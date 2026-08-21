@@ -18,7 +18,33 @@ Find the Meta ads already working for the organization this session is authentic
    ad's own `adName`/`campaignName` and the products it is clearly selling. `ctaText` MUST
    be one of Meta's accepted values (Shop Now, Order Now, Learn More, Get Offer, Sign Up,
    Subscribe, Get Quote, Send Message) or the publish is rejected.
-5. Show the merchant what you are about to create, then **STOP**. For each ad: its name,
+
+   `create_ad` also supports these, and they are worth offering rather than leaving at
+   defaults — a cloned ad inherits the creative, not the conversation behind it:
+   - **`incentives`** — a discount attached to the flow. If the source ad's own copy
+     promises an offer (a "30" or "%" in the ad name is a strong hint), the clone needs a
+     matching incentive or the DM will not honour what the creative advertises.
+   - **`appliesOnSellingPlans`** on an incentive — whether the discount applies to
+     subscription purchases. Ask if the merchant sells subscriptions.
+   - **`welcomeMessage`** — the first message when the chat opens.
+   - **`greetingInstruction`** — a verbatim opening line the agent reproduces word for word.
+   - **`productRecommendation`** — a short survey that recommends a product from the
+     answers, instead of leading with a carousel.
+   - **`includeBestSellers`** — defaults to true; adds best sellers alongside the chosen
+     products.
+
+   Do not interrogate the merchant about all of these. Draft sensible defaults, show what
+   you chose, and name the one or two most likely to matter for this ad.
+5. Ask where it should live, once: a **new campaign** (the default — say so and move on)
+   or an **existing** one. If they name an existing campaign, pass `campaignId`. If they
+   want a new one with a specific name, pass `campaignName`. Never pass both.
+
+   **Always use a new ad set for the batch** unless the merchant explicitly asks otherwise:
+   ad #1 creates it and #2..N join it. Only pass an `adsetId` they gave you — and if they do
+   ask to join a live ad set, that is when the learning-phase reset applies (see Hard Rules)
+   and you cannot set a budget, because it belongs to that ad set already.
+
+6. Show the merchant what you are about to create, then **STOP**. For each ad: its name,
    spend/cpa/roas and why it made the cut, and underneath it the flow you drafted — headline,
    CTA, the products **by name** (never raw IDs), and the ice breakers written out. Say what
    the ice breakers are: the tappable buttons a customer sees first in the DM. Also tell them
@@ -32,8 +58,8 @@ Find the Meta ads already working for the organization this session is authentic
    **Publish exactly what they saw.** Do not regenerate the headline, CTA, products or ice
    breakers at publish time — if the published flow differs from the draft they approved,
    the review was theatre.
-6. On "Go", publish all N with `create_ad`: `sourceMetaAdId` set to that ad's `adId`, `publishToMeta: true`. Pass the `name`, `headline`, `ctaText`, `shopifyProductIds` and `iceBreakers` the merchant approved in step 5, unchanged. **Ad #1 creates the ad set** — call it first, with no `adsetId`. Poll `poll_ad_status` on its `flowId` until `status` is `active` or `failed`; once active, read `metaAdsetId` off that response, then pass that same value as `adsetId` on ads #2 through N so the whole batch shares one ad set. Do not fire the remaining ads in parallel or before `metaAdsetId` arrives — each `create_ad`/`poll_ad_status` call returns its own `nextStep`; follow it literally rather than deciding sequencing yourself.
-7. Report back, per flow: its name, `flowId`, and confirmed status once `poll_ad_status` says `active` (or its `statusError` if one failed — report that, do not retry, retrying a failed publish risks duplicate campaign objects). `poll_ad_status`'s own response already carries what the merchant needs next, with no extra call: for an active flow, surface `previews.storyPreviewUrl` (fall back to `previews.fallbackPreviewUrl` if that one is absent) so they can see the ad itself, and `adManagerUrl` so they can go turn it on — the literal next thing they have to do, since everything lands PAUSED. Both fields are optional and a failed flow has neither; only print a link you actually have, never an empty one.
+7. On "Go", publish all N with `create_ad`: `sourceMetaAdId` set to that ad's `adId`, `publishToMeta: true`. Pass the `name`, `headline`, `ctaText`, `shopifyProductIds` and `iceBreakers` the merchant approved when you showed them the draft, unchanged — do not regenerate any of it. **Ad #1 creates the ad set** — call it first, with no `adsetId`. Poll `poll_ad_status` on its `flowId` until `status` is `active` or `failed`; once active, read `metaAdsetId` off that response, then pass that same value as `adsetId` on ads #2 through N so the whole batch shares one ad set. Do not fire the remaining ads in parallel or before `metaAdsetId` arrives — each `create_ad`/`poll_ad_status` call returns its own `nextStep`; follow it literally rather than deciding sequencing yourself.
+8. Report back, per flow: its name, `flowId`, and confirmed status once `poll_ad_status` says `active` (or its `statusError` if one failed — report that, do not retry, retrying a failed publish risks duplicate campaign objects). `poll_ad_status`'s own response already carries what the merchant needs next, with no extra call: for an active flow, surface `previews.storyPreviewUrl` (fall back to `previews.fallbackPreviewUrl` if that one is absent) so they can see the ad itself, and `adManagerUrl` so they can go turn it on — the literal next thing they have to do, since everything lands PAUSED. Both fields are optional and a failed flow has neither; only print a link you actually have, never an empty one.
 
 ## Budget and how many ads
 
@@ -45,6 +71,10 @@ assume dollars).
 
 Say it as a starting point they can move, not a rule: "these are running on about
 $300/day, so I'd start this at $90/day and watch it for a week."
+
+Then actually set it: pass `dailyBudgetCents` on the ad that CREATES the ad set (ad #1).
+It is in **cents** — $90/day is `9000`. Budget lives on the ad set, so do not pass it on
+ads #2..N that join with `adsetId`; they inherit it.
 
 Do NOT derive a daily rate from `spend`. `spend` is the 90-day total and real ads run far
 less than that — for one merchant the ads clearing the floor averaged 26 days, so dividing
