@@ -19,14 +19,14 @@ provides:
 - **Two guided workflows**, as MCP prompts: `flow_status_report` and `scale_what_works`
 
 **2. The `scale-what-works` skill** — a longer playbook for the "which ads should I run next"
-conversation. Claude Code only; every other client gets the MCP server's own
-`scale_what_works` prompt, which covers the same ground.
+conversation. It travels with the plugin, so Claude Code, Claude Desktop and Claude.ai all
+get it. Clients that take the MCP server on its own get the server's `scale_what_works`
+prompt instead, which covers the same ground.
 
 | Client | Gets | Install section |
 |---|---|---|
 | Claude Code | Tools + prompts + skill | [Claude Code](#claude-code) |
-| Claude Desktop | Tools + prompts | [Claude Desktop](#claude-desktop) |
-| Claude.ai (web, mobile) | Tools + prompts | [Claude.ai](#claudeai-web-and-mobile) |
+| Claude Desktop, Claude.ai, Cowork | Tools + prompts + skill | [Claude Desktop and Claude.ai](#claude-desktop-and-claudeai) |
 | ChatGPT | Tools | [ChatGPT](#chatgpt) |
 | Cursor, VS Code, other MCP clients | Tools + prompts | [Other MCP clients](#other-mcp-clients) |
 
@@ -71,31 +71,36 @@ claude mcp add --transport http moshi https://mcp.moshi.ai/mcp
 
 Use `--scope user` to make it available in every project rather than just the current one.
 
-## Claude Desktop
+## Claude Desktop and Claude.ai
 
-1. **Settings → Connectors → Add custom connector**
-2. URL: `https://mcp.moshi.ai/mcp`
-3. **Add**, then **Connect** — sign in to Moshi in the browser window that opens
+Install the plugin — it brings the MCP server and the skill in together. Same flow on the
+desktop app, the web app and Cowork; available on all paid plans (Pro, Max, Team,
+Enterprise).
 
-The two guided workflows are MCP *prompts*, and Desktop keeps prompts somewhere other than
-the tools list: click the **+** button in the composer, then **Connectors → moshi**. A prompt
-that is working perfectly will never show up under tools, so check there before assuming
-something is broken.
+1. Open **Customize** in the left sidebar, then the **Plugins** tab.
+   In Cowork, open **Customize** from the **Cowork** tab first.
+2. Under **Personal plugins**, click **+ → Add marketplace**
+3. Choose **Add from a repository** and give it
+   `https://github.com/moshi-labs/moshi-claude-plugin`
+4. Install **moshi**, then sign in to Moshi when it prompts you to connect
 
-Desktop only starts connectors at launch — quit fully and reopen if the connector does not
-appear.
+The two guided workflows are MCP *prompts*, and prompts live somewhere other than the tools
+list: click the **+** button in the composer, then **Connectors → moshi**. A prompt that is
+working perfectly will never show up under tools, so look there before assuming something is
+broken.
 
-## Claude.ai (web and mobile)
+The desktop app only starts connectors at launch — quit it fully and reopen if Moshi does not
+show up.
 
-**Free, Pro and Max:**
+### Just the MCP server
 
-1. **Customize → Connectors**
-2. **+ → Add custom connector**
-3. URL: `https://mcp.moshi.ai/mcp` → **Add** → **Connect** and sign in
+Plugins need a paid plan. On Free, or if you want the tools without the rest, add the server
+as a custom connector instead: **Customize → Connectors → + → Add custom connector**, URL
+`https://mcp.moshi.ai/mcp`, then **Connect** and sign in.
 
-**Team and Enterprise:** an Owner adds it once for the workspace under **Organization
-settings → Connectors → Add**, hovers **Custom**, picks **Web**, and enters the same URL.
-Members then go to **Customize → Connectors** and click **Connect** to sign in as themselves.
+On Team and Enterprise an Owner adds it once for the whole workspace under **Organization
+settings → Connectors → Add**, hovering **Custom** and picking **Web**. Members then click
+**Connect** under **Customize → Connectors** to sign in as themselves.
 
 ## ChatGPT
 
