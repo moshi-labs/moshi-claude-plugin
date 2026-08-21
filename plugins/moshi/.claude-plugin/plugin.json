@@ -1,15 +1,16 @@
 {
   "name": "moshi",
-  "description": "Moshi: conversational commerce and lead gen over Instagram DM, Facebook Messenger and iMessage. Bundles the Moshi MCP server and guided workflows.",
-  "version": "0.1.0",
-  "author": { "name": "Moshi Labs" },
-  "keywords": ["moshi", "mcp", "meta", "ads", "commerce", "lead-gen"],
-  "userConfig": {
-    "api_key": {
-      "type": "string",
-      "title": "Moshi API key",
-      "description": "Create one under Settings → API keys in app.moshi.ai",
-      "sensitive": true
-    }
-  }
+  "description": "Moshi: conversational commerce and lead gen over Instagram DM, Facebook Messenger and iMessage. Bundles the Moshi MCP server and guided workflows. Sign in with your Moshi account when prompted.",
+  "version": "0.2.0",
+  "author": {
+    "name": "Moshi Labs"
+  },
+  "keywords": [
+    "moshi",
+    "mcp",
+    "meta",
+    "ads",
+    "commerce",
+    "lead-gen"
+  ]
 }
