@@ -8,26 +8,71 @@ Find the Meta ads already working for the organization this session is authentic
 
 ## Walk the merchant through it, in order
 
-1. Call `get_flow_status_data` with `period` set to the window the merchant named, or `since_launch` if they did not name one. Use it for two or three lines of orientation ONLY — spend, DM conversations opened, thread-proven orders. This is orientation, not the report — `/flow_status_report` already produces the full one-pager over this same data, and this skill must not duplicate it. Do not build a funnel, a lead table, or a "what people said" section here.
+1. Call `get_flow_status_data` with `period` set to the window the merchant named, or `since_launch` if they did not name one. Use it for two or three lines of orientation ONLY — spend, DM conversations opened, and whichever outcome this merchant runs on — thread-proven orders for a store, captured and qualified leads for a survey flow. This is orientation, not the report — `/flow_status_report` already produces the full one-pager over this same data, and this skill must not duplicate it. Do not build a funnel, a lead table, or a "what people said" section here.
 2. Decide N first — see "How many ads to launch" below — then call `get_ad_shortlist` with `render: true` and `suggestLimit: N`. The tool decides the proposed set itself: it keeps only ads where `cloneable !== false` AND `alreadyMirrored !== true` (see Hard Rules below for exactly what the `null` case means and why it is kept, not dropped), ranks what remains by `cpa` ascending with `cpa: null` (no purchases yet) sorted last, and takes the top N. It draws cards for ONLY that set and returns the identical set as `suggested` in the tool result — the tool is the single source of truth for "which ads are we proposing", so the cards and your narration can never disagree. Read `suggested` off the result; do not re-derive the filter yourself.
 3. Look up the `suggested` adIds in `ads` to get each proposed ad's name, spend, cpa and roas.
 4. Present the proposed ads to the merchant: name, spend, cpa/roas, and why each made the cut. Also tell them what `counts` shows was left out (see Hard Rules). Then **STOP** and wait for the merchant to say **"Go"** (or an unambiguous equivalent). Do not call `create_ad` before they do.
 5. On "Go", publish all N with `create_ad`: `sourceMetaAdId` set to that ad's `adId`, `publishToMeta: true`. `create_ad` still requires `name`, `headline`, `ctaText`, `shopifyProductIds` and `iceBreakers` even though `sourceMetaAdId` supplies the creative — base these on the ad's own `adName`/`campaignName` and the organization's products (call `get_products` if you have not already), with a Meta-safe ctaText. **Ad #1 creates the ad set** — call it first, with no `adsetId`. Poll `poll_ad_status` on its `flowId` until `status` is `active` or `failed`; once active, read `metaAdsetId` off that response, then pass that same value as `adsetId` on ads #2 through N so the whole batch shares one ad set. Do not fire the remaining ads in parallel or before `metaAdsetId` arrives — each `create_ad`/`poll_ad_status` call returns its own `nextStep`; follow it literally rather than deciding sequencing yourself.
 6. Report back, per flow: its name, `flowId`, and confirmed status once `poll_ad_status` says `active` (or its `statusError` if one failed — report that, do not retry, retrying a failed publish risks duplicate campaign objects). `poll_ad_status`'s own response already carries what the merchant needs next, with no extra call: for an active flow, surface `previews.storyPreviewUrl` (fall back to `previews.fallbackPreviewUrl` if that one is absent) so they can see the ad itself, and `adManagerUrl` so they can go turn it on — the literal next thing they have to do, since everything lands PAUSED. Both fields are optional and a failed flow has neither; only print a link you actually have, never an empty one.
 
-## How many ads to launch
+## Budget and how many ads
 
-Default to **3**. **6 is a hard cap** — never launch more than 6 ads in one batch.
+**Recommend a daily budget of 30% of what these ads already run on.** Each ad carries
+`effectiveDailyBudget` — the daily budget the merchant themselves set on the campaign (or
+the ad set, when the campaign has none). Average that across the ads you are proposing and
+recommend **30% of the average**, in the account's own currency (`accountCurrency` — do not
+assume dollars).
 
-Why the cap: a Moshi ad set is created with `daily_budget: 2000` ($20/day), and every ad in a shared ad set (this flow always shares one — see Hard Rules) draws from that SAME budget; Meta fragments delivery across whatever is in the set instead of giving each ad its own spend. One ad needs roughly $20-25/day of spend to exit the learning phase, so packing more ads onto a fixed $20/day set starves all of them — at 10 ads on $20/day, none is likely to ever exit learning.
+Say it as a starting point they can move, not a rule: "these are running on about
+$300/day, so I'd start this at $90/day and watch it for a week."
 
-Scale up only if the merchant states a budget, at roughly one ad per $20-25/day (a stated $100/day supports around 4-5 ads — still capped at 6).
+Do NOT derive a daily rate from `spend`. `spend` is the 90-day total and real ads run far
+less than that — for one merchant the ads clearing the floor averaged 26 days, so dividing
+by 90 understates the true daily rate by more than 3x. `effectiveDailyBudget` is the only
+daily figure in the response.
 
-If the merchant asks for more than 6 (e.g. "do all 10"), do not silently comply and do not refuse: explain the budget-fragmentation cost above in concrete terms — each ad would get well under $20/day and may never exit learning — and recommend fewer. If they still want more reach after hearing that, offer to run the rest as a second batch later rather than exceeding 6 in this one.
+Where `effectiveDailyBudget` is `null` (a lifetime-budget campaign has no daily figure —
+`counts.adsMissingDailyBudget` says how many), say you could not read their current budget
+and name Moshi's $20/day default as what it will otherwise start on. Do not invent a rate.
+
+**How many: default to 3, hard cap 6.**
+
+Every ad in a shared ad set draws from the SAME budget and Meta fragments delivery across
+whatever is in the set. An ad needs roughly $20-25/day to exit the learning phase, so the
+budget you recommend sets the ceiling: at $90/day, three ads get $30 each and all three can
+learn; ten would get $9 each and none would.
+
+If the merchant asks for more than 6, do not silently comply and do not refuse. Show them
+the division in their own numbers — "at $90/day, ten ads is $9 each and none of them will
+get enough spend to learn" — recommend fewer, and offer to run the rest as a second batch.
+
+## Tone — you are talking to a merchant about their own business
+
+Be direct and confident about what Moshi can do. Lead with the finding, not the caveat.
+
+The unknowns in this data are real and you must not hide them — but state each one **once**,
+in a clause, and keep going. Do not stack hedges, do not apologise for the limits of the
+data, and do not narrate your own uncertainty at length.
+
+Bad — three hedges for one fact, and it reads like the product does not work:
+
+> All three came back cloneable: true, so the creative check passed. One thing I can't
+> confirm: this org has a flow published before Moshi started recording source lineage, so
+> "already mirrored" is unknown for every ad here — I can't promise these three are fresh,
+> only that nothing on record contradicts it.
+
+Good — same facts, one caveat, merchant-legible:
+
+> These three are your strongest performers and all are ready to clone. One older flow
+> predates our source tracking, so if you've already run one of these I wouldn't see it.
+
+Say "your ads", "your best performers", "I'd start this at $90/day". Not "the data
+suggests", "I cannot verify", "it appears that". You are reporting on their business, not
+defending a measurement.
 
 ## Hard rules — these are correctness, not style
 
-1. **`cloneable` and `alreadyMirrored` are three-state, not boolean.** `cloneable === false` is a real, checked blocker — never mirror that ad, it fails at publish. `cloneable === null` means it was never checked (creative never returned, or the creative-lookup cap was hit) — that is UNKNOWN, never treat it as false, and never hide the ad for it; keep it, but tell the merchant cloneability was never confirmed rather than promising it will work. Same shape for `alreadyMirrored`: `=== true` means a flow already clones it (drop it, re-launching is redundant); `=== null` means lineage can't be traced (the org has flows with no recorded source) — keep the ad, but say you can't confirm it's fresh.
+1. **`cloneable` and `alreadyMirrored` are three-state, not boolean.** `cloneable === false` is a real, checked blocker — never mirror that ad, it fails at publish. `cloneable === null` means it was never checked (creative never returned, or the creative-lookup cap was hit) — that is UNKNOWN, never treat it as false, and never hide the ad for it; keep it, but say once that its creative could not be checked. State it and move on — do not repeat the caveat or apologise for it. Same shape for `alreadyMirrored`: `=== true` means a flow already clones it (drop it, re-launching is redundant); `=== null` means lineage can't be traced (the org has flows with no recorded source) — keep the ad, but mention once that an older flow predates source tracking, so a previous clone would not show up. Once, plainly, then move on.
 2. **Everything this creates is created PAUSED.** Nothing spends until the merchant activates it themselves in Meta. Say this plainly and early — it is the single most reassuring fact about this whole flow and merchants will not assume it on their own.
 3. **Why one ad set:** All the ads you pick go into ONE ad set. Be honest about why: adding an ad to an existing ad set RESETS that ad set's learning phase — Meta counts it as a significant edit, and learning is tracked per ad set, so the reset hits the ad already in there too. The real benefits are budget consolidation (one budget instead of N) and skipping ad set setup. NEVER say or imply that this keeps your existing optimization, inherits performance, or preserves learning. It does not.
 4. **Report what `get_ad_shortlist` left out.** Its `counts` field names ads dropped by the spend floor, the creative-lookup cap, and the result limit — surface that so the merchant knows they are not seeing every ad in the account, only the ones that cleared the bar to be ranked at all. Separately, `ads` itself can carry more ads than `suggested` proposes — say so too, so the merchant does not wonder whether the N you presented was everything that qualified.
