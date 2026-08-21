@@ -61,11 +61,6 @@ run the skill directly:
 /moshi:scale-what-works
 ```
 
-> The repo is currently **private**, so `marketplace add` clones it with your GitHub
-> credentials — you need read access on `moshi-labs/moshi-claude-plugin`. To hand this to
-> someone outside the org, either make the repo public or have them clone it and add the
-> local path instead: `claude plugin marketplace add ./moshi-claude-plugin`.
-
 ### The MCP server on its own
 
 If you only want the tools and prompts, skip the plugin:
@@ -162,9 +157,6 @@ not in the tools list.
 **Claude Code doesn't see the plugin** — plugins load at session start. Restart, then
 `claude plugin list` to confirm it installed and is enabled.
 
-**`marketplace add` fails** — you need read access to the private repo. See the note in the
-Claude Code section.
-
 **A new Moshi tool isn't showing up** — reconnect the connector (ChatGPT: **Refresh** on the
 app; Claude Desktop: quit and reopen). The tool list is cached per connection.
 
@@ -180,4 +172,5 @@ plugins/moshi/
 
 Maintainers: bump the version in **both** `marketplace.json` and `plugin.json` — they have to
 agree. `claude plugin validate .` checks the manifests, and `claude plugin tag plugins/moshi`
-cuts the release tag once they do.
+cuts the release tag once they do. To try a change before pushing it, add your working copy as
+a marketplace by path: `claude plugin marketplace add ./moshi-claude-plugin`.
