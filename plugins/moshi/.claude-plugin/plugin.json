@@ -1,7 +1,7 @@
 {
   "name": "moshi",
   "description": "Moshi: conversational commerce and lead gen over Instagram DM, Facebook Messenger and iMessage. Bundles the Moshi MCP server and guided workflows. Sign in with your Moshi account when prompted.",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "author": {
     "name": "Moshi Labs"
   },
