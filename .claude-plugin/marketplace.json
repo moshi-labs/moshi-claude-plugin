@@ -5,14 +5,14 @@
   },
   "metadata": {
     "description": "Moshi tools and workflows for AI clients",
-    "version": "0.6.0"
+    "version": "0.7.0"
   },
   "plugins": [
     {
       "name": "moshi",
       "source": "./plugins/moshi",
       "description": "Moshi: conversational commerce and lead gen over Instagram DM, Messenger and iMessage. Tools plus guided workflows for reporting on flows and turning proven Meta ads into new ones.",
-      "version": "0.6.0"
+      "version": "0.7.0"
     }
   ]
 }

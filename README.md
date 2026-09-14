@@ -16,12 +16,18 @@ provides:
 - **Catalog & brand** — products, product lore, brand docs, knowledge health
 - **Ads** — shortlist your proven Meta ads, create and publish Moshi ads, upload creatives
 - **Simulator** — launch a sandbox conversation and message it as a customer
-- **Two guided workflows**, as MCP prompts: `flow_status_report` and `scale_what_works`
+- **Three guided workflows**, as MCP prompts: `flow_status_report`, `scale_what_works` and
+  `weekly_newsletter`
 
-**2. The `scale-what-works` skill** — a longer playbook for the "which ads should I run next"
-conversation. It travels with the plugin, so Claude Code, Claude Desktop and Claude.ai all
-get it. Clients that take the MCP server on its own get the server's `scale_what_works`
-prompt instead, which covers the same ground.
+**2. Two skills** — longer playbooks that travel with the plugin, so Claude Code, Claude
+Desktop and Claude.ai all get them:
+
+- `scale-what-works` — the "which ads should I run next" conversation.
+- `weekly-newsletter` — a weekly newsletter for the merchant, which a Cowork `/schedule`
+  run can write unattended.
+
+Clients that take the MCP server on its own get the matching prompts, `scale_what_works` and
+`weekly_newsletter`, which cover the same ground.
 
 | Client | Gets | Install section |
 |---|---|---|
@@ -172,7 +178,8 @@ app; Claude Desktop: quit and reopen). The tool list is cached per connection.
 plugins/moshi/
 ├── .claude-plugin/plugin.json    plugin manifest
 ├── .mcp.json                     points at the hosted MCP server
-└── skills/scale-what-works/      the ads-scaling playbook
+├── skills/scale-what-works/      the ads-scaling playbook
+└── skills/weekly-newsletter/     the weekly merchant newsletter
 ```
 
 Maintainers: bump the version in **both** `marketplace.json` and `plugin.json` — they have to
