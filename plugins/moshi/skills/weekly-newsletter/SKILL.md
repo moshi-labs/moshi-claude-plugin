@@ -26,6 +26,7 @@ Write the weekly Moshi newsletter for the organization this session is authentic
 10. **Stay read-only.** Never launch an ad, send a nudge or call a write tool. Every call to action sends the merchant to act.
 11. **Name the merchant only from `organization.name`.** Never guess a name or take one from a transcript.
 12. **Badge "Closed with Closer" only where a row's `closedWithCloser` is true.** Never add `closes.closedWithCloserCount` to `missed.nudgedThenPurchased`: the first counts this period's orders that followed a Closer nudge, and the second counts conversations nudged this period that later placed an order. They answer different questions.
+13. **Money has a currency.** Take it from `closes.rows[].currency` for purchase values and `nextAds.accountCurrency` for ad figures, where present. Never assume USD, and never print a `$` sign unless the currency is USD.
 
 ## Voice
 
@@ -73,7 +74,7 @@ When `edition` is `"quiet_week"`, nothing measurable happened in the window. Ren
 - `purchases_missing_amount` flag: revenue is a floor.
 - `duplicate_order_ids` flag: show the rows as they are; do not dedupe them.
 - `purchase_count_mismatch` flag: a purchase landed between reads. Show both numbers and do not reconcile them.
-- `live_queue_truncated` flag: `missed.liveQueue.total` is exact, straight from `/recover`'s own count. Only `missed.liveQueue.cartValue` (and `returned`) cover the first 200 rows read — those two are a floor.
+- `live_queue_truncated` flag: `missed.liveQueue.total` is exact, straight from `/recover`'s own count, and so is `missed.liveQueue.returned`, the number of rows the tool actually read. Only `missed.liveQueue.cartValue` is a floor — it covers those returned rows only.
 - `closer_queue_truncated` flag: `missed.stillReachable.count` and `missed.stillReachable.cartValue` are floors — say so.
 
 Design it cleanly: stat tiles, restrained color, readable in light and dark, and short enough to read in two minutes. Produce it as an artifact.

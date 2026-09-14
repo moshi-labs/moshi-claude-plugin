@@ -11,7 +11,7 @@
     {
       "name": "moshi",
       "source": "./plugins/moshi",
-      "description": "Moshi: conversational commerce and lead gen over Instagram DM, Messenger and iMessage. Tools plus guided workflows for reporting on flows and turning proven Meta ads into new ones.",
+      "description": "Moshi: conversational commerce and lead gen over Instagram DM, Messenger and iMessage. Tools plus guided workflows for reporting on flows, turning proven Meta ads into new ones, and writing the merchant's weekly newsletter.",
       "version": "0.7.0"
     }
   ]
