@@ -69,7 +69,7 @@ When `edition` is `"quiet_week"`, nothing measurable happened in the window. Ren
 - `nextAds` is null (the `ad_shortlist_unavailable` flag): leave out section 4 and keep the flag in the footer.
 - `no_connected_ad_account` flag with an empty `nextAds.ads`: leave out section 4 and give that reason (`nextAds.notes.note`).
 - `releases` is null (the `releases_unavailable` flag): leave out section 5 and keep the flag in the footer. An empty `releases` list: leave out section 5 without comment.
-- `partial_period` flag: the window reaches today, so say "so far".
+- `partial_period` flag: the window reaches today, so say "so far", and every `scorecard.deltas` entry is `comparable: false` — show no week-over-week changes; comparisons come once the week is complete.
 - `closer_history_incomplete` flag: the missed counts are a floor.
 - `purchases_missing_amount` flag: revenue is a floor.
 - `duplicate_order_ids` flag: show the rows as they are; do not dedupe them.
