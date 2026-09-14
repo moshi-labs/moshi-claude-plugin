@@ -31,8 +31,8 @@ Clients that take the MCP server on its own get the matching prompts, `scale_wha
 
 | Client | Gets | Install section |
 |---|---|---|
-| Claude Code | Tools + prompts + skill | [Claude Code](#claude-code) |
-| Claude Desktop, Claude.ai, Cowork | Tools + prompts + skill | [Claude Desktop and Claude.ai](#claude-desktop-and-claudeai) |
+| Claude Code | Tools + prompts + skills | [Claude Code](#claude-code) |
+| Claude Desktop, Claude.ai, Cowork | Tools + prompts + skills | [Claude Desktop and Claude.ai](#claude-desktop-and-claudeai) |
 | ChatGPT | Tools | [ChatGPT](#chatgpt) |
 | Cursor, VS Code, other MCP clients | Tools + prompts | [Other MCP clients](#other-mcp-clients) |
 
@@ -61,7 +61,7 @@ claude plugin install moshi@moshi
 
 Restart Claude Code, then run `/mcp`, pick **moshi**, and authenticate — a browser window
 opens for you to sign in to Moshi. After that, ask for what you want in plain language, or
-run the skill directly:
+run a skill directly:
 
 ```
 /moshi:scale-what-works
@@ -79,7 +79,7 @@ Use `--scope user` to make it available in every project rather than just the cu
 
 ## Claude Desktop and Claude.ai
 
-Install the plugin — it brings the MCP server and the skill in together. Same flow on the
+Install the plugin — it brings the MCP server and the skills in together. Same flow on the
 desktop app, the web app and Cowork; available on all paid plans (Pro, Max, Team,
 Enterprise).
 
@@ -90,7 +90,7 @@ Enterprise).
    `https://github.com/moshi-labs/moshi-claude-plugin`
 4. Install **moshi**, then sign in to Moshi when it prompts you to connect
 
-The two guided workflows are MCP *prompts*, and prompts live somewhere other than the tools
+The three guided workflows are MCP *prompts*, and prompts live somewhere other than the tools
 list: click the **+** button in the composer, then **Connectors → moshi**. A prompt that is
 working perfectly will never show up under tools, so look there before assuming something is
 broken.
