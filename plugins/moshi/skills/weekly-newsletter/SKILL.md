@@ -25,8 +25,9 @@ Write the weekly Moshi newsletter for the organization this session is authentic
 9. **Label `nextAds` figures with the shortlist's own window**, `nextAds.window.dateStart` → `nextAds.window.dateStop`. Never present that spend, CPA or ROAS as this period's numbers.
 10. **Stay read-only.** Never launch an ad, send a nudge or call a write tool. Every call to action sends the merchant to act.
 11. **Name the merchant only from `organization.name`.** Never guess a name or take one from a transcript.
-12. **Badge "Closed with Closer" only where a row's `closedWithCloser` is true.** Never add `closes.closedWithCloserCount` to `missed.nudgedThenPurchased`: the first counts this period's orders that followed a Closer nudge, and the second counts conversations nudged this period that later placed an order. They answer different questions.
-13. **Money has a currency.** Take it from `closes.rows[].currency` for purchase values and `nextAds.accountCurrency` for ad figures, where present. Never assume USD, and never print a `$` sign unless the currency is USD.
+12. **Link any dashboard destination with `organization.dashboardUrl`** (the Closer CTA keeps `organization.closerUrl`). Never write `app.moshi.ai` or any other hardcoded Moshi dashboard host.
+13. **Badge "Closed with Closer" only where a row's `closedWithCloser` is true.** Never add `closes.closedWithCloserCount` to `missed.nudgedThenPurchased`: the first counts this period's orders that followed a Closer nudge, and the second counts conversations nudged this period that later placed an order. They answer different questions.
+14. **Money has a currency.** Take it from `closes.rows[].currency` for purchase values and `nextAds.accountCurrency` for ad figures, where present. Never assume USD, and never print a `$` sign unless the currency is USD.
 
 ## Voice
 
