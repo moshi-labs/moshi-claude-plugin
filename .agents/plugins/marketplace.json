@@ -1,0 +1,17 @@
+{
+  "name": "moshi",
+  "plugins": [
+    {
+      "name": "moshi",
+      "source": {
+        "source": "local",
+        "path": "./plugins/moshi"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Business"
+    }
+  ]
+}
