@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "moshi",
+  "version": "0.7.0",
+  "description": "Moshi: conversational commerce and lead gen over Instagram DM, Facebook Messenger and iMessage. Bundles the Moshi MCP server and guided workflows. Sign in with your Moshi account when prompted.",
+  "author": {
+    "name": "Moshi Labs",
+    "url": "https://www.moshi.ai"
+  },
+  "homepage": "https://www.moshi.ai",
+  "repository": "https://github.com/moshi-labs/moshi-claude-plugin",
+  "keywords": ["moshi", "mcp", "meta", "ads", "commerce", "lead-gen"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Moshi",
+        "shortDescription": "Report on your Moshi flows and turn your best Meta ads into new ones.",
+        "longDescription": "Moshi runs AI conversations with your customers over Instagram DM, Facebook Messenger and iMessage. Connect your Moshi account to see how your flows, ads and revenue are performing, read customer conversations, update your brand docs and product details, and turn the Meta ads already working for you into new Moshi flows.",
+        "developerName": "Moshi Labs",
+        "category": "Business",
+        "capabilities": ["Read", "Write"],
+        "websiteURL": "https://www.moshi.ai",
+        "privacyPolicyURL": "https://www.moshi.ai/legal/privacy",
+        "termsOfServiceURL": "https://www.moshi.ai/legal/terms",
+        "defaultPrompt": [
+          "How did my Moshi flows perform last week?",
+          "Which of my Meta ads are worth scaling with Moshi?",
+          "Show me my most recent customer conversations in Moshi."
+        ],
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/logo.png"
+      }
+    }
+  }
+}
