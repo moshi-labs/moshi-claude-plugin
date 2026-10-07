@@ -1,6 +1,6 @@
 ---
 name: close-the-carts
-description: Work a Moshi merchant's Closer queue — the shoppers who got close to buying, went quiet, and are still reachable. Show who's in it, bulk-draft a nudge for each lead the merchant picks, lay every draft out for one review pass, then send the ones they approve.
+description: Use when a Moshi merchant asks about abandoned carts, who almost bought, who to follow up with, their Closer queue, or wants to nudge or recover leads in bulk. Works the Closer queue of shoppers who got close to buying and went quiet — shows who's in it, drafts a nudge for each lead the merchant picks after they confirm the queue, lays every draft out for one review pass, then sends the ones they approve. Requires the Moshi MCP server.
 when_to_use: Use when a Moshi merchant asks about abandoned carts, who almost bought, who to follow up with, their Closer queue, or wants to nudge or recover leads in bulk. Requires the Moshi MCP server.
 ---
 
@@ -33,8 +33,9 @@ once, and send what they approve.
 2. **Pick the batch.** Propose the leads to draft: default to every lead that is not
    `heldByHuman`, up to **10**, ordered by time left (soonest-closing first), then cart
    value. Never propose more than `dailyCap` — anything past the cap cannot be sent today.
-   Say what you'd pick in one line and go ahead unless they change it; the merchant can name
-   leads to add or drop. If they ask for more than 10, do it, capped at `dailyCap`.
+   Show the queue and the proposed batch in one line, and get a one-line yes from the
+   merchant before drafting (drafting is a write: it generates text and logs activity); they
+   can name leads to add or drop. If they ask for more than 10, do it, capped at `dailyCap`.
 
    Only draft leads the merchant will actually consider. Every draft runs a generation and is
    recorded as the merchant opening that lead, so do not draft the whole queue "just to see".
@@ -66,7 +67,8 @@ once, and send what they approve.
    `draft_closer_nudge` again for that lead with the new `offerContext` (it returns a new
    `draftId`; use that one). Once the merchant confirms, call `send_closer_nudge` for each
    approved lead with its `draftId` and the **final text** as `message`. Send one at a time,
-   not in parallel.
+   not in parallel. The client (e.g. ChatGPT) may also ask the merchant to confirm each send;
+   that is expected, so wait for it.
 
    **Send exactly what they approved.** Do not re-polish wording at send time. The draft's
    offer carries into the send automatically — only pass `incentiveId`, `newOffer` or

@@ -1,7 +1,7 @@
 ---
 name: weekly-newsletter
-description: Write a Moshi merchant's weekly newsletter as an artifact from one consistent read — the week at a glance with changes from the prior period, top conversations, Closer wins and missed leads, the next ad to launch, and what's new from Moshi. Read-only.
-when_to_use: Use when a Moshi merchant, or a scheduled Cowork run, asks for a weekly newsletter, a weekly recap or digest, or how the week went. With no dates it covers the last completed Monday-to-Sunday week in UTC, so it runs unattended. Requires the Moshi MCP server.
+description: Use when a Moshi merchant, or a scheduled or unattended run, asks for a weekly newsletter, weekly recap or digest, or how the week went (defaults to the last completed Monday-to-Sunday week, UTC). Writes the newsletter from one consistent read — the week at a glance with changes from the prior period, top conversations, Closer wins and missed leads, the next ad to launch, and what's new from Moshi. Read-only. Requires the Moshi MCP server.
+when_to_use: Use when a Moshi merchant, or a scheduled or unattended run (e.g. a Cowork /schedule run), asks for a weekly newsletter, a weekly recap or digest, or how the week went. With no dates it covers the last completed Monday-to-Sunday week in UTC, so it runs unattended. Requires the Moshi MCP server.
 ---
 
 Write the weekly Moshi newsletter for the organization this session is authenticated as. Cover the window the merchant named. If they named none, which is always the case on a scheduled run, cover the last completed Monday-to-Sunday week in UTC: `periodEnd` is the latest Sunday before today (yesterday when today is Monday, 7 days back when today is Sunday), and `periodStart` is the Monday 6 days before it. Both days are included. The reader is the merchant: a busy owner who wants to know how the week went, which shoppers are worth a message today, and what to do next.
@@ -53,7 +53,7 @@ When `scorecard.prior` is null, show no changes and label the tiles "first perio
 - Then `missed.windowClosed.count` leads worth `missed.windowClosed.cartValue` whose reply window has closed.
 - A cart value is a floor ("at least") when its `cartValueUnknownCount` is above 0.
 
-**4. Next ad to launch**: 1 to 3 ads from `nextAds.ads`, each with CPA and ROAS labelled with the shortlist's own window, `nextAds.window.dateStart` → `nextAds.window.dateStop` (rule 9), and the call to action "run Scale what works" (`/scale_what_works`, or the `scale-what-works` skill). If `nextAds` is null or `nextAds.ads` is empty, leave the section out and say why in one line.
+**4. Next ad to launch**: 1 to 3 ads from `nextAds.ads`, each with CPA and ROAS labelled with the shortlist's own window, `nextAds.window.dateStart` → `nextAds.window.dateStop` (rule 9), and the call to action "run Scale what works" (the `scale-what-works` skill). If `nextAds` is null or `nextAds.ads` is empty, leave the section out and say why in one line.
 
 **5. New from Moshi**: only from `releases`. For each entry, its title, its summary in one line, and its link. Leave the section out when `releases` is null or empty.
 
@@ -78,4 +78,4 @@ When `edition` is `"quiet_week"`, nothing measurable happened in the window. Ren
 - `live_queue_truncated` flag: `missed.liveQueue.total` is exact, straight from `/recover`'s own count, and so is `missed.liveQueue.returned`, the number of rows the tool actually read. Only `missed.liveQueue.cartValue` is a floor — it covers those returned rows only.
 - `closer_queue_truncated` flag: `missed.stillReachable.count` and `missed.stillReachable.cartValue` are floors — say so.
 
-Design it cleanly: stat tiles, restrained color, readable in light and dark, and short enough to read in two minutes. Produce it as an artifact.
+Design it cleanly: stat tiles, restrained color, readable in light and dark, and short enough to read in two minutes. Produce it as an artifact where the client supports artifacts; otherwise as a single self-contained HTML file the user can download, or failing that markdown.

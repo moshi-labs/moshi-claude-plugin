@@ -1,6 +1,6 @@
 ---
 name: performance-pulse-check
-description: Read a Moshi merchant's whole Meta ad account like a senior performance marketer and deliver a pulse-check report on how their Moshi ads are doing, judged by campaign age, objective and fair comparisons. Use when a Moshi merchant asks how their ads are doing or whether Moshi is working.
+description: Use when a Moshi merchant asks "how are my ads doing", "is Moshi working", "pulse check", "should I keep spending on Moshi", "my ROAS looks low", "why did my CPA go up", "compare Moshi to my other ads", or for day-one or week-one results; also for scheduled runs. Reads the whole Meta ad account like a senior performance marketer and delivers a read-only pulse-check report, judged by campaign age, objective and fair comparisons. Needs only the Moshi MCP server.
 when_to_use: Use when a Moshi merchant asks "how are my ads doing", "is Moshi working", "pulse check", "should I keep spending on Moshi", "should I kill Moshi", "my ROAS looks low", "why did my CPA go up", "compare Moshi to my other ads", or for day-one or week-one results. Also for scheduled runs. Read-only. Needs only the Moshi MCP server, which serves the whole Meta ad account from Moshi's synced copy.
 ---
 
@@ -46,8 +46,11 @@ allows, and how to say it.
    typed numbers.
 7. **Render.** Copy `assets/pulse-check.html` and replace only the
    `const DATA = {...};` block in its last script. If you can copy files,
-   copy and edit. If not, emit the whole template unchanged with your DATA
-   block, as an artifact. If the report shows a "data check" banner, fix
+   copy and edit, and return the result as a downloadable file. If you
+   cannot, and the client supports artifacts (e.g. Claude), emit the whole
+   template unchanged with your DATA block, as an artifact. Never print the
+   template inline in chat. If no file can be written and there are no
+   artifacts, give the chat answer only and list the report as not rendered. If the report shows a "data check" banner, fix
    DATA and render again.
 8. **Reply in chat** with the answer shape below.
 
@@ -71,7 +74,7 @@ Your chat reply has these parts, in this order:
    edit, so CPA is readable from Oct 1."
 5. **One line per tool flag** that touches a number you cited, in plain
    words.
-6. **The report**, as the artifact.
+6. **The report**, as the artifact (or the downloadable HTML file where artifacts are unavailable; if neither, say it was not rendered).
 
 ## Hard rules
 
