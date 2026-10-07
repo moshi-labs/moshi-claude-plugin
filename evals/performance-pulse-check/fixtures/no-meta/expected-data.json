@@ -68,7 +68,7 @@
   "nextSteps": [
     {
       "step": 1,
-      "what": "Connect the Meta Ads connector to add CTR, CPC and fair comparisons.",
+      "what": "Connect your Meta ad account in Moshi to add CTR, CPC and fair comparisons.",
       "owner": "merchant",
       "by": "2026-10-09"
     },
@@ -89,10 +89,15 @@
       "source": "moshi",
       "code": "population_mismatch",
       "text": "Chats include profile-button chats. Chats from ads count ad-sourced chats only."
+    },
+    {
+      "source": "meta",
+      "code": "no_synced_ads",
+      "text": "No Meta ad account is synced in Moshi, so this report uses Moshi data only."
     }
   ],
   "notMeasurableYet": [
-    "CTR, CPC and CPM: Meta is not connected.",
-    "Fair comparison with your other ads: Meta is not connected."
+    "CTR, CPC and CPM: no Meta ad account is synced in Moshi.",
+    "Fair comparison with your other ads: no Meta ad account is synced in Moshi."
   ]
 }

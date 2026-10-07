@@ -37,11 +37,11 @@
           "name": "Moshi | Sales | Broad US",
           "optimizationGoal": "OFFSITE_CONVERSIONS",
           "dailyBudget": null,
-          "learning": null,
+          "learning": "learning",
           "adCount": 3,
           "startTime": "2026-10-06",
           "lastLearningReset": "2026-10-06",
-          "attributionSetting": "1d_view_7d_click",
+          "attributionSetting": "7-day click, 1-day view",
           "ads": [
             {
               "id": "1202620000000001",
@@ -52,11 +52,11 @@
                   "date": "2026-10-06",
                   "spend": 73.75,
                   "impressions": 5194,
+                  "reach": 4328,
                   "linkClicks": 128,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 1,
-                  "purchaseValue": 24.5,
-                  "frequency": 1.2
+                  "purchaseValue": 24.5
                 }
               ]
             },
@@ -69,11 +69,11 @@
                   "date": "2026-10-06",
                   "spend": 64.67,
                   "impressions": 4369,
+                  "reach": 3641,
                   "linkClicks": 97,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 1,
-                  "purchaseValue": 21.0,
-                  "frequency": 1.2
+                  "purchaseValue": 21
                 }
               ]
             },
@@ -86,11 +86,11 @@
                   "date": "2026-10-06",
                   "spend": 15.41,
                   "impressions": 860,
+                  "reach": 717,
                   "linkClicks": 10,
-                  "conversations": null,
-                  "purchases": null,
-                  "purchaseValue": null,
-                  "frequency": 1.2
+                  "conversations": 0,
+                  "purchases": 0,
+                  "purchaseValue": 0
                 }
               ]
             }
@@ -116,11 +116,11 @@
           "name": "Broad 25-54",
           "optimizationGoal": "OFFSITE_CONVERSIONS",
           "dailyBudget": null,
-          "learning": null,
+          "learning": "success",
           "adCount": 12,
           "startTime": "2026-03-02",
           "lastLearningReset": "2026-03-02",
-          "attributionSetting": "1d_view_7d_click",
+          "attributionSetting": "7-day click, 1-day view",
           "ads": [
             {
               "id": "1202620000000006",
@@ -131,301 +131,301 @@
                   "date": "2026-09-07",
                   "spend": 999.23,
                   "impressions": 90838,
+                  "reach": 50466,
                   "linkClicks": 1096,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 26,
-                  "purchaseValue": 1403.76,
-                  "frequency": 1.8
+                  "purchaseValue": 1403.76
                 },
                 {
                   "date": "2026-09-08",
                   "spend": 974.94,
                   "impressions": 88630,
+                  "reach": 48958,
                   "linkClicks": 1084,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 22,
-                  "purchaseValue": 1197.34,
-                  "frequency": 1.810345
+                  "purchaseValue": 1197.34
                 },
                 {
                   "date": "2026-09-09",
                   "spend": 986.77,
                   "impressions": 89706,
+                  "reach": 49270,
                   "linkClicks": 1058,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 17,
-                  "purchaseValue": 977.09,
-                  "frequency": 1.82069
+                  "purchaseValue": 977.09
                 },
                 {
                   "date": "2026-09-10",
                   "spend": 1055.13,
                   "impressions": 95920,
+                  "reach": 52386,
                   "linkClicks": 1173,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 25,
-                  "purchaseValue": 1354.51,
-                  "frequency": 1.831034
+                  "purchaseValue": 1354.51
                 },
                 {
                   "date": "2026-09-11",
                   "spend": 990.69,
                   "impressions": 90062,
+                  "reach": 48910,
                   "linkClicks": 1042,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 24,
-                  "purchaseValue": 1289.29,
-                  "frequency": 1.841379
+                  "purchaseValue": 1289.29
                 },
                 {
                   "date": "2026-09-12",
                   "spend": 970.85,
                   "impressions": 88258,
+                  "reach": 47663,
                   "linkClicks": 1110,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 20,
-                  "purchaseValue": 1227.23,
-                  "frequency": 1.851724
+                  "purchaseValue": 1227.23
                 },
                 {
                   "date": "2026-09-13",
                   "spend": 1016.51,
                   "impressions": 92410,
+                  "reach": 49628,
                   "linkClicks": 1138,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 25,
-                  "purchaseValue": 1310.03,
-                  "frequency": 1.862069
+                  "purchaseValue": 1310.03
                 },
                 {
                   "date": "2026-09-14",
                   "spend": 1029.81,
                   "impressions": 93618,
+                  "reach": 49999,
                   "linkClicks": 1096,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 21,
-                  "purchaseValue": 1089.09,
-                  "frequency": 1.872414
+                  "purchaseValue": 1089.09
                 },
                 {
                   "date": "2026-09-15",
                   "spend": 938.18,
                   "impressions": 85289,
+                  "reach": 45300,
                   "linkClicks": 1010,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 14,
-                  "purchaseValue": 766.0,
-                  "frequency": 1.882759
+                  "purchaseValue": 766
                 },
                 {
                   "date": "2026-09-16",
                   "spend": 1049.02,
                   "impressions": 95365,
+                  "reach": 50375,
                   "linkClicks": 1201,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 23,
-                  "purchaseValue": 1186.99,
-                  "frequency": 1.893103
+                  "purchaseValue": 1186.99
                 },
                 {
                   "date": "2026-09-17",
                   "spend": 978.46,
                   "impressions": 88951,
+                  "reach": 46732,
                   "linkClicks": 1021,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 17,
-                  "purchaseValue": 975.1,
-                  "frequency": 1.903448
+                  "purchaseValue": 975.1
                 },
                 {
                   "date": "2026-09-18",
                   "spend": 1016.36,
                   "impressions": 92396,
+                  "reach": 48279,
                   "linkClicks": 1057,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 21,
-                  "purchaseValue": 1157.78,
-                  "frequency": 1.913793
+                  "purchaseValue": 1157.78
                 },
                 {
                   "date": "2026-09-19",
                   "spend": 985.7,
                   "impressions": 89609,
+                  "reach": 46571,
                   "linkClicks": 1036,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 19,
-                  "purchaseValue": 979.36,
-                  "frequency": 1.924138
+                  "purchaseValue": 979.36
                 },
                 {
                   "date": "2026-09-20",
                   "spend": 1026.06,
                   "impressions": 93278,
+                  "reach": 48219,
                   "linkClicks": 1136,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 24,
-                  "purchaseValue": 1319.13,
-                  "frequency": 1.934483
+                  "purchaseValue": 1319.13
                 },
                 {
                   "date": "2026-09-21",
                   "spend": 1063.95,
                   "impressions": 96722,
+                  "reach": 49733,
                   "linkClicks": 1145,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 19,
-                  "purchaseValue": 1037.06,
-                  "frequency": 1.944828
+                  "purchaseValue": 1037.06
                 },
                 {
                   "date": "2026-09-22",
                   "spend": 1057.78,
                   "impressions": 96162,
+                  "reach": 49183,
                   "linkClicks": 1114,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 26,
-                  "purchaseValue": 1583.6,
-                  "frequency": 1.955172
+                  "purchaseValue": 1583.6
                 },
                 {
                   "date": "2026-09-23",
                   "spend": 1049.27,
                   "impressions": 95388,
+                  "reach": 48531,
                   "linkClicks": 1141,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 22,
-                  "purchaseValue": 1323.55,
-                  "frequency": 1.965517
+                  "purchaseValue": 1323.55
                 },
                 {
                   "date": "2026-09-24",
                   "spend": 1029.44,
                   "impressions": 93585,
+                  "reach": 47364,
                   "linkClicks": 1157,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 19,
-                  "purchaseValue": 1087.03,
-                  "frequency": 1.975862
+                  "purchaseValue": 1087.03
                 },
                 {
                   "date": "2026-09-25",
                   "spend": 1033.35,
                   "impressions": 93940,
+                  "reach": 47296,
                   "linkClicks": 1098,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 18,
-                  "purchaseValue": 1076.79,
-                  "frequency": 1.986207
+                  "purchaseValue": 1076.79
                 },
                 {
                   "date": "2026-09-26",
                   "spend": 1009.54,
                   "impressions": 91776,
+                  "reach": 45967,
                   "linkClicks": 1091,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 22,
-                  "purchaseValue": 1172.19,
-                  "frequency": 1.996552
+                  "purchaseValue": 1172.19
                 },
                 {
                   "date": "2026-09-27",
                   "spend": 964.7,
                   "impressions": 87700,
+                  "reach": 43699,
                   "linkClicks": 1011,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 19,
-                  "purchaseValue": 988.82,
-                  "frequency": 2.006897
+                  "purchaseValue": 988.82
                 },
                 {
                   "date": "2026-09-28",
                   "spend": 1055.55,
                   "impressions": 95959,
+                  "reach": 47569,
                   "linkClicks": 1204,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 25,
-                  "purchaseValue": 1285.28,
-                  "frequency": 2.017241
+                  "purchaseValue": 1285.28
                 },
                 {
                   "date": "2026-09-29",
                   "spend": 1013.8,
                   "impressions": 92163,
+                  "reach": 45455,
                   "linkClicks": 1068,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 20,
-                  "purchaseValue": 1036.69,
-                  "frequency": 2.027586
+                  "purchaseValue": 1036.69
                 },
                 {
                   "date": "2026-09-30",
                   "spend": 999.64,
                   "impressions": 90876,
+                  "reach": 44592,
                   "linkClicks": 1044,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 18,
-                  "purchaseValue": 954.28,
-                  "frequency": 2.037931
+                  "purchaseValue": 954.28
                 },
                 {
                   "date": "2026-10-01",
                   "spend": 995.26,
                   "impressions": 90478,
+                  "reach": 44173,
                   "linkClicks": 1132,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 24,
-                  "purchaseValue": 1419.92,
-                  "frequency": 2.048276
+                  "purchaseValue": 1419.92
                 },
                 {
                   "date": "2026-10-02",
                   "spend": 1031.55,
                   "impressions": 93777,
+                  "reach": 45553,
                   "linkClicks": 1129,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 17,
-                  "purchaseValue": 867.87,
-                  "frequency": 2.058621
+                  "purchaseValue": 867.87
                 },
                 {
                   "date": "2026-10-03",
                   "spend": 948.83,
                   "impressions": 86257,
+                  "reach": 41691,
                   "linkClicks": 1037,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 19,
-                  "purchaseValue": 1155.62,
-                  "frequency": 2.068966
+                  "purchaseValue": 1155.62
                 },
                 {
                   "date": "2026-10-04",
                   "spend": 957.94,
                   "impressions": 87085,
+                  "reach": 41882,
                   "linkClicks": 1007,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 22,
-                  "purchaseValue": 1258.31,
-                  "frequency": 2.07931
+                  "purchaseValue": 1258.31
                 },
                 {
                   "date": "2026-10-05",
                   "spend": 937.43,
                   "impressions": 85220,
+                  "reach": 40782,
                   "linkClicks": 1007,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 19,
-                  "purchaseValue": 1132.69,
-                  "frequency": 2.089655
+                  "purchaseValue": 1132.69
                 },
                 {
                   "date": "2026-10-06",
                   "spend": 571.49,
                   "impressions": 51953,
+                  "reach": 24740,
                   "linkClicks": 647,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 13,
-                  "purchaseValue": 791.77,
-                  "frequency": 2.1
+                  "purchaseValue": 791.77
                 }
               ]
             },
@@ -438,301 +438,301 @@
                   "date": "2026-09-07",
                   "spend": 847.94,
                   "impressions": 77085,
+                  "reach": 42825,
                   "linkClicks": 820,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 21,
-                  "purchaseValue": 1114.4,
-                  "frequency": 1.8
+                  "purchaseValue": 1114.4
                 },
                 {
                   "date": "2026-09-08",
                   "spend": 796.05,
                   "impressions": 72368,
+                  "reach": 39975,
                   "linkClicks": 828,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 15,
-                  "purchaseValue": 841.35,
-                  "frequency": 1.810345
+                  "purchaseValue": 841.35
                 },
                 {
                   "date": "2026-09-09",
                   "spend": 762.09,
                   "impressions": 69280,
+                  "reach": 38052,
                   "linkClicks": 797,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 21,
-                  "purchaseValue": 1098.78,
-                  "frequency": 1.82069
+                  "purchaseValue": 1098.78
                 },
                 {
                   "date": "2026-09-10",
                   "spend": 757.75,
                   "impressions": 68886,
+                  "reach": 37621,
                   "linkClicks": 756,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 15,
-                  "purchaseValue": 886.25,
-                  "frequency": 1.831034
+                  "purchaseValue": 886.25
                 },
                 {
                   "date": "2026-09-11",
                   "spend": 782.39,
                   "impressions": 71126,
+                  "reach": 38626,
                   "linkClicks": 789,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 13,
-                  "purchaseValue": 686.16,
-                  "frequency": 1.841379
+                  "purchaseValue": 686.16
                 },
                 {
                   "date": "2026-09-12",
                   "spend": 752.82,
                   "impressions": 68438,
+                  "reach": 36959,
                   "linkClicks": 756,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 16,
-                  "purchaseValue": 916.97,
-                  "frequency": 1.851724
+                  "purchaseValue": 916.97
                 },
                 {
                   "date": "2026-09-13",
                   "spend": 848.79,
                   "impressions": 77162,
+                  "reach": 41439,
                   "linkClicks": 832,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 15,
-                  "purchaseValue": 833.79,
-                  "frequency": 1.862069
+                  "purchaseValue": 833.79
                 },
                 {
                   "date": "2026-09-14",
                   "spend": 849.95,
                   "impressions": 77268,
+                  "reach": 41267,
                   "linkClicks": 834,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 15,
-                  "purchaseValue": 827.69,
-                  "frequency": 1.872414
+                  "purchaseValue": 827.69
                 },
                 {
                   "date": "2026-09-15",
                   "spend": 821.25,
                   "impressions": 74659,
+                  "reach": 39654,
                   "linkClicks": 803,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 13,
-                  "purchaseValue": 761.74,
-                  "frequency": 1.882759
+                  "purchaseValue": 761.74
                 },
                 {
                   "date": "2026-09-16",
                   "spend": 808.42,
                   "impressions": 73492,
+                  "reach": 38821,
                   "linkClicks": 815,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 12,
-                  "purchaseValue": 638.3,
-                  "frequency": 1.893103
+                  "purchaseValue": 638.3
                 },
                 {
                   "date": "2026-09-17",
                   "spend": 755.39,
                   "impressions": 68671,
+                  "reach": 36077,
                   "linkClicks": 745,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 19,
-                  "purchaseValue": 1168.05,
-                  "frequency": 1.903448
+                  "purchaseValue": 1168.05
                 },
                 {
                   "date": "2026-09-18",
                   "spend": 838.82,
                   "impressions": 76256,
+                  "reach": 39845,
                   "linkClicks": 828,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 17,
-                  "purchaseValue": 1027.53,
-                  "frequency": 1.913793
+                  "purchaseValue": 1027.53
                 },
                 {
                   "date": "2026-09-19",
                   "spend": 782.45,
                   "impressions": 71131,
+                  "reach": 36968,
                   "linkClicks": 775,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 17,
-                  "purchaseValue": 922.05,
-                  "frequency": 1.924138
+                  "purchaseValue": 922.05
                 },
                 {
                   "date": "2026-09-20",
                   "spend": 797.08,
                   "impressions": 72461,
+                  "reach": 37458,
                   "linkClicks": 786,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 19,
-                  "purchaseValue": 1067.91,
-                  "frequency": 1.934483
+                  "purchaseValue": 1067.91
                 },
                 {
                   "date": "2026-09-21",
                   "spend": 754.95,
                   "impressions": 68632,
+                  "reach": 35289,
                   "linkClicks": 718,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 16,
-                  "purchaseValue": 827.24,
-                  "frequency": 1.944828
+                  "purchaseValue": 827.24
                 },
                 {
                   "date": "2026-09-22",
                   "spend": 818.95,
                   "impressions": 74450,
+                  "reach": 38078,
                   "linkClicks": 796,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 16,
-                  "purchaseValue": 867.91,
-                  "frequency": 1.955172
+                  "purchaseValue": 867.91
                 },
                 {
                   "date": "2026-09-23",
                   "spend": 817.32,
                   "impressions": 74302,
+                  "reach": 37803,
                   "linkClicks": 787,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 15,
-                  "purchaseValue": 866.36,
-                  "frequency": 1.965517
+                  "purchaseValue": 866.36
                 },
                 {
                   "date": "2026-09-24",
                   "spend": 773.08,
                   "impressions": 70279,
+                  "reach": 35569,
                   "linkClicks": 811,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 21,
-                  "purchaseValue": 1286.06,
-                  "frequency": 1.975862
+                  "purchaseValue": 1286.06
                 },
                 {
                   "date": "2026-09-25",
                   "spend": 848.33,
                   "impressions": 77120,
+                  "reach": 38828,
                   "linkClicks": 886,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 18,
-                  "purchaseValue": 1076.07,
-                  "frequency": 1.986207
+                  "purchaseValue": 1076.07
                 },
                 {
                   "date": "2026-09-26",
                   "spend": 789.46,
                   "impressions": 71769,
+                  "reach": 35946,
                   "linkClicks": 755,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 19,
-                  "purchaseValue": 1153.23,
-                  "frequency": 1.996552
+                  "purchaseValue": 1153.23
                 },
                 {
                   "date": "2026-09-27",
                   "spend": 772.89,
                   "impressions": 70262,
+                  "reach": 35010,
                   "linkClicks": 763,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 13,
-                  "purchaseValue": 759.02,
-                  "frequency": 2.006897
+                  "purchaseValue": 759.02
                 },
                 {
                   "date": "2026-09-28",
                   "spend": 762.9,
                   "impressions": 69354,
+                  "reach": 34381,
                   "linkClicks": 787,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 11,
-                  "purchaseValue": 604.08,
-                  "frequency": 2.017241
+                  "purchaseValue": 604.08
                 },
                 {
                   "date": "2026-09-29",
                   "spend": 831.6,
                   "impressions": 75599,
+                  "reach": 37285,
                   "linkClicks": 830,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 13,
-                  "purchaseValue": 659.55,
-                  "frequency": 2.027586
+                  "purchaseValue": 659.55
                 },
                 {
                   "date": "2026-09-30",
                   "spend": 820.24,
                   "impressions": 74566,
+                  "reach": 36589,
                   "linkClicks": 785,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 14,
-                  "purchaseValue": 800.01,
-                  "frequency": 2.037931
+                  "purchaseValue": 800.01
                 },
                 {
                   "date": "2026-10-01",
                   "spend": 778.6,
                   "impressions": 70782,
+                  "reach": 34557,
                   "linkClicks": 743,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 17,
-                  "purchaseValue": 994.44,
-                  "frequency": 2.048276
+                  "purchaseValue": 994.44
                 },
                 {
                   "date": "2026-10-02",
                   "spend": 812.55,
                   "impressions": 73868,
+                  "reach": 35882,
                   "linkClicks": 780,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 15,
-                  "purchaseValue": 917.98,
-                  "frequency": 2.058621
+                  "purchaseValue": 917.98
                 },
                 {
                   "date": "2026-10-03",
                   "spend": 801.3,
                   "impressions": 72845,
+                  "reach": 35208,
                   "linkClicks": 782,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 20,
-                  "purchaseValue": 1085.73,
-                  "frequency": 2.068966
+                  "purchaseValue": 1085.73
                 },
                 {
                   "date": "2026-10-04",
                   "spend": 802.59,
                   "impressions": 72962,
+                  "reach": 35090,
                   "linkClicks": 776,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 19,
-                  "purchaseValue": 1102.95,
-                  "frequency": 2.07931
+                  "purchaseValue": 1102.95
                 },
                 {
                   "date": "2026-10-05",
                   "spend": 803.46,
                   "impressions": 73042,
+                  "reach": 34954,
                   "linkClicks": 803,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 15,
-                  "purchaseValue": 833.21,
-                  "frequency": 2.089655
+                  "purchaseValue": 833.21
                 },
                 {
                   "date": "2026-10-06",
                   "spend": 440.72,
                   "impressions": 40065,
+                  "reach": 19079,
                   "linkClicks": 420,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 9,
-                  "purchaseValue": 529.62,
-                  "frequency": 2.1
+                  "purchaseValue": 529.62
                 }
               ]
             }
@@ -758,11 +758,11 @@
           "name": "Interests Home & Gifting",
           "optimizationGoal": "OFFSITE_CONVERSIONS",
           "dailyBudget": null,
-          "learning": null,
+          "learning": "success",
           "adCount": 11,
           "startTime": "2026-04-14",
           "lastLearningReset": "2026-04-14",
-          "attributionSetting": "1d_view_7d_click",
+          "attributionSetting": "7-day click, 1-day view",
           "ads": [
             {
               "id": "1202620000000022",
@@ -773,301 +773,301 @@
                   "date": "2026-09-07",
                   "spend": 694.62,
                   "impressions": 63147,
+                  "reach": 35082,
                   "linkClicks": 649,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 16,
-                  "purchaseValue": 893.19,
-                  "frequency": 1.8
+                  "purchaseValue": 893.19
                 },
                 {
                   "date": "2026-09-08",
                   "spend": 659.53,
                   "impressions": 59957,
+                  "reach": 33119,
                   "linkClicks": 645,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 10,
-                  "purchaseValue": 526.68,
-                  "frequency": 1.810345
+                  "purchaseValue": 526.68
                 },
                 {
                   "date": "2026-09-09",
                   "spend": 658.24,
                   "impressions": 59840,
+                  "reach": 32867,
                   "linkClicks": 636,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 15,
-                  "purchaseValue": 858.68,
-                  "frequency": 1.82069
+                  "purchaseValue": 858.68
                 },
                 {
                   "date": "2026-09-10",
                   "spend": 672.8,
                   "impressions": 61163,
+                  "reach": 33404,
                   "linkClicks": 664,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 16,
-                  "purchaseValue": 865.2,
-                  "frequency": 1.831034
+                  "purchaseValue": 865.2
                 },
                 {
                   "date": "2026-09-11",
                   "spend": 677.83,
                   "impressions": 61620,
+                  "reach": 33464,
                   "linkClicks": 658,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 17,
-                  "purchaseValue": 1030.6,
-                  "frequency": 1.841379
+                  "purchaseValue": 1030.6
                 },
                 {
                   "date": "2026-09-12",
                   "spend": 736.92,
                   "impressions": 66992,
+                  "reach": 36178,
                   "linkClicks": 719,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 12,
-                  "purchaseValue": 687.18,
-                  "frequency": 1.851724
+                  "purchaseValue": 687.18
                 },
                 {
                   "date": "2026-09-13",
                   "spend": 692.94,
                   "impressions": 62994,
+                  "reach": 33830,
                   "linkClicks": 671,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 13,
-                  "purchaseValue": 685.2,
-                  "frequency": 1.862069
+                  "purchaseValue": 685.2
                 },
                 {
                   "date": "2026-09-14",
                   "spend": 738.99,
                   "impressions": 67180,
+                  "reach": 35879,
                   "linkClicks": 673,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 12,
-                  "purchaseValue": 649.11,
-                  "frequency": 1.872414
+                  "purchaseValue": 649.11
                 },
                 {
                   "date": "2026-09-15",
                   "spend": 745.72,
                   "impressions": 67792,
+                  "reach": 36007,
                   "linkClicks": 685,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 14,
-                  "purchaseValue": 853.46,
-                  "frequency": 1.882759
+                  "purchaseValue": 853.46
                 },
                 {
                   "date": "2026-09-16",
                   "spend": 710.93,
                   "impressions": 64629,
+                  "reach": 34139,
                   "linkClicks": 708,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 13,
-                  "purchaseValue": 718.93,
-                  "frequency": 1.893103
+                  "purchaseValue": 718.93
                 },
                 {
                   "date": "2026-09-17",
                   "spend": 687.29,
                   "impressions": 62481,
+                  "reach": 32825,
                   "linkClicks": 647,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 12,
-                  "purchaseValue": 614.82,
-                  "frequency": 1.903448
+                  "purchaseValue": 614.82
                 },
                 {
                   "date": "2026-09-18",
                   "spend": 747.55,
                   "impressions": 67959,
+                  "reach": 35510,
                   "linkClicks": 730,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 16,
-                  "purchaseValue": 901.8,
-                  "frequency": 1.913793
+                  "purchaseValue": 901.8
                 },
                 {
                   "date": "2026-09-19",
                   "spend": 670.65,
                   "impressions": 60967,
+                  "reach": 31685,
                   "linkClicks": 623,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 16,
-                  "purchaseValue": 954.05,
-                  "frequency": 1.924138
+                  "purchaseValue": 954.05
                 },
                 {
                   "date": "2026-09-20",
                   "spend": 695.66,
                   "impressions": 63241,
+                  "reach": 32691,
                   "linkClicks": 680,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 17,
-                  "purchaseValue": 864.84,
-                  "frequency": 1.934483
+                  "purchaseValue": 864.84
                 },
                 {
                   "date": "2026-09-21",
                   "spend": 686.85,
                   "impressions": 62441,
+                  "reach": 32106,
                   "linkClicks": 649,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 12,
-                  "purchaseValue": 677.3,
-                  "frequency": 1.944828
+                  "purchaseValue": 677.3
                 },
                 {
                   "date": "2026-09-22",
                   "spend": 679.88,
                   "impressions": 61807,
+                  "reach": 31612,
                   "linkClicks": 624,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 15,
-                  "purchaseValue": 827.22,
-                  "frequency": 1.955172
+                  "purchaseValue": 827.22
                 },
                 {
                   "date": "2026-09-23",
                   "spend": 729.55,
                   "impressions": 66322,
+                  "reach": 33743,
                   "linkClicks": 671,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 12,
-                  "purchaseValue": 671.12,
-                  "frequency": 1.965517
+                  "purchaseValue": 671.12
                 },
                 {
                   "date": "2026-09-24",
                   "spend": 654.61,
                   "impressions": 59510,
+                  "reach": 30119,
                   "linkClicks": 619,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 10,
-                  "purchaseValue": 548.34,
-                  "frequency": 1.975862
+                  "purchaseValue": 548.34
                 },
                 {
                   "date": "2026-09-25",
                   "spend": 679.72,
                   "impressions": 61793,
+                  "reach": 31111,
                   "linkClicks": 667,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 13,
-                  "purchaseValue": 691.86,
-                  "frequency": 1.986207
+                  "purchaseValue": 691.86
                 },
                 {
                   "date": "2026-09-26",
                   "spend": 708.75,
                   "impressions": 64432,
+                  "reach": 32272,
                   "linkClicks": 675,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 11,
-                  "purchaseValue": 650.22,
-                  "frequency": 1.996552
+                  "purchaseValue": 650.22
                 },
                 {
                   "date": "2026-09-27",
                   "spend": 707.98,
                   "impressions": 64361,
+                  "reach": 32070,
                   "linkClicks": 643,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 13,
-                  "purchaseValue": 713.13,
-                  "frequency": 2.006897
+                  "purchaseValue": 713.13
                 },
                 {
                   "date": "2026-09-28",
                   "spend": 659.47,
                   "impressions": 59951,
+                  "reach": 29719,
                   "linkClicks": 659,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 14,
-                  "purchaseValue": 861.32,
-                  "frequency": 2.017241
+                  "purchaseValue": 861.32
                 },
                 {
                   "date": "2026-09-29",
                   "spend": 697.7,
                   "impressions": 63426,
+                  "reach": 31282,
                   "linkClicks": 662,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 11,
-                  "purchaseValue": 636.2,
-                  "frequency": 2.027586
+                  "purchaseValue": 636.2
                 },
                 {
                   "date": "2026-09-30",
                   "spend": 698.35,
                   "impressions": 63486,
+                  "reach": 31152,
                   "linkClicks": 645,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 16,
-                  "purchaseValue": 912.2,
-                  "frequency": 2.037931
+                  "purchaseValue": 912.2
                 },
                 {
                   "date": "2026-10-01",
                   "spend": 659.42,
                   "impressions": 59946,
+                  "reach": 29267,
                   "linkClicks": 660,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 13,
-                  "purchaseValue": 789.78,
-                  "frequency": 2.048276
+                  "purchaseValue": 789.78
                 },
                 {
                   "date": "2026-10-02",
                   "spend": 691.26,
                   "impressions": 62841,
+                  "reach": 30526,
                   "linkClicks": 630,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 13,
-                  "purchaseValue": 714.54,
-                  "frequency": 2.058621
+                  "purchaseValue": 714.54
                 },
                 {
                   "date": "2026-10-03",
                   "spend": 727.54,
                   "impressions": 66140,
+                  "reach": 31968,
                   "linkClicks": 694,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 13,
-                  "purchaseValue": 715.14,
-                  "frequency": 2.068966
+                  "purchaseValue": 715.14
                 },
                 {
                   "date": "2026-10-04",
                   "spend": 698.24,
                   "impressions": 63476,
+                  "reach": 30527,
                   "linkClicks": 682,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 16,
-                  "purchaseValue": 877.55,
-                  "frequency": 2.07931
+                  "purchaseValue": 877.55
                 },
                 {
                   "date": "2026-10-05",
                   "spend": 664.82,
                   "impressions": 60437,
+                  "reach": 28922,
                   "linkClicks": 604,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 13,
-                  "purchaseValue": 689.46,
-                  "frequency": 2.089655
+                  "purchaseValue": 689.46
                 },
                 {
                   "date": "2026-10-06",
                   "spend": 403.92,
                   "impressions": 36720,
+                  "reach": 17486,
                   "linkClicks": 383,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 10,
-                  "purchaseValue": 512.62,
-                  "frequency": 2.1
+                  "purchaseValue": 512.62
                 }
               ]
             }
@@ -1079,11 +1079,11 @@
       "id": "1202620000000042",
       "name": "Retargeting | Site Visitors 30d",
       "owner": "merchant",
-      "objective": "sales",
+      "objective": "other",
       "metaObjective": "OUTCOME_SALES",
       "budgetType": "CBO",
       "dailyBudget": 450.0,
-      "status": "ACTIVE",
+      "status": "PAUSED",
       "startTime": null,
       "adsPulled": "none",
       "retargeting": true,
@@ -1091,13 +1091,13 @@
         {
           "id": "1202620000000041",
           "name": "Visitors 30d",
-          "optimizationGoal": "OFFSITE_CONVERSIONS",
+          "optimizationGoal": null,
           "dailyBudget": null,
           "learning": null,
           "adCount": 6,
           "startTime": null,
-          "lastLearningReset": "2026-05-20",
-          "attributionSetting": "1d_view_7d_click",
+          "lastLearningReset": null,
+          "attributionSetting": null,
           "ads": []
         }
       ]
@@ -1120,11 +1120,11 @@
           "name": "Amber Broad",
           "optimizationGoal": "OFFSITE_CONVERSIONS",
           "dailyBudget": null,
-          "learning": null,
+          "learning": "success",
           "adCount": 12,
           "startTime": "2026-09-08",
           "lastLearningReset": "2026-09-08",
-          "attributionSetting": "1d_view_7d_click",
+          "attributionSetting": "7-day click, 1-day view",
           "ads": [
             {
               "id": "1202620000000043",
@@ -1135,141 +1135,141 @@
                   "date": "2026-09-08",
                   "spend": 190.08,
                   "impressions": 14079,
+                  "reach": 12799,
                   "linkClicks": 135,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 162.41,
-                  "frequency": 1.1
+                  "purchaseValue": 162.41
                 },
                 {
                   "date": "2026-09-09",
                   "spend": 206.49,
                   "impressions": 15295,
+                  "reach": 13345,
                   "linkClicks": 149,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 209.37,
-                  "frequency": 1.146154
+                  "purchaseValue": 209.37
                 },
                 {
                   "date": "2026-09-10",
                   "spend": 188.24,
                   "impressions": 13944,
+                  "reach": 11695,
                   "linkClicks": 139,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 2,
-                  "purchaseValue": 113.01,
-                  "frequency": 1.192308
+                  "purchaseValue": 113.01
                 },
                 {
                   "date": "2026-09-11",
                   "spend": 212.52,
                   "impressions": 15742,
+                  "reach": 12711,
                   "linkClicks": 158,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 164.36,
-                  "frequency": 1.238462
+                  "purchaseValue": 164.36
                 },
                 {
                   "date": "2026-09-12",
                   "spend": 191.71,
                   "impressions": 14200,
+                  "reach": 11054,
                   "linkClicks": 143,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 2,
-                  "purchaseValue": 100.82,
-                  "frequency": 1.284615
+                  "purchaseValue": 100.82
                 },
                 {
                   "date": "2026-09-13",
                   "spend": 203.54,
                   "impressions": 15076,
+                  "reach": 11329,
                   "linkClicks": 167,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 170.23,
-                  "frequency": 1.330769
+                  "purchaseValue": 170.23
                 },
                 {
                   "date": "2026-09-14",
                   "spend": 201.55,
                   "impressions": 14929,
+                  "reach": 10842,
                   "linkClicks": 167,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 193.87,
-                  "frequency": 1.376923
+                  "purchaseValue": 193.87
                 },
                 {
                   "date": "2026-09-15",
                   "spend": 204.16,
                   "impressions": 15122,
+                  "reach": 10626,
                   "linkClicks": 159,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 2,
-                  "purchaseValue": 101.83,
-                  "frequency": 1.423077
+                  "purchaseValue": 101.83
                 },
                 {
                   "date": "2026-09-16",
                   "spend": 207.66,
                   "impressions": 15382,
+                  "reach": 10469,
                   "linkClicks": 173,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 166.64,
-                  "frequency": 1.469231
+                  "purchaseValue": 166.64
                 },
                 {
                   "date": "2026-09-17",
                   "spend": 211.59,
                   "impressions": 15673,
+                  "reach": 10343,
                   "linkClicks": 173,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 213.73,
-                  "frequency": 1.515385
+                  "purchaseValue": 213.73
                 },
                 {
                   "date": "2026-09-18",
                   "spend": 211.27,
                   "impressions": 15649,
+                  "reach": 10022,
                   "linkClicks": 174,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 227.49,
-                  "frequency": 1.561538
+                  "purchaseValue": 227.49
                 },
                 {
                   "date": "2026-09-19",
                   "spend": 203.05,
                   "impressions": 15041,
+                  "reach": 9356,
                   "linkClicks": 180,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 208.3,
-                  "frequency": 1.607692
+                  "purchaseValue": 208.3
                 },
                 {
                   "date": "2026-09-20",
                   "spend": 194.12,
                   "impressions": 14378,
+                  "reach": 8694,
                   "linkClicks": 173,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 201.48,
-                  "frequency": 1.653846
+                  "purchaseValue": 201.48
                 },
                 {
                   "date": "2026-09-21",
                   "spend": 209.92,
                   "impressions": 15549,
+                  "reach": 9146,
                   "linkClicks": 186,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 218.88,
-                  "frequency": 1.7
+                  "purchaseValue": 218.88
                 }
               ]
             },
@@ -1282,141 +1282,141 @@
                   "date": "2026-09-08",
                   "spend": 202.27,
                   "impressions": 14983,
+                  "reach": 13621,
                   "linkClicks": 168,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 282.05,
-                  "frequency": 1.1
+                  "purchaseValue": 282.05
                 },
                 {
                   "date": "2026-09-09",
                   "spend": 199.08,
                   "impressions": 14746,
+                  "reach": 12866,
                   "linkClicks": 177,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 147.32,
-                  "frequency": 1.146154
+                  "purchaseValue": 147.32
                 },
                 {
                   "date": "2026-09-10",
                   "spend": 194.08,
                   "impressions": 14376,
+                  "reach": 12057,
                   "linkClicks": 176,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 170.7,
-                  "frequency": 1.192308
+                  "purchaseValue": 170.7
                 },
                 {
                   "date": "2026-09-11",
                   "spend": 187.97,
                   "impressions": 13923,
+                  "reach": 11242,
                   "linkClicks": 165,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 164.42,
-                  "frequency": 1.238462
+                  "purchaseValue": 164.42
                 },
                 {
                   "date": "2026-09-12",
                   "spend": 196.26,
                   "impressions": 14537,
+                  "reach": 11316,
                   "linkClicks": 181,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 160.29,
-                  "frequency": 1.284615
+                  "purchaseValue": 160.29
                 },
                 {
                   "date": "2026-09-13",
                   "spend": 197.31,
                   "impressions": 14615,
+                  "reach": 10982,
                   "linkClicks": 180,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 199.86,
-                  "frequency": 1.330769
+                  "purchaseValue": 199.86
                 },
                 {
                   "date": "2026-09-14",
                   "spend": 189.1,
                   "impressions": 14007,
+                  "reach": 10173,
                   "linkClicks": 187,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 214.86,
-                  "frequency": 1.376923
+                  "purchaseValue": 214.86
                 },
                 {
                   "date": "2026-09-15",
                   "spend": 210.71,
                   "impressions": 15608,
+                  "reach": 10968,
                   "linkClicks": 204,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 204.8,
-                  "frequency": 1.423077
+                  "purchaseValue": 204.8
                 },
                 {
                   "date": "2026-09-16",
                   "spend": 197.33,
                   "impressions": 14616,
+                  "reach": 9948,
                   "linkClicks": 199,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 154.88,
-                  "frequency": 1.469231
+                  "purchaseValue": 154.88
                 },
                 {
                   "date": "2026-09-17",
                   "spend": 200.98,
                   "impressions": 14887,
+                  "reach": 9824,
                   "linkClicks": 200,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 162.38,
-                  "frequency": 1.515385
+                  "purchaseValue": 162.38
                 },
                 {
                   "date": "2026-09-18",
                   "spend": 186.26,
                   "impressions": 13797,
+                  "reach": 8836,
                   "linkClicks": 193,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 141.48,
-                  "frequency": 1.561538
+                  "purchaseValue": 141.48
                 },
                 {
                   "date": "2026-09-19",
                   "spend": 191.06,
                   "impressions": 14152,
+                  "reach": 8803,
                   "linkClicks": 191,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 161.77,
-                  "frequency": 1.607692
+                  "purchaseValue": 161.77
                 },
                 {
                   "date": "2026-09-20",
                   "spend": 206.39,
                   "impressions": 15288,
+                  "reach": 9244,
                   "linkClicks": 216,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 258.71,
-                  "frequency": 1.653846
+                  "purchaseValue": 258.71
                 },
                 {
                   "date": "2026-09-21",
                   "spend": 199.96,
                   "impressions": 14811,
+                  "reach": 8712,
                   "linkClicks": 224,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 223.39,
-                  "frequency": 1.7
+                  "purchaseValue": 223.39
                 }
               ]
             },
@@ -1429,141 +1429,141 @@
                   "date": "2026-09-08",
                   "spend": 190.15,
                   "impressions": 14085,
+                  "reach": 12805,
                   "linkClicks": 137,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 2,
-                  "purchaseValue": 108.42,
-                  "frequency": 1.1
+                  "purchaseValue": 108.42
                 },
                 {
                   "date": "2026-09-09",
                   "spend": 203.02,
                   "impressions": 15038,
+                  "reach": 13120,
                   "linkClicks": 146,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 158.07,
-                  "frequency": 1.146154
+                  "purchaseValue": 158.07
                 },
                 {
                   "date": "2026-09-10",
                   "spend": 187.21,
                   "impressions": 13867,
+                  "reach": 11630,
                   "linkClicks": 139,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 156.61,
-                  "frequency": 1.192308
+                  "purchaseValue": 156.61
                 },
                 {
                   "date": "2026-09-11",
                   "spend": 210.62,
                   "impressions": 15601,
+                  "reach": 12597,
                   "linkClicks": 163,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 147.48,
-                  "frequency": 1.238462
+                  "purchaseValue": 147.48
                 },
                 {
                   "date": "2026-09-12",
                   "spend": 189.59,
                   "impressions": 14043,
+                  "reach": 10932,
                   "linkClicks": 150,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 212.55,
-                  "frequency": 1.284615
+                  "purchaseValue": 212.55
                 },
                 {
                   "date": "2026-09-13",
                   "spend": 198.37,
                   "impressions": 14693,
+                  "reach": 11041,
                   "linkClicks": 156,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 156.95,
-                  "frequency": 1.330769
+                  "purchaseValue": 156.95
                 },
                 {
                   "date": "2026-09-14",
                   "spend": 190.07,
                   "impressions": 14079,
+                  "reach": 10225,
                   "linkClicks": 154,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 161.31,
-                  "frequency": 1.376923
+                  "purchaseValue": 161.31
                 },
                 {
                   "date": "2026-09-15",
                   "spend": 192.9,
                   "impressions": 14288,
+                  "reach": 10040,
                   "linkClicks": 150,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 161.85,
-                  "frequency": 1.423077
+                  "purchaseValue": 161.85
                 },
                 {
                   "date": "2026-09-16",
                   "spend": 200.28,
                   "impressions": 14835,
+                  "reach": 10097,
                   "linkClicks": 170,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 152.83,
-                  "frequency": 1.469231
+                  "purchaseValue": 152.83
                 },
                 {
                   "date": "2026-09-17",
                   "spend": 211.41,
                   "impressions": 15660,
+                  "reach": 10334,
                   "linkClicks": 172,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 158.77,
-                  "frequency": 1.515385
+                  "purchaseValue": 158.77
                 },
                 {
                   "date": "2026-09-18",
                   "spend": 203.68,
                   "impressions": 15087,
+                  "reach": 9662,
                   "linkClicks": 173,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 205.53,
-                  "frequency": 1.561538
+                  "purchaseValue": 205.53
                 },
                 {
                   "date": "2026-09-19",
                   "spend": 204.72,
                   "impressions": 15164,
+                  "reach": 9432,
                   "linkClicks": 185,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 267.24,
-                  "frequency": 1.607692
+                  "purchaseValue": 267.24
                 },
                 {
                   "date": "2026-09-20",
                   "spend": 199.16,
                   "impressions": 14752,
+                  "reach": 8920,
                   "linkClicks": 184,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 213.23,
-                  "frequency": 1.653846
+                  "purchaseValue": 213.23
                 },
                 {
                   "date": "2026-09-21",
                   "spend": 210.32,
                   "impressions": 15579,
+                  "reach": 9164,
                   "linkClicks": 192,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 218.11,
-                  "frequency": 1.7
+                  "purchaseValue": 218.11
                 }
               ]
             },
@@ -1576,141 +1576,141 @@
                   "date": "2026-09-08",
                   "spend": 213.41,
                   "impressions": 15808,
+                  "reach": 14371,
                   "linkClicks": 210,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 272.21,
-                  "frequency": 1.1
+                  "purchaseValue": 272.21
                 },
                 {
                   "date": "2026-09-09",
                   "spend": 192.02,
                   "impressions": 14223,
+                  "reach": 12409,
                   "linkClicks": 185,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 192.27,
-                  "frequency": 1.146154
+                  "purchaseValue": 192.27
                 },
                 {
                   "date": "2026-09-10",
                   "spend": 196.7,
                   "impressions": 14570,
+                  "reach": 12220,
                   "linkClicks": 210,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 240.17,
-                  "frequency": 1.192308
+                  "purchaseValue": 240.17
                 },
                 {
                   "date": "2026-09-11",
                   "spend": 188.3,
                   "impressions": 13948,
+                  "reach": 11262,
                   "linkClicks": 192,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 235.29,
-                  "frequency": 1.238462
+                  "purchaseValue": 235.29
                 },
                 {
                   "date": "2026-09-12",
                   "spend": 192.31,
                   "impressions": 14244,
+                  "reach": 11088,
                   "linkClicks": 198,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 156.73,
-                  "frequency": 1.284615
+                  "purchaseValue": 156.73
                 },
                 {
                   "date": "2026-09-13",
                   "spend": 191.14,
                   "impressions": 14158,
+                  "reach": 10639,
                   "linkClicks": 206,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 271.6,
-                  "frequency": 1.330769
+                  "purchaseValue": 271.6
                 },
                 {
                   "date": "2026-09-14",
                   "spend": 197.62,
                   "impressions": 14638,
+                  "reach": 10631,
                   "linkClicks": 225,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 277.0,
-                  "frequency": 1.376923
+                  "purchaseValue": 277
                 },
                 {
                   "date": "2026-09-15",
                   "spend": 192.97,
                   "impressions": 14293,
+                  "reach": 10044,
                   "linkClicks": 215,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 283.19,
-                  "frequency": 1.423077
+                  "purchaseValue": 283.19
                 },
                 {
                   "date": "2026-09-16",
                   "spend": 203.31,
                   "impressions": 15060,
+                  "reach": 10250,
                   "linkClicks": 233,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 198.9,
-                  "frequency": 1.469231
+                  "purchaseValue": 198.9
                 },
                 {
                   "date": "2026-09-17",
                   "spend": 192.04,
                   "impressions": 14225,
+                  "reach": 9387,
                   "linkClicks": 235,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 6,
-                  "purchaseValue": 336.62,
-                  "frequency": 1.515385
+                  "purchaseValue": 336.62
                 },
                 {
                   "date": "2026-09-18",
                   "spend": 200.8,
                   "impressions": 14874,
+                  "reach": 9525,
                   "linkClicks": 243,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 207.23,
-                  "frequency": 1.561538
+                  "purchaseValue": 207.23
                 },
                 {
                   "date": "2026-09-19",
                   "spend": 190.08,
                   "impressions": 14079,
+                  "reach": 8757,
                   "linkClicks": 227,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 191.36,
-                  "frequency": 1.607692
+                  "purchaseValue": 191.36
                 },
                 {
                   "date": "2026-09-20",
                   "spend": 211.74,
                   "impressions": 15684,
+                  "reach": 9483,
                   "linkClicks": 249,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 6,
-                  "purchaseValue": 324.45,
-                  "frequency": 1.653846
+                  "purchaseValue": 324.45
                 },
                 {
                   "date": "2026-09-21",
                   "spend": 188.52,
                   "impressions": 13964,
+                  "reach": 8214,
                   "linkClicks": 234,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 6,
-                  "purchaseValue": 342.38,
-                  "frequency": 1.7
+                  "purchaseValue": 342.38
                 }
               ]
             },
@@ -1723,141 +1723,141 @@
                   "date": "2026-09-08",
                   "spend": 212.88,
                   "impressions": 15768,
+                  "reach": 14335,
                   "linkClicks": 217,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 245.84,
-                  "frequency": 1.1
+                  "purchaseValue": 245.84
                 },
                 {
                   "date": "2026-09-09",
                   "spend": 195.26,
                   "impressions": 14463,
+                  "reach": 12619,
                   "linkClicks": 200,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 234.87,
-                  "frequency": 1.146154
+                  "purchaseValue": 234.87
                 },
                 {
                   "date": "2026-09-10",
                   "spend": 190.67,
                   "impressions": 14123,
+                  "reach": 11845,
                   "linkClicks": 202,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 160.85,
-                  "frequency": 1.192308
+                  "purchaseValue": 160.85
                 },
                 {
                   "date": "2026-09-11",
                   "spend": 195.23,
                   "impressions": 14461,
+                  "reach": 11677,
                   "linkClicks": 206,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 264.24,
-                  "frequency": 1.238462
+                  "purchaseValue": 264.24
                 },
                 {
                   "date": "2026-09-12",
                   "spend": 196.95,
                   "impressions": 14589,
+                  "reach": 11357,
                   "linkClicks": 205,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 266.67,
-                  "frequency": 1.284615
+                  "purchaseValue": 266.67
                 },
                 {
                   "date": "2026-09-13",
                   "spend": 197.47,
                   "impressions": 14627,
+                  "reach": 10991,
                   "linkClicks": 213,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 247.43,
-                  "frequency": 1.330769
+                  "purchaseValue": 247.43
                 },
                 {
                   "date": "2026-09-14",
                   "spend": 191.03,
                   "impressions": 14150,
+                  "reach": 10277,
                   "linkClicks": 212,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 159.05,
-                  "frequency": 1.376923
+                  "purchaseValue": 159.05
                 },
                 {
                   "date": "2026-09-15",
                   "spend": 208.45,
                   "impressions": 15440,
+                  "reach": 10850,
                   "linkClicks": 241,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 204.46,
-                  "frequency": 1.423077
+                  "purchaseValue": 204.46
                 },
                 {
                   "date": "2026-09-16",
                   "spend": 211.86,
                   "impressions": 15692,
+                  "reach": 10680,
                   "linkClicks": 238,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 6,
-                  "purchaseValue": 293.28,
-                  "frequency": 1.469231
+                  "purchaseValue": 293.28
                 },
                 {
                   "date": "2026-09-17",
                   "spend": 209.54,
                   "impressions": 15521,
+                  "reach": 10242,
                   "linkClicks": 232,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 275.89,
-                  "frequency": 1.515385
+                  "purchaseValue": 275.89
                 },
                 {
                   "date": "2026-09-18",
                   "spend": 201.33,
                   "impressions": 14913,
+                  "reach": 9550,
                   "linkClicks": 240,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 6,
-                  "purchaseValue": 342.97,
-                  "frequency": 1.561538
+                  "purchaseValue": 342.97
                 },
                 {
                   "date": "2026-09-19",
                   "spend": 191.02,
                   "impressions": 14149,
+                  "reach": 8801,
                   "linkClicks": 229,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 152.21,
-                  "frequency": 1.607692
+                  "purchaseValue": 152.21
                 },
                 {
                   "date": "2026-09-20",
                   "spend": 190.06,
                   "impressions": 14078,
+                  "reach": 8512,
                   "linkClicks": 224,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 238.39,
-                  "frequency": 1.653846
+                  "purchaseValue": 238.39
                 },
                 {
                   "date": "2026-09-21",
                   "spend": 190.31,
                   "impressions": 14097,
+                  "reach": 8292,
                   "linkClicks": 224,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 6,
-                  "purchaseValue": 296.01,
-                  "frequency": 1.7
+                  "purchaseValue": 296.01
                 }
               ]
             },
@@ -1870,141 +1870,141 @@
                   "date": "2026-09-08",
                   "spend": 210.59,
                   "impressions": 15599,
+                  "reach": 14181,
                   "linkClicks": 198,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 283.48,
-                  "frequency": 1.1
+                  "purchaseValue": 283.48
                 },
                 {
                   "date": "2026-09-09",
                   "spend": 194.74,
                   "impressions": 14425,
+                  "reach": 12586,
                   "linkClicks": 195,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 194.01,
-                  "frequency": 1.146154
+                  "purchaseValue": 194.01
                 },
                 {
                   "date": "2026-09-10",
                   "spend": 195.75,
                   "impressions": 14500,
+                  "reach": 12161,
                   "linkClicks": 199,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 160.97,
-                  "frequency": 1.192308
+                  "purchaseValue": 160.97
                 },
                 {
                   "date": "2026-09-11",
                   "spend": 195.84,
                   "impressions": 14506,
+                  "reach": 11713,
                   "linkClicks": 192,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 203.28,
-                  "frequency": 1.238462
+                  "purchaseValue": 203.28
                 },
                 {
                   "date": "2026-09-12",
                   "spend": 198.89,
                   "impressions": 14732,
+                  "reach": 11468,
                   "linkClicks": 213,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 6,
-                  "purchaseValue": 294.98,
-                  "frequency": 1.284615
+                  "purchaseValue": 294.98
                 },
                 {
                   "date": "2026-09-13",
                   "spend": 213.66,
                   "impressions": 15826,
+                  "reach": 11892,
                   "linkClicks": 227,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 6,
-                  "purchaseValue": 331.77,
-                  "frequency": 1.330769
+                  "purchaseValue": 331.77
                 },
                 {
                   "date": "2026-09-14",
                   "spend": 200.72,
                   "impressions": 14868,
+                  "reach": 10798,
                   "linkClicks": 209,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 6,
-                  "purchaseValue": 343.15,
-                  "frequency": 1.376923
+                  "purchaseValue": 343.15
                 },
                 {
                   "date": "2026-09-15",
                   "spend": 203.49,
                   "impressions": 15073,
+                  "reach": 10592,
                   "linkClicks": 213,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 273.79,
-                  "frequency": 1.423077
+                  "purchaseValue": 273.79
                 },
                 {
                   "date": "2026-09-16",
                   "spend": 210.63,
                   "impressions": 15602,
+                  "reach": 10619,
                   "linkClicks": 244,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 7,
-                  "purchaseValue": 381.19,
-                  "frequency": 1.469231
+                  "purchaseValue": 381.19
                 },
                 {
                   "date": "2026-09-17",
                   "spend": 196.99,
                   "impressions": 14591,
+                  "reach": 9629,
                   "linkClicks": 223,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 273.54,
-                  "frequency": 1.515385
+                  "purchaseValue": 273.54
                 },
                 {
                   "date": "2026-09-18",
                   "spend": 203.54,
                   "impressions": 15076,
+                  "reach": 9655,
                   "linkClicks": 241,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 264.68,
-                  "frequency": 1.561538
+                  "purchaseValue": 264.68
                 },
                 {
                   "date": "2026-09-19",
                   "spend": 212.98,
                   "impressions": 15776,
+                  "reach": 9813,
                   "linkClicks": 255,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 7,
-                  "purchaseValue": 378.47,
-                  "frequency": 1.607692
+                  "purchaseValue": 378.47
                 },
                 {
                   "date": "2026-09-20",
                   "spend": 189.48,
                   "impressions": 14035,
+                  "reach": 8486,
                   "linkClicks": 223,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 198.13,
-                  "frequency": 1.653846
+                  "purchaseValue": 198.13
                 },
                 {
                   "date": "2026-09-21",
                   "spend": 189.56,
                   "impressions": 14041,
+                  "reach": 8259,
                   "linkClicks": 219,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 274.71,
-                  "frequency": 1.7
+                  "purchaseValue": 274.71
                 }
               ]
             },
@@ -2017,141 +2017,141 @@
                   "date": "2026-09-08",
                   "spend": 205.9,
                   "impressions": 15251,
+                  "reach": 13865,
                   "linkClicks": 193,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 169.79,
-                  "frequency": 1.1
+                  "purchaseValue": 169.79
                 },
                 {
                   "date": "2026-09-09",
                   "spend": 208.99,
                   "impressions": 15480,
+                  "reach": 13506,
                   "linkClicks": 183,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 275.83,
-                  "frequency": 1.146154
+                  "purchaseValue": 275.83
                 },
                 {
                   "date": "2026-09-10",
                   "spend": 191.26,
                   "impressions": 14167,
+                  "reach": 11882,
                   "linkClicks": 187,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 205.96,
-                  "frequency": 1.192308
+                  "purchaseValue": 205.96
                 },
                 {
                   "date": "2026-09-11",
                   "spend": 204.31,
                   "impressions": 15133,
+                  "reach": 12219,
                   "linkClicks": 199,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 248.46,
-                  "frequency": 1.238462
+                  "purchaseValue": 248.46
                 },
                 {
                   "date": "2026-09-12",
                   "spend": 199.55,
                   "impressions": 14781,
+                  "reach": 11506,
                   "linkClicks": 187,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 155.71,
-                  "frequency": 1.284615
+                  "purchaseValue": 155.71
                 },
                 {
                   "date": "2026-09-13",
                   "spend": 188.09,
                   "impressions": 13932,
+                  "reach": 10469,
                   "linkClicks": 183,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 243.3,
-                  "frequency": 1.330769
+                  "purchaseValue": 243.3
                 },
                 {
                   "date": "2026-09-14",
                   "spend": 198.14,
                   "impressions": 14676,
+                  "reach": 10659,
                   "linkClicks": 190,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 239.21,
-                  "frequency": 1.376923
+                  "purchaseValue": 239.21
                 },
                 {
                   "date": "2026-09-15",
                   "spend": 191.09,
                   "impressions": 14154,
+                  "reach": 9946,
                   "linkClicks": 201,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 210.21,
-                  "frequency": 1.423077
+                  "purchaseValue": 210.21
                 },
                 {
                   "date": "2026-09-16",
                   "spend": 203.06,
                   "impressions": 15041,
+                  "reach": 10237,
                   "linkClicks": 212,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 193.58,
-                  "frequency": 1.469231
+                  "purchaseValue": 193.58
                 },
                 {
                   "date": "2026-09-17",
                   "spend": 189.98,
                   "impressions": 14072,
+                  "reach": 9286,
                   "linkClicks": 196,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 150.43,
-                  "frequency": 1.515385
+                  "purchaseValue": 150.43
                 },
                 {
                   "date": "2026-09-18",
                   "spend": 210.97,
                   "impressions": 15627,
+                  "reach": 10007,
                   "linkClicks": 221,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 198.38,
-                  "frequency": 1.561538
+                  "purchaseValue": 198.38
                 },
                 {
                   "date": "2026-09-19",
                   "spend": 189.69,
                   "impressions": 14051,
+                  "reach": 8740,
                   "linkClicks": 215,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 6,
-                  "purchaseValue": 328.58,
-                  "frequency": 1.607692
+                  "purchaseValue": 328.58
                 },
                 {
                   "date": "2026-09-20",
                   "spend": 212.7,
                   "impressions": 15755,
+                  "reach": 9526,
                   "linkClicks": 238,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 254.0,
-                  "frequency": 1.653846
+                  "purchaseValue": 254
                 },
                 {
                   "date": "2026-09-21",
                   "spend": 204.27,
                   "impressions": 15131,
+                  "reach": 8901,
                   "linkClicks": 225,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 254.26,
-                  "frequency": 1.7
+                  "purchaseValue": 254.26
                 }
               ]
             },
@@ -2164,141 +2164,141 @@
                   "date": "2026-09-08",
                   "spend": 192.9,
                   "impressions": 14288,
+                  "reach": 12989,
                   "linkClicks": 145,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 214.56,
-                  "frequency": 1.1
+                  "purchaseValue": 214.56
                 },
                 {
                   "date": "2026-09-09",
                   "spend": 199.51,
                   "impressions": 14778,
+                  "reach": 12894,
                   "linkClicks": 149,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 2,
-                  "purchaseValue": 114.37,
-                  "frequency": 1.146154
+                  "purchaseValue": 114.37
                 },
                 {
                   "date": "2026-09-10",
                   "spend": 207.12,
                   "impressions": 15342,
+                  "reach": 12867,
                   "linkClicks": 157,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 162.51,
-                  "frequency": 1.192308
+                  "purchaseValue": 162.51
                 },
                 {
                   "date": "2026-09-11",
                   "spend": 211.39,
                   "impressions": 15658,
+                  "reach": 12643,
                   "linkClicks": 163,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 146.24,
-                  "frequency": 1.238462
+                  "purchaseValue": 146.24
                 },
                 {
                   "date": "2026-09-12",
                   "spend": 202.51,
                   "impressions": 15001,
+                  "reach": 11677,
                   "linkClicks": 170,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 193.01,
-                  "frequency": 1.284615
+                  "purchaseValue": 193.01
                 },
                 {
                   "date": "2026-09-13",
                   "spend": 196.42,
                   "impressions": 14549,
+                  "reach": 10933,
                   "linkClicks": 154,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 155.78,
-                  "frequency": 1.330769
+                  "purchaseValue": 155.78
                 },
                 {
                   "date": "2026-09-14",
                   "spend": 190.29,
                   "impressions": 14095,
+                  "reach": 10237,
                   "linkClicks": 155,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 153.58,
-                  "frequency": 1.376923
+                  "purchaseValue": 153.58
                 },
                 {
                   "date": "2026-09-15",
                   "spend": 209.96,
                   "impressions": 15552,
+                  "reach": 10928,
                   "linkClicks": 174,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 203.84,
-                  "frequency": 1.423077
+                  "purchaseValue": 203.84
                 },
                 {
                   "date": "2026-09-16",
                   "spend": 194.16,
                   "impressions": 14382,
+                  "reach": 9789,
                   "linkClicks": 165,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 222.26,
-                  "frequency": 1.469231
+                  "purchaseValue": 222.26
                 },
                 {
                   "date": "2026-09-17",
                   "spend": 206.51,
                   "impressions": 15296,
+                  "reach": 10094,
                   "linkClicks": 189,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 249.53,
-                  "frequency": 1.515385
+                  "purchaseValue": 249.53
                 },
                 {
                   "date": "2026-09-18",
                   "spend": 192.55,
                   "impressions": 14262,
+                  "reach": 9133,
                   "linkClicks": 173,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 219.85,
-                  "frequency": 1.561538
+                  "purchaseValue": 219.85
                 },
                 {
                   "date": "2026-09-19",
                   "spend": 211.37,
                   "impressions": 15657,
+                  "reach": 9739,
                   "linkClicks": 198,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 269.06,
-                  "frequency": 1.607692
+                  "purchaseValue": 269.06
                 },
                 {
                   "date": "2026-09-20",
                   "spend": 205.11,
                   "impressions": 15193,
+                  "reach": 9186,
                   "linkClicks": 195,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 220.4,
-                  "frequency": 1.653846
+                  "purchaseValue": 220.4
                 },
                 {
                   "date": "2026-09-21",
                   "spend": 210.51,
                   "impressions": 15593,
+                  "reach": 9172,
                   "linkClicks": 198,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 203.05,
-                  "frequency": 1.7
+                  "purchaseValue": 203.05
                 }
               ]
             },
@@ -2311,141 +2311,141 @@
                   "date": "2026-09-08",
                   "spend": 189.65,
                   "impressions": 14048,
+                  "reach": 12771,
                   "linkClicks": 138,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 203.22,
-                  "frequency": 1.1
+                  "purchaseValue": 203.22
                 },
                 {
                   "date": "2026-09-09",
                   "spend": 193.74,
                   "impressions": 14351,
+                  "reach": 12521,
                   "linkClicks": 135,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 2,
-                  "purchaseValue": 98.07,
-                  "frequency": 1.146154
+                  "purchaseValue": 98.07
                 },
                 {
                   "date": "2026-09-10",
                   "spend": 191.66,
                   "impressions": 14196,
+                  "reach": 11906,
                   "linkClicks": 146,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 2,
-                  "purchaseValue": 97.55,
-                  "frequency": 1.192308
+                  "purchaseValue": 97.55
                 },
                 {
                   "date": "2026-09-11",
                   "spend": 211.98,
                   "impressions": 15702,
+                  "reach": 12679,
                   "linkClicks": 165,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 150.47,
-                  "frequency": 1.238462
+                  "purchaseValue": 150.47
                 },
                 {
                   "date": "2026-09-12",
                   "spend": 213.68,
                   "impressions": 15828,
+                  "reach": 12321,
                   "linkClicks": 161,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 215.97,
-                  "frequency": 1.284615
+                  "purchaseValue": 215.97
                 },
                 {
                   "date": "2026-09-13",
                   "spend": 204.12,
                   "impressions": 15119,
+                  "reach": 11361,
                   "linkClicks": 152,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 221.05,
-                  "frequency": 1.330769
+                  "purchaseValue": 221.05
                 },
                 {
                   "date": "2026-09-14",
                   "spend": 198.54,
                   "impressions": 14706,
+                  "reach": 10680,
                   "linkClicks": 155,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 228.35,
-                  "frequency": 1.376923
+                  "purchaseValue": 228.35
                 },
                 {
                   "date": "2026-09-15",
                   "spend": 212.39,
                   "impressions": 15732,
+                  "reach": 11055,
                   "linkClicks": 166,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 207.58,
-                  "frequency": 1.423077
+                  "purchaseValue": 207.58
                 },
                 {
                   "date": "2026-09-16",
                   "spend": 213.64,
                   "impressions": 15824,
+                  "reach": 10770,
                   "linkClicks": 183,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 224.72,
-                  "frequency": 1.469231
+                  "purchaseValue": 224.72
                 },
                 {
                   "date": "2026-09-17",
                   "spend": 210.77,
                   "impressions": 15612,
+                  "reach": 10302,
                   "linkClicks": 169,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 169.94,
-                  "frequency": 1.515385
+                  "purchaseValue": 169.94
                 },
                 {
                   "date": "2026-09-18",
                   "spend": 192.57,
                   "impressions": 14264,
+                  "reach": 9135,
                   "linkClicks": 162,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 201.87,
-                  "frequency": 1.561538
+                  "purchaseValue": 201.87
                 },
                 {
                   "date": "2026-09-19",
                   "spend": 207.98,
                   "impressions": 15406,
+                  "reach": 9583,
                   "linkClicks": 174,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 210.15,
-                  "frequency": 1.607692
+                  "purchaseValue": 210.15
                 },
                 {
                   "date": "2026-09-20",
                   "spend": 186.76,
                   "impressions": 13833,
+                  "reach": 8364,
                   "linkClicks": 168,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 222.65,
-                  "frequency": 1.653846
+                  "purchaseValue": 222.65
                 },
                 {
                   "date": "2026-09-21",
                   "spend": 191.34,
                   "impressions": 14173,
+                  "reach": 8337,
                   "linkClicks": 171,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 163.29,
-                  "frequency": 1.7
+                  "purchaseValue": 163.29
                 }
               ]
             },
@@ -2458,141 +2458,141 @@
                   "date": "2026-09-08",
                   "spend": 193.83,
                   "impressions": 14357,
+                  "reach": 13052,
                   "linkClicks": 146,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 143.57,
-                  "frequency": 1.1
+                  "purchaseValue": 143.57
                 },
                 {
                   "date": "2026-09-09",
                   "spend": 200.06,
                   "impressions": 14819,
+                  "reach": 12929,
                   "linkClicks": 161,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 208.79,
-                  "frequency": 1.146154
+                  "purchaseValue": 208.79
                 },
                 {
                   "date": "2026-09-10",
                   "spend": 208.12,
                   "impressions": 15416,
+                  "reach": 12930,
                   "linkClicks": 163,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 166.58,
-                  "frequency": 1.192308
+                  "purchaseValue": 166.58
                 },
                 {
                   "date": "2026-09-11",
                   "spend": 190.68,
                   "impressions": 14124,
+                  "reach": 11404,
                   "linkClicks": 159,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 210.0,
-                  "frequency": 1.238462
+                  "purchaseValue": 210
                 },
                 {
                   "date": "2026-09-12",
                   "spend": 200.46,
                   "impressions": 14848,
+                  "reach": 11558,
                   "linkClicks": 157,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 164.5,
-                  "frequency": 1.284615
+                  "purchaseValue": 164.5
                 },
                 {
                   "date": "2026-09-13",
                   "spend": 206.4,
                   "impressions": 15289,
+                  "reach": 11489,
                   "linkClicks": 174,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 162.99,
-                  "frequency": 1.330769
+                  "purchaseValue": 162.99
                 },
                 {
                   "date": "2026-09-14",
                   "spend": 213.7,
                   "impressions": 15829,
+                  "reach": 11496,
                   "linkClicks": 188,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 205.74,
-                  "frequency": 1.376923
+                  "purchaseValue": 205.74
                 },
                 {
                   "date": "2026-09-15",
                   "spend": 197.86,
                   "impressions": 14656,
+                  "reach": 10299,
                   "linkClicks": 165,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 170.6,
-                  "frequency": 1.423077
+                  "purchaseValue": 170.6
                 },
                 {
                   "date": "2026-09-16",
                   "spend": 197.11,
                   "impressions": 14600,
+                  "reach": 9937,
                   "linkClicks": 171,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 228.1,
-                  "frequency": 1.469231
+                  "purchaseValue": 228.1
                 },
                 {
                   "date": "2026-09-17",
                   "spend": 211.6,
                   "impressions": 15673,
+                  "reach": 10343,
                   "linkClicks": 192,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 261.36,
-                  "frequency": 1.515385
+                  "purchaseValue": 261.36
                 },
                 {
                   "date": "2026-09-18",
                   "spend": 204.16,
                   "impressions": 15123,
+                  "reach": 9685,
                   "linkClicks": 191,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 189.24,
-                  "frequency": 1.561538
+                  "purchaseValue": 189.24
                 },
                 {
                   "date": "2026-09-19",
                   "spend": 199.03,
                   "impressions": 14742,
+                  "reach": 9170,
                   "linkClicks": 185,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 225.95,
-                  "frequency": 1.607692
+                  "purchaseValue": 225.95
                 },
                 {
                   "date": "2026-09-20",
                   "spend": 207.91,
                   "impressions": 15400,
+                  "reach": 9312,
                   "linkClicks": 193,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 219.67,
-                  "frequency": 1.653846
+                  "purchaseValue": 219.67
                 },
                 {
                   "date": "2026-09-21",
                   "spend": 207.19,
                   "impressions": 15347,
+                  "reach": 9028,
                   "linkClicks": 195,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 212.65,
-                  "frequency": 1.7
+                  "purchaseValue": 212.65
                 }
               ]
             },
@@ -2605,141 +2605,141 @@
                   "date": "2026-09-08",
                   "spend": 212.16,
                   "impressions": 15715,
+                  "reach": 14286,
                   "linkClicks": 204,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 246.88,
-                  "frequency": 1.1
+                  "purchaseValue": 246.88
                 },
                 {
                   "date": "2026-09-09",
                   "spend": 199.5,
                   "impressions": 14777,
+                  "reach": 12893,
                   "linkClicks": 194,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 190.32,
-                  "frequency": 1.146154
+                  "purchaseValue": 190.32
                 },
                 {
                   "date": "2026-09-10",
                   "spend": 197.67,
                   "impressions": 14642,
+                  "reach": 12280,
                   "linkClicks": 196,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 165.85,
-                  "frequency": 1.192308
+                  "purchaseValue": 165.85
                 },
                 {
                   "date": "2026-09-11",
                   "spend": 211.55,
                   "impressions": 15670,
+                  "reach": 12653,
                   "linkClicks": 211,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 261.49,
-                  "frequency": 1.238462
+                  "purchaseValue": 261.49
                 },
                 {
                   "date": "2026-09-12",
                   "spend": 197.9,
                   "impressions": 14659,
+                  "reach": 11411,
                   "linkClicks": 210,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 248.44,
-                  "frequency": 1.284615
+                  "purchaseValue": 248.44
                 },
                 {
                   "date": "2026-09-13",
                   "spend": 196.16,
                   "impressions": 14530,
+                  "reach": 10918,
                   "linkClicks": 210,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 6,
-                  "purchaseValue": 338.88,
-                  "frequency": 1.330769
+                  "purchaseValue": 338.88
                 },
                 {
                   "date": "2026-09-14",
                   "spend": 207.76,
                   "impressions": 15389,
+                  "reach": 11176,
                   "linkClicks": 226,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 6,
-                  "purchaseValue": 341.88,
-                  "frequency": 1.376923
+                  "purchaseValue": 341.88
                 },
                 {
                   "date": "2026-09-15",
                   "spend": 210.74,
                   "impressions": 15610,
+                  "reach": 10969,
                   "linkClicks": 227,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 245.84,
-                  "frequency": 1.423077
+                  "purchaseValue": 245.84
                 },
                 {
                   "date": "2026-09-16",
                   "spend": 198.64,
                   "impressions": 14714,
+                  "reach": 10015,
                   "linkClicks": 232,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 251.13,
-                  "frequency": 1.469231
+                  "purchaseValue": 251.13
                 },
                 {
                   "date": "2026-09-17",
                   "spend": 190.61,
                   "impressions": 14119,
+                  "reach": 9317,
                   "linkClicks": 211,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 283.5,
-                  "frequency": 1.515385
+                  "purchaseValue": 283.5
                 },
                 {
                   "date": "2026-09-18",
                   "spend": 210.89,
                   "impressions": 15621,
+                  "reach": 10004,
                   "linkClicks": 234,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 193.05,
-                  "frequency": 1.561538
+                  "purchaseValue": 193.05
                 },
                 {
                   "date": "2026-09-19",
                   "spend": 198.98,
                   "impressions": 14739,
+                  "reach": 9168,
                   "linkClicks": 229,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 257.46,
-                  "frequency": 1.607692
+                  "purchaseValue": 257.46
                 },
                 {
                   "date": "2026-09-20",
                   "spend": 203.68,
                   "impressions": 15087,
+                  "reach": 9122,
                   "linkClicks": 246,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 236.33,
-                  "frequency": 1.653846
+                  "purchaseValue": 236.33
                 },
                 {
                   "date": "2026-09-21",
                   "spend": 212.39,
                   "impressions": 15732,
+                  "reach": 9254,
                   "linkClicks": 259,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 7,
-                  "purchaseValue": 351.16,
-                  "frequency": 1.7
+                  "purchaseValue": 351.16
                 }
               ]
             },
@@ -2752,141 +2752,141 @@
                   "date": "2026-09-08",
                   "spend": 209.16,
                   "impressions": 15493,
+                  "reach": 14085,
                   "linkClicks": 191,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 259.68,
-                  "frequency": 1.1
+                  "purchaseValue": 259.68
                 },
                 {
                   "date": "2026-09-09",
                   "spend": 197.13,
                   "impressions": 14602,
+                  "reach": 12740,
                   "linkClicks": 191,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 146.44,
-                  "frequency": 1.146154
+                  "purchaseValue": 146.44
                 },
                 {
                   "date": "2026-09-10",
                   "spend": 197.81,
                   "impressions": 14652,
+                  "reach": 12289,
                   "linkClicks": 188,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 204.52,
-                  "frequency": 1.192308
+                  "purchaseValue": 204.52
                 },
                 {
                   "date": "2026-09-11",
                   "spend": 196.74,
                   "impressions": 14573,
+                  "reach": 11767,
                   "linkClicks": 191,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 162.75,
-                  "frequency": 1.238462
+                  "purchaseValue": 162.75
                 },
                 {
                   "date": "2026-09-12",
                   "spend": 211.27,
                   "impressions": 15649,
+                  "reach": 12182,
                   "linkClicks": 211,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 250.28,
-                  "frequency": 1.284615
+                  "purchaseValue": 250.28
                 },
                 {
                   "date": "2026-09-13",
                   "spend": 207.29,
                   "impressions": 15354,
+                  "reach": 11538,
                   "linkClicks": 208,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 255.19,
-                  "frequency": 1.330769
+                  "purchaseValue": 255.19
                 },
                 {
                   "date": "2026-09-14",
                   "spend": 210.39,
                   "impressions": 15584,
+                  "reach": 11318,
                   "linkClicks": 227,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 191.33,
-                  "frequency": 1.376923
+                  "purchaseValue": 191.33
                 },
                 {
                   "date": "2026-09-15",
                   "spend": 198.88,
                   "impressions": 14731,
+                  "reach": 10352,
                   "linkClicks": 207,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 226.77,
-                  "frequency": 1.423077
+                  "purchaseValue": 226.77
                 },
                 {
                   "date": "2026-09-16",
                   "spend": 212.34,
                   "impressions": 15728,
+                  "reach": 10705,
                   "linkClicks": 220,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 159.96,
-                  "frequency": 1.469231
+                  "purchaseValue": 159.96
                 },
                 {
                   "date": "2026-09-17",
                   "spend": 212.53,
                   "impressions": 15743,
+                  "reach": 10389,
                   "linkClicks": 244,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 6,
-                  "purchaseValue": 326.94,
-                  "frequency": 1.515385
+                  "purchaseValue": 326.94
                 },
                 {
                   "date": "2026-09-18",
                   "spend": 199.52,
                   "impressions": 14779,
+                  "reach": 9464,
                   "linkClicks": 224,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 6,
-                  "purchaseValue": 287.51,
-                  "frequency": 1.561538
+                  "purchaseValue": 287.51
                 },
                 {
                   "date": "2026-09-19",
                   "spend": 205.11,
                   "impressions": 15193,
+                  "reach": 9450,
                   "linkClicks": 240,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 219.25,
-                  "frequency": 1.607692
+                  "purchaseValue": 219.25
                 },
                 {
                   "date": "2026-09-20",
                   "spend": 190.72,
                   "impressions": 14127,
+                  "reach": 8542,
                   "linkClicks": 232,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 6,
-                  "purchaseValue": 309.25,
-                  "frequency": 1.653846
+                  "purchaseValue": 309.25
                 },
                 {
                   "date": "2026-09-21",
                   "spend": 202.35,
                   "impressions": 14988,
+                  "reach": 8816,
                   "linkClicks": 251,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 244.61,
-                  "frequency": 1.7
+                  "purchaseValue": 244.61
                 }
               ]
             }
@@ -2912,11 +2912,11 @@
           "name": "Linen Broad",
           "optimizationGoal": "OFFSITE_CONVERSIONS",
           "dailyBudget": null,
-          "learning": null,
+          "learning": "success",
           "adCount": 9,
           "startTime": "2026-08-11",
           "lastLearningReset": "2026-08-11",
-          "attributionSetting": "1d_view_7d_click",
+          "attributionSetting": "7-day click, 1-day view",
           "ads": [
             {
               "id": "1202620000000057",
@@ -2927,141 +2927,141 @@
                   "date": "2026-08-11",
                   "spend": 197.68,
                   "impressions": 15443,
+                  "reach": 14039,
                   "linkClicks": 157,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 136.5,
-                  "frequency": 1.1
+                  "purchaseValue": 136.5
                 },
                 {
                   "date": "2026-08-12",
                   "spend": 221.75,
                   "impressions": 17324,
+                  "reach": 15115,
                   "linkClicks": 181,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 2,
-                  "purchaseValue": 96.82,
-                  "frequency": 1.146154
+                  "purchaseValue": 96.82
                 },
                 {
                   "date": "2026-08-13",
                   "spend": 201.28,
                   "impressions": 15724,
+                  "reach": 13188,
                   "linkClicks": 163,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 145.82,
-                  "frequency": 1.192308
+                  "purchaseValue": 145.82
                 },
                 {
                   "date": "2026-08-14",
                   "spend": 202.03,
                   "impressions": 15783,
+                  "reach": 12744,
                   "linkClicks": 181,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 152.9,
-                  "frequency": 1.238462
+                  "purchaseValue": 152.9
                 },
                 {
                   "date": "2026-08-15",
                   "spend": 206.71,
                   "impressions": 16148,
+                  "reach": 12570,
                   "linkClicks": 175,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 152.46,
-                  "frequency": 1.284615
+                  "purchaseValue": 152.46
                 },
                 {
                   "date": "2026-08-16",
                   "spend": 210.73,
                   "impressions": 16463,
+                  "reach": 12371,
                   "linkClicks": 192,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 136.41,
-                  "frequency": 1.330769
+                  "purchaseValue": 136.41
                 },
                 {
                   "date": "2026-08-17",
                   "spend": 200.18,
                   "impressions": 15639,
+                  "reach": 11358,
                   "linkClicks": 183,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 191.42,
-                  "frequency": 1.376923
+                  "purchaseValue": 191.42
                 },
                 {
                   "date": "2026-08-18",
                   "spend": 220.58,
                   "impressions": 17232,
+                  "reach": 12109,
                   "linkClicks": 198,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 152.09,
-                  "frequency": 1.423077
+                  "purchaseValue": 152.09
                 },
                 {
                   "date": "2026-08-19",
                   "spend": 219.55,
                   "impressions": 17152,
+                  "reach": 11674,
                   "linkClicks": 215,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 148.22,
-                  "frequency": 1.469231
+                  "purchaseValue": 148.22
                 },
                 {
                   "date": "2026-08-20",
                   "spend": 203.35,
                   "impressions": 15886,
+                  "reach": 10483,
                   "linkClicks": 201,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 203.39,
-                  "frequency": 1.515385
+                  "purchaseValue": 203.39
                 },
                 {
                   "date": "2026-08-21",
                   "spend": 219.5,
                   "impressions": 17148,
+                  "reach": 10981,
                   "linkClicks": 226,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 215.4,
-                  "frequency": 1.561538
+                  "purchaseValue": 215.4
                 },
                 {
                   "date": "2026-08-22",
                   "spend": 204.9,
                   "impressions": 16007,
+                  "reach": 9957,
                   "linkClicks": 212,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 153.36,
-                  "frequency": 1.607692
+                  "purchaseValue": 153.36
                 },
                 {
                   "date": "2026-08-23",
                   "spend": 222.84,
                   "impressions": 17409,
+                  "reach": 10526,
                   "linkClicks": 227,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 208.76,
-                  "frequency": 1.653846
+                  "purchaseValue": 208.76
                 },
                 {
                   "date": "2026-08-24",
                   "spend": 220.4,
                   "impressions": 17218,
+                  "reach": 10128,
                   "linkClicks": 232,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 196.6,
-                  "frequency": 1.7
+                  "purchaseValue": 196.6
                 }
               ]
             },
@@ -3074,141 +3074,141 @@
                   "date": "2026-08-11",
                   "spend": 198.32,
                   "impressions": 15493,
+                  "reach": 14085,
                   "linkClicks": 161,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 2,
-                  "purchaseValue": 93.74,
-                  "frequency": 1.1
+                  "purchaseValue": 93.74
                 },
                 {
                   "date": "2026-08-12",
                   "spend": 218.58,
                   "impressions": 17076,
+                  "reach": 14899,
                   "linkClicks": 188,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 205.94,
-                  "frequency": 1.146154
+                  "purchaseValue": 205.94
                 },
                 {
                   "date": "2026-08-13",
                   "spend": 209.66,
                   "impressions": 16379,
+                  "reach": 13737,
                   "linkClicks": 187,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 181.87,
-                  "frequency": 1.192308
+                  "purchaseValue": 181.87
                 },
                 {
                   "date": "2026-08-14",
                   "spend": 213.08,
                   "impressions": 16647,
+                  "reach": 13442,
                   "linkClicks": 186,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 184.83,
-                  "frequency": 1.238462
+                  "purchaseValue": 184.83
                 },
                 {
                   "date": "2026-08-15",
                   "spend": 216.88,
                   "impressions": 16943,
+                  "reach": 13189,
                   "linkClicks": 188,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 139.34,
-                  "frequency": 1.284615
+                  "purchaseValue": 139.34
                 },
                 {
                   "date": "2026-08-16",
                   "spend": 204.22,
                   "impressions": 15954,
+                  "reach": 11989,
                   "linkClicks": 180,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 202.49,
-                  "frequency": 1.330769
+                  "purchaseValue": 202.49
                 },
                 {
                   "date": "2026-08-17",
                   "spend": 197.23,
                   "impressions": 15408,
+                  "reach": 11190,
                   "linkClicks": 184,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 151.22,
-                  "frequency": 1.376923
+                  "purchaseValue": 151.22
                 },
                 {
                   "date": "2026-08-18",
                   "spend": 208.37,
                   "impressions": 16279,
+                  "reach": 11439,
                   "linkClicks": 198,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 206.93,
-                  "frequency": 1.423077
+                  "purchaseValue": 206.93
                 },
                 {
                   "date": "2026-08-19",
                   "spend": 216.51,
                   "impressions": 16915,
+                  "reach": 11513,
                   "linkClicks": 203,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 149.46,
-                  "frequency": 1.469231
+                  "purchaseValue": 149.46
                 },
                 {
                   "date": "2026-08-20",
                   "spend": 212.13,
                   "impressions": 16572,
+                  "reach": 10936,
                   "linkClicks": 215,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 229.69,
-                  "frequency": 1.515385
+                  "purchaseValue": 229.69
                 },
                 {
                   "date": "2026-08-21",
                   "spend": 208.48,
                   "impressions": 16287,
+                  "reach": 10430,
                   "linkClicks": 211,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 214.27,
-                  "frequency": 1.561538
+                  "purchaseValue": 214.27
                 },
                 {
                   "date": "2026-08-22",
                   "spend": 196.73,
                   "impressions": 15369,
+                  "reach": 9560,
                   "linkClicks": 198,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 266.97,
-                  "frequency": 1.607692
+                  "purchaseValue": 266.97
                 },
                 {
                   "date": "2026-08-23",
                   "spend": 211.28,
                   "impressions": 16506,
+                  "reach": 9980,
                   "linkClicks": 211,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 188.9,
-                  "frequency": 1.653846
+                  "purchaseValue": 188.9
                 },
                 {
                   "date": "2026-08-24",
                   "spend": 216.92,
                   "impressions": 16946,
+                  "reach": 9968,
                   "linkClicks": 222,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 149.58,
-                  "frequency": 1.7
+                  "purchaseValue": 149.58
                 }
               ]
             },
@@ -3221,141 +3221,141 @@
                   "date": "2026-08-11",
                   "spend": 218.91,
                   "impressions": 17102,
+                  "reach": 15547,
                   "linkClicks": 246,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 184.17,
-                  "frequency": 1.1
+                  "purchaseValue": 184.17
                 },
                 {
                   "date": "2026-08-12",
                   "spend": 216.33,
                   "impressions": 16901,
+                  "reach": 14746,
                   "linkClicks": 255,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 262.19,
-                  "frequency": 1.146154
+                  "purchaseValue": 262.19
                 },
                 {
                   "date": "2026-08-13",
                   "spend": 197.4,
                   "impressions": 15421,
+                  "reach": 12934,
                   "linkClicks": 228,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 195.78,
-                  "frequency": 1.192308
+                  "purchaseValue": 195.78
                 },
                 {
                   "date": "2026-08-14",
                   "spend": 214.4,
                   "impressions": 16749,
+                  "reach": 13524,
                   "linkClicks": 260,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 263.07,
-                  "frequency": 1.238462
+                  "purchaseValue": 263.07
                 },
                 {
                   "date": "2026-08-15",
                   "spend": 205.99,
                   "impressions": 16093,
+                  "reach": 12527,
                   "linkClicks": 237,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 204.44,
-                  "frequency": 1.284615
+                  "purchaseValue": 204.44
                 },
                 {
                   "date": "2026-08-16",
                   "spend": 217.26,
                   "impressions": 16973,
+                  "reach": 12754,
                   "linkClicks": 252,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 186.37,
-                  "frequency": 1.330769
+                  "purchaseValue": 186.37
                 },
                 {
                   "date": "2026-08-17",
                   "spend": 210.27,
                   "impressions": 16427,
+                  "reach": 11930,
                   "linkClicks": 270,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 178.2,
-                  "frequency": 1.376923
+                  "purchaseValue": 178.2
                 },
                 {
                   "date": "2026-08-18",
                   "spend": 222.88,
                   "impressions": 17412,
+                  "reach": 12235,
                   "linkClicks": 291,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 6,
-                  "purchaseValue": 266.87,
-                  "frequency": 1.423077
+                  "purchaseValue": 266.87
                 },
                 {
                   "date": "2026-08-19",
                   "spend": 204.04,
                   "impressions": 15940,
+                  "reach": 10849,
                   "linkClicks": 253,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 6,
-                  "purchaseValue": 271.94,
-                  "frequency": 1.469231
+                  "purchaseValue": 271.94
                 },
                 {
                   "date": "2026-08-20",
                   "spend": 200.1,
                   "impressions": 15632,
+                  "reach": 10316,
                   "linkClicks": 254,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 6,
-                  "purchaseValue": 276.24,
-                  "frequency": 1.515385
+                  "purchaseValue": 276.24
                 },
                 {
                   "date": "2026-08-21",
                   "spend": 225.4,
                   "impressions": 17609,
+                  "reach": 11277,
                   "linkClicks": 293,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 6,
-                  "purchaseValue": 275.88,
-                  "frequency": 1.561538
+                  "purchaseValue": 275.88
                 },
                 {
                   "date": "2026-08-22",
                   "spend": 204.97,
                   "impressions": 16012,
+                  "reach": 9960,
                   "linkClicks": 287,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 7,
-                  "purchaseValue": 325.33,
-                  "frequency": 1.607692
+                  "purchaseValue": 325.33
                 },
                 {
                   "date": "2026-08-23",
                   "spend": 206.66,
                   "impressions": 16145,
+                  "reach": 9762,
                   "linkClicks": 271,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 191.45,
-                  "frequency": 1.653846
+                  "purchaseValue": 191.45
                 },
                 {
                   "date": "2026-08-24",
                   "spend": 211.74,
                   "impressions": 16541,
+                  "reach": 9730,
                   "linkClicks": 297,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 228.24,
-                  "frequency": 1.7
+                  "purchaseValue": 228.24
                 }
               ]
             },
@@ -3368,141 +3368,141 @@
                   "date": "2026-08-11",
                   "spend": 199.02,
                   "impressions": 15548,
+                  "reach": 14135,
                   "linkClicks": 172,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 138.55,
-                  "frequency": 1.1
+                  "purchaseValue": 138.55
                 },
                 {
                   "date": "2026-08-12",
                   "spend": 219.38,
                   "impressions": 17138,
+                  "reach": 14953,
                   "linkClicks": 189,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 200.38,
-                  "frequency": 1.146154
+                  "purchaseValue": 200.38
                 },
                 {
                   "date": "2026-08-13",
                   "spend": 217.71,
                   "impressions": 17008,
+                  "reach": 14265,
                   "linkClicks": 195,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 135.12,
-                  "frequency": 1.192308
+                  "purchaseValue": 135.12
                 },
                 {
                   "date": "2026-08-14",
                   "spend": 222.87,
                   "impressions": 17411,
+                  "reach": 14059,
                   "linkClicks": 190,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 215.26,
-                  "frequency": 1.238462
+                  "purchaseValue": 215.26
                 },
                 {
                   "date": "2026-08-15",
                   "spend": 206.69,
                   "impressions": 16147,
+                  "reach": 12570,
                   "linkClicks": 182,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 138.24,
-                  "frequency": 1.284615
+                  "purchaseValue": 138.24
                 },
                 {
                   "date": "2026-08-16",
                   "spend": 218.5,
                   "impressions": 17069,
+                  "reach": 12826,
                   "linkClicks": 198,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 149.81,
-                  "frequency": 1.330769
+                  "purchaseValue": 149.81
                 },
                 {
                   "date": "2026-08-17",
                   "spend": 203.99,
                   "impressions": 15937,
+                  "reach": 11574,
                   "linkClicks": 185,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 2,
-                  "purchaseValue": 104.64,
-                  "frequency": 1.376923
+                  "purchaseValue": 104.64
                 },
                 {
                   "date": "2026-08-18",
                   "spend": 207.5,
                   "impressions": 16210,
+                  "reach": 11391,
                   "linkClicks": 200,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 210.48,
-                  "frequency": 1.423077
+                  "purchaseValue": 210.48
                 },
                 {
                   "date": "2026-08-19",
                   "spend": 198.32,
                   "impressions": 15493,
+                  "reach": 10545,
                   "linkClicks": 195,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 187.45,
-                  "frequency": 1.469231
+                  "purchaseValue": 187.45
                 },
                 {
                   "date": "2026-08-20",
                   "spend": 209.15,
                   "impressions": 16339,
+                  "reach": 10782,
                   "linkClicks": 203,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 160.09,
-                  "frequency": 1.515385
+                  "purchaseValue": 160.09
                 },
                 {
                   "date": "2026-08-21",
                   "spend": 203.09,
                   "impressions": 15866,
+                  "reach": 10160,
                   "linkClicks": 209,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 155.28,
-                  "frequency": 1.561538
+                  "purchaseValue": 155.28
                 },
                 {
                   "date": "2026-08-22",
                   "spend": 198.71,
                   "impressions": 15524,
+                  "reach": 9656,
                   "linkClicks": 209,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 138.63,
-                  "frequency": 1.607692
+                  "purchaseValue": 138.63
                 },
                 {
                   "date": "2026-08-23",
                   "spend": 204.13,
                   "impressions": 15947,
+                  "reach": 9642,
                   "linkClicks": 207,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 245.22,
-                  "frequency": 1.653846
+                  "purchaseValue": 245.22
                 },
                 {
                   "date": "2026-08-24",
                   "spend": 197.69,
                   "impressions": 15444,
+                  "reach": 9085,
                   "linkClicks": 202,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 204.26,
-                  "frequency": 1.7
+                  "purchaseValue": 204.26
                 }
               ]
             },
@@ -3515,141 +3515,141 @@
                   "date": "2026-08-11",
                   "spend": 208.06,
                   "impressions": 16255,
+                  "reach": 14777,
                   "linkClicks": 191,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 181.6,
-                  "frequency": 1.1
+                  "purchaseValue": 181.6
                 },
                 {
                   "date": "2026-08-12",
                   "spend": 210.58,
                   "impressions": 16451,
+                  "reach": 14353,
                   "linkClicks": 202,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 182.59,
-                  "frequency": 1.146154
+                  "purchaseValue": 182.59
                 },
                 {
                   "date": "2026-08-13",
                   "spend": 224.92,
                   "impressions": 17572,
+                  "reach": 14738,
                   "linkClicks": 215,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 152.13,
-                  "frequency": 1.192308
+                  "purchaseValue": 152.13
                 },
                 {
                   "date": "2026-08-14",
                   "spend": 225.42,
                   "impressions": 17610,
+                  "reach": 14219,
                   "linkClicks": 237,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 227.91,
-                  "frequency": 1.238462
+                  "purchaseValue": 227.91
                 },
                 {
                   "date": "2026-08-15",
                   "spend": 202.19,
                   "impressions": 15796,
+                  "reach": 12296,
                   "linkClicks": 205,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 137.31,
-                  "frequency": 1.284615
+                  "purchaseValue": 137.31
                 },
                 {
                   "date": "2026-08-16",
                   "spend": 205.33,
                   "impressions": 16041,
+                  "reach": 12054,
                   "linkClicks": 214,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 208.06,
-                  "frequency": 1.330769
+                  "purchaseValue": 208.06
                 },
                 {
                   "date": "2026-08-17",
                   "spend": 220.99,
                   "impressions": 17264,
+                  "reach": 12538,
                   "linkClicks": 229,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 205.01,
-                  "frequency": 1.376923
+                  "purchaseValue": 205.01
                 },
                 {
                   "date": "2026-08-18",
                   "spend": 197.37,
                   "impressions": 15419,
+                  "reach": 10835,
                   "linkClicks": 225,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 193.97,
-                  "frequency": 1.423077
+                  "purchaseValue": 193.97
                 },
                 {
                   "date": "2026-08-19",
                   "spend": 208.29,
                   "impressions": 16272,
+                  "reach": 11075,
                   "linkClicks": 241,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 242.02,
-                  "frequency": 1.469231
+                  "purchaseValue": 242.02
                 },
                 {
                   "date": "2026-08-20",
                   "spend": 224.5,
                   "impressions": 17539,
+                  "reach": 11574,
                   "linkClicks": 246,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 265.9,
-                  "frequency": 1.515385
+                  "purchaseValue": 265.9
                 },
                 {
                   "date": "2026-08-21",
                   "spend": 221.12,
                   "impressions": 17275,
+                  "reach": 11063,
                   "linkClicks": 261,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 6,
-                  "purchaseValue": 273.29,
-                  "frequency": 1.561538
+                  "purchaseValue": 273.29
                 },
                 {
                   "date": "2026-08-22",
                   "spend": 216.23,
                   "impressions": 16892,
+                  "reach": 10507,
                   "linkClicks": 253,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 6,
-                  "purchaseValue": 321.94,
-                  "frequency": 1.607692
+                  "purchaseValue": 321.94
                 },
                 {
                   "date": "2026-08-23",
                   "spend": 208.01,
                   "impressions": 16250,
+                  "reach": 9826,
                   "linkClicks": 255,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 192.37,
-                  "frequency": 1.653846
+                  "purchaseValue": 192.37
                 },
                 {
                   "date": "2026-08-24",
                   "spend": 217.59,
                   "impressions": 16998,
+                  "reach": 9999,
                   "linkClicks": 273,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 6,
-                  "purchaseValue": 275.94,
-                  "frequency": 1.7
+                  "purchaseValue": 275.94
                 }
               ]
             },
@@ -3662,141 +3662,141 @@
                   "date": "2026-08-11",
                   "spend": 209.17,
                   "impressions": 16341,
+                  "reach": 14855,
                   "linkClicks": 208,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 195.88,
-                  "frequency": 1.1
+                  "purchaseValue": 195.88
                 },
                 {
                   "date": "2026-08-12",
                   "spend": 220.83,
                   "impressions": 17251,
+                  "reach": 15051,
                   "linkClicks": 213,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 245.89,
-                  "frequency": 1.146154
+                  "purchaseValue": 245.89
                 },
                 {
                   "date": "2026-08-13",
                   "spend": 199.25,
                   "impressions": 15566,
+                  "reach": 13055,
                   "linkClicks": 207,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 160.91,
-                  "frequency": 1.192308
+                  "purchaseValue": 160.91
                 },
                 {
                   "date": "2026-08-14",
                   "spend": 216.54,
                   "impressions": 16916,
+                  "reach": 13659,
                   "linkClicks": 217,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 236.28,
-                  "frequency": 1.238462
+                  "purchaseValue": 236.28
                 },
                 {
                   "date": "2026-08-15",
                   "spend": 224.51,
                   "impressions": 17539,
+                  "reach": 13653,
                   "linkClicks": 224,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 200.96,
-                  "frequency": 1.284615
+                  "purchaseValue": 200.96
                 },
                 {
                   "date": "2026-08-16",
                   "spend": 204.52,
                   "impressions": 15978,
+                  "reach": 12007,
                   "linkClicks": 215,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 150.11,
-                  "frequency": 1.330769
+                  "purchaseValue": 150.11
                 },
                 {
                   "date": "2026-08-17",
                   "spend": 221.36,
                   "impressions": 17293,
+                  "reach": 12559,
                   "linkClicks": 237,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 246.6,
-                  "frequency": 1.376923
+                  "purchaseValue": 246.6
                 },
                 {
                   "date": "2026-08-18",
-                  "spend": 217.0,
+                  "spend": 217,
                   "impressions": 16952,
+                  "reach": 11912,
                   "linkClicks": 253,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 238.36,
-                  "frequency": 1.423077
+                  "purchaseValue": 238.36
                 },
                 {
                   "date": "2026-08-19",
                   "spend": 210.45,
                   "impressions": 16441,
+                  "reach": 11190,
                   "linkClicks": 243,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 6,
-                  "purchaseValue": 322.44,
-                  "frequency": 1.469231
+                  "purchaseValue": 322.44
                 },
                 {
                   "date": "2026-08-20",
                   "spend": 205.29,
                   "impressions": 16038,
+                  "reach": 10583,
                   "linkClicks": 226,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 230.56,
-                  "frequency": 1.515385
+                  "purchaseValue": 230.56
                 },
                 {
                   "date": "2026-08-21",
                   "spend": 216.47,
                   "impressions": 16911,
+                  "reach": 10830,
                   "linkClicks": 244,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 255.98,
-                  "frequency": 1.561538
+                  "purchaseValue": 255.98
                 },
                 {
                   "date": "2026-08-22",
                   "spend": 224.49,
                   "impressions": 17538,
+                  "reach": 10909,
                   "linkClicks": 263,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 260.02,
-                  "frequency": 1.607692
+                  "purchaseValue": 260.02
                 },
                 {
                   "date": "2026-08-23",
                   "spend": 211.64,
                   "impressions": 16534,
+                  "reach": 9997,
                   "linkClicks": 246,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 185.78,
-                  "frequency": 1.653846
+                  "purchaseValue": 185.78
                 },
                 {
                   "date": "2026-08-24",
                   "spend": 218.73,
                   "impressions": 17087,
+                  "reach": 10051,
                   "linkClicks": 272,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 195.99,
-                  "frequency": 1.7
+                  "purchaseValue": 195.99
                 }
               ]
             },
@@ -3809,141 +3809,141 @@
                   "date": "2026-08-11",
                   "spend": 196.59,
                   "impressions": 15358,
+                  "reach": 13962,
                   "linkClicks": 155,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 157.06,
-                  "frequency": 1.1
+                  "purchaseValue": 157.06
                 },
                 {
                   "date": "2026-08-12",
                   "spend": 222.81,
                   "impressions": 17406,
+                  "reach": 15186,
                   "linkClicks": 191,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 139.94,
-                  "frequency": 1.146154
+                  "purchaseValue": 139.94
                 },
                 {
                   "date": "2026-08-13",
                   "spend": 211.91,
                   "impressions": 16555,
+                  "reach": 13885,
                   "linkClicks": 180,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 154.11,
-                  "frequency": 1.192308
+                  "purchaseValue": 154.11
                 },
                 {
                   "date": "2026-08-14",
                   "spend": 204.44,
                   "impressions": 15972,
+                  "reach": 12897,
                   "linkClicks": 177,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 188.36,
-                  "frequency": 1.238462
+                  "purchaseValue": 188.36
                 },
                 {
                   "date": "2026-08-15",
                   "spend": 208.88,
                   "impressions": 16318,
+                  "reach": 12703,
                   "linkClicks": 185,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 188.27,
-                  "frequency": 1.284615
+                  "purchaseValue": 188.27
                 },
                 {
                   "date": "2026-08-16",
                   "spend": 224.06,
                   "impressions": 17505,
+                  "reach": 13154,
                   "linkClicks": 195,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 135.26,
-                  "frequency": 1.330769
+                  "purchaseValue": 135.26
                 },
                 {
                   "date": "2026-08-17",
                   "spend": 224.36,
                   "impressions": 17528,
+                  "reach": 12730,
                   "linkClicks": 206,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 196.32,
-                  "frequency": 1.376923
+                  "purchaseValue": 196.32
                 },
                 {
                   "date": "2026-08-18",
                   "spend": 201.93,
                   "impressions": 15775,
+                  "reach": 11085,
                   "linkClicks": 176,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 156.33,
-                  "frequency": 1.423077
+                  "purchaseValue": 156.33
                 },
                 {
                   "date": "2026-08-19",
                   "spend": 225.6,
                   "impressions": 17625,
+                  "reach": 11996,
                   "linkClicks": 202,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 134.35,
-                  "frequency": 1.469231
+                  "purchaseValue": 134.35
                 },
                 {
                   "date": "2026-08-20",
                   "spend": 200.88,
                   "impressions": 15693,
+                  "reach": 10356,
                   "linkClicks": 195,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 208.27,
-                  "frequency": 1.515385
+                  "purchaseValue": 208.27
                 },
                 {
                   "date": "2026-08-21",
                   "spend": 207.75,
                   "impressions": 16230,
+                  "reach": 10394,
                   "linkClicks": 194,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 215.44,
-                  "frequency": 1.561538
+                  "purchaseValue": 215.44
                 },
                 {
                   "date": "2026-08-22",
                   "spend": 199.83,
                   "impressions": 15611,
+                  "reach": 9710,
                   "linkClicks": 187,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 141.72,
-                  "frequency": 1.607692
+                  "purchaseValue": 141.72
                 },
                 {
                   "date": "2026-08-23",
                   "spend": 215.77,
                   "impressions": 16857,
+                  "reach": 10193,
                   "linkClicks": 219,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 137.36,
-                  "frequency": 1.653846
+                  "purchaseValue": 137.36
                 },
                 {
                   "date": "2026-08-24",
                   "spend": 212.17,
                   "impressions": 16575,
+                  "reach": 9750,
                   "linkClicks": 225,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 6,
-                  "purchaseValue": 267.92,
-                  "frequency": 1.7
+                  "purchaseValue": 267.92
                 }
               ]
             },
@@ -3956,141 +3956,141 @@
                   "date": "2026-08-11",
                   "spend": 211.29,
                   "impressions": 16506,
+                  "reach": 15005,
                   "linkClicks": 215,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 231.37,
-                  "frequency": 1.1
+                  "purchaseValue": 231.37
                 },
                 {
                   "date": "2026-08-12",
                   "spend": 201.06,
                   "impressions": 15707,
+                  "reach": 13704,
                   "linkClicks": 209,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 203.64,
-                  "frequency": 1.146154
+                  "purchaseValue": 203.64
                 },
                 {
                   "date": "2026-08-13",
                   "spend": 221.42,
                   "impressions": 17298,
+                  "reach": 14508,
                   "linkClicks": 221,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 183.5,
-                  "frequency": 1.192308
+                  "purchaseValue": 183.5
                 },
                 {
                   "date": "2026-08-14",
                   "spend": 205.92,
                   "impressions": 16087,
+                  "reach": 12989,
                   "linkClicks": 228,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 191.85,
-                  "frequency": 1.238462
+                  "purchaseValue": 191.85
                 },
                 {
                   "date": "2026-08-15",
                   "spend": 201.97,
                   "impressions": 15779,
+                  "reach": 12283,
                   "linkClicks": 211,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 133.55,
-                  "frequency": 1.284615
+                  "purchaseValue": 133.55
                 },
                 {
                   "date": "2026-08-16",
                   "spend": 219.65,
                   "impressions": 17159,
+                  "reach": 12894,
                   "linkClicks": 247,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 206.16,
-                  "frequency": 1.330769
+                  "purchaseValue": 206.16
                 },
                 {
                   "date": "2026-08-17",
                   "spend": 223.64,
                   "impressions": 17471,
+                  "reach": 12688,
                   "linkClicks": 245,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 226.73,
-                  "frequency": 1.376923
+                  "purchaseValue": 226.73
                 },
                 {
                   "date": "2026-08-18",
                   "spend": 204.96,
                   "impressions": 16012,
+                  "reach": 11252,
                   "linkClicks": 231,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 201.07,
-                  "frequency": 1.423077
+                  "purchaseValue": 201.07
                 },
                 {
                   "date": "2026-08-19",
                   "spend": 207.2,
                   "impressions": 16187,
+                  "reach": 11017,
                   "linkClicks": 238,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 238.59,
-                  "frequency": 1.469231
+                  "purchaseValue": 238.59
                 },
                 {
                   "date": "2026-08-20",
                   "spend": 216.79,
                   "impressions": 16936,
+                  "reach": 11176,
                   "linkClicks": 263,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 6,
-                  "purchaseValue": 278.02,
-                  "frequency": 1.515385
+                  "purchaseValue": 278.02
                 },
                 {
                   "date": "2026-08-21",
                   "spend": 203.65,
                   "impressions": 15910,
+                  "reach": 10189,
                   "linkClicks": 251,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 196.15,
-                  "frequency": 1.561538
+                  "purchaseValue": 196.15
                 },
                 {
                   "date": "2026-08-22",
                   "spend": 205.58,
                   "impressions": 16060,
+                  "reach": 9989,
                   "linkClicks": 262,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 230.31,
-                  "frequency": 1.607692
+                  "purchaseValue": 230.31
                 },
                 {
                   "date": "2026-08-23",
                   "spend": 223.07,
                   "impressions": 17427,
+                  "reach": 10537,
                   "linkClicks": 264,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 201.95,
-                  "frequency": 1.653846
+                  "purchaseValue": 201.95
                 },
                 {
                   "date": "2026-08-24",
                   "spend": 206.77,
                   "impressions": 16153,
+                  "reach": 9502,
                   "linkClicks": 269,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 7,
-                  "purchaseValue": 346.04,
-                  "frequency": 1.7
+                  "purchaseValue": 346.04
                 }
               ]
             },
@@ -4103,141 +4103,141 @@
                   "date": "2026-08-11",
                   "spend": 204.58,
                   "impressions": 15982,
+                  "reach": 14529,
                   "linkClicks": 192,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 155.75,
-                  "frequency": 1.1
+                  "purchaseValue": 155.75
                 },
                 {
                   "date": "2026-08-12",
                   "spend": 203.85,
                   "impressions": 15926,
+                  "reach": 13895,
                   "linkClicks": 191,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 186.47,
-                  "frequency": 1.146154
+                  "purchaseValue": 186.47
                 },
                 {
                   "date": "2026-08-13",
                   "spend": 216.42,
                   "impressions": 16908,
+                  "reach": 14181,
                   "linkClicks": 215,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 189.9,
-                  "frequency": 1.192308
+                  "purchaseValue": 189.9
                 },
                 {
                   "date": "2026-08-14",
                   "spend": 201.58,
                   "impressions": 15748,
+                  "reach": 12716,
                   "linkClicks": 204,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 3,
-                  "purchaseValue": 157.59,
-                  "frequency": 1.238462
+                  "purchaseValue": 157.59
                 },
                 {
                   "date": "2026-08-15",
                   "spend": 212.7,
                   "impressions": 16616,
+                  "reach": 12935,
                   "linkClicks": 202,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 191.21,
-                  "frequency": 1.284615
+                  "purchaseValue": 191.21
                 },
                 {
                   "date": "2026-08-16",
                   "spend": 214.51,
                   "impressions": 16758,
+                  "reach": 12593,
                   "linkClicks": 209,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 198.03,
-                  "frequency": 1.330769
+                  "purchaseValue": 198.03
                 },
                 {
                   "date": "2026-08-17",
                   "spend": 203.7,
                   "impressions": 15913,
+                  "reach": 11557,
                   "linkClicks": 215,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 208.84,
-                  "frequency": 1.376923
+                  "purchaseValue": 208.84
                 },
                 {
                   "date": "2026-08-18",
                   "spend": 222.88,
                   "impressions": 17412,
+                  "reach": 12235,
                   "linkClicks": 237,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 254.32,
-                  "frequency": 1.423077
+                  "purchaseValue": 254.32
                 },
                 {
                   "date": "2026-08-19",
                   "spend": 200.92,
                   "impressions": 15696,
+                  "reach": 10683,
                   "linkClicks": 217,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 253.08,
-                  "frequency": 1.469231
+                  "purchaseValue": 253.08
                 },
                 {
                   "date": "2026-08-20",
                   "spend": 215.97,
                   "impressions": 16872,
+                  "reach": 11134,
                   "linkClicks": 240,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 267.05,
-                  "frequency": 1.515385
+                  "purchaseValue": 267.05
                 },
                 {
                   "date": "2026-08-21",
                   "spend": 221.67,
                   "impressions": 17317,
+                  "reach": 11090,
                   "linkClicks": 231,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 246.3,
-                  "frequency": 1.561538
+                  "purchaseValue": 246.3
                 },
                 {
                   "date": "2026-08-22",
                   "spend": 215.17,
                   "impressions": 16810,
+                  "reach": 10456,
                   "linkClicks": 236,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 6,
-                  "purchaseValue": 279.03,
-                  "frequency": 1.607692
+                  "purchaseValue": 279.03
                 },
                 {
                   "date": "2026-08-23",
                   "spend": 212.37,
                   "impressions": 16591,
+                  "reach": 10032,
                   "linkClicks": 244,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 4,
-                  "purchaseValue": 177.55,
-                  "frequency": 1.653846
+                  "purchaseValue": 177.55
                 },
                 {
                   "date": "2026-08-24",
                   "spend": 197.4,
                   "impressions": 15421,
+                  "reach": 9071,
                   "linkClicks": 227,
-                  "conversations": null,
+                  "conversations": 0,
                   "purchases": 5,
-                  "purchaseValue": 226.67,
-                  "frequency": 1.7
+                  "purchaseValue": 226.67
                 }
               ]
             }

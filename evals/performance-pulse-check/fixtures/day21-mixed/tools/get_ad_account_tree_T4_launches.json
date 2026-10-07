@@ -1,0 +1,274 @@
+{
+ "organization": {
+  "id": "b3a77c74-a4be-5fd5-bc2e-1e9050579e79",
+  "name": "Tidewater Pet Supply"
+ },
+ "account": {
+  "currency": "USD",
+  "timezone": "America/Chicago"
+ },
+ "window": {
+  "dateFrom": "2026-07-09",
+  "dateTo": "2026-10-06",
+  "days": 90,
+  "granularity": "total",
+  "note": "Inclusive: every day from dateFrom through dateTo, as Meta's insight days in the ad account's timezone."
+ },
+ "source": "Moshi's synced copy of the organization's Meta ad account (every campaign, Moshi-created and the merchant's own), refreshed about every 6 hours.",
+ "flags": [
+  {
+   "code": "ads_over_max_ads",
+   "message": "Only the top 0 of 27 matching ads by spend are listed (maxAds 0); each ad set's adsOverMaxAds counts its unlisted ones, and their campaign and ad set totals still include them. Raise maxAds, or name the campaigns, ad sets or ads you want, to list the rest."
+  }
+ ],
+ "counts": {
+  "campaigns": 3,
+  "adsets": 4,
+  "ads": 27,
+  "adsListed": 0,
+  "adsOverMaxAds": 27,
+  "omittedForNoDelivery": {
+   "campaigns": 0,
+   "adsets": 0,
+   "ads": 0
+  }
+ },
+ "campaigns": [
+  {
+   "campaignId": "1202640000000102",
+   "campaignName": "Evergreen | Prospecting | Broad",
+   "owner": "merchant",
+   "status": "ACTIVE",
+   "objective": "OUTCOME_SALES",
+   "startTime": "1969-12-31T15:59:59-0800",
+   "dailyBudget": "300000",
+   "adsetCount": 1,
+   "adCount": 9,
+   "moshiAdCount": 0,
+   "metrics": {
+    "reach": 1444472,
+    "impressions": 10074299,
+    "spend": 191312.08,
+    "roas": 2.5972,
+    "purchases": 8014,
+    "purchaseValue": 496876,
+    "cpm": 18.9901,
+    "messagingConversationsStarted": 0,
+    "costPerMessagingConversationStarted": null
+   },
+   "adsets": [
+    {
+     "adsetId": "1202640000000101",
+     "adsetName": "Broad 25-60",
+     "owner": "merchant",
+     "status": "ACTIVE",
+     "effectiveStatus": "ACTIVE",
+     "startTime": "1969-12-31T15:59:59-0800",
+     "optimizationGoal": "OFFSITE_CONVERSIONS",
+     "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
+     "attributionSpec": [
+      {
+       "eventType": "CLICK_THROUGH",
+       "windowDays": 7
+      },
+      {
+       "eventType": "VIEW_THROUGH",
+       "windowDays": 1
+      }
+     ],
+     "lastSignificantEditAt": "2026-05-12T14:00:00.000Z",
+     "learningPhase": {
+      "status": "SUCCESS",
+      "learningWindowEndsAt": "2026-05-19T14:00:00.000Z"
+     },
+     "adCount": 9,
+     "moshiAdCount": 0,
+     "metrics": {
+      "reach": 1444472,
+      "impressions": 10074299,
+      "spend": 191312.08,
+      "roas": 2.5972,
+      "purchases": 8014,
+      "purchaseValue": 496876,
+      "cpm": 18.9901,
+      "messagingConversationsStarted": 0,
+      "costPerMessagingConversationStarted": null
+     },
+     "adsOverMaxAds": 9,
+     "ads": []
+    }
+   ]
+  },
+  {
+   "campaignId": "1202640000000114",
+   "campaignName": "Prospecting | Lookalike Pet Parents",
+   "owner": "merchant",
+   "status": "ACTIVE",
+   "objective": "OUTCOME_SALES",
+   "startTime": "2026-08-04T09:15:00-0500",
+   "dailyBudget": "198000",
+   "adsetCount": 1,
+   "adCount": 10,
+   "moshiAdCount": 0,
+   "metrics": {
+    "reach": 1686337,
+    "impressions": 7879271,
+    "spend": 110310.79,
+    "roas": 1.4255,
+    "purchases": 2713,
+    "purchaseValue": 157245.86,
+    "cpm": 14.0001,
+    "messagingConversationsStarted": 0,
+    "costPerMessagingConversationStarted": null
+   },
+   "adsets": [
+    {
+     "adsetId": "1202640000000113",
+     "adsetName": "Lookalike 1% Pet Parents",
+     "owner": "merchant",
+     "status": "ACTIVE",
+     "effectiveStatus": "ACTIVE",
+     "startTime": "2026-08-04T09:15:00-0500",
+     "optimizationGoal": "OFFSITE_CONVERSIONS",
+     "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
+     "attributionSpec": [
+      {
+       "eventType": "CLICK_THROUGH",
+       "windowDays": 7
+      },
+      {
+       "eventType": "VIEW_THROUGH",
+       "windowDays": 1
+      }
+     ],
+     "lastSignificantEditAt": "2026-08-04T14:00:00.000Z",
+     "learningPhase": {
+      "status": "SUCCESS",
+      "learningWindowEndsAt": "2026-08-11T14:00:00.000Z"
+     },
+     "adCount": 10,
+     "moshiAdCount": 0,
+     "metrics": {
+      "reach": 1686337,
+      "impressions": 7879271,
+      "spend": 110310.79,
+      "roas": 1.4255,
+      "purchases": 2713,
+      "purchaseValue": 157245.86,
+      "cpm": 14.0001,
+      "messagingConversationsStarted": 0,
+      "costPerMessagingConversationStarted": null
+     },
+     "adsOverMaxAds": 10,
+     "ads": []
+    }
+   ]
+  },
+  {
+   "campaignId": "1202640000000125",
+   "campaignName": "Launch | Raincoat Season",
+   "owner": "merchant",
+   "status": "ACTIVE",
+   "objective": "OUTCOME_SALES",
+   "startTime": "2026-07-21T09:15:00-0500",
+   "adsetCount": 2,
+   "adCount": 8,
+   "moshiAdCount": 0,
+   "metrics": {
+    "reach": 1405361,
+    "impressions": 7962300,
+    "spend": 103510.63,
+    "roas": 1.3249,
+    "purchases": 2239,
+    "purchaseValue": 137137.73,
+    "cpm": 13.0001,
+    "messagingConversationsStarted": 0,
+    "costPerMessagingConversationStarted": null
+   },
+   "adsets": [
+    {
+     "adsetId": "1202640000000124",
+     "adsetName": "Raincoat Lookalike",
+     "owner": "merchant",
+     "status": "ACTIVE",
+     "effectiveStatus": "ACTIVE",
+     "startTime": "2026-07-21T09:15:00-0500",
+     "optimizationGoal": "OFFSITE_CONVERSIONS",
+     "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
+     "dailyBudget": "70000",
+     "attributionSpec": [
+      {
+       "eventType": "CLICK_THROUGH",
+       "windowDays": 7
+      },
+      {
+       "eventType": "VIEW_THROUGH",
+       "windowDays": 1
+      }
+     ],
+     "lastSignificantEditAt": "2026-07-21T14:00:00.000Z",
+     "learningPhase": {
+      "status": "SUCCESS",
+      "learningWindowEndsAt": "2026-07-28T14:00:00.000Z"
+     },
+     "adCount": 4,
+     "moshiAdCount": 0,
+     "metrics": {
+      "reach": 740618,
+      "impressions": 3985060,
+      "spend": 51806.17,
+      "roas": 1.3038,
+      "purchases": 1104,
+      "purchaseValue": 67547.29,
+      "cpm": 13.0001,
+      "messagingConversationsStarted": 0,
+      "costPerMessagingConversationStarted": null
+     },
+     "adsOverMaxAds": 4,
+     "ads": []
+    },
+    {
+     "adsetId": "1202640000000119",
+     "adsetName": "Raincoat Interests",
+     "owner": "merchant",
+     "status": "ACTIVE",
+     "effectiveStatus": "ACTIVE",
+     "startTime": "2026-07-21T09:15:00-0500",
+     "optimizationGoal": "OFFSITE_CONVERSIONS",
+     "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
+     "dailyBudget": "70000",
+     "attributionSpec": [
+      {
+       "eventType": "CLICK_THROUGH",
+       "windowDays": 7
+      },
+      {
+       "eventType": "VIEW_THROUGH",
+       "windowDays": 1
+      }
+     ],
+     "lastSignificantEditAt": "2026-07-21T14:00:00.000Z",
+     "learningPhase": {
+      "status": "SUCCESS",
+      "learningWindowEndsAt": "2026-07-28T14:00:00.000Z"
+     },
+     "adCount": 4,
+     "moshiAdCount": 0,
+     "metrics": {
+      "reach": 738709,
+      "impressions": 3977240,
+      "spend": 51704.46,
+      "roas": 1.3459,
+      "purchases": 1135,
+      "purchaseValue": 69590.44,
+      "cpm": 13.0001,
+      "messagingConversationsStarted": 0,
+      "costPerMessagingConversationStarted": null
+     },
+     "adsOverMaxAds": 4,
+     "ads": []
+    }
+   ]
+  }
+ ]
+}

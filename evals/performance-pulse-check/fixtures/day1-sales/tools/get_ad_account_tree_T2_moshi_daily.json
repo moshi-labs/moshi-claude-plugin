@@ -1,0 +1,241 @@
+{
+ "organization": {
+  "id": "e5538f29-b025-5059-b90f-068fac6cb77e",
+  "name": "Marlowe & Pine Candle Co."
+ },
+ "account": {
+  "currency": "USD",
+  "timezone": "America/Los_Angeles"
+ },
+ "window": {
+  "dateFrom": "2026-09-07",
+  "dateTo": "2026-10-06",
+  "days": 30,
+  "granularity": "daily",
+  "note": "Inclusive: every day from dateFrom through dateTo, as Meta's insight days in the ad account's timezone."
+ },
+ "source": "Moshi's synced copy of the organization's Meta ad account (every campaign, Moshi-created and the merchant's own), refreshed about every 6 hours.",
+ "flags": [],
+ "counts": {
+  "campaigns": 1,
+  "adsets": 1,
+  "ads": 3,
+  "adsListed": 3,
+  "adsOverMaxAds": 0,
+  "omittedForNoDelivery": {
+   "campaigns": 0,
+   "adsets": 0,
+   "ads": 0
+  },
+  "dailyRows": 3
+ },
+ "campaigns": [
+  {
+   "campaignId": "1202620000000005",
+   "campaignName": "Moshi | Sales | Marlowe Candles",
+   "owner": "moshi",
+   "status": "ACTIVE",
+   "objective": "OUTCOME_SALES",
+   "startTime": "2026-10-06T09:15:00-0700",
+   "dailyBudget": "30000",
+   "adsetCount": 1,
+   "adCount": 3,
+   "moshiAdCount": 3,
+   "metrics": {
+    "reach": 7817,
+    "impressions": 10423,
+    "spend": 153.83,
+    "roas": 0.2958,
+    "purchases": 2,
+    "purchaseValue": 45.5,
+    "cpm": 14.7587,
+    "messagingConversationsStarted": 0,
+    "costPerMessagingConversationStarted": null
+   },
+   "adsets": [
+    {
+     "adsetId": "1202620000000004",
+     "adsetName": "Moshi | Sales | Broad US",
+     "owner": "moshi",
+     "status": "ACTIVE",
+     "effectiveStatus": "ACTIVE",
+     "startTime": "2026-10-06T09:15:00-0700",
+     "optimizationGoal": "OFFSITE_CONVERSIONS",
+     "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
+     "attributionSpec": [
+      {
+       "eventType": "CLICK_THROUGH",
+       "windowDays": 7
+      },
+      {
+       "eventType": "VIEW_THROUGH",
+       "windowDays": 1
+      }
+     ],
+     "lastSignificantEditAt": "2026-10-06T16:00:00.000Z",
+     "learningPhase": {
+      "status": "LEARNING",
+      "conversions": 2,
+      "learningWindowEndsAt": "2026-10-13T16:00:00.000Z"
+     },
+     "adCount": 3,
+     "moshiAdCount": 3,
+     "metrics": {
+      "reach": 7817,
+      "impressions": 10423,
+      "spend": 153.83,
+      "roas": 0.2958,
+      "purchases": 2,
+      "purchaseValue": 45.5,
+      "cpm": 14.7587,
+      "messagingConversationsStarted": 0,
+      "costPerMessagingConversationStarted": null
+     },
+     "ads": [
+      {
+       "adId": "1202620000000001",
+       "adName": "Moshi - Cedar Smoke Unboxing",
+       "owner": "moshi",
+       "moshiFlowId": "6ec55f1b-ec28-5d9c-be10-8ac6fe6b9dc2",
+       "status": "ACTIVE",
+       "effectiveStatus": "ACTIVE",
+       "creativeType": "video",
+       "ctaType": "SHOP_NOW",
+       "metrics": {
+        "reach": 4328,
+        "impressions": 5194,
+        "spend": 73.75,
+        "roas": 0.3322,
+        "purchases": 1,
+        "purchaseValue": 24.5,
+        "cpm": 14.1991,
+        "messagingConversationsStarted": 0,
+        "costPerMessagingConversationStarted": null
+       },
+       "funnel": {
+        "clicks": 173,
+        "linkClicks": 128,
+        "ctr": 3.3308,
+        "landingPageViews": 102,
+        "addToCart": 3,
+        "initiateCheckout": 2,
+        "leads": 0,
+        "videoViews": 1091,
+        "postEngagement": 194
+       },
+       "daily": [
+        {
+         "date": "2026-10-06",
+         "reach": 4328,
+         "impressions": 5194,
+         "spend": 73.75,
+         "roas": 0.3322,
+         "purchases": 1,
+         "purchaseValue": 24.5,
+         "cpm": 14.1991,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 128
+        }
+       ]
+      },
+      {
+       "adId": "1202620000000002",
+       "adName": "Moshi - Burn Test Close-up",
+       "owner": "moshi",
+       "moshiFlowId": "7cb47a43-acf3-5dab-bca5-8b164473fe07",
+       "status": "ACTIVE",
+       "effectiveStatus": "ACTIVE",
+       "creativeType": "video",
+       "ctaType": "SHOP_NOW",
+       "metrics": {
+        "reach": 3641,
+        "impressions": 4369,
+        "spend": 64.67,
+        "roas": 0.3247,
+        "purchases": 1,
+        "purchaseValue": 21,
+        "cpm": 14.802,
+        "messagingConversationsStarted": 0,
+        "costPerMessagingConversationStarted": null
+       },
+       "funnel": {
+        "clicks": 131,
+        "linkClicks": 97,
+        "ctr": 2.9984,
+        "landingPageViews": 78,
+        "addToCart": 3,
+        "initiateCheckout": 2,
+        "leads": 0,
+        "videoViews": 917,
+        "postEngagement": 148
+       },
+       "daily": [
+        {
+         "date": "2026-10-06",
+         "reach": 3641,
+         "impressions": 4369,
+         "spend": 64.67,
+         "roas": 0.3247,
+         "purchases": 1,
+         "purchaseValue": 21,
+         "cpm": 14.802,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 97
+        }
+       ]
+      },
+      {
+       "adId": "1202620000000003",
+       "adName": "Moshi - Gift Bundle Chat",
+       "owner": "moshi",
+       "moshiFlowId": "9c89b471-8302-5bd8-9309-d3ed2e2dbe53",
+       "status": "ACTIVE",
+       "effectiveStatus": "ACTIVE",
+       "creativeType": "image",
+       "ctaType": "SHOP_NOW",
+       "metrics": {
+        "reach": 717,
+        "impressions": 860,
+        "spend": 15.41,
+        "roas": 0,
+        "purchases": 0,
+        "purchaseValue": 0,
+        "cpm": 17.9186,
+        "messagingConversationsStarted": 0,
+        "costPerMessagingConversationStarted": null
+       },
+       "funnel": {
+        "clicks": 14,
+        "linkClicks": 10,
+        "ctr": 1.6279,
+        "landingPageViews": 8,
+        "addToCart": 0,
+        "initiateCheckout": 0,
+        "leads": 0,
+        "videoViews": 0,
+        "postEngagement": 17
+       },
+       "daily": [
+        {
+         "date": "2026-10-06",
+         "reach": 717,
+         "impressions": 860,
+         "spend": 15.41,
+         "roas": 0,
+         "purchases": 0,
+         "purchaseValue": 0,
+         "cpm": 17.9186,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 10
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

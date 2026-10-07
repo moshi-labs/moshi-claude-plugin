@@ -1,4 +1,5 @@
 {
   "dayConvention": "Day numbering: the first day with impressions is day 1, and the first N days are days 1 to N. Stage bands: 1-3, 4-7, 8-14, 15-30, 31+. A learning reset restarts the count at day 1 on the reset date. All in the account timezone.",
-  "note": "Moshi launched 2026-09-16, so today is day 21. The Sales ad set reset on 2026-09-24 (its day 9), so it is on day 13 since the reset."
+  "note": "Moshi launched 2026-09-16, so today is day 21. The Sales ad set reset on 2026-09-24 (its day 9), so it is on day 13 since the reset.",
+  "dataSource": "The tree is get_ad_account_tree (references/meta-reads.md). The Sales ad set's lastSignificantEditAt is 2026-09-24T14:00Z (Sep 24 in America/Chicago): a learning reset, listed as a significant_edit change. The tree does not say what the edit was (the old fixture's budget raise), and there is no anomaly scan, so no budget claim and no audience-overlap issue. Daily rows carry reach; the template's frequency is impressions / reach (top ad 3.90 on Oct 6). T1, T3 and T4 carry the expected ads_over_max_ads flag, which stays out of flags[]."
 }

@@ -1,0 +1,297 @@
+{
+ "organization": {
+  "id": "208af985-8ab9-503b-943c-60052b3c7439",
+  "name": "Ridgeline Trail Gear"
+ },
+ "account": {
+  "currency": "USD",
+  "timezone": "America/Denver"
+ },
+ "window": {
+  "dateFrom": "2026-09-07",
+  "dateTo": "2026-10-06",
+  "days": 30,
+  "granularity": "daily",
+  "note": "Inclusive: every day from dateFrom through dateTo, as Meta's insight days in the ad account's timezone."
+ },
+ "source": "Moshi's synced copy of the organization's Meta ad account (every campaign, Moshi-created and the merchant's own), refreshed about every 6 hours.",
+ "flags": [],
+ "counts": {
+  "campaigns": 1,
+  "adsets": 1,
+  "ads": 2,
+  "adsListed": 2,
+  "adsOverMaxAds": 0,
+  "omittedForNoDelivery": {
+   "campaigns": 0,
+   "adsets": 0,
+   "ads": 0
+  },
+  "dailyRows": 10
+ },
+ "campaigns": [
+  {
+   "campaignId": "1202660000000129",
+   "campaignName": "Moshi | Sales | Ridgeline Trail Gear",
+   "owner": "moshi",
+   "status": "ACTIVE",
+   "objective": "OUTCOME_SALES",
+   "startTime": "2026-10-02T09:15:00-0600",
+   "dailyBudget": "25000",
+   "adsetCount": 1,
+   "adCount": 2,
+   "moshiAdCount": 2,
+   "metrics": {
+    "reach": 57859,
+    "impressions": 94456,
+    "spend": 1166.14,
+    "roas": 0,
+    "purchases": 0,
+    "purchaseValue": 0,
+    "cpm": 12.3459,
+    "messagingConversationsStarted": 423,
+    "costPerMessagingConversationStarted": 2.7568
+   },
+   "adsets": [
+    {
+     "adsetId": "1202660000000128",
+     "adsetName": "Moshi | Chat | Broad US",
+     "owner": "moshi",
+     "status": "ACTIVE",
+     "effectiveStatus": "ACTIVE",
+     "startTime": "2026-10-02T09:15:00-0600",
+     "optimizationGoal": "CONVERSATIONS",
+     "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
+     "attributionSpec": [
+      {
+       "eventType": "CLICK_THROUGH",
+       "windowDays": 7
+      },
+      {
+       "eventType": "VIEW_THROUGH",
+       "windowDays": 1
+      }
+     ],
+     "lastSignificantEditAt": "2026-10-02T15:00:00.000Z",
+     "learningPhase": {
+      "status": "SUCCESS",
+      "learningWindowEndsAt": "2026-10-09T15:00:00.000Z"
+     },
+     "adCount": 2,
+     "moshiAdCount": 2,
+     "metrics": {
+      "reach": 57859,
+      "impressions": 94456,
+      "spend": 1166.14,
+      "roas": 0,
+      "purchases": 0,
+      "purchaseValue": 0,
+      "cpm": 12.3459,
+      "messagingConversationsStarted": 423,
+      "costPerMessagingConversationStarted": 2.7568
+     },
+     "ads": [
+      {
+       "adId": "1202660000000127",
+       "adName": "Moshi - Boot Break-in Q",
+       "owner": "moshi",
+       "moshiFlowId": "e45862ec-d4aa-5170-aa29-ef9e46210b3e",
+       "status": "ACTIVE",
+       "effectiveStatus": "ACTIVE",
+       "creativeType": "image",
+       "ctaType": "MESSAGE_PAGE",
+       "metrics": {
+        "reach": 31597,
+        "impressions": 46340,
+        "spend": 583.92,
+        "roas": 0,
+        "purchases": 0,
+        "purchaseValue": 0,
+        "cpm": 12.6008,
+        "messagingConversationsStarted": 181,
+        "costPerMessagingConversationStarted": 3.2261
+       },
+       "funnel": {
+        "clicks": 1410,
+        "linkClicks": 1044,
+        "ctr": 3.0427,
+        "landingPageViews": 0,
+        "addToCart": 0,
+        "initiateCheckout": 0,
+        "leads": 0,
+        "videoViews": 0,
+        "postEngagement": 1595
+       },
+       "daily": [
+        {
+         "date": "2026-10-02",
+         "reach": 9623,
+         "impressions": 10585,
+         "spend": 133.37,
+         "roas": 0,
+         "purchases": 0,
+         "purchaseValue": 0,
+         "cpm": 12.5999,
+         "messagingConversationsStarted": 41,
+         "costPerMessagingConversationStarted": 3.2529,
+         "linkClicks": 233
+        },
+        {
+         "date": "2026-10-03",
+         "reach": 8248,
+         "impressions": 9898,
+         "spend": 124.72,
+         "roas": 0,
+         "purchases": 0,
+         "purchaseValue": 0,
+         "cpm": 12.6005,
+         "messagingConversationsStarted": 40,
+         "costPerMessagingConversationStarted": 3.118,
+         "linkClicks": 238
+        },
+        {
+         "date": "2026-10-04",
+         "reach": 8078,
+         "impressions": 10502,
+         "spend": 132.34,
+         "roas": 0,
+         "purchases": 0,
+         "purchaseValue": 0,
+         "cpm": 12.6014,
+         "messagingConversationsStarted": 44,
+         "costPerMessagingConversationStarted": 3.0077,
+         "linkClicks": 233
+        },
+        {
+         "date": "2026-10-05",
+         "reach": 6999,
+         "impressions": 9799,
+         "spend": 123.48,
+         "roas": 0,
+         "purchases": 0,
+         "purchaseValue": 0,
+         "cpm": 12.6013,
+         "messagingConversationsStarted": 36,
+         "costPerMessagingConversationStarted": 3.43,
+         "linkClicks": 218
+        },
+        {
+         "date": "2026-10-06",
+         "reach": 3704,
+         "impressions": 5556,
+         "spend": 70.01,
+         "roas": 0,
+         "purchases": 0,
+         "purchaseValue": 0,
+         "cpm": 12.6008,
+         "messagingConversationsStarted": 20,
+         "costPerMessagingConversationStarted": 3.5005,
+         "linkClicks": 122
+        }
+       ]
+      },
+      {
+       "adId": "1202660000000126",
+       "adName": "Moshi - Pack Fit Question",
+       "owner": "moshi",
+       "moshiFlowId": "8771f670-2f66-5813-91aa-cba7bbed6162",
+       "status": "ACTIVE",
+       "effectiveStatus": "ACTIVE",
+       "creativeType": "image",
+       "ctaType": "MESSAGE_PAGE",
+       "metrics": {
+        "reach": 32691,
+        "impressions": 48116,
+        "spend": 582.22,
+        "roas": 0,
+        "purchases": 0,
+        "purchaseValue": 0,
+        "cpm": 12.1003,
+        "messagingConversationsStarted": 242,
+        "costPerMessagingConversationStarted": 2.4059
+       },
+       "funnel": {
+        "clicks": 1675,
+        "linkClicks": 1240,
+        "ctr": 3.4812,
+        "landingPageViews": 0,
+        "addToCart": 0,
+        "initiateCheckout": 0,
+        "leads": 0,
+        "videoViews": 0,
+        "postEngagement": 1868
+       },
+       "daily": [
+        {
+         "date": "2026-10-02",
+         "reach": 9054,
+         "impressions": 9959,
+         "spend": 120.51,
+         "roas": 0,
+         "purchases": 0,
+         "purchaseValue": 0,
+         "cpm": 12.1006,
+         "messagingConversationsStarted": 46,
+         "costPerMessagingConversationStarted": 2.6198,
+         "linkClicks": 259
+        },
+        {
+         "date": "2026-10-03",
+         "reach": 8996,
+         "impressions": 10795,
+         "spend": 130.62,
+         "roas": 0,
+         "purchases": 0,
+         "purchaseValue": 0,
+         "cpm": 12.1,
+         "messagingConversationsStarted": 52,
+         "costPerMessagingConversationStarted": 2.5119,
+         "linkClicks": 273
+        },
+        {
+         "date": "2026-10-04",
+         "reach": 8421,
+         "impressions": 10947,
+         "spend": 132.46,
+         "roas": 0,
+         "purchases": 0,
+         "purchaseValue": 0,
+         "cpm": 12.1001,
+         "messagingConversationsStarted": 59,
+         "costPerMessagingConversationStarted": 2.2451,
+         "linkClicks": 282
+        },
+        {
+         "date": "2026-10-05",
+         "reach": 7618,
+         "impressions": 10665,
+         "spend": 129.05,
+         "roas": 0,
+         "purchases": 0,
+         "purchaseValue": 0,
+         "cpm": 12.1003,
+         "messagingConversationsStarted": 54,
+         "costPerMessagingConversationStarted": 2.3898,
+         "linkClicks": 279
+        },
+        {
+         "date": "2026-10-06",
+         "reach": 3833,
+         "impressions": 5750,
+         "spend": 69.58,
+         "roas": 0,
+         "purchases": 0,
+         "purchaseValue": 0,
+         "cpm": 12.1009,
+         "messagingConversationsStarted": 31,
+         "costPerMessagingConversationStarted": 2.2445,
+         "linkClicks": 147
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

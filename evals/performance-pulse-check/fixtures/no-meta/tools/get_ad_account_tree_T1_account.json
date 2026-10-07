@@ -1,0 +1,37 @@
+{
+ "organization": {
+  "id": "92715857-f38e-5256-85e5-63ae81ad29b3",
+  "name": "Copperline Coffee Roasters"
+ },
+ "account": {
+  "currency": null,
+  "timezone": null
+ },
+ "window": {
+  "dateFrom": "2026-09-07",
+  "dateTo": "2026-10-06",
+  "days": 30,
+  "granularity": "total",
+  "note": "Inclusive: every day from dateFrom through dateTo, as Meta's insight days in the ad account's timezone."
+ },
+ "source": "Moshi's synced copy of the organization's Meta ad account (every campaign, Moshi-created and the merchant's own), refreshed about every 6 hours.",
+ "flags": [
+  {
+   "code": "no_synced_ads",
+   "message": "No Meta ads are synced for this organization: either no Meta ad account is connected or nothing has synced yet. This is NO DATA, not zero performance."
+  }
+ ],
+ "counts": {
+  "campaigns": 0,
+  "adsets": 0,
+  "ads": 0,
+  "adsListed": 0,
+  "adsOverMaxAds": 0,
+  "omittedForNoDelivery": {
+   "campaigns": 0,
+   "adsets": 0,
+   "ads": 0
+  }
+ },
+ "campaigns": []
+}

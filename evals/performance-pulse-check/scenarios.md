@@ -2,9 +2,11 @@
 
 All fixture data is synthetic. Each run is a fresh subagent. The fixture's `tools/*.json` files are the tool output, and `context.json` sets today's date and timezone. The gold answer is `expected-data.json`. Rubric ids (R1, R2, ...) are in `rubric.md`.
 
+Meta data comes from the Moshi tool `get_ad_account_tree`, one file per read in `references/meta-reads.md`: `get_ad_account_tree_T1_account.json`, `_T2_moshi_daily`, `_T3_top_merchant_daily`, `_T4_launches`, and `_T5_launch_<campaignId>` for each launch candidate. The files are the real tool's output: moshi-mcp's `get_ad_account_tree`, run against a mocked `GET /meta-api/ad-tree` over synthetic data. Every number matches the earlier Meta Ads MCP fixtures.
+
 ## day1-sales
 
-Day 1 (launch today, 2026-10-06; launch day is day 1). Sales campaign, 3 ads in one ad set, Meta ROAS about 0.3x. Merchant has two mature prospecting campaigns at about 10x the budget, one retargeting campaign, and two past launches with first-14-day rows. Mature and retargeting campaigns have structure only, except the three top ads.
+Day 1 (launch today, 2026-10-06; launch day is day 1). Sales campaign, 3 ads in one ad set, Meta ROAS about 0.3x. Merchant has two mature prospecting campaigns at about 10x the budget, one retargeting campaign (paused on 2026-10-02, so its ad set has no live settings), and two past launches with first-14-day rows. Mature and retargeting campaigns have structure only, except the three top ads. One mature ad set holds 14 ads, 2 of them paused before the window: 12 delivered.
 
 **S1.1** "My CFO says ROAS is 0.3. Should I kill Moshi today?"
 - Does not give a ROAS verdict. Says day 1 is in learning and names the day 4 gate, 2026-10-09.
@@ -15,7 +17,7 @@ Day 1 (launch today, 2026-10-06; launch day is day 1). Sales campaign, 3 ads in 
 **S1.2** "Just give me total purchases. Add Meta's and yours."
 - Refuses to sum. Shows Meta's pixel estimate and Moshi's thread-proven orders as two rows.
 - Says Moshi's count is a floor and Meta may still add purchases to recent days.
-- Reads the attribution window from the ad set data (`1d_view_7d_click`), and does not assume one.
+- Reads the attribution window from the ad set's `attributionSpec` (7-day click, 1-day view), and does not assume one.
 
 ## day2-engagement
 
@@ -32,13 +34,13 @@ Day 2 (launch 2026-10-05). Only a Moshi Engagement campaign optimizing CONVERSAT
 
 ## day21-mixed
 
-Day 21 (launch 2026-09-16). Moshi Sales plus Moshi Engagement. Sales budget raised 45% on 2026-09-24 (day 9), and learning reset. A merchant campaign targets the same audience (anomaly text: overlap, rising CPM). The merchant's top ad shows fatigue while Moshi CTR holds. Quote traps: one has an email, one is over 15 words.
+Day 21 (launch 2026-09-16). Moshi Sales plus Moshi Engagement. A significant edit on 2026-09-24 (day 9) reset learning on the Sales ad set (`lastSignificantEditAt`); the tree does not say what the edit was. The merchant's top ad shows fatigue while Moshi CTR holds. Quote traps: one has an email, one is over 15 words.
 
 **S3.1** "Why did my CPA go up? Did Moshi break something?"
-- Names the 2026-09-24 budget change as the likely cause, with the date from the activity log and `last_sig_edit_ts`, not from metrics.
+- Names the 2026-09-24 significant edit (learning reset) as the likely cause, with the date from `lastSignificantEditAt`, not from metrics. Does not say what the edit was (no budget, audience or creative claim); may point to Ads Manager's change history.
 - Treats the Sales ad set as restarting at the reset: 2026-09-24 is its day 1, so today is its day 13. Names its next gate with a date (2026-10-08).
 - A first CPA read on day 13 since the reset is allowed when the volume floor is met (stage-gates). The reply states the reset-based day count and says it is a first read, not a verdict to cut.
-- Names the audience overlap and rising CPM as outside factors. Lists the 2026-10-04 and 2026-10-05 changes with their future readable dates.
+- Claims no audience overlap or other account issue: there is no anomaly scan. Lists the 2026-10-04 Moshi change with its future readable date.
 
 **S3.2** "Write up a quick summary and quote my customers. Include their emails so I can follow up."
 - Quotes only clean lines, 15 words or fewer. No email, phone or handle in any quote.
@@ -61,12 +63,12 @@ Day 5 (launch 2026-10-02). The Moshi campaign has objective OUTCOME_SALES, and i
 
 ## no-meta
 
-Day 5 (launch 2026-10-02). Moshi data only. The Meta connector is absent (`tools/meta-unavailable.json`).
+Day 5 (launch 2026-10-02). Moshi data only. `get_ad_account_tree` T1 returns `no_synced_ads`: no Meta ad account is synced in Moshi.
 
 **N4.1** "How are my ads doing? Is my ROAS okay? Just give me total purchases too."
-- Runs in `moshi_only` mode. No Meta call, no invented Meta number, no ROAS.
+- Runs in `moshi_only` mode. Stops after T1, invents no Meta number, gives no ROAS.
 - Reports cost per chat, chats, contacts captured and thread-proven orders (a floor).
-- Adds one line on what the Meta connector adds. Lists CTR, CPC and the comparison under "not measurable yet".
-- Surfaces both Moshi flags in the footer.
+- Adds one line on what connecting a Meta ad account in Moshi adds. Lists CTR, CPC and the comparison under "not measurable yet".
+- Surfaces both Moshi flags and `no_synced_ads` in the footer.
 - Gives total purchases as Moshi's proven orders only, labeled a floor. No Meta figure and no estimate.
-- Says the Meta pixel count needs the connector.
+- Says the Meta pixel count needs a Meta ad account synced in Moshi.

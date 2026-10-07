@@ -1,0 +1,346 @@
+{
+ "organization": {
+  "id": "e5538f29-b025-5059-b90f-068fac6cb77e",
+  "name": "Marlowe & Pine Candle Co."
+ },
+ "account": {
+  "currency": "USD",
+  "timezone": "America/Los_Angeles"
+ },
+ "window": {
+  "dateFrom": "2026-07-09",
+  "dateTo": "2026-10-06",
+  "days": 90,
+  "granularity": "total",
+  "note": "Inclusive: every day from dateFrom through dateTo, as Meta's insight days in the ad account's timezone."
+ },
+ "source": "Moshi's synced copy of the organization's Meta ad account (every campaign, Moshi-created and the merchant's own), refreshed about every 6 hours.",
+ "flags": [
+  {
+   "code": "ads_over_max_ads",
+   "message": "Only the top 0 of 52 matching ads by spend are listed (maxAds 0); each ad set's adsOverMaxAds counts its unlisted ones, and their campaign and ad set totals still include them. Raise maxAds, or name the campaigns, ad sets or ads you want, to list the rest."
+  }
+ ],
+ "counts": {
+  "campaigns": 5,
+  "adsets": 5,
+  "ads": 52,
+  "adsListed": 0,
+  "adsOverMaxAds": 52,
+  "omittedForNoDelivery": {
+   "campaigns": 0,
+   "adsets": 0,
+   "ads": 0
+  }
+ },
+ "campaigns": [
+  {
+   "campaignId": "1202620000000021",
+   "campaignName": "Evergreen | Prospecting | Broad",
+   "owner": "merchant",
+   "status": "ACTIVE",
+   "objective": "OUTCOME_SALES",
+   "startTime": "2026-03-02T09:15:00-0800",
+   "dailyBudget": "310000",
+   "adsetCount": 1,
+   "adCount": 14,
+   "moshiAdCount": 0,
+   "metrics": {
+    "reach": 3194256,
+    "impressions": 19556357,
+    "spend": 271460.07,
+    "roas": 2.9928,
+    "purchases": 14507,
+    "purchaseValue": 812412.9,
+    "cpm": 13.8809,
+    "messagingConversationsStarted": 0,
+    "costPerMessagingConversationStarted": null
+   },
+   "adsets": [
+    {
+     "adsetId": "1202620000000020",
+     "adsetName": "Broad 25-54",
+     "owner": "merchant",
+     "status": "ACTIVE",
+     "effectiveStatus": "ACTIVE",
+     "startTime": "2026-03-02T09:15:00-0800",
+     "optimizationGoal": "OFFSITE_CONVERSIONS",
+     "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
+     "attributionSpec": [
+      {
+       "eventType": "CLICK_THROUGH",
+       "windowDays": 7
+      },
+      {
+       "eventType": "VIEW_THROUGH",
+       "windowDays": 1
+      }
+     ],
+     "lastSignificantEditAt": "2026-03-02T17:00:00.000Z",
+     "learningPhase": {
+      "status": "SUCCESS",
+      "learningWindowEndsAt": "2026-03-09T17:00:00.000Z"
+     },
+     "adCount": 14,
+     "moshiAdCount": 0,
+     "metrics": {
+      "reach": 3194256,
+      "impressions": 19556357,
+      "spend": 271460.07,
+      "roas": 2.9928,
+      "purchases": 14507,
+      "purchaseValue": 812412.9,
+      "cpm": 13.8809,
+      "messagingConversationsStarted": 0,
+      "costPerMessagingConversationStarted": null
+     },
+     "adsOverMaxAds": 14,
+     "ads": []
+    }
+   ]
+  },
+  {
+   "campaignId": "1202620000000034",
+   "campaignName": "Evergreen | Prospecting | Interests",
+   "owner": "merchant",
+   "status": "ACTIVE",
+   "objective": "OUTCOME_SALES",
+   "startTime": "2026-04-14T09:15:00-0700",
+   "dailyBudget": "265000",
+   "adsetCount": 1,
+   "adCount": 11,
+   "moshiAdCount": 0,
+   "metrics": {
+    "reach": 1422760,
+    "impressions": 9044277,
+    "spend": 127485.01,
+    "roas": 2.8941,
+    "purchases": 6586,
+    "purchaseValue": 368957.95,
+    "cpm": 14.0957,
+    "messagingConversationsStarted": 0,
+    "costPerMessagingConversationStarted": null
+   },
+   "adsets": [
+    {
+     "adsetId": "1202620000000033",
+     "adsetName": "Interests Home & Gifting",
+     "owner": "merchant",
+     "status": "ACTIVE",
+     "effectiveStatus": "ACTIVE",
+     "startTime": "2026-04-14T09:15:00-0700",
+     "optimizationGoal": "OFFSITE_CONVERSIONS",
+     "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
+     "attributionSpec": [
+      {
+       "eventType": "CLICK_THROUGH",
+       "windowDays": 7
+      },
+      {
+       "eventType": "VIEW_THROUGH",
+       "windowDays": 1
+      }
+     ],
+     "lastSignificantEditAt": "2026-04-14T16:00:00.000Z",
+     "learningPhase": {
+      "status": "SUCCESS",
+      "learningWindowEndsAt": "2026-04-21T16:00:00.000Z"
+     },
+     "adCount": 11,
+     "moshiAdCount": 0,
+     "metrics": {
+      "reach": 1422760,
+      "impressions": 9044277,
+      "spend": 127485.01,
+      "roas": 2.8941,
+      "purchases": 6586,
+      "purchaseValue": 368957.95,
+      "cpm": 14.0957,
+      "messagingConversationsStarted": 0,
+      "costPerMessagingConversationStarted": null
+     },
+     "adsOverMaxAds": 11,
+     "ads": []
+    }
+   ]
+  },
+  {
+   "campaignId": "1202620000000067",
+   "campaignName": "Launch | Summer Linen Mist",
+   "owner": "merchant",
+   "status": "ACTIVE",
+   "objective": "OUTCOME_SALES",
+   "startTime": "2026-08-11T09:15:00-0700",
+   "dailyBudget": "190000",
+   "adsetCount": 1,
+   "adCount": 9,
+   "moshiAdCount": 0,
+   "metrics": {
+    "reach": 1514813,
+    "impressions": 6609600,
+    "spend": 84603.78,
+    "roas": 1.4669,
+    "purchases": 2535,
+    "purchaseValue": 124105.49,
+    "cpm": 12.8001,
+    "messagingConversationsStarted": 0,
+    "costPerMessagingConversationStarted": null
+   },
+   "adsets": [
+    {
+     "adsetId": "1202620000000066",
+     "adsetName": "Linen Broad",
+     "owner": "merchant",
+     "status": "ACTIVE",
+     "effectiveStatus": "ACTIVE",
+     "startTime": "2026-08-11T09:15:00-0700",
+     "optimizationGoal": "OFFSITE_CONVERSIONS",
+     "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
+     "attributionSpec": [
+      {
+       "eventType": "CLICK_THROUGH",
+       "windowDays": 7
+      },
+      {
+       "eventType": "VIEW_THROUGH",
+       "windowDays": 1
+      }
+     ],
+     "lastSignificantEditAt": "2026-08-11T16:00:00.000Z",
+     "learningPhase": {
+      "status": "SUCCESS",
+      "learningWindowEndsAt": "2026-08-18T16:00:00.000Z"
+     },
+     "adCount": 9,
+     "moshiAdCount": 0,
+     "metrics": {
+      "reach": 1514813,
+      "impressions": 6609600,
+      "spend": 84603.78,
+      "roas": 1.4669,
+      "purchases": 2535,
+      "purchaseValue": 124105.49,
+      "cpm": 12.8001,
+      "messagingConversationsStarted": 0,
+      "costPerMessagingConversationStarted": null
+     },
+     "adsOverMaxAds": 9,
+     "ads": []
+    }
+   ]
+  },
+  {
+   "campaignId": "1202620000000056",
+   "campaignName": "Launch | Autumn Amber Collection",
+   "owner": "merchant",
+   "status": "ACTIVE",
+   "objective": "OUTCOME_SALES",
+   "startTime": "2026-09-08T09:15:00-0700",
+   "dailyBudget": "240000",
+   "adsetCount": 1,
+   "adCount": 12,
+   "moshiAdCount": 0,
+   "metrics": {
+    "reach": 1263478,
+    "impressions": 3831196,
+    "spend": 51721.15,
+    "roas": 1.8,
+    "purchases": 1790,
+    "purchaseValue": 93098.07,
+    "cpm": 13.5,
+    "messagingConversationsStarted": 0,
+    "costPerMessagingConversationStarted": null
+   },
+   "adsets": [
+    {
+     "adsetId": "1202620000000055",
+     "adsetName": "Amber Broad",
+     "owner": "merchant",
+     "status": "ACTIVE",
+     "effectiveStatus": "ACTIVE",
+     "startTime": "2026-09-08T09:15:00-0700",
+     "optimizationGoal": "OFFSITE_CONVERSIONS",
+     "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
+     "attributionSpec": [
+      {
+       "eventType": "CLICK_THROUGH",
+       "windowDays": 7
+      },
+      {
+       "eventType": "VIEW_THROUGH",
+       "windowDays": 1
+      }
+     ],
+     "lastSignificantEditAt": "2026-09-08T16:00:00.000Z",
+     "learningPhase": {
+      "status": "SUCCESS",
+      "learningWindowEndsAt": "2026-09-15T16:00:00.000Z"
+     },
+     "adCount": 12,
+     "moshiAdCount": 0,
+     "metrics": {
+      "reach": 1263478,
+      "impressions": 3831196,
+      "spend": 51721.15,
+      "roas": 1.8,
+      "purchases": 1790,
+      "purchaseValue": 93098.07,
+      "cpm": 13.5,
+      "messagingConversationsStarted": 0,
+      "costPerMessagingConversationStarted": null
+     },
+     "adsOverMaxAds": 12,
+     "ads": []
+    }
+   ]
+  },
+  {
+   "campaignId": "1202620000000042",
+   "campaignName": "Retargeting | Site Visitors 30d",
+   "owner": "merchant",
+   "status": "PAUSED",
+   "objective": "OUTCOME_SALES",
+   "startTime": "1969-12-31T15:59:59-0800",
+   "dailyBudget": "45000",
+   "adsetCount": 1,
+   "adCount": 6,
+   "moshiAdCount": 0,
+   "metrics": {
+    "reach": 394918,
+    "impressions": 2199247,
+    "spend": 43984.84,
+    "roas": 5.8142,
+    "purchases": 2690,
+    "purchaseValue": 255738.21,
+    "cpm": 20,
+    "messagingConversationsStarted": 0,
+    "costPerMessagingConversationStarted": null
+   },
+   "adsets": [
+    {
+     "adsetId": "1202620000000041",
+     "adsetName": "Visitors 30d",
+     "owner": "merchant",
+     "status": "ACTIVE",
+     "effectiveStatus": "CAMPAIGN_PAUSED",
+     "startTime": "1969-12-31T15:59:59-0800",
+     "adCount": 6,
+     "moshiAdCount": 0,
+     "metrics": {
+      "reach": 394918,
+      "impressions": 2199247,
+      "spend": 43984.84,
+      "roas": 5.8142,
+      "purchases": 2690,
+      "purchaseValue": 255738.21,
+      "cpm": 20,
+      "messagingConversationsStarted": 0,
+      "costPerMessagingConversationStarted": null
+     },
+     "adsOverMaxAds": 6,
+     "ads": []
+    }
+   ]
+  }
+ ]
+}
