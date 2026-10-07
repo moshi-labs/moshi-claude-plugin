@@ -1,0 +1,17 @@
+{
+ "_shape": "modelled-from-description",
+ "conversationId": "conv_d2_02",
+ "source": "ad",
+ "messages": [
+  {
+   "role": "shopper",
+   "text": "Is the chili mix very hot?",
+   "sentAt": "2026-10-06T10:00:00Z"
+  },
+  {
+   "role": "agent",
+   "text": "It is medium heat. The mild jar is a good start.",
+   "sentAt": "2026-10-06T10:07:00Z"
+  }
+ ]
+}

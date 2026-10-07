@@ -1,0 +1,7 @@
+<!doctype html><html><head><meta charset=utf-8><style>html,body{margin:0;background:transparent}#c{width:192px}</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie_svg.min.js"></script><script src="av.js"></script></head><body><div id=c></div>
+<script>
+const q=new URLSearchParams(location.search),m=q.get('m'),fr=+q.get('fr');
+(async()=>{const r=new Response(Uint8Array.from(atob(AV.z),c=>c.charCodeAt(0))).body.pipeThrough(new DecompressionStream('gzip'));const j=(await new Response(r).json())[m];j.assets.forEach(a=>{if(a.e)a.p='data:image/webp;base64,'+AV.i[a.p]});
+const a=lottie.loadAnimation({container:c,renderer:'svg',loop:false,autoplay:false,animationData:j});a.addEventListener('DOMLoaded',()=>{a.goToAndStop(fr,true);document.title='done'})})()
+</script></body></html>

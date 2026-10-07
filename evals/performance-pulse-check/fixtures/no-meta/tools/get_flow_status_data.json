@@ -1,0 +1,53 @@
+{
+ "_shape": "modelled-from-description",
+ "organizationName": "Copperline Coffee Roasters",
+ "currency": "USD",
+ "timezone": "America/Chicago",
+ "window": {
+  "start": "2026-10-02",
+  "end": "2026-10-06"
+ },
+ "scorecard": {
+  "chats": 187,
+  "chatsFromAds": 171,
+  "contactsCaptured": 41,
+  "productViews": 74,
+  "carts": 12,
+  "checkouts": 6,
+  "purchases": 5
+ },
+ "funnel": {
+  "chats": 187,
+  "contactsCaptured": 41,
+  "productViews": 74,
+  "carts": 12,
+  "checkouts": 6,
+  "orders": 5
+ },
+ "leads": {
+  "total": 187,
+  "hot": 14,
+  "warm": 52,
+  "cold": 121
+ },
+ "openCarts": {
+  "count": 6,
+  "valueKnown": false
+ },
+ "closer": {
+  "recoveries": 1,
+  "revenue": 36.0
+ },
+ "flags": [
+  {
+   "code": "cart_value_unknown",
+   "text": "Open cart value is unknown: carts carry no price."
+  }
+ ],
+ "transcriptsToRead": {
+  "conversationIds": [
+   "conv_nm_01",
+   "conv_nm_02"
+  ]
+ }
+}

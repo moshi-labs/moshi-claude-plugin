@@ -1,0 +1,34 @@
+{
+ "ad_accounts": [
+  {
+   "ad_account_id": "3317702284455",
+   "ad_account_name": "Marlowe & Pine Candle Co.",
+   "business_id": "7710045584455",
+   "business_name": "Marlowe & Pine",
+   "is_ads_mcp_enabled": true,
+   "account_status": "ACTIVE",
+   "is_queryable": true,
+   "has_payment_method": true,
+   "currency": "USD",
+   "min_daily_budget_cents": 100,
+   "is_ads_mcp_disabled_reason": null,
+   "not_queryable_reason": null,
+   "recommended_catalog": null
+  },
+  {
+   "ad_account_id": "3317702289990",
+   "ad_account_name": "Marlowe Wholesale (mcp disabled)",
+   "business_id": "7710045500123",
+   "business_name": "Marlowe & Pine",
+   "is_ads_mcp_enabled": false,
+   "account_status": "ACTIVE",
+   "is_queryable": false,
+   "has_payment_method": true,
+   "currency": "USD",
+   "min_daily_budget_cents": 100,
+   "is_ads_mcp_disabled_reason": "Not enabled for Ads MCP",
+   "not_queryable_reason": "mcp disabled",
+   "recommended_catalog": null
+  }
+ ]
+}

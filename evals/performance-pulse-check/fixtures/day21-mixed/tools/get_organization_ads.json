@@ -1,0 +1,40 @@
+{
+ "_shape": "modelled-from-description",
+ "ads": [
+  {
+   "flowId": "flow_1",
+   "flowName": "Jerky flow",
+   "adName": "Moshi - Salmon Jerky Reaction",
+   "metaAdId": "1202640000000083",
+   "status": "ACTIVE"
+  },
+  {
+   "flowId": "flow_2",
+   "flowName": "Puppy flow",
+   "adName": "Moshi - Puppy Treat Chat",
+   "metaAdId": "1202640000000084",
+   "status": "ACTIVE"
+  },
+  {
+   "flowId": "flow_3",
+   "flowName": "Ingredient flow",
+   "adName": "Moshi - Ingredient Check",
+   "metaAdId": "1202640000000085",
+   "status": "ACTIVE"
+  },
+  {
+   "flowId": "flow_4",
+   "flowName": "Quiz flow",
+   "adName": "Moshi - Treat Quiz",
+   "metaAdId": "1202640000000086",
+   "status": "ACTIVE"
+  },
+  {
+   "flowId": "flow_5",
+   "flowName": "Tummy flow",
+   "adName": "Moshi - Sensitive Tummy Q",
+   "metaAdId": "1202640000000087",
+   "status": "ACTIVE"
+  }
+ ]
+}

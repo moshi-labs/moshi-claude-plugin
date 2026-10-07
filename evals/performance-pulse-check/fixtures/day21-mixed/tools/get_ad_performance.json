@@ -1,0 +1,54 @@
+{
+ "_shape": "modelled-from-description",
+ "window": {
+  "start": "2026-09-16",
+  "end": "2026-10-06"
+ },
+ "currency": "USD",
+ "spend": 13460.02,
+ "perAd": [
+  {
+   "metaAdId": "1202640000000083",
+   "spend": 4676.97
+  },
+  {
+   "metaAdId": "1202640000000084",
+   "spend": 3628.41
+  },
+  {
+   "metaAdId": "1202640000000085",
+   "spend": 2078.12
+  },
+  {
+   "metaAdId": "1202640000000086",
+   "spend": 1843.82
+  },
+  {
+   "metaAdId": "1202640000000087",
+   "spend": 1232.7
+  }
+ ],
+ "dmFunnel": {
+  "chats": 640,
+  "chatsFromAds": 571,
+  "productViews": 233,
+  "carts": 61,
+  "checkouts": 29
+ },
+ "leadHeat": {
+  "hot": 34,
+  "warm": 148,
+  "cold": 458
+ },
+ "orders": {
+  "threadProven": 11,
+  "revenue": 689.2,
+  "delayed": 4
+ },
+ "flags": [
+  {
+   "code": "cart_value_unknown",
+   "text": "Open cart value is unknown: carts carry no price."
+  }
+ ]
+}

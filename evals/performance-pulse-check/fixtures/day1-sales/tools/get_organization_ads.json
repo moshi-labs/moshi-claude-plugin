@@ -1,0 +1,26 @@
+{
+ "_shape": "modelled-from-description",
+ "ads": [
+  {
+   "flowId": "flow_1",
+   "flowName": "Cedar Smoke flow",
+   "adName": "Moshi - Cedar Smoke Unboxing",
+   "metaAdId": "1202620000000001",
+   "status": "ACTIVE"
+  },
+  {
+   "flowId": "flow_2",
+   "flowName": "Burn Test flow",
+   "adName": "Moshi - Burn Test Close-up",
+   "metaAdId": "1202620000000002",
+   "status": "ACTIVE"
+  },
+  {
+   "flowId": "flow_3",
+   "flowName": "Gift Bundle flow",
+   "adName": "Moshi - Gift Bundle Chat",
+   "metaAdId": "1202620000000003",
+   "status": "ACTIVE"
+  }
+ ]
+}

@@ -1,0 +1,6 @@
+{
+ "_note": "Synthetic. The Meta Ads connector is absent in this session.",
+ "meta_ads_connector": "not connected",
+ "tools_available": [],
+ "expected_skill_behavior": "mode moshi_only; one line on what connecting Meta adds"
+}

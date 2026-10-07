@@ -1,0 +1,54 @@
+{
+ "_shape": "modelled-from-description",
+ "organizationName": "Saltmarsh Spice Traders",
+ "currency": "USD",
+ "timezone": "America/New_York",
+ "window": {
+  "start": "2026-10-05",
+  "end": "2026-10-06"
+ },
+ "scorecard": {
+  "chats": 91,
+  "chatsFromAds": 82,
+  "contactsCaptured": 13,
+  "productViews": 24,
+  "carts": 2,
+  "checkouts": 1,
+  "purchases": 0
+ },
+ "funnel": {
+  "chats": 91,
+  "contactsCaptured": 13,
+  "productViews": 24,
+  "carts": 2,
+  "checkouts": 1,
+  "orders": 0
+ },
+ "leads": {
+  "total": 91,
+  "hot": 7,
+  "warm": 22,
+  "cold": 62
+ },
+ "openCarts": {
+  "count": 2,
+  "valueKnown": true,
+  "value": 64.5
+ },
+ "closer": {
+  "recoveries": 0,
+  "revenue": 0
+ },
+ "flags": [
+  {
+   "code": "population_mismatch",
+   "text": "Chats include profile-button chats. Chats from ads count ad-sourced chats only."
+  }
+ ],
+ "transcriptsToRead": {
+  "conversationIds": [
+   "conv_d2_01",
+   "conv_d2_02"
+  ]
+ }
+}

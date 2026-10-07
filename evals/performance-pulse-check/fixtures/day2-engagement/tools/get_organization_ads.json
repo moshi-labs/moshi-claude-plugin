@@ -1,0 +1,19 @@
+{
+ "_shape": "modelled-from-description",
+ "ads": [
+  {
+   "flowId": "flow_1",
+   "flowName": "Pantry Reveal flow",
+   "adName": "Moshi - Pantry Reveal",
+   "metaAdId": "1202630000000068",
+   "status": "ACTIVE"
+  },
+  {
+   "flowId": "flow_2",
+   "flowName": "Blend Quiz flow",
+   "adName": "Moshi - Blend Quiz Hook",
+   "metaAdId": "1202630000000069",
+   "status": "ACTIVE"
+  }
+ ]
+}
