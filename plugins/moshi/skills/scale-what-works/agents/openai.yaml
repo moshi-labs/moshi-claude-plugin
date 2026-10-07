@@ -1,0 +1,7 @@
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "moshi"
+      description: "Moshi MCP server: flow status, ad shortlist, and ad creation"
+      transport: "streamable_http"
+      url: "https://mcp.moshi.ai/mcp"

@@ -41,7 +41,7 @@ clients still get the Closer tools.
 |---|---|---|
 | Claude Code | Tools + prompts + skills | [Claude Code](#claude-code) |
 | Claude Desktop, Claude.ai, Cowork | Tools + prompts + skills | [Claude Desktop and Claude.ai](#claude-desktop-and-claudeai) |
-| ChatGPT | Tools | [ChatGPT](#chatgpt) |
+| ChatGPT, Codex | Tools + skills (OpenAI package) | [ChatGPT](#chatgpt) |
 | Cursor, VS Code, other MCP clients | Tools + prompts | [Other MCP clients](#other-mcp-clients) |
 
 ## Before you start
@@ -132,6 +132,10 @@ the Moshi server ships new tools, hit **Refresh** on the app to pull them in.
 
 ChatGPT surfaces MCP tools but not MCP prompts, so ask for a report in your own words rather
 than looking for a `/flow_status_report` command.
+
+ChatGPT and Codex also get the Moshi skills through the OpenAI package (`plugins/moshi/plugin.json`
+and `mcp.json`). Build it with `scripts/build-openai-zip.sh` and upload the ZIP at
+chatgpt.com/plugins. Invoke a skill with `@` in ChatGPT or `$` in Codex.
 
 ## Other MCP clients
 
