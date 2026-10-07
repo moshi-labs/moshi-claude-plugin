@@ -15,11 +15,12 @@ provides:
 - **Conversations & leads** — list conversations, read messages and events, export results
 - **Catalog & brand** — products, product lore, brand docs, knowledge health
 - **Ads** — shortlist your proven Meta ads, create and publish Moshi ads, upload creatives
+- **Closer** — the shoppers who almost bought; draft and send them a nudge
 - **Simulator** — launch a sandbox conversation and message it as a customer
 - **Three guided workflows**, as MCP prompts: `flow_status_report`, `scale_what_works` and
   `weekly_newsletter`
 
-**2. Three skills** — longer playbooks that travel with the plugin, so Claude Code, Claude
+**2. Four skills** — longer playbooks that travel with the plugin, so Claude Code, Claude
 Desktop and Claude.ai all get them:
 
 - `scale-what-works` — the "which ads should I run next" conversation.
@@ -29,9 +30,12 @@ Desktop and Claude.ai all get them:
   Meta ad account, judges each campaign by its age and objective, and compares Moshi with
   the merchant's own launches. It needs only the Moshi connection: the Meta numbers come
   from Moshi's synced copy of the ad account, refreshed about every 6 hours.
+- `close-the-carts` — work the Closer queue: see who almost bought, bulk-draft a nudge for
+  each, review them all in one pass, and send the ones you approve.
 
 Clients that take the MCP server on its own get the matching prompts, `scale_what_works` and
-`weekly_newsletter`, which cover the same ground.
+`weekly_newsletter`, which cover the same ground. `close-the-carts` has no prompt; those
+clients still get the Closer tools.
 
 | Client | Gets | Install section |
 |---|---|---|
@@ -184,7 +188,8 @@ plugins/moshi/
 ├── .mcp.json                     points at the hosted MCP server
 ├── skills/scale-what-works/      the ads-scaling playbook
 ├── skills/weekly-newsletter/     the weekly merchant newsletter
-└── skills/performance-pulse-check/  the ads pulse-check report
+├── skills/performance-pulse-check/  the ads pulse-check report
+└── skills/close-the-carts/       the Closer queue: bulk-draft, review, send
 evals/performance-pulse-check/    synthetic fixtures, rubric and template source (not shipped)
 ```
 
