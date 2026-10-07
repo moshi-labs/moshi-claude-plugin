@@ -1,8 +1,8 @@
-// Positive test: an old campaign whose rows start at the 30-day read's start counts from its startTime: base.data.js plus the lines under "// change".
+// Positive test: rows written before reach replaced frequency keep their own frequency (fatigue-window.data.js with frequency rows).
 // The helpers sit inside a function so their names do not clash with the template's globals.
 const DATA = (() => {
 const R = (s, n, f) => Array.from({ length: n }, (_, i) => ({ date: new Date(Date.parse(s) + i * 864e5).toISOString().slice(0, 10),
-  spend: 50, impressions: 5000, linkClicks: 60, conversations: null, purchases: 2, purchaseValue: 120, reach: 4167, ...f }));
+  spend: 50, impressions: 5000, linkClicks: 60, conversations: null, purchases: 2, purchaseValue: 120, frequency: 1.2, ...f }));
 const camp = (id, owner, objective, startTime, ads, x = {}) => ({ id, name: id, owner, objective, metaObjective: "OUTCOME_SALES", budgetType: "CBO",
   dailyBudget: 100, status: "ACTIVE", startTime, adsPulled: "all", retargeting: false,
   adsets: [{ id: id + "_s", name: id + " set", startTime, optimizationGoal: "OFFSITE_CONVERSIONS", dailyBudget: null, learning: null, adCount: ads.length,
@@ -22,7 +22,6 @@ const D = {
   nextSteps: [{ step: "1", what: "Hold budget.", owner: "merchant", by: "2026-10-08" }], flags: [], notMeasurableYet: []
 };
   // change
-  D.campaigns.push(camp("yold29", "merchant", "sales", "2026-03-20", [R("2026-09-07", 30)]), camp("yold30", "merchant", "sales", "2026-03-20", [R("2026-09-06", 31)])); // read starts asOf - 29 or - 30 days
-  D.verdict.body = "Old campaign is on {c:yold29.age}; its twin is on {c:yold30.age}.";
+  D.campaigns[1].adsets[0].ads[0].daily = R("2026-09-15", 14); // Sep 15-21 fall before window.start
   return D;
 })();

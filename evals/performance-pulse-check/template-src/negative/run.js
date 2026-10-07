@@ -34,13 +34,17 @@ const EXPECT = {
   'first-launch.data.js': [],
   'paused-launch.data.js': [],
   'truncated-read.data.js': [],
-  'fatigue-window.data.js': []
+  'fatigue-window.data.js': [],
+  'legacy-frequency.data.js': [],
+  'significant-edit.data.js': ['Check 2: comparison cpa day 14: Moshi is on day 6 since its last reset; CPA needs day 8']
 };
 // The banner escapes DATA text: check 3's <b> must reach the page as text, not markup.
 // An ad set added Oct 2 to a campaign that started Aug 1 counts from its own startTime; the campaign keeps its Aug 1 clock.
 // {m:firstLaunch} renders as a date. A check 10 failure hides the verdict that cites the ad; age tokens still render.
 // A campaign published paused (startTime Sep 24, first row Oct 1) is on day 6 and passes a day-5 comparison.
 // An old campaign whose rows start at the read's start (asOf - 29 or - 30 days) keeps its Mar 20 startTime: day 201.
+// Frequency is impressions / reach (5000 / 4167 rounds to 1.20); a row that still carries frequency keeps its own.
+// A significant_edit restarts the clock like budget_major and reads delivery at 3 days, CPA at 7.
 const RENDERED = { 'check3.data.js': ['&lt;b&gt;x&lt;/b&gt;'],
   'adset-day1.data.js': ['New set is on day 5', 'old set is on day 67', 'the campaign is on day 67'],
   'first-launch.data.js': ['Moshi launched Sep 22'], 'check10-fatigue.data.js': ['Moshi launched Sep 22'],
@@ -48,7 +52,9 @@ const RENDERED = { 'check3.data.js': ['&lt;b&gt;x&lt;/b&gt;'],
   'paused-launch.data.js': ['Paused launch is on day 6', 'CTR, first 5 days'],
   'truncated-read.data.js': ['Old campaign is on day 201', 'its twin is on day 201'],
   'cmp-dup.data.js': ['None of your launches match'],
-  'fatigue-window.data.js': ['Creative fatigue', 'Yours: ym1 ad 0, frequency 1.20 on Sep 28'] };
+  'fatigue-window.data.js': ['Creative fatigue', 'Yours: ym1 ad 0, frequency 1.20 on Sep 28'],
+  'legacy-frequency.data.js': ['Yours: ym1 ad 0, frequency 1.20 on Sep 28'],
+  'significant-edit.data.js': ['clock restarted Oct 1 after a learning reset', 'Meta restarted learning after a significant edit', 'delivery readable Oct 4, CPA readable Oct 8'] };
 // Strings that must not render. check10: no Meta tile, comparison or fatigue value from the duplicate Moshi ad (CTR 1.20%, value $1,800).
 // cmp-dup: the failed comparison reports check 10, not check 2. fatigue-window: Sep 15-21 rows sit before window.start.
 const RENDERED_NOT = { 'check10.data.js': ['1.20%', '$1,800', 'Creative fatigue'], 'check10-fatigue.data.js': ['Creative fatigue'],

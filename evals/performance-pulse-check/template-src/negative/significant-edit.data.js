@@ -1,4 +1,5 @@
-// Positive test: an old campaign whose rows start at the 30-day read's start counts from its startTime: base.data.js plus the lines under "// change".
+// A significant edit (kind significant_edit, the only Meta change Moshi's synced data shows) restarts the clock and gets
+// readable dates: base.data.js plus the lines under "// change".
 // The helpers sit inside a function so their names do not clash with the template's globals.
 const DATA = (() => {
 const R = (s, n, f) => Array.from({ length: n }, (_, i) => ({ date: new Date(Date.parse(s) + i * 864e5).toISOString().slice(0, 10),
@@ -22,7 +23,6 @@ const D = {
   nextSteps: [{ step: "1", what: "Hold budget.", owner: "merchant", by: "2026-10-08" }], flags: [], notMeasurableYet: []
 };
   // change
-  D.campaigns.push(camp("yold29", "merchant", "sales", "2026-03-20", [R("2026-09-07", 30)]), camp("yold30", "merchant", "sales", "2026-03-20", [R("2026-09-06", 31)])); // read starts asOf - 29 or - 30 days
-  D.verdict.body = "Old campaign is on {c:yold29.age}; its twin is on {c:yold30.age}.";
+  D.changes.push({ date: "2026-10-01", what: "Meta restarted learning after a significant edit", kind: "significant_edit", source: "meta", entityId: "cm1_s" });
   return D;
 })();
