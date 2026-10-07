@@ -1,0 +1,32 @@
+{
+ "_shape": "modelled-from-description",
+ "conversationId": "conv_d21_02",
+ "source": "profile",
+ "messages": [
+  {
+   "role": "shopper",
+   "text": "Do you ship to Canada?",
+   "sentAt": "2026-10-06T10:00:00Z"
+  },
+  {
+   "role": "agent",
+   "text": "Not yet. We ship across the US.",
+   "sentAt": "2026-10-06T10:07:00Z"
+  },
+  {
+   "role": "shopper",
+   "text": "ok please email the ingredient sheet to buddy.example@example.com thanks",
+   "sentAt": "2026-10-06T10:14:00Z"
+  },
+  {
+   "role": "agent",
+   "text": "Sent.",
+   "sentAt": "2026-10-06T11:21:00Z"
+  },
+  {
+   "role": "shopper",
+   "text": "Is the puppy mix soft enough for a ten week old?",
+   "sentAt": "2026-10-06T11:28:00Z"
+  }
+ ]
+}

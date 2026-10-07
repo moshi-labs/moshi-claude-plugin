@@ -1,0 +1,19 @@
+{
+ "ad_accounts": [
+  {
+   "ad_account_id": "5539921106642",
+   "ad_account_name": "Tidewater Pet Supply",
+   "business_id": "7710045506642",
+   "business_name": "Tidewater Pet",
+   "is_ads_mcp_enabled": true,
+   "account_status": "ACTIVE",
+   "is_queryable": true,
+   "has_payment_method": true,
+   "currency": "USD",
+   "min_daily_budget_cents": 100,
+   "is_ads_mcp_disabled_reason": null,
+   "not_queryable_reason": null,
+   "recommended_catalog": null
+  }
+ ]
+}

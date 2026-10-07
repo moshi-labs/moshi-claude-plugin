@@ -1,0 +1,53 @@
+{
+ "_shape": "modelled-from-description",
+ "organizationName": "Ridgeline Trail Gear",
+ "currency": "USD",
+ "timezone": "America/Denver",
+ "window": {
+  "start": "2026-10-02",
+  "end": "2026-10-06"
+ },
+ "scorecard": {
+  "chats": 429,
+  "chatsFromAds": 420,
+  "contactsCaptured": 64,
+  "productViews": 115,
+  "carts": 8,
+  "checkouts": 3,
+  "purchases": 2
+ },
+ "funnel": {
+  "chats": 429,
+  "contactsCaptured": 64,
+  "productViews": 115,
+  "carts": 8,
+  "checkouts": 3,
+  "orders": 2
+ },
+ "leads": {
+  "total": 429,
+  "hot": 9,
+  "warm": 107,
+  "cold": 313
+ },
+ "openCarts": {
+  "count": 8,
+  "valueKnown": false
+ },
+ "closer": {
+  "recoveries": 0,
+  "revenue": 0
+ },
+ "flags": [
+  {
+   "code": "population_mismatch",
+   "text": "Chats include profile-button chats. Chats from ads count ad-sourced chats only."
+  }
+ ],
+ "transcriptsToRead": {
+  "conversationIds": [
+   "conv_d5_01",
+   "conv_d5_02"
+  ]
+ }
+}

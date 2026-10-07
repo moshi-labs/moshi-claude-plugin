@@ -1,0 +1,17 @@
+{
+ "_shape": "modelled-from-description",
+ "conversationId": "conv_nm_02",
+ "source": "ad",
+ "messages": [
+  {
+   "role": "shopper",
+   "text": "Do you grind beans for a French press?",
+   "sentAt": "2026-10-06T10:00:00Z"
+  },
+  {
+   "role": "agent",
+   "text": "Yes. Pick coarse at checkout.",
+   "sentAt": "2026-10-06T10:07:00Z"
+  }
+ ]
+}

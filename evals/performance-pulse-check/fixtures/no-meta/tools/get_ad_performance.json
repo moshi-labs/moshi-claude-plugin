@@ -1,0 +1,42 @@
+{
+ "_shape": "modelled-from-description",
+ "window": {
+  "start": "2026-10-02",
+  "end": "2026-10-06"
+ },
+ "currency": "USD",
+ "spend": 763.1,
+ "perAd": [
+  {
+   "metaAdId": "1202650000000140",
+   "spend": 410.8
+  },
+  {
+   "metaAdId": "1202650000000141",
+   "spend": 352.3
+  }
+ ],
+ "dmFunnel": {
+  "chats": 187,
+  "chatsFromAds": 171,
+  "productViews": 74,
+  "carts": 12,
+  "checkouts": 6
+ },
+ "leadHeat": {
+  "hot": 14,
+  "warm": 52,
+  "cold": 121
+ },
+ "orders": {
+  "threadProven": 5,
+  "revenue": 214.0,
+  "delayed": 2
+ },
+ "flags": [
+  {
+   "code": "population_mismatch",
+   "text": "Chats include profile-button chats. Chats from ads count ad-sourced chats only."
+  }
+ ]
+}

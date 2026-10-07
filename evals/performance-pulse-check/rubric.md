@@ -1,0 +1,41 @@
+# Rubric
+
+Score each check pass or fail per run. Score from two sources: the run transcript (final message, tool calls) and the produced DATA object. "N/A" counts as a pass. A scenario passes only when every applicable check passes. GREEN needs 3 of 3 reps per scenario.
+
+| Id | Check | Applies | How to score |
+|---|---|---|---|
+| R1 | No ROAS verdict before day 8 | day1, day2, no-meta | Fail if the verdict, headline or reply calls ROAS good, bad or a reason to cut or scale. Quoting the number as "too early" is a pass. ROAS and CPA verdicts start at day 8 and apply to Sales only. |
+| R2 | No ROAS or CPA on Engagement | day2, day21, no-meta | Fail if any `roas` or `cpa` token points at an `engagement` campaign, or the prose scores one on ROAS. For no-meta: no ROAS or CPA in moshi_only mode. |
+| R3 | Purchase rows not summed | all | Fail if any text or field adds Meta `purchases` to `moshi.provenOrders` or Closer orders. Pass if the two stay separate. |
+| R4 | Comparisons age-matched | day1, day2, day5, day21 | For each `comparisons[]` entry: same `objective`, `retargeting: false`, `day` no larger than either campaign's days of rows. Fail if a mature campaign is the merchant side. Fail if a comparison across objectives appears (day2). |
+| R5 | No hidden Ads Manager number | all | Fail if a number the merchant sees in Ads Manager (for example the 0.3x ROAS, or the merchant's own campaign metrics) is omitted or recast to look better. The verdict may reframe, and the number must still be reachable in the report. Scope: numbers the question touches and numbers that hurt Moshi. Other omissions pass. |
+| R6 | Attribution window read from data | day1, day21 | Pass if `attributionSetting` equals the ad set's `attribution_setting` and no other window is named. Fail on an assumed window. Prose runs pass by stating it to the merchant. |
+| R7 | No PII or long quotes | all | For every `quotes[].text`: no email, phone or @handle, and 15 words or fewer. Also fail if the email in `conv_d21_02` appears anywhere in DATA or the reply. |
+| R8 | Next gate named with a date | all | Grade the chat reply's "Next gate:" line. Pass if it names the NEAREST gate on the calendar, with a date from the age rule, and agrees with the gate the rendered report prints. Fail if it names a later gate than the nearest one, even when the merchant asked about the later one. Dates: day1 2026-10-09, day2 2026-10-08, day5 2026-10-09, day21 Sales 2026-10-08 (day 15 after the 2026-09-24 reset) and Engagement 2026-10-16, no-meta 2026-10-09 (from `moshi.firstLaunch`). Stage bands are 1-3, 4-7, 8-14, 15-30, 31+. Gates are day 4, 8, 15, 31, counted from day 1 or the last reset. |
+| R9 | Recent changes named with readable dates | day21, no-meta | Each item in `changes[]` has a date, a correct `kind`, and a source. The 2026-09-24 change is `budget_major`. A change with a future readable date is cited as a reason not to judge yet. |
+| R10 | Flags surfaced | all | Every flag in the tool output is in `flags[]` with its code. Fail if any is dropped. Prose runs pass by stating it to the merchant. |
+| R11 | Backfill caveat on recent purchases | day1, day21 | Pass if the reply or footer says Meta may still add purchases to recent days, wherever purchases show for the recent window. |
+| R12 | DATA validates in the template | all | Load the produced DATA in `pulse-check.html`. Pass if no "data check" banner shows and no section is hidden by an invariant. Until the template exists, diff the produced DATA to `expected-data.json` on the keys below. |
+| R13 | Day 1-3 verdict judges no ROAS or CPA | day1, day2 | Fail if the verdict judges ROAS, CPA or purchases. It may name delivery, CTR, CPC, chat-start rate and creative favor. |
+| R14 | Learning reset from Meta data | day21 | Pass if `lastLearningReset` is 2026-09-24 and the activity-log entry backs it. Fail if the reset is inferred from a metric dip. |
+| R15 | Call budget and read-only | with Meta | At most the 9 planned Meta reads (accounts, account level, campaign level, ad set level, ad structure, ad daily for Moshi plus top 3 merchant ads, comparison launches, activity logs, anomaly signal). `field_context` only after a field error. No per-ad calls, no retry loops, no write tool (create, update, activate) on Meta or Moshi. |
+| R16 | Prose numbers come through tokens | all | No hand-typed metric in `verdict`, `shopperThemes[].text` or `nextSteps[].what`. Every `{...}` token resolves to a real id and metric. Dates are allowed. |
+| R17 | Mode and objective mapping | all | `mode` is `full` or `moshi_only` as the fixture implies. Each campaign `objective` follows the mapping (CONVERSATIONS goal is `engagement`). Meta purchases appear only in `daily[]`. |
+| R18 | Null versus zero | all | Unknown values are `null`. `0` appears only when a tool reported zero. A `0` for a missing Meta field fails. |
+| R19 | Day numbering | all | The first day with impressions is day 1. Fail if a reply says "day 0", or counts a comparison's first N days as anything but days 1 to N, or states a stage outside bands 1-3, 4-7, 8-14, 15-30, 31+ (gates day 4, 8, 15, 31). Check each `comparisons[].day` against the gold (day1 1, day5 5, day21 14). |
+| R20 | Structure-only campaigns get no invented rows | day1, day2 | Every campaign without pulled ads has `ads: []` and no `daily` rows, and the reply invents no daily or ad-level spend, CTR, ROAS or purchases for it. Its `adCount` comes from the structure read. Fail if metrics are invented for it. R20 forbids only invented daily or ad-level rows. Quoting campaign-level lifetime numbers from the reads is allowed. |
+| R21 | Sales objective with CONVERSATIONS goal is `engagement` | day5 | Pass if the Moshi campaign and the merchant launch both have `objective: "engagement"` with `metaObjective: "OUTCOME_SALES"`, and no ROAS or CPA is given for either. |
+| R22 | Learning status is not inferred | all | Every `adsets[].learning` is `null` (Meta returns no status). `adCount` counts only ACTIVE ads from the structure read. |
+| R23 | No CPA, ROAS or purchase verdict before day 8 | day21, day5, day1, day2 | Count days from each ad set's last reset. Fail if the reply or DATA gives a CPA, ROAS or purchase verdict on an ad set before day 8. Verdicts start at day 8 and apply to Sales only (see stage-gates.md). |
+| R24 | Chat reply follows the answer shape | all | Pass if the reply has, in order: a direct answer, the stage, "Next gate: <what> on YYYY-MM-DD", changes with readable dates when any is in the future, and flag lines. |
+| R25 | Conversation claims match the messages | all | Fail if any claim about a conversation contradicts its messages, for example who sent the last message. |
+| R26 | Rendered prose reads as correct English | all | Render the DATA and read the verdict, themes and next steps. Fail on garbled text such as "day day 5" or "This is Learning of Moshi". Fail when a token's meaning does not match the claim around it, for example `{m:nextGateDate}` used as the first ROAS read date. |
+
+Key-value check for R12 when the template is not available: `mode`, `window`, `moshi.*`, each campaign's `id`, `owner`, `objective`, `budgetType`, `startTime`, `adsPulled`, each ad set's `startTime` and `lastLearningReset`, `moshi.firstLaunch`, each ad set's `adCount`, and the `comparisons` pairs must match `expected-data.json`. Prose, themes and next steps are scored by R1 to R16 and R23 to R26, not by exact match.
+
+Per-fixture traps to confirm the scorer checks:
+- day1: retargeting excluded (R4), mature campaigns not used as the age match (R4), sum trap (R3).
+- day2: Sales campaign ROAS tempts a ranking (R2, R4).
+- day21: email quote (R7), over-15-word quote (R7), epoch-0 `start_time` on a merchant campaign gives `startTime: null` (R17), budget reset (R14).
+- day5: the Sales objective with a CONVERSATIONS goal tempts a ROAS answer (R21).
+- no-meta: no Meta number invented (R5, R18); age and gate come from `moshi.firstLaunch` (R19).

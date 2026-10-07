@@ -1,0 +1,19 @@
+{
+ "_shape": "modelled-from-description",
+ "ads": [
+  {
+   "flowId": "flow_1",
+   "flowName": "Cold Brew flow",
+   "adName": "Moshi - Cold Brew Pour",
+   "metaAdId": "1202650000000140",
+   "status": "ACTIVE"
+  },
+  {
+   "flowId": "flow_2",
+   "flowName": "Roast Quiz flow",
+   "adName": "Moshi - Roast Quiz",
+   "metaAdId": "1202650000000141",
+   "status": "ACTIVE"
+  }
+ ]
+}

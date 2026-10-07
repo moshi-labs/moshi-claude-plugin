@@ -1,0 +1,3 @@
+{
+ "result": "[{\"event_type\": \"Campaign status updated\", \"actor_id\": \"100090001\", \"actor_name\": \"Moshi Moshi\", \"object_id\": \"1202620000000005\", \"object_name\": \"Moshi | Sales | Marlowe Candles\", \"application_name\": \"moshi-prod\", \"datetime\": \"10/6/2026 at 9:06 AM\", \"extra_data\": \"{\\\"old_value\\\": \\\"Pending Process\\\", \\\"new_value\\\": \\\"Active\\\", \\\"campaign_id\\\": 1202620000000005, \\\"type\\\": \\\"run_status\\\"}\"}]"
+}

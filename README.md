@@ -19,12 +19,15 @@ provides:
 - **Three guided workflows**, as MCP prompts: `flow_status_report`, `scale_what_works` and
   `weekly_newsletter`
 
-**2. Two skills** — longer playbooks that travel with the plugin, so Claude Code, Claude
+**2. Three skills** — longer playbooks that travel with the plugin, so Claude Code, Claude
 Desktop and Claude.ai all get them:
 
 - `scale-what-works` — the "which ads should I run next" conversation.
 - `weekly-newsletter` — a weekly newsletter for the merchant, which a Cowork `/schedule`
   run can write unattended.
+- `performance-pulse-check` — the "how are my Moshi ads doing" report. It reads the whole
+  Meta ad account, judges each campaign by its age and objective, and compares Moshi with
+  the merchant's own launches. With the Meta Ads connector, it covers the whole account.
 
 Clients that take the MCP server on its own get the matching prompts, `scale_what_works` and
 `weekly_newsletter`, which cover the same ground.
@@ -179,7 +182,9 @@ plugins/moshi/
 ├── .claude-plugin/plugin.json    plugin manifest
 ├── .mcp.json                     points at the hosted MCP server
 ├── skills/scale-what-works/      the ads-scaling playbook
-└── skills/weekly-newsletter/     the weekly merchant newsletter
+├── skills/weekly-newsletter/     the weekly merchant newsletter
+└── skills/performance-pulse-check/  the ads pulse-check report
+evals/performance-pulse-check/    synthetic fixtures, rubric and template source (not shipped)
 ```
 
 Maintainers: bump the version in **both** `marketplace.json` and `plugin.json` — they have to

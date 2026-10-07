@@ -1,0 +1,37 @@
+{
+ "_shape": "modelled-from-description",
+ "window": {
+  "start": "2026-10-05",
+  "end": "2026-10-06"
+ },
+ "currency": "USD",
+ "spend": 176.84,
+ "perAd": [
+  {
+   "metaAdId": "1202630000000068",
+   "spend": 84.11
+  },
+  {
+   "metaAdId": "1202630000000069",
+   "spend": 92.73
+  }
+ ],
+ "dmFunnel": {
+  "chats": 91,
+  "chatsFromAds": 82,
+  "productViews": 24,
+  "carts": 2,
+  "checkouts": 1
+ },
+ "leadHeat": {
+  "hot": 7,
+  "warm": 22,
+  "cold": 62
+ },
+ "orders": {
+  "threadProven": 0,
+  "revenue": 0,
+  "delayed": 0
+ },
+ "flags": []
+}

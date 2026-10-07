@@ -1,0 +1,17 @@
+{
+ "_shape": "modelled-from-description",
+ "conversationId": "conv_d2_01",
+ "source": "ad",
+ "messages": [
+  {
+   "role": "shopper",
+   "text": "Which blend is best for grilled chicken?",
+   "sentAt": "2026-10-06T10:00:00Z"
+  },
+  {
+   "role": "agent",
+   "text": "The smoky citrus blend works well on chicken.",
+   "sentAt": "2026-10-06T10:07:00Z"
+  }
+ ]
+}
