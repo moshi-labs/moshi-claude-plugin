@@ -29,11 +29,10 @@ ${R.a601}] }] }] }
 moshi: { firstLaunch: "2026-09-22", spend: 2192.6, chats: 318, chatsFromAds: 284, contactsCaptured: 71, productViews: 149, carts: 46, checkouts: 27, provenOrders: 14, provenRevenue: 768.5, delayedOrders: 5, closerRecoveries: 3, closerRevenue: 141 },
 comparisons: [{ metric: "ctr", day: 7, moshiCampaignId: "cm_101", merchantCampaignId: "cm_401" }],
 changes: [
-  { date: "2026-09-30", what: "Chat to Cart budget $220 → $300/day", kind: "budget_major", source: "meta", entityId: "cm_101" },
-  { date: "2026-10-03", what: "Agent learned the 3-pack bundle", kind: "agent_knowledge", source: "moshi", entityId: null },
-  { date: "2026-10-05", what: "Fall Launch budget $1,500 → $1,400/day", kind: "budget_minor", source: "meta", entityId: "cm_401" }
+  { date: "2026-09-30", what: "Meta restarted learning after a significant edit", kind: "significant_edit", source: "meta", entityId: "as_201" },
+  { date: "2026-10-03", what: "Agent learned the 3-pack bundle", kind: "agent_knowledge", source: "moshi", entityId: null }
 ],
-accountIssues: [{ kind: "audience_overlap", severity: "warn", text: "Fall Launch and Chat to Cart bid on one audience." }],
+accountIssues: [],
 shopperThemes: [
   { theme: "How hot is it?", text: "The quiz answers heat questions at {c:cm_102.costPerConversation} a conversation." },
   { theme: "Bundles", text: "The 3-pack is in {m:carts} carts." }

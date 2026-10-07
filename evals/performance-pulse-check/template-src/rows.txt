@@ -1,28 +1,28 @@
 //a301
-            {date:"2026-09-22",spend:89.7,impressions:6013,linkClicks:128,purchases:1,purchaseValue:43.5,frequency:1.05},
-            {date:"2026-09-23",spend:105.2,impressions:7970,linkClicks:151,purchases:1,purchaseValue:43.2,frequency:1.11},
-            {date:"2026-09-24",spend:112.2,impressions:8216,linkClicks:178,purchases:1,purchaseValue:44,frequency:1.17},
-            {date:"2026-09-25",spend:124.3,impressions:8393,linkClicks:176,purchases:1,purchaseValue:43.9,frequency:1.23},
-            {date:"2026-09-26",spend:135.4,impressions:10351,linkClicks:188,purchases:2,purchaseValue:81.3,frequency:1.29},
-            {date:"2026-09-27",spend:147.5,impressions:10012,linkClicks:216,purchases:1,purchaseValue:44.4,frequency:1.35},
-            {date:"2026-09-28",spend:157.7,impressions:10670,linkClicks:199,purchases:2,purchaseValue:87,frequency:1.41},
-            {date:"2026-09-29",spend:138,impressions:9590,linkClicks:186,purchases:1,purchaseValue:46.4,frequency:1.47},
-            {date:"2026-09-30",spend:143.3,impressions:9547,linkClicks:176,purchases:2,purchaseValue:83.4,frequency:1.53},
-            {date:"2026-10-01",spend:167.3,impressions:11445,linkClicks:213,purchases:2,purchaseValue:86.3,frequency:1.59},
-            {date:"2026-10-02",spend:161.7,impressions:10877,linkClicks:207,purchases:1,purchaseValue:43.6,frequency:1.65},
-            {date:"2026-10-03",spend:131.6,impressions:9268,linkClicks:154,purchases:1,purchaseValue:45.3,frequency:1.71},
-            {date:"2026-10-04",spend:170.5,impressions:12058,linkClicks:209,purchases:2,purchaseValue:86.9,frequency:1.77},
-            {date:"2026-10-05",spend:165.2,impressions:11685,linkClicks:205,purchases:1,purchaseValue:41.7,frequency:1.83},
-            {date:"2026-10-06",spend:160.9,impressions:11071,linkClicks:179,purchases:2,purchaseValue:94.3,frequency:1.89}
+            {date:"2026-09-22",spend:89.7,impressions:6013,linkClicks:128,conversations:0,purchases:1,purchaseValue:43.5,reach:5727},
+            {date:"2026-09-23",spend:105.2,impressions:7970,linkClicks:151,conversations:0,purchases:1,purchaseValue:43.2,reach:7180},
+            {date:"2026-09-24",spend:112.2,impressions:8216,linkClicks:178,conversations:0,purchases:1,purchaseValue:44,reach:7022},
+            {date:"2026-09-25",spend:124.3,impressions:8393,linkClicks:176,conversations:0,purchases:1,purchaseValue:43.9,reach:6824},
+            {date:"2026-09-26",spend:135.4,impressions:10351,linkClicks:188,conversations:0,purchases:2,purchaseValue:81.3,reach:8024},
+            {date:"2026-09-27",spend:147.5,impressions:10012,linkClicks:216,conversations:0,purchases:1,purchaseValue:44.4,reach:7416},
+            {date:"2026-09-28",spend:157.7,impressions:10670,linkClicks:199,conversations:0,purchases:2,purchaseValue:87,reach:7567},
+            {date:"2026-09-29",spend:138,impressions:9590,linkClicks:186,conversations:0,purchases:1,purchaseValue:46.4,reach:6524},
+            {date:"2026-09-30",spend:143.3,impressions:9547,linkClicks:176,conversations:0,purchases:2,purchaseValue:83.4,reach:6240},
+            {date:"2026-10-01",spend:167.3,impressions:11445,linkClicks:213,conversations:0,purchases:2,purchaseValue:86.3,reach:7198},
+            {date:"2026-10-02",spend:161.7,impressions:10877,linkClicks:207,conversations:0,purchases:1,purchaseValue:43.6,reach:6592},
+            {date:"2026-10-03",spend:131.6,impressions:9268,linkClicks:154,conversations:0,purchases:1,purchaseValue:45.3,reach:5420},
+            {date:"2026-10-04",spend:170.5,impressions:12058,linkClicks:209,conversations:0,purchases:2,purchaseValue:86.9,reach:6812},
+            {date:"2026-10-05",spend:165.2,impressions:11685,linkClicks:205,conversations:0,purchases:1,purchaseValue:41.7,reach:6385},
+            {date:"2026-10-06",spend:160.9,impressions:11071,linkClicks:179,conversations:0,purchases:2,purchaseValue:94.3,reach:5858}
 //a303
-            {date:"2026-10-06",spend:82.1,impressions:7894,linkClicks:146,conversations:14,purchases:0,purchaseValue:0,frequency:1.04}
+            {date:"2026-10-06",spend:82.1,impressions:7894,linkClicks:146,conversations:14,purchases:0,purchaseValue:0,reach:7590}
 //a601
-            {date:"2026-09-29",spend:522.9,impressions:26894,linkClicks:337,purchases:12,purchaseValue:563.7,frequency:1.1},
-            {date:"2026-09-30",spend:644,impressions:32630,linkClicks:435,purchases:26,purchaseValue:1124.9,frequency:1.21},
-            {date:"2026-10-01",spend:584.3,impressions:30463,linkClicks:385,purchases:12,purchaseValue:632.5,frequency:1.32},
-            {date:"2026-10-02",spend:602,impressions:32128,linkClicks:419,purchases:18,purchaseValue:799.2,frequency:1.43},
-            {date:"2026-10-03",spend:663.7,impressions:33615,linkClicks:430,purchases:12,purchaseValue:536.2,frequency:1.54},
-            {date:"2026-10-04",spend:647.9,impressions:34975,linkClicks:421,purchases:25,purchaseValue:1135.2,frequency:1.65},
-            {date:"2026-10-05",spend:670.5,impressions:32677,linkClicks:344,purchases:13,purchaseValue:564.2,frequency:1.76},
-            {date:"2026-10-06",spend:616.8,impressions:34246,linkClicks:402,purchases:13,purchaseValue:623.3,frequency:1.87}
+            {date:"2026-09-29",spend:522.9,impressions:26894,linkClicks:337,conversations:0,purchases:12,purchaseValue:563.7,reach:24449},
+            {date:"2026-09-30",spend:644,impressions:32630,linkClicks:435,conversations:0,purchases:26,purchaseValue:1124.9,reach:26967},
+            {date:"2026-10-01",spend:584.3,impressions:30463,linkClicks:385,conversations:0,purchases:12,purchaseValue:632.5,reach:23078},
+            {date:"2026-10-02",spend:602,impressions:32128,linkClicks:419,conversations:0,purchases:18,purchaseValue:799.2,reach:22467},
+            {date:"2026-10-03",spend:663.7,impressions:33615,linkClicks:430,conversations:0,purchases:12,purchaseValue:536.2,reach:21828},
+            {date:"2026-10-04",spend:647.9,impressions:34975,linkClicks:421,conversations:0,purchases:25,purchaseValue:1135.2,reach:21197},
+            {date:"2026-10-05",spend:670.5,impressions:32677,linkClicks:344,conversations:0,purchases:13,purchaseValue:564.2,reach:18566},
+            {date:"2026-10-06",spend:616.8,impressions:34246,linkClicks:402,conversations:0,purchases:13,purchaseValue:623.3,reach:18313}
 //moshi spend 2192.60
