@@ -10,15 +10,18 @@ A fair comparison has all five parts:
 1. **Same objective.** Both campaigns map to the same `objective` (see
    `data-contract.md`). Engagement compares to engagement, sales to sales.
 2. **A launch, not a mature campaign.** The merchant campaign started in
-   the last 90 days and is not retargeting. Read 7 pulled all its ads, so
-   its `adsPulled` is `"all"`. A campaign with only its top ads pulled
-   fails the data check. Mature campaigns are context
-   for the account map only. They never go into a comparison.
+   the last 90 days and is not retargeting. T4 in `meta-reads.md` lists
+   the candidates. T5 pulled all its ads, so its `adsPulled` is `"all"`. A
+   campaign with only its top ads pulled fails the data check. Mature
+   campaigns are context for the account map only. They never go into a
+   comparison.
 3. **The same days of life.** Moshi's days 1–N against the merchant
    launch's days 1–N. N is Moshi's age since launch (a reset does not
-   change N), capped at 14, the days that read 7 pulls for each launch.
+   change N), capped at 14, the days that T5 pulls for each launch.
    Calendar overlap does not matter. A launch from August still compares
-   on its own days 1–N.
+   on its own days 1–N. If the launch first delivered after its
+   `startTime`, T5 holds fewer than 14 of its days, so compare only the
+   days that have rows.
 4. **A metric the stage allows.** Day 1–7: `ctr`, `cpc`,
    `costPerConversation`. Day 8+: add `cpa` and `roas`, for Sales only.
 5. **A resource note.** The template writes it from each side's daily

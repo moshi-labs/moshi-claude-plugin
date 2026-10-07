@@ -4,6 +4,18 @@ Date: 2026-10-06
 Status: approved, hardened for build
 Reference report: an internal Moshi day-one results report (Oct 2026)
 
+> **Update 2026-10-07 (plugin 0.9.0).** The skill no longer needs the Meta Ads
+> connector. Meta numbers now come from the Moshi MCP tool `get_ad_account_tree`
+> (moshi-mcp #38, moshi-api #1786), which serves Moshi's synced copy of the ad
+> account, refreshed about every 6 hours. The plan in `references/meta-reads.md`
+> replaces the nine Meta reads below with at most five reads. The activity log
+> and the anomaly scan have no replacement in v1. Meta changes now show only as
+> `significant_edit` (learning restarts), and `accountIssues` come from the
+> structure read. Daily rows carry `reach`, and the template computes frequency
+> from it. Learning status now comes from `learningPhase` on ACTIVE ad sets.
+> Ad set settings appear only on ACTIVE ad sets. The rest of this document
+> describes the 0.8.0 design.
+
 ## Goal
 
 A merchant asks "how are my Moshi ads doing?" and gets a report that reads

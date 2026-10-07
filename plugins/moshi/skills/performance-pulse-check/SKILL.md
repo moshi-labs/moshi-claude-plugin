@@ -1,7 +1,7 @@
 ---
 name: performance-pulse-check
 description: Read a Moshi merchant's whole Meta ad account like a senior performance marketer and deliver a pulse-check report on how their Moshi ads are doing, judged by campaign age, objective and fair comparisons. Use when a Moshi merchant asks how their ads are doing or whether Moshi is working.
-when_to_use: Use when a Moshi merchant asks "how are my ads doing", "is Moshi working", "pulse check", "should I keep spending on Moshi", "should I kill Moshi", "my ROAS looks low", "why did my CPA go up", "compare Moshi to my other ads", or for day-one or week-one results. Also for scheduled runs. Read-only. Requires the Moshi MCP server; the Meta Ads connector adds the full account view.
+when_to_use: Use when a Moshi merchant asks "how are my ads doing", "is Moshi working", "pulse check", "should I keep spending on Moshi", "should I kill Moshi", "my ROAS looks low", "why did my CPA go up", "compare Moshi to my other ads", or for day-one or week-one results. Also for scheduled runs. Read-only. Needs only the Moshi MCP server, which serves the whole Meta ad account from Moshi's synced copy.
 ---
 
 # Performance pulse check
@@ -18,22 +18,21 @@ allows, and how to say it.
 
 ## Steps
 
-1. **Read Moshi.** `get_organization_ads` (which Meta ads are Moshi's),
-   `get_flow_status_data` (funnel, leads, carts, `flags`),
-   `get_ad_performance` (Moshi spend, proven orders, `flags`), and
-   `get_recent_brand_doc_change` if it exists. Then read 2–3 threads from
-   `transcriptsToRead` with `get_conversation_messages`.
-2. **Read Meta.** Follow `references/meta-call-budget.md` exactly: nine
-   reads, in order. If the connector is missing, or the account has
-   `is_ads_mcp_enabled` or `is_queryable` false, set `mode: "moshi_only"`
-   and skip to step 4. In `moshi_only`, add "CTR, CPC and CPM: Meta is
-   not connected" and "Comparison with your launches: Meta is not
-   connected" to `notMeasurableYet`. If several accounts qualify, ask which one; in a
-   scheduled run, use the account that holds the Moshi ads.
-3. **Classify.** Label every campaign Moshi or merchant, and engagement or
-   sales, with the objective mapping in `references/data-contract.md`. The
-   ad set's optimization goal decides: a Sales campaign that optimizes for
-   CONVERSATIONS is engagement.
+1. **Read Moshi.** `get_flow_status_data` (funnel, leads, carts,
+   `flags`), `get_ad_performance` (Moshi spend, proven orders, `flags`),
+   and `get_recent_brand_doc_change` if it exists. Then read 2–3 threads
+   from `transcriptsToRead` with `get_conversation_messages`.
+2. **Read Meta through Moshi.** Follow `references/meta-reads.md`
+   exactly: `get_ad_account_tree`, at most five reads, in order. If the
+   first read flags `no_synced_ads` (no Meta ad account connected in
+   Moshi, or nothing synced yet) or fails, set `mode: "moshi_only"` and
+   skip to step 4. In `moshi_only`, add "CTR, CPC and CPM: no Meta ad
+   account is synced in Moshi" and "Comparison with your launches: no Meta
+   ad account is synced in Moshi" to `notMeasurableYet`.
+3. **Classify.** Label every campaign Moshi or merchant from the tree's
+   `owner`, and engagement or sales with the objective mapping in
+   `references/data-contract.md`. The ad set's optimization goal decides:
+   a Sales campaign that optimizes for CONVERSATIONS is engagement.
 4. **Age and stage.** Read `references/stage-gates.md`. Compute each
    campaign's day count, apply any learning reset, and find its next gate
    date. List every change since the first Moshi launch.
@@ -41,7 +40,7 @@ allows, and how to say it.
    comparisons that meet its recipe.
 6. **Fill DATA.** Build the `DATA` object exactly as
    `references/data-contract.md` defines it. Raw numbers only. Merge reads
-   6 and 7 into one row per ad per date, and set each campaign's
+   T2, T3 and T5 into one row per ad per date, and set each campaign's
    `adsPulled` from the read that pulled its ads. Write the
    verdict and other prose with tokens such as `{c:123.cpc}`, never with
    typed numbers.
@@ -68,8 +67,8 @@ Your chat reply has these parts, in this order:
    when the merchant asks about a later one. Name the later gate on its
    own line after it.
 4. **What changed and when it shows**, if any change has a readable date
-   after today: "Budget raised 45% on Sep 24, so CPA is readable from
-   Oct 1."
+   after today: "Meta restarted learning on Sep 24 after a significant
+   edit, so CPA is readable from Oct 1."
 5. **One line per tool flag** that touches a number you cited, in plain
    words.
 6. **The report**, as the artifact.
@@ -86,16 +85,20 @@ Your chat reply has these parts, in this order:
    `moshi_only` mode. Never build ROAS or CPA from Moshi-proven orders.
 5. No ROAS, CPA, purchase or order-value verdict before day 8, counted
    from the last reset.
-6. Learning status and resets come from Meta fields only. If Meta does not
-   show them, say nothing about learning.
+6. Learning status and resets come from Meta fields only: `learningPhase`
+   and `lastSignificantEditAt`. If Meta does not show them, say nothing
+   about learning. Meta does not say what a significant edit changed, so
+   never call it a budget, audience or creative change.
 7. Comparisons follow `comparison-method.md`. Never lifetime numbers,
    never mature campaigns.
-8. The attribution window is `attribution_setting` from the ad set. Name
-   it when you cite Meta purchases.
+8. The attribution window is the ad set's `attributionSpec`. Name it when
+   you cite Meta purchases. When an ad set has none (it is not ACTIVE),
+   say its window is not reported.
 9. Show the backfill line when the window ends in the last 7 days and you
    cite Meta purchases.
-10. Every tool flag goes in `flags[]`. Anomaly-scan findings go in
-    `accountIssues[]`, not in `flags[]`.
+10. Every tool flag goes in `flags[]`, as `meta-reads.md` says. Account
+    issues from the structure read go in `accountIssues[]`, not in
+    `flags[]`.
 11. Describe a chat only from its messages. Before you say a shopper is
     waiting, check who sent the last message.
 12. Quotes are anonymous and 15 words or fewer: no names, emails, phone
@@ -105,7 +108,8 @@ Your chat reply has these parts, in this order:
     a winner, suggest the `scale-what-works` skill. Before day 31, name the
     skill and the ad without the word "scale". When you call an ad tired,
     cite its latest-day frequency, not its window average.
-14. Stay inside the call budget. No extra reads, no retry loops.
+14. Stay inside the read plan in `meta-reads.md`. No extra reads, no
+    retry loops.
 
 ## Rationalizations
 
