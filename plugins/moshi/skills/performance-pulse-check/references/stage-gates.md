@@ -5,8 +5,8 @@ question.
 
 ## Age
 
-- Day 1 of a campaign is the later of its `startTime` (Meta `start_time`,
-  in the account timezone) and its first `daily[]` row with
+- Day 1 of a campaign is the later of its `startTime` (the day of the
+  tree's `startTime`, in the account timezone) and its first `daily[]` row with
   `impressions > 0`. Day 1 of an ad set uses the same rule with its own
   `startTime` (else its campaign's) and its own rows.
 - One exception: when that first row falls within 1 day of the start of
@@ -14,15 +14,15 @@ question.
   the read cut the history off. Day 1 is then `startTime`.
 - With no rows, day 1 is `startTime`, then `moshi.firstLaunch` for a Moshi
   campaign.
-- Moshi publishes ads PAUSED, so `start_time` can come days before the
+- Moshi publishes ads PAUSED, so `startTime` can come days before the
   first delivery. A campaign paused at creation counts from its first
   delivery, not from its creation.
-- A learning reset restarts the count. The reset date is
-  `learning_stage_info.last_sig_edit_ts`, or a significant edit in the
-  activity log (a budget change over 20%, a new ad, a targeting or
-  optimization change). The reset date is day 1 again: a reset on Sep 24
-  makes Sep 24 day 1 and Oct 6 day 13. A reset on or before day 1 is the
-  launch, not a reset.
+- A learning reset restarts the count. The reset date is the ad set's
+  `lastSignificantEditAt` (`lastLearningReset` in DATA). Meta logs a
+  significant edit for a budget change over 20%, a new ad, or a targeting
+  or optimization change, and Moshi's data does not say which one it was.
+  The reset date is day 1 again: a reset on Sep 24 makes Sep 24 day 1 and
+  Oct 6 day 13. A reset on or before day 1 is the launch, not a reset.
 - Each entity has its own clock. A campaign's reset is the latest reset
   among its ad sets, or a significant change on the campaign itself. A new
   ad set in an old campaign does not change the campaign's age.
@@ -31,8 +31,9 @@ question.
 - The reset clock decides the stage and the next gate. The launch clock
   (days since day 1) decides comparisons and fatigue. A reset
   never delays those.
-- Never infer learning status or a reset from the metrics. If Meta does
-  not show it, say nothing about learning.
+- Never infer learning status or a reset from the metrics. Learning status
+  is `learningPhase.status`, and Meta reports it only for ACTIVE ad sets.
+  If Meta does not show it, say nothing about learning.
 
 ## What each stage can judge
 
@@ -62,7 +63,7 @@ A change that has not reached its readable date is a reason not to judge.
 
 | `kind` | Readable after |
 |---|---|
-| `budget_major`, `new_ad`, `targeting`, `optimization` | learning restarts: 3 days for delivery, 7 days for CPA |
+| `significant_edit`, `budget_major`, `new_ad`, `targeting`, `optimization` | learning restarts: 3 days for delivery, 7 days for CPA |
 | `budget_minor` | 3 days |
 | `status` | 3 days |
 | `agent_knowledge`, `offer` | 5 days of chats |

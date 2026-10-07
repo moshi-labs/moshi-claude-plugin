@@ -27,7 +27,8 @@ Desktop and Claude.ai all get them:
   run can write unattended.
 - `performance-pulse-check` — the "how are my Moshi ads doing" report. It reads the whole
   Meta ad account, judges each campaign by its age and objective, and compares Moshi with
-  the merchant's own launches. With the Meta Ads connector, it covers the whole account.
+  the merchant's own launches. It needs only the Moshi connection: the Meta numbers come
+  from Moshi's synced copy of the ad account, refreshed about every 6 hours.
 
 Clients that take the MCP server on its own get the matching prompts, `scale_what_works` and
 `weekly_newsletter`, which cover the same ground.

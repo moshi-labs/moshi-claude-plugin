@@ -23,14 +23,14 @@ Rules for every field:
 | Field | Type | Source |
 |---|---|---|
 | `schemaVersion` | `1` | constant |
-| `merchant.name` | string | Meta ad account name, or the Moshi org name |
-| `merchant.currency` | ISO code or null | `ads_get_ad_accounts` → `currency`; in `moshi_only`, the Moshi org currency if a tool returns it, else null |
-| `merchant.timezone` | IANA name or null | `ad_account` level → `timezone_name`; in `moshi_only`, the Moshi org timezone if returned, else null (the template then uses UTC and says so) |
+| `merchant.name` | string | T1 `organization.name`, else the org name a Moshi tool returns |
+| `merchant.currency` | ISO code or null | T1 `account.currency`, null when it is null; in `moshi_only`, the Moshi org currency if a tool returns it, else null |
+| `merchant.timezone` | IANA name or null | T1 `account.timezone`, null when it is null; in `moshi_only`, the Moshi org timezone if returned, else null (the template then uses UTC and says so) |
 | `asOf` | timestamp | when you read the data |
 | `window.start`, `window.end` | date | the report window, both days included |
 | `window.partial` | boolean | `true` when `window.end` is today |
-| `metaSyncedAt` | timestamp or null | when the Meta reads ran; null in `moshi_only` |
-| `mode` | `"full"` or `"moshi_only"` | `moshi_only` when Meta is missing, not enabled, or not queryable |
+| `metaSyncedAt` | timestamp or null | when you ran T1 (Moshi's copy can be up to about 6 hours older); null in `moshi_only` |
+| `mode` | `"full"` or `"moshi_only"` | `moshi_only` when T1 flags `no_synced_ads` or fails (see `meta-reads.md`) |
 | `mood` | `"delight"` or `"reading"` | `"delight"` when a Moshi campaign leads on the metric its stage allows; `"reading"` when it is too early to judge. Sets the avatar. Missing values render as `"reading"` |
 | `verdict.headline` | string, ≤ 90 chars | you write it, with tokens |
 | `verdict.body` | string, 2–3 sentences | you write it, with tokens |
@@ -40,34 +40,33 @@ Rules for every field:
 One entry per campaign that delivered in the window, plus each merchant
 campaign you name in `comparisons`. In `moshi_only` mode, leave it empty.
 
-Only some campaigns get ad-level `daily[]` rows: Moshi campaigns, every
-campaign read 7 returned, and the campaigns that hold the merchant's top
-ads. A campaign that read 7 returned keeps all its rows and
-`adsPulled: "all"`, whether or not you compare it. Every other campaign
-keeps `ads: []` and appears in the account map with its structure only.
-The template shows no metrics for it.
+Only some campaigns get ad-level `daily[]` rows: Moshi campaigns (T2),
+every launch T5 read, and the campaigns that hold the merchant's top ads
+(T3). A campaign T5 read keeps all its rows and `adsPulled: "all"`,
+whether or not you compare it. Every other campaign keeps `ads: []` and
+appears in the account map with its structure only. The template shows no
+metrics for it. The reads are in `meta-reads.md`.
 
-`adsPulled` tells the template which ads you pulled. Read 7 pulls every
-ad of a comparison launch, and read 6 pulls every Moshi ad. Read 6 pulls
-only the merchant's top ads. `adsPulled` is `"all"` only when every ad
-set's ads came from read 7 (or the campaign is Moshi's). If any ad set has
-only read-6 top ads, use `"top"`. The template trusts `adsPulled`. It never
-infers it from names, comparisons or ad counts. When `adsPulled` is
-missing, the template uses `"all"` for a Moshi campaign, `"top"` for a
-merchant campaign with ads, and `"none"` for a merchant campaign without
-ads.
+`adsPulled` tells the template which ads you pulled. T5 pulls every ad of
+a comparison launch, and T2 pulls every Moshi ad. T3 pulls only the
+merchant's top ads. `adsPulled` is `"all"` only when every ad set's ads
+came from T5 (or the campaign is Moshi's). If any ad set has only T3 top
+ads, use `"top"`. The template trusts `adsPulled`. It never infers it from
+names, comparisons or ad counts. When `adsPulled` is missing, the template
+uses `"all"` for a Moshi campaign, `"top"` for a merchant campaign with
+ads, and `"none"` for a merchant campaign without ads.
 
 | Field | Type | Source |
 |---|---|---|
-| `id`, `name` | string | campaign `id`, `name` |
-| `owner` | `"moshi"` or `"merchant"` | `"moshi"` when any of its ads is in `get_organization_ads` |
+| `id`, `name` | string | campaign `campaignId`, `campaignName` |
+| `owner` | `"moshi"` or `"merchant"` | `"moshi"` when T1's `owner` is `moshi` or `mixed`, else `"merchant"`. T2 pulls only the Moshi ads of a `mixed` campaign |
 | `objective` | `"engagement"`, `"sales"` or `"other"` | see Objective mapping |
 | `metaObjective` | string | campaign `objective`, verbatim |
-| `budgetType` | `"CBO"` or `"ABO"` | `"CBO"` when the campaign has `daily_budget` or `lifetime_budget` |
-| `dailyBudget` | number or null | campaign `daily_budget` (CBO only) |
-| `status` | string | campaign `effective_status` |
-| `startTime` | date or null | campaign `start_time`; null when Meta returns 1969-12-31 |
-| `adsPulled` | `"all"`, `"top"` or `"none"` | `"all"` for a Moshi campaign and for a campaign where every ad set's ads came from read 7; `"top"` when any ad set has only read-6 top ads; `"none"` when `ads` is empty in every ad set |
+| `budgetType` | `"CBO"` or `"ABO"` | `"CBO"` when the campaign has `dailyBudget` or `lifetimeBudget` |
+| `dailyBudget` | number or null | campaign `dailyBudget` ÷ 100 (CBO only; `meta-reads.md` covers currencies without cents) |
+| `status` | string | campaign `status`, verbatim |
+| `startTime` | date or null | the day of campaign `startTime`; null when it is missing or 1969-12-31 |
+| `adsPulled` | `"all"`, `"top"` or `"none"` | `"all"` for a Moshi campaign and for a campaign where every ad set's ads came from T5; `"top"` when any ad set has only T3 top ads; `"none"` when `ads` is empty in every ad set |
 | `retargeting` | boolean | `true` when the name or audience shows retargeting; else `false` |
 | `adsets` | array | below |
 
@@ -75,55 +74,58 @@ ads.
 
 | Field | Type | Source |
 |---|---|---|
-| `id`, `name` | string | ad set `id`, `name` |
-| `startTime` | date or null | ad set `start_time` (read 4); null when Meta returns 1969-12-31 |
-| `optimizationGoal` | string | `optimization_goal`, verbatim |
-| `dailyBudget` | number or null | ad set `daily_budget` (ABO only) |
-| `learning` | `"learning"`, `"limited"`, `"success"` or null | a learning status only when Meta returns one; else null. Never infer it. |
-| `adCount` | integer or null | the number of read-5 rows with this `adset_id` and `effective_status` `ACTIVE`; the account map and the resource note show it |
-| `lastLearningReset` | date or null | `learning_stage_info.last_sig_edit_ts` (epoch seconds) in the account timezone. Copy it even when it falls on launch day; the template treats that as the launch, not a reset |
-| `attributionSetting` | string or null | `attribution_setting`, verbatim |
+| `id`, `name` | string | ad set `adsetId`, `adsetName` |
+| `startTime` | date or null | the day of ad set `startTime`; null when it is missing or 1969-12-31 |
+| `optimizationGoal` | string or null | `optimizationGoal`, verbatim; null when it is missing (the ad set is not ACTIVE) |
+| `dailyBudget` | number or null | ad set `dailyBudget` ÷ 100 (ABO only); null when it is missing |
+| `learning` | `"learning"`, `"limited"`, `"success"` or null | `learningPhase.status`: `LEARNING` → `"learning"`, `FAIL` → `"limited"`, `SUCCESS` → `"success"`. Null when `learningPhase` is missing. Never infer it. |
+| `adCount` | integer or null | T1's `adsOverMaxAds` for this ad set: its ads that delivered in the 30 days. T1 lists no ads, so it counts them all. Not the tree's `adCount`, which also counts paused and old ads. For a launch only T4 lists, use T4's. The account map and the resource note show it |
+| `lastLearningReset` | date or null | `lastSignificantEditAt` as a day in the account timezone; null when it is missing. Copy it even when it falls on launch day; the template treats that as the launch, not a reset |
+| `attributionSetting` | string or null | `attributionSpec` in words, in its order: `{CLICK_THROUGH, 7}, {VIEW_THROUGH, 1}` is `"7-day click, 1-day view"` (`ENGAGED_VIDEO_VIEW` is "engaged view"); null when it is missing |
 | `ads` | array | below |
 
 ### `campaigns[].adsets[].ads[]`
 
 | Field | Type | Source |
 |---|---|---|
-| `id`, `name` | string | ad `id`, `name` |
+| `id`, `name` | string | ad `adId`, `adName` |
 | `angle` | string or null | a 2–4 word creative label you write, for example "Dermatologist reaction" |
-| `daily` | array | one row per day with delivery, from the `time_increment: "1"` read |
+| `daily` | array | one row per day with delivery, from a `granularity: "daily"` read |
 
 `daily[]` row:
 
-| Field | Type | Meta field |
+| Field | Type | Tree field |
 |---|---|---|
-| `date` | date | `date_start` |
-| `spend` | number | `amount_spent.value` |
+| `date` | date | `date` |
+| `spend` | number | `spend` |
 | `impressions` | integer | `impressions` |
-| `linkClicks` | integer or null | `link_click` |
-| `conversations` | integer or null | `results` value when `results.indicator` is `actions:onsite_conversion.messaging_conversation_started_7d`; else null |
-| `purchases` | integer or null | `omni_purchase` |
-| `purchaseValue` | number or null | `omni_purchase_values.value` |
-| `frequency` | number or null | `frequency` |
+| `reach` | integer or null | `reach`, that day's own. The template computes frequency as impressions ÷ reach |
+| `linkClicks` | integer or null | `linkClicks`; null when it is missing |
+| `conversations` | integer or null | `messagingConversationsStarted` |
+| `purchases` | integer or null | `purchases` |
+| `purchaseValue` | number or null | `purchaseValue` |
 
-Each ad has one row per date. Merge reads 6 and 7: when both return a
-date for one ad, keep one row. The values are the same, so keep the read-6
-row. Keep every other row, and never trim rows to the report window.
-Comparisons read days 1–N, which can fall before the window.
+Each ad has one row per date. Merge T2, T3 and T5: when two reads return
+a date for one ad, keep one row. The values are the same. Keep every other
+row, and never trim rows to the report window. Comparisons read days 1–N,
+which can fall before the window.
 
-Do not copy Meta's `ctr`, `cpc`, `cpm`, `cost_per_result` or
-`purchase_roas`. The template computes them from the raw fields.
+Do not copy the tree's `roas`, `cpm`, `costPerMessagingConversationStarted`,
+funnel `ctr` or window `reach`. The template computes every rate from the
+raw fields.
 
 ## Objective mapping
 
 | Meta signal | `objective` |
 |---|---|
-| `OUTCOME_ENGAGEMENT`, or any ad set with `optimization_goal` `CONVERSATIONS` | `"engagement"` |
+| `OUTCOME_ENGAGEMENT`, or any ad set with `optimizationGoal` `CONVERSATIONS` | `"engagement"` |
 | `OUTCOME_SALES` with a purchase optimization goal | `"sales"` |
 | anything else | `"other"` |
 
 A Sales campaign whose ad sets optimize for `CONVERSATIONS` is
-`"engagement"`. The ad set's goal decides what Meta optimizes for.
+`"engagement"`. The ad set's goal decides what Meta optimizes for. An
+`OUTCOME_SALES` campaign where no ad set shows an `optimizationGoal` (none
+is ACTIVE) has an unknown goal, so it is `"other"`.
 
 ## `moshi`
 
@@ -170,11 +172,20 @@ campaign must have `retargeting: false`. When no valid pair exists, leave
 
 Every change since the first Moshi launch that can move results.
 
+Moshi's synced data has no Meta change log. A Meta change shows only when
+it restarted learning: for each ad set whose `lastLearningReset` falls
+after its own day 1 and on or after the first Moshi launch, add
+`kind: "significant_edit"`, `source: "meta"`, the ad set's id, and a
+`what` such as "Meta restarted learning after a significant edit". Meta
+does not say what the edit was, so never call it a budget, audience or
+creative change. Moshi changes come from Moshi tools, for example
+`get_recent_brand_doc_change` → `agent_knowledge`.
+
 | Field | Type | Source |
 |---|---|---|
-| `date` | date | activity log `datetime` (month/day/year) or the Moshi change date |
-| `what` | string, ≤ 80 chars | "Budget raised from $500 to $730/day" |
-| `kind` | `"budget_major"`, `"budget_minor"`, `"new_ad"`, `"targeting"`, `"optimization"`, `"status"`, `"agent_knowledge"` or `"offer"` | your classification |
+| `date` | date | the day of `lastSignificantEditAt`, or the Moshi change date |
+| `what` | string, ≤ 80 chars | "Meta restarted learning after a significant edit" |
+| `kind` | `"significant_edit"`, `"budget_major"`, `"budget_minor"`, `"new_ad"`, `"targeting"`, `"optimization"`, `"status"`, `"agent_knowledge"` or `"offer"` | your classification |
 | `source` | `"meta"` or `"moshi"` | |
 | `entityId` | string or null | the campaign, ad set or ad id |
 
@@ -186,11 +197,11 @@ than 20%.
 
 | Field | Shape | Notes |
 |---|---|---|
-| `accountIssues[]` | `{ kind, severity: "info"\|"warn", text }` | from the anomaly scan and your structure read; `kind` is `"audience_overlap"`, `"pixel"`, `"budget_cut"`, `"learning_limited"` or `"other"` |
+| `accountIssues[]` | `{ kind, severity: "info"\|"warn", text }` | from your T1 structure read, for example `learning_limited` for an ad set whose `learning` is `"limited"`. There is no anomaly scan, so add no overlap or pixel issue you did not read. `kind` is `"audience_overlap"`, `"pixel"`, `"budget_cut"`, `"learning_limited"` or `"other"` |
 | `shopperThemes[]` | `{ theme, text }` | 2–4 themes from the chats |
 | `quotes[]` | `{ text, source: "ad"\|"profile" }` | 2–3 quotes, anonymized, ≤ 15 words each |
 | `nextSteps[]` | `{ step, what, owner: "moshi"\|"merchant", by }` | `by` is a date |
-| `flags[]` | `{ source: "moshi"\|"meta", code, text }` | every flag from every tool, plus `meta_rate_limited` when it happens |
+| `flags[]` | `{ source: "moshi"\|"meta", code, text }` | every flag from every tool, as `meta-reads.md` says (`get_ad_account_tree` flags use `"meta"`), plus `meta_read_failed` when a read fails |
 | `notMeasurableYet[]` | string | each item you could not measure, and why |
 
 ## Tokens
@@ -252,7 +263,8 @@ A `c:` or `s:` token on a campaign with `adsPulled: "top"` fails the data
 check. So does an `{all:merchant.…}` token when any merchant campaign has
 `adsPulled` other than `"all"` (`"top"` or `"none"`). Cite merchant campaigns through `cmp:` tokens. When the
 merchant asks about a number on such a campaign, state it in the chat
-reply from read 3, with its date range and attribution window.
+reply from T1's campaign `metrics`, with T1's date range and the
+attribution window.
 
 ## Data checks
 
