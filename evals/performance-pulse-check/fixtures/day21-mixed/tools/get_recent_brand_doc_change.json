@@ -1,0 +1,10 @@
+{
+ "_shape": "modelled-from-description",
+ "changes": [
+  {
+   "docName": "Shipping and returns",
+   "changedAt": "2026-10-04T16:20:00Z",
+   "summary": "Return window changed from 14 to 30 days."
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+{
+ "_shape": "modelled-from-description",
+ "conversationId": "conv_d1_01",
+ "source": "ad",
+ "messages": [
+  {
+   "role": "shopper",
+   "text": "Does the cedar one fill a small room?",
+   "sentAt": "2026-10-06T10:00:00Z"
+  },
+  {
+   "role": "agent",
+   "text": "Yes. One cedar candle scents about 300 square feet.",
+   "sentAt": "2026-10-06T10:07:00Z"
+  },
+  {
+   "role": "shopper",
+   "text": "Nice. Which one burns longest?",
+   "sentAt": "2026-10-06T10:14:00Z"
+  }
+ ]
+}

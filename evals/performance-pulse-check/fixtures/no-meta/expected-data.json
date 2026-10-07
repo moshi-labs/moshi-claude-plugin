@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "merchant": {
+    "name": "Copperline Coffee Roasters",
+    "currency": "USD",
+    "timezone": "America/Chicago"
+  },
+  "asOf": "2026-10-06T18:40:00Z",
+  "window": {
+    "start": "2026-10-02",
+    "end": "2026-10-06",
+    "partial": true
+  },
+  "metaSyncedAt": null,
+  "mode": "moshi_only",
+  "mood": "reading",
+  "verdict": {
+    "headline": "Your chat ads start a chat for {m:costPerChat} each.",
+    "body": "{m:chats} shoppers have chatted so far, and {m:contactsCaptured} left a contact. Purchases come from thread-proven orders only, so the count is a floor."
+  },
+  "campaigns": [],
+  "moshi": {
+    "firstLaunch": "2026-10-02",
+    "spend": 763.1,
+    "chats": 187,
+    "chatsFromAds": 171,
+    "contactsCaptured": 41,
+    "productViews": 74,
+    "carts": 12,
+    "checkouts": 6,
+    "provenOrders": 5,
+    "provenRevenue": 214.0,
+    "delayedOrders": 2,
+    "closerRecoveries": 1,
+    "closerRevenue": 36.0
+  },
+  "comparisons": [],
+  "changes": [
+    {
+      "date": "2026-10-03",
+      "what": "Bitterness scale added to the roast guide",
+      "kind": "agent_knowledge",
+      "source": "moshi",
+      "entityId": null
+    }
+  ],
+  "accountIssues": [],
+  "shopperThemes": [
+    {
+      "theme": "Bitterness",
+      "text": "Shoppers ask which roast is smoothest. {m:productViews} chats reached a product page."
+    },
+    {
+      "theme": "Grind size",
+      "text": "Shoppers ask for a grind that fits their brewer."
+    }
+  ],
+  "quotes": [
+    {
+      "text": "Which roast is least bitter?",
+      "source": "ad"
+    },
+    {
+      "text": "Do you grind beans for a French press?",
+      "source": "ad"
+    }
+  ],
+  "nextSteps": [
+    {
+      "step": 1,
+      "what": "Connect the Meta Ads connector to add CTR, CPC and fair comparisons.",
+      "owner": "merchant",
+      "by": "2026-10-09"
+    },
+    {
+      "step": 2,
+      "what": "Read chats at the next gate: {m:nextGate}.",
+      "owner": "moshi",
+      "by": "2026-10-09"
+    }
+  ],
+  "flags": [
+    {
+      "source": "moshi",
+      "code": "cart_value_unknown",
+      "text": "Open cart value is unknown: carts carry no price."
+    },
+    {
+      "source": "moshi",
+      "code": "population_mismatch",
+      "text": "Chats include profile-button chats. Chats from ads count ad-sourced chats only."
+    }
+  ],
+  "notMeasurableYet": [
+    "CTR, CPC and CPM: Meta is not connected.",
+    "Fair comparison with your other ads: Meta is not connected."
+  ]
+}

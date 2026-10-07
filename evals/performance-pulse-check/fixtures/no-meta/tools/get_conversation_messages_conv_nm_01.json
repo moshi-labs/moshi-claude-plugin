@@ -1,0 +1,17 @@
+{
+ "_shape": "modelled-from-description",
+ "conversationId": "conv_nm_01",
+ "source": "ad",
+ "messages": [
+  {
+   "role": "shopper",
+   "text": "Which roast is least bitter?",
+   "sentAt": "2026-10-06T10:00:00Z"
+  },
+  {
+   "role": "agent",
+   "text": "Our light roast is the smoothest.",
+   "sentAt": "2026-10-06T10:07:00Z"
+  }
+ ]
+}

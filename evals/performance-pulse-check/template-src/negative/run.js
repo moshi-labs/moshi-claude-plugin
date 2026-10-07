@@ -1,0 +1,67 @@
+// Runs every negative DATA file through check.js and fails when an expected banner line is missing.
+// Usage: node template-src/negative/run.js (from evals/performance-pulse-check), or from any directory.
+const { execFileSync } = require('child_process'), path = require('path');
+const check = path.join(__dirname, '..', 'check.js');
+const EXPECT = {
+  'base.data.js': [],
+  'check0.data.js': ['Check 0: the report could not render'],
+  'check1.data.js': ['Check 1: {c:ce1.roas} would show ROAS for an engagement campaign'],
+  'check2.data.js': ['Check 2: comparison ctr day 15: day must be a whole number from 1 to 14',
+    'Check 2: comparison ctr day 7: your campaign has no start date',
+    'Check 2: comparison ctr day 7: your campaign started more than 90 days ago',
+    'Check 2: comparison cpa day 7: Moshi is on day 6 since its last reset; CPA needs day 8',
+    'Check 2: comparison roas day 7: ROAS needs a Sales campaign',
+    'Check 2: comparison ctr day 7: cmt has rows for only 1 of the first 7 days',
+    'Check 2: comparison ctr day 7: cmg has rows for only 6 of the first 7 days',
+    'Check 2: comparison cpa day 7: CPA needs at least 8 days; day is 7',
+    'Check 2: comparison ctr day 7: your campaign has adsPulled "top"; a comparison needs "all"'],
+  'check3.data.js': ['Check 3: {c:<b>x</b>.ctr} points to nothing'],
+  'check3-moshi.data.js': ['Check 3: {all:moshi.cpc} has no Moshi campaign'],
+  'check4.data.js': ['Check 4: a quote holds an email'],
+  'check5.data.js': ['Check 5: schemaVersion is 2'],
+  'check6.data.js': ['Check 6: {all:merchant.cpc} includes ytop', 'Check 6: {c:yzero.ctr} cites a campaign with only its top ads pulled'],
+  'check6-none.data.js': ['Check 6: {all:merchant.spend} includes ynone, which has adsPulled "none"'],
+  'check7.data.js': ['Check 7: {m:age} ignores the learning reset'],
+  'check8.data.js': ['Check 8: campaigns[0].startTime is not a YYYY-MM-DD date', 'Check 8: campaigns[0].adsets[0].startTime is not a YYYY-MM-DD date',
+    'Check 8: campaigns[0].adsets[0].ads[0].daily[3].date is not a YYYY-MM-DD date',
+    'Check 8: changes[0].date is not a YYYY-MM-DD date', 'Check 8: nextSteps[0].by is not a YYYY-MM-DD date',
+    'Check 8: moshi.firstLaunch is not a YYYY-MM-DD date', 'Check 8: {m:firstLaunch} needs a valid moshi.firstLaunch'],
+  'check9.data.js': ['Check 9: {m:costPerChat} has no value'],
+  'check10.data.js': ['Check 10: ad cm1_a0 has two rows for 2026-09-22'],
+  'check10-fatigue.data.js': ['Check 10: ad cm1_a0 has two rows for 2026-09-22'],
+  'cmp-dup.data.js': ['Check 10: ad ym1_a1 has two rows for 2026-08-01'],
+  'adset-day1.data.js': [],
+  'first-launch.data.js': [],
+  'paused-launch.data.js': [],
+  'truncated-read.data.js': [],
+  'fatigue-window.data.js': []
+};
+// The banner escapes DATA text: check 3's <b> must reach the page as text, not markup.
+// An ad set added Oct 2 to a campaign that started Aug 1 counts from its own startTime; the campaign keeps its Aug 1 clock.
+// {m:firstLaunch} renders as a date. A check 10 failure hides the verdict that cites the ad; age tokens still render.
+// A campaign published paused (startTime Sep 24, first row Oct 1) is on day 6 and passes a day-5 comparison.
+// An old campaign whose rows start at the read's start (asOf - 29 or - 30 days) keeps its Mar 20 startTime: day 201.
+const RENDERED = { 'check3.data.js': ['&lt;b&gt;x&lt;/b&gt;'],
+  'adset-day1.data.js': ['New set is on day 5', 'old set is on day 67', 'the campaign is on day 67'],
+  'first-launch.data.js': ['Moshi launched Sep 22'], 'check10-fatigue.data.js': ['Moshi launched Sep 22'],
+  'check10.data.js': ['Wait until Oct 22'],
+  'paused-launch.data.js': ['Paused launch is on day 6', 'CTR, first 5 days'],
+  'truncated-read.data.js': ['Old campaign is on day 201', 'its twin is on day 201'],
+  'cmp-dup.data.js': ['None of your launches match'],
+  'fatigue-window.data.js': ['Creative fatigue', 'Yours: ym1 ad 0, frequency 1.20 on Sep 28'] };
+// Strings that must not render. check10: no Meta tile, comparison or fatigue value from the duplicate Moshi ad (CTR 1.20%, value $1,800).
+// cmp-dup: the failed comparison reports check 10, not check 2. fatigue-window: Sep 15-21 rows sit before window.start.
+const RENDERED_NOT = { 'check10.data.js': ['1.20%', '$1,800', 'Creative fatigue'], 'check10-fatigue.data.js': ['Creative fatigue'],
+  'cmp-dup.data.js': ['Check 2'], 'check8.data.js': ['Check 9'], 'fatigue-window.data.js': ['Sep 15', 'Sep 21'] };
+let failed = 0;
+for (const [file, want] of Object.entries(EXPECT)) {
+  const out = execFileSync('node', [check, path.join(__dirname, file)], { encoding: 'utf8' });
+  const banner = out.match(/^banner: (.*)$/m)[1], rendered = out.match(/^rendered: (.*)$/m)[1];
+  const miss = want.filter(w => !banner.includes(w)).concat((RENDERED[file] || []).filter(w => !rendered.includes(w)).map(w => 'rendered ' + w))
+    .concat((RENDERED_NOT[file] || []).filter(w => rendered.includes(w)).map(w => 'unwanted ' + w));
+  const bad = miss.length > 0 || (!want.length && banner != 'none');
+  if (bad) failed++;
+  console.log(`${bad ? 'FAIL' : 'ok  '} ${file}: ${bad ? (miss.length ? 'missing ' + miss.join(' | ') : 'unexpected ' + banner) : banner}`);
+}
+console.log(failed ? `${failed} negative test(s) failed` : 'all negative tests passed');
+process.exit(failed ? 1 : 0);

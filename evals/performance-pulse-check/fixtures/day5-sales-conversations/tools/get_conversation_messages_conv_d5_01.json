@@ -1,0 +1,17 @@
+{
+ "_shape": "modelled-from-description",
+ "conversationId": "conv_d5_01",
+ "source": "ad",
+ "messages": [
+  {
+   "role": "shopper",
+   "text": "Does the pack fit a carry-on?",
+   "sentAt": "2026-10-06T10:00:00Z"
+  },
+  {
+   "role": "agent",
+   "text": "Yes. The 35 liter pack fits most carry-on rules.",
+   "sentAt": "2026-10-06T10:07:00Z"
+  }
+ ]
+}

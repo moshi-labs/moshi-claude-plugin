@@ -1,0 +1,17 @@
+{
+ "_shape": "modelled-from-description",
+ "conversationId": "conv_d5_02",
+ "source": "ad",
+ "messages": [
+  {
+   "role": "shopper",
+   "text": "How long to break in the boots?",
+   "sentAt": "2026-10-06T10:00:00Z"
+  },
+  {
+   "role": "agent",
+   "text": "Plan on two short hikes.",
+   "sentAt": "2026-10-06T10:07:00Z"
+  }
+ ]
+}

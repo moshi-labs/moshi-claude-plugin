@@ -1,0 +1,17 @@
+{
+ "_shape": "modelled-from-description",
+ "conversationId": "conv_d21_03",
+ "source": "ad",
+ "messages": [
+  {
+   "role": "shopper",
+   "text": "I ordered last week after the chat and my dog loves them so I want to reorder the large bag with the same discount if that is possible",
+   "sentAt": "2026-10-06T10:00:00Z"
+  },
+  {
+   "role": "agent",
+   "text": "Yes. I added the code to your cart.",
+   "sentAt": "2026-10-06T10:07:00Z"
+  }
+ ]
+}

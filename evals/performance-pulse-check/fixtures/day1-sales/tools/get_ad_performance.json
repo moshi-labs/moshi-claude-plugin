@@ -1,0 +1,46 @@
+{
+ "_shape": "modelled-from-description",
+ "window": {
+  "start": "2026-10-06",
+  "end": "2026-10-06"
+ },
+ "currency": "USD",
+ "spend": 153.83,
+ "perAd": [
+  {
+   "metaAdId": "1202620000000001",
+   "spend": 73.75
+  },
+  {
+   "metaAdId": "1202620000000002",
+   "spend": 64.67
+  },
+  {
+   "metaAdId": "1202620000000003",
+   "spend": 15.41
+  }
+ ],
+ "dmFunnel": {
+  "chats": 14,
+  "chatsFromAds": 12,
+  "productViews": 6,
+  "carts": 2,
+  "checkouts": 1
+ },
+ "leadHeat": {
+  "hot": 2,
+  "warm": 5,
+  "cold": 7
+ },
+ "orders": {
+  "threadProven": 1,
+  "revenue": 24.5,
+  "delayed": 0
+ },
+ "flags": [
+  {
+   "code": "spend_window_partial",
+   "text": "Today's Moshi spend is partial."
+  }
+ ]
+}

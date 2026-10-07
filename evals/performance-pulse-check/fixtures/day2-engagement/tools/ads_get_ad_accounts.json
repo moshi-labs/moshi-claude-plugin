@@ -1,0 +1,19 @@
+{
+ "ad_accounts": [
+  {
+   "ad_account_id": "4428810095531",
+   "ad_account_name": "Saltmarsh Spice Traders",
+   "business_id": "7710045595531",
+   "business_name": "Saltmarsh Spice",
+   "is_ads_mcp_enabled": true,
+   "account_status": "ACTIVE",
+   "is_queryable": true,
+   "has_payment_method": true,
+   "currency": "USD",
+   "min_daily_budget_cents": 100,
+   "is_ads_mcp_disabled_reason": null,
+   "not_queryable_reason": null,
+   "recommended_catalog": null
+  }
+ ]
+}

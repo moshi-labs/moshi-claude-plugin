@@ -1,0 +1,17 @@
+{
+ "_shape": "modelled-from-description",
+ "conversationId": "conv_d21_01",
+ "source": "ad",
+ "messages": [
+  {
+   "role": "shopper",
+   "text": "Will the salmon jerky upset a sensitive stomach?",
+   "sentAt": "2026-10-06T10:00:00Z"
+  },
+  {
+   "role": "agent",
+   "text": "It has one protein and no grain.",
+   "sentAt": "2026-10-06T10:07:00Z"
+  }
+ ]
+}

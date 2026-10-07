@@ -1,0 +1,17 @@
+{
+ "_shape": "modelled-from-description",
+ "conversationId": "conv_d1_02",
+ "source": "ad",
+ "messages": [
+  {
+   "role": "shopper",
+   "text": "Can I get the gift bundle before the 20th?",
+   "sentAt": "2026-10-06T10:00:00Z"
+  },
+  {
+   "role": "agent",
+   "text": "Yes. Standard shipping takes three to five days.",
+   "sentAt": "2026-10-06T10:07:00Z"
+  }
+ ]
+}
