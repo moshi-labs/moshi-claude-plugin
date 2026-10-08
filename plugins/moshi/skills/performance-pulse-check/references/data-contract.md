@@ -254,7 +254,7 @@ numbers you computed.
 | `{a:<adId>.<metric>}` | one ad over the window |
 | `{all:moshi.<metric>}` | all Moshi campaigns over the window; needs at least one Moshi campaign |
 | `{all:merchant.<metric>}` | all merchant campaigns over the window |
-| `{m:<moshiField>}` | a `moshi` field (`firstLaunch` renders as a date, "Sep 22"), or `costPerChat` (the report's cost per ad chat over the window: the spend of the Moshi campaigns that started chats ÷ Meta's chats started on them, `conversations`; a campaign that sends shoppers to the site stays out. In `moshi_only` mode, `moshi.spend ÷ chatsFromAds`), `age` and `stage` (from `firstLaunch`), `nextGate` and `nextGateDate` (the earliest gate among the primary campaign and any campaign shown beside it) |
+| `{m:<moshiField>}` | a `moshi` field (`firstLaunch` renders as a date, "Sep 22"), or `costPerChat` (the report's cost per ad chat over the window, on Meta's count: the spend of the Moshi campaigns that started chats ÷ Meta's chats started on them, `conversations`; a campaign that sends shoppers to the site stays out. When Meta reports no chats on any Moshi campaign, and in `moshi_only` mode, Moshi's count: `moshi.spend ÷ chatsFromAds`. The report names the count), `age` and `stage` (from `firstLaunch`), `nextGate` and `nextGateDate` (the earliest gate among the primary campaign and any campaign shown beside it) |
 | `{cmp:<index>.moshi}`, `{cmp:<index>.merchant}` | comparison `index` (0-based): each side's value over the first `day` days |
 | `{cmp:<index>.note}` | comparison `index`: the resource note the template wrote |
 
@@ -294,8 +294,9 @@ What tokens render, so the sentence around them reads right:
   renders "Meta credits it with 28 purchases (7-day click, 1-day view)".
   Never type the window yourself.
 - `{m:costPerChat}` is the report's cost per ad chat, on Meta's count of
-  chats started. `costPerConversation` is the same division for one
-  campaign, ad set or ad. Both say "Meta's count" when you cite them.
+  chats started unless Meta reports none. `costPerConversation` is the
+  same division for one campaign, ad set or ad. Name the count when you
+  cite either.
 - A token with no value (a null field, or a rate with a zero or null
   divisor) fails the data check and hides its element. Cite only numbers
   that exist. `{m:firstLaunch}` renders a date such as "Sep 22". It fails

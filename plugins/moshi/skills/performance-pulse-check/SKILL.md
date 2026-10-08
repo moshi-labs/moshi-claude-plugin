@@ -122,8 +122,8 @@ Your chat reply has these parts, in this order:
     cite its latest-day frequency, not its window average.
 14. Stay inside the read plan in `meta-reads.md`. No extra reads, no
     retry loops.
-15. Cost per ad chat is on Meta's count of chats started, for the Moshi
-    campaigns that start chats, and contacts come from
+15. Cost per ad chat is one number, on Meta's count of chats started
+    (Moshi's count only when Meta reports none), and contacts come from
     `get_ad_performance`. Never call either not measurable when the tools
     return them.
 
