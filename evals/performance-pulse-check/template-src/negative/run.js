@@ -82,7 +82,7 @@ const RENDERED = { 'check3.data.js': ['&lt;b&gt;x&lt;/b&gt;'],
   'attribution.data.js': ['Meta credits Moshi with 30 purchases (7-day click) at $25.00 .', 'Yours: $25.00 (Meta’s default for this ad set, not reported)',
     'Counted on: Moshi 7-day click · yours Meta’s default for this ad set (not reported)'],
   'icebreakers.data.js': ['How 210 ad chats started Is it spicy? 41% 87 Do you ship to Canada? 24% 51 Typed their own 30% 62 Other 5% 10'],
-  'costperchat.data.js': ['Chats cost $10.00 .', 'Cost per ad chat $10.00 Meta’s count: 75 chats started'] };
+  'costperchat.data.js': ['Chats cost $10.00 .', 'Cost per ad chat $10.00 Meta’s count: 75 chats started, on the campaigns that start chats'] };
 // Strings that must not render. check10: no Meta tile, comparison or fatigue value from the duplicate Moshi ad (CTR 1.20%, value $1,800).
 // cmp-dup: the failed comparison reports check 10, not check 2. fatigue-window: Sep 15-21 rows sit before window.start.
 const RENDERED_NOT = { 'check10.data.js': ['1.20%', '$1,800', 'Creative fatigue'], 'check10-fatigue.data.js': ['Creative fatigue'],

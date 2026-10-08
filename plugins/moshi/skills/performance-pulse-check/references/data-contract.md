@@ -254,7 +254,7 @@ numbers you computed.
 | `{a:<adId>.<metric>}` | one ad over the window |
 | `{all:moshi.<metric>}` | all Moshi campaigns over the window; needs at least one Moshi campaign |
 | `{all:merchant.<metric>}` | all merchant campaigns over the window |
-| `{m:<moshiField>}` | a `moshi` field (`firstLaunch` renders as a date, "Sep 22"), or `costPerChat` (the report's cost per ad chat: the Moshi campaigns' spend ÷ Meta's chats started, `conversations`, over the window; in `moshi_only` mode `moshi.spend ÷ chatsFromAds`), `age` and `stage` (from `firstLaunch`), `nextGate` and `nextGateDate` (the earliest gate among the primary campaign and any campaign shown beside it) |
+| `{m:<moshiField>}` | a `moshi` field (`firstLaunch` renders as a date, "Sep 22"), or `costPerChat` (the report's cost per ad chat over the window: the spend of the Moshi campaigns that started chats ÷ Meta's chats started on them, `conversations`; a campaign that sends shoppers to the site stays out. In `moshi_only` mode, `moshi.spend ÷ chatsFromAds`), `age` and `stage` (from `firstLaunch`), `nextGate` and `nextGateDate` (the earliest gate among the primary campaign and any campaign shown beside it) |
 | `{cmp:<index>.moshi}`, `{cmp:<index>.merchant}` | comparison `index` (0-based): each side's value over the first `day` days |
 | `{cmp:<index>.note}` | comparison `index`: the resource note the template wrote |
 

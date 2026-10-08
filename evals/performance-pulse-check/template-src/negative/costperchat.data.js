@@ -1,4 +1,4 @@
-// Positive test: cost per ad chat is Moshi spend over Meta’s chats started: base.data.js plus the lines under "// change".
+// Positive test: cost per ad chat is the spend of the Moshi campaigns that start chats over Meta’s chats started: base.data.js plus the lines under "// change".
 // The helpers sit inside a function so their names do not clash with the template's globals.
 const DATA = (() => {
 const R = (s, n, f) => Array.from({ length: n }, (_, i) => ({ date: new Date(Date.parse(s) + i * 864e5).toISOString().slice(0, 10),
@@ -23,6 +23,7 @@ const D = {
 };
   // change
   D.campaigns[0].adsets[0].ads[0].daily = R("2026-09-22", 15, { conversations: 5 });
+  D.campaigns.push(camp("cm2", "moshi", "sales", "2026-09-22", [R("2026-09-22", 15, { conversations: 0 })])); // sends shoppers to the site
   D.verdict.body = "Chats cost {m:costPerChat}.";
   return D;
 })();

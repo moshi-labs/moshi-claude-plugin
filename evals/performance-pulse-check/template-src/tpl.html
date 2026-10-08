@@ -88,7 +88,7 @@ const RD={significant_edit:MJ,budget_major:MJ,targeting:MJ,optimization:MJ,budge
 // Meta purchase figures always show the attribution window of the ad sets behind them.
 const PM=['purchases','purchaseValue','roas','cpa'],NR='Meta’s default for this ad set (not reported)';
 const N0=()=>Object.create(null);
-let ANI,AVS,CMPS=[],D,W,REF,AO,CUR='USD',TZ='UTC',ERR=[],CH=[],INK={},T=0,MOV,RUN,SH,ACT=0,VIS=new Set(),BADF,IX={c:N0(),s:N0(),a:N0()},FULL,MC=[],COV=[],PR=null,MA={},OV={a:new Set,s:new Set,c:new Set};
+let ANI,AVS,CMPS=[],D,W,REF,AO,CUR='USD',TZ='UTC',ERR=[],CH=[],INK={},T=0,MOV,RUN,SH,ACT=0,VIS=new Set(),BADF,IX={c:N0(),s:N0(),a:N0()},FULL,MC=[],COV=[],PR=null,MA={},CA={},OV={a:new Set,s:new Set,c:new Set};
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const pd=s=>Date.parse(s+'T00:00:00Z'),ds=n=>new Date(n).toISOString().slice(0,10),dd=(a,b)=>Math.round((pd(a)-pd(b))/DY),addD=(s,n)=>ds(pd(s)+n*DY);
 const isD=s=>typeof s=='string'&&/^\d{4}-\d\d-\d\d$/.test(s)&&!isNaN(pd(s))&&ds(pd(s))==s;
@@ -136,8 +136,9 @@ const ev=e=>setsOf(e).some(s=>/engaged/i.test(s.attributionSetting||'')),spW=c=>
 const ovx=e=>(e.daily?OV.a:e.adsets?OV.c:OV.s).has(e.id);
 // Check 13: the headline is about the primary campaign. A campaign tied with it on spend passes.
 const hd=(C,t)=>{if(C.owner=='moshi'&&PR&&C!=PR&&spW(C)<spW(PR)-.005)throw[13,`the headline cites ${C.name} (${t}), not the primary campaign ${PR.name}`]};
-// Cost per ad chat: Meta's chats started on the Moshi campaigns; in moshi_only mode, Moshi's chatsFromAds.
-const cpChat=()=>{const m=D.moshi||{},dc=FULL&&MC.find(c=>c.dup);if(dc)throw[10,dc.dup];return FULL?(ok(MA.spend)&&MA.conversations?MA.spend/MA.conversations:null):ok(m.spend)&&ok(m.chatsFromAds)&&m.chatsFromAds?m.spend/m.chatsFromAds:null};
+// Cost per ad chat: the spend of the Moshi campaigns that started chats ÷ Meta's chats started on them (CA); in moshi_only mode,
+// Moshi's spend ÷ chatsFromAds. A Moshi campaign that sends shoppers to the site starts no chats, so its spend stays out.
+const cpChat=()=>{const m=D.moshi||{},dc=FULL&&MC.find(c=>c.dup);if(dc)throw[10,dc.dup];return FULL?(ok(CA.spend)&&CA.conversations?CA.spend/CA.conversations:null):ok(m.spend)&&ok(m.chatsFromAds)&&m.chatsFromAds?m.spend/m.chatsFromAds:null};
 // x: 'h' for the verdict headline, 'b' for its body. Returns [metric, value, attribution window or 0].
 function val(p,b,x){if(p=='cmp'){const[i,k]=b.split('.'),c=CMPS[+i];if(!c||!/^\d+$/.test(i)||!['moshi','merchant','note'].includes(k))throw[3,`{cmp:${b}} points to nothing`];if(!c.ok)throw c.err||[2,`{cmp:${b}} cites a failed comparison`];if(x=='h')hd(c.mc,`{cmp:${b}}`);return k=='note'?['s',c.note]:[c.metric,c.v[k=='moshi'?0:1],c.lab&&c.lab[k=='moshi'?0:1]]}
 if(p=='m'){const m=D.moshi||{};if(AGE.includes(b)){if(b[0]!='n'){const rs=D.campaigns.filter(c=>c.owner=='moshi'&&resetOf(c));if(rs.length)throw[7,`{m:${b}} ignores the learning reset; cite {c:${rs[0].id}.${b}}`]}const g=b[0]=='n'?mGate():mStage();if(!g&&BADF)throw[8,`{m:${b}} needs a valid moshi.firstLaunch`];return ageV(b,g)}if(b=='firstLaunch'){if(!m[b])throw BADF?[8,`{m:${b}} needs a valid moshi.firstLaunch`]:[9,`{m:${b}} has no value`];return['s',fD(m[b])]}if(b=='costPerChat')return['costPerChat',cpChat()];if(Object.hasOwn(m,b))return[b,m[b]];throw[3,`{m:${b}} points to nothing`]}
@@ -216,7 +217,7 @@ a.r1=a.daily.filter(r=>r.impressions>0).map(r=>r.date).sort()[0];
 // a dup flag here; tokens, tiles, the stage tracker, the fatigue chart and comparisons read only these flags.
 const dts=a.daily.map(r=>r.date),dupI=dts.findIndex((d,i)=>dts.indexOf(d)!=i);if(dupI>=0){a.dup=s.dup=c.dup=`ad ${a.id} has two rows for ${dts[dupI]}`;bad(10,a.dup);a.daily=[]}})})});
 MC=D.campaigns.filter(c=>c.owner=='moshi');const YC=D.campaigns.filter(c=>c.owner=='merchant');
-const recent=REF&&dd(AO||REF,REF)<=7,dM=MC.some(c=>c.dup);MA=dM?{}:agg(rowsOf(MC).filter(inW),0);
+const recent=REF&&dd(AO||REF,REF)<=7,dM=MC.some(c=>c.dup),CC=MC.filter(c=>rowsOf([c]).some(r=>inW(r)&&r.conversations>0));MA=dM?{}:agg(rowsOf(MC).filter(inW),0);CA=dM?{}:agg(rowsOf(CC).filter(inW),0);
 // The primary campaign: the Moshi campaign with the largest spend in the window (the first listed on a tie). A campaign with 25%+
 // of Moshi's spend that delivered in the last 7 days shows beside it. Every other Moshi campaign gets one footnote line.
 const lastD=c=>rowsOf([c]).filter(r=>r.impressions>0).map(r=>r.date).sort().pop(),tot=MC.reduce((t,c)=>t+spW(c),0);
@@ -261,7 +262,7 @@ const SA=dM?{}:agg(rowsOf(MC.filter(c=>c.objective=='sales')).filter(inW),0);let
 const tile=(l,v,s)=>`<div class="card tile"><div class="tl">${l}</div><div class="tv">${v}</div>${s?`<div class="ts">${s}</div>`:''}</div>`;
 const SG=MC.filter(c=>c.objective=='sales').map(stage),early=SG.length&&SG.every(g=>!g||g.age<8),r8=SG.filter(Boolean).map(g=>addD(g.s.d,7)).sort()[0];
 if(full&&!dM)try{attr=lab(MC.filter(c=>rowsOf([c]).some(inW)))}catch(e){bad(...e);attr=null}
-h.push(`<div class="tiles">${tile('Spend',fM(full?MA.spend:m.spend),full?'Moshi campaigns, Meta':'Moshi-managed')}${full?tile('CTR',fP(MA.ctr),'link clicks ÷ impressions'):''}${tile('Cost per ad chat',fM(cpc),full?`Meta’s count${ok(MA.conversations)?`: ${fN(MA.conversations)} chats started`:' of chats started'}`:'Moshi’s count of chats from ads')}${tile('Chats',fN(m.chats),ok(m.chatsFromAds)?fN(m.chatsFromAds)+' from ads':'')}${tile('Contacts captured',fN(m.contactsCaptured),'emails and phones')}</div>
+h.push(`<div class="tiles">${tile('Spend',fM(full?MA.spend:m.spend),full?'Moshi campaigns, Meta':'Moshi-managed')}${full?tile('CTR',fP(MA.ctr),'link clicks ÷ impressions'):''}${tile('Cost per ad chat',fM(cpc),full?`Meta’s count${ok(CA.conversations)?`: ${fN(CA.conversations)} chats started${CC.length<MC.length?', on the campaigns that start chats':''}`:' of chats started'}`:'Moshi’s count of chats from ads')}${tile('Chats',fN(m.chats),ok(m.chatsFromAds)?fN(m.chatsFromAds)+' from ads':'')}${tile('Contacts captured',fN(m.contactsCaptured),'emails and phones')}</div>
 <div class="card pur"><div class="ph"><h3>Purchases</h3>${pill('two sources, never added')}</div>
 ${full&&attr!=null?`<div class="pr"><div><b>Meta’s estimate</b><small>pixel${attr?', '+esc(attr):''}</small></div><div><span class="num">${fN(MA.purchases)}</span> <small>purchases</small></div><div><span class="num">${fM(MA.purchaseValue)}</span> <small>value</small></div><div>${MC.some(c=>c.objective=='sales')?`<span class="num">${fmt('roas',SA.roas)}</span> <small>ROAS, Sales campaigns${early?`, too early to judge${r8?', first read '+fD(r8):''}`:''}</small>`:'<small>No ROAS: chat campaigns are scored on cost per chat</small>'}</div></div>`:''}
 <div class="pr"><div><b>Moshi-proven</b><small>matched to a chat thread, a floor</small></div><div><span class="num">${fN(m.provenOrders)}</span> <small>orders</small></div><div><span class="num">${fM(m.provenRevenue)}</span> <small>revenue</small></div><div><span class="num">${fN(m.closerRecoveries)}</span> <small>Closer recoveries, ${fM(m.closerRevenue)}</small></div></div>
