@@ -59,6 +59,7 @@
      "owner": "moshi",
      "status": "ACTIVE",
      "effectiveStatus": "ACTIVE",
+     "adsetStatus": "ACTIVE",
      "startTime": "2026-10-02T09:15:00-0600",
      "optimizationGoal": "CONVERSATIONS",
      "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
@@ -98,6 +99,8 @@
        "moshiFlowId": "e45862ec-d4aa-5170-aa29-ef9e46210b3e",
        "status": "ACTIVE",
        "effectiveStatus": "ACTIVE",
+       "clonedFrom": null,
+       "creativeOverlap": [],
        "creativeType": "image",
        "ctaType": "MESSAGE_PAGE",
        "metrics": {
@@ -197,6 +200,8 @@
        "moshiFlowId": "8771f670-2f66-5813-91aa-cba7bbed6162",
        "status": "ACTIVE",
        "effectiveStatus": "ACTIVE",
+       "clonedFrom": null,
+       "creativeOverlap": [],
        "creativeType": "image",
        "ctaType": "MESSAGE_PAGE",
        "metrics": {

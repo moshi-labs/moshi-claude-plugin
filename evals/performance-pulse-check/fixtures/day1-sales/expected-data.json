@@ -12,8 +12,13 @@
     "partial": true
   },
   "metaSyncedAt": "2026-10-06T18:39:00Z",
+  "metaWindow": {
+    "start": "2026-09-07",
+    "end": "2026-10-06"
+  },
   "mode": "full",
   "mood": "delight",
+  "primaryCampaignId": "1202620000000005",
   "verdict": {
     "headline": "Your chat ads are earning clicks at {c:1202620000000005.ctr}.",
     "body": "Day 1 is a read on attention, and two of three creatives have it. Your CTR beats both of your last two launches on their first day: {cmp:0.moshi} against {cmp:0.merchant} and {cmp:1.merchant}. Purchases are too early to call."
@@ -26,7 +31,7 @@
       "objective": "sales",
       "metaObjective": "OUTCOME_SALES",
       "budgetType": "CBO",
-      "dailyBudget": 300.0,
+      "dailyBudget": 300,
       "status": "ACTIVE",
       "startTime": "2026-10-06",
       "adsPulled": "all",
@@ -39,6 +44,7 @@
           "dailyBudget": null,
           "learning": "learning",
           "adCount": 3,
+          "status": "ACTIVE",
           "startTime": "2026-10-06",
           "lastLearningReset": "2026-10-06",
           "attributionSetting": "7-day click, 1-day view",
@@ -47,6 +53,8 @@
               "id": "1202620000000001",
               "name": "Moshi - Cedar Smoke Unboxing",
               "angle": "Unboxing reaction",
+              "clonedFrom": null,
+              "creativeOverlap": [],
               "daily": [
                 {
                   "date": "2026-10-06",
@@ -64,6 +72,8 @@
               "id": "1202620000000002",
               "name": "Moshi - Burn Test Close-up",
               "angle": "Burn test demo",
+              "clonedFrom": null,
+              "creativeOverlap": [],
               "daily": [
                 {
                   "date": "2026-10-06",
@@ -81,6 +91,8 @@
               "id": "1202620000000003",
               "name": "Moshi - Gift Bundle Chat",
               "angle": "Gift bundle offer",
+              "clonedFrom": null,
+              "creativeOverlap": [],
               "daily": [
                 {
                   "date": "2026-10-06",
@@ -105,11 +117,12 @@
       "objective": "sales",
       "metaObjective": "OUTCOME_SALES",
       "budgetType": "CBO",
-      "dailyBudget": 3100.0,
+      "dailyBudget": 3100,
       "status": "ACTIVE",
       "startTime": "2026-03-02",
       "adsPulled": "top",
       "retargeting": false,
+      "metaSpend": 83367.36,
       "adsets": [
         {
           "id": "1202620000000020",
@@ -118,6 +131,7 @@
           "dailyBudget": null,
           "learning": "success",
           "adCount": 12,
+          "status": "ACTIVE",
           "startTime": "2026-03-02",
           "lastLearningReset": "2026-03-02",
           "attributionSetting": "7-day click, 1-day view",
@@ -747,11 +761,12 @@
       "objective": "sales",
       "metaObjective": "OUTCOME_SALES",
       "budgetType": "CBO",
-      "dailyBudget": 2650.0,
+      "dailyBudget": 2650,
       "status": "ACTIVE",
       "startTime": "2026-04-14",
       "adsPulled": "top",
       "retargeting": false,
+      "metaSpend": 42537.73,
       "adsets": [
         {
           "id": "1202620000000033",
@@ -760,6 +775,7 @@
           "dailyBudget": null,
           "learning": "success",
           "adCount": 11,
+          "status": "ACTIVE",
           "startTime": "2026-04-14",
           "lastLearningReset": "2026-04-14",
           "attributionSetting": "7-day click, 1-day view",
@@ -1082,11 +1098,12 @@
       "objective": "other",
       "metaObjective": "OUTCOME_SALES",
       "budgetType": "CBO",
-      "dailyBudget": 450.0,
+      "dailyBudget": 450,
       "status": "PAUSED",
       "startTime": null,
       "adsPulled": "none",
       "retargeting": true,
+      "metaSpend": 12900,
       "adsets": [
         {
           "id": "1202620000000041",
@@ -1095,6 +1112,7 @@
           "dailyBudget": null,
           "learning": null,
           "adCount": 6,
+          "status": "CAMPAIGN_PAUSED",
           "startTime": null,
           "lastLearningReset": null,
           "attributionSetting": null,
@@ -1109,11 +1127,12 @@
       "objective": "sales",
       "metaObjective": "OUTCOME_SALES",
       "budgetType": "CBO",
-      "dailyBudget": 2400.0,
+      "dailyBudget": 2400,
       "status": "ACTIVE",
       "startTime": "2026-09-08",
       "adsPulled": "all",
       "retargeting": false,
+      "metaSpend": 51721.15,
       "adsets": [
         {
           "id": "1202620000000055",
@@ -1122,6 +1141,7 @@
           "dailyBudget": null,
           "learning": "success",
           "adCount": 12,
+          "status": "ACTIVE",
           "startTime": "2026-09-08",
           "lastLearningReset": "2026-09-08",
           "attributionSetting": "7-day click, 1-day view",
@@ -2901,11 +2921,12 @@
       "objective": "sales",
       "metaObjective": "OUTCOME_SALES",
       "budgetType": "CBO",
-      "dailyBudget": 1900.0,
+      "dailyBudget": 1900,
       "status": "ACTIVE",
       "startTime": "2026-08-11",
       "adsPulled": "all",
       "retargeting": false,
+      "metaSpend": 40500,
       "adsets": [
         {
           "id": "1202620000000066",
@@ -2914,6 +2935,7 @@
           "dailyBudget": null,
           "learning": "success",
           "adCount": 9,
+          "status": "ACTIVE",
           "startTime": "2026-08-11",
           "lastLearningReset": "2026-08-11",
           "attributionSetting": "7-day click, 1-day view",
@@ -4277,6 +4299,25 @@
   ],
   "changes": [],
   "accountIssues": [],
+  "iceBreakers": {
+    "total": 12,
+    "items": [
+      {
+        "text": "Which scent lasts longest?",
+        "conversations": 5,
+        "share": 0.4167
+      },
+      {
+        "text": "Can I send it as a gift?",
+        "conversations": 3,
+        "share": 0.25
+      }
+    ],
+    "typedOwn": {
+      "conversations": 4,
+      "share": 0.3333
+    }
+  },
   "shopperThemes": [
     {
       "theme": "Room size",

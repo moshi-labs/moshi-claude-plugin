@@ -12,8 +12,13 @@
     "partial": true
   },
   "metaSyncedAt": "2026-10-06T18:37:00Z",
+  "metaWindow": {
+    "start": "2026-09-07",
+    "end": "2026-10-06"
+  },
   "mode": "full",
   "mood": "delight",
+  "primaryCampaignId": "1202640000000089",
   "verdict": {
     "headline": "Your Moshi ads hold CTR at {c:1202640000000089.ctr} while your top ad tires.",
     "body": "Your top ad now shows a frequency of {a:1202640000000092.frequency}, and its CTR is down to {a:1202640000000092.ctr}. A significant edit on Sep 24 restarted learning on the Sales ad set, so its next gate is {c:1202640000000089.nextGate} on {c:1202640000000089.nextGateDate}."
@@ -26,7 +31,7 @@
       "objective": "sales",
       "metaObjective": "OUTCOME_SALES",
       "budgetType": "CBO",
-      "dailyBudget": 580.0,
+      "dailyBudget": 580,
       "status": "ACTIVE",
       "startTime": "2026-09-16",
       "adsPulled": "all",
@@ -39,6 +44,7 @@
           "dailyBudget": null,
           "learning": "success",
           "adCount": 3,
+          "status": "ACTIVE",
           "startTime": "2026-09-16",
           "lastLearningReset": "2026-09-24",
           "attributionSetting": "7-day click, 1-day view",
@@ -47,6 +53,8 @@
               "id": "1202640000000083",
               "name": "Moshi - Salmon Jerky Reaction",
               "angle": "Taste test reaction",
+              "clonedFrom": null,
+              "creativeOverlap": [],
               "daily": [
                 {
                   "date": "2026-09-16",
@@ -264,6 +272,8 @@
               "id": "1202640000000084",
               "name": "Moshi - Puppy Treat Chat",
               "angle": "Puppy treat offer",
+              "clonedFrom": null,
+              "creativeOverlap": [],
               "daily": [
                 {
                   "date": "2026-09-16",
@@ -481,6 +491,8 @@
               "id": "1202640000000085",
               "name": "Moshi - Ingredient Check",
               "angle": "Ingredient check",
+              "clonedFrom": null,
+              "creativeOverlap": [],
               "daily": [
                 {
                   "date": "2026-09-16",
@@ -715,9 +727,10 @@
           "id": "1202640000000090",
           "name": "Moshi | Chat | Broad US",
           "optimizationGoal": "CONVERSATIONS",
-          "dailyBudget": 150.0,
+          "dailyBudget": 150,
           "learning": "success",
           "adCount": 2,
+          "status": "ACTIVE",
           "startTime": "2026-09-16",
           "lastLearningReset": "2026-09-16",
           "attributionSetting": "7-day click, 1-day view",
@@ -726,6 +739,8 @@
               "id": "1202640000000086",
               "name": "Moshi - Treat Quiz",
               "angle": "Treat quiz hook",
+              "clonedFrom": null,
+              "creativeOverlap": [],
               "daily": [
                 {
                   "date": "2026-09-16",
@@ -943,6 +958,8 @@
               "id": "1202640000000087",
               "name": "Moshi - Sensitive Tummy Q",
               "angle": "Sensitive tummy question",
+              "clonedFrom": null,
+              "creativeOverlap": [],
               "daily": [
                 {
                   "date": "2026-09-16",
@@ -1167,11 +1184,12 @@
       "objective": "sales",
       "metaObjective": "OUTCOME_SALES",
       "budgetType": "CBO",
-      "dailyBudget": 3000.0,
+      "dailyBudget": 3000,
       "status": "ACTIVE",
       "startTime": null,
       "adsPulled": "top",
       "retargeting": false,
+      "metaSpend": 63742.59,
       "adsets": [
         {
           "id": "1202640000000101",
@@ -1180,6 +1198,7 @@
           "dailyBudget": null,
           "learning": "success",
           "adCount": 9,
+          "status": "ACTIVE",
           "startTime": null,
           "lastLearningReset": "2026-05-12",
           "attributionSetting": "7-day click, 1-day view",
@@ -2116,11 +2135,12 @@
       "objective": "sales",
       "metaObjective": "OUTCOME_SALES",
       "budgetType": "CBO",
-      "dailyBudget": 1980.0,
+      "dailyBudget": 1980,
       "status": "ACTIVE",
       "startTime": "2026-08-04",
       "adsPulled": "all",
       "retargeting": false,
+      "metaSpend": 51000,
       "adsets": [
         {
           "id": "1202640000000113",
@@ -2129,6 +2149,7 @@
           "dailyBudget": null,
           "learning": "success",
           "adCount": 10,
+          "status": "ACTIVE",
           "startTime": "2026-08-04",
           "lastLearningReset": "2026-08-04",
           "attributionSetting": "7-day click, 1-day view",
@@ -3619,14 +3640,16 @@
       "startTime": "2026-07-21",
       "adsPulled": "all",
       "retargeting": false,
+      "metaSpend": 39200,
       "adsets": [
         {
           "id": "1202640000000119",
           "name": "Raincoat Interests",
           "optimizationGoal": "OFFSITE_CONVERSIONS",
-          "dailyBudget": 700.0,
+          "dailyBudget": 700,
           "learning": "success",
           "adCount": 4,
+          "status": "ACTIVE",
           "startTime": "2026-07-21",
           "lastLearningReset": "2026-07-21",
           "attributionSetting": "7-day click, 1-day view",
@@ -4225,9 +4248,10 @@
           "id": "1202640000000124",
           "name": "Raincoat Lookalike",
           "optimizationGoal": "OFFSITE_CONVERSIONS",
-          "dailyBudget": 700.0,
+          "dailyBudget": 700,
           "learning": "success",
           "adCount": 4,
+          "status": "ACTIVE",
           "startTime": "2026-07-21",
           "lastLearningReset": "2026-07-21",
           "attributionSetting": "7-day click, 1-day view",
@@ -4871,6 +4895,30 @@
     }
   ],
   "accountIssues": [],
+  "iceBreakers": {
+    "total": 571,
+    "items": [
+      {
+        "text": "Is it gentle on sensitive stomachs?",
+        "conversations": 214,
+        "share": 0.3748
+      },
+      {
+        "text": "Which bag size fits my dog?",
+        "conversations": 131,
+        "share": 0.2294
+      },
+      {
+        "text": "Do you ship to Canada?",
+        "conversations": 52,
+        "share": 0.0911
+      }
+    ],
+    "typedOwn": {
+      "conversations": 174,
+      "share": 0.3047
+    }
+  },
   "shopperThemes": [
     {
       "theme": "Sensitive stomachs",

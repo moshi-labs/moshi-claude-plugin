@@ -59,6 +59,7 @@
      "owner": "moshi",
      "status": "ACTIVE",
      "effectiveStatus": "ACTIVE",
+     "adsetStatus": "ACTIVE",
      "startTime": "2026-10-06T09:15:00-0700",
      "optimizationGoal": "OFFSITE_CONVERSIONS",
      "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
@@ -99,6 +100,8 @@
        "moshiFlowId": "6ec55f1b-ec28-5d9c-be10-8ac6fe6b9dc2",
        "status": "ACTIVE",
        "effectiveStatus": "ACTIVE",
+       "clonedFrom": null,
+       "creativeOverlap": [],
        "creativeType": "video",
        "ctaType": "SHOP_NOW",
        "metrics": {
@@ -146,6 +149,8 @@
        "moshiFlowId": "7cb47a43-acf3-5dab-bca5-8b164473fe07",
        "status": "ACTIVE",
        "effectiveStatus": "ACTIVE",
+       "clonedFrom": null,
+       "creativeOverlap": [],
        "creativeType": "video",
        "ctaType": "SHOP_NOW",
        "metrics": {
@@ -193,6 +198,8 @@
        "moshiFlowId": "9c89b471-8302-5bd8-9309-d3ed2e2dbe53",
        "status": "ACTIVE",
        "effectiveStatus": "ACTIVE",
+       "clonedFrom": null,
+       "creativeOverlap": [],
        "creativeType": "image",
        "ctaType": "SHOP_NOW",
        "metrics": {

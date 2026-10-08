@@ -12,8 +12,13 @@
     "partial": true
   },
   "metaSyncedAt": "2026-10-06T18:36:00Z",
+  "metaWindow": {
+    "start": "2026-09-07",
+    "end": "2026-10-06"
+  },
   "mode": "full",
   "mood": "delight",
+  "primaryCampaignId": "1202660000000129",
   "verdict": {
     "headline": "Your chat ads start conversations at {c:1202660000000129.costPerConversation} each.",
     "body": "This campaign has a Sales objective, but it optimizes for chats, so cost per conversation is its score. Its CTR is {cmp:0.moshi} on days 1 to 5, against {cmp:0.merchant} for your summer launch."
@@ -26,7 +31,7 @@
       "objective": "engagement",
       "metaObjective": "OUTCOME_SALES",
       "budgetType": "CBO",
-      "dailyBudget": 250.0,
+      "dailyBudget": 250,
       "status": "ACTIVE",
       "startTime": "2026-10-02",
       "adsPulled": "all",
@@ -39,6 +44,7 @@
           "dailyBudget": null,
           "learning": "success",
           "adCount": 2,
+          "status": "ACTIVE",
           "startTime": "2026-10-02",
           "lastLearningReset": "2026-10-02",
           "attributionSetting": "7-day click, 1-day view",
@@ -47,6 +53,8 @@
               "id": "1202660000000126",
               "name": "Moshi - Pack Fit Question",
               "angle": "Pack fit question",
+              "clonedFrom": null,
+              "creativeOverlap": [],
               "daily": [
                 {
                   "date": "2026-10-02",
@@ -104,6 +112,8 @@
               "id": "1202660000000127",
               "name": "Moshi - Boot Break-in Q",
               "angle": "Boot break-in question",
+              "clonedFrom": null,
+              "creativeOverlap": [],
               "daily": [
                 {
                   "date": "2026-10-02",
@@ -168,11 +178,12 @@
       "objective": "engagement",
       "metaObjective": "OUTCOME_SALES",
       "budgetType": "CBO",
-      "dailyBudget": 900.0,
+      "dailyBudget": 900,
       "status": "ACTIVE",
       "startTime": "2026-08-07",
       "adsPulled": "all",
       "retargeting": false,
+      "metaSpend": 32906.92,
       "adsets": [
         {
           "id": "1202660000000138",
@@ -181,6 +192,7 @@
           "dailyBudget": null,
           "learning": "success",
           "adCount": 8,
+          "status": "ACTIVE",
           "startTime": "2026-08-07",
           "lastLearningReset": "2026-08-07",
           "attributionSetting": "7-day click, 1-day view",
@@ -2276,7 +2288,7 @@
     "carts": 8,
     "checkouts": 3,
     "provenOrders": 2,
-    "provenRevenue": 148.0,
+    "provenRevenue": 148,
     "delayedOrders": 1,
     "closerRecoveries": 0,
     "closerRevenue": 0
@@ -2297,6 +2309,25 @@
   ],
   "changes": [],
   "accountIssues": [],
+  "iceBreakers": {
+    "total": 420,
+    "items": [
+      {
+        "text": "Will it fit a carry-on?",
+        "conversations": 168,
+        "share": 0.4
+      },
+      {
+        "text": "How long is the boot break-in?",
+        "conversations": 97,
+        "share": 0.231
+      }
+    ],
+    "typedOwn": {
+      "conversations": 155,
+      "share": 0.369
+    }
+  },
   "shopperThemes": [
     {
       "theme": "Fit and size",

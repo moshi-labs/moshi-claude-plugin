@@ -12,8 +12,13 @@
     "partial": true
   },
   "metaSyncedAt": "2026-10-06T18:38:00Z",
+  "metaWindow": {
+    "start": "2026-09-07",
+    "end": "2026-10-06"
+  },
   "mode": "full",
   "mood": "reading",
+  "primaryCampaignId": "1202630000000071",
   "verdict": {
     "headline": "Your chat ads start conversations at {c:1202630000000071.costPerConversation} each.",
     "body": "This campaign optimizes for chats, so cost per conversation is its score. It is in learning, and purchases are too early to read."
@@ -26,7 +31,7 @@
       "objective": "engagement",
       "metaObjective": "OUTCOME_ENGAGEMENT",
       "budgetType": "CBO",
-      "dailyBudget": 120.0,
+      "dailyBudget": 120,
       "status": "ACTIVE",
       "startTime": "2026-10-05",
       "adsPulled": "all",
@@ -39,6 +44,7 @@
           "dailyBudget": null,
           "learning": "learning",
           "adCount": 2,
+          "status": "ACTIVE",
           "startTime": "2026-10-05",
           "lastLearningReset": "2026-10-05",
           "attributionSetting": "7-day click, 1-day view",
@@ -47,6 +53,8 @@
               "id": "1202630000000068",
               "name": "Moshi - Pantry Reveal",
               "angle": "Pantry reveal",
+              "clonedFrom": null,
+              "creativeOverlap": [],
               "daily": [
                 {
                   "date": "2026-10-05",
@@ -74,6 +82,8 @@
               "id": "1202630000000069",
               "name": "Moshi - Blend Quiz Hook",
               "angle": "Blend quiz hook",
+              "clonedFrom": null,
+              "creativeOverlap": [],
               "daily": [
                 {
                   "date": "2026-10-05",
@@ -108,11 +118,12 @@
       "objective": "sales",
       "metaObjective": "OUTCOME_SALES",
       "budgetType": "CBO",
-      "dailyBudget": 1200.0,
+      "dailyBudget": 1200,
       "status": "ACTIVE",
       "startTime": "2026-02-10",
       "adsPulled": "top",
       "retargeting": false,
+      "metaSpend": 17892.27,
       "adsets": [
         {
           "id": "1202630000000081",
@@ -121,6 +132,7 @@
           "dailyBudget": null,
           "learning": "success",
           "adCount": 9,
+          "status": "ACTIVE",
           "startTime": "2026-02-10",
           "lastLearningReset": "2026-02-10",
           "attributionSetting": "7-day click, 1-day view",
@@ -1069,6 +1081,25 @@
   "comparisons": [],
   "changes": [],
   "accountIssues": [],
+  "iceBreakers": {
+    "total": 82,
+    "items": [
+      {
+        "text": "Which blend is best for grilling?",
+        "conversations": 34,
+        "share": 0.4146
+      },
+      {
+        "text": "How hot is the chili mix?",
+        "conversations": 21,
+        "share": 0.2561
+      }
+    ],
+    "typedOwn": {
+      "conversations": 27,
+      "share": 0.3293
+    }
+  },
   "shopperThemes": [
     {
       "theme": "Recipe fit",

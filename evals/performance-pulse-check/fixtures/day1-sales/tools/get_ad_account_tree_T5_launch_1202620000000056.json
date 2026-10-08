@@ -59,6 +59,7 @@
      "owner": "merchant",
      "status": "ACTIVE",
      "effectiveStatus": "ACTIVE",
+     "adsetStatus": "ACTIVE",
      "startTime": "2026-09-08T09:15:00-0700",
      "optimizationGoal": "OFFSITE_CONVERSIONS",
      "bidStrategy": "LOWEST_COST_WITHOUT_CAP",

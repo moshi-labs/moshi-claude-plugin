@@ -12,8 +12,10 @@
     "partial": true
   },
   "metaSyncedAt": null,
+  "metaWindow": null,
   "mode": "moshi_only",
   "mood": "reading",
+  "primaryCampaignId": null,
   "verdict": {
     "headline": "Your chat ads start a chat for {m:costPerChat} each.",
     "body": "{m:chats} shoppers have chatted so far, and {m:contactsCaptured} left a contact. Purchases come from thread-proven orders only, so the count is a floor."
@@ -29,10 +31,10 @@
     "carts": 12,
     "checkouts": 6,
     "provenOrders": 5,
-    "provenRevenue": 214.0,
+    "provenRevenue": 214,
     "delayedOrders": 2,
     "closerRecoveries": 1,
-    "closerRevenue": 36.0
+    "closerRevenue": 36
   },
   "comparisons": [],
   "changes": [
@@ -45,6 +47,25 @@
     }
   ],
   "accountIssues": [],
+  "iceBreakers": {
+    "total": 171,
+    "items": [
+      {
+        "text": "Which roast is least bitter?",
+        "conversations": 74,
+        "share": 0.4327
+      },
+      {
+        "text": "Can you grind it for my brewer?",
+        "conversations": 40,
+        "share": 0.2339
+      }
+    ],
+    "typedOwn": {
+      "conversations": 57,
+      "share": 0.3333
+    }
+  },
   "shopperThemes": [
     {
       "theme": "Bitterness",
