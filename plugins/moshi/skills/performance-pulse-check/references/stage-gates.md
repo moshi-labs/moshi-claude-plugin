@@ -49,7 +49,9 @@ An engagement campaign never gets a CPA or ROAS gate. Its day 8 gate is a
 read on cost per chat, carts and delayed orders.
 
 Next gates: day 4, day 8, day 15, day 31. With several Moshi campaigns,
-the next gate is the earliest next-gate date among them. The next gate date is the
+the next gate is the earliest next-gate date among the primary campaign
+and any campaign shown beside it (`data-contract.md`, `primaryCampaignId`);
+a footnoted campaign's gates do not count. The next gate date is the
 calendar date of the next of these, counted from day 1 or from the last
 reset. Every answer names it: "Next gate: first CPA read on 2026-10-14."
 
@@ -77,3 +79,8 @@ question.
 Meta keeps adding purchases to the last few days as conversions arrive.
 When the window ends in the last 7 days and any Meta purchase number is
 shown, add: "Meta may still add purchases to recent days."
+
+Meta counts purchases under each ad set's attribution window, and the
+report prints it next to every Meta purchase figure. When your ad set's
+window adds engaged views and Moshi's doesn't, its count is on a wider
+basis: say the two are not on the same basis instead of ranking them.

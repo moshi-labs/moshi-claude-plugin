@@ -11,28 +11,36 @@ organization argument, so never pass one.
 
 ## The plan
 
-Make at most five reads, plus any splits the size guard needs. Never call
+Make at most six reads, plus any splits the size guard needs. Never call
 once per ad. Dates are `YYYY-MM-DD`, include both ends, and are the ad
-account's own days.
+account's own days. The report window is the one `get_ad_performance`
+returns; the Meta reads start early enough to cover it.
 
 | Read | Arguments | Gives |
 |---|---|---|
-| T1 account | `dateFrom`: 29 days before today, `dateTo`: today, `maxAds: 0` | `account`, `organization`, `flags`, and every campaign and ad set that delivered in those 30 days, with no ad rows |
-| T2 Moshi ads | T1's `window.dateFrom` and `window.dateTo`, `granularity: "daily"`, `owner: "moshi"`, `maxAds: 500` | daily rows for every Moshi ad |
+| T1 account | `dateFrom`: the earlier of `window.start` and 29 days before today (never more than 91 days before today), `dateTo`: today, `maxAds: 0` | `account`, `organization`, `flags`, and every campaign and ad set that delivered in those days, with no ad rows |
+| T2 Moshi ads | T1's `window.dateFrom` and `window.dateTo`, `granularity: "daily"`, `owner: "moshi"`, `maxAds: 500` | daily rows for every Moshi ad, with its `clonedFrom` and `creativeOverlap` |
 | T3 top ads | T1's dates, `granularity: "daily"`, `owner: "merchant"`, `maxAds: 3` | daily rows for the merchant's 3 top ads by spend |
-| T4 launches | `dateFrom`: 89 days before today, `dateTo`: today, `owner: "merchant"`, `maxAds: 0` | the merchant's campaigns that delivered in the last 90 days, with `startTime`. These are the launch candidates |
-| T5 one launch | `adsetIds`: every ad set T4 lists for the launch, `granularity: "daily"`, `dateFrom`: its `startTime` day, `dateTo`: 13 days later | daily rows for every ad of the launch, days 1–14 |
+| T4 launches | `dateFrom`: 89 days before today, `dateTo`: today, `owner: "merchant"`, `maxAds: 0` | the merchant's campaigns that delivered in the last 90 days, each ad set with its `startTime`. A launch is an ad set, or a whole campaign, that started in those 90 days |
+| T5 one launch | `adsetIds`: the launch ad set, or every ad set T4 lists for a launch campaign, `granularity: "daily"`, `dateFrom`: its `startTime` day, `dateTo`: 13 days later | daily rows for every ad of the launch, days 1–14 |
+| T6 overlap | `adIds`: every `clonedFrom.adId` and `creativeOverlap[].adId` on the Moshi ads T2 returned, `granularity: "daily"`, `dateFrom`: `window.start`, `dateTo`: `window.end`, `maxAds: 200` | daily rows for each ad of yours a Moshi ad was cloned from or shares a creative with, and each of their ad sets' `metrics` for the report window (`adsets[].totals`) |
 
 - Read T1 first. If its `flags` include `no_synced_ads`, Moshi has no Meta
   ad account connected or nothing has synced yet. Stop there and use
   `mode: "moshi_only"`. Do the same if T1 returns an error.
-- Skip T2, T4 and T5 when T1 lists no campaign with `owner` `moshi` or
+- Skip T2, T4, T5 and T6 when T1 lists no campaign with `owner` `moshi` or
   `mixed`. Skip T3 when T1 lists none with `owner` `merchant` or `mixed`.
 - Run T5 once for each launch you will compare, at most two. Pick them from
   T4 with `comparison-method.md`. Skip T5 when no launch qualifies, and
   never put two launches in one call.
-- No daily read spans more than 30 days, so the tool's 92-day daily cap
-  never applies.
+- Run T6 once, after T2, when any Moshi ad has a `clonedFrom` or a
+  `creativeOverlap` entry. Skip it when none has, or when the API does not
+  return those fields. Never split it: if it is refused, skip it and add
+  "Overlap with your ads: too many ads to read" to `notMeasurableYet`.
+- T1 never starts more than 91 days before today, so no daily read passes
+  the tool's 92-day cap. When `window.start` is earlier than that, add
+  "Meta numbers: only the last 92 days of the window" to
+  `notMeasurableYet`.
 
 ## Reading the responses
 
@@ -52,11 +60,20 @@ account's own days.
 - `lastSignificantEditAt` is a UTC timestamp. Convert it to
   `account.timezone` before you take the day: `2026-09-24T03:00:00Z` is
   Sep 23 in America/Chicago.
-- Ad sets carry these settings only when Meta reports them as ACTIVE:
-  `optimizationGoal`, `attributionSpec`, `bidStrategy`, `dailyBudget`,
-  `lifetimeBudget`, `learningPhase` and `lastSignificantEditAt`. Moshi
-  reads them live. A missing setting means it was not read, never "none".
-  Write null and never infer one.
+- A merchant ad set carries these settings only when Meta reports it as
+  ACTIVE: `optimizationGoal`, `attributionSpec`, `bidStrategy`,
+  `dailyBudget`, `lifetimeBudget`, `learningPhase` and
+  `lastSignificantEditAt`. Moshi reads them live. Moshi's own ad sets
+  carry `optimizationGoal`, `attributionSpec` and their budgets even when
+  paused (an older API drops them too). A missing setting means it was
+  not read, never "none". Write null and never infer one.
+- `adsetStatus` is the ad set's effective status (`ACTIVE`, `PAUSED`,
+  `CAMPAIGN_PAUSED`, ...). An older API has only `effectiveStatus`.
+- Moshi ads carry `clonedFrom` (the merchant ad Moshi copied, or null) and
+  `creativeOverlap` (the merchant's ads that share the creative, matched
+  by lineage, image hash or video id). A recropped or edited copy may not
+  match. An older API returns neither: skip T6, and the report shows no
+  overlap callout.
 - `daily[]` holds one row for each day with delivery. A day with no row had
   no delivery. Each row's `reach` is that day's own reach.
 - Daily `linkClicks` is missing on an older Moshi API. Write null, never 0.
@@ -97,6 +114,7 @@ campaign at a time and keep every other argument. Never shorten the dates.
 - T5: make one call per ad set of the launch.
 - T3 or T4: if refused, skip it and add the missing part to
   `notMeasurableYet` (your top ads, or your launches).
+- T6: if refused, skip it as the plan says.
 - If a single ad set is still refused, leave it out and name it in
   `notMeasurableYet`.
 

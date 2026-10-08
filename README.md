@@ -27,9 +27,11 @@ Desktop and Claude.ai all get them:
 - `weekly-newsletter` — a weekly newsletter for the merchant, which a Cowork `/schedule`
   run can write unattended.
 - `performance-pulse-check` — the "how are my Moshi ads doing" report. It reads the whole
-  Meta ad account, judges each campaign by its age and objective, and compares Moshi with
-  the merchant's own launches. It needs only the Moshi connection: the Meta numbers come
-  from Moshi's synced copy of the ad account, refreshed about every 6 hours.
+  Meta ad account, leads with Moshi's biggest campaign, judges it by its age and objective,
+  and compares it with the merchant's own launches. It opens with what in the account is
+  skewing results, such as Moshi ads that reuse the merchant's live creatives and so
+  compete with them in the same auctions. It needs only the Moshi connection: the Meta
+  numbers come from Moshi's synced copy of the ad account, refreshed about every 6 hours.
 - `close-the-carts` — work the Closer queue: see who almost bought, bulk-draft a nudge for
   each, review them all in one pass, and send the ones you approve.
 
