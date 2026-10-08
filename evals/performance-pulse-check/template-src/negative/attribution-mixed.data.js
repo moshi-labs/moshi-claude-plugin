@@ -1,5 +1,4 @@
-// A significant edit (kind significant_edit, the only Meta change Moshi's synced data shows) restarts the clock and gets
-// readable dates: base.data.js plus the lines under "// change".
+// Positive test: a purchase token names only the windows of the ad sets that have purchases: base.data.js plus the lines under "// change".
 // The helpers sit inside a function so their names do not clash with the template's globals.
 const DATA = (() => {
 const R = (s, n, f) => Array.from({ length: n }, (_, i) => ({ date: new Date(Date.parse(s) + i * 864e5).toISOString().slice(0, 10),
@@ -23,6 +22,8 @@ const D = {
   nextSteps: [{ step: "1", what: "Hold budget.", owner: "merchant", by: "2026-10-08" }], flags: [], notMeasurableYet: []
 };
   // change
-  D.changes.push({ date: "2026-10-01", what: "Meta restarted learning after a significant edit", kind: "significant_edit", source: "meta", entityId: "cm1_s" });
+  D.campaigns[0].adsets.push({ ...D.campaigns[0].adsets[0], id: "cm1_s2", name: "cm1 chat set", attributionSetting: "1-day click",
+    ads: [{ id: "cm1_s2_a0", name: "cm1 chat ad", angle: null, daily: R("2026-09-22", 15, { purchases: 0, purchaseValue: 0 }) }] });
+  D.verdict.body = "Meta credits Moshi with {c:cm1.purchases} purchases.";
   return D;
 })();

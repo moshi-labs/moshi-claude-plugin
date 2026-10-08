@@ -1,5 +1,4 @@
-// A significant edit (kind significant_edit, the only Meta change Moshi's synced data shows) restarts the clock and gets
-// readable dates: base.data.js plus the lines under "// change".
+// Negative test for check 10 on the primary campaign: a duplicate row does not move the primary, raise check 13 or change the next gate: base.data.js plus the lines under "// change".
 // The helpers sit inside a function so their names do not clash with the template's globals.
 const DATA = (() => {
 const R = (s, n, f) => Array.from({ length: n }, (_, i) => ({ date: new Date(Date.parse(s) + i * 864e5).toISOString().slice(0, 10),
@@ -23,6 +22,9 @@ const D = {
   nextSteps: [{ step: "1", what: "Hold budget.", owner: "merchant", by: "2026-10-08" }], flags: [], notMeasurableYet: []
 };
   // change
-  D.changes.push({ date: "2026-10-01", what: "Meta restarted learning after a significant edit", kind: "significant_edit", source: "meta", entityId: "cm1_s" });
+  D.campaigns.push(camp("cm2", "moshi", "sales", "2026-09-22", [R("2026-09-22", 15, { spend: 10 })]));
+  D.campaigns[2].adsets[0].lastLearningReset = "2026-10-01"; // cm2's own next gate (Oct 8) must not count: it is a footnote
+  const a = D.campaigns[0].adsets[0].ads[0]; a.daily.push({ ...a.daily[0] });
+  D.nextSteps[0].what = "Wait until {m:nextGateDate}.";
   return D;
 })();

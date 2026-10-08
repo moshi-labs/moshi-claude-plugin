@@ -36,8 +36,9 @@ allows, and how to say it.
    a Sales campaign that optimizes for CONVERSATIONS is engagement. Moshi's
    ad sets show their goal even when paused.
 4. **Pick the primary campaign:** the Moshi campaign with the largest
-   spend in the window. The verdict is about it. The report footnotes any
-   other Moshi campaign under 25% of Moshi's spend or idle for 7 days.
+   spend in the window, as `primaryCampaignId`. The verdict is about it.
+   The report footnotes any other Moshi campaign under 25% of Moshi's
+   spend or idle for 7 days.
 5. **Age and stage.** Read `references/stage-gates.md`. Compute each
    campaign's day count, apply any learning reset, and find its next gate
    date. List every change since the first Moshi launch.

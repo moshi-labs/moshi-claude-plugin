@@ -51,7 +51,13 @@ const EXPECT = {
   'attribution.data.js': [],
   'icebreakers.data.js': [],
   'costperchat.data.js': [],
-  'costperchat-moshi.data.js': []
+  'costperchat-moshi.data.js': [],
+  'check11-all.data.js': ['Check 11: {all:merchant.ctr} covers your campaigns that run Moshi’s creative'],
+  'dup-overlap.data.js': ['Check 10: ad yo_a0 has two rows for 2026-09-22', 'Check 10: ad cm1_a1 has two rows for 2026-09-24'],
+  'dup-primary.data.js': ['Check 10: ad cm1_a0 has two rows for 2026-09-22'],
+  'check13-missing.data.js': ['Check 13: primaryCampaignId is missing; the primary campaign is cm1'],
+  'attribution-mixed.data.js': [],
+  'overlap-share.data.js': []
 };
 // The banner escapes DATA text: check 3's <b> must reach the page as text, not markup.
 // An ad set added Oct 2 to a campaign that started Aug 1 counts from its own startTime; the campaign keeps its Aug 1 clock.
@@ -63,7 +69,9 @@ const EXPECT = {
 // overlap: the callout (sorted by Moshi's share, on the days both ran), the account map's clone sources side by side with their windows,
 // the engaged-view basis note, the not-shown line, and an ad set comparison inside an old campaign. primary: cm1 leads, cm3 (25%+, this
 // week) shows beside it, cm2 gets the footnote and its earlier gate does not count. attribution: a purchase token carries its window once
-// per text; null reads as Meta's default. icebreakers: whole percentages that add to 100, with an Other line. costperchat: Meta's count.
+// per text; null reads as Meta's default. icebreakers: whole percentages that add to 100, with an Other line. costperchat: Meta's count,
+// and a campaign with one stray chat stays out. dup-overlap and dup-primary: a check 10 row never feeds the callout, the map or the
+// primary pick. attribution-mixed: an ad set with no purchases adds no window. overlap-share: a share under 100% never reads 100%.
 const RENDERED = { 'check3.data.js': ['&lt;b&gt;x&lt;/b&gt;'],
   'adset-day1.data.js': ['New set is on day 5', 'old set is on day 67', 'the campaign is on day 67'],
   'first-launch.data.js': ['Moshi launched Sep 22'], 'check10-fatigue.data.js': ['Moshi launched Sep 22'],
@@ -84,14 +92,17 @@ const RENDERED = { 'check3.data.js': ['&lt;b&gt;x&lt;/b&gt;'],
     'Counted on: Moshi 7-day click · yours Meta’s default for this ad set (not reported)'],
   'icebreakers.data.js': ['How 210 ad chats started Is it spicy? 41% 87 Do you ship to Canada? 24% 51 Typed their own 30% 62 Other 5% 10'],
   'costperchat.data.js': ['Chats cost $10.00 .', 'Cost per ad chat $10.00 Meta’s count: 75 chats started, on the campaigns that start chats'],
-  'costperchat-moshi.data.js': ['Chats cost $25.00 .', 'Cost per ad chat $25.00 Moshi’s count of chats from ads'] };
+  'costperchat-moshi.data.js': ['Chats cost $25.00 .', 'Cost per ad chat $25.00 Moshi’s count of chats from ads'],
+  'dup-overlap.data.js': ['cm1 set Moshi — — —'], 'dup-primary.data.js': ['Also ran: cm2, $150, still delivering.', 'Wait until Oct 22'],
+  'attribution-mixed.data.js': ['Meta credits Moshi with 30 purchases (7-day click) .'], 'overlap-share.data.js': ['Blue 2 10,000 40 >99%'] };
 // Strings that must not render. check10: no Meta tile, comparison or fatigue value from the duplicate Moshi ad (CTR 1.20%, value $1,800).
 // cmp-dup: the failed comparison reports check 10, not check 2. fatigue-window: Sep 15-21 rows sit before window.start.
 const RENDERED_NOT = { 'check10.data.js': ['1.20%', '$1,800', 'Creative fatigue'], 'check10-fatigue.data.js': ['Creative fatigue'],
   'cmp-dup.data.js': ['Check 2'], 'check8.data.js': ['Check 9'], 'fatigue-window.data.js': ['Sep 15', 'Sep 21'],
   'check11.data.js': ['Your Tan ad clicked at', 'yo set 1.20%'], 'check12.data.js': ['Meta’s estimate', 'CPA $25.00', 'CPA, first 14 days'],
   'check13.data.js': ['Moshi CTR is', 'CPA $25.00'], 'check13-headline.data.js': ['Chats cost'], 'primary.data.js': ['cm2 Engagement Today'],
-  'attribution.data.js': ['at $25.00 (7-day click)'] };
+  'attribution.data.js': ['at $25.00 (7-day click)'], 'check11-all.data.js': ['Yours is'], 'dup-overlap.data.js': ['Moshi’s share', 'Tan 15'],
+  'dup-primary.data.js': ['Check 13'], 'check13-missing.data.js': ['Moshi CTR is'], 'attribution-mixed.data.js': ['1-day click)'] };
 // Strings that must render in this order. overlap: "Things in your account affecting results" leads, before the verdict.
 const ORDER = { 'overlap.data.js': [['Things in your account affecting results', 'Moshi CTR is'], ['Moshi CTR is', 'Where each campaign stands']] };
 let failed = 0;

@@ -1,4 +1,4 @@
-// Negative test for check 11: a head-to-head against your ad set, campaign or ad that runs Moshi’s creative: base.data.js plus the lines under "// change".
+// Negative test for check 10 in the overlap callout and the map: a duplicate row on your Tan source drops its callout row, and one on Moshi’s Blue ad blanks its ad set in the map: base.data.js plus the lines under "// change".
 // The helpers sit inside a function so their names do not clash with the template's globals.
 const DATA = (() => {
 const R = (s, n, f) => Array.from({ length: n }, (_, i) => ({ date: new Date(Date.parse(s) + i * 864e5).toISOString().slice(0, 10),
@@ -37,7 +37,10 @@ const D = {
   yo.adsets[0].ads[0].name = "Tan mug"; yo.adsets[0].ads[0].id = "yo_a0";
   D.campaigns.push(yo);
   D.campaigns[1].metaSpend = 1200; yo.metaSpend = 9000; D.metaWindow = { start: "2026-09-07", end: "2026-10-06" };
-  D.comparisons.push({ metric: "ctr", day: 7, moshiCampaignId: "cm1", merchantAdsetId: "yo_s" }, { metric: "ctr", day: 7, moshiCampaignId: "cm1", merchantCampaignId: "yo" });
-  D.verdict.body = "Your Tan ad clicked at {a:yo_a0.ctr}.";
+  // A second Tan copy still delivers, so only the check 10 skip keeps the Tan row out of the callout.
+  yo.adsets[0].ads.push({ id: "yo_a1", name: "Tan mug copy", angle: null, daily: R("2026-09-22", 15, { impressions: 10000, reach: 9000 }) });
+  D.campaigns[0].adsets[0].ads[0].creativeOverlap.push({ adId: "yo_a1", adName: "Tan mug copy", adsetId: "yo_s", adsetName: "yo_s name", campaignId: "yo", campaignName: "yo", matchedBy: "image_hash" });
+  const t = yo.adsets[0].ads[0]; t.daily.push({ ...t.daily[0] });
+  const b = D.campaigns[0].adsets[0].ads[1]; b.daily.push({ ...b.daily[0] });
   return D;
 })();

@@ -11,7 +11,7 @@ const D = {
   schemaVersion: 1,
   merchant: { name: "Base Shop", currency: "USD", timezone: "UTC" },
   asOf: "2026-10-06T12:00:00Z", window: { start: "2026-09-22", end: "2026-10-06", partial: true }, metaSyncedAt: "2026-10-06T12:00:00Z",
-  mode: "full", mood: "reading",
+  mode: "full", mood: "reading", primaryCampaignId: "cm1",
   verdict: { headline: "Moshi CTR is {c:cm1.ctr}; yours is {cmp:0.merchant}.", body: "CPA {c:cm1.cpa}. Next gate {m:nextGateDate}, {m:nextGate}." },
   campaigns: [camp("cm1", "moshi", "sales", "2026-09-22", [R("2026-09-22", 15)]), camp("ym1", "merchant", "sales", "2026-08-01", [R("2026-08-01", 14)])],
   moshi: { firstLaunch: "2026-09-22", spend: 750, chats: 40, chatsFromAds: 30, contactsCaptured: 5, productViews: 10, carts: 3, checkouts: 2,
@@ -24,6 +24,7 @@ const D = {
   // change
   D.campaigns[0].adsets[0].ads[0].daily = R("2026-09-22", 15, { conversations: 5 });
   D.campaigns.push(camp("cm2", "moshi", "sales", "2026-09-22", [R("2026-09-22", 15, { conversations: 0 })])); // sends shoppers to the site
+  D.campaigns[2].adsets[0].ads[0].daily[3].conversations = 1; // one stray chat in 15 days does not make it a chat campaign
   D.verdict.body = "Chats cost {m:costPerChat}.";
   return D;
 })();

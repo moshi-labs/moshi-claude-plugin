@@ -1,5 +1,4 @@
-// A significant edit (kind significant_edit, the only Meta change Moshi's synced data shows) restarts the clock and gets
-// readable dates: base.data.js plus the lines under "// change".
+// Positive test: Moshi’s share never rounds up to 100% while your copies had impressions: base.data.js plus the lines under "// change".
 // The helpers sit inside a function so their names do not clash with the template's globals.
 const DATA = (() => {
 const R = (s, n, f) => Array.from({ length: n }, (_, i) => ({ date: new Date(Date.parse(s) + i * 864e5).toISOString().slice(0, 10),
@@ -23,6 +22,21 @@ const D = {
   nextSteps: [{ step: "1", what: "Hold budget.", owner: "merchant", by: "2026-10-08" }], flags: [], notMeasurableYet: []
 };
   // change
-  D.changes.push({ date: "2026-10-01", what: "Meta restarted learning after a significant edit", kind: "significant_edit", source: "meta", entityId: "cm1_s" });
+  const ov = (id, s, a, n) => ({ adId: id, adName: n, adsetId: s, adsetName: s + " name", campaignId: "yo", campaignName: "yo", matchedBy: a });
+  const m = D.campaigns[0].adsets[0];
+  m.ads = [{ ...m.ads[0], angle: "Tan", clonedFrom: { adId: "yo_a0", adName: "Tan mug", adsetId: "yo_s", campaignId: "yo" }, creativeOverlap: [ov("yo_a0", "yo_s", "lineage", "Tan mug")] },
+    { id: "cm1_a1", name: "cm1 ad 1", angle: "Blue", daily: R("2026-09-24", 13), clonedFrom: { adId: "yo_b0", adName: "Blue mug", adsetId: "yo_s2", campaignId: "yo" }, creativeOverlap: [ov("yo_b0", "yo_s2", "image_hash", "Blue mug")] }];
+  m.adCount = 2;
+  const yo = camp("yo", "merchant", "sales", "2026-03-01", [R("2026-09-22", 15, { impressions: 45000, reach: 37500 })], { adsPulled: "top" });
+  yo.adsets[0].attributionSetting = "7-day click, 1-day view, 1-day engaged view";
+  yo.adsets[0].totals = { spend: 3000, impressions: 675000, conversations: 0, purchases: 100, purchaseValue: 5000 };
+  yo.adsets.push({ ...yo.adsets[0], id: "yo_s2", name: "yo set 2", attributionSetting: "7-day click, 1-day view", totals: { spend: 20, impressions: 1000, conversations: 0, purchases: 1, purchaseValue: 40 },
+    ads: [{ id: "yo_b0", name: "Blue mug", angle: null, daily: R("2026-09-22", 4, { impressions: 500, reach: 450 }) }] },
+    { ...yo.adsets[0], id: "yo_new", name: "yo new set", startTime: "2026-09-25", adsPulled: "all", attributionSetting: "7-day click", totals: undefined,
+    ads: [{ id: "yo_new_a0", name: "yo new ad", angle: null, daily: R("2026-09-25", 12) }] });
+  yo.adsets[0].ads[0].name = "Tan mug"; yo.adsets[0].ads[0].id = "yo_a0";
+  D.campaigns.push(yo);
+  D.campaigns[1].metaSpend = 1200; yo.metaSpend = 9000; D.metaWindow = { start: "2026-09-07", end: "2026-10-06" };
+  D.campaigns.find(c => c.id == "yo").adsets[1].ads[0].daily.forEach(r => { r.impressions = 20; r.reach = 18; });
   return D;
 })();

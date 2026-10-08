@@ -33,7 +33,7 @@ Rules for every field:
 | `metaWindow` | `{ start, end }` or null | T1's `window.dateFrom` and `window.dateTo`, the dates every `metaSpend` covers; null in `moshi_only` |
 | `mode` | `"full"` or `"moshi_only"` | `moshi_only` when T1 flags `no_synced_ads` or fails (see `meta-reads.md`) |
 | `mood` | `"delight"` or `"reading"` | `"delight"` when the primary campaign leads on the metric its stage allows; `"reading"` when it is too early to judge. Sets the avatar. Missing values render as `"reading"` |
-| `primaryCampaignId` | string or null | the Moshi campaign with the largest spend in the window (its daily `spend` rows inside `window`); the verdict is about it. Null in `moshi_only` or when no Moshi campaign spent in the window |
+| `primaryCampaignId` | string or null | the Moshi campaign with the largest spend in the window (its daily `spend` rows inside `window`); the verdict is about it. Required whenever a Moshi campaign spent in the window: a missing or wrong one hides the verdict (check 13). Null in `moshi_only` or when no Moshi campaign spent |
 | `verdict.headline` | string, ≤ 90 chars | you write it, with tokens, about the primary campaign |
 | `verdict.body` | string, 2–3 sentences | you write it, with tokens |
 | `iceBreakers` | object or null | `get_ad_performance` → `iceBreakers`, as the tool returns it. The template reads `total`, `items[].text`, `items[].conversations` and `typedOwn.conversations`, and works out shares that add up to 100%. Null when the tool does not return it |
@@ -134,8 +134,9 @@ The overlap callout is the template's. For each Moshi ad in the primary
 campaign (and any shown beside it) with `creativeOverlap`, it takes the
 days in the window when that ad and at least one of the listed ads of
 yours delivered, and shows Moshi's share of the impressions on those days.
-It needs the listed ads' `daily` rows, which T6 reads. Quote its numbers
-in the chat reply; never work out a share of your own.
+It needs the listed ads' `daily` rows, which T6 reads. If you cite a share
+in the chat reply, count it the same way: impressions on the days both
+delivered, never over the whole window.
 
 Each ad has one row per date. Merge T2, T3, T5 and T6: when two reads
 return a date for one ad, keep one row. The values are the same. Keep
@@ -254,7 +255,7 @@ numbers you computed.
 | `{a:<adId>.<metric>}` | one ad over the window |
 | `{all:moshi.<metric>}` | all Moshi campaigns over the window; needs at least one Moshi campaign |
 | `{all:merchant.<metric>}` | all merchant campaigns over the window |
-| `{m:<moshiField>}` | a `moshi` field (`firstLaunch` renders as a date, "Sep 22"), or `costPerChat` (the report's cost per ad chat over the window, on Meta's count: the spend of the Moshi campaigns that started chats ÷ Meta's chats started on them, `conversations`; a campaign that sends shoppers to the site stays out. When Meta reports no chats on any Moshi campaign, and in `moshi_only` mode, Moshi's count: `moshi.spend ÷ chatsFromAds`. The report names the count), `age` and `stage` (from `firstLaunch`), `nextGate` and `nextGateDate` (the earliest gate among the primary campaign and any campaign shown beside it) |
+| `{m:<moshiField>}` | a `moshi` field (`firstLaunch` renders as a date, "Sep 22"), or `costPerChat` (the report's cost per ad chat over the window, on Meta's count: the spend of the Moshi campaigns that start chats ÷ Meta's chats started on them, `conversations`. A campaign starts chats when Meta credits chats on at least half its delivery days in the window, so one that sends shoppers to the site stays out. When no Moshi campaign starts chats, and in `moshi_only` mode, Moshi's count: `moshi.spend ÷ chatsFromAds`. The report names the count), `age` and `stage` (from `firstLaunch`), `nextGate` and `nextGateDate` (the earliest gate among the primary campaign and any campaign shown beside it) |
 | `{cmp:<index>.moshi}`, `{cmp:<index>.merchant}` | comparison `index` (0-based): each side's value over the first `day` days |
 | `{cmp:<index>.note}` | comparison `index`: the resource note the template wrote |
 
@@ -289,8 +290,8 @@ What tokens render, so the sentence around them reads right:
 - `c:`, `s:`, `a:` and `all:` metrics cover the whole report window,
   including days before a reset. Never write "since <date>" next to one.
 - `purchases`, `purchaseValue`, `roas` and `cpa` are Meta's purchase
-  figures. The first one in each text renders with its ad sets'
-  attribution window: "Meta credits it with {c:123.purchases} purchases"
+  figures. The first one in each text renders with the attribution window
+  of the ad sets behind it that have purchases: "Meta credits it with {c:123.purchases} purchases"
   renders "Meta credits it with 28 purchases (7-day click, 1-day view)".
   Never type the window yourself.
 - `{m:costPerChat}` is the report's cost per ad chat, on Meta's count of
@@ -311,8 +312,8 @@ number on such a campaign, state it in the chat reply from T1's campaign
 `metrics`, with T1's date range and the attribution window.
 
 In the verdict, the headline cites only the primary campaign among Moshi's
-(check 13), and no token in the verdict cites your ad, ad set or campaign
-that runs Moshi's creative (check 11). The overlap callout and the account
+(check 13), and no token in the verdict cites, or with `{all:merchant.…}`
+covers, your ad, ad set or campaign that runs Moshi's creative (check 11). The overlap callout and the account
 map show those side by side.
 
 ## Data checks
@@ -350,15 +351,17 @@ a check fails:
    metric token on them, every comparison with that campaign on either
    side, and the Meta tiles when the campaign is Moshi's. The fatigue chart
    skips the campaign. Age, stage and gate tokens still render.
-11. A comparison's merchant side, or a verdict token, is your ad, ad set or
-   campaign named in a Moshi ad's `creativeOverlap`. It shares auctions with
+11. A comparison's merchant side, or a verdict token, is (or, for
+   `{all:merchant.…}`, covers) your ad, ad set or campaign named in a Moshi
+   ad's `creativeOverlap`. It shares auctions with
    Moshi's ad, so it is no fair test: the report shows it side by side.
-12. An ad set behind a Meta purchase figure (a purchase token, a `cpa` or
-   `roas` comparison, the purchases card, a map row) has no
-   `attributionSetting` field. Null is fine; a missing field is not.
-13. `primaryCampaignId` is not the Moshi campaign with the largest spend in
-   the window (the verdict is hidden), or the headline cites another Moshi
-   campaign (the headline is hidden).
+12. An ad set whose purchases a Meta purchase figure shows (a purchase
+   token, a `cpa` or `roas` comparison, the purchases card, a map row) has
+   no `attributionSetting` field. Null is fine; a missing field is not.
+13. `primaryCampaignId` is missing or is not the Moshi campaign with the
+   largest spend in the window (the verdict is hidden), or the headline
+   cites another Moshi campaign (the headline is hidden). An ad that failed
+   check 10 still counts each of its dates once for this ranking.
 
 ## Minimal example
 

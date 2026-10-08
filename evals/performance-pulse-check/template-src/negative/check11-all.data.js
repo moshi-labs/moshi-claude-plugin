@@ -1,5 +1,4 @@
-// A significant edit (kind significant_edit, the only Meta change Moshi's synced data shows) restarts the clock and gets
-// readable dates: base.data.js plus the lines under "// change".
+// Negative test for check 11: {all:merchant.…} in the verdict covers your campaign that runs Moshi’s creative: base.data.js plus the lines under "// change".
 // The helpers sit inside a function so their names do not clash with the template's globals.
 const DATA = (() => {
 const R = (s, n, f) => Array.from({ length: n }, (_, i) => ({ date: new Date(Date.parse(s) + i * 864e5).toISOString().slice(0, 10),
@@ -23,6 +22,7 @@ const D = {
   nextSteps: [{ step: "1", what: "Hold budget.", owner: "merchant", by: "2026-10-08" }], flags: [], notMeasurableYet: []
 };
   // change
-  D.changes.push({ date: "2026-10-01", what: "Meta restarted learning after a significant edit", kind: "significant_edit", source: "meta", entityId: "cm1_s" });
+  D.campaigns[0].adsets[0].ads[0].creativeOverlap = [{ adId: "ym1_a0", adName: "ym1 ad 0", adsetId: "ym1_s", adsetName: "ym1 set", campaignId: "ym1", campaignName: "ym1", matchedBy: "image_hash" }];
+  D.comparisons = []; D.verdict.body = "Yours is {all:merchant.ctr}, and CPA {all:merchant.cpa} against Moshi's {c:cm1.cpa}.";
   return D;
 })();
