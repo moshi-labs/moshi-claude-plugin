@@ -1,4 +1,4 @@
-// Negative test for check 9: base.data.js plus the lines under "// change".
+// Negative test for check 13: the headline cites a Moshi campaign other than the primary: base.data.js plus the lines under "// change".
 // The helpers sit inside a function so their names do not clash with the template's globals.
 const DATA = (() => {
 const R = (s, n, f) => Array.from({ length: n }, (_, i) => ({ date: new Date(Date.parse(s) + i * 864e5).toISOString().slice(0, 10),
@@ -22,7 +22,7 @@ const D = {
   nextSteps: [{ step: "1", what: "Hold budget.", owner: "merchant", by: "2026-10-08" }], flags: [], notMeasurableYet: []
 };
   // change
-  D.moshi.chatsFromAds = null; // full mode divides by Meta's chats started, and the base rows report none
-  D.verdict.body = "Chats cost {m:costPerChat}.";
+  D.campaigns.push(camp("cm2", "moshi", "engagement", "2026-09-22", [R("2026-09-22", 15, { spend: 10, conversations: 4 })]));
+  D.primaryCampaignId = "cm1"; D.verdict.headline = "Chats cost {c:cm2.costPerConversation}.";
   return D;
 })();

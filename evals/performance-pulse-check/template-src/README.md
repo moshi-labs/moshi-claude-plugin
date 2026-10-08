@@ -12,8 +12,13 @@ node build.js ../../../plugins/moshi/skills/performance-pulse-check/assets/pulse
   of the built-in sample.
 - The sample DATA lives in `build.js`; its daily rows are in `rows.txt`
   (`gen.js` generated them).
+- `node negative/run.js` renders every `negative/*.data.js` through the shipped
+  template and fails when an expected banner line or rendered string is missing.
 
-The shipped file must stay at or under 120,000 bytes (`wc -c`).
+The shipped file must stay at or under 122,880 bytes (`wc -c`): the design spec's
+120 KB, so a host that must re-emit the template whole can do it in one artifact.
+0.11.0 moved the line from 120,000 to 120 KiB for the overlap callout, the clone-source
+map and the ice-breaker shares; the avatar and the sample DATA are already lean.
 
 ## Avatar
 

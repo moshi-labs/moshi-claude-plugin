@@ -1,4 +1,4 @@
-// Negative test for check 9: base.data.js plus the lines under "// change".
+// Positive test: the primary campaign leads; a 25%+ campaign that delivered this week shows beside it; the rest get a footnote: base.data.js plus the lines under "// change".
 // The helpers sit inside a function so their names do not clash with the template's globals.
 const DATA = (() => {
 const R = (s, n, f) => Array.from({ length: n }, (_, i) => ({ date: new Date(Date.parse(s) + i * 864e5).toISOString().slice(0, 10),
@@ -22,7 +22,8 @@ const D = {
   nextSteps: [{ step: "1", what: "Hold budget.", owner: "merchant", by: "2026-10-08" }], flags: [], notMeasurableYet: []
 };
   // change
-  D.moshi.chatsFromAds = null; // full mode divides by Meta's chats started, and the base rows report none
-  D.verdict.body = "Chats cost {m:costPerChat}.";
+  D.campaigns.push(camp("cm2", "moshi", "engagement", "2026-09-22", [R("2026-09-22", 4, { spend: 10, conversations: 4 })]), camp("cm3", "moshi", "sales", "2026-09-22", [R("2026-09-22", 15, { spend: 40 })]));
+  D.campaigns[2].adsets[0].lastLearningReset = "2026-10-01"; // cm2's own next gate (day 8, Oct 8) would come first if it counted
+  D.primaryCampaignId = "cm1";
   return D;
 })();
