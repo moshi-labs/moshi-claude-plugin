@@ -23,6 +23,30 @@
   "carts": 8,
   "checkouts": 3
  },
+ "contactsCaptured": {
+  "total": 64,
+  "email": 45,
+  "phone": 19
+ },
+ "iceBreakers": {
+  "total": 420,
+  "items": [
+   {
+    "text": "Will it fit a carry-on?",
+    "conversations": 168,
+    "share": 0.4
+   },
+   {
+    "text": "How long is the boot break-in?",
+    "conversations": 97,
+    "share": 0.231
+   }
+  ],
+  "typedOwn": {
+   "conversations": 155,
+   "share": 0.369
+  }
+ },
  "leadHeat": {
   "hot": 9,
   "warm": 107,
@@ -30,7 +54,7 @@
  },
  "orders": {
   "threadProven": 2,
-  "revenue": 148.0,
+  "revenue": 148,
   "delayed": 1
  },
  "flags": []

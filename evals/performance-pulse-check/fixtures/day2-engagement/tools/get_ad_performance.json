@@ -23,6 +23,30 @@
   "carts": 2,
   "checkouts": 1
  },
+ "contactsCaptured": {
+  "total": 13,
+  "email": 9,
+  "phone": 4
+ },
+ "iceBreakers": {
+  "total": 82,
+  "items": [
+   {
+    "text": "Which blend is best for grilling?",
+    "conversations": 34,
+    "share": 0.4146
+   },
+   {
+    "text": "How hot is the chili mix?",
+    "conversations": 21,
+    "share": 0.2561
+   }
+  ],
+  "typedOwn": {
+   "conversations": 27,
+   "share": 0.3293
+  }
+ },
  "leadHeat": {
   "hot": 7,
   "warm": 22,

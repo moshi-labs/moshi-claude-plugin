@@ -35,6 +35,35 @@
   "carts": 61,
   "checkouts": 29
  },
+ "contactsCaptured": {
+  "total": 118,
+  "email": 84,
+  "phone": 34
+ },
+ "iceBreakers": {
+  "total": 571,
+  "items": [
+   {
+    "text": "Is it gentle on sensitive stomachs?",
+    "conversations": 214,
+    "share": 0.3748
+   },
+   {
+    "text": "Which bag size fits my dog?",
+    "conversations": 131,
+    "share": 0.2294
+   },
+   {
+    "text": "Do you ship to Canada?",
+    "conversations": 52,
+    "share": 0.0911
+   }
+  ],
+  "typedOwn": {
+   "conversations": 174,
+   "share": 0.3047
+  }
+ },
  "leadHeat": {
   "hot": 34,
   "warm": 148,

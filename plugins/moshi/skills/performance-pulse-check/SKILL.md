@@ -19,47 +19,56 @@ allows, and how to say it.
 ## Steps
 
 1. **Read Moshi.** `get_flow_status_data` (funnel, leads, carts,
-   `flags`), `get_ad_performance` (Moshi spend, proven orders, `flags`),
-   and `get_recent_brand_doc_change` if it exists. Then read 2–3 threads
-   from `transcriptsToRead` with `get_conversation_messages`.
+   `flags`), `get_ad_performance` (Moshi spend, proven orders,
+   `contactsCaptured`, `iceBreakers`, `flags`; its `window` is the report
+   window), and `get_recent_brand_doc_change` if it exists. Then read 2–3
+   threads from `transcriptsToRead` with `get_conversation_messages`.
 2. **Read Meta through Moshi.** Follow `references/meta-reads.md`
-   exactly: `get_ad_account_tree`, at most five reads, in order. If the
+   exactly: `get_ad_account_tree`, at most six reads, in order. If the
    first read flags `no_synced_ads` (no Meta ad account connected in
    Moshi, or nothing synced yet) or fails, set `mode: "moshi_only"` and
-   skip to step 4. In `moshi_only`, add "CTR, CPC and CPM: no Meta ad
+   skip to step 5. In `moshi_only`, add "CTR, CPC and CPM: no Meta ad
    account is synced in Moshi" and "Comparison with your launches: no Meta
    ad account is synced in Moshi" to `notMeasurableYet`.
 3. **Classify.** Label every campaign Moshi or merchant from the tree's
    `owner`, and engagement or sales with the objective mapping in
    `references/data-contract.md`. The ad set's optimization goal decides:
-   a Sales campaign that optimizes for CONVERSATIONS is engagement.
-4. **Age and stage.** Read `references/stage-gates.md`. Compute each
+   a Sales campaign that optimizes for CONVERSATIONS is engagement. Moshi's
+   ad sets show their goal even when paused.
+4. **Pick the primary campaign:** the Moshi campaign with the largest
+   spend in the window, as `primaryCampaignId`. The verdict is about it.
+   The report footnotes any other Moshi campaign under 25% of Moshi's
+   spend or idle for 7 days.
+5. **Age and stage.** Read `references/stage-gates.md`. Compute each
    campaign's day count, apply any learning reset, and find its next gate
    date. List every change since the first Moshi launch.
-5. **Compare.** Read `references/comparison-method.md` and pick at most two
+6. **Compare.** Read `references/comparison-method.md` and pick at most two
    comparisons that meet its recipe.
-6. **Fill DATA.** Build the `DATA` object exactly as
+7. **Fill DATA.** Build the `DATA` object exactly as
    `references/data-contract.md` defines it. Raw numbers only. Merge reads
-   T2, T3 and T5 into one row per ad per date, and set each campaign's
-   `adsPulled` from the read that pulled its ads. Write the
+   T2, T3, T5 and T6 into one row per ad per date, and set `adsPulled`
+   from the read that pulled each campaign's ads. Write the
    verdict and other prose with tokens such as `{c:123.cpc}`, never with
    typed numbers.
-7. **Render.** Copy `assets/pulse-check.html` and replace only the
+8. **Render.** Copy `assets/pulse-check.html` and replace only the
    `const DATA = {...};` block in its last script. If you can copy files,
    copy and edit. If not, emit the whole template unchanged with your DATA
    block, as an artifact. If the report shows a "data check" banner, fix
    DATA and render again.
-8. **Reply in chat** with the answer shape below.
+9. **Reply in chat** with the answer shape below.
 
 ## Answer shape
 
 Your chat reply has these parts, in this order:
 
-1. **The answer to the merchant's question**, in 1–2 sentences. Lead with
-   Moshi's strongest real number for this stage. From day 15 since
-   launch, if the merchant's top ad shows frequency above 3.5 and falling
-   CTR while Moshi's CTR holds, say so here. When Moshi has proven
-   orders or Closer recoveries, name each in one line as a floor.
+1. **The answer to the merchant's question**, in 1–2 sentences, about the
+   primary campaign. Lead with its strongest real number for this stage.
+   From day 15 since launch, if the merchant's top ad shows frequency
+   above 3.5 and falling CTR while Moshi's CTR holds, say so here. When
+   Moshi has proven orders or Closer recoveries, name each in one line as
+   a floor. When the report opens with the overlap callout, say in one
+   line that Moshi's ads and yours shared auctions (Meta's overlap rule),
+   so it is not a fair test, and name the fix.
 2. **The stage**: "Day 5 of the Moshi campaign: judging cost per chat and
    carts, not ROAS yet."
 3. **Next gate**: "Next gate: first CPA read on 2026-10-14." Always a
@@ -90,10 +99,14 @@ Your chat reply has these parts, in this order:
    about learning. Meta does not say what a significant edit changed, so
    never call it a budget, audience or creative change.
 7. Comparisons follow `comparison-method.md`. Never lifetime numbers,
-   never mature campaigns.
-8. The attribution window is the ad set's `attributionSpec`. Name it when
-   you cite Meta purchases. When an ad set has none (it is not ACTIVE),
-   say its window is not reported.
+   never mature campaigns, and never your ad, ad set or campaign that
+   shares a Moshi ad's creative (`creativeOverlap`): they ran in the same
+   auctions. Show them side by side and name no winner.
+8. The attribution window is the ad set's `attributionSpec`. Name it with
+   every Meta purchase number in the chat reply; the report prints it
+   itself. When it is missing, say "Meta's default for this ad set (not
+   reported)". When yours counts engaged views and Moshi's doesn't, the
+   counts are not on the same basis.
 9. Show the backfill line when the window ends in the last 7 days and you
    cite Meta purchases.
 10. Every tool flag goes in `flags[]`, as `meta-reads.md` says. Account
@@ -110,6 +123,10 @@ Your chat reply has these parts, in this order:
     cite its latest-day frequency, not its window average.
 14. Stay inside the read plan in `meta-reads.md`. No extra reads, no
     retry loops.
+15. Cost per ad chat is one number, on Meta's count of chats started
+    (Moshi's count only when Meta reports none), and contacts come from
+    `get_ad_performance`. Never call either not measurable when the tools
+    return them.
 
 ## Rationalizations
 
@@ -118,13 +135,17 @@ Your chat reply has these parts, in this order:
 | "The merchant asked for ROAS, or it's a Sales campaign, so I'll compute it." | If the ad set optimizes for CONVERSATIONS, ROAS measures a goal Meta is not chasing. Say so, and give cost per conversation. |
 | "ROAS isn't ready yet. I'll check it on day 7." | For an engagement campaign, the answer is "not applicable", not "not yet". |
 | "Moshi's proven orders give me a ROAS." | Proven orders are a floor. A ROAS built from them understates Moshi and looks like Meta's number. |
-| "Mature campaigns are useful context." | They have months of learning and 10× the budget. They belong in the account map, not the comparison. |
+| "Mature campaigns are useful context." | They have months of learning and 10× the budget. They never go into a comparison. |
 | "The launch ran before Moshi, so it can't compare." | Age-matching compares days 1–N of each campaign. The calendar does not matter. |
 | "That change seems irrelevant to the question." | List every change. The merchant decides what matters. |
 | "The data is the merchant's own, so I can print emails." | The report gets shared and screenshotted. Contact details stay in the Moshi dashboard. |
 | "The daily rows show CPA recovered, so I can judge it." | Not before the reset ad set reaches day 8 of its new count. |
 | "They asked about ROAS, so the next gate is the ROAS gate." | The next gate is the nearest one. Give the ROAS gate on the line after it. |
 | "The reset pushed fatigue back too." | Fatigue counts from launch. A reset moves the stage, not the fatigue read. |
+| "Both Moshi campaigns ran, so the headline covers both." | The headline is the primary campaign's. The others get a footnote. |
+| "The ad set it was cloned from is the fairest test." | Same creative, similar people, same auctions: Meta enters only one. Side by side, no winner. |
+| "The Moshi ad set is paused, so its goal and window are unknown." | Moshi's ad sets report both even when paused. |
+| "Every campaign is over 90 days old, so no launch qualifies." | A launch is an ad set. A new one in an old campaign counts. |
 
 ## Red flags
 
@@ -135,6 +156,8 @@ Stop and re-check when you notice yourself:
 - Saying ROAS or CPA near an engagement campaign.
 - Reading a lifetime CTR next to Moshi's first few days.
 - Writing a `{…}` token that is not in the contract's token table.
+- Leading the verdict with a campaign that is not the primary.
+- Writing "beat" or "ahead" about your ad that shares Moshi's creative.
 
 ## Voice
 

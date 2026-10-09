@@ -1,0 +1,27 @@
+{
+ "_shape": "modelled-from-description",
+ "conversationId": "conv_ov_01",
+ "source": "ad",
+ "messages": [
+  {
+   "role": "shopper",
+   "text": "How free is the mug?",
+   "sentAt": "2026-10-04T15:02:00Z"
+  },
+  {
+   "role": "agent",
+   "text": "Free with your first order of the concentrate. It ships with the bottle.",
+   "sentAt": "2026-10-04T15:02:40Z"
+  },
+  {
+   "role": "shopper",
+   "text": "ok and how strong is it",
+   "sentAt": "2026-10-04T15:05:00Z"
+  },
+  {
+   "role": "agent",
+   "text": "One bottle makes 16 cups. Start with one ounce over ice and adjust from there.",
+   "sentAt": "2026-10-04T15:05:30Z"
+  }
+ ]
+}

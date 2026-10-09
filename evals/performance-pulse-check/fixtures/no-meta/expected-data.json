@@ -12,8 +12,10 @@
     "partial": true
   },
   "metaSyncedAt": null,
+  "metaWindow": null,
   "mode": "moshi_only",
   "mood": "reading",
+  "primaryCampaignId": null,
   "verdict": {
     "headline": "Your chat ads start a chat for {m:costPerChat} each.",
     "body": "{m:chats} shoppers have chatted so far, and {m:contactsCaptured} left a contact. Purchases come from thread-proven orders only, so the count is a floor."
@@ -29,10 +31,10 @@
     "carts": 12,
     "checkouts": 6,
     "provenOrders": 5,
-    "provenRevenue": 214.0,
+    "provenRevenue": 214,
     "delayedOrders": 2,
     "closerRecoveries": 1,
-    "closerRevenue": 36.0
+    "closerRevenue": 36
   },
   "comparisons": [],
   "changes": [
@@ -45,6 +47,25 @@
     }
   ],
   "accountIssues": [],
+  "iceBreakers": {
+    "total": 171,
+    "items": [
+      {
+        "text": "Which roast is least bitter?",
+        "conversations": 74,
+        "share": 0.4327
+      },
+      {
+        "text": "Can you grind it for my brewer?",
+        "conversations": 40,
+        "share": 0.2339
+      }
+    ],
+    "typedOwn": {
+      "conversations": 57,
+      "share": 0.3333
+    }
+  },
   "shopperThemes": [
     {
       "theme": "Bitterness",
@@ -68,7 +89,7 @@
   "nextSteps": [
     {
       "step": 1,
-      "what": "Connect the Meta Ads connector to add CTR, CPC and fair comparisons.",
+      "what": "Connect your Meta ad account in Moshi to add CTR, CPC and fair comparisons.",
       "owner": "merchant",
       "by": "2026-10-09"
     },
@@ -89,10 +110,15 @@
       "source": "moshi",
       "code": "population_mismatch",
       "text": "Chats include profile-button chats. Chats from ads count ad-sourced chats only."
+    },
+    {
+      "source": "meta",
+      "code": "no_synced_ads",
+      "text": "No Meta ad account is synced in Moshi, so this report uses Moshi data only."
     }
   ],
   "notMeasurableYet": [
-    "CTR, CPC and CPM: Meta is not connected.",
-    "Fair comparison with your other ads: Meta is not connected."
+    "CTR, CPC and CPM: no Meta ad account is synced in Moshi.",
+    "Fair comparison with your other ads: no Meta ad account is synced in Moshi."
   ]
 }

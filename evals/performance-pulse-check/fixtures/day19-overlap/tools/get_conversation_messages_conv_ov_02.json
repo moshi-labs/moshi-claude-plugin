@@ -1,0 +1,27 @@
+{
+ "_shape": "modelled-from-description",
+ "conversationId": "conv_ov_02",
+ "source": "ad",
+ "messages": [
+  {
+   "role": "shopper",
+   "text": "How much caffeine is in it?",
+   "sentAt": "2026-10-05T17:20:00Z"
+  },
+  {
+   "role": "agent",
+   "text": "About 120 mg per one-ounce serving, close to a strong cup of coffee.",
+   "sentAt": "2026-10-05T17:20:35Z"
+  },
+  {
+   "role": "shopper",
+   "text": "perfect, putting it in my cart now",
+   "sentAt": "2026-10-05T17:24:00Z"
+  },
+  {
+   "role": "agent",
+   "text": "Your cart is saved with the free fall mug. It is waiting whenever you are ready.",
+   "sentAt": "2026-10-06T15:24:00Z"
+  }
+ ]
+}

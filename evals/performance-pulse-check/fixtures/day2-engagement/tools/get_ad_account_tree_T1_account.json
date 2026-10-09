@@ -1,0 +1,170 @@
+{
+ "organization": {
+  "id": "9374ed38-b8b3-5180-8ce8-30cde786b82a",
+  "name": "Saltmarsh Spice Traders"
+ },
+ "account": {
+  "currency": "USD",
+  "timezone": "America/New_York"
+ },
+ "window": {
+  "dateFrom": "2026-09-07",
+  "dateTo": "2026-10-06",
+  "days": 30,
+  "granularity": "total",
+  "note": "Inclusive: every day from dateFrom through dateTo, as Meta's insight days in the ad account's timezone."
+ },
+ "source": "Moshi's synced copy of the organization's Meta ad account (every campaign, Moshi-created and the merchant's own), refreshed about every 6 hours.",
+ "flags": [
+  {
+   "code": "ads_over_max_ads",
+   "message": "Only the top 0 of 11 matching ads by spend are listed (maxAds 0); each ad set's adsOverMaxAds counts its unlisted ones, and their campaign and ad set totals still include them. Raise maxAds, or name the campaigns, ad sets or ads you want, to list the rest."
+  }
+ ],
+ "counts": {
+  "campaigns": 2,
+  "adsets": 2,
+  "ads": 11,
+  "adsListed": 0,
+  "adsOverMaxAds": 11,
+  "omittedForNoDelivery": {
+   "campaigns": 0,
+   "adsets": 0,
+   "ads": 0
+  }
+ },
+ "campaigns": [
+  {
+   "campaignId": "1202630000000082",
+   "campaignName": "Sales | Always-On | Spice Sets",
+   "owner": "merchant",
+   "status": "ACTIVE",
+   "objective": "OUTCOME_SALES",
+   "startTime": "2026-02-10T09:15:00-0500",
+   "dailyBudget": "120000",
+   "adsetCount": 1,
+   "adCount": 9,
+   "moshiAdCount": 0,
+   "metrics": {
+    "reach": 407737,
+    "impressions": 1491022,
+    "spend": 17892.27,
+    "roas": 3.4,
+    "purchases": 981,
+    "purchaseValue": 60833.72,
+    "cpm": 12,
+    "messagingConversationsStarted": 0,
+    "costPerMessagingConversationStarted": null
+   },
+   "adsets": [
+    {
+     "adsetId": "1202630000000081",
+     "adsetName": "Always-On Broad",
+     "owner": "merchant",
+     "status": "ACTIVE",
+     "effectiveStatus": "ACTIVE",
+     "adsetStatus": "ACTIVE",
+     "startTime": "2026-02-10T09:15:00-0500",
+     "optimizationGoal": "OFFSITE_CONVERSIONS",
+     "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
+     "attributionSpec": [
+      {
+       "eventType": "CLICK_THROUGH",
+       "windowDays": 7
+      },
+      {
+       "eventType": "VIEW_THROUGH",
+       "windowDays": 1
+      }
+     ],
+     "lastSignificantEditAt": "2026-02-10T14:00:00.000Z",
+     "learningPhase": {
+      "status": "SUCCESS",
+      "learningWindowEndsAt": "2026-02-17T14:00:00.000Z"
+     },
+     "adCount": 9,
+     "moshiAdCount": 0,
+     "metrics": {
+      "reach": 407737,
+      "impressions": 1491022,
+      "spend": 17892.27,
+      "roas": 3.4,
+      "purchases": 981,
+      "purchaseValue": 60833.72,
+      "cpm": 12,
+      "messagingConversationsStarted": 0,
+      "costPerMessagingConversationStarted": null
+     },
+     "adsOverMaxAds": 9,
+     "ads": []
+    }
+   ]
+  },
+  {
+   "campaignId": "1202630000000071",
+   "campaignName": "Moshi | Chat Starter | Spice Sets",
+   "owner": "moshi",
+   "status": "ACTIVE",
+   "objective": "OUTCOME_ENGAGEMENT",
+   "startTime": "2026-10-05T09:15:00-0400",
+   "dailyBudget": "12000",
+   "adsetCount": 1,
+   "adCount": 2,
+   "moshiAdCount": 2,
+   "metrics": {
+    "reach": 13098,
+    "impressions": 17498,
+    "spend": 176.84,
+    "roas": 0,
+    "purchases": 0,
+    "purchaseValue": 0,
+    "cpm": 10.1063,
+    "messagingConversationsStarted": 85,
+    "costPerMessagingConversationStarted": 2.0805
+   },
+   "adsets": [
+    {
+     "adsetId": "1202630000000070",
+     "adsetName": "Moshi | Chat | Broad US",
+     "owner": "moshi",
+     "status": "ACTIVE",
+     "effectiveStatus": "ACTIVE",
+     "adsetStatus": "ACTIVE",
+     "startTime": "2026-10-05T09:15:00-0400",
+     "optimizationGoal": "CONVERSATIONS",
+     "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
+     "attributionSpec": [
+      {
+       "eventType": "CLICK_THROUGH",
+       "windowDays": 7
+      },
+      {
+       "eventType": "VIEW_THROUGH",
+       "windowDays": 1
+      }
+     ],
+     "lastSignificantEditAt": "2026-10-05T13:00:00.000Z",
+     "learningPhase": {
+      "status": "LEARNING",
+      "learningWindowEndsAt": "2026-10-12T13:00:00.000Z"
+     },
+     "adCount": 2,
+     "moshiAdCount": 2,
+     "metrics": {
+      "reach": 13098,
+      "impressions": 17498,
+      "spend": 176.84,
+      "roas": 0,
+      "purchases": 0,
+      "purchaseValue": 0,
+      "cpm": 10.1063,
+      "messagingConversationsStarted": 85,
+      "costPerMessagingConversationStarted": 2.0805
+     },
+     "adsOverMaxAds": 2,
+     "ads": []
+    }
+   ]
+  }
+ ]
+}

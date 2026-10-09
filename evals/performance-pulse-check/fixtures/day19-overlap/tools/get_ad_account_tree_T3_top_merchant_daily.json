@@ -1,0 +1,1591 @@
+{
+ "organization": {
+  "id": "6f0d2c9a-4e1b-5d7c-9a3f-2b8e1c4d5f60",
+  "name": "Fogline Coffee Co."
+ },
+ "account": {
+  "currency": "USD",
+  "timezone": "America/Denver"
+ },
+ "window": {
+  "dateFrom": "2026-09-07",
+  "dateTo": "2026-10-06",
+  "days": 30,
+  "granularity": "daily",
+  "note": "Inclusive: every day from dateFrom through dateTo, as Meta's insight days in the ad account's timezone."
+ },
+ "source": "Moshi's synced copy of the organization's Meta ad account (every campaign, Moshi-created and the merchant's own), refreshed about every 6 hours.",
+ "flags": [
+  {
+   "code": "ads_over_max_ads",
+   "message": "Only the top 3 of 18 matching ads by spend are listed (maxAds 3); each ad set's adsOverMaxAds counts its unlisted ones, and their campaign and ad set totals still include them. Raise maxAds, or name the campaigns, ad sets or ads you want, to list the rest."
+  }
+ ],
+ "counts": {
+  "campaigns": 3,
+  "adsets": 8,
+  "ads": 18,
+  "adsListed": 3,
+  "adsOverMaxAds": 15,
+  "omittedForNoDelivery": {
+   "campaigns": 0,
+   "adsets": 1,
+   "ads": 1
+  },
+  "dailyRows": 81
+ },
+ "campaigns": [
+  {
+   "campaignId": "1202680000000101",
+   "campaignName": "Testing | ABO | Conversions",
+   "owner": "merchant",
+   "status": "ACTIVE",
+   "objective": "OUTCOME_SALES",
+   "startTime": "2026-06-12T09:00:00-0600",
+   "adsetCount": 6,
+   "adCount": 14,
+   "moshiAdCount": 0,
+   "metrics": {
+    "reach": 613898,
+    "impressions": 1547368,
+    "spend": 28107.74,
+    "roas": 1.0219,
+    "purchases": 667,
+    "purchaseValue": 28723.03,
+    "cpm": 18.1649,
+    "messagingConversationsStarted": 0,
+    "costPerMessagingConversationStarted": null
+   },
+   "adsets": [
+    {
+     "adsetId": "1202680000000111",
+     "adsetName": "Fall Mug 1",
+     "owner": "merchant",
+     "status": "ACTIVE",
+     "effectiveStatus": "ACTIVE",
+     "adsetStatus": "ACTIVE",
+     "startTime": "2026-08-28T09:00:00-0600",
+     "optimizationGoal": "OFFSITE_CONVERSIONS",
+     "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
+     "dailyBudget": "42500",
+     "attributionSpec": [
+      {
+       "eventType": "CLICK_THROUGH",
+       "windowDays": 7
+      },
+      {
+       "eventType": "VIEW_THROUGH",
+       "windowDays": 1
+      },
+      {
+       "eventType": "ENGAGED_VIDEO_VIEW",
+       "windowDays": 1
+      }
+     ],
+     "lastSignificantEditAt": "2026-08-28T15:00:00.000Z",
+     "learningPhase": {
+      "status": "SUCCESS"
+     },
+     "adCount": 3,
+     "moshiAdCount": 0,
+     "metrics": {
+      "reach": 237706,
+      "impressions": 604048,
+      "spend": 12339.98,
+      "roas": 1.1132,
+      "purchases": 319,
+      "purchaseValue": 13737.33,
+      "cpm": 20.4288,
+      "messagingConversationsStarted": 0,
+      "costPerMessagingConversationStarted": null
+     },
+     "adsOverMaxAds": 2,
+     "ads": [
+      {
+       "adId": "1202680000000112",
+       "adName": "Static | Fall Mug Ombre Hand Hold | Listicle LP",
+       "owner": "merchant",
+       "moshiFlowId": null,
+       "status": "ACTIVE",
+       "effectiveStatus": "ACTIVE",
+       "creativeType": "image",
+       "ctaType": "SHOP_NOW",
+       "metrics": {
+        "reach": 223934,
+        "impressions": 513485,
+        "spend": 10605,
+        "roas": 1.1767,
+        "purchases": 289,
+        "purchaseValue": 12478.72,
+        "cpm": 20.653,
+        "messagingConversationsStarted": 0,
+        "costPerMessagingConversationStarted": null
+       },
+       "funnel": {
+        "clicks": 10413,
+        "linkClicks": 7712,
+        "ctr": 2.0279,
+        "landingPageViews": 6172,
+        "addToCart": 867,
+        "initiateCheckout": 462,
+        "leads": 0,
+        "videoViews": 0,
+        "postEngagement": 17969
+       },
+       "daily": [
+        {
+         "date": "2026-09-07",
+         "reach": 17920,
+         "impressions": 18356,
+         "spend": 352.65,
+         "roas": 1.1978,
+         "purchases": 10,
+         "purchaseValue": 422.39,
+         "cpm": 19.2117,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 312
+        },
+        {
+         "date": "2026-09-08",
+         "reach": 15660,
+         "impressions": 16727,
+         "spend": 332.8,
+         "roas": 1.4024,
+         "purchases": 12,
+         "purchaseValue": 466.73,
+         "cpm": 19.896,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 251
+        },
+        {
+         "date": "2026-09-09",
+         "reach": 16031,
+         "impressions": 16668,
+         "spend": 339.38,
+         "roas": 1.153,
+         "purchases": 10,
+         "purchaseValue": 391.3,
+         "cpm": 20.3612,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 267
+        },
+        {
+         "date": "2026-09-10",
+         "reach": 16199,
+         "impressions": 17341,
+         "spend": 331.74,
+         "roas": 0.9544,
+         "purchases": 8,
+         "purchaseValue": 316.61,
+         "cpm": 19.1304,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 222
+        },
+        {
+         "date": "2026-09-11",
+         "reach": 14877,
+         "impressions": 15868,
+         "spend": 304.59,
+         "roas": 1.5267,
+         "purchases": 11,
+         "purchaseValue": 465.03,
+         "cpm": 19.1952,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 227
+        },
+        {
+         "date": "2026-09-12",
+         "reach": 16640,
+         "impressions": 17272,
+         "spend": 332.19,
+         "roas": 1.0179,
+         "purchases": 8,
+         "purchaseValue": 338.13,
+         "cpm": 19.2329,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 233
+        },
+        {
+         "date": "2026-09-13",
+         "reach": 14573,
+         "impressions": 15745,
+         "spend": 316.14,
+         "roas": 1.4768,
+         "purchases": 10,
+         "purchaseValue": 466.87,
+         "cpm": 20.0788,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 253
+        },
+        {
+         "date": "2026-09-14",
+         "reach": 14713,
+         "impressions": 16053,
+         "spend": 344.96,
+         "roas": 1.0286,
+         "purchases": 9,
+         "purchaseValue": 354.84,
+         "cpm": 21.4888,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 226
+        },
+        {
+         "date": "2026-09-15",
+         "reach": 14536,
+         "impressions": 15957,
+         "spend": 345.91,
+         "roas": 1.1994,
+         "purchases": 9,
+         "purchaseValue": 414.89,
+         "cpm": 21.6776,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 262
+        },
+        {
+         "date": "2026-09-16",
+         "reach": 17065,
+         "impressions": 18441,
+         "spend": 362.03,
+         "roas": 1.5993,
+         "purchases": 14,
+         "purchaseValue": 578.98,
+         "cpm": 19.6318,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 273
+        },
+        {
+         "date": "2026-09-17",
+         "reach": 17199,
+         "impressions": 18715,
+         "spend": 377.87,
+         "roas": 0.9004,
+         "purchases": 8,
+         "purchaseValue": 340.24,
+         "cpm": 20.1908,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 296
+        },
+        {
+         "date": "2026-09-18",
+         "reach": 16166,
+         "impressions": 17551,
+         "spend": 370.47,
+         "roas": 1.2312,
+         "purchases": 10,
+         "purchaseValue": 456.12,
+         "cpm": 21.1082,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 224
+        },
+        {
+         "date": "2026-09-19",
+         "reach": 15027,
+         "impressions": 16499,
+         "spend": 322.08,
+         "roas": 1.2397,
+         "purchases": 9,
+         "purchaseValue": 399.29,
+         "cpm": 19.5212,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 247
+        },
+        {
+         "date": "2026-09-20",
+         "reach": 16928,
+         "impressions": 18358,
+         "spend": 389.08,
+         "roas": 1.0772,
+         "purchases": 9,
+         "purchaseValue": 419.11,
+         "cpm": 21.194,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 302
+        },
+        {
+         "date": "2026-09-21",
+         "reach": 16239,
+         "impressions": 16700,
+         "spend": 321.61,
+         "roas": 1.6562,
+         "purchases": 12,
+         "purchaseValue": 532.66,
+         "cpm": 19.2581,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 219
+        },
+        {
+         "date": "2026-09-22",
+         "reach": 16974,
+         "impressions": 18314,
+         "spend": 393.41,
+         "roas": 1.2842,
+         "purchases": 12,
+         "purchaseValue": 505.21,
+         "cpm": 21.4814,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 250
+        },
+        {
+         "date": "2026-09-23",
+         "reach": 16088,
+         "impressions": 16517,
+         "spend": 364.57,
+         "roas": 1.021,
+         "purchases": 8,
+         "purchaseValue": 372.21,
+         "cpm": 22.0724,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 216
+        },
+        {
+         "date": "2026-09-24",
+         "reach": 17648,
+         "impressions": 18224,
+         "spend": 401.31,
+         "roas": 1.4905,
+         "purchases": 13,
+         "purchaseValue": 598.15,
+         "cpm": 22.021,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 262
+        },
+        {
+         "date": "2026-09-25",
+         "reach": 17522,
+         "impressions": 18404,
+         "spend": 348.29,
+         "roas": 1.0736,
+         "purchases": 8,
+         "purchaseValue": 373.94,
+         "cpm": 18.9247,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 308
+        },
+        {
+         "date": "2026-09-26",
+         "reach": 17625,
+         "impressions": 18004,
+         "spend": 367.26,
+         "roas": 1.2521,
+         "purchases": 10,
+         "purchaseValue": 459.86,
+         "cpm": 20.3988,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 291
+        },
+        {
+         "date": "2026-09-27",
+         "reach": 15972,
+         "impressions": 16690,
+         "spend": 380.68,
+         "roas": 1.4332,
+         "purchases": 12,
+         "purchaseValue": 545.58,
+         "cpm": 22.8089,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 228
+        },
+        {
+         "date": "2026-09-28",
+         "reach": 17524,
+         "impressions": 18203,
+         "spend": 398.75,
+         "roas": 0.7843,
+         "purchases": 7,
+         "purchaseValue": 312.74,
+         "cpm": 21.9057,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 306
+        },
+        {
+         "date": "2026-09-29",
+         "reach": 15868,
+         "impressions": 17385,
+         "spend": 383.63,
+         "roas": 1.0409,
+         "purchases": 10,
+         "purchaseValue": 399.31,
+         "cpm": 22.0667,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 239
+        },
+        {
+         "date": "2026-09-30",
+         "reach": 15527,
+         "impressions": 16958,
+         "spend": 325.54,
+         "roas": 1.1386,
+         "purchases": 8,
+         "purchaseValue": 370.65,
+         "cpm": 19.1968,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 286
+        },
+        {
+         "date": "2026-10-01",
+         "reach": 14667,
+         "impressions": 15706,
+         "spend": 309.04,
+         "roas": 0.7666,
+         "purchases": 6,
+         "purchaseValue": 236.91,
+         "cpm": 19.6766,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 241
+        },
+        {
+         "date": "2026-10-02",
+         "reach": 15539,
+         "impressions": 16093,
+         "spend": 329.74,
+         "roas": 1.1067,
+         "purchases": 9,
+         "purchaseValue": 364.91,
+         "cpm": 20.4897,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 261
+        },
+        {
+         "date": "2026-10-03",
+         "reach": 16361,
+         "impressions": 17029,
+         "spend": 361.65,
+         "roas": 1.4465,
+         "purchases": 12,
+         "purchaseValue": 523.14,
+         "cpm": 21.2373,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 281
+        },
+        {
+         "date": "2026-10-04",
+         "reach": 14427,
+         "impressions": 15774,
+         "spend": 351.63,
+         "roas": 0.9863,
+         "purchases": 8,
+         "purchaseValue": 346.81,
+         "cpm": 22.2917,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 218
+        },
+        {
+         "date": "2026-10-05",
+         "reach": 15127,
+         "impressions": 15554,
+         "spend": 335.35,
+         "roas": 0.766,
+         "purchases": 6,
+         "purchaseValue": 256.88,
+         "cpm": 21.5604,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 252
+        },
+        {
+         "date": "2026-10-06",
+         "reach": 17055,
+         "impressions": 18379,
+         "spend": 410.65,
+         "roas": 1.0939,
+         "purchases": 11,
+         "purchaseValue": 449.23,
+         "cpm": 22.3434,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 259
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "adsetId": "1202680000000121",
+     "adsetName": "Fall Mug 2",
+     "owner": "merchant",
+     "status": "ACTIVE",
+     "effectiveStatus": "ACTIVE",
+     "adsetStatus": "ACTIVE",
+     "startTime": "2026-09-10T09:00:00-0600",
+     "optimizationGoal": "OFFSITE_CONVERSIONS",
+     "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
+     "dailyBudget": "22500",
+     "attributionSpec": [
+      {
+       "eventType": "CLICK_THROUGH",
+       "windowDays": 7
+      },
+      {
+       "eventType": "VIEW_THROUGH",
+       "windowDays": 1
+      }
+     ],
+     "lastSignificantEditAt": "2026-09-12T15:00:00.000Z",
+     "learningPhase": {
+      "status": "SUCCESS"
+     },
+     "adCount": 3,
+     "moshiAdCount": 0,
+     "metrics": {
+      "reach": 262862,
+      "impressions": 628583,
+      "spend": 9899.83,
+      "roas": 0.9922,
+      "purchases": 223,
+      "purchaseValue": 9822.89,
+      "cpm": 15.7494,
+      "messagingConversationsStarted": 0,
+      "costPerMessagingConversationStarted": null
+     },
+     "adsOverMaxAds": 2,
+     "ads": [
+      {
+       "adId": "1202680000000122",
+       "adName": "Static | Fall Mug Tan Forecast | Listicle LP",
+       "owner": "merchant",
+       "moshiFlowId": null,
+       "status": "ACTIVE",
+       "effectiveStatus": "ACTIVE",
+       "creativeType": "image",
+       "ctaType": "SHOP_NOW",
+       "metrics": {
+        "reach": 259734,
+        "impressions": 560221,
+        "spend": 8755.13,
+        "roas": 1.0002,
+        "purchases": 198,
+        "purchaseValue": 8756.99,
+        "cpm": 15.628,
+        "messagingConversationsStarted": 0,
+        "costPerMessagingConversationStarted": null
+       },
+       "funnel": {
+        "clicks": 11483,
+        "linkClicks": 8504,
+        "ctr": 2.0497,
+        "landingPageViews": 6801,
+        "addToCart": 594,
+        "initiateCheckout": 318,
+        "leads": 0,
+        "videoViews": 0,
+        "postEngagement": 19610
+       },
+       "daily": [
+        {
+         "date": "2026-09-10",
+         "reach": 20774,
+         "impressions": 21580,
+         "spend": 359.39,
+         "roas": 0.9001,
+         "purchases": 7,
+         "purchaseValue": 323.49,
+         "cpm": 16.6538,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 365
+        },
+        {
+         "date": "2026-09-11",
+         "reach": 19387,
+         "impressions": 20822,
+         "spend": 323.45,
+         "roas": 0.7096,
+         "purchases": 5,
+         "purchaseValue": 229.53,
+         "cpm": 15.5341,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 319
+        },
+        {
+         "date": "2026-09-12",
+         "reach": 19632,
+         "impressions": 20049,
+         "spend": 335.59,
+         "roas": 1.122,
+         "purchases": 8,
+         "purchaseValue": 376.52,
+         "cpm": 16.7385,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 313
+        },
+        {
+         "date": "2026-09-13",
+         "reach": 17962,
+         "impressions": 18867,
+         "spend": 300.97,
+         "roas": 1.3827,
+         "purchases": 9,
+         "purchaseValue": 416.14,
+         "cpm": 15.9522,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 283
+        },
+        {
+         "date": "2026-09-14",
+         "reach": 19854,
+         "impressions": 21785,
+         "spend": 370.59,
+         "roas": 1.2282,
+         "purchases": 10,
+         "purchaseValue": 455.17,
+         "cpm": 17.0112,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 323
+        },
+        {
+         "date": "2026-09-15",
+         "reach": 21322,
+         "impressions": 22581,
+         "spend": 339.33,
+         "roas": 1.291,
+         "purchases": 11,
+         "purchaseValue": 438.06,
+         "cpm": 15.0272,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 365
+        },
+        {
+         "date": "2026-09-16",
+         "reach": 19549,
+         "impressions": 20399,
+         "spend": 319.73,
+         "roas": 0.7078,
+         "purchases": 5,
+         "purchaseValue": 226.32,
+         "cpm": 15.6738,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 288
+        },
+        {
+         "date": "2026-09-17",
+         "reach": 21389,
+         "impressions": 22049,
+         "spend": 358.13,
+         "roas": 0.8864,
+         "purchases": 7,
+         "purchaseValue": 317.46,
+         "cpm": 16.2425,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 314
+        },
+        {
+         "date": "2026-09-18",
+         "reach": 20748,
+         "impressions": 22189,
+         "spend": 369.83,
+         "roas": 1.0788,
+         "purchases": 10,
+         "purchaseValue": 398.96,
+         "cpm": 16.6673,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 310
+        },
+        {
+         "date": "2026-09-19",
+         "reach": 18748,
+         "impressions": 19587,
+         "spend": 274.42,
+         "roas": 1.0267,
+         "purchases": 6,
+         "purchaseValue": 281.75,
+         "cpm": 14.0103,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 310
+        },
+        {
+         "date": "2026-09-20",
+         "reach": 18054,
+         "impressions": 19164,
+         "spend": 278.25,
+         "roas": 0.7237,
+         "purchases": 5,
+         "purchaseValue": 201.38,
+         "cpm": 14.5194,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 292
+        },
+        {
+         "date": "2026-09-21",
+         "reach": 19164,
+         "impressions": 20680,
+         "spend": 346.39,
+         "roas": 0.9734,
+         "purchases": 8,
+         "purchaseValue": 337.18,
+         "cpm": 16.75,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 321
+        },
+        {
+         "date": "2026-09-22",
+         "reach": 20688,
+         "impressions": 22360,
+         "spend": 343.31,
+         "roas": 0.6727,
+         "purchases": 5,
+         "purchaseValue": 230.95,
+         "cpm": 15.3538,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 380
+        },
+        {
+         "date": "2026-09-23",
+         "reach": 18055,
+         "impressions": 19063,
+         "spend": 309.46,
+         "roas": 0.829,
+         "purchases": 6,
+         "purchaseValue": 256.55,
+         "cpm": 16.2335,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 279
+        },
+        {
+         "date": "2026-09-24",
+         "reach": 19073,
+         "impressions": 19734,
+         "spend": 326.94,
+         "roas": 1.1409,
+         "purchases": 9,
+         "purchaseValue": 373.01,
+         "cpm": 16.5673,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 346
+        },
+        {
+         "date": "2026-09-25",
+         "reach": 20155,
+         "impressions": 22138,
+         "spend": 327.54,
+         "roas": 1.281,
+         "purchases": 9,
+         "purchaseValue": 419.59,
+         "cpm": 14.7954,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 318
+        },
+        {
+         "date": "2026-09-26",
+         "reach": 18547,
+         "impressions": 19298,
+         "spend": 317.97,
+         "roas": 1.3492,
+         "purchases": 9,
+         "purchaseValue": 428.99,
+         "cpm": 16.4768,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 269
+        },
+        {
+         "date": "2026-09-27",
+         "reach": 20210,
+         "impressions": 21075,
+         "spend": 301.6,
+         "roas": 1.3745,
+         "purchases": 10,
+         "purchaseValue": 414.56,
+         "cpm": 14.3108,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 354
+        },
+        {
+         "date": "2026-09-28",
+         "reach": 19774,
+         "impressions": 20645,
+         "spend": 345.33,
+         "roas": 0.999,
+         "purchases": 8,
+         "purchaseValue": 344.97,
+         "cpm": 16.7271,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 296
+        },
+        {
+         "date": "2026-09-29",
+         "reach": 20715,
+         "impressions": 21590,
+         "spend": 357.11,
+         "roas": 0.9199,
+         "purchases": 8,
+         "purchaseValue": 328.51,
+         "cpm": 16.5405,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 319
+        },
+        {
+         "date": "2026-09-30",
+         "reach": 21226,
+         "impressions": 22292,
+         "spend": 320.38,
+         "roas": 0.8586,
+         "purchases": 6,
+         "purchaseValue": 275.08,
+         "cpm": 14.372,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 334
+        },
+        {
+         "date": "2026-10-01",
+         "reach": 19130,
+         "impressions": 19600,
+         "spend": 318.32,
+         "roas": 0.7564,
+         "purchases": 5,
+         "purchaseValue": 240.79,
+         "cpm": 16.2408,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 270
+        },
+        {
+         "date": "2026-10-02",
+         "reach": 17831,
+         "impressions": 19395,
+         "spend": 283.48,
+         "roas": 0.9359,
+         "purchases": 6,
+         "purchaseValue": 265.31,
+         "cpm": 14.6161,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 272
+        },
+        {
+         "date": "2026-10-03",
+         "reach": 19356,
+         "impressions": 20974,
+         "spend": 313.41,
+         "roas": 0.6491,
+         "purchases": 5,
+         "purchaseValue": 203.42,
+         "cpm": 14.9428,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 287
+        },
+        {
+         "date": "2026-10-04",
+         "reach": 19435,
+         "impressions": 20728,
+         "spend": 303.2,
+         "roas": 1.5764,
+         "purchases": 10,
+         "purchaseValue": 477.95,
+         "cpm": 14.6276,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 295
+        },
+        {
+         "date": "2026-10-05",
+         "reach": 21753,
+         "impressions": 22700,
+         "spend": 342.68,
+         "roas": 0.7563,
+         "purchases": 6,
+         "purchaseValue": 259.18,
+         "cpm": 15.096,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 409
+        },
+        {
+         "date": "2026-10-06",
+         "reach": 17326,
+         "impressions": 18877,
+         "spend": 268.33,
+         "roas": 0.8801,
+         "purchases": 5,
+         "purchaseValue": 236.17,
+         "cpm": 14.2147,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 273
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "adsetId": "1202680000000141",
+     "adsetName": "Protein 7",
+     "owner": "merchant",
+     "status": "ACTIVE",
+     "effectiveStatus": "ACTIVE",
+     "adsetStatus": "ACTIVE",
+     "startTime": "2026-06-20T09:00:00-0600",
+     "optimizationGoal": "OFFSITE_CONVERSIONS",
+     "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
+     "dailyBudget": "12500",
+     "attributionSpec": [
+      {
+       "eventType": "CLICK_THROUGH",
+       "windowDays": 7
+      },
+      {
+       "eventType": "VIEW_THROUGH",
+       "windowDays": 1
+      },
+      {
+       "eventType": "ENGAGED_VIDEO_VIEW",
+       "windowDays": 1
+      }
+     ],
+     "lastSignificantEditAt": "2026-06-20T15:00:00.000Z",
+     "learningPhase": {
+      "status": "FAIL"
+     },
+     "adCount": 2,
+     "moshiAdCount": 0,
+     "metrics": {
+      "reach": 70366,
+      "impressions": 178614,
+      "spend": 3285.3,
+      "roas": 0.6126,
+      "purchases": 51,
+      "purchaseValue": 2012.72,
+      "cpm": 18.3933,
+      "messagingConversationsStarted": 0,
+      "costPerMessagingConversationStarted": null
+     },
+     "adsOverMaxAds": 2,
+     "ads": []
+    },
+    {
+     "adsetId": "1202680000000131",
+     "adsetName": "Fall Mug Videos",
+     "owner": "merchant",
+     "status": "ACTIVE",
+     "effectiveStatus": "ACTIVE",
+     "adsetStatus": "ACTIVE",
+     "startTime": "2026-09-21T09:00:00-0600",
+     "optimizationGoal": "OFFSITE_CONVERSIONS",
+     "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
+     "dailyBudget": "15000",
+     "attributionSpec": [
+      {
+       "eventType": "CLICK_THROUGH",
+       "windowDays": 7
+      },
+      {
+       "eventType": "VIEW_THROUGH",
+       "windowDays": 1
+      }
+     ],
+     "lastSignificantEditAt": "2026-09-21T15:00:00.000Z",
+     "learningPhase": {
+      "status": "SUCCESS"
+     },
+     "adCount": 4,
+     "moshiAdCount": 0,
+     "metrics": {
+      "reach": 66855,
+      "impressions": 126413,
+      "spend": 2340.04,
+      "roas": 1.151,
+      "purchases": 62,
+      "purchaseValue": 2693.45,
+      "cpm": 18.5111,
+      "messagingConversationsStarted": 0,
+      "costPerMessagingConversationStarted": null
+     },
+     "adsOverMaxAds": 4,
+     "ads": []
+    },
+    {
+     "adsetId": "1202680000000151",
+     "adsetName": "Remarketing | Labor Day 33% Off",
+     "owner": "merchant",
+     "status": "PAUSED",
+     "effectiveStatus": "PAUSED",
+     "adsetStatus": "PAUSED",
+     "startTime": "2026-09-01T09:00:00-0600",
+     "adCount": 1,
+     "moshiAdCount": 0,
+     "metrics": {
+      "reach": 8419,
+      "impressions": 9710,
+      "spend": 242.59,
+      "roas": 1.8824,
+      "purchases": 12,
+      "purchaseValue": 456.64,
+      "cpm": 24.9835,
+      "messagingConversationsStarted": 0,
+      "costPerMessagingConversationStarted": null
+     },
+     "adsOverMaxAds": 1,
+     "ads": []
+    }
+   ]
+  },
+  {
+   "campaignId": "1202680000000201",
+   "campaignName": "Advantage+ | Purchases",
+   "owner": "merchant",
+   "status": "ACTIVE",
+   "objective": "OUTCOME_SALES",
+   "startTime": "2026-05-14T09:00:00-0600",
+   "dailyBudget": "75000",
+   "adsetCount": 1,
+   "adCount": 2,
+   "moshiAdCount": 0,
+   "metrics": {
+    "reach": 381494,
+    "impressions": 888193,
+    "spend": 19501.07,
+    "roas": 1.0083,
+    "purchases": 462,
+    "purchaseValue": 19662.82,
+    "cpm": 21.9559,
+    "messagingConversationsStarted": 0,
+    "costPerMessagingConversationStarted": null
+   },
+   "adsets": [
+    {
+     "adsetId": "1202680000000211",
+     "adsetName": "Advantage+ Prospecting",
+     "owner": "merchant",
+     "status": "ACTIVE",
+     "effectiveStatus": "ACTIVE",
+     "adsetStatus": "ACTIVE",
+     "startTime": "2026-05-14T09:00:00-0600",
+     "optimizationGoal": "OFFSITE_CONVERSIONS",
+     "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
+     "attributionSpec": [
+      {
+       "eventType": "CLICK_THROUGH",
+       "windowDays": 7
+      },
+      {
+       "eventType": "VIEW_THROUGH",
+       "windowDays": 1
+      },
+      {
+       "eventType": "ENGAGED_VIDEO_VIEW",
+       "windowDays": 1
+      }
+     ],
+     "lastSignificantEditAt": "2026-06-12T15:00:00.000Z",
+     "learningPhase": {
+      "status": "SUCCESS"
+     },
+     "adCount": 2,
+     "moshiAdCount": 0,
+     "metrics": {
+      "reach": 381494,
+      "impressions": 888193,
+      "spend": 19501.07,
+      "roas": 1.0083,
+      "purchases": 462,
+      "purchaseValue": 19662.82,
+      "cpm": 21.9559,
+      "messagingConversationsStarted": 0,
+      "costPerMessagingConversationStarted": null
+     },
+     "adsOverMaxAds": 1,
+     "ads": [
+      {
+       "adId": "1202680000000212",
+       "adName": "Static | Fall Mug Ombre Hand Hold | Listicle LP - Copy",
+       "owner": "merchant",
+       "moshiFlowId": null,
+       "status": "ACTIVE",
+       "effectiveStatus": "ACTIVE",
+       "creativeType": "image",
+       "ctaType": "SHOP_NOW",
+       "metrics": {
+        "reach": 306410,
+        "impressions": 620851,
+        "spend": 14066.54,
+        "roas": 1.0008,
+        "purchases": 328,
+        "purchaseValue": 14078.04,
+        "cpm": 22.6569,
+        "messagingConversationsStarted": 0,
+        "costPerMessagingConversationStarted": null
+       },
+       "funnel": {
+        "clicks": 14344,
+        "linkClicks": 10624,
+        "ctr": 2.3104,
+        "landingPageViews": 8498,
+        "addToCart": 984,
+        "initiateCheckout": 524,
+        "leads": 0,
+        "videoViews": 0,
+        "postEngagement": 21731
+       },
+       "daily": [
+        {
+         "date": "2026-09-13",
+         "reach": 23265,
+         "impressions": 24959,
+         "spend": 625.1,
+         "roas": 1.0743,
+         "purchases": 17,
+         "purchaseValue": 671.57,
+         "cpm": 25.0451,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 415
+        },
+        {
+         "date": "2026-09-14",
+         "reach": 24080,
+         "impressions": 26168,
+         "spend": 542.18,
+         "roas": 1.2202,
+         "purchases": 15,
+         "purchaseValue": 661.56,
+         "cpm": 20.7192,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 421
+        },
+        {
+         "date": "2026-09-15",
+         "reach": 28065,
+         "impressions": 28697,
+         "spend": 605.26,
+         "roas": 1.221,
+         "purchases": 17,
+         "purchaseValue": 739.03,
+         "cpm": 21.0914,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 419
+        },
+        {
+         "date": "2026-09-16",
+         "reach": 22474,
+         "impressions": 23733,
+         "spend": 570.02,
+         "roas": 1.1304,
+         "purchases": 14,
+         "purchaseValue": 644.34,
+         "cpm": 24.018,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 442
+        },
+        {
+         "date": "2026-09-17",
+         "reach": 21881,
+         "impressions": 23730,
+         "spend": 511.68,
+         "roas": 0.8523,
+         "purchases": 10,
+         "purchaseValue": 436.1,
+         "cpm": 21.5626,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 456
+        },
+        {
+         "date": "2026-09-18",
+         "reach": 23893,
+         "impressions": 25222,
+         "spend": 567.12,
+         "roas": 0.8721,
+         "purchases": 11,
+         "purchaseValue": 494.59,
+         "cpm": 22.4851,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 408
+        },
+        {
+         "date": "2026-09-19",
+         "reach": 26847,
+         "impressions": 27642,
+         "spend": 624.62,
+         "roas": 1.254,
+         "purchases": 17,
+         "purchaseValue": 783.27,
+         "cpm": 22.5968,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 428
+        },
+        {
+         "date": "2026-09-20",
+         "reach": 22449,
+         "impressions": 23681,
+         "spend": 572.71,
+         "roas": 0.9951,
+         "purchases": 14,
+         "purchaseValue": 569.91,
+         "cpm": 24.1844,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 461
+        },
+        {
+         "date": "2026-09-21",
+         "reach": 22784,
+         "impressions": 24991,
+         "spend": 542.2,
+         "roas": 1.2515,
+         "purchases": 15,
+         "purchaseValue": 678.59,
+         "cpm": 21.6958,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 387
+        },
+        {
+         "date": "2026-09-22",
+         "reach": 27998,
+         "impressions": 28565,
+         "spend": 648.38,
+         "roas": 0.9336,
+         "purchases": 14,
+         "purchaseValue": 605.34,
+         "cpm": 22.6984,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 546
+        },
+        {
+         "date": "2026-09-23",
+         "reach": 27634,
+         "impressions": 28312,
+         "spend": 603.07,
+         "roas": 0.711,
+         "purchases": 11,
+         "purchaseValue": 428.78,
+         "cpm": 21.3009,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 524
+        },
+        {
+         "date": "2026-09-24",
+         "reach": 22777,
+         "impressions": 24894,
+         "spend": 628.33,
+         "roas": 0.7503,
+         "purchases": 12,
+         "purchaseValue": 471.41,
+         "cpm": 25.2402,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 479
+        },
+        {
+         "date": "2026-09-25",
+         "reach": 27126,
+         "impressions": 28607,
+         "spend": 619.04,
+         "roas": 0.7967,
+         "purchases": 12,
+         "purchaseValue": 493.19,
+         "cpm": 21.6395,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 454
+        },
+        {
+         "date": "2026-09-26",
+         "reach": 23633,
+         "impressions": 24108,
+         "spend": 579.29,
+         "roas": 0.7252,
+         "purchases": 10,
+         "purchaseValue": 420.1,
+         "cpm": 24.029,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 437
+        },
+        {
+         "date": "2026-09-27",
+         "reach": 25313,
+         "impressions": 27097,
+         "spend": 575.41,
+         "roas": 1.1605,
+         "purchases": 17,
+         "purchaseValue": 667.79,
+         "cpm": 21.2352,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 515
+        },
+        {
+         "date": "2026-09-28",
+         "reach": 22916,
+         "impressions": 24733,
+         "spend": 527.71,
+         "roas": 1.1472,
+         "purchases": 14,
+         "purchaseValue": 605.37,
+         "cpm": 21.3363,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 438
+        },
+        {
+         "date": "2026-09-29",
+         "reach": 22142,
+         "impressions": 23653,
+         "spend": 593.34,
+         "roas": 0.8302,
+         "purchases": 11,
+         "purchaseValue": 492.59,
+         "cpm": 25.0852,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 350
+        },
+        {
+         "date": "2026-09-30",
+         "reach": 27047,
+         "impressions": 28566,
+         "spend": 594.09,
+         "roas": 0.8123,
+         "purchases": 12,
+         "purchaseValue": 482.58,
+         "cpm": 20.7971,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 470
+        },
+        {
+         "date": "2026-10-01",
+         "reach": 23360,
+         "impressions": 24318,
+         "spend": 576.48,
+         "roas": 1.2391,
+         "purchases": 16,
+         "purchaseValue": 714.31,
+         "cpm": 23.7059,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 391
+        },
+        {
+         "date": "2026-10-02",
+         "reach": 23085,
+         "impressions": 23909,
+         "spend": 520.89,
+         "roas": 1.2175,
+         "purchases": 15,
+         "purchaseValue": 634.16,
+         "cpm": 21.7864,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 369
+        },
+        {
+         "date": "2026-10-03",
+         "reach": 24392,
+         "impressions": 26262,
+         "spend": 557.88,
+         "roas": 0.9004,
+         "purchases": 11,
+         "purchaseValue": 502.34,
+         "cpm": 21.2429,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 483
+        },
+        {
+         "date": "2026-10-04",
+         "reach": 23244,
+         "impressions": 24324,
+         "spend": 522.11,
+         "roas": 0.849,
+         "purchases": 11,
+         "purchaseValue": 443.25,
+         "cpm": 21.4648,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 433
+        },
+        {
+         "date": "2026-10-05",
+         "reach": 26282,
+         "impressions": 27045,
+         "spend": 682.87,
+         "roas": 1.3672,
+         "purchases": 20,
+         "purchaseValue": 933.61,
+         "cpm": 25.2494,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 448
+        },
+        {
+         "date": "2026-10-06",
+         "reach": 25620,
+         "impressions": 27635,
+         "spend": 676.76,
+         "roas": 0.7451,
+         "purchases": 12,
+         "purchaseValue": 504.26,
+         "cpm": 24.4892,
+         "messagingConversationsStarted": 0,
+         "costPerMessagingConversationStarted": null,
+         "linkClicks": 450
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "campaignId": "1202680000000301",
+   "campaignName": "CBO | Testing",
+   "owner": "merchant",
+   "status": "ACTIVE",
+   "objective": "OUTCOME_SALES",
+   "startTime": "2026-06-26T09:00:00-0600",
+   "dailyBudget": "15000",
+   "adsetCount": 2,
+   "adCount": 3,
+   "moshiAdCount": 0,
+   "metrics": {
+    "reach": 74940,
+    "impressions": 190370,
+    "spend": 3359.68,
+    "roas": 0.7676,
+    "purchases": 65,
+    "purchaseValue": 2578.73,
+    "cpm": 17.6482,
+    "messagingConversationsStarted": 0,
+    "costPerMessagingConversationStarted": null
+   },
+   "adsets": [
+    {
+     "adsetId": "1202680000000311",
+     "adsetName": "Batch 12 Blend",
+     "owner": "merchant",
+     "status": "ACTIVE",
+     "effectiveStatus": "ACTIVE",
+     "adsetStatus": "ACTIVE",
+     "startTime": "2026-06-30T09:00:00-0600",
+     "optimizationGoal": "OFFSITE_CONVERSIONS",
+     "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
+     "attributionSpec": [
+      {
+       "eventType": "CLICK_THROUGH",
+       "windowDays": 7
+      },
+      {
+       "eventType": "VIEW_THROUGH",
+       "windowDays": 1
+      }
+     ],
+     "lastSignificantEditAt": "2026-06-30T15:00:00.000Z",
+     "learningPhase": {
+      "status": "SUCCESS"
+     },
+     "adCount": 2,
+     "moshiAdCount": 0,
+     "metrics": {
+      "reach": 71613,
+      "impressions": 182214,
+      "spend": 3217.16,
+      "roas": 0.7633,
+      "purchases": 62,
+      "purchaseValue": 2455.68,
+      "cpm": 17.6559,
+      "messagingConversationsStarted": 0,
+      "costPerMessagingConversationStarted": null
+     },
+     "adsOverMaxAds": 2,
+     "ads": []
+    },
+    {
+     "adsetId": "1202680000000321",
+     "adsetName": "Batch 14 Iteration",
+     "owner": "merchant",
+     "status": "ACTIVE",
+     "effectiveStatus": "ACTIVE",
+     "adsetStatus": "ACTIVE",
+     "startTime": "2026-10-04T09:00:00-0600",
+     "optimizationGoal": "OFFSITE_CONVERSIONS",
+     "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
+     "attributionSpec": [
+      {
+       "eventType": "CLICK_THROUGH",
+       "windowDays": 7
+      },
+      {
+       "eventType": "VIEW_THROUGH",
+       "windowDays": 1
+      }
+     ],
+     "lastSignificantEditAt": "2026-10-04T15:00:00.000Z",
+     "learningPhase": {
+      "status": "LEARNING"
+     },
+     "adCount": 1,
+     "moshiAdCount": 0,
+     "metrics": {
+      "reach": 7271,
+      "impressions": 8156,
+      "spend": 142.52,
+      "roas": 0.8634,
+      "purchases": 3,
+      "purchaseValue": 123.05,
+      "cpm": 17.4743,
+      "messagingConversationsStarted": 0,
+      "costPerMessagingConversationStarted": null
+     },
+     "adsOverMaxAds": 1,
+     "ads": []
+    }
+   ]
+  }
+ ]
+}
