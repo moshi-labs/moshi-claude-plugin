@@ -20,9 +20,13 @@ allows, and how to say it.
 
 1. **Read Moshi.** `get_flow_status_data` (funnel, leads, carts,
    `flags`), `get_ad_performance` (Moshi spend, proven orders,
-   `contactsCaptured`, `iceBreakers`, `flags`; its `window` is the report
-   window), and `get_recent_brand_doc_change` if it exists. Then read 2–3
-   threads from `transcriptsToRead` with `get_conversation_messages`.
+   `contactsCaptured`, `flags`; its `window` is the report window), and
+   `get_recent_brand_doc_change` if it exists. Then read 2–3 threads from
+   `transcriptsToRead` with `get_conversation_messages`. For who messaged:
+   `list_conversations`, `get_leads`, and `get_conversation_events` for
+   each buyer (`data-contract.md` → `chatters`). `get_closer_activity`
+   gives `organization.dashboardUrl` for the Closer link, and
+   `get_ad_shortlist` the creatives' pictures (`thumbnailUrl`).
 2. **Read Meta through Moshi.** Follow `references/meta-reads.md`
    exactly: `get_ad_account_tree`, at most six reads, in order. If the
    first read flags `no_synced_ads` (no Meta ad account connected in
@@ -47,11 +51,12 @@ allows, and how to say it.
 7. **Fill DATA.** Build the `DATA` object exactly as
    `references/data-contract.md` defines it. Raw numbers only. Merge reads
    T2, T3, T5 and T6 into one row per ad per date, and set `adsPulled`
-   from the read that pulled each campaign's ads. Write the
-   verdict and other prose with tokens such as `{c:123.cpc}`, never with
-   typed numbers.
+   from the read that pulled each campaign's ads. Write `verdict.title`
+   in a few plain words, and the headline and body with tokens such as
+   `{c:123.cpc}`, never with typed numbers.
 8. **Render.** Copy `assets/pulse-check.html` and replace only the
-   `const DATA = {...};` block in its last script. If you can copy files,
+   `const DATA = {...};` block in its last script (a split test adds one
+   script after it: see Split tests). If you can copy files,
    copy and edit. If not, emit the whole template unchanged with your DATA
    block, as an artifact. If the report shows a "data check" banner, fix
    DATA and render again.
@@ -78,8 +83,8 @@ Your chat reply has these parts, in this order:
 4. **What changed and when it shows**, if any change has a readable date
    after today: "Meta restarted learning on Sep 24 after a significant
    edit, so CPA is readable from Oct 1."
-5. **One line per tool flag** that touches a number you cited, in plain
-   words.
+5. **One line per tool flag or `notMeasurableYet` item** that touches a
+   number you cited, in plain words. The report prints neither.
 6. **The report**, as the artifact.
 
 ## Hard rules
@@ -114,9 +119,12 @@ Your chat reply has these parts, in this order:
     `flags[]`.
 11. Describe a chat only from its messages. Before you say a shopper is
     waiting, check who sent the last message.
-12. Quotes are anonymous and 15 words or fewer: no names, emails, phone
-    numbers or handles, even if the merchant asks. Point the merchant to
-    the Moshi dashboard for contact details.
+12. Shoppers' handles and pictures go only in `chatters`: they are the
+    merchant's own customers, and the report is for the merchant and
+    Moshi only. Never publish it or share it further. Never put an email
+    or a phone number in DATA or the reply, even if the merchant asks;
+    point them to the Moshi dashboard. A quote in your reply is anonymous
+    and 15 words or fewer.
 13. Read-only. Never create, update, pause or activate anything. To act on
     a winner, suggest the `scale-what-works` skill. Before day 31, name the
     skill and the ad without the word "scale". When you call an ad tired,
@@ -128,6 +136,16 @@ Your chat reply has these parts, in this order:
     `get_ad_performance`. Never call either not measurable when the tools
     return them.
 
+## Split tests
+
+The template has no split-test section. When Moshi runs one, such as DM
+vs Web (two ad sets with the same creatives and budget: one opens a
+chat, the other sends shoppers to the website), say in your reply what
+is tested, each side's budget and results so far from the tree, and when
+each next read lands. When the report should show it too, add the
+section in `references/split-test.md`, the one addition allowed outside
+DATA.
+
 ## Rationalizations
 
 | You think | Reality |
@@ -138,7 +156,7 @@ Your chat reply has these parts, in this order:
 | "Mature campaigns are useful context." | They have months of learning and 10× the budget. They never go into a comparison. |
 | "The launch ran before Moshi, so it can't compare." | Age-matching compares days 1–N of each campaign. The calendar does not matter. |
 | "That change seems irrelevant to the question." | List every change. The merchant decides what matters. |
-| "The data is the merchant's own, so I can print emails." | The report gets shared and screenshotted. Contact details stay in the Moshi dashboard. |
+| "Handles are fine in the report, so emails are too." | A handle shows who engaged. An email or phone number is contact data: it stays in the Moshi dashboard, and the report gets forwarded and screenshotted. |
 | "The daily rows show CPA recovered, so I can judge it." | Not before the reset ad set reaches day 8 of its new count. |
 | "They asked about ROAS, so the next gate is the ROAS gate." | The next gate is the nearest one. Give the ROAS gate on the line after it. |
 | "The reset pushed fatigue back too." | Fatigue counts from launch. A reset moves the stage, not the fatigue read. |
