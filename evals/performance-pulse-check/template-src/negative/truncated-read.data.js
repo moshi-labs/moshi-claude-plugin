@@ -18,8 +18,7 @@ const D = {
     provenOrders: 1, provenRevenue: 60, delayedOrders: 0, closerRecoveries: 0, closerRevenue: 0 },
   comparisons: [{ metric: "ctr", day: 7, moshiCampaignId: "cm1", merchantCampaignId: "ym1" }, { metric: "cpa", day: 14, moshiCampaignId: "cm1", merchantCampaignId: "ym1" }],
   changes: [{ date: "2026-10-01", what: "Budget up 10%", kind: "budget_minor", source: "meta", entityId: "cm1" }],
-  accountIssues: [], shopperThemes: [], quotes: [{ text: "does it ship fast?", source: "ad" }],
-  nextSteps: [{ step: "1", what: "Hold budget.", owner: "merchant", by: "2026-10-08" }], flags: [], notMeasurableYet: []
+  accountIssues: [], flags: [], notMeasurableYet: []
 };
   // change
   D.campaigns.push(camp("yold29", "merchant", "sales", "2026-03-20", [R("2026-09-07", 30)]), camp("yold30", "merchant", "sales", "2026-03-20", [R("2026-09-06", 31)])); // read starts asOf - 29 or - 30 days

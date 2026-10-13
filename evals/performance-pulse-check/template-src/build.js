@@ -11,42 +11,39 @@ mode: "full",
 mood: "delight",
 primaryCampaignId: "cm_101",
 verdict: {
+  title: "Hot start, and Meta is still learning",
   headline: "Chat to Cart clicked at {cmp:0.moshi} in week one, against {cmp:0.merchant} for Fall Launch.",
   body: "Chats cost {m:costPerChat} each, and {m:provenOrders} orders came straight from those threads. Its first fair CPA read lands {c:cm_101.nextGateDate}."
 },
 campaigns: [
-{ id: "cm_101", name: "Moshi · Chat to Cart", owner: "moshi", objective: "sales", metaObjective: "OUTCOME_SALES", budgetType: "CBO", dailyBudget: 300, status: "ACTIVE", startTime: "2026-09-22", adsPulled: "all", retargeting: false,
+{ id: "cm_101", name: "Moshi · Chat to Cart", owner: "moshi", objective: "sales", metaObjective: "OUTCOME_SALES", budgetType: "CBO", dailyBudget: 300, status: "ACTIVE", startTime: "2026-09-22", adsPulled: "all", retargeting: false, metaSpend: 2077, metaPurchases: 21, metaPurchaseValue: 924.4,
   adsets: [{ id: "as_201", name: "Broad US 25–54", startTime: "2026-09-22", optimizationGoal: "OFFSITE_CONVERSIONS", dailyBudget: null, learning: "learning", adCount: 2, lastLearningReset: "2026-09-30", attributionSetting: "7-day click, 1-day view",
     ads: [{ id: "ad_301", name: "Heat ladder reel", angle: "Taste test", daily: [
 ${R.a301}] }] }] },
-{ id: "cm_102", name: "Moshi · Ask the Chili Nerd", owner: "moshi", objective: "engagement", metaObjective: "OUTCOME_ENGAGEMENT", budgetType: "ABO", dailyBudget: null, status: "ACTIVE", startTime: "2026-10-06", adsPulled: "all", retargeting: false,
+{ id: "cm_102", name: "Moshi · Ask the Chili Nerd", owner: "moshi", objective: "engagement", metaObjective: "OUTCOME_ENGAGEMENT", budgetType: "ABO", dailyBudget: null, status: "ACTIVE", startTime: "2026-10-06", adsPulled: "all", retargeting: false, metaSpend: 61.4, metaPurchases: 0, metaPurchaseValue: 0,
   adsets: [{ id: "as_202", name: "Messenger + IG DM", startTime: "2026-10-06", optimizationGoal: "CONVERSATIONS", dailyBudget: 80, learning: null, adCount: 1, lastLearningReset: null, attributionSetting: "1-day click",
     ads: [{ id: "ad_303", name: "Which sauce for tacos?", angle: "Pairing quiz", daily: [
 ${R.a303}] }] }] },
-{ id: "cm_401", name: "Fall Launch", owner: "merchant", objective: "sales", metaObjective: "OUTCOME_SALES", budgetType: "CBO", dailyBudget: 1400, status: "ACTIVE", startTime: "2026-09-29", adsPulled: "all", retargeting: false, metaSpend: 4880,
+{ id: "cm_401", name: "Fall Launch", owner: "merchant", objective: "sales", metaObjective: "OUTCOME_SALES", budgetType: "CBO", dailyBudget: 1400, status: "ACTIVE", startTime: "2026-09-29", adsPulled: "all", retargeting: false, metaSpend: 4808.2, metaPurchases: 117, metaPurchaseValue: 5281.1,
   adsets: [{ id: "as_501", name: "Advantage+ audience", startTime: "2026-09-29", optimizationGoal: "OFFSITE_CONVERSIONS", dailyBudget: null, learning: "success", adCount: 1, lastLearningReset: null, attributionSetting: "7-day click, 1-day view",
     ads: [{ id: "ad_601", name: "Smoked habanero UGC", angle: "Heat reaction", daily: [
 ${R.a601}] }] }] }
 ],
-moshi: { firstLaunch: "2026-09-22", spend: 2138.4, chats: 318, chatsFromAds: 284, contactsCaptured: 71, productViews: 149, carts: 46, checkouts: 27, provenOrders: 14, provenRevenue: 768.5, delayedOrders: 5, closerRecoveries: 3, closerRevenue: 141 },
+moshi: { firstLaunch: "2026-09-22", spend: 2138.4, chats: 318, chatsFromAds: 284, contactsCaptured: 71, contactsEmail: 52, contactsPhone: 19, productViews: 149, carts: 46, checkouts: 27, provenOrders: 14, provenRevenue: 768.5, delayedOrders: 5, closerRecoveries: 3, closerRevenue: 141 },
 comparisons: [{ metric: "ctr", day: 7, moshiCampaignId: "cm_101", merchantCampaignId: "cm_401" }],
-changes: [
-  { date: "2026-09-30", what: "Meta restarted learning after a significant edit", kind: "significant_edit", source: "meta", entityId: "as_201" },
-  { date: "2026-10-03", what: "Agent learned the 3-pack bundle", kind: "agent_knowledge", source: "moshi", entityId: null }
-],
+changes: [{ date: "2026-09-30", what: "Meta restarted learning after a significant edit", kind: "significant_edit", source: "meta", entityId: "as_201" }],
 accountIssues: [],
-iceBreakers: { total: 284, items: [{ text: "Which sauce is hottest?", conversations: 121 }, { text: "What goes with tacos?", conversations: 74 }], typedOwn: { conversations: 89 } },
-shopperThemes: [
-  { theme: "How hot is it?", text: "Heat questions lead, and the agent answers with the heat ladder." },
-  { theme: "Bundles", text: "The 3-pack is in {m:carts} carts." }
-],
-quotes: [{ text: "is the smoked one hotter than sriracha?", source: "ad" }, { text: "ok ordering the 3-pack, my dad will lose it", source: "ad" }],
-nextSteps: [
-  { step: "1", what: "Hold Chat to Cart's budget until the CPA read on {c:cm_101.nextGateDate}.", owner: "merchant", by: "2026-10-07" },
-  { step: "2", what: "Add a heat-level answer card for habanero questions.", owner: "moshi", by: "2026-10-08" }
-],
-flags: [{ source: "moshi", code: "order_match_pending", text: "Oct 6 orders still matching." }],
-notMeasurableYet: ["Retargeting halo: needs day 15"]
+chatters: { total: 318, people: [
+  { username: "salsa.sam", followers: 48200, verified: true, followsYou: false, orderValue: 58 },
+  { username: "heatseekr", followers: 2300, followsYou: true, orderValue: 44.5 },
+  { username: "taco.jo", followers: 640, followsYou: false, orderValue: 89 },
+  { name: "Dana Ruiz", channel: "messenger", orderValue: 41 },
+  { username: "bbq.dad", followers: 21500, followsYou: false, stage: "cart" },
+  { username: "chili.lab", followers: 9100, verified: true, followsYou: false, stage: "product_view" },
+  { username: "mild.mo", followers: 310, followsYou: true }
+] },
+dashboardUrl: "https://brindle.moshi.ai",
+flags: [{ source: "moshi", code: "order_match_pending", text: "Oct 6 orders still matching." }]
 };`;
 const t=fs.readFileSync(S+'/tpl.html','utf8').replace('%%LOGO%%',()=>fs.readFileSync(S+'/logo/logo64q.png.b64','utf8').trim()).replace('%%AV%%',()=>fs.readFileSync(S+'/avatar/av.js','utf8').trim().replace(/;$/,'')+';AV.s={delight:"'+fs.readFileSync(S+'/avatar/still-delight.webp.b64','utf8').trim()+'",reading:"'+fs.readFileSync(S+'/avatar/still-reading.webp.b64','utf8').trim()+'"};');
 // Function replacers keep $&, $' and $` in inserted text literal.

@@ -1,4 +1,4 @@
-// Negative test for check 4: base.data.js plus the lines under "// change".
+// Negative test for check 4: a chatter row whose username or name holds an email or a phone number is hidden: base.data.js plus the lines under "// change".
 // The helpers sit inside a function so their names do not clash with the template's globals.
 const DATA = (() => {
 const R = (s, n, f) => Array.from({ length: n }, (_, i) => ({ date: new Date(Date.parse(s) + i * 864e5).toISOString().slice(0, 10),
@@ -18,10 +18,10 @@ const D = {
     provenOrders: 1, provenRevenue: 60, delayedOrders: 0, closerRecoveries: 0, closerRevenue: 0 },
   comparisons: [{ metric: "ctr", day: 7, moshiCampaignId: "cm1", merchantCampaignId: "ym1" }, { metric: "cpa", day: 14, moshiCampaignId: "cm1", merchantCampaignId: "ym1" }],
   changes: [{ date: "2026-10-01", what: "Budget up 10%", kind: "budget_minor", source: "meta", entityId: "cm1" }],
-  accountIssues: [], shopperThemes: [], quotes: [{ text: "does it ship fast?", source: "ad" }],
-  nextSteps: [{ step: "1", what: "Hold budget.", owner: "merchant", by: "2026-10-08" }], flags: [], notMeasurableYet: []
+  accountIssues: [], flags: [], notMeasurableYet: []
 };
   // change
-  D.quotes = [{ text: "mail me at pat@example.com", source: "ad" }];
+  D.chatters = { people: [{ username: "pat@example.com", followers: 1200, orderValue: 30 }, { name: "+1 (415) 555-0100", channel: "messenger" },
+    { username: "fern.and.fig", followers: 2400, stage: "cart" }] };
   return D;
 })();
