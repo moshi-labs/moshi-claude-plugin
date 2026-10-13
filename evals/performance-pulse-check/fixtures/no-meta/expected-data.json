@@ -27,6 +27,8 @@
     "chats": 187,
     "chatsFromAds": 171,
     "contactsCaptured": 41,
+    "contactsEmail": 29,
+    "contactsPhone": 12,
     "productViews": 74,
     "carts": 12,
     "checkouts": 6,
@@ -47,59 +49,6 @@
     }
   ],
   "accountIssues": [],
-  "iceBreakers": {
-    "total": 171,
-    "items": [
-      {
-        "text": "Which roast is least bitter?",
-        "conversations": 74,
-        "share": 0.4327
-      },
-      {
-        "text": "Can you grind it for my brewer?",
-        "conversations": 40,
-        "share": 0.2339
-      }
-    ],
-    "typedOwn": {
-      "conversations": 57,
-      "share": 0.3333
-    }
-  },
-  "shopperThemes": [
-    {
-      "theme": "Bitterness",
-      "text": "Shoppers ask which roast is smoothest. {m:productViews} chats reached a product page."
-    },
-    {
-      "theme": "Grind size",
-      "text": "Shoppers ask for a grind that fits their brewer."
-    }
-  ],
-  "quotes": [
-    {
-      "text": "Which roast is least bitter?",
-      "source": "ad"
-    },
-    {
-      "text": "Do you grind beans for a French press?",
-      "source": "ad"
-    }
-  ],
-  "nextSteps": [
-    {
-      "step": 1,
-      "what": "Connect your Meta ad account in Moshi to add CTR, CPC and fair comparisons.",
-      "owner": "merchant",
-      "by": "2026-10-09"
-    },
-    {
-      "step": 2,
-      "what": "Read chats at the next gate: {m:nextGate}.",
-      "owner": "moshi",
-      "by": "2026-10-09"
-    }
-  ],
   "flags": [
     {
       "source": "moshi",

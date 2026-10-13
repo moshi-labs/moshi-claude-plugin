@@ -36,6 +36,9 @@
       "startTime": "2026-09-16",
       "adsPulled": "all",
       "retargeting": false,
+      "metaSpend": 10383.5,
+      "metaPurchases": 214,
+      "metaPurchaseValue": 11460.75,
       "adsets": [
         {
           "id": "1202640000000088",
@@ -722,6 +725,9 @@
       "startTime": "2026-09-16",
       "adsPulled": "all",
       "retargeting": false,
+      "metaSpend": 3076.52,
+      "metaPurchases": 0,
+      "metaPurchaseValue": 0,
       "adsets": [
         {
           "id": "1202640000000090",
@@ -1190,6 +1196,8 @@
       "adsPulled": "top",
       "retargeting": false,
       "metaSpend": 63742.59,
+      "metaPurchases": 2673,
+      "metaPurchaseValue": 165730.73,
       "adsets": [
         {
           "id": "1202640000000101",
@@ -2141,6 +2149,8 @@
       "adsPulled": "all",
       "retargeting": false,
       "metaSpend": 51000,
+      "metaPurchases": 1318,
+      "metaPurchaseValue": 76500,
       "adsets": [
         {
           "id": "1202640000000113",
@@ -3641,6 +3651,8 @@
       "adsPulled": "all",
       "retargeting": false,
       "metaSpend": 39200,
+      "metaPurchases": 898,
+      "metaPurchaseValue": 54880,
       "adsets": [
         {
           "id": "1202640000000119",
@@ -4855,6 +4867,8 @@
     "chats": 640,
     "chatsFromAds": 571,
     "contactsCaptured": 118,
+    "contactsEmail": 84,
+    "contactsPhone": 34,
     "productViews": 233,
     "carts": 61,
     "checkouts": 29,
@@ -4895,76 +4909,6 @@
     }
   ],
   "accountIssues": [],
-  "iceBreakers": {
-    "total": 571,
-    "items": [
-      {
-        "text": "Is it gentle on sensitive stomachs?",
-        "conversations": 214,
-        "share": 0.3748
-      },
-      {
-        "text": "Which bag size fits my dog?",
-        "conversations": 131,
-        "share": 0.2294
-      },
-      {
-        "text": "Do you ship to Canada?",
-        "conversations": 52,
-        "share": 0.0911
-      }
-    ],
-    "typedOwn": {
-      "conversations": 174,
-      "share": 0.3047
-    }
-  },
-  "shopperThemes": [
-    {
-      "theme": "Sensitive stomachs",
-      "text": "Shoppers ask about protein and grain. {m:productViews} chats reached a product page."
-    },
-    {
-      "theme": "Reorders",
-      "text": "Some buyers come back to reorder after the first chat."
-    }
-  ],
-  "quotes": [
-    {
-      "text": "Will the salmon jerky upset a sensitive stomach?",
-      "source": "ad"
-    },
-    {
-      "text": "Is the puppy mix soft enough for a ten week old?",
-      "source": "profile"
-    }
-  ],
-  "nextSteps": [
-    {
-      "step": 1,
-      "what": "Read the Sales campaign CPA at its next gate: {c:1202640000000089.nextGate}.",
-      "owner": "moshi",
-      "by": "2026-10-08"
-    },
-    {
-      "step": 2,
-      "what": "Hold the budget steady until that gate.",
-      "owner": "merchant",
-      "by": "2026-10-08"
-    },
-    {
-      "step": 3,
-      "what": "Check Ads Manager's history for what changed on the Sales campaign on Sep 24.",
-      "owner": "merchant",
-      "by": "2026-10-08"
-    },
-    {
-      "step": 4,
-      "what": "Read chats after the return window change.",
-      "owner": "moshi",
-      "by": "2026-10-09"
-    }
-  ],
   "flags": [
     {
       "source": "moshi",
