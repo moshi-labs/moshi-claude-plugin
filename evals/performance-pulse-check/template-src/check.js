@@ -1,5 +1,5 @@
 // Runs the shipped template's code against a DATA file in a stub DOM and
-// prints the data-check banner (or "none") and the rendered verdict.
+// prints the data-check banner (or "none"), the rendered text and the rendered HTML.
 // Usage: node check.js <file with `const DATA = {...};` or a JSON object>
 const fs = require('fs'), vm = require('vm'), path = require('path');
 const html = fs.readFileSync(path.join(__dirname,
@@ -30,3 +30,4 @@ const text = app.innerHTML.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
 const errs = ctx.ERRORS || [];
 console.log('banner:', errs.length ? errs.join(' | ') : 'none');
 console.log('rendered:', text);
+console.log('html:', app.innerHTML.replace(/\s+/g, ' '));

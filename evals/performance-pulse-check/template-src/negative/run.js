@@ -1,6 +1,7 @@
-// Runs every negative DATA file through check.js and fails when an expected banner line is missing.
+// Runs every negative DATA file through check.js and fails when an expected banner line is missing, and fails when the shipped
+// template is over 122,880 bytes.
 // Usage: node template-src/negative/run.js (from evals/performance-pulse-check), or from any directory.
-const { execFileSync } = require('child_process'), path = require('path');
+const { execFileSync } = require('child_process'), path = require('path'), fs = require('fs');
 const check = path.join(__dirname, '..', 'check.js');
 const EXPECT = {
   'base.data.js': [],
@@ -105,16 +106,24 @@ const RENDERED_NOT = { 'check10.data.js': ['1.20%', '$1,800', 'Creative fatigue'
   'dup-primary.data.js': ['Check 13'], 'check13-missing.data.js': ['Moshi CTR is'], 'attribution-mixed.data.js': ['1-day click)'] };
 // Strings that must render in this order. overlap: "Things in your account affecting results" leads, before the verdict.
 const ORDER = { 'overlap.data.js': [['Things in your account affecting results', 'Moshi CTR is'], ['Moshi CTR is', 'Where each campaign stands']] };
+// Strings that must (HTML) or must not (HTML_NOT) be in the rendered markup: links, images and headings.
+const HTML = {}, HTML_NOT = {};
 let failed = 0;
 for (const [file, want] of Object.entries(EXPECT)) {
   const out = execFileSync('node', [check, path.join(__dirname, file)], { encoding: 'utf8' });
-  const banner = out.match(/^banner: (.*)$/m)[1], rendered = out.match(/^rendered: (.*)$/m)[1];
+  const banner = out.match(/^banner: (.*)$/m)[1], rendered = out.match(/^rendered: (.*)$/m)[1], html = out.match(/^html: (.*)$/m)[1];
   const miss = want.filter(w => !banner.includes(w)).concat((RENDERED[file] || []).filter(w => !rendered.includes(w)).map(w => 'rendered ' + w))
     .concat((RENDERED_NOT[file] || []).filter(w => rendered.includes(w)).map(w => 'unwanted ' + w))
-    .concat((ORDER[file] || []).filter(([a, b]) => !(rendered.includes(a) && rendered.indexOf(a) < rendered.indexOf(b))).map(([a, b]) => `order ${a} before ${b}`));
+    .concat((ORDER[file] || []).filter(([a, b]) => !(rendered.includes(a) && rendered.indexOf(a) < rendered.indexOf(b))).map(([a, b]) => `order ${a} before ${b}`))
+    .concat((HTML[file] || []).filter(w => !html.includes(w)).map(w => 'html ' + w))
+    .concat((HTML_NOT[file] || []).filter(w => html.includes(w)).map(w => 'unwanted html ' + w));
   const bad = miss.length > 0 || (!want.length && banner != 'none');
   if (bad) failed++;
   console.log(`${bad ? 'FAIL' : 'ok  '} ${file}: ${bad ? (miss.length ? 'missing ' + miss.join(' | ') : 'unexpected ' + banner) : banner}`);
 }
+// The design spec's size line: a host that must re-emit the template whole can do it in one artifact.
+const size = fs.statSync(path.join(__dirname, '../../../../plugins/moshi/skills/performance-pulse-check/assets/pulse-check.html')).size;
+if (size > 122880) failed++;
+console.log(`${size > 122880 ? 'FAIL' : 'ok  '} pulse-check.html: ${size.toLocaleString('en-US')} of 122,880 bytes`);
 console.log(failed ? `${failed} negative test(s) failed` : 'all negative tests passed');
 process.exit(failed ? 1 : 0);
