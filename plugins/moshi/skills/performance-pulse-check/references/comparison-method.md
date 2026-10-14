@@ -21,9 +21,9 @@ A fair comparison has all six parts:
    that holds an ad in a Moshi ad's `creativeOverlap`. Meta won't show one
    person two ads from the same advertiser in one auction: when ad sets
    aim at similar people it enters the one with the best history, so the
-   two were not tested apart. The template shows them side by side in the
-   account map instead (check 11). Say "ran at the same time, competing in
-   the same auctions", never who won.
+   two were not tested apart. The template shows them side by side, in
+   the overlap callout and Same ads, instead (check 11). Say "ran at the
+   same time, competing in the same auctions", never who won.
 4. **The same days of life.** Moshi's days 1–N against the merchant
    launch's days 1–N. N is Moshi's age since launch (a reset does not
    change N), capped at 14, the days that T5 pulls for each launch.
@@ -57,7 +57,7 @@ Show:
 |---|---|
 | Chats, contacts captured, product views, carts, Closer recoveries | always |
 | Delayed orders: proven orders placed 1+ days after the chat | always |
-| Fatigue: the merchant's top ad's CTR and frequency against Moshi's, by calendar date | day 15+ since launch (a reset does not delay it) |
+| Fatigue: the merchant's top ad's CTR and frequency against Moshi's, latest day against first | day 15+ since launch (a reset does not delay it), in your reply: the report has no fatigue chart |
 | Halo on retargeting | day 15+, labeled directional |
 
 Moshi-proven orders are a floor. Closer recoveries are their own line.

@@ -1,4 +1,6 @@
-// Negative test for check 10 in the fatigue section: a day-15 Moshi campaign whose only ad has two rows for one date.
+// Positive test: From conversation to purchase on day 15: the conversation rate (Meta chats over link clicks), the funnel with
+// Meta's purchases beside Moshi's proven orders, chat order size against your campaigns, and Moshi's share of spend with ROAS:
+// base.data.js plus the lines under "// change".
 // The helpers sit inside a function so their names do not clash with the template's globals.
 const DATA = (() => {
 const R = (s, n, f) => Array.from({ length: n }, (_, i) => ({ date: new Date(Date.parse(s) + i * 864e5).toISOString().slice(0, 10),
@@ -18,11 +20,12 @@ const D = {
     provenOrders: 1, provenRevenue: 60, delayedOrders: 0, closerRecoveries: 0, closerRevenue: 0 },
   comparisons: [{ metric: "ctr", day: 7, moshiCampaignId: "cm1", merchantCampaignId: "ym1" }, { metric: "cpa", day: 14, moshiCampaignId: "cm1", merchantCampaignId: "ym1" }],
   changes: [{ date: "2026-10-01", what: "Budget up 10%", kind: "budget_minor", source: "meta", entityId: "cm1" }],
-  accountIssues: [], shopperThemes: [], quotes: [{ text: "does it ship fast?", source: "ad" }],
-  nextSteps: [{ step: "1", what: "Hold budget.", owner: "merchant", by: "2026-10-08" }], flags: [], notMeasurableYet: []
+  accountIssues: [], flags: [], notMeasurableYet: []
 };
   // change
-  const a = D.campaigns[0].adsets[0].ads[0]; a.daily.push({ ...a.daily[0] }); D.campaigns.pop(); D.comparisons = []; // fatigue has no Moshi rows to plot
-  D.verdict = { headline: "Chats cost {m:costPerChat}.", body: "Moshi launched {m:firstLaunch}." };
+  D.campaigns[0].adsets[0].ads[0].daily.forEach(r => r.conversations = 6); // Meta credits chats every day, so cm1 starts chats
+  Object.assign(D.campaigns[0], { metaSpend: 750, metaPurchases: 30, metaPurchaseValue: 1800 });
+  Object.assign(D.campaigns[1], { metaSpend: 2250, metaPurchases: 50, metaPurchaseValue: 2500 });
+  D.metaWindow = { start: "2026-09-07", end: "2026-10-06" };
   return D;
 })();

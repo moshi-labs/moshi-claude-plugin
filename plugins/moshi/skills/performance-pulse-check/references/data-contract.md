@@ -34,9 +34,11 @@ Rules for every field:
 | `mode` | `"full"` or `"moshi_only"` | `moshi_only` when T1 flags `no_synced_ads` or fails (see `meta-reads.md`) |
 | `mood` | `"delight"` or `"reading"` | `"delight"` when the primary campaign leads on the metric its stage allows; `"reading"` when it is too early to judge. Sets the avatar. Missing values render as `"reading"` |
 | `primaryCampaignId` | string or null | the Moshi campaign with the largest spend in the window (its daily `spend` rows inside `window`); the verdict is about it. Required whenever a Moshi campaign spent in the window: a missing or wrong one hides the verdict (check 13). Null in `moshi_only` or when no Moshi campaign spent |
-| `verdict.headline` | string, ≤ 90 chars | you write it, with tokens, about the primary campaign |
+| `verdict.title` | string, ≤ 45 chars, or null | the report's h1: the read in a few plain words, such as "We're still learning, and so is Meta". Keep numbers for the headline; a token here resolves as it does in the headline. Null makes the headline the h1 |
+| `verdict.headline` | string, ≤ 90 chars | you write it, with tokens, about the primary campaign. It prints under the title |
 | `verdict.body` | string, 2–3 sentences | you write it, with tokens |
-| `iceBreakers` | object or null | `get_ad_performance` → `iceBreakers`, as the tool returns it. The template reads `total`, `items[].text`, `items[].conversations` and `typedOwn.conversations`, and works out shares that add up to 100%. Null when the tool does not return it |
+| `chatters` | object or null | the people who messaged in the window, for What messaging ads tell you (see `chatters` below). Null leaves the section out |
+| `dashboardUrl` | https URL or null | `get_closer_activity` → `organization.dashboardUrl`. The Respond to your Closers button opens `{dashboardUrl}/closer`. Null leaves the section out |
 
 The template picks the primary campaign the same way and checks your
 `primaryCampaignId` against it (check 13). Another Moshi campaign shows
@@ -57,10 +59,10 @@ Only some campaigns get ad-level `daily[]` rows: Moshi campaigns (T2),
 every launch T5 read, the campaigns that hold the merchant's top ads (T3),
 and the ads T6 read. A launch T5 read keeps all its rows and
 `adsPulled: "all"`, whether or not you compare it. Every other campaign
-keeps `ads: []`. The account map shows Moshi's campaigns and the merchant
-ad sets their ads were cloned from or share a creative with; every other
-merchant campaign collapses into one line from its `metaSpend`. The reads
-are in `meta-reads.md`.
+keeps `ads: []`. Same ads shows each Moshi ad beside the ad of yours it
+was cloned from. Moshi's share of your spend and the order-size read add
+up every campaign's T1 totals (`metaSpend`, `metaPurchases`,
+`metaPurchaseValue`). The reads are in `meta-reads.md`.
 
 `adsPulled` tells the template which ads you pulled. T2 pulls every Moshi
 ad, and T5 every ad of a launch. T3 pulls only the merchant's top ads and
@@ -86,8 +88,19 @@ with ads and `"none"` without.
 | `startTime` | date or null | the day of campaign `startTime`; null when it is missing or 1969-12-31 |
 | `adsPulled` | `"all"`, `"top"` or `"none"` | `"all"` when every ad set's ads came from T2 or T5; `"none"` when `ads` is empty in every ad set; else `"top"` |
 | `retargeting` | boolean | `true` when the name or audience shows retargeting; else `false` |
-| `metaSpend` | number or null | merchant campaigns: T1 campaign `metrics.spend`, its spend over `metaWindow`. The account map adds up the campaigns it does not show |
+| `metaSpend` | number or null | every campaign, Moshi's too: T1 campaign `metrics.spend`, its spend over `metaWindow` |
+| `metaPurchases` | integer or null | every campaign: T1 campaign `metrics.purchases` over `metaWindow` |
+| `metaPurchaseValue` | number or null | every campaign: T1 campaign `metrics.purchaseValue` over `metaWindow` |
 | `adsets` | array | below |
+
+Fill `metaSpend`, `metaPurchases` and `metaPurchaseValue` on every
+campaign T1 returned, or leave all three null on every campaign (as when
+the size guard split T1). The template adds them up by `owner`, so one
+missing campaign would make the totals wrong; it shows the share of spend
+and the order-size read only when every campaign has them. Never add them
+up yourself, and never use an average order value a Moshi tool returns
+(the Buyers table's, or `list_conversations` → `extra.averageAov`): that
+is Moshi's own order average, not your store's.
 
 ### `campaigns[].adsets[]`
 
@@ -102,7 +115,7 @@ with ads and `"none"` without.
 | `retargeting` | boolean | only on a retargeting ad set inside a campaign that is not |
 | `totals` | object | T6's ad set `metrics` for the report window: `{ spend, impressions, conversations, purchases, purchaseValue }` (`conversations` is `messagingConversationsStarted`). Only on the merchant ad sets T6 returned |
 | `learning` | `"learning"`, `"limited"`, `"success"` or null | `learningPhase.status`: `LEARNING` → `"learning"`, `FAIL` → `"limited"`, `SUCCESS` → `"success"`. Null when `learningPhase` is missing. Never infer it. |
-| `adCount` | integer or null | T1's `adsOverMaxAds` for this ad set: its ads that delivered in the 30 days. T1 lists no ads, so it counts them all. Not the tree's `adCount`, which also counts paused and old ads. For a launch only T4 lists, use T4's. The account map and the resource note show it |
+| `adCount` | integer or null | T1's `adsOverMaxAds` for this ad set: its ads that delivered in the 30 days. T1 lists no ads, so it counts them all. Not the tree's `adCount`, which also counts paused and old ads. For a launch only T4 lists, use T4's. The resource note shows it |
 | `lastLearningReset` | date or null | `lastSignificantEditAt` as a day in the account timezone; null when it is missing. Copy it even when it falls on launch day; the template treats that as the launch, not a reset |
 | `attributionSetting` | string or null | `attributionSpec` in words, in its order: `{CLICK_THROUGH, 7}, {VIEW_THROUGH, 1}` is `"7-day click, 1-day view"` (`ENGAGED_VIDEO_VIEW` is "engaged view"); null when it is missing, which the report prints as "Meta's default for this ad set (not reported)". Every ad set gets the field: an ad set without it hides its Meta purchases (check 12) |
 | `ads` | array | below |
@@ -112,8 +125,9 @@ with ads and `"none"` without.
 | Field | Type | Source |
 |---|---|---|
 | `id`, `name` | string | ad `adId`, `adName` |
-| `angle` | string or null | a 2–4 word creative label you write, for example "Dermatologist reaction". The overlap callout and the map name ads by it |
-| `clonedFrom` | object or null | Moshi ads: the tree's `clonedFrom`, verbatim (`adId`, `adName`, `adsetId`, `campaignId`) |
+| `angle` | string or null | a 2–4 word creative label you write, for example "Dermatologist reaction". The overlap callout and Same ads name ads by it |
+| `clonedFrom` | object or null | Moshi ads: the tree's `clonedFrom`, verbatim (`adId`, `adName`, `adsetId`, `campaignId`). Same ads sets each copy beside this original over the window, and says the original "didn't run these days" when it has no rows there. So write null when T6 was skipped or refused, and when T6 left the original out for any reason but "nothing delivered in this range" |
+| `thumbnailUrl` | https URL or null | optional: the creative's picture for its Same ads card, on Moshi's copy or your original. `get_ad_shortlist` → `thumbnailUrl` for the same `adId` (its spend floor defaults to $1,000 over 90 days, so lower it or expect gaps). Meta's links expire within days; a picture that fails to load is left out |
 | `creativeOverlap` | array | Moshi ads: the tree's `creativeOverlap`, verbatim; `[]` when it is empty. Leave both fields out on an older API that does not return them |
 | `daily` | array | one row per day with delivery, from a `granularity: "daily"` read |
 
@@ -173,6 +187,7 @@ Moshi's own funnel for the report window. Every field can be null.
 | `chats` | integer | conversations started |
 | `chatsFromAds` | integer | conversations that came from an ad, not a profile button |
 | `contactsCaptured` | integer | `get_ad_performance` → `contactsCaptured.total` (emails plus phones) |
+| `contactsEmail`, `contactsPhone` | integer | `contactsCaptured.email` and `contactsCaptured.phone` |
 | `productViews` | integer | conversations that clicked to a product page |
 | `carts` | integer | conversations that reached a cart |
 | `checkouts` | integer | conversations that reached checkout |
@@ -184,6 +199,42 @@ Moshi's own funnel for the report window. Every field can be null.
 
 Never add `provenOrders` to Meta `purchases`. The template shows them in
 two separate rows.
+
+## `chatters`
+
+The people who messaged in the window, one row each, for What messaging
+ads tell you. A message arrives with a profile, so the report can say who
+the shoppers are: the tiles count the rows, and the lists show every
+buyer and the largest accounts that did not buy. These are the merchant's
+own customers, so their handles and pictures may appear in the report,
+which goes to the merchant and Moshi only. Never put an email or a phone
+number in a row: a row whose `username` or `name` holds one is hidden
+(check 4).
+
+| Field | Type | Source |
+|---|---|---|
+| `total` | integer or null | only when you could not list everyone: the sum of `page.total` over your `list_conversations` calls. The report then says the counts cover only the rows you listed. Null when the rows are everyone; never smaller than the rows (check 15) |
+| `people[]` | array | one row per person, below |
+
+`people[]` row:
+
+| Field | Type | Source |
+|---|---|---|
+| `username` | string | Instagram: `list_conversations` → `username`, without the @ |
+| `name` | string or null | Messenger: `name`. The report shows the first name and the last initial |
+| `channel` | `"messenger"`, or left out | `list_conversations` → `source`. Leave it out for Instagram. Skip `sandbox`, `imessage` and `whatsapp` rows |
+| `followers` | integer or null | `followerCount`; null for Messenger, which does not share it |
+| `verified` | boolean | `isVerifiedUser` |
+| `followsYou` | boolean or null | `isUserFollowBusiness`; null when it is missing |
+| `orderValue` | number or null | what they spent on orders in the window: the sum of `data.totalPrice` (or `data.total_price`) over their `purchase_complete` events, from `get_conversation_events` for each row whose `purchaseCount` is above 0. Null when they did not buy |
+| `stage` | string or null | how far someone who did not buy got: `get_leads` → `furthestStageName` for their `conversationId`, verbatim (`click_through`, `product_view`, `cart`, `checkout`). Null reads as "messaged" |
+| `profilePic` | https URL or null | `profilePic`, Moshi's copy of the profile picture. Null shows their initial |
+| `threadUrl` | https URL or null | their thread in Meta Business Suite, which gets a paper-plane button. No Moshi tool returns one yet, so leave it null |
+
+`list_conversations` returns at most 100 rows a call and has no offset.
+Call it with `limit: 100` and `sinceDays` reaching back to `window.start`.
+When its `page.total` is larger than the rows it returned, call it once
+per Moshi flow (`flowId`) instead.
 
 ## `comparisons[]`
 
@@ -207,7 +258,10 @@ not be retargeting, and must not hold an ad in a Moshi ad's
 
 ## `changes[]`
 
-Every change since the first Moshi launch that can move results.
+Every change since the first Moshi launch that can move results. The
+report does not list them: the template reads the significant ones for
+the learning-reset clock, and your reply names the changes still before
+their readable date (`stage-gates.md`).
 
 Moshi's synced data has no Meta change log. A Meta change shows only when
 it restarted learning: for each ad set whose `lastLearningReset` falls
@@ -235,18 +289,17 @@ than 20%.
 | Field | Shape | Notes |
 |---|---|---|
 | `accountIssues[]` | `{ kind, severity: "info"\|"warn", text }` | issues on Moshi's own campaigns from your structure reads, for example a Moshi ad set whose `status` is not `ACTIVE`, or `learning_limited` for one whose `learning` is `"limited"`. They print under the overlap callout at the top of the report. The template writes the creative-overlap callout itself, and there is no anomaly scan, so add no overlap or pixel issue of your own. `kind` is `"audience_overlap"`, `"pixel"`, `"budget_cut"`, `"learning_limited"` or `"other"` |
-| `shopperThemes[]` | `{ theme, text }` | 2–4 themes from the chats |
-| `quotes[]` | `{ text, source: "ad"\|"profile" }` | 2–3 quotes, anonymized, ≤ 15 words each |
-| `nextSteps[]` | `{ step, what, owner: "moshi"\|"merchant", by }` | `by` is a date |
-| `flags[]` | `{ source: "moshi"\|"meta", code, text }` | every flag from every tool, as `meta-reads.md` says (`get_ad_account_tree` flags use `"meta"`), plus `meta_read_failed` when a read fails |
-| `notMeasurableYet[]` | string | each item you could not measure, and why |
+| `flags[]` | `{ source: "moshi"\|"meta", code, text }` | every flag from every tool, as `meta-reads.md` says (`get_ad_account_tree` flags use `"meta"`), plus `meta_read_failed` when a read fails. The report does not print them: your reply names each one that touches a number you cite |
+| `notMeasurableYet[]` | string | each item you could not measure, and why. Not printed either: say it in your reply when it touches the question |
+
+0.12.0 dropped `iceBreakers`, `shopperThemes`, `quotes` and `nextSteps`:
+the report no longer has those sections. Leave them out.
 
 ## Tokens
 
-Tokens resolve only in `verdict`, `shopperThemes[].text` and
-`nextSteps[].what`. Prose there cites numbers only through tokens. Every
-other string prints exactly as typed, so it holds no tokens and no
-numbers you computed.
+Tokens resolve only in `verdict` (`title`, `headline` and `body`). Prose
+there cites numbers only through tokens. Every other string prints
+exactly as typed, so it holds no tokens and no numbers you computed.
 
 | Token | Value |
 |---|---|
@@ -313,8 +366,8 @@ number on such a campaign, state it in the chat reply from T1's campaign
 
 In the verdict, the headline cites only the primary campaign among Moshi's
 (check 13), and no token in the verdict cites, or with `{all:merchant.…}`
-covers, your ad, ad set or campaign that runs Moshi's creative (check 11). The overlap callout and the account
-map show those side by side.
+covers, your ad, ad set or campaign that runs Moshi's creative (check 11). The overlap callout and Same ads
+show those side by side.
 
 ## Data checks
 
@@ -332,8 +385,8 @@ a check fails:
    before day 8 on Moshi's reset clock.
 3. A token points to nothing, uses an unknown metric, or is malformed, or
    an `{all:moshi.…}` token has no Moshi campaign.
-4. A quote holds an email, a phone number, an @handle, or more than 15
-   words.
+4. A `chatters.people[]` row's `username` or `name` holds an email or a
+   phone number. The row is hidden.
 5. `schemaVersion` is not 1.
 6. A `c:` or `s:` token cites a campaign or ad set with `adsPulled: "top"`,
    or an `{all:…}` token covers a campaign with `adsPulled` other than
@@ -342,26 +395,32 @@ a check fails:
    reset.
 8. A date field (`window.*`, `moshi.firstLaunch`, `campaigns[].startTime`,
    `adsets[].startTime`, `adsets[].lastLearningReset`, `changes[].date`,
-   `nextSteps[].by`, `daily[].date`) is not a `YYYY-MM-DD` date, or a
+   `daily[].date`) is not a `YYYY-MM-DD` date, or a
    `{m:…}` age or `firstLaunch` token needs the invalid `firstLaunch`.
 9. A token has no value: a numeric metric that is null or not finite, or
    a null `{m:firstLaunch}`. Dates and text never fail this check.
 10. An ad has two `daily[]` rows for one date. The template drops that
    ad's rows and marks the ad, its ad set and its campaign. It hides every
    metric token on them, every comparison with that campaign on either
-   side, and the Meta tiles when the campaign is Moshi's. The fatigue chart
-   skips the campaign. Age, stage and gate tokens still render.
+   side, the Meta tiles and the funnel's Meta numbers when the campaign is
+   Moshi's, and the Same ads card of a copy or an original with the
+   duplicate. Age, stage and gate tokens still render.
 11. A comparison's merchant side, or a verdict token, is (or, for
    `{all:merchant.…}`, covers) your ad, ad set or campaign named in a Moshi
    ad's `creativeOverlap`. It shares auctions with
    Moshi's ad, so it is no fair test: the report shows it side by side.
 12. An ad set whose purchases a Meta purchase figure shows (a purchase
-   token, a `cpa` or `roas` comparison, the purchases card, a map row) has
+   token, a `cpa` or `roas` comparison, the funnel's Meta purchases) has
    no `attributionSetting` field. Null is fine; a missing field is not.
 13. `primaryCampaignId` is missing or is not the Moshi campaign with the
    largest spend in the window (the verdict is hidden), or the headline
    cites another Moshi campaign (the headline is hidden). An ad that failed
    check 10 still counts each of its dates once for this ranking.
+14. A link is not an https URL: `dashboardUrl`, a row's `profilePic` or
+   `threadUrl`, an ad's `thumbnailUrl` (a picture may also be a
+   `data:image` URI). The link is dropped.
+15. `chatters.total` is smaller than the number of rows in
+   `chatters.people`.
 
 ## Minimal example
 
@@ -375,16 +434,20 @@ const DATA = {
   mode: "moshi_only",
   primaryCampaignId: null,
   verdict: {
+    title: "Chats are flowing in",
     headline: "Your chat ads are starting chats at {m:costPerChat} each.",
     body: "Moshi is on {m:age}, a read on attention. Purchases are too early to call."
   },
   campaigns: [],
-  moshi: { firstLaunch: "2026-10-05", spend: 412.3, chats: 14, chatsFromAds: 12, contactsCaptured: 3, productViews: 4,
-           carts: 1, checkouts: 1, provenOrders: 0, provenRevenue: 0, delayedOrders: 0,
-           closerRecoveries: 0, closerRevenue: 0 },
-  iceBreakers: { total: 12, items: [{ text: "Is it good for sleep?", conversations: 7, share: 0.58 }],
-                 typedOwn: { conversations: 5, share: 0.42 } },
-  comparisons: [], changes: [], accountIssues: [], shopperThemes: [], quotes: [],
-  nextSteps: [], flags: [], notMeasurableYet: ["Purchases: too early on day 2"]
+  moshi: { firstLaunch: "2026-10-05", spend: 412.3, chats: 14, chatsFromAds: 12, contactsCaptured: 3, contactsEmail: 2,
+           contactsPhone: 1, productViews: 4, carts: 1, checkouts: 1, provenOrders: 0, provenRevenue: 0,
+           delayedOrders: 0, closerRecoveries: 0, closerRevenue: 0 },
+  chatters: { total: null, people: [
+    { username: "fern.fan", followers: 12400, verified: true, followsYou: false, orderValue: null, stage: "cart",
+      profilePic: "https://example.com/p/fern.fan.jpg", threadUrl: null },
+    { name: "Dana Ruiz", channel: "messenger", followers: null, orderValue: 38, stage: null, profilePic: null, threadUrl: null }
+  ] },
+  dashboardUrl: "https://fernleaf.moshi.ai",
+  comparisons: [], changes: [], accountIssues: [], flags: [], notMeasurableYet: ["Purchases: too early on day 2"]
 };
 ```

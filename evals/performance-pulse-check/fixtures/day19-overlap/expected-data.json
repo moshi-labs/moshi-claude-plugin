@@ -37,6 +37,8 @@
       "adsPulled": "top",
       "retargeting": false,
       "metaSpend": 28107.74,
+      "metaPurchases": 667,
+      "metaPurchaseValue": 28723.03,
       "adsets": [
         {
           "id": "1202680000000111",
@@ -1393,6 +1395,8 @@
       "adsPulled": "top",
       "retargeting": false,
       "metaSpend": 19501.07,
+      "metaPurchases": 462,
+      "metaPurchaseValue": 19662.82,
       "adsets": [
         {
           "id": "1202680000000211",
@@ -1677,6 +1681,8 @@
       "adsPulled": "none",
       "retargeting": false,
       "metaSpend": 3359.68,
+      "metaPurchases": 65,
+      "metaPurchaseValue": 2578.73,
       "adsets": [
         {
           "id": "1202680000000311",
@@ -1718,6 +1724,9 @@
       "startTime": "2026-09-18",
       "adsPulled": "all",
       "retargeting": false,
+      "metaSpend": 1572.65,
+      "metaPurchases": 28,
+      "metaPurchaseValue": 1256.64,
       "adsets": [
         {
           "id": "1202680000000012",
@@ -2541,6 +2550,9 @@
       "startTime": "2026-09-03",
       "adsPulled": "all",
       "retargeting": false,
+      "metaSpend": 263.52,
+      "metaPurchases": 0,
+      "metaPurchaseValue": 0,
       "adsets": [
         {
           "id": "1202680000000002",
@@ -2899,6 +2911,8 @@
     "chats": 1020,
     "chatsFromAds": null,
     "contactsCaptured": 212,
+    "contactsEmail": 158,
+    "contactsPhone": 54,
     "productViews": 163,
     "carts": 36,
     "checkouts": 26,
@@ -2930,64 +2944,6 @@
       "kind": "other",
       "severity": "warn",
       "text": "Moshi’s Sales ad set is paused in Meta. It last delivered on Oct 5."
-    }
-  ],
-  "iceBreakers": {
-    "total": 1003,
-    "items": [
-      {
-        "text": "How free is the mug?",
-        "conversations": 412,
-        "share": 0.4108
-      },
-      {
-        "text": "How much caffeine is in it?",
-        "conversations": 168,
-        "share": 0.1675
-      },
-      {
-        "text": "How strong is the concentrate?",
-        "conversations": 95,
-        "share": 0.0947
-      }
-    ],
-    "typedOwn": {
-      "conversations": 328,
-      "share": 0.327
-    }
-  },
-  "shopperThemes": [
-    {
-      "theme": "The free mug opens the door",
-      "text": "Most threads open with the free mug, and the agent answers with the welcome offer right away."
-    },
-    {
-      "theme": "Strength and caffeine",
-      "text": "Shoppers ask how strong it is before they buy, and {m:carts} chats reached a cart."
-    }
-  ],
-  "quotes": [
-    {
-      "text": "How free is the mug?",
-      "source": "ad"
-    },
-    {
-      "text": "perfect, putting it in my cart now",
-      "source": "ad"
-    }
-  ],
-  "nextSteps": [
-    {
-      "step": "1",
-      "what": "If you switch the Moshi Sales ad set back on, run it as a Meta A/B test against your Fall Mug ad sets.",
-      "owner": "merchant",
-      "by": "2026-10-09"
-    },
-    {
-      "step": "2",
-      "what": "Work the {m:carts} chats that reached a cart with the close-the-carts skill.",
-      "owner": "merchant",
-      "by": "2026-10-09"
     }
   ],
   "flags": [

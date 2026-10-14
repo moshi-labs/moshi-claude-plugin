@@ -1,4 +1,4 @@
-// Positive test: the fatigue chart plots only rows inside the report window: base.data.js plus the lines under "// change".
+// Positive test: a metric token counts only the rows inside the report window: base.data.js plus the lines under "// change".
 // The helpers sit inside a function so their names do not clash with the template's globals.
 const DATA = (() => {
 const R = (s, n, f) => Array.from({ length: n }, (_, i) => ({ date: new Date(Date.parse(s) + i * 864e5).toISOString().slice(0, 10),
@@ -18,10 +18,10 @@ const D = {
     provenOrders: 1, provenRevenue: 60, delayedOrders: 0, closerRecoveries: 0, closerRevenue: 0 },
   comparisons: [{ metric: "ctr", day: 7, moshiCampaignId: "cm1", merchantCampaignId: "ym1" }, { metric: "cpa", day: 14, moshiCampaignId: "cm1", merchantCampaignId: "ym1" }],
   changes: [{ date: "2026-10-01", what: "Budget up 10%", kind: "budget_minor", source: "meta", entityId: "cm1" }],
-  accountIssues: [], shopperThemes: [], quotes: [{ text: "does it ship fast?", source: "ad" }],
-  nextSteps: [{ step: "1", what: "Hold budget.", owner: "merchant", by: "2026-10-08" }], flags: [], notMeasurableYet: []
+  accountIssues: [], flags: [], notMeasurableYet: []
 };
   // change
   D.campaigns[1].adsets[0].ads[0].daily = R("2026-09-15", 14); // Sep 15-21 fall before window.start
+  D.verdict.body += " Yours spent {a:ym1_a0.spend}."; // Sep 22-28 only: $350, not $700
   return D;
 })();

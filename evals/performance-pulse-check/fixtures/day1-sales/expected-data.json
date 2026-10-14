@@ -36,6 +36,9 @@
       "startTime": "2026-10-06",
       "adsPulled": "all",
       "retargeting": false,
+      "metaSpend": 153.83,
+      "metaPurchases": 2,
+      "metaPurchaseValue": 45.5,
       "adsets": [
         {
           "id": "1202620000000004",
@@ -123,6 +126,8 @@
       "adsPulled": "top",
       "retargeting": false,
       "metaSpend": 83367.36,
+      "metaPurchases": 4466,
+      "metaPurchaseValue": 250102.09,
       "adsets": [
         {
           "id": "1202620000000020",
@@ -767,6 +772,8 @@
       "adsPulled": "top",
       "retargeting": false,
       "metaSpend": 42537.73,
+      "metaPurchases": 2202,
+      "metaPurchaseValue": 123359.42,
       "adsets": [
         {
           "id": "1202620000000033",
@@ -1104,6 +1111,8 @@
       "adsPulled": "none",
       "retargeting": true,
       "metaSpend": 12900,
+      "metaPurchases": 787,
+      "metaPurchaseValue": 74820,
       "adsets": [
         {
           "id": "1202620000000041",
@@ -1133,6 +1142,8 @@
       "adsPulled": "all",
       "retargeting": false,
       "metaSpend": 51721.15,
+      "metaPurchases": 1790,
+      "metaPurchaseValue": 93098.07,
       "adsets": [
         {
           "id": "1202620000000055",
@@ -2927,6 +2938,8 @@
       "adsPulled": "all",
       "retargeting": false,
       "metaSpend": 40500,
+      "metaPurchases": 1405,
+      "metaPurchaseValue": 68850,
       "adsets": [
         {
           "id": "1202620000000066",
@@ -4274,6 +4287,8 @@
     "chats": 14,
     "chatsFromAds": 12,
     "contactsCaptured": 4,
+    "contactsEmail": 3,
+    "contactsPhone": 1,
     "productViews": 6,
     "carts": 2,
     "checkouts": 1,
@@ -4299,65 +4314,6 @@
   ],
   "changes": [],
   "accountIssues": [],
-  "iceBreakers": {
-    "total": 12,
-    "items": [
-      {
-        "text": "Which scent lasts longest?",
-        "conversations": 5,
-        "share": 0.4167
-      },
-      {
-        "text": "Can I send it as a gift?",
-        "conversations": 3,
-        "share": 0.25
-      }
-    ],
-    "typedOwn": {
-      "conversations": 4,
-      "share": 0.3333
-    }
-  },
-  "shopperThemes": [
-    {
-      "theme": "Room size",
-      "text": "Shoppers ask how far the scent travels. {m:chats} chats started so far at {m:costPerChat} each."
-    },
-    {
-      "theme": "Gift timing",
-      "text": "Some shoppers want delivery before a date."
-    }
-  ],
-  "quotes": [
-    {
-      "text": "Does the cedar one fill a small room?",
-      "source": "ad"
-    },
-    {
-      "text": "Can I get the gift bundle before the 20th?",
-      "source": "ad"
-    }
-  ],
-  "nextSteps": [
-    {
-      "step": 1,
-      "what": "Check cost per chat and chat to product view at the next gate: {m:nextGate}.",
-      "owner": "moshi",
-      "by": "2026-10-09"
-    },
-    {
-      "step": 2,
-      "what": "Let the starved creative get its share of budget, then re-read its CTR.",
-      "owner": "merchant",
-      "by": "2026-10-09"
-    },
-    {
-      "step": 3,
-      "what": "Run scale-what-works if one creative keeps winning.",
-      "owner": "merchant",
-      "by": "2026-10-12"
-    }
-  ],
   "flags": [
     {
       "source": "moshi",

@@ -36,6 +36,9 @@
       "startTime": "2026-10-05",
       "adsPulled": "all",
       "retargeting": false,
+      "metaSpend": 176.84,
+      "metaPurchases": 0,
+      "metaPurchaseValue": 0,
       "adsets": [
         {
           "id": "1202630000000070",
@@ -124,6 +127,8 @@
       "adsPulled": "top",
       "retargeting": false,
       "metaSpend": 17892.27,
+      "metaPurchases": 981,
+      "metaPurchaseValue": 60833.72,
       "adsets": [
         {
           "id": "1202630000000081",
@@ -1069,6 +1074,8 @@
     "chats": 91,
     "chatsFromAds": 82,
     "contactsCaptured": 13,
+    "contactsEmail": 9,
+    "contactsPhone": 4,
     "productViews": 24,
     "carts": 2,
     "checkouts": 1,
@@ -1081,59 +1088,6 @@
   "comparisons": [],
   "changes": [],
   "accountIssues": [],
-  "iceBreakers": {
-    "total": 82,
-    "items": [
-      {
-        "text": "Which blend is best for grilling?",
-        "conversations": 34,
-        "share": 0.4146
-      },
-      {
-        "text": "How hot is the chili mix?",
-        "conversations": 21,
-        "share": 0.2561
-      }
-    ],
-    "typedOwn": {
-      "conversations": 27,
-      "share": 0.3293
-    }
-  },
-  "shopperThemes": [
-    {
-      "theme": "Recipe fit",
-      "text": "Shoppers ask which blend suits a dish. {m:productViews} chats reached a product page."
-    },
-    {
-      "theme": "Heat level",
-      "text": "Shoppers check how hot a mix is before they buy."
-    }
-  ],
-  "quotes": [
-    {
-      "text": "Which blend is best for grilled chicken?",
-      "source": "ad"
-    },
-    {
-      "text": "Is the chili mix very hot?",
-      "source": "ad"
-    }
-  ],
-  "nextSteps": [
-    {
-      "step": 1,
-      "what": "Read chat to product view at the next gate: {m:nextGate}. Today it is {m:productViews} product views from {m:chats} chats.",
-      "owner": "moshi",
-      "by": "2026-10-08"
-    },
-    {
-      "step": 2,
-      "what": "Leave the budget alone until the gate.",
-      "owner": "merchant",
-      "by": "2026-10-08"
-    }
-  ],
   "flags": [
     {
       "source": "moshi",

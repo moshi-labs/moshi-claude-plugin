@@ -12,13 +12,20 @@ node build.js ../../../plugins/moshi/skills/performance-pulse-check/assets/pulse
   of the built-in sample.
 - The sample DATA lives in `build.js`; its daily rows are in `rows.txt`
   (`gen.js` generated them).
+- `node check.js <data.js>` prints the data-check banner, the rendered text and
+  the rendered HTML for one DATA file.
 - `node negative/run.js` renders every `negative/*.data.js` through the shipped
-  template and fails when an expected banner line or rendered string is missing.
+  template and fails when an expected banner line, rendered string or HTML string
+  is missing, or when the shipped file is over the size line.
 
-The shipped file must stay at or under 122,880 bytes (`wc -c`): the design spec's
-120 KB, so a host that must re-emit the template whole can do it in one artifact.
-0.11.0 moved the line from 120,000 to 120 KiB for the overlap callout, the clone-source
-map and the ice-breaker shares; the avatar and the sample DATA are already lean.
+The shipped file must stay at or under 122,880 bytes (`wc -c`; `negative/run.js`
+enforces it): the design spec's 120 KB, so a host that must re-emit the template
+whole can do it in one artifact. 0.11.0 moved the line from 120,000 to 120 KiB for
+the overlap callout, the clone-source map and the ice-breaker shares. 0.12.0 made
+room for What messaging ads tell you, Same ads, the merged funnel and the Closer
+link by dropping the footer, the change timeline, the shopper themes, next steps,
+the account map and Creative fatigue; the avatar and the sample DATA are already
+lean, so a new section has to pay for itself.
 
 ## Avatar
 

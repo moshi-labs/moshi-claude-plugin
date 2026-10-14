@@ -25,7 +25,7 @@ p{margin:0}
 .card{border-radius:var(--r);border:1px solid var(--border-strong);background:var(--surface);box-shadow:var(--shadow)}
 .pill{display:inline-flex;align-items:center;gap:4px;border-radius:var(--r-pill);padding:3px 8px;font:500 11px/1.25 Geist,sans-serif;background:var(--surface-2);color:var(--text-2);white-space:nowrap;vertical-align:middle}
 .pill.mint{background:var(--mint-soft);color:var(--mint-strong)}.pill.acc{background:var(--accent-soft);color:var(--accent-strong)}.pill.rose{background:var(--rose-soft);color:var(--rose)}
-.sub,.ts,.meta,.rn,.cav,small,.tl,.ads,.lg,.ft{color:var(--text-2);font-size:13px}
+.sub,.ts,.meta,.rn,small,.tl{color:var(--text-2);font-size:13px}
 .hd{display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px}
 .hd .mn{font:600 15px/1.2 var(--hd)}.hd .pl{display:flex;flex-wrap:wrap;gap:6px;margin-left:auto}
 .hero{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;padding:12px 2px 4px}
@@ -33,10 +33,6 @@ p{margin:0}
 .av{width:96px;height:116px;overflow:hidden}.av div{height:115px}.av.reading div{height:96px;margin-top:24px}.av div{position:relative}.av img{position:absolute;inset:0;width:96px;height:100%}
 .tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
 .tile{padding:12px 14px;display:grid;gap:2px}.tv{font-size:22px;font-weight:500}
-.pur{padding:14px;display:grid;gap:10px}
-.pr{display:grid;grid-template-columns:minmax(0,1.4fr) repeat(3,minmax(0,1fr));gap:8px 12px;align-items:baseline;padding-top:10px;border-top:1px solid var(--border)}
-.pr b{display:block;font-weight:600}
-.ph{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
 .st{display:grid;grid-template-columns:minmax(0,12rem) minmax(0,1fr);gap:4px 20px;align-items:start;padding:2px 0 12px}.st+.st{border-top:1px solid var(--border);padding-top:10px}
 .stl{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center;padding-top:24px}
 .now{position:relative;height:28px;font-size:12px}.now span{position:absolute;bottom:9px;left:var(--l);transform:translateX(calc(var(--p) * -1));white-space:nowrap}.now i{position:absolute;bottom:0;left:var(--l);width:1px;height:8px;background:var(--text)}
@@ -50,24 +46,26 @@ ul.l{margin:0;padding:0;list-style:none;display:grid;gap:10px}
 .bar{display:grid;grid-template-columns:minmax(0,11rem) minmax(0,1fr) 6.5rem;gap:4px 12px;align-items:center;font-size:14px}
 .bar .v{text-align:right;white-space:nowrap}
 .cmp{display:grid;gap:8px;padding:12px 0;border-top:1px solid var(--border)}
-.node{border-left:3px solid var(--border-strong);padding:2px 0 2px 12px}.node.moshi{border-color:var(--primary)}
-.node ul{margin:8px 0 0;padding:0 0 0 14px;list-style:none;display:grid;gap:6px}
 .nh{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
-.chg{display:grid;grid-template-columns:4.2rem minmax(0,1fr) minmax(0,40%);gap:4px 12px;align-items:center;padding:8px 0;border-top:1px solid var(--border);font-size:14px}
-.q{display:flex;flex-direction:column;gap:8px}.q div{max-width:min(420px,90%);padding:9px 13px;border-radius:18px 18px 18px 6px;background:var(--surface);border:1px solid var(--border);font-size:15px}
-.q div:nth-child(even){align-self:flex-end;border-radius:18px 18px 6px 18px;background:var(--accent-soft)}
-.th{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}.th .card{padding:12px 14px}
+.hero p.dek{font:600 19px/1.35 var(--hd)}.hl{color:var(--accent-strong)}
+.wb{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}.wb>div{border:1px solid var(--border);border-radius:var(--r);padding:10px 12px;background:var(--accent-soft);display:grid;gap:2px;align-content:start}.wb b{font:700 26px/1.2 var(--hd);color:var(--accent-strong)}
+.reach{padding:12px 14px;border-radius:var(--r);background:var(--mint-soft);font-size:14px}
+.whl{display:grid;gap:6px}.whr{display:grid;grid-template-columns:minmax(0,1fr) 4.5rem 6rem 30px;gap:10px;align-items:center;font-size:13px;min-height:38px;padding:0 6px;border-bottom:1px solid var(--border)}.whr>:nth-child(n+2){text-align:right;justify-self:end}.whr.x{font-size:11px;color:var(--text-2);min-height:0;border:0}.whr.hi{background:var(--accent-soft);border-radius:6px;font-weight:600}
+.who{display:flex;align-items:center;gap:8px;min-width:0}.who>span:nth-child(2){overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ca{position:relative;flex:none;width:26px;height:26px;border-radius:50%;overflow:hidden;background:var(--accent-soft);color:var(--accent-strong);display:grid;place-items:center;font-size:11px;font-weight:600}.ca img,.adc img{width:100%;object-fit:cover}.ca img{position:absolute;inset:0;height:100%}
+.vb{display:inline-grid;place-items:center;flex:none;width:14px;height:14px;border-radius:50%;background:var(--primary);color:#fff;font-size:9px}
+.msgb{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;color:var(--primary);background:var(--accent-soft)}.msgb:hover{background:var(--primary);color:#fff}
+.adg{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,260px));gap:12px}.adc{padding:12px;display:grid;gap:8px;align-content:start}.adc img{aspect-ratio:4/5;border-radius:8px}
+.al{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:10px;font-size:13px;align-items:baseline}.al.me span:first-child{font-weight:600}.al i{grid-column:2/-1;color:var(--text-2)}
+.cvr{display:flex;gap:14px;align-items:center}.cvr>b{font:700 34px/1 var(--hd)}.cvr small{display:block}
+.cbtn{justify-self:start;padding:10px 16px;border-radius:var(--r-pill);background:var(--primary);color:#fff;font-weight:600;text-decoration:none}
 .tw{overflow-x:auto}
 table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--border);vertical-align:top}th{color:var(--text-2);font-weight:500}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-.nocv .sr{position:static;width:auto;height:auto;clip:auto;white-space:normal;overflow:visible}.nocv canvas.dv{display:none}
+.nocv canvas.dv{display:none}
 .ban{border-radius:var(--r-lg);padding:14px 16px;background:var(--rose-soft);color:var(--text);border:1px solid var(--rose)}.ban ul{margin:6px 0 0;padding-left:18px;font-size:14px}
-.lg{display:flex;flex-wrap:wrap;gap:6px 16px}
-.ft{display:grid;gap:10px}.ft ul{margin:4px 0 0;padding-left:18px}
 .hero p.sub{font-size:13px}.ov{display:grid;gap:10px}
-.ax{display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 6px;font-size:11px;color:var(--text-2)}.ya{display:flex;flex-direction:column;justify-content:space-between;text-align:right}.xa{display:flex;justify-content:space-between}
 :focus-visible{outline:2px solid var(--primary);outline-offset:2px;border-radius:4px}
-@media (max-width:560px){.bar{grid-template-columns:minmax(0,1fr) 6.5rem}.bar .cw{grid-column:1/-1;grid-row:2}.pr{grid-template-columns:repeat(3,minmax(0,1fr))}.pr>div:first-child{grid-column:1/-1}.chg{grid-template-columns:3.6rem minmax(0,1fr)}.chg .cw{grid-column:1/-1}.hero{grid-template-columns:1fr}.st{grid-template-columns:minmax(0,1fr)}.stl{padding-top:0}.hd .pl{margin-left:0}.glass{padding:16px}}
+@media (max-width:560px){.bar{grid-template-columns:minmax(0,1fr) 6.5rem}.bar .cw{grid-column:1/-1;grid-row:2}.whr{grid-template-columns:minmax(0,1fr) 3.5rem 4.5rem 30px;gap:6px}.hero{grid-template-columns:1fr}.st{grid-template-columns:minmax(0,1fr)}.stl{padding-top:0}.hd .pl{margin-left:0}.glass{padding:16px}}
 </style>
 </head>
 <body>
@@ -83,8 +81,11 @@ const STG=[['Learning','day 1–3'],['Early read','day 4–7'],['First fair read
 const MET=['spend','impressions','linkClicks','ctr','cpc','cpm','conversations','costPerConversation','purchases','purchaseValue','roas','cpa','frequency','ads'],AGE=['age','stage','nextGate','nextGateDate'];
 const MON=['spend','cpc','cpm','costPerConversation','purchaseValue','cpa','costPerChat','provenRevenue','closerRevenue'],LOW=['cpc','costPerConversation','cpa'];
 const LBL={ctr:'CTR',cpc:'CPC',costPerConversation:'Cost per conversation',cpa:'CPA',roas:'ROAS'};
-const RK=['significant_edit','budget_major','new_ad','targeting','optimization'],MJ=[['delivery',3],['CPA',7]];
-const RD={significant_edit:MJ,budget_major:MJ,targeting:MJ,optimization:MJ,budget_minor:[['results',3]],new_ad:[['CTR',3],['CPA',7]],agent_knowledge:[['chats',5]],offer:[['chats',5]],status:[['delivery',3]]};
+// Changes that restart Meta's learning, so the stage clock (changes[] is read for these only).
+const RK=['significant_edit','budget_major','new_ad','targeting','optimization'];
+// get_leads furthestStageName, in words.
+const CHS={click_through:'clicked a link',product_view:'product view',cart:'cart',checkout:'checkout',purchase:'bought'};
+const PLANE='<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M22 3 9.2 10.1"/><path d="M22 3 15 21l-5.8-10.9L2 7.5 22 3Z"/></svg>';
 // Meta purchase figures always show the attribution window of the ad sets behind them.
 const PM=['purchases','purchaseValue','roas','cpa'],NR='Meta’s default for this ad set (not reported)';
 const N0=()=>Object.create(null);
@@ -100,7 +101,11 @@ const fD=s=>s?new Date(pd(s)).toLocaleDateString('en-US',{month:'short',day:'num
 const fT=s=>{try{return s?new Date(s).toLocaleString('en-US',{month:'short',day:'numeric',hour:'numeric',minute:'2-digit',timeZone:TZ,timeZoneName:'short'}):'—'}catch(e){return s}};
 const ok=v=>v!=null&&isFinite(v);
 const fM=v=>{if(!ok(v))return'—';const a=Math.abs(v);if(!CUR)return v.toLocaleString('en-US',{maximumFractionDigits:a>=100?0:2});try{return new Intl.NumberFormat('en-US',{style:'currency',currency:CUR,notation:a>=1e6?'compact':'standard',maximumFractionDigits:a>=1e6?1:a>=100?0:2}).format(v)}catch(e){return v.toFixed(2)+' '+String(CUR).replace(/\W/g,'')}};
-const fN=v=>ok(v)?Math.round(v).toLocaleString('en-US'):'—',fP=v=>ok(v)?(v*100).toFixed(2)+'%':'—';
+const fN=v=>ok(v)?Math.round(v).toLocaleString('en-US'):'—',fP=v=>ok(v)?(v*100).toFixed(2)+'%':'—',s1=n=>n==1?'':'s';
+// Follower counts: 861, 3.6k, 168k, 1.2M. Order values drop a .00.
+const fK=v=>ok(v)?v.toLocaleString('en-US',{notation:'compact',maximumFractionDigits:v<1e4||v>=1e6?1:0}).replace('K','k'):'—',fO=v=>fM(v).replace(/\.00$/,'');
+// Check 14: a link must be https (an image may also be a data:image URI). A bad one is dropped.
+const url=(v,path,img)=>v==null||v===''?null:typeof v=='string'&&(/^https:\/\/[^\s"<>]+$/i.test(v)||img&&/^data:image\/[\w+.-]+;base64,[\w+/=]+$/.test(v))?v:bad(14,`${path} is not an https link`);
 function fmt(k,v){if(!ok(v))return'—';if(MON.includes(k))return fM(v);if(k=='ctr')return fP(v);if(k=='roas')return v.toFixed(2)+'x';if(k=='frequency')return v.toFixed(2);return fN(v)}
 const adsOf=e=>e.daily?[e]:e.ads?e.ads:e.adsets?e.adsets.flatMap(s=>s.ads):[];
 const rowsOf=es=>es.flatMap(adsOf).flatMap(a=>a.daily||[]);
@@ -163,13 +168,12 @@ for(let j=0;j<P.length;j++){const s=P[j];if(!(j&1)){if(/[{}]/.test(s))mal=1;o+=e
 try{const[k,v,l]=val(p,b,x);if(k!='s'&&!ok(v))throw[9,`${s} has no value`];o+='<span class="num">'+esc(k=='s'?v:fmt(k,v))+'</span>';
 if(l&&!seen.has(l)){seen.add(l);const w=k=='purchases'&&/^ purchases?\b/.exec(P[j+1]||'');if(w){o+=w[0];P[j+1]=P[j+1].slice(w[0].length)}o+=` <small>(${esc(l.replace(' (not reported)',', not reported'))})</small>`}}catch(e){fail=1;bad(e[0]||3,e[1]||String(e))}}
 if(mal){bad(3,`"${String(str).slice(0,48)}…" has a malformed token`);return null}return fail?null:o}
-function badQ(q){return/[^\s@]+@[^\s@]+\.[a-z]/i.test(q)?'an email':/\+?\d[\d\s().-]{6,}\d/.test(q)?'a phone number':/(^|[^\w])@\w/.test(q)?'an @handle':q.trim().split(/\s+/).length>15?'more than 15 words':null}
+// Check 4: a chatter's username or name is shown as typed, so it must not hold an email or a phone number.
+const badQ=q=>/[^\s@]+@[^\s@]+\.[a-z]/i.test(q)?'an email':/^\+?[\d\s().-]{7,}$/.test(q.trim())?'a phone number':null;
 function cv(fn,h,label){return`<canvas class="dv" ${label?`role="img" tabindex="0" aria-label="${esc(label)}"`:'aria-hidden="true"'} data-k="${CH.push(fn)-1}" data-h="${h}" style="height:${h}px"></canvas>`}
-function tbl(cap,head,rows,sr=1){return`<div class="${sr?'sr':'tw'}"><table><thead><tr>${head.map(h=>`<th>${h}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`}
+function tbl(head,rows){return`<div class="tw"><table><thead><tr>${head.map(h=>`<th>${h}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr>${r.map(c=>`<td>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`}
 const sec=(t,sub,body)=>`<section class="glass"><div><h2>${t}</h2>${sub?`<p class="sub">${sub}</p>`:''}</div>${body}</section>`;
 const pill=(t,c='')=>`<span class="pill ${c}">${esc(t)}</span>`,oN=o=>o=='engagement'?'Engagement':o=='sales'?'Sales':'Other';
-// Whole percentages that add up to 100 (largest remainder).
-const shares=(ns,t)=>{const r=ns.map(n=>n/t*100),f=r.map(Math.floor);r.map((x,i)=>[x-f[i],i]).sort((a,b)=>b[0]-a[0]).slice(0,100-f.reduce((a,b)=>a+b,0)).forEach(([,i])=>f[i]++);return f};
 const bud=e=>e.adsets?e.budgetType=='CBO'?e.dailyBudget:(a=>a.length?a.reduce((x,y)=>x+y,0):null)(e.adsets.map(s=>s.dailyBudget).filter(v=>v!=null)):e.dailyBudget??null;
 const nA=s=>s.adCount??s.ads.length,nAds=c=>c.adsets.reduce((n,s)=>n+nA(s),0),mStage=()=>D.moshi&&D.moshi.firstLaunch?stg({d:D.moshi.firstLaunch,f:D.moshi.firstLaunch}):null;
 // The earliest next gate among the Moshi campaigns the report covers, each on its own reset clock; from firstLaunch when none has a stage.
@@ -182,7 +186,7 @@ function barRow(name,v,f,k,extra='',win){return`<div class="bar"><div>${name}${w
 // A comparison: a Moshi campaign against a merchant campaign or a merchant ad set (merchantAdsetId), each over its own days 1–N.
 function cmpOf(x){const mc=IX.c[x.moshiCampaignId],S=x.merchantAdsetId!=null,yc=S?IX.s[x.merchantAdsetId]:IX.c[x.merchantCampaignId],Y=yc&&camp(yc),u=S?'ad set':'campaign',M=String(x.metric).toUpperCase(),e=r=>(bad(2,`comparison ${x.metric} day ${x.day}: ${r}`),{ok:0});
 if(!mc||!yc)return e(`a ${S?'campaign or ad set':'campaign'} id is not in campaigns`);if(mc.owner!='moshi'||Y.owner!='merchant')return e('owners do not match the id fields');
-// Check 11: your ad set that runs Moshi's creative shares its auctions, so it is shown side by side in the account map, never head to head.
+// Check 11: your ad set that runs Moshi's creative shares its auctions, so it is shown side by side (Same ads), never head to head.
 if(ovx(yc)){const r=`comparison ${x.metric} day ${x.day}: your ${u} ${yc.name} runs Moshi’s creative, so they share auctions`;bad(11,r);return{ok:0,err:[11,r]}}
 const dc=mc.dup||yc.dup;if(dc)return(bad(10,dc),{ok:0,err:[10,dc]});
 if(mc.objective!=Y.objective)return e(`objectives differ (${mc.objective} vs ${Y.objective})`);if(Y.retargeting||yc.retargeting)return e(`your ${u} is retargeting`);if(pulled(yc)!='all')return e(`your ${u} has adsPulled "${pulled(yc)}"; a comparison needs "all"`);
@@ -212,7 +216,7 @@ D.campaigns=D.campaigns||[];W=D.window||{};CUR=(D.merchant||{}).currency||null;T
 if(!dOK(W,'start','window.start',1)+!dOK(W,'end','window.end',1))W.start=W.end=null;REF=W.end;
 AO=lD(D.asOf);
 if(D.moshi&&!dOK(D.moshi,'firstLaunch','moshi.firstLaunch'))BADF=1;
-D.changes=(D.changes||[]).filter((x,i)=>dOK(x,'date',`changes[${i}].date`,1));D.nextSteps=(D.nextSteps||[]).filter((x,i)=>dOK(x,'by',`nextSteps[${i}].by`));
+D.changes=(D.changes||[]).filter((x,i)=>dOK(x,'date',`changes[${i}].date`,1));
 const full=FULL=D.mode!='moshi_only',m=D.moshi||{},h=[];
 D.campaigns.forEach((c,i)=>{IX.c[c.id]=c;dOK(c,'startTime',`campaigns[${i}].startTime`);(c.adsets=c.adsets||[]).forEach((s,j)=>{s.c=c;IX.s[s.id]=s;['startTime','lastLearningReset'].forEach(k=>dOK(s,k,`campaigns[${i}].adsets[${j}].${k}`));
 (s.ads=s.ads||[]).forEach((a,k)=>{a.c=c;a.s=s;IX.a[a.id]=a;a.daily=(a.daily||[]).filter((r,n)=>dOK(r,'date',`campaigns[${i}].adsets[${j}].ads[${k}].daily[${n}].date`,1));
@@ -229,102 +233,90 @@ PR=MC.reduce((p,c)=>spW(c)>(p?spW(p)+.005:0)?c:p,null);COV=PR?MC.filter(c=>c==PR
 let VH=0;if(full&&PR){const i=D.primaryCampaignId,pc=i!=null&&IX.c[i];if(!(pc&&pc.owner=='moshi'&&spW(pc)>=spW(PR)-.005)){bad(13,i==null?`primaryCampaignId is missing; the primary campaign is ${PR.name}`:`primaryCampaignId ${i} is not the largest-spend Moshi campaign, ${PR.name}`);VH=1}}
 // Overlap: a Moshi ad and your ads that share its creative (creativeOverlap), on the days both delivered in the window.
 MC.forEach(c=>adsOf(c).forEach(a=>(a.creativeOverlap||[]).forEach(o=>{OV.a.add(o.adId);OV.s.add(o.adsetId);OV.c.add(o.campaignId)})));
-const OR=[],SHS=new Set;if(full)COV.forEach(c=>adsOf(c).forEach(a=>{const ol=a.creativeOverlap||[];if(!ol.length)return;
+const OR=[];if(full)COV.forEach(c=>adsOf(c).forEach(a=>{const ol=a.creativeOverlap||[];if(!ol.length)return;
 const os=[...new Set(ol.map(o=>o.adId))].map(i=>IX.a[i]).filter(o=>o&&o.c.owner=='merchant'),md={},yd={};if(a.dup||os.some(o=>o.dup))return;a.daily.forEach(r=>{if(inW(r)&&r.impressions>0)md[r.date]=r.impressions});
-os.forEach(o=>o.daily.forEach(r=>{if(md[r.date]&&inW(r)&&r.impressions>0){yd[r.date]=(yd[r.date]||0)+r.impressions;SHS.add(o.s)}}));
+os.forEach(o=>o.daily.forEach(r=>{if(md[r.date]&&inW(r)&&r.impressions>0)yd[r.date]=(yd[r.date]||0)+r.impressions}));
 const S=Object.keys(yd);OR.push({a,n:S.length,mi:S.reduce((t,d)=>t+md[d],0),yi:S.reduce((t,d)=>t+yd[d],0)})}));
 CMPS=full?(D.comparisons||[]).map(cmpOf):[];
 // 1 header
-h.push(`<header class="hd"><img src="${LOGO}" alt="Moshi" width="28" height="28"><div><div class="mn">${esc((D.merchant||{}).name)}</div><div class="meta">Moshi pulse check</div></div><div class="pl">${pill('As of '+fT(D.asOf))}${pill(fD(W.start)+' – '+fD(W.end)+(W.partial?', so far':''),'acc')}${full?pill('Meta read '+fT(D.metaSyncedAt)):''}</div></header>`);
-if(!full)h.push(`<p class="sub">Moshi data only. Connect your Meta ad account in Moshi for comparisons, fatigue and account checks.</p>`);
+h.push(`<header class="hd"><img src="${LOGO}" alt="Moshi" width="28" height="28"><div><div class="mn">${esc((D.merchant||{}).name)}</div><div class="meta">Moshi pulse check${(D.merchant||{}).timezone?'':' · dates in UTC, no timezone reported'}${CUR?'':' · no currency reported'}</div></div><div class="pl">${pill('As of '+fT(D.asOf))}${pill(fD(W.start)+' – '+fD(W.end)+(W.partial?', so far':''),'acc')}${full?pill('Meta read '+fT(D.metaSyncedAt)):''}</div></header>`);
+if(!full)h.push(`<p class="sub">Moshi data only. Connect your Meta ad account in Moshi for comparisons and account checks.</p>`);
 // 2 issues, first: the overlap callout, then accountIssues
 const sh=o=>o.mi/(o.mi+o.yi),ovs=OR.filter(o=>o.n).sort((x,y)=>sh(x)-sh(y)),pc=v=>v>0&&v<.01?'<1%':v<1&&v>.99?'>99%':Math.round(v*100)+'%',ai=full?D.accountIssues||[]:[];
 let iss=ovs.length?`<div class="ov"><div class="nh">${pill('Worth fixing','rose')}<h3>Moshi’s ads reuse creatives from your live ads</h3></div>
 <p>Meta won’t show one person two ads from the same advertiser in one auction. When ad sets aim at similar people, it enters the one with the best performance history and holds the others back (Meta’s overlapping-audiences rule). On the days both ran, impressions split like this:</p>
-${tbl('',['Creative','Days both ran','Moshi impressions','Your copies’ impressions','Moshi’s share'],ovs.map(o=>[esc(o.a.angle||o.a.name),o.n,fN(o.mi),fN(o.yi),`<b>${pc(sh(o))}</b>`]),0)}
+${tbl(['Creative','Days both ran','Moshi impressions','Your copies’ impressions','Moshi’s share'],ovs.map(o=>[esc(o.a.angle||o.a.name),o.n,fN(o.mi),fN(o.yi),`<b>${pc(sh(o))}</b>`]))}
 <p><b>This is not a fair Moshi-vs-merchant test.</b> To make it one, run it as a Meta A/B test (Experiments in Ads Manager), pause or exclude your overlapping ad while Moshi’s runs, or aim Moshi at a different audience. A re-uploaded or different creative alone isn’t enough.</p>
 <p class="sub">Matched by copy history, image or video. Recropped or edited copies may not be detected.</p></div>`:'';
 if(ai.length)iss+=`<ul class="l">${ai.map(i=>`<li>${pill(i.severity=='warn'?'Worth fixing':'Note',i.severity=='warn'?'rose':'')} ${esc(i.text)}</li>`).join('')}</ul>`;
 if(iss)h.push(sec('Things in your account affecting results',null,iss));
-// 3 verdict, about the primary campaign; the other Moshi campaigns in one footnote line
-const vh=VH?null:tok((D.verdict||{}).headline||'','h'),vb=VH?null:tok((D.verdict||{}).body||'','b');
+// 3 verdict, about the primary campaign: the title (else the headline) as the h1, the headline under it; the other Moshi campaigns in one footnote line
+const V=D.verdict||{},vt=VH||!V.title?null:tok(V.title,'h'),vh=VH?null:tok(V.headline||'','h'),vb=VH?null:tok(V.body||'','b'),h1=vt??vh;
 const mood=D.mood=='delight'?'delight':'reading',ft=full&&PR?MC.filter(c=>!COV.includes(c)&&spW(c)>0).map(c=>{const l=lastD(c);return`Also ran: ${esc(c.name)}, ${fM(spW(c))}, ${dd(REF,l)<2?'still delivering':'stopped on '+fD(l)}.`}).join(' '):'';
-h.push(`<section class="hero"><div class="av ${mood}" aria-hidden="true"><div><img src="data:image/webp;base64,${AV.s[mood]}" alt=""></div></div><div>${vh!=null?`<h1>${vh}</h1>`:''}${vb!=null?`<p>${vb}</p>`:''}${ft?`<p class="sub">${ft}</p>`:''}</div></section>`);
-// 4 stage tracker
+h.push(`<section class="hero"><div class="av ${mood}" aria-hidden="true"><div><img src="data:image/webp;base64,${AV.s[mood]}" alt=""></div></div><div>${h1!=null?`<h1>${h1}</h1>`:''}${vt!=null&&vh!=null?`<p class="dek">${vh}</p>`:''}${vb!=null?`<p>${vb}</p>`:''}${ft?`<p class="sub">${ft}</p>`:''}</div></section>`);
+// 4 What messaging ads tell you: the people who messaged in the window (chatters.people), one row each, from Moshi's own
+// profile copies. The tiles count them; the lists show every buyer (orderValue > 0) and the largest 1k+ accounts that did not buy.
+const CHT=D.chatters||{},PE=(CHT.people||[]).filter((p,i)=>{if(!p||typeof p!='object')return 0;const q=[p.username,p.name].map(x=>badQ(String(x??''))).find(Boolean);
+if(q)return bad(4,`chatters.people[${i}] holds ${q}; the row is hidden`),0;p.pic=url(p.profilePic,`chatters.people[${i}].profilePic`,1);p.link=url(p.threadUrl,`chatters.people[${i}].threadUrl`);p.ms=p.channel=='messenger';['followers','orderValue'].forEach(k=>p[k]=ok(p[k])?+p[k]:null);return 1});
+if(PE.length){const n=PE.length,TT=ok(CHT.total)&&CHT.total>n?CHT.total:n;if(ok(CHT.total)&&CHT.total<n)bad(15,`chatters.total is ${CHT.total}, but ${n} people are listed`);
+const ig=PE.filter(p=>!p.ms),big=PE.filter(p=>p.followers>=1e3),fo=ig.filter(p=>typeof p.followsYou=='boolean'),buy=PE.filter(p=>p.orderValue>0),bb=buy.filter(p=>p.followers>=1e3),nb=big.filter(p=>!(p.orderValue>0));
+const sum=a=>a.reduce((t,p)=>t+p.followers,0),fs=a=>a.sort((x,y)=>(y.followers??-1)-(x.followers??-1)),wt=(b,s)=>`<div><b>${b}</b><small>${s}</small></div>`;
+// A Messenger row shows the first name and last initial; an Instagram row the @username.
+const lbl=p=>p.ms?(w=>w[0]+(w[1]?' '+w[1][0]+'.':''))(String(p.name||p.username||'?').trim().split(/\s+/))+' (Messenger)':'@'+(p.username||p.name||'?');
+const hdr=t=>`<div class="whr x"><span></span><span>Followers</span><span>${t}</span><span></span></div>`;
+const row=(p,v,hi)=>{const l=lbl(p);return`<div class="whr${hi?' hi':''}"><span class="who"><span class="ca">${esc(l.replace('@','')[0].toUpperCase())}${p.pic?`<img src="${esc(p.pic)}" alt="" loading="lazy">`:''}</span><span>${esc(l)}</span>${p.verified?'<span class="vb" title="Verified">✓</span>':''}</span><span class="num">${fK(p.followers)}</span>${v}${p.link?`<a class="msgb" href="${esc(p.link)}" target="_blank" rel="noopener" aria-label="Open your conversation with ${esc(l)}">${PLANE}</a>`:'<span></span>'}</div>`};
+const L1=buy.length?`<div class="whl"><h3>Who bought ${pill(fN(buy.length),'acc')}</h3>${bb.length?`<p class="sub">Highlighted: <b>${fN(bb.length)} with 1k+ followers</b>, ${fO(bb.reduce((t,p)=>t+p.orderValue,0))} of orders.</p>`:''}${hdr('Order')}${fs(buy).map(p=>row(p,`<span class="num">${fO(p.orderValue)}</span>`,p.followers>=1e3)).join('')}</div>`:'';
+const L2=nb.length?`<div class="whl"><h3>Big accounts that haven’t bought yet</h3><p class="sub"><b>${fN(nb.length)} with 1k+ followers</b> messaged and didn’t buy, ${fK(sum(nb))} followers combined.${nb.length>8?' The biggest 8:':''}</p>${hdr('Got as far as')}${fs(nb).slice(0,8).map(p=>row(p,`<span>${CHS[p.stage]||'messaged'}</span>`)).join('')}</div>`:'';
+h.push(sec('What messaging ads tell you','Things you only learn because a shopper messaged instead of clicking through.',`<p style="max-width:64ch">A click to your website is anonymous. A message isn’t: every shopper who DMs arrives with a real profile, so you learn who they are, how big their audience is, and whether they already knew you.</p>
+<div class="wb">${wt(fN(TT),`people messaged${ig.length<n?` (${fN(ig.length)} on Instagram)`:''}`)}${wt(fN(big.length),`${big.length==1?'has':'have'} 1,000+ followers${big.length?`, ${fK(sum(big))} combined`:''}`)}${fo.length?wt(Math.round(fo.filter(p=>!p.followsYou).length/fo.length*100)+'%',`didn’t follow ${esc((D.merchant||{}).name||'you')} yet`):''}${ig.length?(v=>wt(fN(v),'verified account'+s1(v)))(PE.filter(p=>p.verified).length):''}${ok(m.contactsCaptured)?wt(fN(m.contactsCaptured),`emails and phones shared${ok(m.contactsEmail)&&ok(m.contactsPhone)?` (${fN(m.contactsEmail)} email${s1(m.contactsEmail)}, ${fN(m.contactsPhone)} phone${s1(m.contactsPhone)})`:''}`):''}</div>
+${TT>n?`<p class="sub">Counts cover ${fN(n)} of the ${fN(TT)} people who messaged.</p>`:''}${L1||L2?`<div class="reach"><b>You can message these people yourself.</b> Every one of them already messaged you, so the thread is already in your inbox${PE.some(p=>p.link)?': tap the <b>paper-plane</b> on a row to open it in Meta Business Suite':''}. A personal note or a gifted product to a 10k+ account costs little and can turn a shopper into a creator. Moshi’s chat history shows what each person asked about, so you know where to start.</div>`:''}${L1}${L2}
+<p class="sub">${fD(W.start)} – ${fD(W.end)}. Follower counts are from Instagram${PE.some(p=>p.ms)?'; Messenger doesn’t share them':''}.</p>`))}
+// 5 comparison
+if(full)h.push(sec('Moshi against your own launches',`Same objective, same days since launch. Retargeting${OV.s.size?' and your ad sets that run Moshi’s creatives':''} left out.`,(cs=>cs.length?cs.join(''):'<p class="sub">None of your launches match Moshi’s objective and age yet.</p>')(CMPS.filter(x=>x.ok).map(x=>x.html))));
+// 6 stage tracker
 const st=full?COV.map(c=>[c.name,stage(c),c]).filter(x=>x[1]):D.moshi&&D.moshi.firstLaunch&&mStage()?[['Moshi ads',mStage(),{objective:null,adsets:[]}]]:[];
 if(!st.length)h.push(sec('Where each campaign stands',null,`<p class="sub">${full?'No Moshi campaign delivered in this window.':'The stage needs the date of the first Moshi launch.'}</p>`));
 else{const SB=[1,...GATES,61],pos=a=>{const i=a<4?0:a<8?1:a<15?2:a<31?3:4;return i+Math.min(1,(a-SB[i]+.5)/(SB[i+1]-SB[i]))};
 const seg=(t,j)=>(P,w,h)=>{const f=Math.max(0,Math.min(1,t-j)),L=Math.round(f*w);if(L){P.r(0,0,L,h,INK.p,.7,0);if(f<1)P.s(L-1,0,1,h,INK.p)}};
 const track=([n,g,c])=>{const t=pos(g.age),j=Math.floor(t),a=t/5,rs=g.s.f!=g.s.d,vf=c.adsets.filter(s=>!s.dup).map(s=>[s,rowsOf([s]).filter(r=>dd(REF,r.date)<7).reduce((t,r)=>t+((c.objective=='engagement'?r.conversations:r.purchases)||0),0)]).filter(z=>z[1]<50);return`<div class="st"><div class="stl"><b>${esc(n)}</b>${c.objective?pill(oN(c.objective)):''}</div><div>
-<div class="now" style="--l:calc((100% - 8px) * ${a.toFixed(4)} + ${2*Math.min(j,4)}px);--p:${(a*100).toFixed(1)}%"><span>Today · day ${g.age}</span><i></i></div>
+<div class="now" style="--l:calc((100% - 8px) * ${a.toFixed(4)} + ${2*Math.min(j,4)}px);--p:${(a*100).toFixed(1)}%"><span>${REF==AO?'Today':'Through '+fD(REF)} · day ${g.age}</span><i></i></div>
 <div class="sgs">${STG.map((_,k)=>`<div class="sg${k<=j?' on':''}">${k<=j?cv(seg(t,k),12,''):''}</div>`).join('')}</div>
 <div class="gl">${STG.map(([nm],k)=>{const d=(k?'':rs?'reset ':'')+fD(k?addD(g.s.d,SB[k]-1):g.s.d).replace(' ','&nbsp;');return`<div${!k&&rs?' class="rs"':''}>${SB[k]==g.g?`<b>${d}</b>`:d}<br><span${k==g.i?' class="cur"':''}>${nm}</span></div>`}).join('')}</div>
 <p class="sub">${rs?`Clock restarted ${fD(g.s.d)} after a learning reset. `:''}${g.g?`Next gate: day ${g.g} on <b>${fD(g.gd)}</b>, ${gateTxt(g.g,c)}.`:'Full verdict window.'}${vf.length&&c.objective!='other'?` ${esc(vf[0][0].name)}: ${vf[0][1]} of ~50 ${c.objective=='engagement'?'conversations':'purchases'} in 7 days, so cost reads stay directional.`:''}</p></div></div>`};
 h.push(sec('Where each campaign stands','Days since launch. Each stage allows the next fair read.',st.map(track).join('')))}
-// 5 tiles. A Moshi ad with duplicate rows hides the Meta numbers.
+// 7 tiles. A Moshi ad with duplicate rows hides the Meta numbers.
 const SA=dM?{}:agg(rowsOf(MC.filter(c=>c.objective=='sales')).filter(inW),0);let cpc=null,attr='';try{cpc=cpChat()}catch(e){}
 const tile=(l,v,s)=>`<div class="card tile"><div class="tl">${l}</div><div class="tv">${v}</div>${s?`<div class="ts">${s}</div>`:''}</div>`;
 const SG=MC.filter(c=>c.objective=='sales').map(stage),early=SG.length&&SG.every(g=>!g||g.age<8),r8=SG.filter(Boolean).map(g=>addD(g.s.d,7)).sort()[0];
-// The purchases card's window: the Moshi ad sets that delivered in the window (lab keeps those with purchases).
+// The window of Meta's purchases in the funnel: the Moshi ad sets that delivered in the window (lab keeps those with purchases).
 if(full&&!dM)try{attr=lab(MC.flatMap(c=>c.adsets).filter(s=>rowsOf([s]).some(inW)))}catch(e){bad(...e);attr=null}
-h.push(`<div class="tiles">${tile('Spend',fM(full?MA.spend:m.spend),full?'Moshi campaigns, Meta':'Moshi-managed')}${full?tile('CTR',fP(MA.ctr),'link clicks ÷ impressions'):''}${tile('Cost per ad chat',fM(cpc),full&&CA.conversations?`Meta’s count: ${fN(CA.conversations)} chats started${CC.length<MC.length?', on the campaigns that start chats':''}`:'Moshi’s count of chats from ads')}${tile('Chats',fN(m.chats),ok(m.chatsFromAds)?fN(m.chatsFromAds)+' from ads':'')}${tile('Contacts captured',fN(m.contactsCaptured),'emails and phones')}</div>
-<div class="card pur"><div class="ph"><h3>Purchases</h3>${pill('two sources, never added')}</div>
-${full&&attr!=null?`<div class="pr"><div><b>Meta’s estimate</b><small>pixel${attr?', '+esc(attr):''}</small></div><div><span class="num">${fN(MA.purchases)}</span> <small>purchases</small></div><div><span class="num">${fM(MA.purchaseValue)}</span> <small>value</small></div><div>${MC.some(c=>c.objective=='sales')?`<span class="num">${fmt('roas',SA.roas)}</span> <small>ROAS, Sales campaigns${early?`, too early to judge${r8?', first read '+fD(r8):''}`:''}</small>`:'<small>No ROAS: chat campaigns are scored on cost per chat</small>'}</div></div>`:''}
-<div class="pr"><div><b>Moshi-proven</b><small>matched to a chat thread, a floor</small></div><div><span class="num">${fN(m.provenOrders)}</span> <small>orders</small></div><div><span class="num">${fM(m.provenRevenue)}</span> <small>revenue</small></div><div><span class="num">${fN(m.closerRecoveries)}</span> <small>Closer recoveries, ${fM(m.closerRevenue)}</small></div></div>
-${recent&&full?'<p class="cav">Meta may still add purchases to recent days.</p>':''}</div>`);
-// 6 account map: Moshi's tree, each ad with the ad of yours it was cloned from, then those ad sets side by side over the window
-if(full&&COV.length){const rel=new Map,lc=s=>s&&s!='ACTIVE'?pill(String(s).toLowerCase().replace(/_/g,' '),'rose'):'';
-COV.forEach(c=>adsOf(c).forEach(a=>{const f=a.clonedFrom;[...(f?[[f.adsetId,1]]:[]),...(a.creativeOverlap||[]).map(o=>[o.adsetId,0])].forEach(([i,y])=>{const s=IX.s[i];if(!s||s.c.owner!='merchant')return;const r=rel.get(s)||{y:0};r.y|=y;rel.set(s,r)})}));
-const tree=`<ul class="l">${COV.map(c=>`<li class="node moshi"><div class="nh"><b>${esc(c.name)}</b>${pill(oN(c.objective))}${lc(c.status)}</div><ul>${c.adsets.map(s=>`<li><div class="nh">${esc(s.name)}${s.optimizationGoal?pill(s.optimizationGoal):''}${lc(s.status)}${ok(s.dailyBudget)?pill(fM(s.dailyBudget)+'/day'):''}</div><ul class="ads">${s.ads.map(a=>{const f=a.clonedFrom,y=f&&IX.s[f.adsetId];return`<li>${esc(a.angle||a.name)}${f?` ← cloned from your ad “${esc(f.adName||f.adId)}”${y?' in '+esc(y.name):''}`:''}</li>`}).join('')}</ul></li>`).join('')}</ul></li>`).join('')}</ul>`;
-const g=PR&&stage(PR),eg=PR&&PR.objective=='engagement',buy=!eg&&g&&g.age>=8,K=eg?[['conversations','Meta chats'],['costPerConversation','Cost per chat']]:buy?[['purchases','Meta purchases'],['cpa','CPA']]:[['impressions','Impressions'],['cpm','CPM']];
-const nums=s=>{if(s.c.owner=='moshi')return s.dup?{}:agg(rowsOf([s]).filter(inW),0);const t=s.totals||{},q=(a,b,k=1)=>ok(a)&&b?a/b*k:null;return{...t,cpa:q(t.spend,t.purchases),costPerConversation:q(t.spend,t.conversations),cpm:q(t.spend,t.impressions,1e3)}};
-let nb=0;const rows=[...COV.flatMap(c=>c.adsets),...rel.keys()].map(s=>{const v=nums(s),y=s.c.owner=='merchant',r=rel.get(s);let l=null;if(buy)try{l=lab([s])}catch(e){bad(...e)}const b=buy&&y&&l!=null&&ev(s)&&COV.some(c=>!ev(c));nb|=b;
-return[esc(s.name)+' '+(y?pill(r.y?'cloned from':'same creative')+(SHS.has(s)?pill('same days','rose'):''):pill('Moshi','acc')),fM(v.spend),...K.map(([k])=>k=='cpa'&&s.c.objective=='engagement'||buy&&l==null?'—':fmt(k,v[k])),...(buy?[(l?esc(l):'—')+(b?' '+pill('not the same basis'):'')]:[])]});
-const shown=new Set([...rel.keys()].map(s=>s.c)),oth=YC.filter(c=>!shown.has(c)),os=oth.map(c=>c.metaSpend),mw=D.metaWindow||{};
-h.push(sec(rel.size?'Moshi’s campaign tree vs the source it was cloned from':'Moshi’s campaign tree',rel.size?`Same window, ${fD(W.start)} – ${fD(W.end)}.`:null,tree+(rel.size?tbl('',['Ad set','Spend',...K.map(k=>k[1]),...(buy?['Counted on']:[])],rows,0)+(SHS.size?'<p class="sub">Your ad sets marked “same days” ran at the same time as Moshi’s, competing in the same auctions. Read them side by side, not as a contest.</p>':'')+(nb?'<p class="sub">Not the same basis: those ad sets also count engaged-view purchases, and Moshi’s don’t.</p>':''):'')+(oth.length?`<p class="sub">Not shown: ${oth.length} of your campaigns${os.every(ok)?`, with ${fM(os.reduce((a,b)=>a+b,0))} spent${mw.start?` ${fD(mw.start)} – ${fD(mw.end)}`:''}`:''}.</p>`:'')))}
-// 7 comparison
-if(full)h.push(sec('Moshi against your own launches',`Same objective, same days since launch. Retargeting${OV.s.size?' and your ad sets that run Moshi’s creatives':''} left out.`,(cs=>cs.length?cs.join(''):'<p class="sub">None of your launches match Moshi’s objective and age yet.</p>')(CMPS.filter(x=>x.ok).map(x=>x.html))));
-// 8 funnel
-const fr=[['Chats',m.chats],['Viewed a product',m.productViews],['Reached cart',m.carts],['Reached checkout',m.checkouts],['Proven orders',m.provenOrders]].filter(r=>ok(r[1]));
-if(ok(m.chats)&&m.chats>0)h.push(sec('What the chats did','Moshi’s own funnel. Meta’s pixel misses most of it.',
-`<div style="display:grid;gap:8px">${fr.map(([l,v])=>barRow(l,fN(v),v/m.chats,'p',` <small>${(v/m.chats*100).toFixed(0)}%</small>`)).join('')}</div>
-${ok(m.delayedOrders)?`<p class="sub"><b class="num">${fN(m.delayedOrders)}</b> proven orders came 1+ days after the chat.</p>`:''}`));
-// 9 changes
-const rl=([l,d])=>(l?l+' ':'')+'readable '+fD(d);
-const chg=D.changes.filter(c=>full||c.source=='moshi').map(c=>{const e=IX.c[c.entityId]||IX.s[c.entityId]||IX.a[c.entityId],o=e&&camp(e).objective,rs=(RD[c.kind]||[['results',3]]).map(([l,n])=>[l=='CPA'?(o=='sales'?l:o=='engagement'?'cost per chat':''):l,addD(c.date,n)]);return{...c,rs,end:rs[rs.length-1][1]}}).sort((a,b)=>a.date<b.date?-1:1);
-if(chg.length){const d0=chg[0].date,d1=chg.reduce((t,c)=>c.end>t?c.end:t,REF),span=Math.max(1,dd(d1,d0));
-const lane=c=>(P,w,h)=>{const X=d=>Math.round(dd(d,d0)/span*(w-1));P.r(0,h/2|0,w,1,INK.b,.5,0);const a=X(c.date),b=X(c.end);P.r(a,2,Math.max(1,b-a),h-4,INK.p,.32);P.s(a,1,1,h-2,INK.p);c.rs.forEach(([,d])=>P.s(X(d),2,2,h-4,d<=REF?INK.m:INK.a));P.s(X(REF),0,1,h,INK.g)};
-h.push(sec('What changed, and when it shows','Judge each change after its readable date. Grey line: report date.',`<div>${chg.map(c=>`<div class="chg"><span class="num">${fD(c.date)}</span><div>${esc(c.what)} ${pill(c.source=='moshi'?'Moshi':'Meta',c.source=='moshi'?'acc':'')}<br><small>${c.rs.map(rl).join(', ')}${c.end>REF?' · too early to judge':''}</small></div><div class="cw">${cv(lane(c),16,`${c.what}: readable ${fD(c.end)}`)}</div></div>`).join('')}</div>`))}
-// 10 fatigue
-const top=cs=>cs.filter(c=>!c.dup).flatMap(adsOf).map(a=>[a,agg((a.daily||[]).filter(inW),0).spend||0]).sort((x,y)=>y[1]-x[1])[0];
-if(full&&COV.some(c=>{const f=first(c);return f&&dd(REF,f)+1>=15})){const s0=[[top(YC.filter(c=>!c.retargeting)),'g','Yours'],[top(COV),'p','Moshi']].filter(s=>s[0]);
-// The x-axis is the report window: d counts days from window.start. Only rows inside it plot, and the line breaks at a missing
-// date: a point with no neighbour one day away draws as a half-day stub. A day with under a tenth of the ad's median daily
-// impressions is left out: its CTR is noise that would set the scale.
-let lo=0;const ro=a=>{const r=a.daily.filter(r=>r.impressions>0&&inW(r)),md=r.map(x=>x.impressions).sort((x,y)=>x-y)[r.length>>1]/10,k=r.filter(x=>x.impressions>=md);lo+=r.length-k.length;return k},xm=Math.max(2,dd(W.end,W.start)+1);
-const se=s0.map(([[a],k,who])=>({a,k,who,p:ro(a).map(r=>({d:dd(r.date,W.start)+1,date:r.date,ctr:r.linkClicks!=null?r.linkClicks/r.impressions:null,cpm:r.spend/r.impressions*1e3,fq:frq(r)}))})).filter(s=>s.p.length),L=s=>s.p.at(-1)||{},F=s=>s.p[0]||{};
-const ym=k=>Math.max(...se.flatMap(s=>s.p.map(q=>q[k]).filter(ok)))*1.15||1;
-const chart=k=>{const Y0=ym(k);return(P,w,h)=>{P.s(0,h-1,w,1,INK.b);[0,1,2,3].forEach(n=>{const s=se[n&1];if(!s)return;let py=null;const pts=s.p.filter(q=>ok(q[k]));for(let X=0;X<w;X++){const d=1+X/(w-1)*(xm-1),j=pts.findIndex(q=>q.d>=d),i=j<0?pts.length:j,q1=pts[i],q0=pts[i-1];let v;
-if(q1&&q0&&q1.d-q0.d<=1)v=q0[k]+(q1[k]-q0[k])*(d-q0.d)/(q1.d-q0.d);else{const q=q1&&q1.d-d<=.5?q1:q0&&d-q0.d<=.5?q0:null;if(!q){py=null;continue}v=q[k]}
-const Y=Math.round(h-2-v/Y0*(h-4));if(n<2){P.r(X,Y,1,h-1-Y,INK[s.k],.1);continue}const a=py==null?Y:Math.min(py,Y),b=py==null?Y:Math.max(py,Y);P.s(X,a,1,b-a+1,INK[s.k]);py=Y}})}};
-const blk=(k,t,c)=>`<div style="display:grid;gap:6px"><h3>${t}</h3><p class="sub">${c}</p><div class="ax"><div class="ya"><span>${fmt(k,ym(k))}</span><span>${fmt(k,0)}</span></div><div class="cw">${cv(chart(k),120,`${t}: `+se.map(s=>`${s.who} ${fmt(k,L(s)[k])} on ${fD(L(s).date)}`).join(', '))}</div><span></span><div class="xa"><span>${fD(W.start)}</span><span>date</span><span>${fD(W.end)}</span></div></div></div>`;
-if(se.length)h.push(sec('Creative fatigue',`Your top ad and Moshi’s, by date.${lo?' Days with under a tenth of an ad’s usual impressions are left out.':''}`,`<div class="lg">${se.map(s=>`<span><span class="dot ${s.k=='p'?'moshi':''}"></span>${s.who}: ${esc(s.a.angle||s.a.name)}, frequency ${fmt('frequency',F(s).fq)} on ${fD(F(s).date)} → ${fmt('frequency',L(s).fq)} on ${fD(L(s).date)}</span>`).join('')}</div>
-<div class="th">${blk('ctr','CTR by day','A line sliding down while frequency rises = fatigue; flat or rising = healthy.')}${blk('cpm','CPM by day','Rising = getting costlier to reach people.')}</div>
-${tbl('Fatigue by date',['Ad','Date','CTR','CPM','Frequency'],se.flatMap(s=>s.p.map(q=>[esc(s.a.angle||s.a.name),fD(q.date),fP(q.ctr),fM(q.cpm),fmt('frequency',q.fq)])))}`))}
-// 11 shoppers: how ad chats started (ice breakers, shares of 100%), then themes and quotes
-const ib=D.iceBreakers||{},T0=ib.total,ir=ok(T0)&&T0>0?[...(ib.items||[]).map(i=>[esc(i.text),i.conversations]),['<i>Typed their own</i>',(ib.typedOwn||{}).conversations]].filter(r=>ok(r[1])&&r[1]>0):[];
-let ibh='';if(ir.length){const s=ir.reduce((t,r)=>t+r[1],0);if(s<T0)ir.push(['<i>Other</i>',T0-s]);const n=Math.max(s,T0),p=shares(ir.map(r=>r[1]),n);ibh=`<div style="display:grid;gap:8px"><h3>How ${fN(n)} ad chats started</h3>${ir.map(([l,v],i)=>barRow(l,p[i]+'%',v/n,'p',` <small>${fN(v)}</small>`)).join('')}</div>`}
-const th=(D.shopperThemes||[]).map(t=>{const x=tok(t.text);return x==null?'':`<div class="card"><h3>${esc(t.theme)}</h3><p class="sub" style="margin-top:4px">${x}</p></div>`}).join('');
-const qs=(D.quotes||[]).map(q=>{const b=badQ(q.text||'');return b?bad(4,`a quote holds ${b}; it is hidden`):`<div>${esc(q.text)}<br><small>from ${q.source=='profile'?'your profile':'an ad'}</small></div>`}).filter(Boolean).join('');
-if(ibh||th||qs)h.push(sec('What shoppers are asking',null,`${ibh}${th?`<div class="th">${th}</div>`:''}${qs?`<div class="q">${qs}</div>`:''}`));
-// 12 next steps
-const ns=(D.nextSteps||[]).map(s=>{const x=tok(s.what);return x==null?null:[esc(s.step),x,pill(s.owner=='moshi'?'Moshi':'You',s.owner=='moshi'?'acc':''),`<span class="num">${fD(s.by)}</span>`]}).filter(Boolean);
-if(ns.length)h.push(sec('Next steps',null,tbl('',['','What','Who','By'],ns,0)));
-// 13 footer
-const fl=D.flags||[],nm=D.notMeasurableYet||[];
-h.push(`<footer class="glass ft"><div><b>Sources</b>: Moshi MCP.${full?' Meta numbers are Moshi’s copy of your ad account, synced about every 6 hours. A Meta change shows only when it restarted learning.':''} Money in ${CUR?esc(CUR):'the account currency (none reported, so no symbol)'}, dates in ${esc(TZ)}${(D.merchant||{}).timezone?'':' (no timezone reported)'}.</div>
-${fl.length?`<div><b>Flags</b><ul>${fl.map(f=>`<li>${pill(f.source)} <span class="num">${esc(f.code)}</span> ${esc(f.text)}</li>`).join('')}</ul></div>`:''}
-${nm.length?`<div><b>Not measurable yet</b><ul>${nm.map(t=>`<li>${esc(t)}</li>`).join('')}</ul></div>`:''}</footer>`);
+h.push(`<div class="tiles">${tile('Spend',fM(full?MA.spend:m.spend),full?'Moshi campaigns, Meta':'Moshi-managed')}${full?tile('CTR',fP(MA.ctr),'link clicks ÷ impressions'):''}${tile('Cost per ad chat',fM(cpc),full&&CA.conversations?`Meta’s count: ${fN(CA.conversations)} chats started${CC.length<MC.length?', on the campaigns that start chats':''}`:'Moshi’s count of chats from ads')}${tile('Chats',fN(m.chats),ok(m.chatsFromAds)?fN(m.chatsFromAds)+' from ads':'')}${tile('Contacts captured',fN(m.contactsCaptured),'emails and phones')}</div>`);
+// 8 Same ads: each Moshi ad (primary campaign, and any shown beside it) with the ad of yours it was cloned from (clonedFrom), over
+// the window. One card per original; Moshi's copies of it add up (a copy that failed check 10 hides its card). Cards where Moshi's
+// CTR is the higher come first, then by Moshi's CTR.
+// An original with no rows in the window did not run then (T6 reads every original; DATA drops clonedFrom when T6 could not).
+const SM=new Map;if(full)COV.forEach(c=>adsOf(c).forEach(a=>{const f=a.clonedFrom,o=f&&IX.a[f.adId];if(!f||o&&(o.dup||o.c.owner!='merchant'))return;
+const g=SM.get(f.adId)||{a,o,r:[]};g.d|=!!a.dup;g.r.push(...a.daily.filter(inW));SM.set(f.adId,g)}));
+const cd=[...SM.values()].map(g=>({...g,m:agg(g.r,0),y:agg(g.o?g.o.daily.filter(inW):[],0)})).filter(g=>!g.d&&g.m.impressions>0).map(g=>({...g,w:ok(g.y.ctr)&&g.m.ctr>g.y.ctr})).sort((x,y)=>y.w-x.w||(y.m.ctr||0)-(x.m.ctr||0));
+const al=(l,v,me)=>`<div class="al${me?' me':''}"><span>${l}</span>${v.impressions>0?`<span class="num">${fM(v.spend)}</span><span class="num">${fP(v.ctr)} CTR</span>`:'<i>didn’t run these days</i>'}</div>`;
+if(cd.length)h.push(sec('Same ads: Moshi’s copy vs your original',`Spend and click-through rate, ${fD(W.start)} – ${fD(W.end)}. Each pair runs one creative and can share auctions, so read them side by side.`,`<div class="adg">${cd.map(g=>{const t=[g.a,g.o].map(x=>x&&url(x.thumbnailUrl,`ad ${x.id} thumbnailUrl`,1)).find(Boolean);
+return`<div class="card adc">${t?`<img src="${esc(t)}" alt="" loading="lazy">`:''}<h3>${esc(g.a.angle||g.a.name)}</h3>${al('Moshi’s copy',g.m,1)}${al('Your original',g.y)}</div>`}).join('')}</div>`));
+// 9 From conversation to purchase: Moshi's funnel over the window with Meta's purchases on Moshi's campaigns beside it (two sources,
+// never added). Then, from each campaign's Meta totals over metaWindow (metaSpend, metaPurchases, metaPurchaseValue, on every
+// campaign or the part is left out): chat order size against your other campaigns (day 8+), and Moshi's share of your spend.
+if(ok(m.chats)&&m.chats>0){const fq=v=>Math.min(1,v/m.chats),mb=full&&attr!=null&&!dM&&ok(MA.purchases),cr=CA.linkClicks>0?CA.conversations/CA.linkClicks:null;
+const sm=(cs,k)=>cs.reduce((t,c)=>t+c[k],0),hv=k=>D.campaigns.every(c=>ok(c[k])),g8=PR&&(g=>g&&g.age>=8)(stage(PR)),mw=D.metaWindow||{},mwd=`${fD(mw.start)} – ${fD(mw.end)}`;
+const oP=hv('metaPurchases')&&hv('metaPurchaseValue')?sm(YC,'metaPurchases'):0,oA=oP>0?sm(YC,'metaPurchaseValue')/oP:null,cA=m.provenOrders>0&&ok(m.provenRevenue)?m.provenRevenue/m.provenOrders:null,mx=Math.max(cA,oA);
+const Ms=sm(MC,'metaSpend'),Os=sm(YC,'metaSpend'),sp=Ms/(Ms+Os),mR=MC.every(c=>c.objective=='sales')&&g8&&hv('metaPurchaseValue')?sm(MC,'metaPurchaseValue')/Ms:null,oR=hv('metaPurchaseValue')?sm(YC,'metaPurchaseValue')/Os:null;
+h.push(sec('From conversation to purchase','Moshi’s chat funnel, with Meta’s purchase count beside it.',`${cr!=null?`<div class="cvr"><b>${Math.round(cr*100)}%</b><div><h3>Conversation rate</h3><small>Link clicks on Moshi’s chat ads that started a conversation: ${fN(CA.conversations)} of ${fN(CA.linkClicks)}, Meta’s count</small></div></div>`:''}
+<div style="display:grid;gap:8px">${[['Had a conversation',m.chats],['Viewed a product',m.productViews],['Reached cart',m.carts],['Reached checkout',m.checkouts]].filter(r=>ok(r[1])).map(([l,v])=>barRow(l,fN(v),fq(v),'p',` <small>${Math.round(v/m.chats*100)}%</small>`)).join('')}${ok(m.provenOrders)?barRow('Moshi-proven orders',fN(m.provenOrders),fq(m.provenOrders),'p',` <small>${fM(m.provenRevenue)}</small>`):''}${mb?barRow('Meta-credited purchases',fN(MA.purchases),fq(MA.purchases),'a',` <small>${fM(MA.purchaseValue)}</small>`):''}</div>
+<p class="sub">Moshi’s own count, ${fD(W.start)} – ${fD(W.end)}. Two sources, never added: Moshi-proven orders are matched to a chat thread, so they’re a floor${m.closerRecoveries>0?`; Closer recoveries: ${fN(m.closerRecoveries)}, ${fM(m.closerRevenue)}`:''}.${mb?` Meta’s count is its pixel estimate for Moshi’s campaigns${attr?` (${esc(attr)})`:''}${MC.some(c=>c.objective=='sales')?`, ${fmt('roas',SA.roas)} ROAS on the Sales campaigns${early?`, too early to judge${r8?', first read '+fD(r8):''}`:''}`:''}.${recent?' Meta may still add purchases to recent days.':''}`:''}</p>
+${ok(m.delayedOrders)?`<p class="sub"><b class="num">${fN(m.delayedOrders)}</b> proven orders came 1+ days after the chat.</p>`:''}
+${full&&g8&&oA&&cA?(d=>`<div class="cmp"><h3>Chat orders are <span class="hl">${d?Math.abs(d)+'% '+(d>0?'bigger':'smaller'):'about the same size'}</span></h3>${barRow(`<span class="hl">Moshi chat orders</span> <small>· ${fN(m.provenOrders)} order${s1(m.provenOrders)}</small>`,fM(cA),cA/mx,'p')}${barRow(`Your other ads <small>· ${fN(oP)} order${s1(oP)}</small>`,fM(oA),oA/mx,'g')}<p class="sub">Average order value. Moshi: orders matched to a chat, ${fD(W.start)} – ${fD(W.end)}. Your other ads: Meta-credited purchases on your campaigns, ${mwd}, each ad set’s own attribution window.</p></div>`)(Math.round((cA/oA-1)*100)):''}
+${full&&hv('metaSpend')&&Ms>0&&Os>0?`<div class="cmp"><h3>Moshi is <span class="hl">${sp<.001?'&lt;0.1':sp<.1?(sp*100).toFixed(1):Math.round(sp*100)}%</span> of your ad spend</h3>${barRow('<span class="hl">Moshi</span>'+(mR!=null?` <small>· ${fmt('roas',mR)} ROAS</small>`:''),fM(Ms),sp,'p')}${barRow('Your other campaigns'+(oR!=null?` <small>· ${fmt('roas',oR)} ROAS</small>`:''),fM(Os),1-sp,'g')}<p class="sub">${mwd}, Meta’s numbers.${oR!=null?' ROAS is Meta-credited purchase value ÷ spend, each ad set’s own attribution window.':''}</p></div>`:''}`))}
+// 10 Respond to your Closers: the org's Closer page, {dashboardUrl}/closer.
+const cu=url(D.dashboardUrl,'dashboardUrl');
+if(cu)h.push(sec('Respond to your Closers',null,`<p style="max-width:62ch">Some shoppers reach a cart in chat and then go quiet. Moshi drafts a personal follow-up for each one, called a Closer, to bring them back to checkout. Take a quick look, edit anything that doesn’t sound like you, and send.</p><a class="cbtn" href="${esc(cu.replace(/\/+$/,''))}/closer" target="_blank" rel="noopener">Review your Closers →</a>`));
 if(ERR.length)h.unshift(banner());
 app.innerHTML=h.join('\n');return 1}
 function avatar(){const el=document.querySelector('.av div');if(AVS||!el||matchMedia('(prefers-reduced-motion: reduce)').matches||!window.DecompressionStream)return;AVS=1;
@@ -332,7 +324,7 @@ const m=el.parentElement.classList.contains('delight')?'delight':'reading',sc=do
 sc.onload=async()=>{try{const r=new Response(Uint8Array.from(atob(AV.z),c=>c.charCodeAt(0))).body.pipeThrough(new DecompressionStream('gzip')),j=(await new Response(r).json())[m];
 j.assets.forEach(a=>{if(a.e)a.p='data:image/webp;base64,'+AV.i[a.p]});ANI=lottie.loadAnimation({container:el,renderer:'svg',loop:m=='reading',autoplay:true,animationData:j});
 ANI.addEventListener('DOMLoaded',()=>el.querySelector('img')?.remove())}catch(e){}};document.head.append(sc)}
-function inks(){const p=document.createElement('canvas').getContext('2d'),q=document.body.appendChild(document.createElement('i'));['p:primary','g:text-2','m:mint','b:border-strong','a:accent-strong'].forEach(z=>{const[k,n]=z.split(':');p.clearRect(0,0,1,1);q.style.color=`var(--${n})`;p.fillStyle='#888';p.fillStyle=getComputedStyle(q).color;p.fillRect(0,0,1,1);INK[k]=[...p.getImageData(0,0,1,1).data]});q.remove()}
+function inks(){const p=document.createElement('canvas').getContext('2d'),q=document.body.appendChild(document.createElement('i'));['p:primary','g:text-2','m:mint','a:accent-strong'].forEach(z=>{const[k,n]=z.split(':');p.clearRect(0,0,1,1);q.style.color=`var(--${n})`;p.fillStyle='#888';p.fillStyle=getComputedStyle(q).color;p.fillRect(0,0,1,1);INK[k]=[...p.getImageData(0,0,1,1).data]});q.remove()}
 function paint(c){if(!c._x||!c.width)return;const w=c.width,h=c.height,im=c._x.createImageData(w,h),d=im.data;
 const px=(X,Y,k)=>{if(X<0||Y<0||X>=w||Y>=h)return;const i=(Y*w+X)*4;d[i]=k[0];d[i+1]=k[1];d[i+2]=k[2];d[i+3]=255};
 const P={r(x,y,ww,hh,k,v,s=1){const x0=Math.round(x),y0=Math.round(y),x1=Math.round(x+ww),y1=Math.round(y+hh);for(let Y=y0;Y<y1;Y++)for(let X=x0;X<x1;X++){const t=v+(s&&SH?.06*Math.sin(T+X*.3-Y*.5):0);if(t*16>B[(Y&3)*4+(X&3)])px(X,Y,k)}},s(x,y,ww,hh,k){this.r(x,y,ww,hh,k,2,0)}};
@@ -353,6 +345,8 @@ const re=()=>{inks();size()};new ResizeObserver(()=>requestAnimationFrame(size))
 matchMedia('(prefers-color-scheme: dark)').addEventListener('change',re);new MutationObserver(re).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
 rm.addEventListener('change',()=>{MOV=!rm.matches;if(ANI)MOV?ANI.play():ANI.pause();else avatar();wake()});
 document.addEventListener('visibilitychange',wake);size()}
+// A picture that fails to load (Meta's image links expire) is removed: the initial or the card's text shows instead.
+addEventListener('error',e=>{if(e.target.tagName=='IMG')e.target.remove()},true);
 addEventListener('DOMContentLoaded',render);
 </script>
 <script>

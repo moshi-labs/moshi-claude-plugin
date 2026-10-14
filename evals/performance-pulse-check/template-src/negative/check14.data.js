@@ -1,4 +1,5 @@
-// Positive test: ice-breaker shares are whole percentages that add up to 100, with an Other line when they fall short of the total: base.data.js plus the lines under "// change".
+// Negative test for check 14: a link that is not https (a data:image URI is fine for a picture) is dropped: base.data.js plus the
+// lines under "// change".
 // The helpers sit inside a function so their names do not clash with the template's globals.
 const DATA = (() => {
 const R = (s, n, f) => Array.from({ length: n }, (_, i) => ({ date: new Date(Date.parse(s) + i * 864e5).toISOString().slice(0, 10),
@@ -18,10 +19,12 @@ const D = {
     provenOrders: 1, provenRevenue: 60, delayedOrders: 0, closerRecoveries: 0, closerRevenue: 0 },
   comparisons: [{ metric: "ctr", day: 7, moshiCampaignId: "cm1", merchantCampaignId: "ym1" }, { metric: "cpa", day: 14, moshiCampaignId: "cm1", merchantCampaignId: "ym1" }],
   changes: [{ date: "2026-10-01", what: "Budget up 10%", kind: "budget_minor", source: "meta", entityId: "cm1" }],
-  accountIssues: [], shopperThemes: [], quotes: [{ text: "does it ship fast?", source: "ad" }],
-  nextSteps: [{ step: "1", what: "Hold budget.", owner: "merchant", by: "2026-10-08" }], flags: [], notMeasurableYet: []
+  accountIssues: [], flags: [], notMeasurableYet: []
 };
   // change
-  D.iceBreakers = { total: 210, items: [{ text: "Is it spicy?", conversations: 87, share: 0.41 }, { text: "Do you ship to Canada?", conversations: 51, share: 0.24 }], typedOwn: { conversations: 62, share: 0.3 } };
+  D.chatters = { people: [{ username: "ann.k", followers: 1500, orderValue: 20, profilePic: "http://cdn.example.com/a.jpg", threadUrl: "javascript:alert(1)" },
+    { username: "bo.c", followers: 1200, orderValue: 30, profilePic: "data:image/png;base64,iVBORw0KGgo=" }] };
+  D.dashboardUrl = "ftp://base-shop.moshi.ai";
+  Object.assign(D.campaigns[0].adsets[0].ads[0], { angle: "Tan", clonedFrom: { adId: "yz_a0", adName: "Tan mug", adsetId: "yz_s", campaignId: "yz" }, thumbnailUrl: "data:text/html;base64,PHNjcmlwdD4=" });
   return D;
 })();

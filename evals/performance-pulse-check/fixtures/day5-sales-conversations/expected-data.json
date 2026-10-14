@@ -36,6 +36,9 @@
       "startTime": "2026-10-02",
       "adsPulled": "all",
       "retargeting": false,
+      "metaSpend": 1166.14,
+      "metaPurchases": 0,
+      "metaPurchaseValue": 0,
       "adsets": [
         {
           "id": "1202660000000128",
@@ -184,6 +187,8 @@
       "adsPulled": "all",
       "retargeting": false,
       "metaSpend": 32906.92,
+      "metaPurchases": 0,
+      "metaPurchaseValue": 0,
       "adsets": [
         {
           "id": "1202660000000138",
@@ -2284,6 +2289,8 @@
     "chats": 429,
     "chatsFromAds": 420,
     "contactsCaptured": 64,
+    "contactsEmail": 45,
+    "contactsPhone": 19,
     "productViews": 115,
     "carts": 8,
     "checkouts": 3,
@@ -2309,59 +2316,6 @@
   ],
   "changes": [],
   "accountIssues": [],
-  "iceBreakers": {
-    "total": 420,
-    "items": [
-      {
-        "text": "Will it fit a carry-on?",
-        "conversations": 168,
-        "share": 0.4
-      },
-      {
-        "text": "How long is the boot break-in?",
-        "conversations": 97,
-        "share": 0.231
-      }
-    ],
-    "typedOwn": {
-      "conversations": 155,
-      "share": 0.369
-    }
-  },
-  "shopperThemes": [
-    {
-      "theme": "Fit and size",
-      "text": "Shoppers ask whether gear fits a trip. {m:productViews} chats reached a product page."
-    },
-    {
-      "theme": "Break-in time",
-      "text": "Shoppers ask how long boots take to break in."
-    }
-  ],
-  "quotes": [
-    {
-      "text": "Does the pack fit a carry-on?",
-      "source": "ad"
-    },
-    {
-      "text": "How long to break in the boots?",
-      "source": "ad"
-    }
-  ],
-  "nextSteps": [
-    {
-      "step": 1,
-      "what": "Read chat to product view at the next gate: {m:nextGate}.",
-      "owner": "moshi",
-      "by": "2026-10-09"
-    },
-    {
-      "step": 2,
-      "what": "Hold the budget until that gate.",
-      "owner": "merchant",
-      "by": "2026-10-09"
-    }
-  ],
   "flags": [
     {
       "source": "moshi",

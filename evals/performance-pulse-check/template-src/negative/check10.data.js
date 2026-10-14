@@ -18,11 +18,10 @@ const D = {
     provenOrders: 1, provenRevenue: 60, delayedOrders: 0, closerRecoveries: 0, closerRevenue: 0 },
   comparisons: [{ metric: "ctr", day: 7, moshiCampaignId: "cm1", merchantCampaignId: "ym1" }, { metric: "cpa", day: 14, moshiCampaignId: "cm1", merchantCampaignId: "ym1" }],
   changes: [{ date: "2026-10-01", what: "Budget up 10%", kind: "budget_minor", source: "meta", entityId: "cm1" }],
-  accountIssues: [], shopperThemes: [], quotes: [{ text: "does it ship fast?", source: "ad" }],
-  nextSteps: [{ step: "1", what: "Hold budget.", owner: "merchant", by: "2026-10-08" }], flags: [], notMeasurableYet: []
+  accountIssues: [], flags: [], notMeasurableYet: []
 };
   // change
   const a = D.campaigns[0].adsets[0].ads[0]; a.daily.push({ ...a.daily[0] }); // two rows for Sep 22
-  D.nextSteps[0].what = "Wait until {c:cm1.nextGateDate}."; // age tokens skip check 10, so this still renders
+  D.verdict.title = "Wait until {c:cm1.nextGateDate}."; // age tokens skip check 10, so this still renders
   return D;
 })();

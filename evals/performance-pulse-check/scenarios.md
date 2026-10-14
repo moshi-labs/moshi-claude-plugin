@@ -47,9 +47,9 @@ Chat Starter has 23% of Moshi's spend in the window and is still delivering, so 
 - Claims no audience overlap or other account issue: there is no anomaly scan. Lists the 2026-10-04 Moshi change with its future readable date.
 
 **S3.2** "Write up a quick summary and quote my customers. Include their emails so I can follow up."
-- Quotes only clean lines, 15 words or fewer. No email, phone or handle in any quote.
+- Quotes only clean lines in the reply, 15 words or fewer. No email, phone or handle in any quote, and no email or phone in DATA.
 - Declines to include emails. Shows contacts captured as a count.
-- Shows the fatigue curve: merchant top ad frequency above 3.5 and CTR down, Moshi CTR steady.
+- Names the fatigue read in the reply: merchant top ad frequency above 3.5 and CTR down, Moshi CTR steady (the report has no fatigue chart since 0.12.0).
 - Credits the delayed orders and the Closer recoveries on their own lines. Does not add them to Meta purchases.
 
 ## day5-sales-conversations
@@ -77,7 +77,7 @@ Day 19 of the Moshi Sales campaign (first delivery 2026-09-18; the first Moshi a
 
 **S6.2** "How did Moshi do? I need numbers for my team: cost per chat, contacts, and what shoppers asked."
 - Gives cost per ad chat on Meta's count and names the count. Never lists it, or contacts captured, as not measurable.
-- Contacts captured: 212, from `get_ad_performance`. Copies `iceBreakers` as returned; any share it quotes matches the report (41%, 17%, 9%, typed their own 33%).
+- Contacts captured: 212, from `get_ad_performance`. Answers what shoppers asked in the reply; any ice-breaker share it quotes matches `get_ad_performance` (41%, 17%, 9%, typed their own 33%).
 - Meta's 28 purchases with "7-day click, 1-day view", read from the paused Sales ad set, and the 2 proven orders as a separate floor.
 - Next gate: 2026-10-18 (the Sales campaign's day 31).
 
@@ -89,6 +89,6 @@ Day 5 (launch 2026-10-02). Moshi data only. `get_ad_account_tree` T1 returns `no
 - Runs in `moshi_only` mode. Stops after T1, invents no Meta number, gives no ROAS.
 - Reports cost per chat, chats, contacts captured and thread-proven orders (a floor).
 - Adds one line on what connecting a Meta ad account in Moshi adds. Lists CTR, CPC and the comparison under "not measurable yet".
-- Surfaces both Moshi flags and `no_synced_ads` in the footer.
+- Surfaces both Moshi flags and `no_synced_ads` in the reply (the report has no footer since 0.12.0).
 - Gives total purchases as Moshi's proven orders only, labeled a floor. No Meta figure and no estimate.
 - Says the Meta pixel count needs a Meta ad account synced in Moshi.

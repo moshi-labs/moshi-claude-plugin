@@ -62,6 +62,8 @@ many events it has.
 ## Changes and when they show
 
 A change that has not reached its readable date is a reason not to judge.
+The report no longer lists changes, so your reply names each one that has
+not reached its readable date.
 
 | `kind` | Readable after |
 |---|---|
