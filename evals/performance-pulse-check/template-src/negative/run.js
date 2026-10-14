@@ -57,7 +57,7 @@ const EXPECT = {
   'check13-missing.data.js': ['Check 13: primaryCampaignId is missing; the primary campaign is cm1'],
   'attribution-mixed.data.js': [],
   'overlap-share.data.js': [],
-  'messaging.data.js': [],
+  'messaging.data.js': [], 'stopped.data.js': [],
   'messaging-links.data.js': [],
   'check14.data.js': ['Check 14: chatters.people[0].profilePic is not an https link', 'Check 14: chatters.people[0].threadUrl is not an https link',
     'Check 14: ad cm1_a0 thumbnailUrl is not an https link', 'Check 14: dashboardUrl is not an https link'],
@@ -81,11 +81,15 @@ const EXPECT = {
 // Same ads or the primary pick. attribution-mixed: an ad set with no purchases adds no window. overlap-share: a
 // high share is never starvation. overlap-starved: the callout and accountIssues show only when Moshi was starved; Blue (2 days) stays out. messaging: the title over the headline; tiles counted from the rows (a count typed as a string still adds up); every
 // buyer by followers, 1k+ highlighted; the 1k+ accounts that did not buy with how far they got; a Messenger row by first name and
-// initial; no paper-plane without thread links; the Closer page. funnel: the conversation rate is Meta's chats over link clicks on the
+// initial; channels from DATA.channels, contacts with Both, follows on every row; a name links only with a thread link; the Closer page.
+// stopped: a campaign 2+ days past its last delivery counts only delivery days and has no next gate; moshiRun puts both sides of
+// the share-of-spend card on Moshi's run dates. funnel: the conversation rate is Meta's chats over link clicks on the
 // campaigns that start chats; order size and Moshi's ROAS wait for day 8 on the reset clock (funnel-early). sameads: the card where
 // Moshi's CTR is higher leads, then by Moshi's CTR; two copies of one original add up; an original with no rows did not run.
-const RENDERED = { 'check3.data.js': ['&lt;b&gt;x&lt;/b&gt;'],
-  'adset-day1.data.js': ['New set is on day 5', 'old set is on day 67', 'the campaign is on day 67'],
+const RENDERED = { 'stopped.data.js': ['Moshi ran day 8 .', 'cm1 Sales Stopped Sep 29 · day 8', 'Stopped after Sep 29 : 8 days of delivery.',
+    'Moshi is 17% of your ad spend Moshi · 2.40x ROAS $400 Your other campaigns · 1.20x ROAS $2,000 Sep 22 – Oct 6, both sides: Moshi’s delivery days plus 7 for late purchases'],
+  'check3.data.js': ['&lt;b&gt;x&lt;/b&gt;'],
+  'adset-day1.data.js': ['New set is on day 5', 'old set is on day 14', 'the campaign is on day 67'],
   'first-launch.data.js': ['Moshi launched Sep 22'],
   'check10.data.js': ['Wait until Oct 22'],
   'paused-launch.data.js': ['Paused launch is on day 6', 'CTR, first 5 days'],
@@ -107,14 +111,15 @@ const RENDERED = { 'check3.data.js': ['&lt;b&gt;x&lt;/b&gt;'],
   'dup-primary.data.js': ['Also ran: cm2, $150, still delivering.', 'Wait until Oct 22'],
   'attribution-mixed.data.js': ['Meta credits Moshi with 30 purchases (7-day click) .'], 
   'check4.data.js': ['F @fern.and.fig 2.4k cart'],
-  'messaging.data.js': ['Chats are the story Moshi CTR is', '20 people messaged (7 on Instagram) 5 have 1,000+ followers, 2.5M combined 71% didn’t follow Base Shop yet 1 verified account 5 emails and phones shared (3 emails, 2 phones) Counts cover 8 of the 20 people who messaged.',
-    'Who bought 4 Highlighted: 2 with 1k+ followers , $126 of orders. Followers Order A @ann.k ✓ 15k $80 B @bo.c 1.2k $45.50 C @cy 900 $120 D Dee R. (Messenger) — $60',
-    'Big accounts that haven’t bought yet 3 with 1k+ followers messaged and didn’t buy, 2.5M followers combined. Followers Got as far as E @eve.big 2.5M cart F @fay 3.4k product view G @gus 1.1k clicked a link',
+  'messaging.data.js': ['Chats are the story Moshi CTR is', '20 people messaged you, by channel All channels 20 100% Instagram 12 60% Messenger 8 40% Who shared contact info Email 3 15% Phone 2 10% Both 1 5% Following Base Shop Follows you 2 29% Not following yet 5 71% Shares of the people who messaged; following counts the 7 Instagram profiles that report it. The lists cover 8 of the 20 people.',
+    'Who bought 4 Followers Order A @ann.k not following 15k $80 B @bo.c follows you 1.2k $45.50 C @cy not following 900 $120 D Dee R. (Messenger) — $60',
+    'Big accounts that haven’t bought yet 3 with 1k+ followers messaged and didn’t buy, 2.5M followers combined. Followers Got as far as E @eve.big not following 2.5M cart F @fay not following 3.4k product view G @gus not following 1.1k clicked a link',
     'so the thread is already in your inbox. A personal note', 'Follower counts are from Instagram; Messenger doesn’t share them.', 'Respond to your Closers', 'Review your Closers →'],
-  'messaging-links.data.js': ['so the thread is already in your inbox: tap the paper-plane on a row to open it in Meta Business Suite.'],
+  'messaging-links.data.js': ['so the thread is already in your inbox: tap a name to open it in Meta Business Suite.'],
   'check14.data.js': ['B @bo.c 1.2k $30'], 'check15.data.js': ['2 people messaged'],
   'funnel.data.js': ['10% Conversation rate Link clicks on Moshi’s chat ads that started a conversation: 90 of 900, Meta’s count',
-    'Had a conversation 40 100% Viewed a product 10 25% Reached cart 3 8% Reached checkout 2 5% Moshi-proven orders 1 $60.00 Meta-credited purchases 30 $1,800',
+    'Had a conversation 40 100% Viewed a product 10 25% Reached cart 3 8% Reached checkout 2 5% Purchases 30 $1,800',
+    'Purchases: Meta credits 30; darker: the 1 ($60.00) matched to a chat; may overlap, so not added.',
     'Meta’s count is its pixel estimate for Moshi’s campaigns (7-day click), 2.40x ROAS on the Sales campaigns. Meta may still add purchases to recent days.',
     'Chat orders are 20% bigger Moshi chat orders · 1 order $60.00 Your other ads · 50 orders $50.00',
     'Moshi is 25% of your ad spend Moshi · 2.40x ROAS $750 Your other campaigns · 1.11x ROAS $2,250 Sep 7 – Oct 6'],
@@ -131,8 +136,8 @@ const RENDERED_NOT = { 'overlap.data.js': ['Things in your account affecting res
   'check13.data.js': ['Moshi CTR is', 'CPA $25.00'], 'check13-headline.data.js': ['Chats cost'], 'primary.data.js': ['cm2 Engagement Today'],
   'attribution.data.js': ['at $25.00 (7-day click)'], 'check11-all.data.js': ['Yours is'], 'dup-overlap.data.js': ['Moshi’s share', 'Tan 15', 'Same ads'],
   'dup-primary.data.js': ['Check 13'], 'check13-missing.data.js': ['Moshi CTR is'], 'attribution-mixed.data.js': ['1-day click)'],
-  'check4.data.js': ['pat@example.com', '555-0100'], 'messaging.data.js': ['paper-plane', 'Lopez'], 'messaging-links.data.js': ['Respond to your Closers'],
-  'check14.data.js': ['Respond to your Closers', 'paper-plane'], 'funnel-early.data.js': ['Chat orders are', 'Moshi · 2.40x ROAS'] };
+  'check4.data.js': ['pat@example.com', '555-0100'], 'messaging.data.js': ['paper-plane', 'Lopez', 'verified', '✓'], 'stopped.data.js': ['Next gate', 'of ~50 purchases', 'Today ·'], 'messaging-links.data.js': ['Respond to your Closers'],
+  'check14.data.js': ['Respond to your Closers', 'tap a name'], 'funnel-early.data.js': ['Chat orders are', 'Moshi · 2.40x ROAS'] };
 // Strings that must render in this order. overlap: "Things in your account affecting results" leads, before the verdict. messaging:
 // the sections run hero, messaging, your launches, stages, tiles, funnel, Closers.
 const ORDER = { 'overlap-starved.data.js': [['Things in your account affecting results', 'Moshi CTR is'], ['Moshi CTR is', 'Where each campaign stands']],
@@ -142,10 +147,10 @@ const ORDER = { 'overlap-starved.data.js': [['Things in your account affecting r
     ['Contacts captured', 'From conversation to purchase'], ['From conversation to purchase', 'Respond to your Closers']] };
 // Strings that must (HTML) or must not (HTML_NOT) be in the rendered markup: links, images and the title's h1.
 const HTML = { 'messaging.data.js': ['<h1>Chats are the story</h1>', '<p class="dek">Moshi CTR is', 'href="https://base-shop.moshi.ai/closer"'],
-  'messaging-links.data.js': ['class="msgb" href="https://business.facebook.com/latest/inbox/instagram_direct?asset_id=1&amp;selected_item_id=2"', '<img src="https://cdn.example.com/ann.jpg"'],
+  'messaging-links.data.js': ['href="https://business.facebook.com/latest/inbox/instagram_direct?asset_id=1&amp;selected_item_id=2"', '<img src="https://cdn.example.com/ann.jpg"'],
   'check14.data.js': ['<img src="data:image/png;base64,iVBORw0KGgo="'], 'sameads.data.js': ['<img src="https://cdn.example.com/blue.jpg"'],
   'base.data.js': ['<h1>Moshi CTR is'] };
-const HTML_NOT = { 'messaging.data.js': ['class="msgb"', '<img src="https://cdn'], 'check14.data.js': ['javascript:', 'http://cdn', 'data:text', 'ftp:'],
+const HTML_NOT = { 'messaging.data.js': ['href="https://business', '<img src="https://cdn'], 'check14.data.js': ['javascript:', 'http://cdn', 'data:text', 'ftp:'],
   'base.data.js': ['class="dek"'] };
 let failed = 0;
 for (const [file, want] of Object.entries(EXPECT)) {
