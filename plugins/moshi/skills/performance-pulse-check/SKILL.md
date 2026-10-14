@@ -71,9 +71,11 @@ Your chat reply has these parts, in this order:
    From day 15 since launch, if the merchant's top ad shows frequency
    above 3.5 and falling CTR while Moshi's CTR holds, say so here. When
    Moshi has proven orders or Closer recoveries, name each in one line as
-   a floor. When the report opens with the overlap callout, say in one
-   line that Moshi's ads and yours shared auctions (Meta's overlap rule),
-   so it is not a fair test, and name the fix.
+   a floor. When the report opens with the overlap callout (it shows only
+   when your ads clearly starved Moshi's copy), say in one line that
+   Moshi's ads and yours shared auctions (Meta's overlap rule), so it is
+   not a fair test, and name the fix. When Moshi's ads share a creative
+   with yours but the callout is not shown, don't raise it.
 2. **The stage**: "Day 5 of the Moshi campaign: judging cost per chat and
    carts, not ROAS yet."
 3. **Next gate**: "Next gate: first CPA read on 2026-10-14." Always a
@@ -116,7 +118,8 @@ Your chat reply has these parts, in this order:
    cite Meta purchases.
 10. Every tool flag goes in `flags[]`, as `meta-reads.md` says. Account
     issues from the structure read go in `accountIssues[]`, not in
-    `flags[]`.
+    `flags[]`. The report prints them only beside the overlap callout, so
+    when it is not shown, give each warn issue one line in the reply.
 11. Describe a chat only from its messages. Before you say a shopper is
     waiting, check who sent the last message.
 12. Shoppers' handles and pictures go only in `chatters`: they are the

@@ -233,19 +233,24 @@ PR=MC.reduce((p,c)=>spW(c)>(p?spW(p)+.005:0)?c:p,null);COV=PR?MC.filter(c=>c==PR
 let VH=0;if(full&&PR){const i=D.primaryCampaignId,pc=i!=null&&IX.c[i];if(!(pc&&pc.owner=='moshi'&&spW(pc)>=spW(PR)-.005)){bad(13,i==null?`primaryCampaignId is missing; the primary campaign is ${PR.name}`:`primaryCampaignId ${i} is not the largest-spend Moshi campaign, ${PR.name}`);VH=1}}
 // Overlap: a Moshi ad and your ads that share its creative (creativeOverlap), on the days both delivered in the window.
 MC.forEach(c=>adsOf(c).forEach(a=>(a.creativeOverlap||[]).forEach(o=>{OV.a.add(o.adId);OV.s.add(o.adsetId);OV.c.add(o.campaignId)})));
-const OR=[];if(full)COV.forEach(c=>adsOf(c).forEach(a=>{const ol=a.creativeOverlap||[];if(!ol.length)return;
+// Each overlap also gets its budget pacing on the shared days: the spend of the entity holding Moshi's budget (the campaign
+// under CBO, else the ad set) over its daily budget times those days. Null when no budget is known.
+const OR=[];if(full)COV.forEach(c=>(c.adsets||[]).forEach(st=>(st.ads||[]).forEach(a=>{const ol=a.creativeOverlap||[];if(!ol.length)return;
 const os=[...new Set(ol.map(o=>o.adId))].map(i=>IX.a[i]).filter(o=>o&&o.c.owner=='merchant'),md={},yd={};if(a.dup||os.some(o=>o.dup))return;a.daily.forEach(r=>{if(inW(r)&&r.impressions>0)md[r.date]=r.impressions});
 os.forEach(o=>o.daily.forEach(r=>{if(md[r.date]&&inW(r)&&r.impressions>0)yd[r.date]=(yd[r.date]||0)+r.impressions}));
-const S=Object.keys(yd);OR.push({a,n:S.length,mi:S.reduce((t,d)=>t+md[d],0),yi:S.reduce((t,d)=>t+yd[d],0)})}));
+const S=Object.keys(yd),be=c.budgetType=='CBO'?c:st,bd=be.dailyBudget,bs=adsOf(be).flatMap(x=>x.daily).filter(r=>S.includes(r.date)).reduce((t,r)=>t+(r.spend||0),0);
+OR.push({a,n:S.length,mi:S.reduce((t,d)=>t+md[d],0),yi:S.reduce((t,d)=>t+yd[d],0),pace:bd>0&&S.length?bs/(bd*S.length):null})})));
 CMPS=full?(D.comparisons||[]).map(cmpOf):[];
 // 1 header
 h.push(`<header class="hd"><img src="${LOGO}" alt="Moshi" width="28" height="28"><div><div class="mn">${esc((D.merchant||{}).name)}</div><div class="meta">Moshi pulse check${(D.merchant||{}).timezone?'':' · dates in UTC, no timezone reported'}${CUR?'':' · no currency reported'}</div></div><div class="pl">${pill('As of '+fT(D.asOf))}${pill(fD(W.start)+' – '+fD(W.end)+(W.partial?', so far':''),'acc')}${full?pill('Meta read '+fT(D.metaSyncedAt)):''}</div></header>`);
 if(!full)h.push(`<p class="sub">Moshi data only. Connect your Meta ad account in Moshi for comparisons and account checks.</p>`);
 // 2 issues, first: the overlap callout, then accountIssues
-const sh=o=>o.mi/(o.mi+o.yi),ovs=OR.filter(o=>o.n).sort((x,y)=>sh(x)-sh(y)),pc=v=>v>0&&v<.01?'<1%':v<1&&v>.99?'>99%':Math.round(v*100)+'%',ai=full?D.accountIssues||[]:[];
-let iss=ovs.length?`<div class="ov"><div class="nh">${pill('Worth fixing','rose')}<h3>Moshi’s ads reuse creatives from your live ads</h3></div>
-<p>Meta won’t show one person two ads from the same advertiser in one auction. When ad sets aim at similar people, it enters the one with the best performance history and holds the others back (Meta’s overlapping-audiences rule). On the days both ran, impressions split like this:</p>
-${tbl(['Creative','Days both ran','Moshi impressions','Your copies’ impressions','Moshi’s share'],ovs.map(o=>[esc(o.a.angle||o.a.name),o.n,fN(o.mi),fN(o.yi),`<b>${pc(sh(o))}</b>`]))}
+// The section shows only when Moshi was clearly starved: on at least 3 shared days, Moshi took 20% or less of the impressions
+// AND its budget spent under half. A small share alone can just be a smaller budget, so it never shows the section.
+const sh=o=>o.mi/(o.mi+o.yi),starved=o=>o.n>=3&&sh(o)<=.2&&o.pace!=null&&o.pace<.5,ovs=OR.filter(starved).sort((x,y)=>sh(x)-sh(y)),pc=v=>v>0&&v<.01?'<1%':v<1&&v>.99?'>99%':Math.round(v*100)+'%',ai=full&&ovs.length?D.accountIssues||[]:[];
+let iss=ovs.length?`<div class="ov"><div class="nh">${pill('Worth fixing','rose')}<h3>Your live ads crowded out Moshi’s copy</h3></div>
+<p>Meta won’t show one person two ads from the same advertiser in one auction. When ad sets aim at similar people, it enters the one with the best performance history and holds the others back (Meta’s overlapping-audiences rule). On the days both ran, Moshi got a small share of the impressions and couldn’t spend its budget:</p>
+${tbl(['Creative','Days both ran','Moshi impressions','Your copies’ impressions','Moshi’s share','Moshi budget spent'],ovs.map(o=>[esc(o.a.angle||o.a.name),o.n,fN(o.mi),fN(o.yi),`<b>${pc(sh(o))}</b>`,`<b>${pc(o.pace)}</b>`]))}
 <p><b>This is not a fair Moshi-vs-merchant test.</b> To make it one, run it as a Meta A/B test (Experiments in Ads Manager), pause or exclude your overlapping ad while Moshi’s runs, or aim Moshi at a different audience. A re-uploaded or different creative alone isn’t enough.</p>
 <p class="sub">Matched by copy history, image or video. Recropped or edited copies may not be detected.</p></div>`:'';
 if(ai.length)iss+=`<ul class="l">${ai.map(i=>`<li>${pill(i.severity=='warn'?'Worth fixing':'Note',i.severity=='warn'?'rose':'')} ${esc(i.text)}</li>`).join('')}</ul>`;

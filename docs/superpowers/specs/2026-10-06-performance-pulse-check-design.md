@@ -30,6 +30,13 @@ Reference report: an internal Moshi day-one results report (Oct 2026)
 > adds one. Check 4 now guards chatter rows; checks 14 (https links) and 15
 > (`chatters.total`) are new.
 
+> **Update 2026-10-14 (plugin 0.12.1).** Things in your account affecting
+> results shows only when your ads clearly starved Moshi's copy: on 3+
+> days both delivered, Moshi took 20% or less of the impressions and spent
+> under half its daily budget. Shared creative alone no longer opens the
+> report, and `accountIssues` print only beside that callout; otherwise
+> the reply carries them.
+
 ## Goal
 
 A merchant asks "how are my Moshi ads doing?" and gets a report that reads
