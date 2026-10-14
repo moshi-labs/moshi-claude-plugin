@@ -21,8 +21,9 @@ A fair comparison has all six parts:
    that holds an ad in a Moshi ad's `creativeOverlap`. Meta won't show one
    person two ads from the same advertiser in one auction: when ad sets
    aim at similar people it enters the one with the best history, so the
-   two were not tested apart. The template shows them side by side, in
-   the overlap callout and Same ads, instead (check 11). Say "ran at the
+   two were not tested apart. The template shows them side by side in
+   Same ads instead, plus the overlap callout when Moshi was starved
+   (check 11). Say "ran at the
    same time, competing in the same auctions", never who won.
 4. **The same days of life.** Moshi's days 1–N against the merchant
    launch's days 1–N. N is Moshi's age since launch (a reset does not

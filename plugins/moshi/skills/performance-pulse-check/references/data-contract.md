@@ -147,10 +147,15 @@ is Moshi's own order average, not your store's.
 The overlap callout is the template's. For each Moshi ad in the primary
 campaign (and any shown beside it) with `creativeOverlap`, it takes the
 days in the window when that ad and at least one of the listed ads of
-yours delivered, and shows Moshi's share of the impressions on those days.
-It needs the listed ads' `daily` rows, which T6 reads. If you cite a share
-in the chat reply, count it the same way: impressions on the days both
-delivered, never over the whole window.
+yours delivered, and shows Moshi's share of the impressions on those days
+and how much of its daily budget Moshi spent on them (the campaign's
+`dailyBudget` under CBO, else the ad set's). It shows the callout only when
+your ads clearly starved Moshi: 3 or more shared days, Moshi's share 20% or
+less, and under half its budget spent. A small share with the budget spent
+is just a smaller budget, so it shows nothing. With no budget it shows
+nothing. It needs the listed ads' `daily` rows, which T6 reads. If you cite
+a share in the chat reply, count it the same way: impressions on the days
+both delivered, never over the whole window.
 
 Each ad has one row per date. Merge T2, T3, T5 and T6: when two reads
 return a date for one ad, keep one row. The values are the same. Keep
@@ -288,7 +293,7 @@ than 20%.
 
 | Field | Shape | Notes |
 |---|---|---|
-| `accountIssues[]` | `{ kind, severity: "info"\|"warn", text }` | issues on Moshi's own campaigns from your structure reads, for example a Moshi ad set whose `status` is not `ACTIVE`, or `learning_limited` for one whose `learning` is `"limited"`. They print under the overlap callout at the top of the report. The template writes the creative-overlap callout itself, and there is no anomaly scan, so add no overlap or pixel issue of your own. `kind` is `"audience_overlap"`, `"pixel"`, `"budget_cut"`, `"learning_limited"` or `"other"` |
+| `accountIssues[]` | `{ kind, severity: "info"\|"warn", text }` | issues on Moshi's own campaigns from your structure reads, for example a Moshi ad set whose `status` is not `ACTIVE`, or `learning_limited` for one whose `learning` is `"limited"`. They print under the overlap callout at the top of the report, and only when the callout shows; otherwise the reply carries them. The template writes the creative-overlap callout itself, and there is no anomaly scan, so add no overlap or pixel issue of your own. `kind` is `"audience_overlap"`, `"pixel"`, `"budget_cut"`, `"learning_limited"` or `"other"` |
 | `flags[]` | `{ source: "moshi"\|"meta", code, text }` | every flag from every tool, as `meta-reads.md` says (`get_ad_account_tree` flags use `"meta"`), plus `meta_read_failed` when a read fails. The report does not print them: your reply names each one that touches a number you cite |
 | `notMeasurableYet[]` | string | each item you could not measure, and why. Not printed either: say it in your reply when it touches the question |
 

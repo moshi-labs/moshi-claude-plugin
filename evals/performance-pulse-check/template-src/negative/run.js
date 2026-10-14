@@ -46,7 +46,7 @@ const EXPECT = {
   'check12.data.js': ['Check 12: ad set cm1_s has no attributionSetting, so its purchases would show with no window'],
   'check13.data.js': ['Check 13: primaryCampaignId cm2 is not the largest-spend Moshi campaign, cm1'],
   'check13-headline.data.js': ['Check 13: the headline cites cm2 ({c:cm2.costPerConversation}), not the primary campaign cm1'],
-  'overlap.data.js': [],
+  'overlap.data.js': [], 'overlap-starved.data.js': [],
   'primary.data.js': [],
   'attribution.data.js': [],
   'costperchat.data.js': [],
@@ -74,12 +74,12 @@ const EXPECT = {
 // An old campaign whose rows start at the read's start (asOf - 29 or - 30 days) keeps its Mar 20 startTime: day 201.
 // Frequency is impressions / reach (5000 / 4167 rounds to 1.20); a row that still carries frequency keeps its own.
 // A metric token counts only the rows inside the window. A significant_edit restarts the clock like budget_major.
-// overlap: the callout (sorted by Moshi's share, on the days both ran), Same ads with each clone source over the window, and an ad set
+// overlap: shared creative alone shows no callout (Moshi spent its budget); Same ads with each clone source over the window, and an ad set
 // comparison inside an old campaign. primary: cm1 leads, cm3 (25%+, this week) shows beside it, cm2 gets the footnote and its earlier
 // gate does not count. attribution: a purchase token carries its window once per text; null reads as Meta's default. costperchat:
 // Meta's count, and a campaign with one stray chat stays out. dup-overlap and dup-primary: a check 10 row never feeds the callout,
-// Same ads or the primary pick. attribution-mixed: an ad set with no purchases adds no window. overlap-share: a share under 100% never
-// reads 100%. messaging: the title over the headline; tiles counted from the rows (a count typed as a string still adds up); every
+// Same ads or the primary pick. attribution-mixed: an ad set with no purchases adds no window. overlap-share: a
+// high share is never starvation. overlap-starved: the callout and accountIssues show only when Moshi was starved; Blue (2 days) stays out. messaging: the title over the headline; tiles counted from the rows (a count typed as a string still adds up); every
 // buyer by followers, 1k+ highlighted; the 1k+ accounts that did not buy with how far they got; a Messenger row by first name and
 // initial; no paper-plane without thread links; the Closer page. funnel: the conversation rate is Meta's chats over link clicks on the
 // campaigns that start chats; order size and Moshi's ROAS wait for day 8 on the reset clock (funnel-early). sameads: the card where
@@ -94,9 +94,9 @@ const RENDERED = { 'check3.data.js': ['&lt;b&gt;x&lt;/b&gt;'],
   'window-rows.data.js': ['Yours spent $350 .'],
   'legacy-frequency.data.js': ['Your ad ran at frequency 1.20 .'],
   'significant-edit.data.js': ['Clock restarted Oct 1 after a learning reset'],
-  'overlap.data.js': ['Moshi’s ads reuse creatives from your live ads', 'Tan 15 75,000 675,000 10% Blue 2 10,000 1,000 91%',
-    'This is not a fair Moshi-vs-merchant test', 'Recropped or edited copies may not be detected',
-    'Tan Moshi’s copy $750 1.20% CTR Your original $750 0.13% CTR Blue Moshi’s copy $650 1.20% CTR Your original $200 12.00% CTR',
+  'overlap-starved.data.js': ['Your live ads crowded out Moshi’s copy', 'Tan 15 75,000 675,000 10% 19%',
+    'This is not a fair Moshi-vs-merchant test', 'Recropped or edited copies may not be detected', 'Moshi ad set paused with its campaign.'],
+  'overlap.data.js': ['Tan Moshi’s copy $750 1.20% CTR Your original $750 0.13% CTR Blue Moshi’s copy $650 1.20% CTR Your original $200 12.00% CTR',
     'CTR, first 7 days cm1 1.20% yo new set 1.20% Your ad set: 1 ads'],
   'check13-headline.data.js': ['CPA $25.00 (7-day click)'],
   'primary.data.js': ['Also ran: cm2, $40.00, stopped on Sep 25.', 'Next gate Oct 22 , day 31', 'cm3 Sales Today'],
@@ -105,7 +105,7 @@ const RENDERED = { 'check3.data.js': ['&lt;b&gt;x&lt;/b&gt;'],
   'costperchat.data.js': ['Chats cost $10.00 .', 'Cost per ad chat $10.00 Meta’s count: 75 chats started, on the campaigns that start chats'],
   'costperchat-moshi.data.js': ['Chats cost $25.00 .', 'Cost per ad chat $25.00 Moshi’s count of chats from ads'],
   'dup-primary.data.js': ['Also ran: cm2, $150, still delivering.', 'Wait until Oct 22'],
-  'attribution-mixed.data.js': ['Meta credits Moshi with 30 purchases (7-day click) .'], 'overlap-share.data.js': ['Blue 2 10,000 40 >99%'],
+  'attribution-mixed.data.js': ['Meta credits Moshi with 30 purchases (7-day click) .'], 
   'check4.data.js': ['F @fern.and.fig 2.4k cart'],
   'messaging.data.js': ['Chats are the story Moshi CTR is', '20 people messaged (7 on Instagram) 5 have 1,000+ followers, 2.5M combined 71% didn’t follow Base Shop yet 1 verified account 5 emails and phones shared (3 emails, 2 phones) Counts cover 8 of the 20 people who messaged.',
     'Who bought 4 Highlighted: 2 with 1k+ followers , $126 of orders. Followers Order A @ann.k ✓ 15k $80 B @bo.c 1.2k $45.50 C @cy 900 $120 D Dee R. (Messenger) — $60',
@@ -123,7 +123,9 @@ const RENDERED = { 'check3.data.js': ['&lt;b&gt;x&lt;/b&gt;'],
   'sameads.data.js': ['Blue Moshi’s copy $1,500 0.80% CTR Your original $750 0.60% CTR Red Moshi’s copy $750 2.00% CTR Your original $750 3.00% CTR Tan Moshi’s copy $750 1.20% CTR Your original didn’t run these days'] };
 // Strings that must not render. check10: no Meta tile, comparison or funnel value from the duplicate Moshi ad (CTR 1.20%, value $1,800).
 // cmp-dup: the failed comparison reports check 10, not check 2. window-rows: $700 would count the Sep 15-21 rows before window.start.
-const RENDERED_NOT = { 'check10.data.js': ['1.20%', '$1,800'],
+const RENDERED_NOT = { 'overlap.data.js': ['Things in your account affecting results', 'crowded out'],
+  'overlap-share.data.js': ['Things in your account affecting results'], 'overlap-starved.data.js': ['Blue 2'],
+  'check10.data.js': ['1.20%', '$1,800'],
   'cmp-dup.data.js': ['Check 2'], 'check8.data.js': ['Check 9'], 'window-rows.data.js': ['$700'],
   'check11.data.js': ['Your Tan ad clicked at', 'yo set 1.20%'], 'check12.data.js': ['Meta-credited purchases', 'CPA $25.00', 'CPA, first 14 days'],
   'check13.data.js': ['Moshi CTR is', 'CPA $25.00'], 'check13-headline.data.js': ['Chats cost'], 'primary.data.js': ['cm2 Engagement Today'],
@@ -133,7 +135,8 @@ const RENDERED_NOT = { 'check10.data.js': ['1.20%', '$1,800'],
   'check14.data.js': ['Respond to your Closers', 'paper-plane'], 'funnel-early.data.js': ['Chat orders are', 'Moshi · 2.40x ROAS'] };
 // Strings that must render in this order. overlap: "Things in your account affecting results" leads, before the verdict. messaging:
 // the sections run hero, messaging, your launches, stages, tiles, funnel, Closers.
-const ORDER = { 'overlap.data.js': [['Things in your account affecting results', 'Moshi CTR is'], ['Moshi CTR is', 'Where each campaign stands']],
+const ORDER = { 'overlap-starved.data.js': [['Things in your account affecting results', 'Moshi CTR is'], ['Moshi CTR is', 'Where each campaign stands']],
+  'overlap.data.js': [['Moshi CTR is', 'Where each campaign stands']],
   'messaging.data.js': [['Moshi CTR is', 'What messaging ads tell you'], ['What messaging ads tell you', 'Moshi against your own launches'],
     ['Moshi against your own launches', 'Where each campaign stands'], ['Where each campaign stands', 'Contacts captured'],
     ['Contacts captured', 'From conversation to purchase'], ['From conversation to purchase', 'Respond to your Closers']] };
