@@ -28,7 +28,9 @@ Desktop and Claude.ai all get them:
   run can write unattended.
 - `performance-pulse-check` — the "how are my Moshi ads doing" report. It reads the whole
   Meta ad account, leads with Moshi's biggest campaign, judges it by its age and objective,
-  and compares it with the merchant's own launches. It opens with what in the account is
+  and compares it with the merchant's own launches and the campaigns they are running. When
+  Moshi has just launched a new ad set, it reports the week before that launch, the baseline
+  the change is measured against. It opens with what in the account is
   skewing results, such as Moshi ads that reuse the merchant's live creatives and so
   compete with them in the same auctions. It needs only the Moshi connection: the Meta
   numbers come from Moshi's synced copy of the ad account, refreshed about every 6 hours.

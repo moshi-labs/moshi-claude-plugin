@@ -1,0 +1,336 @@
+{
+ "organization": {
+  "id": "3c1f7a52-9e4b-5d08-a6c2-7b1e0d4f9a83",
+  "name": "Wren & Thistle Tea"
+ },
+ "account": {
+  "currency": "USD",
+  "timezone": "America/Los_Angeles"
+ },
+ "window": {
+  "dateFrom": "2026-07-16",
+  "dateTo": "2026-10-13",
+  "days": 90,
+  "granularity": "total",
+  "note": "Inclusive: every day from dateFrom through dateTo, as Meta's insight days in the ad account's timezone."
+ },
+ "source": "Moshi's synced copy of the organization's Meta ad account (every campaign, Moshi-created and the merchant's own), refreshed about every 6 hours.",
+ "flags": [
+  {
+   "code": "ads_over_max_ads",
+   "message": "Only the top 0 of 17 matching ads by spend are listed (maxAds 0); each ad set's adsOverMaxAds counts its unlisted ones, and their campaign and ad set totals still include them. Raise maxAds, or name the campaigns, ad sets or ads you want, to list the rest."
+  }
+ ],
+ "counts": {
+  "campaigns": 4,
+  "adsets": 5,
+  "ads": 17,
+  "adsListed": 0,
+  "adsOverMaxAds": 17,
+  "omittedForNoDelivery": {
+   "campaigns": 0,
+   "adsets": 0,
+   "ads": 0
+  }
+ },
+ "campaigns": [
+  {
+   "campaignId": "1202700000000101",
+   "campaignName": "Evergreen | ASC | US",
+   "owner": "merchant",
+   "status": "ACTIVE",
+   "objective": "OUTCOME_SALES",
+   "startTime": "2026-03-03T09:00:00-0800",
+   "dailyBudget": "60000",
+   "adsetCount": 1,
+   "adCount": 9,
+   "moshiAdCount": 0,
+   "metrics": {
+    "reach": 350247,
+    "impressions": 3409229,
+    "spend": 53680,
+    "roas": 1.1303,
+    "purchases": 1385,
+    "purchaseValue": 60675.88,
+    "cpm": 15.7455,
+    "messagingConversationsStarted": 0,
+    "costPerMessagingConversationStarted": null
+   },
+   "adsets": [
+    {
+     "adsetId": "1202700000000111",
+     "adsetName": "Advantage+ shopping",
+     "owner": "merchant",
+     "status": "ACTIVE",
+     "effectiveStatus": "ACTIVE",
+     "adsetStatus": "ACTIVE",
+     "startTime": "2026-03-03T09:00:00-0800",
+     "optimizationGoal": "OFFSITE_CONVERSIONS",
+     "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
+     "attributionSpec": [
+      {
+       "eventType": "CLICK_THROUGH",
+       "windowDays": 7
+      },
+      {
+       "eventType": "VIEW_THROUGH",
+       "windowDays": 1
+      }
+     ],
+     "lastSignificantEditAt": "2026-09-02T17:00:00.000Z",
+     "learningPhase": {
+      "status": "SUCCESS",
+      "learningWindowEndsAt": "2026-09-09T17:00:00.000Z"
+     },
+     "adCount": 9,
+     "moshiAdCount": 0,
+     "metrics": {
+      "reach": 366168,
+      "impressions": 3409229,
+      "spend": 53680,
+      "roas": 1.1303,
+      "purchases": 1385,
+      "purchaseValue": 60675.88,
+      "cpm": 15.7455,
+      "messagingConversationsStarted": 0,
+      "costPerMessagingConversationStarted": null
+     },
+     "adsOverMaxAds": 6,
+     "ads": []
+    }
+   ]
+  },
+  {
+   "campaignId": "1202700000000201",
+   "campaignName": "RTG | Site + IG 30d",
+   "owner": "merchant",
+   "status": "ACTIVE",
+   "objective": "OUTCOME_SALES",
+   "startTime": "2026-05-12T09:00:00-0700",
+   "adsetCount": 2,
+   "adCount": 6,
+   "moshiAdCount": 0,
+   "metrics": {
+    "reach": 124705,
+    "impressions": 1168871,
+    "spend": 17921.85,
+    "roas": 1.0355,
+    "purchases": 453,
+    "purchaseValue": 18558.17,
+    "cpm": 15.3326,
+    "messagingConversationsStarted": 0,
+    "costPerMessagingConversationStarted": null
+   },
+   "adsets": [
+    {
+     "adsetId": "1202700000000211",
+     "adsetName": "Broad 25-54",
+     "owner": "merchant",
+     "status": "ACTIVE",
+     "effectiveStatus": "ACTIVE",
+     "adsetStatus": "ACTIVE",
+     "startTime": "2026-05-12T09:00:00-0700",
+     "optimizationGoal": "OFFSITE_CONVERSIONS",
+     "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
+     "dailyBudget": "16000",
+     "attributionSpec": [
+      {
+       "eventType": "CLICK_THROUGH",
+       "windowDays": 7
+      },
+      {
+       "eventType": "VIEW_THROUGH",
+       "windowDays": 1
+      }
+     ],
+     "lastSignificantEditAt": "2026-08-14T16:00:00.000Z",
+     "learningPhase": {
+      "status": "SUCCESS",
+      "learningWindowEndsAt": "2026-08-21T16:00:00.000Z"
+     },
+     "adCount": 4,
+     "moshiAdCount": 0,
+     "metrics": {
+      "reach": 122061,
+      "impressions": 1057650,
+      "spend": 14349.5,
+      "roas": 0.9863,
+      "purchases": 341,
+      "purchaseValue": 14153.44,
+      "cpm": 13.5673,
+      "messagingConversationsStarted": 0,
+      "costPerMessagingConversationStarted": null
+     },
+     "adsOverMaxAds": 3,
+     "ads": []
+    },
+    {
+     "adsetId": "1202700000000212",
+     "adsetName": "Site visitors 30d",
+     "owner": "merchant",
+     "status": "ACTIVE",
+     "effectiveStatus": "ACTIVE",
+     "adsetStatus": "ACTIVE",
+     "startTime": "2026-05-12T09:00:00-0700",
+     "optimizationGoal": "OFFSITE_CONVERSIONS",
+     "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
+     "dailyBudget": "4000",
+     "attributionSpec": [
+      {
+       "eventType": "CLICK_THROUGH",
+       "windowDays": 7
+      },
+      {
+       "eventType": "VIEW_THROUGH",
+       "windowDays": 1
+      }
+     ],
+     "lastSignificantEditAt": "2026-08-14T16:00:00.000Z",
+     "learningPhase": {
+      "status": "FAIL",
+      "learningWindowEndsAt": "2026-08-21T16:00:00.000Z"
+     },
+     "adCount": 2,
+     "moshiAdCount": 0,
+     "metrics": {
+      "reach": 8312,
+      "impressions": 111221,
+      "spend": 3572.35,
+      "roas": 1.233,
+      "purchases": 112,
+      "purchaseValue": 4404.73,
+      "cpm": 32.1194,
+      "messagingConversationsStarted": 0,
+      "costPerMessagingConversationStarted": null
+     },
+     "adsOverMaxAds": 2,
+     "ads": []
+    }
+   ]
+  },
+  {
+   "campaignId": "1202700000000301",
+   "campaignName": "Fall Tins | Launch",
+   "owner": "merchant",
+   "status": "ACTIVE",
+   "objective": "OUTCOME_SALES",
+   "startTime": "2026-09-15T09:00:00-0700",
+   "adsetCount": 1,
+   "adCount": 4,
+   "moshiAdCount": 0,
+   "metrics": {
+    "reach": 37864,
+    "impressions": 212148,
+    "spend": 3275.36,
+    "roas": 0.9463,
+    "purchases": 71,
+    "purchaseValue": 3099.49,
+    "cpm": 15.439,
+    "messagingConversationsStarted": 0,
+    "costPerMessagingConversationStarted": null
+   },
+   "adsets": [
+    {
+     "adsetId": "1202700000000311",
+     "adsetName": "Fall Tins | Broad",
+     "owner": "merchant",
+     "status": "ACTIVE",
+     "effectiveStatus": "ACTIVE",
+     "adsetStatus": "ACTIVE",
+     "startTime": "2026-09-15T09:00:00-0700",
+     "optimizationGoal": "OFFSITE_CONVERSIONS",
+     "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
+     "dailyBudget": "12000",
+     "attributionSpec": [
+      {
+       "eventType": "CLICK_THROUGH",
+       "windowDays": 7
+      },
+      {
+       "eventType": "VIEW_THROUGH",
+       "windowDays": 1
+      }
+     ],
+     "lastSignificantEditAt": "2026-09-15T16:00:00.000Z",
+     "learningPhase": {
+      "status": "SUCCESS",
+      "learningWindowEndsAt": "2026-09-22T16:00:00.000Z"
+     },
+     "adCount": 4,
+     "moshiAdCount": 0,
+     "metrics": {
+      "reach": 39585,
+      "impressions": 212148,
+      "spend": 3275.36,
+      "roas": 0.9463,
+      "purchases": 71,
+      "purchaseValue": 3099.49,
+      "cpm": 15.439,
+      "messagingConversationsStarted": 0,
+      "costPerMessagingConversationStarted": null
+     },
+     "adsOverMaxAds": 4,
+     "ads": []
+    }
+   ]
+  },
+  {
+   "campaignId": "1202700000000401",
+   "campaignName": "Brand | Video views",
+   "owner": "merchant",
+   "status": "ACTIVE",
+   "objective": "OUTCOME_AWARENESS",
+   "startTime": "2026-08-20T09:00:00-0700",
+   "adsetCount": 1,
+   "adCount": 2,
+   "moshiAdCount": 0,
+   "metrics": {
+    "reach": 37646,
+    "impressions": 268217,
+    "spend": 1611.28,
+    "roas": 0.1759,
+    "purchases": 7,
+    "purchaseValue": 283.5,
+    "cpm": 6.0074,
+    "messagingConversationsStarted": 0,
+    "costPerMessagingConversationStarted": null
+   },
+   "adsets": [
+    {
+     "adsetId": "1202700000000411",
+     "adsetName": "Reach 18-44",
+     "owner": "merchant",
+     "status": "ACTIVE",
+     "effectiveStatus": "ACTIVE",
+     "adsetStatus": "ACTIVE",
+     "startTime": "2026-08-20T09:00:00-0700",
+     "optimizationGoal": "THRUPLAY",
+     "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
+     "dailyBudget": "3000",
+     "attributionSpec": [
+      {
+       "eventType": "CLICK_THROUGH",
+       "windowDays": 1
+      }
+     ],
+     "lastSignificantEditAt": "2026-08-20T16:00:00.000Z",
+     "adCount": 2,
+     "moshiAdCount": 0,
+     "metrics": {
+      "reach": 39357,
+      "impressions": 268217,
+      "spend": 1611.28,
+      "roas": 0.1759,
+      "purchases": 7,
+      "purchaseValue": 283.5,
+      "cpm": 6.0074,
+      "messagingConversationsStarted": 0,
+      "costPerMessagingConversationStarted": null
+     },
+     "adsOverMaxAds": 2,
+     "ads": []
+    }
+   ]
+  }
+ ]
+}

@@ -10,7 +10,7 @@ const fmt=a=>a.map(r=>'            '+JSON.stringify(r).replace(/"(\w+)":/g,'$1:'
 const out={
  a301:rows('2026-09-22',15,{sp:150,ctr:.021,cpm:14,cv:9,pu:.009,aov:44,f0:1.05,fi:.06,fat:.012,ramp:1}),
  a303:rows('2026-10-06',1,{sp:72,ctr:.017,cpm:11,cv:6.2,pu:.004,aov:41,f0:1.04,fi:.05}),
- a601:rows('2026-09-29',8,{sp:610,ctr:.013,cpm:19,cv:null,pu:.03,aov:48,f0:1.1,fi:.11,fat:.022}),
+ a601:rows('2026-09-29',7,{sp:610,ctr:.013,cpm:19,cv:null,pu:.03,aov:48,f0:1.1,fi:.11,fat:.022}),
 };
 for(const k in out)console.log('//'+k+'\n'+fmt(out[k]));
 let sp=0;for(const k of ['a301','a303'])out[k].forEach(r=>{if(r.date>='2026-09-22')sp+=r.spend});console.log('//moshi spend',sp.toFixed(2));

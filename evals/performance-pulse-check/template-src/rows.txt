@@ -23,6 +23,5 @@
             {date:"2026-10-02",spend:670.5,impressions:32677,linkClicks:370,conversations:0,purchases:13,purchaseValue:564.2,reach:22851},
             {date:"2026-10-03",spend:616.8,impressions:34246,linkClicks:433,conversations:0,purchases:13,purchaseValue:623.3,reach:22238},
             {date:"2026-10-04",spend:528,impressions:27738,linkClicks:307,conversations:0,purchases:10,purchaseValue:466.1,reach:16811},
-            {date:"2026-10-05",spend:560.6,impressions:30877,linkClicks:334,conversations:0,purchases:12,purchaseValue:537.4,reach:17544},
-            {date:"2026-10-06",spend:518.7,impressions:25493,linkClicks:287,conversations:0,purchases:14,purchaseValue:619.5,reach:13633}
+            {date:"2026-10-05",spend:560.6,impressions:30877,linkClicks:334,conversations:0,purchases:12,purchaseValue:537.4,reach:17544}
 //moshi spend 2138.40

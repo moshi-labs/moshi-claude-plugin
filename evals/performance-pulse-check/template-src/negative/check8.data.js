@@ -26,6 +26,7 @@ const D = {
   D.campaigns[0].adsets[0].ads[0].daily[3].date = "10/05/2026";
   D.changes[0].date = "Oct 1";
   D.moshi.firstLaunch = "2026-9-22";
+  D.moshiWindow = { start: "2026-9-22", end: "2026-10-06" };
   D.verdict.title = "Moshi launched {m:firstLaunch}."; // check 8, not check 9
   return D;
 })();

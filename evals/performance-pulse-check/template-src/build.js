@@ -4,9 +4,10 @@ const data=`const DATA = {
 schemaVersion: 1,
 merchant: { name: "Brindle Chili Works", currency: "USD", timezone: "America/Los_Angeles" },
 asOf: "2026-10-06T18:40:00Z",
-window: { start: "2026-09-22", end: "2026-10-06", partial: true },
+window: { start: "2026-09-29", end: "2026-10-05", partial: false, before: "as_202" },
 metaSyncedAt: "2026-10-06T18:09:00Z",
 metaWindow: { start: "2026-09-07", end: "2026-10-06" },
+moshiWindow: { start: "2026-09-22", end: "2026-10-06" },
 mode: "full",
 mood: "delight",
 primaryCampaignId: "cm_101",
@@ -24,14 +25,16 @@ ${R.a301}] }] }] },
   adsets: [{ id: "as_202", name: "Messenger + IG DM", startTime: "2026-10-06", optimizationGoal: "CONVERSATIONS", dailyBudget: 80, learning: null, adCount: 1, lastLearningReset: null, attributionSetting: "1-day click",
     ads: [{ id: "ad_303", name: "Which sauce for tacos?", angle: "Pairing quiz", daily: [
 ${R.a303}] }] }] },
-{ id: "cm_401", name: "Fall Launch", owner: "merchant", objective: "sales", metaObjective: "OUTCOME_SALES", budgetType: "CBO", dailyBudget: 1400, status: "ACTIVE", startTime: "2026-09-29", adsPulled: "all", retargeting: false, metaSpend: 4808.2, metaPurchases: 117, metaPurchaseValue: 5281.1,
+{ id: "cm_401", name: "Fall Launch", owner: "merchant", objective: "sales", metaObjective: "OUTCOME_SALES", budgetType: "CBO", dailyBudget: 1400, status: "ACTIVE", startTime: "2026-09-29", adsPulled: "all", retargeting: false, metaSpend: 4289.5, metaPurchases: 103, metaPurchaseValue: 4661.6,
   adsets: [{ id: "as_501", name: "Advantage+ audience", startTime: "2026-09-29", optimizationGoal: "OFFSITE_CONVERSIONS", dailyBudget: null, learning: "success", adCount: 1, lastLearningReset: null, attributionSetting: "7-day click, 1-day view",
+    totals: { spend: 4289.5, impressions: 226256, linkClicks: 2806, conversations: 0, purchases: 103, purchaseValue: 4661.6 },
     ads: [{ id: "ad_601", name: "Smoked habanero UGC", angle: "Heat reaction", daily: [
 ${R.a601}] }] }] }
 ],
 moshi: { firstLaunch: "2026-09-22", spend: 2138.4, chats: 318, chatsFromAds: 284, contactsCaptured: 71, contactsEmail: 52, contactsPhone: 19, productViews: 149, carts: 46, checkouts: 27, provenOrders: 14, provenRevenue: 768.5, delayedOrders: 5, closerRecoveries: 3, closerRevenue: 141 },
-comparisons: [{ metric: "ctr", day: 7, moshiCampaignId: "cm_101", merchantCampaignId: "cm_401" }],
-changes: [{ date: "2026-09-30", what: "Meta restarted learning after a significant edit", kind: "significant_edit", source: "meta", entityId: "as_201" }],
+comparisons: [{ metric: "ctr", day: 7, moshiCampaignId: "cm_101", merchantCampaignId: "cm_401" }, { metric: "ctr", running: true, moshiCampaignId: "cm_101" }],
+changes: [{ date: "2026-09-30", what: "Meta restarted learning after a significant edit", kind: "significant_edit", source: "meta", entityId: "as_201" },
+  { date: "2026-10-06", what: "Moshi launched Messenger + IG DM", kind: "new_ad", source: "moshi", entityId: "as_202" }],
 accountIssues: [],
 chatters: { total: 318, people: [
   { username: "salsa.sam", followers: 48200, verified: true, followsYou: false, orderValue: 58 },
@@ -45,7 +48,8 @@ chatters: { total: 318, people: [
 dashboardUrl: "https://brindle.moshi.ai",
 flags: [{ source: "moshi", code: "order_match_pending", text: "Oct 6 orders still matching." }]
 };`;
-const t=fs.readFileSync(S+'/tpl.html','utf8').replace('%%LOGO%%',()=>fs.readFileSync(S+'/logo/logo64q.png.b64','utf8').trim()).replace('%%AV%%',()=>fs.readFileSync(S+'/avatar/av.js','utf8').trim().replace(/;$/,'')+';AV.s={delight:"'+fs.readFileSync(S+'/avatar/still-delight.webp.b64','utf8').trim()+'",reading:"'+fs.readFileSync(S+'/avatar/still-reading.webp.b64','utf8').trim()+'"};');
+// Plain attribute values need no quotes in HTML (class=sub is class="sub", alt is alt=""), which saves about 175 bytes of the size line.
+const t=fs.readFileSync(S+'/tpl.html','utf8').replace(/<script>\n(const LOGO[\s\S]*?)<\/script>/,(m,c)=>'<script>\n'+c.replace(/ (class|role|aria-hidden|loading|target|rel|width|height|tabindex)="([\w-]+)"/g,' $1=$2').replace(/ alt=""/g,' alt')+'</script>').replace('%%LOGO%%',()=>fs.readFileSync(S+'/logo/logo64q.png.b64','utf8').trim()).replace('%%AV%%',()=>fs.readFileSync(S+'/avatar/av.js','utf8').trim().replace(/;$/,'')+';AV.s={delight:"'+fs.readFileSync(S+'/avatar/still-delight.webp.b64','utf8').trim()+'",reading:"'+fs.readFileSync(S+'/avatar/still-reading.webp.b64','utf8').trim()+'"};');
 // Function replacers keep $&, $' and $` in inserted text literal.
 const cp=require('child_process'),NM=process.env.NM_BIN||'npx --yes ';
 let o=t.replace(/<style>([\s\S]*?)<\/style>/,(m,c)=>'<style>'+cp.execSync(NM+'esbuild --loader=css --minify --target=chrome123,safari17.5,firefox120 --log-level=warning',{input:c}).toString().trim()+'</style>');

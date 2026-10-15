@@ -27,17 +27,19 @@ Rules for every field:
 | `merchant.currency` | ISO code or null | T1 `account.currency`, null when it is null; in `moshi_only`, the Moshi org currency if a tool returns it, else null |
 | `merchant.timezone` | IANA name or null | T1 `account.timezone`, null when it is null; in `moshi_only`, the Moshi org timezone if returned, else null (the template then uses UTC and says so) |
 | `asOf` | timestamp | when you read the data |
-| `window.start`, `window.end` | date | the report window, both days included: the window `get_ad_performance` returns (the Moshi tools' window), never T1's 30 days |
+| `window.start`, `window.end` | date | the report window, both days included (see Report window): the 7 days before Moshi's newest ad set launched, when it launched in the last 7 days; otherwise the window `get_ad_performance` returns. Never T1's 30 days |
 | `window.partial` | boolean | `true` when `window.end` is today |
+| `window.before` | string or null | the id of the Moshi ad set whose launch ends a baseline window; null for any other window. The header names the ad set (check 16) |
 | `metaSyncedAt` | timestamp or null | when you ran T1 (Moshi's copy can be up to about 6 hours older); null in `moshi_only` |
 | `metaWindow` | `{ start, end }` or null | T1's `window.dateFrom` and `window.dateTo`, the dates every `metaSpend` covers; null in `moshi_only` |
+| `moshiWindow` | `{ start, end }` or null | `get_ad_performance`'s `window` (`since` to `displayUntil`), the dates every `moshi` count and the `chatters` cover. Required with `window.before`; leave it out when it equals `window` |
 | `mode` | `"full"` or `"moshi_only"` | `moshi_only` when T1 flags `no_synced_ads` or fails (see `meta-reads.md`) |
 | `mood` | `"delight"` or `"reading"` | `"delight"` when the primary campaign leads on the metric its stage allows; `"reading"` when it is too early to judge. Sets the avatar. Missing values render as `"reading"` |
 | `primaryCampaignId` | string or null | the Moshi campaign with the largest spend in the window (its daily `spend` rows inside `window`); the verdict is about it. Required whenever a Moshi campaign spent in the window: a missing or wrong one hides the verdict (check 13). Null in `moshi_only` or when no Moshi campaign spent |
 | `verdict.title` | string, ≤ 45 chars, or null | the report's h1: the read in a few plain words, such as "We're still learning, and so is Meta". Keep numbers for the headline; a token here resolves as it does in the headline. Null makes the headline the h1 |
 | `verdict.headline` | string, ≤ 90 chars | you write it, with tokens, about the primary campaign. It prints under the title |
 | `verdict.body` | string, 2–3 sentences | you write it, with tokens |
-| `chatters` | object or null | the people who messaged in the window, for What messaging ads tell you (see `chatters` below). Null leaves the section out |
+| `chatters` | object or null | the people who messaged in `moshiWindow` (in `window` when there is none), for What messaging ads tell you (see `chatters` below). Null leaves the section out |
 | `dashboardUrl` | https URL or null | `get_closer_activity` → `organization.dashboardUrl`. The Respond to your Closers button opens `{dashboardUrl}/closer`. Null leaves the section out |
 
 The template picks the primary campaign the same way and checks your
@@ -48,6 +50,54 @@ cannot change the read, and a campaign idle for a week is history, not a
 live decision. Every other Moshi campaign gets one footnote line under the
 verdict ("Also ran: X, $Y, stopped on Sep 25"), and its gates do not count
 for `{m:nextGate}`.
+
+## Report window
+
+When Moshi has just launched a new ad set, the report covers the 7 days
+before it: how things ran before that change, with none of the new ad
+set's learning days mixed in. Set it after T1 and T2, before the reads
+that use it (`meta-reads.md`).
+
+1. Find each Moshi ad set's launch: its day 1, the later of its
+   `startTime` day and its first T2 `daily[]` row with `impressions > 0`.
+   Moshi publishes ads paused, so an ad set created on Oct 9 that first
+   delivered on Oct 10 launched on Oct 10. The tree has no created time,
+   and no other tool gives a launch: `get_adset_learning_status` lists
+   only ACTIVE ad sets still reporting learning, and its
+   `lastSignificantEditAt` moves with every significant edit;
+   `list_flows` lists Moshi flows, not Meta ad sets.
+2. The newest Moshi ad set is the one with the latest launch, L. When
+   several launched on L, as a split test's two ad sets do, any of them
+   names it.
+3. When L is today or up to 6 days before it, and another Moshi ad
+   delivered on at least one of the 7 days before L, the window is L − 7
+   to L − 1: `window.before` is that ad set's id, `window.partial` is
+   `false`, and `moshiWindow` is `get_ad_performance`'s window. From the new
+   ad set's day 8 it has its own first fair read, so the default window,
+   which includes it, is the right one again.
+4. Otherwise (no Moshi ad set launched in the last 7 days, or no other
+   Moshi ad delivered in the 7 days before it, so there is nothing to
+   compare against), the window is `get_ad_performance`'s and
+   `window.before` is null. A merchant who asks for a window gets theirs,
+   with `window.before` null.
+5. Add the launch to `changes[]`: `kind: "new_ad"`, `source: "moshi"`,
+   the ad set's id and its launch day. A `moshi` change restarts no clock,
+   and your reply names when it becomes readable.
+
+The Moshi tools report a named period (`last_7d`, `last_30d`,
+`last_90d` or `since_launch`, which ends today), and `list_conversations`
+reaches back from today with no first-message date, so none of them can
+cut out a past week. Read them as usual. Their dates go in `moshiWindow`,
+and the report prints them next to every Moshi count, so nothing claims a
+week it does not cover. Each part of the report reads one set of dates:
+
+| Part | Dates |
+|---|---|
+| The verdict's metric tokens, the overlap callout, the Spend and CTR tiles, Cost per ad chat on Meta's count, Same ads, the conversation rate, Meta's purchases in the funnel, your running campaigns | `window` |
+| What messaging ads tell you, the Chats and Contacts tiles, Cost per ad chat on Moshi's count (when Meta reports no chats), the funnel's Moshi counts, Moshi's chat orders | `moshiWindow` |
+| A launch comparison | each side's days 1 to N, with Moshi's day N no later than the window's last day |
+| Moshi's share of your spend, your order size | `metaWindow` |
+| Age, stage and gates | today (`asOf`) |
 
 ## `campaigns[]`
 
@@ -87,7 +137,7 @@ with ads and `"none"` without.
 | `status` | string | campaign `status`, verbatim |
 | `startTime` | date or null | the day of campaign `startTime`; null when it is missing or 1969-12-31 |
 | `adsPulled` | `"all"`, `"top"` or `"none"` | `"all"` when every ad set's ads came from T2 or T5; `"none"` when `ads` is empty in every ad set; else `"top"` |
-| `retargeting` | boolean | `true` when the name or audience shows retargeting; else `false` |
+| `retargeting` | boolean | `true` when the name says retargeting (the tree carries no audience, so the name is all there is); else `false`. It only keeps a launch out of a launch comparison, where a warm audience would flatter it. A name can mislead (an "RTG" campaign can be mostly broad), so your running campaigns ignore the flag, and your reply never calls a campaign retargeting from its name |
 | `metaSpend` | number or null | every campaign, Moshi's too: T1 campaign `metrics.spend`, its spend over `metaWindow` |
 | `metaPurchases` | integer or null | every campaign: T1 campaign `metrics.purchases` over `metaWindow` |
 | `metaPurchaseValue` | number or null | every campaign: T1 campaign `metrics.purchaseValue` over `metaWindow` |
@@ -113,7 +163,7 @@ is Moshi's own order average, not your store's.
 | `dailyBudget` | number or null | ad set `dailyBudget` ÷ 100 (ABO only); null when it is missing |
 | `adsPulled` | `"all"`, `"top"` or `"none"` | only when it differs from what the campaign implies (see above), such as a launch ad set T5 read inside an older campaign |
 | `retargeting` | boolean | only on a retargeting ad set inside a campaign that is not |
-| `totals` | object | T6's ad set `metrics` for the report window: `{ spend, impressions, conversations, purchases, purchaseValue }` (`conversations` is `messagingConversationsStarted`). Only on the merchant ad sets T6 returned |
+| `totals` | object | the ad set's `metrics` for the report window, from T7: `{ spend, impressions, linkClicks, conversations, purchases, purchaseValue }` (`conversations` is `messagingConversationsStarted`). `linkClicks` is the sum of its ads' `funnel.linkClicks` in T7; null when T7 left any of its ads unlisted (`adsOverMaxAds`). On every merchant ad set T7 returned. When T7 was skipped, the ad sets T6 returned carry T6's `metrics`, with `linkClicks: null`. Your running campaigns read it |
 | `learning` | `"learning"`, `"limited"`, `"success"` or null | `learningPhase.status`: `LEARNING` → `"learning"`, `FAIL` → `"limited"`, `SUCCESS` → `"success"`. Null when `learningPhase` is missing. Never infer it. |
 | `adCount` | integer or null | T1's `adsOverMaxAds` for this ad set: its ads that delivered in the 30 days. T1 lists no ads, so it counts them all. Not the tree's `adCount`, which also counts paused and old ads. For a launch only T4 lists, use T4's. The resource note shows it |
 | `lastLearningReset` | date or null | `lastSignificantEditAt` as a day in the account timezone; null when it is missing. Copy it even when it falls on launch day; the template treats that as the launch, not a reset |
@@ -202,18 +252,18 @@ two separate rows.
 
 ## `chatters`
 
-The people who messaged in the window, one row each, for What messaging
-ads tell you. A message arrives with a profile, so the report can say who
-the shoppers are: the tiles count the rows, and the lists show every
-buyer and the largest accounts that did not buy. These are the merchant's
-own customers, so their handles and pictures may appear in the report,
-which goes to the merchant and Moshi only. Never put an email or a phone
-number in a row: a row whose `username` or `name` holds one is hidden
-(check 4).
+The people who messaged in `moshiWindow` (in `window` when there is no
+`moshiWindow`), one row each, for What messaging ads tell you. A message
+arrives with a profile, so the report can say who the shoppers are: the
+tiles count the rows, and the lists show every buyer and the largest
+accounts that did not buy. These are the merchant's own customers, so
+their handles and pictures may appear in the report, which goes to the
+merchant and Moshi only. Never put an email or a phone number in a row:
+a row whose `username` or `name` holds one is hidden (check 4).
 
 | Field | Type | Source |
 |---|---|---|
-| `total` | integer or null | only when you could not list everyone: the sum of `page.total` over your `list_conversations` calls. The report then says the counts cover only the rows you listed. Null when the rows are everyone; never smaller than the rows (check 15) |
+| `total` | integer or null | only when paging stopped before the last page (a call failed): the first call's `page.total`. The report then says the counts cover only the rows you listed. Null when you paged to the end; never smaller than the rows (check 15) |
 | `people[]` | array | one row per person, below |
 
 `people[]` row:
@@ -226,35 +276,53 @@ number in a row: a row whose `username` or `name` holds one is hidden
 | `followers` | integer or null | `followerCount`; null for Messenger, which does not share it |
 | `verified` | boolean | `isVerifiedUser` |
 | `followsYou` | boolean or null | `isUserFollowBusiness`; null when it is missing |
-| `orderValue` | number or null | what they spent on orders in the window: the sum of `data.totalPrice` (or `data.total_price`) over their `purchase_complete` events, from `get_conversation_events` for each row whose `purchaseCount` is above 0. Null when they did not buy |
+| `orderValue` | number or null | what they spent on orders in those dates: the sum of `data.totalPrice` (or `data.total_price`) over their `purchase_complete` events, from `get_conversation_events` for each row whose `purchaseCount` is above 0. Null when they did not buy |
 | `stage` | string or null | how far someone who did not buy got: `get_leads` → `furthestStageName` for their `conversationId`, verbatim (`click_through`, `product_view`, `cart`, `checkout`). Null reads as "messaged" |
 | `profilePic` | https URL or null | `profilePic`, Moshi's copy of the profile picture. Null shows their initial |
-| `threadUrl` | https URL or null | their thread in Meta Business Suite, which gets a paper-plane button. No Moshi tool returns one yet, so leave it null |
+| `threadUrl` | https URL or null | `list_conversations` → `threadUrl`, as given: their thread in your own Meta inbox (Business Suite for Instagram, the Page inbox on facebook.com for Messenger), which gets a paper-plane button. Null for an Instagram lead who never sent a DM, and when Meta did not return the thread that call; that row gets no button |
 
-`list_conversations` returns at most 100 rows a call and has no offset.
-Call it with `limit: 100` and `sinceDays` reaching back to `window.start`.
-When its `page.total` is larger than the rows it returned, call it once
-per Moshi flow (`flowId`) instead.
+`list_conversations` returns at most 100 rows a call. Call it with
+`limit: 100` and `sinceDays` reaching back to `moshiWindow.start`
+(`window.start` when there is no `moshiWindow`), and no `source`, so
+Instagram and Messenger come together. While `page.hasNext` is true, call
+it again with the same arguments and `cursor` set to `page.nextCursor`,
+until you have every row (`page.total`). Paging is not a retry: page to
+the end. If a page fails, keep the rows you have, set `total`, and name
+the gap in `notMeasurableYet`.
 
 ## `comparisons[]`
 
-You pick the pairs. The template draws the bars and writes the resource
-note.
+You pick the pairs: a launch, or your running campaigns
+(`comparison-method.md`). The template draws the bars and writes the
+resource note.
 
 | Field | Type | Meaning |
 |---|---|---|
 | `metric` | `"ctr"`, `"cpc"`, `"costPerConversation"`, `"cpa"` or `"roas"` | the metric to compare |
-| `day` | integer ≥ 1 | compare each side's first `day` days |
+| `day` | integer ≥ 1 | a launch: compare each side's first `day` days |
 | `moshiCampaignId` | string | a `campaigns[].id` with `owner: "moshi"` |
 | `merchantAdsetId` | string | the merchant launch ad set, an `adsets[].id`; use it for a launch ad set inside an older campaign |
 | `merchantCampaignId` | string | instead of `merchantAdsetId`, when the whole campaign is the launch |
+| `running` | `true`, or left out | instead of a launch: your running campaigns over the report window. Takes `metric: "ctr"` and no `day` or merchant id |
 
-Both sides must have the same `objective` (an ad set takes its campaign's),
-and both need a `daily[]` row with impressions on each of days 1 to `day`,
-with no gap. `cpa` and `roas` need `day` 8 or more. The merchant side must
-not be retargeting, and must not hold an ad in a Moshi ad's
-`creativeOverlap` (check 11). When no valid pair exists, leave
-`comparisons` empty and put the reason in `notMeasurableYet`.
+A launch pair: both sides must have the same `objective` (an ad set takes
+its campaign's), and both need a `daily[]` row with impressions on each
+of days 1 to `day`, with no gap. Moshi's day `day` must fall on or before
+the window's last day, so a baseline window keeps the new ad set's days
+out. `cpa` and `roas` need `day` 8 or more, and Moshi on day 8 or later of
+its reset clock on the window's last day. The merchant side must not be
+retargeting, and must not hold an ad in a Moshi ad's `creativeOverlap`
+(check 11).
+
+A running entry: the Moshi campaign's CTR over the window against every
+campaign of yours with its objective that has ad sets with `totals` and
+`linkClicks`, each campaign's CTR weighted by its spend. The template
+leaves out your ad sets that hold an ad in a Moshi ad's `creativeOverlap`
+and leaves nothing out by name. The Moshi campaign needs impressions in
+the window.
+
+When no valid entry exists, leave `comparisons` empty and put the reason
+in `notMeasurableYet`.
 
 ## `changes[]`
 
@@ -308,8 +376,8 @@ exactly as typed, so it holds no tokens and no numbers you computed.
 | `{a:<adId>.<metric>}` | one ad over the window |
 | `{all:moshi.<metric>}` | all Moshi campaigns over the window; needs at least one Moshi campaign |
 | `{all:merchant.<metric>}` | all merchant campaigns over the window |
-| `{m:<moshiField>}` | a `moshi` field (`firstLaunch` renders as a date, "Sep 22"), or `costPerChat` (the report's cost per ad chat over the window, on Meta's count: the spend of the Moshi campaigns that start chats ÷ Meta's chats started on them, `conversations`. A campaign starts chats when Meta credits chats on at least half its delivery days in the window, so one that sends shoppers to the site stays out. When no Moshi campaign starts chats, and in `moshi_only` mode, Moshi's count: `moshi.spend ÷ chatsFromAds`. The report names the count), `age` and `stage` (from `firstLaunch`), `nextGate` and `nextGateDate` (the earliest gate among the primary campaign and any campaign shown beside it) |
-| `{cmp:<index>.moshi}`, `{cmp:<index>.merchant}` | comparison `index` (0-based): each side's value over the first `day` days |
+| `{m:<moshiField>}` | a `moshi` field (`firstLaunch` renders as a date, "Sep 22"), or `costPerChat` (the report's cost per ad chat over the window, on Meta's count: the spend of the Moshi campaigns that start chats ÷ Meta's chats started on them, `conversations`. A campaign starts chats when Meta credits chats on at least half its delivery days in the window, so one that sends shoppers to the site stays out. When no Moshi campaign starts chats, and in `moshi_only` mode, Moshi's count: `moshi.spend ÷ chatsFromAds`, over `moshiWindow`. The report names the count), `age` and `stage` (from `firstLaunch`), `nextGate` and `nextGateDate` (the earliest gate among the primary campaign and any campaign shown beside it) |
+| `{cmp:<index>.moshi}`, `{cmp:<index>.merchant}` | comparison `index` (0-based): each side's value over the first `day` days, or over the window for a running entry |
 | `{cmp:<index>.note}` | comparison `index`: the resource note the template wrote |
 
 Only the tokens in this table resolve. Any other `{…}`, such as
@@ -342,6 +410,9 @@ What tokens render, so the sentence around them reads right:
   reset clock.
 - `c:`, `s:`, `a:` and `all:` metrics cover the whole report window,
   including days before a reset. Never write "since <date>" next to one.
+- `{m:…}` counts (`chats`, `provenOrders`, `contactsCaptured`, ...) cover
+  `moshiWindow`. In a baseline window, say which dates they cover ("since
+  launch") so they do not read as the window's.
 - `purchases`, `purchaseValue`, `roas` and `cpa` are Meta's purchase
   figures. The first one in each text renders with the attribution window
   of the ad sets behind it that have purchases: "Meta credits it with {c:123.purchases} purchases"
@@ -381,8 +452,12 @@ a check fails:
    side whose `adsPulled` is not `"all"`, a merchant
    `startTime` that is null or more than 90 days before `asOf`, a `day`
    outside 1–14, a side without a row with impressions on each of days
-   1–N, or `cpa`/`roas` on a non-Sales campaign, with `day` under 8, or
-   before day 8 on Moshi's reset clock.
+   1–N, Moshi's day N after the window's last day, or `cpa`/`roas` on a
+   non-Sales campaign, with `day` under 8, or before day 8 on Moshi's
+   reset clock on the window's last day. A running entry fails on a metric
+   other than `ctr`, a Moshi campaign with no impressions in the window,
+   or no campaign of yours with its objective and `totals` with
+   `linkClicks`.
 3. A token points to nothing, uses an unknown metric, or is malformed, or
    an `{all:moshi.…}` token has no Moshi campaign.
 4. A `chatters.people[]` row's `username` or `name` holds an email or a
@@ -393,10 +468,11 @@ a check fails:
    `"all"`.
 7. `{m:age}` or `{m:stage}` is used while a Moshi ad set has a learning
    reset.
-8. A date field (`window.*`, `moshi.firstLaunch`, `campaigns[].startTime`,
-   `adsets[].startTime`, `adsets[].lastLearningReset`, `changes[].date`,
-   `daily[].date`) is not a `YYYY-MM-DD` date, or a
-   `{m:…}` age or `firstLaunch` token needs the invalid `firstLaunch`.
+8. A date field (`window.*`, `moshiWindow.*`, `moshi.firstLaunch`,
+   `campaigns[].startTime`, `adsets[].startTime`,
+   `adsets[].lastLearningReset`, `changes[].date`, `daily[].date`) is not
+   a `YYYY-MM-DD` date, or a `{m:…}` age or `firstLaunch` token needs the
+   invalid `firstLaunch`.
 9. A token has no value: a numeric metric that is null or not finite, or
    a null `{m:firstLaunch}`. Dates and text never fail this check.
 10. An ad has two `daily[]` rows for one date. The template drops that
@@ -421,6 +497,11 @@ a check fails:
    `data:image` URI). The link is dropped.
 15. `chatters.total` is smaller than the number of rows in
    `chatters.people`.
+16. `window.before` is set, but it names no Moshi ad set, the ad set is
+   past its first 7 days, the window is not the 7 days before its day 1,
+   another Moshi ad set's day 1 is later, no Moshi campaign spent in the
+   window, or `moshiWindow` is missing or not valid. The header leaves out
+   the line that names the ad set.
 
 ## Minimal example
 
