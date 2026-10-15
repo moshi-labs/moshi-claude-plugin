@@ -138,12 +138,12 @@ const ORDER = { 'overlap.data.js': [['Things in your account affecting results',
     ['Moshi against your own launches', 'Where each campaign stands'], ['Where each campaign stands', 'Contacts captured'],
     ['Contacts captured', 'From conversation to purchase'], ['From conversation to purchase', 'Respond to your Closers']] };
 // Strings that must (HTML) or must not (HTML_NOT) be in the rendered markup: links, images and the title's h1.
-const HTML = { 'messaging.data.js': ['<h1>Chats are the story</h1>', '<p class="dek">Moshi CTR is', 'href="https://base-shop.moshi.ai/closer"'],
-  'messaging-links.data.js': ['class="msgb" href="https://business.facebook.com/latest/inbox/instagram_direct?asset_id=1&amp;selected_item_id=2"', '<img src="https://cdn.example.com/ann.jpg"'],
+const HTML = { 'messaging.data.js': ['<h1>Chats are the story</h1>', '<p class=dek>Moshi CTR is', 'href="https://base-shop.moshi.ai/closer"'],
+  'messaging-links.data.js': ['class=msgb href="https://business.facebook.com/latest/inbox/instagram_direct?asset_id=1&amp;selected_item_id=2"', '<img src="https://cdn.example.com/ann.jpg"'],
   'check14.data.js': ['<img src="data:image/png;base64,iVBORw0KGgo="'], 'sameads.data.js': ['<img src="https://cdn.example.com/blue.jpg"'],
   'base.data.js': ['<h1>Moshi CTR is'] };
-const HTML_NOT = { 'messaging.data.js': ['class="msgb"', '<img src="https://cdn'], 'check14.data.js': ['javascript:', 'http://cdn', 'data:text', 'ftp:'],
-  'base.data.js': ['class="dek"'] };
+const HTML_NOT = { 'messaging.data.js': ['class=msgb', '<img src="https://cdn'], 'check14.data.js': ['javascript:', 'http://cdn', 'data:text', 'ftp:'],
+  'base.data.js': ['class=dek'] };
 let failed = 0;
 for (const [file, want] of Object.entries(EXPECT)) {
   const out = execFileSync('node', [check, path.join(__dirname, file)], { encoding: 'utf8' });

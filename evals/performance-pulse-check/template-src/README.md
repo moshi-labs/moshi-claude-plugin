@@ -1,7 +1,9 @@
 # pulse-check template source
 
-`tpl.html` is the readable template. `build.js` inlines the logo, the avatar, minifies
-the CSS (esbuild) and JS (terser), and writes the shipped file:
+`tpl.html` is the readable template. `build.js` inlines the logo, the avatar, drops
+the quotes around plain attribute values in the markup the code writes
+(`class=sub`), minifies the CSS (esbuild) and JS (terser), and writes the shipped
+file:
 
 ```
 node build.js ../../../plugins/moshi/skills/performance-pulse-check/assets/pulse-check.html
