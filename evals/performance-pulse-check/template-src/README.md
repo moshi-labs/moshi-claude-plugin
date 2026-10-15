@@ -32,7 +32,8 @@ lean, so a new section has to pay for itself.
 `avatar/av.js` holds the Moshi Lottie avatar for `DATA.mood` (`delight` or
 `reading`): both animations as one gzip+base64 JSON blob, plus their images
 as shared WebP data URIs. `avatar/make.py` builds it from the frontend's
-`.lottie` files (needs Pillow):
+`.lottie` files (needs Pillow and zopfli, which packs the JSON 1.6 KB smaller
+than gzip -9 in the same gzip format):
 
 ```
 python3 -I avatar/make.py <moshi-frontend>/apps/admin-app/public/animations
