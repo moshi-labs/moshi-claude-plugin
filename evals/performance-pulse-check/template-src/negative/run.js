@@ -1,5 +1,6 @@
-// Runs every negative DATA file through check.js and fails when an expected banner line is missing, and fails when the shipped
-// template is over 122,880 bytes.
+// Runs every negative DATA file, and every fixture's gold (fixtures/*/expected-data.json), through check.js. Fails when an expected
+// banner line, rendered string or HTML string is missing, when a gold shows a banner, and when the shipped template is over 122,880
+// bytes.
 // Usage: node template-src/negative/run.js (from evals/performance-pulse-check), or from any directory.
 const { execFileSync } = require('child_process'), path = require('path'), fs = require('fs');
 const check = path.join(__dirname, '..', 'check.js');
@@ -84,6 +85,9 @@ const EXPECT = {
   'running-dup.data.js': ['Check 10: ad cm1_a0 has two rows for 2026-09-22'],
   'check16-merchant.data.js': ['Check 16: window.before names no Moshi ad set']
 };
+// Every fixture's gold renders with no banner.
+const FIXTURES = path.join(__dirname, '../../fixtures');
+for (const f of fs.readdirSync(FIXTURES)) if (fs.existsSync(path.join(FIXTURES, f, 'expected-data.json'))) EXPECT[`../../fixtures/${f}/expected-data.json`] = [];
 // The banner escapes DATA text: check 3's <b> must reach the page as text, not markup.
 // An ad set added Oct 2 to a campaign that started Aug 1 counts from its own startTime; the campaign keeps its Aug 1 clock.
 // {m:firstLaunch} renders as a date. A check 10 failure hides the verdict that cites the ad; age tokens (here in the title) still render.
@@ -192,7 +196,7 @@ for (const [file, want] of Object.entries(EXPECT)) {
     .concat((HTML_NOT[file] || []).filter(w => html.includes(w)).map(w => 'unwanted html ' + w));
   const bad = miss.length > 0 || (!want.length && banner != 'none');
   if (bad) failed++;
-  console.log(`${bad ? 'FAIL' : 'ok  '} ${file}: ${bad ? (miss.length ? 'missing ' + miss.join(' | ') : 'unexpected ' + banner) : banner}`);
+  console.log(`${bad ? 'FAIL' : 'ok  '} ${file.replace('../../', '')}: ${bad ? (miss.length ? 'missing ' + miss.join(' | ') : 'unexpected ' + banner) : banner}`);
 }
 // The design spec's size line: a host that must re-emit the template whole can do it in one artifact.
 const size = fs.statSync(path.join(__dirname, '../../../../plugins/moshi/skills/performance-pulse-check/assets/pulse-check.html')).size;
