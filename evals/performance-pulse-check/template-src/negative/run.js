@@ -26,7 +26,8 @@ const EXPECT = {
   'check8.data.js': ['Check 8: campaigns[0].startTime is not a YYYY-MM-DD date', 'Check 8: campaigns[0].adsets[0].startTime is not a YYYY-MM-DD date',
     'Check 8: campaigns[0].adsets[0].ads[0].daily[3].date is not a YYYY-MM-DD date',
     'Check 8: changes[0].date is not a YYYY-MM-DD date',
-    'Check 8: moshi.firstLaunch is not a YYYY-MM-DD date', 'Check 8: {m:firstLaunch} needs a valid moshi.firstLaunch'],
+    'Check 8: moshi.firstLaunch is not a YYYY-MM-DD date', 'Check 8: {m:firstLaunch} needs a valid moshi.firstLaunch',
+    'Check 8: moshiWindow.start is not a YYYY-MM-DD date'],
   'check9.data.js': ['Check 9: {m:costPerChat} has no value'],
   'check10.data.js': ['Check 10: ad cm1_a0 has two rows for 2026-09-22'],
   'cmp-dup.data.js': ['Check 10: ad ym1_a1 has two rows for 2026-08-01'],
@@ -65,7 +66,23 @@ const EXPECT = {
   'funnel.data.js': [],
   'funnel-early.data.js': [],
   'sameads.data.js': [],
-  'share-tiny.data.js': []
+  'share-tiny.data.js': [],
+  'running.data.js': [],
+  'check2-running.data.js': ['Check 2: comparison cpa running: running campaigns compare on CTR only',
+    'Check 2: comparison ctr running: no Sales campaign of yours has link clicks in the window',
+    'Check 2: comparison ctr running: cm2 has no impressions in the window', 'Check 2: comparison ctr running: owners do not match the id fields'],
+  'baseline.data.js': [],
+  'baseline-early.data.js': [],
+  'check16.data.js': ['Check 16: window.before needs the window Sep 28 – Oct 4'],
+  'check16-newer.data.js': ['Check 16: window.before names Mid test, but Gift guide launched later'],
+  'check16-moshiwindow.data.js': ['Check 16: window.before needs a valid moshiWindow'],
+  'check16-stale.data.js': ['Check 16: window.before names Gift guide, past its first 7 days'],
+  'check16-noprior.data.js': ['Check 16: window.before names Gift guide, but no Moshi ad ran before'],
+  'check16-badmw.data.js': ['Check 8: moshiWindow.start is not a YYYY-MM-DD date', 'Check 16: window.before needs a valid moshiWindow'],
+  'baseline-past.data.js': ['Check 2: comparison ctr day 6: Moshi’s day 6 is after the window',
+    'Check 2: comparison cpa day 8: Moshi is on day 5 since its last reset; CPA needs day 8'],
+  'running-dup.data.js': ['Check 10: ad cm1_a0 has two rows for 2026-09-22'],
+  'check16-merchant.data.js': ['Check 16: window.before names no Moshi ad set']
 };
 // The banner escapes DATA text: check 3's <b> must reach the page as text, not markup.
 // An ad set added Oct 2 to a campaign that started Aug 1 counts from its own startTime; the campaign keeps its Aug 1 clock.
@@ -84,6 +101,12 @@ const EXPECT = {
 // initial; no paper-plane without thread links; the Closer page. funnel: the conversation rate is Meta's chats over link clicks on the
 // campaigns that start chats; order size and Moshi's ROAS wait for day 8 on the reset clock (funnel-early). sameads: the card where
 // Moshi's CTR is higher leads, then by Moshi's CTR; two copies of one original add up; an original with no rows did not run.
+// running: your running campaigns' CTR is weighted by each campaign's spend, names nothing and leaves nothing out by name; only
+// the same objective, ad sets with link clicks read and no ad set that runs Moshi's creative count. baseline: the window is the 7
+// days before Moshi's newest ad set launched and the header says so; Moshi's own counts carry moshiWindow's dates and Meta's
+// count the window's; the stage and gates count to today. baseline-early: the funnel's ROAS is judged at the window's last day.
+// baseline-past: a launch comparison stops at the window's last day, and its CPA gate is judged there. running-dup: a duplicate row
+// hides a running comparison with check 10.
 const RENDERED = { 'check3.data.js': ['&lt;b&gt;x&lt;/b&gt;'],
   'adset-day1.data.js': ['New set is on day 5', 'old set is on day 67', 'the campaign is on day 67'],
   'first-launch.data.js': ['Moshi launched Sep 22'],
@@ -120,7 +143,16 @@ const RENDERED = { 'check3.data.js': ['&lt;b&gt;x&lt;/b&gt;'],
     'Moshi is 25% of your ad spend Moshi · 2.40x ROAS $750 Your other campaigns · 1.11x ROAS $2,250 Sep 7 – Oct 6'],
   'funnel-early.data.js': ['2.40x ROAS on the Sales campaigns, too early to judge, first read Oct 9.', 'Moshi is 25% of your ad spend Moshi $750 Your other campaigns · 1.11x ROAS $2,250'],
   'share-tiny.data.js': ['Moshi is &lt;0.1% of your ad spend'],
-  'sameads.data.js': ['Blue Moshi’s copy $1,500 0.80% CTR Your original $750 0.60% CTR Red Moshi’s copy $750 2.00% CTR Your original $750 3.00% CTR Tan Moshi’s copy $750 1.20% CTR Your original didn’t run these days'] };
+  'sameads.data.js': ['Blue Moshi’s copy $1,500 0.80% CTR Your original $750 0.60% CTR Red Moshi’s copy $750 2.00% CTR Your original $750 3.00% CTR Tan Moshi’s copy $750 1.20% CTR Your original didn’t run these days'],
+  'running.data.js': ['Moshi against your own ads Same objective. A launch on its first days, retargeting left out; your running campaigns on the same dates. Your ad sets that run Moshi’s creatives are left out.',
+    'CTR, Sep 22 – Oct 6 cm1 1.20% Your 3 running Sales campaigns ahead 1.60% Weighted by each campaign’s spend on these dates: yours $5,000, Moshi’s $750.',
+    'Your running campaigns: 1.60% . Weighted by each campaign’s spend on these dates'],
+  'baseline.data.js': ['Sep 28 – Oct 4 Meta read', 'The 7 days before Moshi launched Gift guide on Oct 5: how things ran before that change.',
+    'Next gate Oct 22 , day 31 .', 'Today · day 17', 'Next gate: day 31 on Oct 22', 'Spend $420 Moshi campaigns, Meta', 'Also ran: cm2, $70.00, stopped on Oct 5.', 'cm1 set: 14 of ~50 purchases in 7 days',
+    'Cost per ad chat $25.00 Moshi’s count of chats from ads, Sep 22 – Oct 8',
+    'Chats 40 30 from ads, Sep 22 – Oct 8 Contacts captured 5 emails and phones, Sep 22 – Oct 8', 'Moshi’s own count, Sep 22 – Oct 8.',
+    'Meta’s count, Sep 28 – Oct 4, is its pixel estimate', 'Sep 22 – Oct 8. Follower counts are from Instagram.'],
+  'baseline-early.data.js': ['Today · day 9', '2.40x ROAS on the Sales campaigns, too early to judge.'] };
 // Strings that must not render. check10: no Meta tile, comparison or funnel value from the duplicate Moshi ad (CTR 1.20%, value $1,800).
 // cmp-dup: the failed comparison reports check 10, not check 2. window-rows: $700 would count the Sep 15-21 rows before window.start.
 const RENDERED_NOT = { 'check10.data.js': ['1.20%', '$1,800'],
@@ -130,18 +162,23 @@ const RENDERED_NOT = { 'check10.data.js': ['1.20%', '$1,800'],
   'attribution.data.js': ['at $25.00 (7-day click)'], 'check11-all.data.js': ['Yours is'], 'dup-overlap.data.js': ['Moshi’s share', 'Tan 15', 'Same ads'],
   'dup-primary.data.js': ['Check 13'], 'check13-missing.data.js': ['Moshi CTR is'], 'attribution-mixed.data.js': ['1-day click)'],
   'check4.data.js': ['pat@example.com', '555-0100'], 'messaging.data.js': ['paper-plane', 'Lopez'], 'messaging-links.data.js': ['Respond to your Closers'],
-  'check14.data.js': ['Respond to your Closers', 'paper-plane'], 'funnel-early.data.js': ['Chat orders are', 'Moshi · 2.40x ROAS'] };
+  'check14.data.js': ['Respond to your Closers', 'paper-plane'], 'funnel-early.data.js': ['Chat orders are', 'Moshi · 2.40x ROAS'],
+  'running.data.js': ['1.45%', 'RTG'], 'baseline.data.js': ['Next gate: day 15', 'Through', 'so far', 'still delivering'],
+  'check16.data.js': ['The 7 days before'], 'check16-newer.data.js': ['The 7 days before'], 'check16-merchant.data.js': ['The 7 days before'],
+  'check16-stale.data.js': ['The 7 days before'], 'check16-noprior.data.js': ['The 7 days before'], 'check16-badmw.data.js': ['The 7 days before', 'from ads,'],
+  'baseline-early.data.js': ['first read'], 'running-dup.data.js': ['Check 2: comparison ctr running'],
+  'check16-moshiwindow.data.js': ['The 7 days before', 'from ads,'] };
 // Strings that must render in this order. overlap: "Things in your account affecting results" leads, before the verdict. messaging:
-// the sections run hero, messaging, your launches, stages, tiles, funnel, Closers.
+// the sections run hero, messaging, your own ads, stages, tiles, funnel, Closers.
 const ORDER = { 'overlap.data.js': [['Things in your account affecting results', 'Moshi CTR is'], ['Moshi CTR is', 'Where each campaign stands']],
-  'messaging.data.js': [['Moshi CTR is', 'What messaging ads tell you'], ['What messaging ads tell you', 'Moshi against your own launches'],
-    ['Moshi against your own launches', 'Where each campaign stands'], ['Where each campaign stands', 'Contacts captured'],
+  'messaging.data.js': [['Moshi CTR is', 'What messaging ads tell you'], ['What messaging ads tell you', 'Moshi against your own ads'],
+    ['Moshi against your own ads', 'Where each campaign stands'], ['Where each campaign stands', 'Contacts captured'],
     ['Contacts captured', 'From conversation to purchase'], ['From conversation to purchase', 'Respond to your Closers']] };
 // Strings that must (HTML) or must not (HTML_NOT) be in the rendered markup: links, images and the title's h1.
 const HTML = { 'messaging.data.js': ['<h1>Chats are the story</h1>', '<p class=dek>Moshi CTR is', 'href="https://base-shop.moshi.ai/closer"'],
   'messaging-links.data.js': ['class=msgb href="https://business.facebook.com/latest/inbox/instagram_direct?asset_id=1&amp;selected_item_id=2"', '<img src="https://cdn.example.com/ann.jpg"'],
   'check14.data.js': ['<img src="data:image/png;base64,iVBORw0KGgo="'], 'sameads.data.js': ['<img src="https://cdn.example.com/blue.jpg"'],
-  'base.data.js': ['<h1>Moshi CTR is'] };
+  'base.data.js': ['<h1>Moshi CTR is'], 'baseline.data.js': ['</header><p class=sub>The 7 days before Moshi launched <b>Gift guide</b> on Oct 5'] };
 const HTML_NOT = { 'messaging.data.js': ['class=msgb', '<img src="https://cdn'], 'check14.data.js': ['javascript:', 'http://cdn', 'data:text', 'ftp:'],
   'base.data.js': ['class=dek'] };
 let failed = 0;
