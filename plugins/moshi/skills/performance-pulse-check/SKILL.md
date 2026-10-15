@@ -24,8 +24,10 @@ allows, and how to say it.
    report window unless step 3 sets a baseline), and
    `get_recent_brand_doc_change` if it exists. Then read 2–3 threads from
    `transcriptsToRead` with `get_conversation_messages`. For who messaged:
-   `list_conversations`, `get_leads`, and `get_conversation_events` for
-   each buyer (`data-contract.md` → `chatters`). `get_closer_activity`
+   `list_conversations`, paged with `cursor` until `page.hasNext` is false
+   (each row brings its `threadUrl`), `get_leads`, and
+   `get_conversation_events` for each buyer (`data-contract.md` →
+   `chatters`). `get_closer_activity`
    gives `organization.dashboardUrl` for the Closer link, and
    `get_ad_shortlist` the creatives' pictures (`thumbnailUrl`).
 2. **Read Meta through Moshi.** Follow `references/meta-reads.md`

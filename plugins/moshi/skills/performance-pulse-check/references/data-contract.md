@@ -256,15 +256,14 @@ The people who messaged in `moshiWindow` (in `window` when there is no
 `moshiWindow`), one row each, for What messaging ads tell you. A message
 arrives with a profile, so the report can say who the shoppers are: the
 tiles count the rows, and the lists show every buyer and the largest
-accounts that did not buy. These are the merchant's
-own customers, so their handles and pictures may appear in the report,
-which goes to the merchant and Moshi only. Never put an email or a phone
-number in a row: a row whose `username` or `name` holds one is hidden
-(check 4).
+accounts that did not buy. These are the merchant's own customers, so
+their handles and pictures may appear in the report, which goes to the
+merchant and Moshi only. Never put an email or a phone number in a row:
+a row whose `username` or `name` holds one is hidden (check 4).
 
 | Field | Type | Source |
 |---|---|---|
-| `total` | integer or null | only when you could not list everyone: the sum of `page.total` over your `list_conversations` calls. The report then says the counts cover only the rows you listed. Null when the rows are everyone; never smaller than the rows (check 15) |
+| `total` | integer or null | only when paging stopped before the last page (a call failed): the first call's `page.total`. The report then says the counts cover only the rows you listed. Null when you paged to the end; never smaller than the rows (check 15) |
 | `people[]` | array | one row per person, below |
 
 `people[]` row:
@@ -280,13 +279,16 @@ number in a row: a row whose `username` or `name` holds one is hidden
 | `orderValue` | number or null | what they spent on orders in those dates: the sum of `data.totalPrice` (or `data.total_price`) over their `purchase_complete` events, from `get_conversation_events` for each row whose `purchaseCount` is above 0. Null when they did not buy |
 | `stage` | string or null | how far someone who did not buy got: `get_leads` → `furthestStageName` for their `conversationId`, verbatim (`click_through`, `product_view`, `cart`, `checkout`). Null reads as "messaged" |
 | `profilePic` | https URL or null | `profilePic`, Moshi's copy of the profile picture. Null shows their initial |
-| `threadUrl` | https URL or null | their thread in Meta Business Suite, which gets a paper-plane button: `list_conversations` → `threadUrl` when the row carries one. No Moshi tool returns it yet, so until one does it is null |
+| `threadUrl` | https URL or null | `list_conversations` → `threadUrl`, as given: their thread in your own Meta inbox (Business Suite for Instagram, the Page inbox on facebook.com for Messenger), which gets a paper-plane button. Null for an Instagram lead who never sent a DM, and when Meta did not return the thread that call; that row gets no button |
 
-`list_conversations` returns at most 100 rows a call and has no offset.
-Call it with `limit: 100` and `sinceDays` reaching back to
-`moshiWindow.start` (`window.start` when there is no `moshiWindow`). When
-its `page.total` is larger than the rows it returned, call it once per
-Moshi flow (`flowId`) instead.
+`list_conversations` returns at most 100 rows a call. Call it with
+`limit: 100` and `sinceDays` reaching back to `moshiWindow.start`
+(`window.start` when there is no `moshiWindow`), and no `source`, so
+Instagram and Messenger come together. While `page.hasNext` is true, call
+it again with the same arguments and `cursor` set to `page.nextCursor`,
+until you have every row (`page.total`). Paging is not a retry: page to
+the end. If a page fails, keep the rows you have, set `total`, and name
+the gap in `notMeasurableYet`.
 
 ## `comparisons[]`
 
