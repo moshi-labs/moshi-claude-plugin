@@ -113,7 +113,7 @@ const RENDERED = { 'stopped.data.js': ['Moshi ran day 8 .', 'cm1 Sales Stopped S
   'dup-primary.data.js': ['Also ran: cm2, $150, still delivering.', 'Wait until Oct 22'],
   'attribution-mixed.data.js': ['Meta credits Moshi with 30 purchases (7-day click) .'], 
   'check4.data.js': ['F @fern.and.fig 2.4k cart'],
-  'messaging.data.js': ['Chats are the story Moshi CTR is', '20 people messaged you, by channel All channels 20 100% Instagram 12 60% Messenger 8 40% Who shared contact info Email 3 15% Phone 2 10% Both 1 5% Following Base Shop Follows you 2 29% Not following yet 5 71% Shares of the people who messaged; following counts the 7 Instagram profiles that report it. The lists cover 8 of the 20 people.',
+  'messaging.data.js': ['Chats are the story Moshi CTR is', '20 people messaged you By channel Instagram 12 60% Messenger 8 40% Shared contact info Email 3 15% Phone 2 10% Both 1 5% Following Base Shop Follows you 2 29% Not following yet 5 71% Channel and contact shares are of everyone who messaged; following counts the 7 Instagram profiles that report it. The lists cover 8 of the 20 people.',
     'Who bought 4 Followers Order A @ann.k not following 15k $80 B @bo.c follows you 1.2k $45.50 C @cy not following 900 $120 D Dee R. (Messenger) — $60',
     'Big accounts that haven’t bought yet 3 with 1k+ followers messaged and didn’t buy, 2.5M followers combined. Followers Got as far as E @eve.big not following 2.5M cart F @fay not following 3.4k product view G @gus not following 1.1k clicked a link',
     'so the thread is already in your inbox. A personal note', 'Follower counts are from Instagram; Messenger doesn’t share them.', 'Respond to your Closers', 'Review your Closers →'],

@@ -39,8 +39,8 @@ Reference report: an internal Moshi day-one results report (Oct 2026)
 
 > **Update 2026-10-14 (plugin 0.13.0).** Ages count only delivery days: an
 > entity 2+ days past its last delivery stops its clock there and has no
-> next gate. What messaging ads tell you swaps its tiles for three bar
-> groups (who messaged by channel from `channels`, who shared email /
+> next gate. What messaging ads tell you swaps its tiles for one bar chart
+> under "N people messaged you", in three labelled groups (by channel from `channels`, who shared email /
 > phone / both, who follows you), drops verified badges and the 1k+
 > highlight, lists every buyer with their follow status, and links a name
 > to its Business Suite thread instead of a paper-plane button. The funnel
