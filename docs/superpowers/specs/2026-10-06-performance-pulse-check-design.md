@@ -46,7 +46,10 @@ Reference report: an internal Moshi day-one results report (Oct 2026)
 > to its Business Suite thread instead of a paper-plane button. The funnel
 > shows one Purchases bar: Meta's count, with Moshi's chat-matched orders
 > drawn inside it, never added. The share-of-spend card reads both sides
-> over Moshi's run plus 7 days (`moshiRun`, read T7).
+> over Moshi's run plus 7 days (`moshiRun`, read T7). The order-size card
+> compares Meta-credited average order value on both sides, on those
+> dates, with 10+ purchases a side; it no longer sets Moshi's Shopify
+> chat orders against Meta's pixel values.
 
 ## Goal
 

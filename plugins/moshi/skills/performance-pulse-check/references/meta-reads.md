@@ -24,7 +24,7 @@ returns; the Meta reads start early enough to cover it.
 | T4 launches | `dateFrom`: 89 days before today, `dateTo`: today, `owner: "merchant"`, `maxAds: 0` | the merchant's campaigns that delivered in the last 90 days, each ad set with its `startTime`. A launch is an ad set, or a whole campaign, that started in those 90 days |
 | T5 one launch | `adsetIds`: the launch ad set, or every ad set T4 lists for a launch campaign, `granularity: "daily"`, `dateFrom`: its `startTime` day, `dateTo`: 13 days later | daily rows for every ad of the launch, days 1–14 |
 | T6 overlap | `adIds`: every `clonedFrom.adId` and `creativeOverlap[].adId` on the Moshi ads T2 returned, `granularity: "daily"`, `dateFrom`: `window.start`, `dateTo`: `window.end`, `maxAds: 200` | daily rows for each ad of yours a Moshi ad was cloned from or shares a creative with, and each of their ad sets' `metrics` for the report window (`adsets[].totals`). Same ads and the overlap callout read them |
-| T7 Moshi's run | `dateFrom`: the first day any Moshi campaign delivered in the window (T2's earliest row), `dateTo`: its last delivery day plus 7, capped at today, `owner: "merchant"`, `maxAds: 0` | your campaigns' totals over Moshi's run, for `moshiRun` |
+| T7 Moshi's run | `dateFrom`: the first day any Moshi campaign delivered in the window (T2's earliest row), `dateTo`: its last delivery day plus 7, capped at today, `owner: "merchant"`, `maxAds: 0` | your campaigns' spend, purchases and purchase value over Moshi's run, for `moshiRun` |
 
 - Read T1 first. If its `flags` include `no_synced_ads`, Moshi has no Meta
   ad account connected or nothing has synced yet. Stop there and use

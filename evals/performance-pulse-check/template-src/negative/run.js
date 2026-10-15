@@ -57,7 +57,7 @@ const EXPECT = {
   'check13-missing.data.js': ['Check 13: primaryCampaignId is missing; the primary campaign is cm1'],
   'attribution-mixed.data.js': [],
   'overlap-share.data.js': [],
-  'messaging.data.js': [], 'stopped.data.js': [],
+  'messaging.data.js': [], 'stopped.data.js': [], 'aov-small.data.js': [],
   'messaging-links.data.js': [],
   'check14.data.js': ['Check 14: chatters.people[0].profilePic is not an https link', 'Check 14: chatters.people[0].threadUrl is not an https link',
     'Check 14: ad cm1_a0 thumbnailUrl is not an https link', 'Check 14: dashboardUrl is not an https link'],
@@ -83,10 +83,12 @@ const EXPECT = {
 // buyer by followers, 1k+ highlighted; the 1k+ accounts that did not buy with how far they got; a Messenger row by first name and
 // initial; channels from DATA.channels, contacts with Both, follows on every row; a name links only with a thread link; the Closer page.
 // stopped: a campaign 2+ days past its last delivery counts only delivery days and has no next gate; moshiRun puts both sides of
-// the share-of-spend card on Moshi's run dates. funnel: the conversation rate is Meta's chats over link clicks on the
+// the share-of-spend and order-size cards on Moshi's run dates. Order size compares Meta-credited purchases on both sides, never
+// Moshi's chat-matched orders, and hides under 10 purchases a side (aov-small). funnel: the conversation rate is Meta's chats over link clicks on the
 // campaigns that start chats; order size and Moshi's ROAS wait for day 8 on the reset clock (funnel-early). sameads: the card where
 // Moshi's CTR is higher leads, then by Moshi's CTR; two copies of one original add up; an original with no rows did not run.
 const RENDERED = { 'stopped.data.js': ['Moshi ran day 8 .', 'cm1 Sales Stopped Sep 29 · day 8', 'Stopped after Sep 29 : 8 days of delivery.',
+    'Moshi’s orders are 20% bigger Moshi · 16 purchases $60.00 Your other campaigns · 48 purchases $50.00 Average order value of Meta-credited purchases on both sides, Sep 22 – Oct 6',
     'Moshi is 17% of your ad spend Moshi · 2.40x ROAS $400 Your other campaigns · 1.20x ROAS $2,000 Sep 22 – Oct 6, both sides: Moshi’s delivery days plus 7 for late purchases'],
   'check3.data.js': ['&lt;b&gt;x&lt;/b&gt;'],
   'adset-day1.data.js': ['New set is on day 5', 'old set is on day 14', 'the campaign is on day 67'],
@@ -121,14 +123,15 @@ const RENDERED = { 'stopped.data.js': ['Moshi ran day 8 .', 'cm1 Sales Stopped S
     'Had a conversation 40 100% Viewed a product 10 25% Reached cart 3 8% Reached checkout 2 5% Purchases 30 $1,800',
     'Purchases: Meta credits 30; darker: the 1 ($60.00) matched to a chat; may overlap, so not added.',
     'Meta’s count is its pixel estimate for Moshi’s campaigns (7-day click), 2.40x ROAS on the Sales campaigns. Meta may still add purchases to recent days.',
-    'Chat orders are 20% bigger Moshi chat orders · 1 order $60.00 Your other ads · 50 orders $50.00',
+    'Moshi’s orders are 20% bigger Moshi · 30 purchases $60.00 Your other campaigns · 50 purchases $50.00 Average order value of Meta-credited purchases on both sides, Sep 7 – Oct 6',
     'Moshi is 25% of your ad spend Moshi · 2.40x ROAS $750 Your other campaigns · 1.11x ROAS $2,250 Sep 7 – Oct 6'],
   'funnel-early.data.js': ['2.40x ROAS on the Sales campaigns, too early to judge, first read Oct 9.', 'Moshi is 25% of your ad spend Moshi $750 Your other campaigns · 1.11x ROAS $2,250'],
   'share-tiny.data.js': ['Moshi is &lt;0.1% of your ad spend'],
   'sameads.data.js': ['Blue Moshi’s copy $1,500 0.80% CTR Your original $750 0.60% CTR Red Moshi’s copy $750 2.00% CTR Your original $750 3.00% CTR Tan Moshi’s copy $750 1.20% CTR Your original didn’t run these days'] };
 // Strings that must not render. check10: no Meta tile, comparison or funnel value from the duplicate Moshi ad (CTR 1.20%, value $1,800).
 // cmp-dup: the failed comparison reports check 10, not check 2. window-rows: $700 would count the Sep 15-21 rows before window.start.
-const RENDERED_NOT = { 'overlap.data.js': ['Things in your account affecting results', 'crowded out'],
+const RENDERED_NOT = { 'aov-small.data.js': ['orders are'],
+  'overlap.data.js': ['Things in your account affecting results', 'crowded out'],
   'overlap-share.data.js': ['Things in your account affecting results'], 'overlap-starved.data.js': ['Blue 2'],
   'check10.data.js': ['1.20%', '$1,800'],
   'cmp-dup.data.js': ['Check 2'], 'check8.data.js': ['Check 9'], 'window-rows.data.js': ['$700'],

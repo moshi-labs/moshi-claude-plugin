@@ -25,6 +25,6 @@ const D = {
   D.campaigns[0].adsets[0].ads[0].daily = D.campaigns[0].adsets[0].ads[0].daily.slice(0, 8);
   D.comparisons = []; D.verdict = { headline: "Moshi ran {c:cm1.age}.", body: "" };
   D.campaigns.forEach(c => { c.metaSpend = 1; c.metaPurchases = 1; c.metaPurchaseValue = 1 });
-  D.moshiRun = { start: "2026-09-22", end: "2026-10-06", otherSpend: 2000, otherPurchaseValue: 2400 };
+  D.moshiRun = { start: "2026-09-22", end: "2026-10-06", otherSpend: 2000, otherPurchases: 48, otherPurchaseValue: 2400 };
   return D;
 })();
