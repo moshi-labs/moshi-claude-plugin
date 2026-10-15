@@ -101,7 +101,7 @@ const RENDERED = { 'stopped.data.js': ['Moshi ran day 8 .', 'cm1 Sales Stopped S
   'legacy-frequency.data.js': ['Your ad ran at frequency 1.20 .'],
   'significant-edit.data.js': ['Clock restarted Oct 1 after a learning reset'],
   'overlap-starved.data.js': ['Your live ads crowded out Moshi’s copy', 'Tan 15 75,000 675,000 10% 19%',
-    'This is not a fair Moshi-vs-merchant test', 'Recropped or edited copies may not be detected', 'Moshi ad set paused with its campaign.'],
+    'This is not a fair Moshi-vs-merchant test', 'edited copies may be missed', 'Moshi ad set paused with its campaign.'],
   'overlap.data.js': ['Tan Moshi’s copy $750 1.20% CTR Your original $750 0.13% CTR Blue Moshi’s copy $650 1.20% CTR Your original $200 12.00% CTR',
     'CTR, first 7 days cm1 1.20% yo new set 1.20% Your ad set: 1 ads'],
   'check13-headline.data.js': ['CPA $25.00 (7-day click)'],
