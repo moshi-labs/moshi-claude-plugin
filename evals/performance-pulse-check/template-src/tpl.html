@@ -267,9 +267,10 @@ if(PE.length){const n=PE.length,TT=ok(CHT.total)&&CHT.total>n?CHT.total:n;if(ok(
 const ig=PE.filter(p=>!p.ms),big=PE.filter(p=>p.followers>=1e3),fo=ig.filter(p=>typeof p.followsYou=='boolean'),buy=PE.filter(p=>p.orderValue>0),nb=big.filter(p=>!(p.orderValue>0));
 const sum=a=>a.reduce((t,p)=>t+p.followers,0),fs=a=>a.sort((x,y)=>(y.followers??-1)-(x.followers??-1)),MN=esc((D.merchant||{}).name||'you');
 // Bar groups: each row's count and its share of the group's base. Channels: DATA.channels, else the rows when they are everyone.
-const pr=(v,b)=>`${fN(v)} <small>${Math.round(v/b*100)}%</small>`,// One stacked bar a group: each row a segment in one ink, told apart by its dither (solid, stripes, checker, diagonal; P.f), the
+const pr=(v,b)=>`${fN(v)} <small>${Math.round(v/b*100)}%</small>`,// One stacked bar a group: each row a segment in one ink, told apart by its pattern (plain, stripes, checker, diagonal) through the same shimmering ordered dither as
+// the other bars (P.r's mask m), the
 // rest of the base left empty, and a legend.
-grp=(t,b,rs)=>rs.length&&b>0?`<small>${t}</small>${cv((P,w,h)=>{let x=0;P.r(0,0,w,h,INK.g,.07,0);rs.forEach(([,v],i)=>{const L=Math.round(v/b*w);P.f(x,1,L-1,h-2,i);x+=L})},18,t)}<div class="lg">${rs.map(([l,v],i)=>`<span><i class="sw">${cv((P,w,h)=>P.f(0,0,w,h,i),10,'')}</i>${l} ${pr(v,b)}</span>`).join('')}</div>`:'';
+grp=(t,b,rs)=>rs.length&&b>0?`<small>${t}</small>${cv((P,w,h)=>{let x=0;P.r(0,0,w,h,INK.g,.07,0);rs.forEach(([,v],i)=>{const L=Math.round(v/b*w);P.r(x,1,L-1,h-2,INK.p,i?.75:.55,1,i);x+=L})},18,t)}<div class="lg">${rs.map(([l,v],i)=>`<span><i class="sw">${cv((P,w,h)=>P.r(0,0,w,h,INK.p,i?.75:.55,0,i),10,'')}</i>${l} ${pr(v,b)}</span>`).join('')}</div>`:'';
 const CN={instagram:'Instagram',messenger:'Messenger',whatsapp:'WhatsApp',imessage:'iMessage'},chs=Array.isArray(D.channels)?D.channels.filter(c=>c&&ok(c.people)&&c.people>0).map(c=>[CN[c.channel]||esc(c.channel),+c.people]):TT==n?[[CN.instagram,ig.length],[CN.messenger,n-ig.length]].filter(c=>c[1]):[],cb=chs.reduce((t,c)=>t+c[1],0);
 // A Messenger row shows the first name and last initial; an Instagram row the @username.
 const lbl=p=>p.ms?(w=>w[0]+(w[1]?' '+w[1][0]+'.':''))(String(p.name||p.username||'?').trim().split(/\s+/))+' (Messenger)':'@'+(p.username||p.name||'?');
@@ -340,7 +341,7 @@ ANI.addEventListener('DOMLoaded',()=>el.querySelector('img')?.remove())}catch(e)
 function inks(){const p=document.createElement('canvas').getContext('2d'),q=document.body.appendChild(document.createElement('i'));['p:primary','g:text-2','m:mint','a:accent-strong'].forEach(z=>{const[k,n]=z.split(':');p.clearRect(0,0,1,1);q.style.color=`var(--${n})`;p.fillStyle='#888';p.fillStyle=getComputedStyle(q).color;p.fillRect(0,0,1,1);INK[k]=[...p.getImageData(0,0,1,1).data]});q.remove()}
 function paint(c){if(!c._x||!c.width)return;const w=c.width,h=c.height,im=c._x.createImageData(w,h),d=im.data;
 const px=(X,Y,k)=>{if(X<0||Y<0||X>=w||Y>=h)return;const i=(Y*w+X)*4;d[i]=k[0];d[i+1]=k[1];d[i+2]=k[2];d[i+3]=255};
-const P={r(x,y,ww,hh,k,v,s=1){const x0=Math.round(x),y0=Math.round(y),x1=Math.round(x+ww),y1=Math.round(y+hh);for(let Y=y0;Y<y1;Y++)for(let X=x0;X<x1;X++){const t=v+(s&&SH?.06*Math.sin(T+X*.3-Y*.5):0);if(t*16>B[(Y&3)*4+(X&3)])px(X,Y,k)}},s(x,y,ww,hh,k){this.r(x,y,ww,hh,k,2,0)},f(x,y,ww,hh,i){for(let Y=y;Y<y+hh;Y++)for(let X=x;X<x+ww;X++)if([1,X%3<1,(X+Y)&1,(X+Y)%4<1][i])px(X,Y,INK.p)}};
+const P={r(x,y,ww,hh,k,v,s=1,m=0){const x0=Math.round(x),y0=Math.round(y),x1=Math.round(x+ww),y1=Math.round(y+hh);for(let Y=y0;Y<y1;Y++)for(let X=x0;X<x1;X++){const t=v+(s&&SH?.06*Math.sin(T+X*.3-Y*.5):0);if(t*16>B[(Y&3)*4+(X&3)]&&(m<1||(m<2?X%3<1:m<3?(X+Y)&1:(X+Y)%4<1)))px(X,Y,k)}},s(x,y,ww,hh,k){this.r(x,y,ww,hh,k,2,0)}};
 c._f(P,w,h);c._x.putImageData(im,0,0)}
 const all=()=>document.querySelectorAll('canvas.dv');
 function size(){all().forEach(c=>{const w=Math.floor(c.parentElement.clientWidth/2),hh=Math.floor(c.dataset.h/2);if(c.width!=w||c.height!=hh){c.width=w;c.height=hh;c.style.width=w*2+'px';c.style.height=hh*2+'px'}paint(c)})}
