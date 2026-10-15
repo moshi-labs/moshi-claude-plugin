@@ -1,0 +1,10 @@
+{
+ "_shape": "modelled-from-description",
+ "changes": [
+  {
+   "docName": "Tea guide",
+   "changedAt": "2026-10-01T18:00:00Z",
+   "summary": "Cold-brew steeping times added for every blend."
+  }
+ ]
+}

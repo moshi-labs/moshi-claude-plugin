@@ -85,8 +85,10 @@ const EXPECT = {
   'running-dup.data.js': ['Check 10: ad cm1_a0 has two rows for 2026-09-22'],
   'check16-merchant.data.js': ['Check 16: window.before names no Moshi ad set']
 };
-// Every fixture's gold renders with no banner.
-const FIXTURES = path.join(__dirname, '../../fixtures');
+// Every fixture's gold renders with no banner. day17-new-adset carries the sections 0.12.0 and 0.13.0 added: who messaged (tiles,
+// every buyer and the big accounts, paged in full, with Instagram and Messenger thread links and a row Meta gave none), both
+// comparisons, the baseline window and the full funnel.
+const FIXTURES = path.join(__dirname, '../../fixtures'), G17 = '../../fixtures/day17-new-adset/expected-data.json';
 for (const f of fs.readdirSync(FIXTURES)) if (fs.existsSync(path.join(FIXTURES, f, 'expected-data.json'))) EXPECT[`../../fixtures/${f}/expected-data.json`] = [];
 // The banner escapes DATA text: check 3's <b> must reach the page as text, not markup.
 // An ad set added Oct 2 to a campaign that started Aug 1 counts from its own startTime; the campaign keeps its Aug 1 clock.
@@ -156,7 +158,22 @@ const RENDERED = { 'check3.data.js': ['&lt;b&gt;x&lt;/b&gt;'],
     'Cost per ad chat $25.00 Moshi’s count of chats from ads, Sep 22 – Oct 8',
     'Chats 40 30 from ads, Sep 22 – Oct 8 Contacts captured 5 emails and phones, Sep 22 – Oct 8', 'Moshi’s own count, Sep 22 – Oct 8.',
     'Meta’s count, Sep 28 – Oct 4, is its pixel estimate', 'Sep 22 – Oct 8. Follower counts are from Instagram.'],
-  'baseline-early.data.js': ['Today · day 9', '2.40x ROAS on the Sales campaigns, too early to judge.'] };
+  'baseline-early.data.js': ['Today · day 9', '2.40x ROAS on the Sales campaigns, too early to judge.'],
+  [G17]: ['Oct 3 – Oct 9 Meta read', 'The 7 days before Moshi launched Moshi | Chat | Gift guide on Oct 10: how things ran before that change.',
+    'A strong week before the gift guide Your chat ads clicked at 2.23% , against 1.41% for your running campaigns.',
+    'Meta credits the campaign with 8 purchases (7-day click, 1-day view) . Since launch, 8 orders came straight from Moshi chats.',
+    '144 people messaged (141 on Instagram) 14 have 1,000+ followers, 462k combined 65% didn’t follow Wren &amp; Thistle Tea yet 3 verified accounts 26 emails and phones shared (19 emails, 7 phones) You can message these people yourself.',
+    'so the thread is already in your inbox: tap the paper-plane on a row to open it.',
+    'Who bought 7 Highlighted: 3 with 1k+ followers , $219 of orders. Followers Order A @ana.brews ✓ 48k $86 K @kettle.kate 3.4k $58 S @slowpour.sam 1.2k $74.50 M @moss.and.mint 640 $44 E @early.oolong 330 $52 D @dee.reads 212 $39 P Priya N. (Messenger) — $61',
+    'Big accounts that haven’t bought yet 11 with 1k+ followers messaged and didn’t buy, 409k followers combined. The biggest 8: Followers Got as far as C @chai.collective ✓ 212k cart L @leafandladle ✓ 86k product view',
+    'N @nordic.brew.co 16k messaged', 'Sep 27 – Oct 13. Follower counts are from Instagram; Messenger doesn’t share them.',
+    'CTR, Oct 3 – Oct 9 Moshi | Sales | Wren &amp; Thistle ahead 2.23% Your 3 running Sales campaigns 1.41% Weighted by each campaign’s spend on these dates: yours $6,484, Moshi’s $281.',
+    'CTR, first 13 days Moshi | Sales | Wren &amp; Thistle ahead 2.18% Fall Tins | Launch 1.56%', 'Today · day 17', 'Next gate: day 31 on Oct 27',
+    'Chats 144 138 from ads, Sep 27 – Oct 13 Contacts captured 26 emails and phones, Sep 27 – Oct 13',
+    '14% Conversation rate Link clicks on Moshi’s chat ads that started a conversation: 60 of 419, Meta’s count', 'Moshi’s own count, Sep 27 – Oct 13.',
+    'Meta’s count, Oct 3 – Oct 9, is its pixel estimate for Moshi’s campaigns (7-day click, 1-day view), 1.33x ROAS on the Sales campaigns. Meta may still add purchases to recent days.',
+    'Chat orders are 20% bigger Moshi chat orders · 8 orders $51.81 Your other ads · 672 orders $43.17',
+    'Moshi is 2.2% of your ad spend Moshi · 0.96x ROAS $637 Your other campaigns · 1.05x ROAS $27,676', 'Review your Closers →'] };
 // Strings that must not render. check10: no Meta tile, comparison or funnel value from the duplicate Moshi ad (CTR 1.20%, value $1,800).
 // cmp-dup: the failed comparison reports check 10, not check 2. window-rows: $700 would count the Sep 15-21 rows before window.start.
 const RENDERED_NOT = { 'check10.data.js': ['1.20%', '$1,800'],
@@ -171,18 +188,26 @@ const RENDERED_NOT = { 'check10.data.js': ['1.20%', '$1,800'],
   'check16.data.js': ['The 7 days before'], 'check16-newer.data.js': ['The 7 days before'], 'check16-merchant.data.js': ['The 7 days before'],
   'check16-stale.data.js': ['The 7 days before'], 'check16-noprior.data.js': ['The 7 days before'], 'check16-badmw.data.js': ['The 7 days before', 'from ads,'],
   'baseline-early.data.js': ['first read'], 'running-dup.data.js': ['Check 2: comparison ctr running'],
-  'check16-moshiwindow.data.js': ['The 7 days before', 'from ads,'] };
+  'check16-moshiwindow.data.js': ['The 7 days before', 'from ads,'], [G17]: ['RTG', 'Brand | Video views', 'otto.brandt', 'so far', 'Counts cover'] };
 // Strings that must render in this order. overlap: "Things in your account affecting results" leads, before the verdict. messaging:
 // the sections run hero, messaging, your own ads, stages, tiles, funnel, Closers.
 const ORDER = { 'overlap.data.js': [['Things in your account affecting results', 'Moshi CTR is'], ['Moshi CTR is', 'Where each campaign stands']],
   'messaging.data.js': [['Moshi CTR is', 'What messaging ads tell you'], ['What messaging ads tell you', 'Moshi against your own ads'],
+    ['Moshi against your own ads', 'Where each campaign stands'], ['Where each campaign stands', 'Contacts captured'],
+    ['Contacts captured', 'From conversation to purchase'], ['From conversation to purchase', 'Respond to your Closers']],
+  [G17]: [['A strong week before the gift guide', 'What messaging ads tell you'], ['What messaging ads tell you', 'Moshi against your own ads'],
     ['Moshi against your own ads', 'Where each campaign stands'], ['Where each campaign stands', 'Contacts captured'],
     ['Contacts captured', 'From conversation to purchase'], ['From conversation to purchase', 'Respond to your Closers']] };
 // Strings that must (HTML) or must not (HTML_NOT) be in the rendered markup: links, images and the title's h1.
 const HTML = { 'messaging.data.js': ['<h1>Chats are the story</h1>', '<p class=dek>Moshi CTR is', 'href="https://base-shop.moshi.ai/closer"'],
   'messaging-links.data.js': ['class=msgb href="https://business.facebook.com/latest/inbox/instagram_direct?asset_id=1&amp;selected_item_id=2"', '<img src="https://cdn.example.com/ann.jpg"'],
   'check14.data.js': ['<img src="data:image/png;base64,iVBORw0KGgo="'], 'sameads.data.js': ['<img src="https://cdn.example.com/blue.jpg"'],
-  'base.data.js': ['<h1>Moshi CTR is'], 'baseline.data.js': ['</header><p class=sub>The 7 days before Moshi launched <b>Gift guide</b> on Oct 5'] };
+  'base.data.js': ['<h1>Moshi CTR is'], 'baseline.data.js': ['</header><p class=sub>The 7 days before Moshi launched <b>Gift guide</b> on Oct 5'],
+  [G17]: ['<h1>A strong week before the gift guide</h1>', '</header><p class=sub>The 7 days before Moshi launched',
+    'class=msgb href="https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&amp;business_id=900270000000009&amp;selected_item_id=17841400000000101&amp;thread_type=IG_MESSAGE&amp;mailbox_id=110270000000071"',
+    '<span class=num>$61</span><a class=msgb href="https://www.facebook.com/110270000000071/inbox/5550000000035/?section=messages"',
+    '<span>@dee.reads</span></span><span class=num>212</span><span class=num>$39</span><span></span></div>',
+    'href="https://wrenandthistle.moshi.ai/closer"'] };
 const HTML_NOT = { 'messaging.data.js': ['class=msgb', '<img src="https://cdn'], 'check14.data.js': ['javascript:', 'http://cdn', 'data:text', 'ftp:'],
   'base.data.js': ['class=dek'] };
 let failed = 0;
