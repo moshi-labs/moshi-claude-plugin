@@ -11,7 +11,7 @@ organization argument, so never pass one.
 
 ## The plan
 
-Make at most six reads, plus any splits the size guard needs. Never call
+Make at most seven reads, plus any splits the size guard needs. Never call
 once per ad. Dates are `YYYY-MM-DD`, include both ends, and are the ad
 account's own days. The report window is the one `get_ad_performance`
 returns; the Meta reads start early enough to cover it.
@@ -24,6 +24,7 @@ returns; the Meta reads start early enough to cover it.
 | T4 launches | `dateFrom`: 89 days before today, `dateTo`: today, `owner: "merchant"`, `maxAds: 0` | the merchant's campaigns that delivered in the last 90 days, each ad set with its `startTime`. A launch is an ad set, or a whole campaign, that started in those 90 days |
 | T5 one launch | `adsetIds`: the launch ad set, or every ad set T4 lists for a launch campaign, `granularity: "daily"`, `dateFrom`: its `startTime` day, `dateTo`: 13 days later | daily rows for every ad of the launch, days 1–14 |
 | T6 overlap | `adIds`: every `clonedFrom.adId` and `creativeOverlap[].adId` on the Moshi ads T2 returned, `granularity: "daily"`, `dateFrom`: `window.start`, `dateTo`: `window.end`, `maxAds: 200` | daily rows for each ad of yours a Moshi ad was cloned from or shares a creative with, and each of their ad sets' `metrics` for the report window (`adsets[].totals`). Same ads and the overlap callout read them |
+| T7 Moshi's run | `dateFrom`: the first day any Moshi campaign delivered in the window (T2's earliest row), `dateTo`: its last delivery day plus 7, capped at today, `owner: "merchant"`, `maxAds: 0` | your campaigns' spend, purchases and purchase value over Moshi's run, for `moshiRun` |
 
 - Read T1 first. If its `flags` include `no_synced_ads`, Moshi has no Meta
   ad account connected or nothing has synced yet. Stop there and use
@@ -33,6 +34,8 @@ returns; the Meta reads start early enough to cover it.
 - Run T5 once for each launch you will compare, at most two. Pick them from
   T4 with `comparison-method.md`. Skip T5 when no launch qualifies, and
   never put two launches in one call.
+- Run T7 once, after T2, when a Moshi campaign delivered in the window.
+  Skip it otherwise; if it fails, leave `moshiRun` null.
 - Run T6 once, after T2, when any Moshi ad has a `clonedFrom` or a
   `creativeOverlap` entry. Skip it when none has, or when the API does not
   return those fields. Never split it: if it is refused, skip it, add

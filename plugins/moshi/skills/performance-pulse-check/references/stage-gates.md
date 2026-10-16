@@ -17,6 +17,10 @@ question.
 - Moshi publishes ads PAUSED, so `startTime` can come days before the
   first delivery. A campaign paused at creation counts from its first
   delivery, not from its creation.
+- Only delivery days count. When an entity's last row with impressions
+  is 2 or more days before the report date, it stopped: its age ends on
+  that day, it has no next gate, and the report says when it stopped. A
+  campaign that ran Sep 4 to Sep 14 is day 11 on Oct 14, not day 41.
 - A learning reset restarts the count. The reset date is the ad set's
   `lastSignificantEditAt` (`lastLearningReset` in DATA). Meta logs a
   significant edit for a budget change over 20%, a new ad, or a targeting

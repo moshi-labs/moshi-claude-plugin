@@ -31,6 +31,8 @@ Rules for every field:
 | `window.partial` | boolean | `true` when `window.end` is today |
 | `metaSyncedAt` | timestamp or null | when you ran T1 (Moshi's copy can be up to about 6 hours older); null in `moshi_only` |
 | `metaWindow` | `{ start, end }` or null | T1's `window.dateFrom` and `window.dateTo`, the dates every `metaSpend` covers; null in `moshi_only` |
+| `moshiRun` | object or null | the share-of-spend card's dates, on both sides: `{ start, end, otherSpend, otherPurchases, otherPurchaseValue }`. `start` is the first day a Moshi campaign delivered in the window; `end` is its last delivery day plus 7 (Meta's click window, for purchases credited after it stopped), capped at today. `otherSpend`, `otherPurchases` and `otherPurchaseValue` are the sums of T7's merchant campaign `metrics.spend`, `metrics.purchases` and `metrics.purchaseValue`. The template adds Moshi's side from its daily rows on those dates. Null falls back to `metaWindow` totals |
+| `channels` | array or null | who messaged, by channel, for the channel chart: `[{ channel, people }]`, `channel` one of `instagram`, `messenger`, `whatsapp`, `imessage`. Count each from `list_conversations` `page.total` with `source` set and `sinceDays` reaching `window.start` (`limit: 1`); Messenger has no `source` filter, so it is the unfiltered total minus every other source, `sandbox` included. Null when you could not count; the template then counts the rows, only when they are everyone |
 | `mode` | `"full"` or `"moshi_only"` | `moshi_only` when T1 flags `no_synced_ads` or fails (see `meta-reads.md`) |
 | `mood` | `"delight"` or `"reading"` | `"delight"` when the primary campaign leads on the metric its stage allows; `"reading"` when it is too early to judge. Sets the avatar. Missing values render as `"reading"` |
 | `primaryCampaignId` | string or null | the Moshi campaign with the largest spend in the window (its daily `spend` rows inside `window`); the verdict is about it. Required whenever a Moshi campaign spent in the window: a missing or wrong one hides the verdict (check 13). Null in `moshi_only` or when no Moshi campaign spent |
@@ -97,7 +99,7 @@ Fill `metaSpend`, `metaPurchases` and `metaPurchaseValue` on every
 campaign T1 returned, or leave all three null on every campaign (as when
 the size guard split T1). The template adds them up by `owner`, so one
 missing campaign would make the totals wrong; it shows the share of spend
-and the order-size read only when every campaign has them. Never add them
+and the order-size read only when every campaign has them. The order-size read sets the average Meta-credited purchase on Moshi's campaigns against yours, on `moshiRun` dates when given, else `metaWindow`, and only with 10+ purchases a side. Moshi's chat-matched orders are Shopify totals, a different measure, so they never go in it. Never add them
 up yourself, and never use an average order value a Moshi tool returns
 (the Buyers table's, or `list_conversations` → `extra.averageAov`): that
 is Moshi's own order average, not your store's.
@@ -193,6 +195,7 @@ Moshi's own funnel for the report window. Every field can be null.
 | `chatsFromAds` | integer | conversations that came from an ad, not a profile button |
 | `contactsCaptured` | integer | `get_ad_performance` → `contactsCaptured.total` (emails plus phones) |
 | `contactsEmail`, `contactsPhone` | integer | `contactsCaptured.email` and `contactsCaptured.phone` |
+| `contactsBoth` | integer or null | people who shared both, when a tool returns it (`contactsCaptured.both`); null leaves the Both row out. Never derive it |
 | `productViews` | integer | conversations that clicked to a product page |
 | `carts` | integer | conversations that reached a cart |
 | `checkouts` | integer | conversations that reached checkout |
@@ -229,12 +232,11 @@ number in a row: a row whose `username` or `name` holds one is hidden
 | `name` | string or null | Messenger: `name`. The report shows the first name and the last initial |
 | `channel` | `"messenger"`, or left out | `list_conversations` → `source`. Leave it out for Instagram. Skip `sandbox`, `imessage` and `whatsapp` rows |
 | `followers` | integer or null | `followerCount`; null for Messenger, which does not share it |
-| `verified` | boolean | `isVerifiedUser` |
 | `followsYou` | boolean or null | `isUserFollowBusiness`; null when it is missing |
 | `orderValue` | number or null | what they spent on orders in the window: the sum of `data.totalPrice` (or `data.total_price`) over their `purchase_complete` events, from `get_conversation_events` for each row whose `purchaseCount` is above 0. Null when they did not buy |
 | `stage` | string or null | how far someone who did not buy got: `get_leads` → `furthestStageName` for their `conversationId`, verbatim (`click_through`, `product_view`, `cart`, `checkout`). Null reads as "messaged" |
 | `profilePic` | https URL or null | `profilePic`, Moshi's copy of the profile picture. Null shows their initial |
-| `threadUrl` | https URL or null | their thread in Meta Business Suite, which gets a paper-plane button. No Moshi tool returns one yet, so leave it null |
+| `threadUrl` | https URL or null | their thread in Meta Business Suite; the person's name links to it. No Moshi tool returns one yet, so leave it null |
 
 `list_conversations` returns at most 100 rows a call and has no offset.
 Call it with `limit: 100` and `sinceDays` reaching back to `window.start`.

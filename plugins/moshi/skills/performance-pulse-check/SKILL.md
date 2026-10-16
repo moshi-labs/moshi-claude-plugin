@@ -24,11 +24,12 @@ allows, and how to say it.
    `get_recent_brand_doc_change` if it exists. Then read 2–3 threads from
    `transcriptsToRead` with `get_conversation_messages`. For who messaged:
    `list_conversations`, `get_leads`, and `get_conversation_events` for
-   each buyer (`data-contract.md` → `chatters`). `get_closer_activity`
+   each buyer (`data-contract.md` → `chatters`), and `list_conversations`
+   once per channel for `channels`. `get_closer_activity`
    gives `organization.dashboardUrl` for the Closer link, and
    `get_ad_shortlist` the creatives' pictures (`thumbnailUrl`).
 2. **Read Meta through Moshi.** Follow `references/meta-reads.md`
-   exactly: `get_ad_account_tree`, at most six reads, in order. If the
+   exactly: `get_ad_account_tree`, at most seven reads, in order. If the
    first read flags `no_synced_ads` (no Meta ad account connected in
    Moshi, or nothing synced yet) or fails, set `mode: "moshi_only"` and
    skip to step 5. In `moshi_only`, add "CTR, CPC and CPM: no Meta ad

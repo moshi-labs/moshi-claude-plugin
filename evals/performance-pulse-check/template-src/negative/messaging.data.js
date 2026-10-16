@@ -23,6 +23,8 @@ const D = {
 };
   // change
   D.verdict.title = "Chats are the story";
+  D.channels = [{ channel: "instagram", people: 12 }, { channel: "messenger", people: 8 }];
+  D.moshi.contactsBoth = 1;
   D.chatters = { total: 20, people: [
     { username: "ann.k", followers: 15200, verified: true, followsYou: false, orderValue: 80 },
     { username: "bo.c", followers: 1200, followsYou: true, orderValue: 45.5 },

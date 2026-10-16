@@ -37,6 +37,20 @@ Reference report: an internal Moshi day-one results report (Oct 2026)
 > report, and `accountIssues` print only beside that callout; otherwise
 > the reply carries them.
 
+> **Update 2026-10-14 (plugin 0.13.0).** Ages count only delivery days: an
+> entity 2+ days past its last delivery stops its clock there and has no
+> next gate. What messaging ads tell you swaps its tiles for one bar chart
+> under "N people messaged you", in three labelled groups (by channel from `channels`, who shared email /
+> phone / both, who follows you), drops verified badges and the 1k+
+> highlight, lists every buyer with their follow status, and links a name
+> to its Business Suite thread instead of a paper-plane button. The funnel
+> shows one Purchases bar: Meta's count, with Moshi's chat-matched orders
+> drawn inside it, never added. The share-of-spend card reads both sides
+> over Moshi's run plus 7 days (`moshiRun`, read T7). The order-size card
+> compares Meta-credited average order value on both sides, on those
+> dates, with 10+ purchases a side; it no longer sets Moshi's Shopify
+> chat orders against Meta's pixel values.
+
 ## Goal
 
 A merchant asks "how are my Moshi ads doing?" and gets a report that reads
