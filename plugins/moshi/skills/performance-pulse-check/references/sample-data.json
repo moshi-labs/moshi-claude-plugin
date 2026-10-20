@@ -1,0 +1,488 @@
+{
+  "schemaVersion": 1,
+  "merchant": {
+    "name": "Brindle Chili Works",
+    "currency": "USD",
+    "timezone": "America/Los_Angeles"
+  },
+  "asOf": "2026-10-06T18:40:00Z",
+  "window": {
+    "start": "2026-09-29",
+    "end": "2026-10-05",
+    "partial": false,
+    "before": "as_202"
+  },
+  "metaSyncedAt": "2026-10-06T18:09:00Z",
+  "metaWindow": {
+    "start": "2026-09-07",
+    "end": "2026-10-06"
+  },
+  "moshiWindow": {
+    "start": "2026-09-22",
+    "end": "2026-10-06"
+  },
+  "mode": "full",
+  "mood": "delight",
+  "primaryCampaignId": "cm_101",
+  "verdict": {
+    "title": "Hot start, and Meta is still learning",
+    "headline": "Chat to Cart clicked at {cmp:0.moshi} in week one, against {cmp:0.merchant} for Fall Launch.",
+    "body": "Chats cost {m:costPerChat} each, and {m:provenOrders} orders came straight from those threads. Its first fair CPA read lands {c:cm_101.nextGateDate}."
+  },
+  "campaigns": [
+    {
+      "id": "cm_101",
+      "name": "Moshi · Chat to Cart",
+      "owner": "moshi",
+      "objective": "sales",
+      "metaObjective": "OUTCOME_SALES",
+      "budgetType": "CBO",
+      "dailyBudget": 300,
+      "status": "ACTIVE",
+      "startTime": "2026-09-22",
+      "adsPulled": "all",
+      "retargeting": false,
+      "metaSpend": 2077,
+      "metaPurchases": 21,
+      "metaPurchaseValue": 924.4,
+      "adsets": [
+        {
+          "id": "as_201",
+          "name": "Broad US 25–54",
+          "startTime": "2026-09-22",
+          "optimizationGoal": "OFFSITE_CONVERSIONS",
+          "dailyBudget": null,
+          "learning": "learning",
+          "adCount": 2,
+          "lastLearningReset": "2026-09-30",
+          "attributionSetting": "7-day click, 1-day view",
+          "ads": [
+            {
+              "id": "ad_301",
+              "name": "Heat ladder reel",
+              "angle": "Taste test",
+              "daily": [
+                {
+                  "date": "2026-09-22",
+                  "spend": 89.7,
+                  "impressions": 6013,
+                  "linkClicks": 128,
+                  "conversations": 10,
+                  "purchases": 1,
+                  "purchaseValue": 44.1,
+                  "reach": 5727
+                },
+                {
+                  "date": "2026-09-23",
+                  "spend": 91.7,
+                  "impressions": 6644,
+                  "linkClicks": 148,
+                  "conversations": 10,
+                  "purchases": 1,
+                  "purchaseValue": 46.5,
+                  "reach": 5986
+                },
+                {
+                  "date": "2026-09-24",
+                  "spend": 125.7,
+                  "impressions": 8976,
+                  "linkClicks": 168,
+                  "conversations": 15,
+                  "purchases": 1,
+                  "purchaseValue": 41,
+                  "reach": 7672
+                },
+                {
+                  "date": "2026-09-25",
+                  "spend": 137.4,
+                  "impressions": 9306,
+                  "linkClicks": 188,
+                  "conversations": 17,
+                  "purchases": 1,
+                  "purchaseValue": 48.1,
+                  "reach": 7566
+                },
+                {
+                  "date": "2026-09-26",
+                  "spend": 132.9,
+                  "impressions": 10185,
+                  "linkClicks": 201,
+                  "conversations": 14,
+                  "purchases": 1,
+                  "purchaseValue": 44.4,
+                  "reach": 7895
+                },
+                {
+                  "date": "2026-09-27",
+                  "spend": 157.7,
+                  "impressions": 10670,
+                  "linkClicks": 201,
+                  "conversations": 17,
+                  "purchases": 2,
+                  "purchaseValue": 83.3,
+                  "reach": 7904
+                },
+                {
+                  "date": "2026-09-28",
+                  "spend": 152.1,
+                  "impressions": 10262,
+                  "linkClicks": 193,
+                  "conversations": 16,
+                  "purchases": 2,
+                  "purchaseValue": 85.4,
+                  "reach": 7278
+                },
+                {
+                  "date": "2026-09-29",
+                  "spend": 131.1,
+                  "impressions": 8973,
+                  "linkClicks": 187,
+                  "conversations": 14,
+                  "purchases": 2,
+                  "purchaseValue": 83.4,
+                  "reach": 6104
+                },
+                {
+                  "date": "2026-09-30",
+                  "spend": 154.6,
+                  "impressions": 11500,
+                  "linkClicks": 214,
+                  "conversations": 15,
+                  "purchases": 2,
+                  "purchaseValue": 83.1,
+                  "reach": 7516
+                },
+                {
+                  "date": "2026-10-01",
+                  "spend": 147.8,
+                  "impressions": 9793,
+                  "linkClicks": 168,
+                  "conversations": 17,
+                  "purchases": 1,
+                  "purchaseValue": 45.3,
+                  "reach": 6159
+                },
+                {
+                  "date": "2026-10-02",
+                  "spend": 170.5,
+                  "impressions": 12058,
+                  "linkClicks": 215,
+                  "conversations": 19,
+                  "purchases": 2,
+                  "purchaseValue": 94,
+                  "reach": 7308
+                },
+                {
+                  "date": "2026-10-03",
+                  "spend": 147.8,
+                  "impressions": 10159,
+                  "linkClicks": 183,
+                  "conversations": 18,
+                  "purchases": 1,
+                  "purchaseValue": 40.8,
+                  "reach": 5941
+                },
+                {
+                  "date": "2026-10-04",
+                  "spend": 139.7,
+                  "impressions": 10551,
+                  "linkClicks": 200,
+                  "conversations": 18,
+                  "purchases": 2,
+                  "purchaseValue": 94.3,
+                  "reach": 5961
+                },
+                {
+                  "date": "2026-10-05",
+                  "spend": 161.1,
+                  "impressions": 11608,
+                  "linkClicks": 212,
+                  "conversations": 17,
+                  "purchases": 1,
+                  "purchaseValue": 42.7,
+                  "reach": 6343
+                },
+                {
+                  "date": "2026-10-06",
+                  "spend": 137.2,
+                  "impressions": 10091,
+                  "linkClicks": 173,
+                  "conversations": 14,
+                  "purchases": 1,
+                  "purchaseValue": 48,
+                  "reach": 5339
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cm_102",
+      "name": "Moshi · Ask the Chili Nerd",
+      "owner": "moshi",
+      "objective": "engagement",
+      "metaObjective": "OUTCOME_ENGAGEMENT",
+      "budgetType": "ABO",
+      "dailyBudget": null,
+      "status": "ACTIVE",
+      "startTime": "2026-10-06",
+      "adsPulled": "all",
+      "retargeting": false,
+      "metaSpend": 61.4,
+      "metaPurchases": 0,
+      "metaPurchaseValue": 0,
+      "adsets": [
+        {
+          "id": "as_202",
+          "name": "Messenger + IG DM",
+          "startTime": "2026-10-06",
+          "optimizationGoal": "CONVERSATIONS",
+          "dailyBudget": 80,
+          "learning": null,
+          "adCount": 1,
+          "lastLearningReset": null,
+          "attributionSetting": "1-day click",
+          "ads": [
+            {
+              "id": "ad_303",
+              "name": "Which sauce for tacos?",
+              "angle": "Pairing quiz",
+              "daily": [
+                {
+                  "date": "2026-10-06",
+                  "spend": 61.4,
+                  "impressions": 5658,
+                  "linkClicks": 93,
+                  "conversations": 9,
+                  "purchases": 0,
+                  "purchaseValue": 0,
+                  "reach": 5440
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cm_401",
+      "name": "Fall Launch",
+      "owner": "merchant",
+      "objective": "sales",
+      "metaObjective": "OUTCOME_SALES",
+      "budgetType": "CBO",
+      "dailyBudget": 1400,
+      "status": "ACTIVE",
+      "startTime": "2026-09-29",
+      "adsPulled": "all",
+      "retargeting": false,
+      "metaSpend": 4289.5,
+      "metaPurchases": 103,
+      "metaPurchaseValue": 4661.6,
+      "adsets": [
+        {
+          "id": "as_501",
+          "name": "Advantage+ audience",
+          "startTime": "2026-09-29",
+          "optimizationGoal": "OFFSITE_CONVERSIONS",
+          "dailyBudget": null,
+          "learning": "success",
+          "adCount": 1,
+          "lastLearningReset": null,
+          "attributionSetting": "7-day click, 1-day view",
+          "totals": {
+            "spend": 4289.5,
+            "impressions": 226256,
+            "linkClicks": 2806,
+            "conversations": 0,
+            "purchases": 103,
+            "purchaseValue": 4661.6
+          },
+          "ads": [
+            {
+              "id": "ad_601",
+              "name": "Smoked habanero UGC",
+              "angle": "Heat reaction",
+              "daily": [
+                {
+                  "date": "2026-09-29",
+                  "spend": 602,
+                  "impressions": 32128,
+                  "linkClicks": 449,
+                  "conversations": 0,
+                  "purchases": 18,
+                  "purchaseValue": 799.2,
+                  "reach": 29207
+                },
+                {
+                  "date": "2026-09-30",
+                  "spend": 663.7,
+                  "impressions": 33615,
+                  "linkClicks": 461,
+                  "conversations": 0,
+                  "purchases": 12,
+                  "purchaseValue": 536.2,
+                  "reach": 27781
+                },
+                {
+                  "date": "2026-10-01",
+                  "spend": 647.9,
+                  "impressions": 34975,
+                  "linkClicks": 452,
+                  "conversations": 0,
+                  "purchases": 25,
+                  "purchaseValue": 1135.2,
+                  "reach": 26496
+                },
+                {
+                  "date": "2026-10-02",
+                  "spend": 670.5,
+                  "impressions": 32677,
+                  "linkClicks": 370,
+                  "conversations": 0,
+                  "purchases": 13,
+                  "purchaseValue": 564.2,
+                  "reach": 22851
+                },
+                {
+                  "date": "2026-10-03",
+                  "spend": 616.8,
+                  "impressions": 34246,
+                  "linkClicks": 433,
+                  "conversations": 0,
+                  "purchases": 13,
+                  "purchaseValue": 623.3,
+                  "reach": 22238
+                },
+                {
+                  "date": "2026-10-04",
+                  "spend": 528,
+                  "impressions": 27738,
+                  "linkClicks": 307,
+                  "conversations": 0,
+                  "purchases": 10,
+                  "purchaseValue": 466.1,
+                  "reach": 16811
+                },
+                {
+                  "date": "2026-10-05",
+                  "spend": 560.6,
+                  "impressions": 30877,
+                  "linkClicks": 334,
+                  "conversations": 0,
+                  "purchases": 12,
+                  "purchaseValue": 537.4,
+                  "reach": 17544
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "moshi": {
+    "firstLaunch": "2026-09-22",
+    "spend": 2138.4,
+    "chats": 318,
+    "chatsFromAds": 284,
+    "contactsCaptured": 71,
+    "contactsEmail": 52,
+    "contactsPhone": 19,
+    "productViews": 149,
+    "carts": 46,
+    "checkouts": 27,
+    "provenOrders": 14,
+    "provenRevenue": 768.5,
+    "delayedOrders": 5,
+    "closerRecoveries": 3,
+    "closerRevenue": 141
+  },
+  "comparisons": [
+    {
+      "metric": "ctr",
+      "day": 7,
+      "moshiCampaignId": "cm_101",
+      "merchantCampaignId": "cm_401"
+    },
+    {
+      "metric": "ctr",
+      "running": true,
+      "moshiCampaignId": "cm_101"
+    }
+  ],
+  "changes": [
+    {
+      "date": "2026-09-30",
+      "what": "Meta restarted learning after a significant edit",
+      "kind": "significant_edit",
+      "source": "meta",
+      "entityId": "as_201"
+    },
+    {
+      "date": "2026-10-06",
+      "what": "Moshi launched Messenger + IG DM",
+      "kind": "new_ad",
+      "source": "moshi",
+      "entityId": "as_202"
+    }
+  ],
+  "accountIssues": [],
+  "chatters": {
+    "total": 318,
+    "people": [
+      {
+        "username": "salsa.sam",
+        "followers": 48200,
+        "verified": true,
+        "followsYou": false,
+        "orderValue": 58
+      },
+      {
+        "username": "heatseekr",
+        "followers": 2300,
+        "followsYou": true,
+        "orderValue": 44.5
+      },
+      {
+        "username": "taco.jo",
+        "followers": 640,
+        "followsYou": false,
+        "orderValue": 89
+      },
+      {
+        "name": "Dana Ruiz",
+        "channel": "messenger",
+        "orderValue": 41
+      },
+      {
+        "username": "bbq.dad",
+        "followers": 21500,
+        "followsYou": false,
+        "stage": "cart"
+      },
+      {
+        "username": "chili.lab",
+        "followers": 9100,
+        "verified": true,
+        "followsYou": false,
+        "stage": "product_view"
+      },
+      {
+        "username": "mild.mo",
+        "followers": 310,
+        "followsYou": true
+      }
+    ]
+  },
+  "dashboardUrl": "https://brindle.moshi.ai",
+  "flags": [
+    {
+      "source": "moshi",
+      "code": "order_match_pending",
+      "text": "Oct 6 orders still matching."
+    }
+  ]
+}

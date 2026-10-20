@@ -221,8 +221,9 @@ const banner=()=>`<div class="ban" role="alert"><b>Data check</b>: ${ERR.length}
 function render(){const app=document.getElementById('app');let done;
 try{done=build(app)}catch(e){bad(0,`the report could not render: ${e&&e.message||e}`);app.innerHTML=banner()}window.ERRORS=ERR;if(done){avatar();boot()}}
 function build(app){
-try{D=DATA}catch(e){D=null}
-if(!D||typeof D!='object'){bad(0,'the DATA block is missing or did not parse');app.innerHTML=banner();return}
+// The shipped template's DATA is null until the skill fills it. A DATA block that did not parse or run leaves D undefined.
+try{D=DATA}catch(e){}
+if(!D||typeof D!='object'){bad(0,D===null?'no data yet: the performance-pulse-check skill fills this template':'the DATA block is missing or did not parse');app.innerHTML=banner();return}
 if(D.schemaVersion!==1)bad(5,`schemaVersion is ${D.schemaVersion}; this template reads 1`);
 D.campaigns=D.campaigns||[];W=D.window||{};CUR=(D.merchant||{}).currency||null;TZ=(D.merchant||{}).timezone||'UTC';
 if(!dOK(W,'start','window.start',1)+!dOK(W,'end','window.end',1))W.start=W.end=null;REF=W.end;

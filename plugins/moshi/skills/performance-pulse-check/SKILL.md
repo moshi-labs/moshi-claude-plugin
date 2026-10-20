@@ -66,10 +66,14 @@ allows, and how to say it.
    T2, T3, T5 and T6 into one row per ad per date, fill `totals` from T7,
    and set `adsPulled` from the read that pulled each campaign's ads.
    Write `verdict.title` in a few plain words, and the headline and body
-   with tokens such as `{c:123.cpc}`, never with typed numbers.
+   with tokens such as `{c:123.cpc}`, never with typed numbers. A worked
+   example for a made-up merchant is in `references/sample-data.json`; it
+   predates some fields, such as `creativeOverlap`, so the contract wins
+   where they differ.
 9. **Render.** Copy `assets/pulse-check.html` and replace only the
-   `const DATA = {...};` block in its last script (a split test adds one
-   script after it: see Split tests). If you can copy files,
+   `const DATA = null;` line in its last script with your
+   `const DATA = {...};` block (a split test adds one script after it:
+   see Split tests). If you can copy files,
    copy and edit. If not, emit the whole template unchanged with your DATA
    block, as an artifact. If the report shows a "data check" banner, fix
    DATA and render again.

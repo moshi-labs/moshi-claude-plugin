@@ -1,13 +1,14 @@
 // Runs the shipped template's code against a DATA file in a stub DOM and
 // prints the data-check banner (or "none"), the rendered text and the rendered HTML.
 // Usage: node check.js <file with `const DATA = {...};` or a JSON object>
+// With no file, it runs the template's own DATA block: the shipped placeholder, `const DATA = null;`.
 const fs = require('fs'), vm = require('vm'), path = require('path');
 const html = fs.readFileSync(path.join(__dirname,
   '../../../plugins/moshi/skills/performance-pulse-check/assets/pulse-check.html'), 'utf8');
 const scripts = [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].map(m => m[1]);
-const code = scripts.filter(s => !/^\s*const DATA\s*=/.test(s)).join('\n;\n');
+const isData = s => /^\s*const DATA\s*=/.test(s), code = scripts.filter(s => !isData(s)).join('\n;\n');
 
-let src = fs.readFileSync(process.argv[2], 'utf8');
+let src = process.argv[2] ? fs.readFileSync(process.argv[2], 'utf8') : scripts.find(isData) || '';
 if (/^\s*\{/.test(src)) src = 'const DATA = ' + src + ';';
 
 const app = { innerHTML: '' }, noop = () => {};
