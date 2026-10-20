@@ -1,6 +1,7 @@
-// Runs every negative DATA file, and every fixture's gold (fixtures/*/expected-data.json), through check.js. Fails when an expected
-// banner line, rendered string or HTML string is missing, when a gold shows a banner, and when the shipped template is over 122,880
-// bytes.
+// Runs every negative DATA file, every fixture's gold (fixtures/*/expected-data.json) and the skill's references/sample-data.json
+// through check.js. Fails when an expected banner line, rendered string or HTML string is missing, when a gold or the sample shows a
+// banner, when the shipped template's placeholder DATA does not show the no-data banner, when sample-data.json is stale, and when
+// the shipped template is over 122,880 bytes.
 // Usage: node template-src/negative/run.js (from evals/performance-pulse-check), or from any directory.
 const { execFileSync } = require('child_process'), path = require('path'), fs = require('fs');
 const check = path.join(__dirname, '..', 'check.js');
@@ -210,6 +211,11 @@ const HTML = { 'messaging.data.js': ['<h1>Chats are the story</h1>', '<p class=d
     'href="https://wrenandthistle.moshi.ai/closer"'] };
 const HTML_NOT = { 'messaging.data.js': ['class=msgb', '<img src="https://cdn'], 'check14.data.js': ['javascript:', 'http://cdn', 'data:text', 'ftp:'],
   'base.data.js': ['class=dek'] };
+// The sample, the skill's worked example (sample.js writes it; build.js --sample previews it), renders whole with no banner.
+const SKILL = '../../../../plugins/moshi/skills/performance-pulse-check', SAMPLE = SKILL + '/references/sample-data.json';
+EXPECT[SAMPLE] = [];
+RENDERED[SAMPLE] = ['Chat to Cart clicked at 1.98% in week one, against 1.24% for Fall Launch.', 'Review your Closers →'];
+HTML[SAMPLE] = ['<h1>Hot start, and Meta is still learning</h1>'];
 let failed = 0;
 for (const [file, want] of Object.entries(EXPECT)) {
   const out = execFileSync('node', [check, path.join(__dirname, file)], { encoding: 'utf8' });
@@ -221,7 +227,19 @@ for (const [file, want] of Object.entries(EXPECT)) {
     .concat((HTML_NOT[file] || []).filter(w => html.includes(w)).map(w => 'unwanted html ' + w));
   const bad = miss.length > 0 || (!want.length && banner != 'none');
   if (bad) failed++;
-  console.log(`${bad ? 'FAIL' : 'ok  '} ${file.replace('../../', '')}: ${bad ? (miss.length ? 'missing ' + miss.join(' | ') : 'unexpected ' + banner) : banner}`);
+  console.log(`${bad ? 'FAIL' : 'ok  '} ${file.replace(/^(\.\.\/)+/, '')}: ${bad ? (miss.length ? 'missing ' + miss.join(' | ') : 'unexpected ' + banner) : banner}`);
+}
+// The shipped template carries no data: its last script is the placeholder SKILL.md step 9 tells the skill to replace, and opened
+// as is it shows the no-data banner (check.js with no file runs it) instead of throwing. sample-data.json is sample.js's output.
+const PH = 'const DATA = null;', own = execFileSync('node', [check], { encoding: 'utf8' }).match(/^banner: (.*)$/m)[1];
+const read = f => fs.readFileSync(path.join(__dirname, SKILL, f), 'utf8'), sample = require('../sample.js');
+for (const [ok, name] of [
+  [read('assets/pulse-check.html').includes(`<script>\n${PH}\n</script>\n</body>`) && read('SKILL.md').includes('`' + PH + '`'),
+    `pulse-check.html ships ${PH}, the line SKILL.md step 9 replaces`],
+  [own == 'Check 0: no data yet: the performance-pulse-check skill fills this template', `placeholder: ${own}`],
+  [read('references/sample-data.json') == sample.json, 'references/sample-data.json matches sample.js (node template-src/sample.js rewrites it)']]) {
+  if (!ok) failed++;
+  console.log(`${ok ? 'ok  ' : 'FAIL'} ${name}`);
 }
 // The design spec's size line: a host that must re-emit the template whole can do it in one artifact.
 const size = fs.statSync(path.join(__dirname, '../../../../plugins/moshi/skills/performance-pulse-check/assets/pulse-check.html')).size;

@@ -9,20 +9,32 @@ file:
 node build.js ../../../plugins/moshi/skills/performance-pulse-check/assets/pulse-check.html
 ```
 
-- `node build.js <out> 1` writes the unminified template.
-- `node build.js <out> "" <data.js>` renders a fixture's DATA block instead
-  of the built-in sample. For a gold, wrap it first:
+The shipped file carries no data: its last script is `const DATA = null;`, which
+the skill replaces with its own DATA block (SKILL.md step 9). Opened as is, it
+shows a data-check banner that says the skill fills it.
+
+- `node build.js <out> --sample` writes a preview with the sample DATA.
+- `node build.js <out> 1` writes the unminified template (add `--sample` for the
+  preview).
+- `node build.js <out> "" <data.js>` renders a fixture's DATA block instead.
+  For a gold, wrap it first:
   `{ printf 'const DATA = '; cat ../fixtures/day17-new-adset/expected-data.json; printf ';'; } > "$TMPDIR/day17.data.js"`.
-- The sample DATA lives in `build.js`; its daily rows are in `rows.txt`
-  (`gen.js` generated them).
+- The sample DATA lives in `sample.js`; its daily rows are in `rows.txt`
+  (`gen.js` generated them). `node sample.js` writes it as pretty JSON to
+  `references/sample-data.json`, the skill's worked example: run it after you
+  change the sample (`negative/run.js` fails while the file is stale).
 - `node check.js <data.js>` prints the data-check banner, the rendered text and
-  the rendered HTML for one DATA file.
-- `node negative/run.js` renders every `negative/*.data.js`, and every
-  fixture's gold (`../fixtures/*/expected-data.json`), through the shipped
+  the rendered HTML for one DATA file, a `const DATA = ...;` script or a JSON
+  object such as `references/sample-data.json`. With no file it runs the
+  shipped template's own placeholder.
+- `node negative/run.js` renders every `negative/*.data.js`, every fixture's
+  gold (`../fixtures/*/expected-data.json`) and the sample through the shipped
   template. It fails when an expected banner line, rendered string or HTML string
-  is missing, when a gold shows a banner, or when the shipped file is over the
-  size line. day17-new-adset's gold also has to show the sections 0.12.0 and
-  0.13.0 added (all but Same ads, which needs a Moshi ad cloned from yours).
+  is missing, when a gold or the sample shows a banner, when the shipped file's
+  last script is not the placeholder or the placeholder does not show its banner,
+  when `sample-data.json` is stale, or when the shipped file is over the size
+  line. day17-new-adset's gold also has to show the sections 0.12.0 and 0.13.0
+  added (all but Same ads, which needs a Moshi ad cloned from yours).
 
 The shipped file must stay at or under 122,880 bytes (`wc -c`; `negative/run.js`
 enforces it): the design spec's 120 KB, so a host that must re-emit the template
@@ -34,7 +46,9 @@ the account map and Creative fatigue; the avatar and the sample DATA are already
 lean, so a new section has to pay for itself. 0.13.0 paid for the running-campaigns
 comparison, the baseline window and check 16 by packing the avatar with zopfli
 (1,652 bytes, the same JSON) and dropping the quotes around plain attribute
-values (about 170).
+values (about 170). 0.13.1 moved the sample DATA out of the template into
+`references/sample-data.json` (~7 KB: 122,714 to 115,627 bytes). The skill
+always replaces the DATA block, so it never used the sample.
 
 ## Avatar
 
