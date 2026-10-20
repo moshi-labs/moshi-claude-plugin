@@ -1,0 +1,224 @@
+{
+ "organization": {
+  "id": "9374ed38-b8b3-5180-8ce8-30cde786b82a",
+  "name": "Saltmarsh Spice Traders"
+ },
+ "account": {
+  "currency": "USD",
+  "timezone": "America/New_York"
+ },
+ "window": {
+  "dateFrom": "2026-09-07",
+  "dateTo": "2026-10-06",
+  "days": 30,
+  "granularity": "daily",
+  "note": "Inclusive: every day from dateFrom through dateTo, as Meta's insight days in the ad account's timezone."
+ },
+ "source": "Moshi's synced copy of the organization's Meta ad account (every campaign, Moshi-created and the merchant's own), refreshed about every 6 hours.",
+ "flags": [],
+ "counts": {
+  "campaigns": 1,
+  "adsets": 1,
+  "ads": 2,
+  "adsListed": 2,
+  "adsOverMaxAds": 0,
+  "omittedForNoDelivery": {
+   "campaigns": 0,
+   "adsets": 0,
+   "ads": 0
+  },
+  "dailyRows": 4
+ },
+ "campaigns": [
+  {
+   "campaignId": "1202630000000071",
+   "campaignName": "Moshi | Chat Starter | Spice Sets",
+   "owner": "moshi",
+   "status": "ACTIVE",
+   "objective": "OUTCOME_ENGAGEMENT",
+   "startTime": "2026-10-05T09:15:00-0400",
+   "dailyBudget": "12000",
+   "adsetCount": 1,
+   "adCount": 2,
+   "moshiAdCount": 2,
+   "metrics": {
+    "reach": 13098,
+    "impressions": 17498,
+    "spend": 176.84,
+    "roas": 0,
+    "purchases": 0,
+    "purchaseValue": 0,
+    "cpm": 10.1063,
+    "messagingConversationsStarted": 85,
+    "costPerMessagingConversationStarted": 2.0805
+   },
+   "adsets": [
+    {
+     "adsetId": "1202630000000070",
+     "adsetName": "Moshi | Chat | Broad US",
+     "owner": "moshi",
+     "status": "ACTIVE",
+     "effectiveStatus": "ACTIVE",
+     "adsetStatus": "ACTIVE",
+     "startTime": "2026-10-05T09:15:00-0400",
+     "optimizationGoal": "CONVERSATIONS",
+     "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
+     "attributionSpec": [
+      {
+       "eventType": "CLICK_THROUGH",
+       "windowDays": 7
+      },
+      {
+       "eventType": "VIEW_THROUGH",
+       "windowDays": 1
+      }
+     ],
+     "lastSignificantEditAt": "2026-10-05T13:00:00.000Z",
+     "learningPhase": {
+      "status": "LEARNING",
+      "learningWindowEndsAt": "2026-10-12T13:00:00.000Z"
+     },
+     "adCount": 2,
+     "moshiAdCount": 2,
+     "metrics": {
+      "reach": 13098,
+      "impressions": 17498,
+      "spend": 176.84,
+      "roas": 0,
+      "purchases": 0,
+      "purchaseValue": 0,
+      "cpm": 10.1063,
+      "messagingConversationsStarted": 85,
+      "costPerMessagingConversationStarted": 2.0805
+     },
+     "ads": [
+      {
+       "adId": "1202630000000069",
+       "adName": "Moshi - Blend Quiz Hook",
+       "owner": "moshi",
+       "moshiFlowId": "7b0939d0-9077-52f3-8128-f3ea74c8d1ab",
+       "status": "ACTIVE",
+       "effectiveStatus": "ACTIVE",
+       "clonedFrom": null,
+       "creativeOverlap": [],
+       "creativeType": "image",
+       "ctaType": "MESSAGE_PAGE",
+       "metrics": {
+        "reach": 7420,
+        "impressions": 8916,
+        "spend": 92.73,
+        "roas": 0,
+        "purchases": 0,
+        "purchaseValue": 0,
+        "cpm": 10.4004,
+        "messagingConversationsStarted": 35,
+        "costPerMessagingConversationStarted": 2.6494
+       },
+       "funnel": {
+        "clicks": 290,
+        "linkClicks": 215,
+        "ctr": 3.2526,
+        "landingPageViews": 0,
+        "addToCart": 0,
+        "initiateCheckout": 0,
+        "leads": 0,
+        "videoViews": 0,
+        "postEngagement": 326
+       },
+       "daily": [
+        {
+         "date": "2026-10-05",
+         "reach": 5581,
+         "impressions": 6139,
+         "spend": 63.85,
+         "roas": 0,
+         "purchases": 0,
+         "purchaseValue": 0,
+         "cpm": 10.4007,
+         "messagingConversationsStarted": 24,
+         "costPerMessagingConversationStarted": 2.6604,
+         "linkClicks": 148
+        },
+        {
+         "date": "2026-10-06",
+         "reach": 2136,
+         "impressions": 2777,
+         "spend": 28.88,
+         "roas": 0,
+         "purchases": 0,
+         "purchaseValue": 0,
+         "cpm": 10.3997,
+         "messagingConversationsStarted": 11,
+         "costPerMessagingConversationStarted": 2.6255,
+         "linkClicks": 67
+        }
+       ]
+      },
+      {
+       "adId": "1202630000000068",
+       "adName": "Moshi - Pantry Reveal",
+       "owner": "moshi",
+       "moshiFlowId": "a9589303-2bc0-5250-b001-00757dcb263b",
+       "status": "ACTIVE",
+       "effectiveStatus": "ACTIVE",
+       "clonedFrom": null,
+       "creativeOverlap": [],
+       "creativeType": "video",
+       "ctaType": "MESSAGE_PAGE",
+       "metrics": {
+        "reach": 7133,
+        "impressions": 8582,
+        "spend": 84.11,
+        "roas": 0,
+        "purchases": 0,
+        "purchaseValue": 0,
+        "cpm": 9.8007,
+        "messagingConversationsStarted": 50,
+        "costPerMessagingConversationStarted": 1.6822
+       },
+       "funnel": {
+        "clicks": 325,
+        "linkClicks": 241,
+        "ctr": 3.787,
+        "landingPageViews": 0,
+        "addToCart": 0,
+        "initiateCheckout": 0,
+        "leads": 0,
+        "videoViews": 1802,
+        "postEngagement": 359
+       },
+       "daily": [
+        {
+         "date": "2026-10-05",
+         "reach": 5305,
+         "impressions": 5835,
+         "spend": 57.19,
+         "roas": 0,
+         "purchases": 0,
+         "purchaseValue": 0,
+         "cpm": 9.8012,
+         "messagingConversationsStarted": 34,
+         "costPerMessagingConversationStarted": 1.6821,
+         "linkClicks": 166
+        },
+        {
+         "date": "2026-10-06",
+         "reach": 2113,
+         "impressions": 2747,
+         "spend": 26.92,
+         "roas": 0,
+         "purchases": 0,
+         "purchaseValue": 0,
+         "cpm": 9.7998,
+         "messagingConversationsStarted": 16,
+         "costPerMessagingConversationStarted": 1.6825,
+         "linkClicks": 75
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

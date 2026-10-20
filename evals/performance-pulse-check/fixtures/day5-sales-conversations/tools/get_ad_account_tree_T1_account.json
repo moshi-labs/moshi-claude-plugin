@@ -1,0 +1,170 @@
+{
+ "organization": {
+  "id": "208af985-8ab9-503b-943c-60052b3c7439",
+  "name": "Ridgeline Trail Gear"
+ },
+ "account": {
+  "currency": "USD",
+  "timezone": "America/Denver"
+ },
+ "window": {
+  "dateFrom": "2026-09-07",
+  "dateTo": "2026-10-06",
+  "days": 30,
+  "granularity": "total",
+  "note": "Inclusive: every day from dateFrom through dateTo, as Meta's insight days in the ad account's timezone."
+ },
+ "source": "Moshi's synced copy of the organization's Meta ad account (every campaign, Moshi-created and the merchant's own), refreshed about every 6 hours.",
+ "flags": [
+  {
+   "code": "ads_over_max_ads",
+   "message": "Only the top 0 of 10 matching ads by spend are listed (maxAds 0); each ad set's adsOverMaxAds counts its unlisted ones, and their campaign and ad set totals still include them. Raise maxAds, or name the campaigns, ad sets or ads you want, to list the rest."
+  }
+ ],
+ "counts": {
+  "campaigns": 2,
+  "adsets": 2,
+  "ads": 10,
+  "adsListed": 0,
+  "adsOverMaxAds": 10,
+  "omittedForNoDelivery": {
+   "campaigns": 0,
+   "adsets": 0,
+   "ads": 0
+  }
+ },
+ "campaigns": [
+  {
+   "campaignId": "1202660000000139",
+   "campaignName": "Launch | Summer Pack Sale",
+   "owner": "merchant",
+   "status": "ACTIVE",
+   "objective": "OUTCOME_SALES",
+   "startTime": "2026-08-07T09:15:00-0600",
+   "dailyBudget": "90000",
+   "adsetCount": 1,
+   "adCount": 8,
+   "moshiAdCount": 0,
+   "metrics": {
+    "reach": 798940,
+    "impressions": 2632553,
+    "spend": 32906.92,
+    "roas": 0,
+    "purchases": 0,
+    "purchaseValue": 0,
+    "cpm": 12.5,
+    "messagingConversationsStarted": 5153,
+    "costPerMessagingConversationStarted": 6.386
+   },
+   "adsets": [
+    {
+     "adsetId": "1202660000000138",
+     "adsetName": "Pack Sale Broad",
+     "owner": "merchant",
+     "status": "ACTIVE",
+     "effectiveStatus": "ACTIVE",
+     "adsetStatus": "ACTIVE",
+     "startTime": "2026-08-07T09:15:00-0600",
+     "optimizationGoal": "CONVERSATIONS",
+     "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
+     "attributionSpec": [
+      {
+       "eventType": "CLICK_THROUGH",
+       "windowDays": 7
+      },
+      {
+       "eventType": "VIEW_THROUGH",
+       "windowDays": 1
+      }
+     ],
+     "lastSignificantEditAt": "2026-08-07T15:00:00.000Z",
+     "learningPhase": {
+      "status": "SUCCESS",
+      "learningWindowEndsAt": "2026-08-14T15:00:00.000Z"
+     },
+     "adCount": 8,
+     "moshiAdCount": 0,
+     "metrics": {
+      "reach": 798940,
+      "impressions": 2632553,
+      "spend": 32906.92,
+      "roas": 0,
+      "purchases": 0,
+      "purchaseValue": 0,
+      "cpm": 12.5,
+      "messagingConversationsStarted": 5153,
+      "costPerMessagingConversationStarted": 6.386
+     },
+     "adsOverMaxAds": 8,
+     "ads": []
+    }
+   ]
+  },
+  {
+   "campaignId": "1202660000000129",
+   "campaignName": "Moshi | Sales | Ridgeline Trail Gear",
+   "owner": "moshi",
+   "status": "ACTIVE",
+   "objective": "OUTCOME_SALES",
+   "startTime": "2026-10-02T09:15:00-0600",
+   "dailyBudget": "25000",
+   "adsetCount": 1,
+   "adCount": 2,
+   "moshiAdCount": 2,
+   "metrics": {
+    "reach": 57859,
+    "impressions": 94456,
+    "spend": 1166.14,
+    "roas": 0,
+    "purchases": 0,
+    "purchaseValue": 0,
+    "cpm": 12.3459,
+    "messagingConversationsStarted": 423,
+    "costPerMessagingConversationStarted": 2.7568
+   },
+   "adsets": [
+    {
+     "adsetId": "1202660000000128",
+     "adsetName": "Moshi | Chat | Broad US",
+     "owner": "moshi",
+     "status": "ACTIVE",
+     "effectiveStatus": "ACTIVE",
+     "adsetStatus": "ACTIVE",
+     "startTime": "2026-10-02T09:15:00-0600",
+     "optimizationGoal": "CONVERSATIONS",
+     "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
+     "attributionSpec": [
+      {
+       "eventType": "CLICK_THROUGH",
+       "windowDays": 7
+      },
+      {
+       "eventType": "VIEW_THROUGH",
+       "windowDays": 1
+      }
+     ],
+     "lastSignificantEditAt": "2026-10-02T15:00:00.000Z",
+     "learningPhase": {
+      "status": "SUCCESS",
+      "learningWindowEndsAt": "2026-10-09T15:00:00.000Z"
+     },
+     "adCount": 2,
+     "moshiAdCount": 2,
+     "metrics": {
+      "reach": 57859,
+      "impressions": 94456,
+      "spend": 1166.14,
+      "roas": 0,
+      "purchases": 0,
+      "purchaseValue": 0,
+      "cpm": 12.3459,
+      "messagingConversationsStarted": 423,
+      "costPerMessagingConversationStarted": 2.7568
+     },
+     "adsOverMaxAds": 2,
+     "ads": []
+    }
+   ]
+  }
+ ]
+}

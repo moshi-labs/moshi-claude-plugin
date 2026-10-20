@@ -1,0 +1,550 @@
+{
+ "organization": {
+  "id": "6f0d2c9a-4e1b-5d7c-9a3f-2b8e1c4d5f60",
+  "name": "Fogline Coffee Co."
+ },
+ "account": {
+  "currency": "USD",
+  "timezone": "America/Denver"
+ },
+ "window": {
+  "dateFrom": "2026-09-07",
+  "dateTo": "2026-10-06",
+  "days": 30,
+  "granularity": "total",
+  "note": "Inclusive: every day from dateFrom through dateTo, as Meta's insight days in the ad account's timezone."
+ },
+ "source": "Moshi's synced copy of the organization's Meta ad account (every campaign, Moshi-created and the merchant's own), refreshed about every 6 hours.",
+ "flags": [
+  {
+   "code": "ads_over_max_ads",
+   "message": "Only the top 0 of 26 matching ads by spend are listed (maxAds 0); each ad set's adsOverMaxAds counts its unlisted ones, and their campaign and ad set totals still include them. Raise maxAds, or name the campaigns, ad sets or ads you want, to list the rest."
+  }
+ ],
+ "counts": {
+  "campaigns": 5,
+  "adsets": 10,
+  "ads": 26,
+  "adsListed": 0,
+  "adsOverMaxAds": 26,
+  "omittedForNoDelivery": {
+   "campaigns": 0,
+   "adsets": 1,
+   "ads": 1
+  }
+ },
+ "campaigns": [
+  {
+   "campaignId": "1202680000000101",
+   "campaignName": "Testing | ABO | Conversions",
+   "owner": "merchant",
+   "status": "ACTIVE",
+   "objective": "OUTCOME_SALES",
+   "startTime": "2026-06-12T09:00:00-0600",
+   "adsetCount": 6,
+   "adCount": 14,
+   "moshiAdCount": 0,
+   "metrics": {
+    "reach": 613898,
+    "impressions": 1547368,
+    "spend": 28107.74,
+    "roas": 1.0219,
+    "purchases": 667,
+    "purchaseValue": 28723.03,
+    "cpm": 18.1649,
+    "messagingConversationsStarted": 0,
+    "costPerMessagingConversationStarted": null
+   },
+   "adsets": [
+    {
+     "adsetId": "1202680000000111",
+     "adsetName": "Fall Mug 1",
+     "owner": "merchant",
+     "status": "ACTIVE",
+     "effectiveStatus": "ACTIVE",
+     "adsetStatus": "ACTIVE",
+     "startTime": "2026-08-28T09:00:00-0600",
+     "optimizationGoal": "OFFSITE_CONVERSIONS",
+     "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
+     "dailyBudget": "42500",
+     "attributionSpec": [
+      {
+       "eventType": "CLICK_THROUGH",
+       "windowDays": 7
+      },
+      {
+       "eventType": "VIEW_THROUGH",
+       "windowDays": 1
+      },
+      {
+       "eventType": "ENGAGED_VIDEO_VIEW",
+       "windowDays": 1
+      }
+     ],
+     "lastSignificantEditAt": "2026-08-28T15:00:00.000Z",
+     "learningPhase": {
+      "status": "SUCCESS"
+     },
+     "adCount": 3,
+     "moshiAdCount": 0,
+     "metrics": {
+      "reach": 237706,
+      "impressions": 604048,
+      "spend": 12339.98,
+      "roas": 1.1132,
+      "purchases": 319,
+      "purchaseValue": 13737.33,
+      "cpm": 20.4288,
+      "messagingConversationsStarted": 0,
+      "costPerMessagingConversationStarted": null
+     },
+     "adsOverMaxAds": 3,
+     "ads": []
+    },
+    {
+     "adsetId": "1202680000000121",
+     "adsetName": "Fall Mug 2",
+     "owner": "merchant",
+     "status": "ACTIVE",
+     "effectiveStatus": "ACTIVE",
+     "adsetStatus": "ACTIVE",
+     "startTime": "2026-09-10T09:00:00-0600",
+     "optimizationGoal": "OFFSITE_CONVERSIONS",
+     "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
+     "dailyBudget": "22500",
+     "attributionSpec": [
+      {
+       "eventType": "CLICK_THROUGH",
+       "windowDays": 7
+      },
+      {
+       "eventType": "VIEW_THROUGH",
+       "windowDays": 1
+      }
+     ],
+     "lastSignificantEditAt": "2026-09-12T15:00:00.000Z",
+     "learningPhase": {
+      "status": "SUCCESS"
+     },
+     "adCount": 3,
+     "moshiAdCount": 0,
+     "metrics": {
+      "reach": 262862,
+      "impressions": 628583,
+      "spend": 9899.83,
+      "roas": 0.9922,
+      "purchases": 223,
+      "purchaseValue": 9822.89,
+      "cpm": 15.7494,
+      "messagingConversationsStarted": 0,
+      "costPerMessagingConversationStarted": null
+     },
+     "adsOverMaxAds": 3,
+     "ads": []
+    },
+    {
+     "adsetId": "1202680000000141",
+     "adsetName": "Protein 7",
+     "owner": "merchant",
+     "status": "ACTIVE",
+     "effectiveStatus": "ACTIVE",
+     "adsetStatus": "ACTIVE",
+     "startTime": "2026-06-20T09:00:00-0600",
+     "optimizationGoal": "OFFSITE_CONVERSIONS",
+     "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
+     "dailyBudget": "12500",
+     "attributionSpec": [
+      {
+       "eventType": "CLICK_THROUGH",
+       "windowDays": 7
+      },
+      {
+       "eventType": "VIEW_THROUGH",
+       "windowDays": 1
+      },
+      {
+       "eventType": "ENGAGED_VIDEO_VIEW",
+       "windowDays": 1
+      }
+     ],
+     "lastSignificantEditAt": "2026-06-20T15:00:00.000Z",
+     "learningPhase": {
+      "status": "FAIL"
+     },
+     "adCount": 2,
+     "moshiAdCount": 0,
+     "metrics": {
+      "reach": 70366,
+      "impressions": 178614,
+      "spend": 3285.3,
+      "roas": 0.6126,
+      "purchases": 51,
+      "purchaseValue": 2012.72,
+      "cpm": 18.3933,
+      "messagingConversationsStarted": 0,
+      "costPerMessagingConversationStarted": null
+     },
+     "adsOverMaxAds": 2,
+     "ads": []
+    },
+    {
+     "adsetId": "1202680000000131",
+     "adsetName": "Fall Mug Videos",
+     "owner": "merchant",
+     "status": "ACTIVE",
+     "effectiveStatus": "ACTIVE",
+     "adsetStatus": "ACTIVE",
+     "startTime": "2026-09-21T09:00:00-0600",
+     "optimizationGoal": "OFFSITE_CONVERSIONS",
+     "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
+     "dailyBudget": "15000",
+     "attributionSpec": [
+      {
+       "eventType": "CLICK_THROUGH",
+       "windowDays": 7
+      },
+      {
+       "eventType": "VIEW_THROUGH",
+       "windowDays": 1
+      }
+     ],
+     "lastSignificantEditAt": "2026-09-21T15:00:00.000Z",
+     "learningPhase": {
+      "status": "SUCCESS"
+     },
+     "adCount": 4,
+     "moshiAdCount": 0,
+     "metrics": {
+      "reach": 66855,
+      "impressions": 126413,
+      "spend": 2340.04,
+      "roas": 1.151,
+      "purchases": 62,
+      "purchaseValue": 2693.45,
+      "cpm": 18.5111,
+      "messagingConversationsStarted": 0,
+      "costPerMessagingConversationStarted": null
+     },
+     "adsOverMaxAds": 4,
+     "ads": []
+    },
+    {
+     "adsetId": "1202680000000151",
+     "adsetName": "Remarketing | Labor Day 33% Off",
+     "owner": "merchant",
+     "status": "PAUSED",
+     "effectiveStatus": "PAUSED",
+     "adsetStatus": "PAUSED",
+     "startTime": "2026-09-01T09:00:00-0600",
+     "adCount": 1,
+     "moshiAdCount": 0,
+     "metrics": {
+      "reach": 8419,
+      "impressions": 9710,
+      "spend": 242.59,
+      "roas": 1.8824,
+      "purchases": 12,
+      "purchaseValue": 456.64,
+      "cpm": 24.9835,
+      "messagingConversationsStarted": 0,
+      "costPerMessagingConversationStarted": null
+     },
+     "adsOverMaxAds": 1,
+     "ads": []
+    }
+   ]
+  },
+  {
+   "campaignId": "1202680000000201",
+   "campaignName": "Advantage+ | Purchases",
+   "owner": "merchant",
+   "status": "ACTIVE",
+   "objective": "OUTCOME_SALES",
+   "startTime": "2026-05-14T09:00:00-0600",
+   "dailyBudget": "75000",
+   "adsetCount": 1,
+   "adCount": 2,
+   "moshiAdCount": 0,
+   "metrics": {
+    "reach": 381494,
+    "impressions": 888193,
+    "spend": 19501.07,
+    "roas": 1.0083,
+    "purchases": 462,
+    "purchaseValue": 19662.82,
+    "cpm": 21.9559,
+    "messagingConversationsStarted": 0,
+    "costPerMessagingConversationStarted": null
+   },
+   "adsets": [
+    {
+     "adsetId": "1202680000000211",
+     "adsetName": "Advantage+ Prospecting",
+     "owner": "merchant",
+     "status": "ACTIVE",
+     "effectiveStatus": "ACTIVE",
+     "adsetStatus": "ACTIVE",
+     "startTime": "2026-05-14T09:00:00-0600",
+     "optimizationGoal": "OFFSITE_CONVERSIONS",
+     "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
+     "attributionSpec": [
+      {
+       "eventType": "CLICK_THROUGH",
+       "windowDays": 7
+      },
+      {
+       "eventType": "VIEW_THROUGH",
+       "windowDays": 1
+      },
+      {
+       "eventType": "ENGAGED_VIDEO_VIEW",
+       "windowDays": 1
+      }
+     ],
+     "lastSignificantEditAt": "2026-06-12T15:00:00.000Z",
+     "learningPhase": {
+      "status": "SUCCESS"
+     },
+     "adCount": 2,
+     "moshiAdCount": 0,
+     "metrics": {
+      "reach": 381494,
+      "impressions": 888193,
+      "spend": 19501.07,
+      "roas": 1.0083,
+      "purchases": 462,
+      "purchaseValue": 19662.82,
+      "cpm": 21.9559,
+      "messagingConversationsStarted": 0,
+      "costPerMessagingConversationStarted": null
+     },
+     "adsOverMaxAds": 2,
+     "ads": []
+    }
+   ]
+  },
+  {
+   "campaignId": "1202680000000301",
+   "campaignName": "CBO | Testing",
+   "owner": "merchant",
+   "status": "ACTIVE",
+   "objective": "OUTCOME_SALES",
+   "startTime": "2026-06-26T09:00:00-0600",
+   "dailyBudget": "15000",
+   "adsetCount": 2,
+   "adCount": 3,
+   "moshiAdCount": 0,
+   "metrics": {
+    "reach": 74940,
+    "impressions": 190370,
+    "spend": 3359.68,
+    "roas": 0.7676,
+    "purchases": 65,
+    "purchaseValue": 2578.73,
+    "cpm": 17.6482,
+    "messagingConversationsStarted": 0,
+    "costPerMessagingConversationStarted": null
+   },
+   "adsets": [
+    {
+     "adsetId": "1202680000000311",
+     "adsetName": "Batch 12 Blend",
+     "owner": "merchant",
+     "status": "ACTIVE",
+     "effectiveStatus": "ACTIVE",
+     "adsetStatus": "ACTIVE",
+     "startTime": "2026-06-30T09:00:00-0600",
+     "optimizationGoal": "OFFSITE_CONVERSIONS",
+     "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
+     "attributionSpec": [
+      {
+       "eventType": "CLICK_THROUGH",
+       "windowDays": 7
+      },
+      {
+       "eventType": "VIEW_THROUGH",
+       "windowDays": 1
+      }
+     ],
+     "lastSignificantEditAt": "2026-06-30T15:00:00.000Z",
+     "learningPhase": {
+      "status": "SUCCESS"
+     },
+     "adCount": 2,
+     "moshiAdCount": 0,
+     "metrics": {
+      "reach": 71613,
+      "impressions": 182214,
+      "spend": 3217.16,
+      "roas": 0.7633,
+      "purchases": 62,
+      "purchaseValue": 2455.68,
+      "cpm": 17.6559,
+      "messagingConversationsStarted": 0,
+      "costPerMessagingConversationStarted": null
+     },
+     "adsOverMaxAds": 2,
+     "ads": []
+    },
+    {
+     "adsetId": "1202680000000321",
+     "adsetName": "Batch 14 Iteration",
+     "owner": "merchant",
+     "status": "ACTIVE",
+     "effectiveStatus": "ACTIVE",
+     "adsetStatus": "ACTIVE",
+     "startTime": "2026-10-04T09:00:00-0600",
+     "optimizationGoal": "OFFSITE_CONVERSIONS",
+     "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
+     "attributionSpec": [
+      {
+       "eventType": "CLICK_THROUGH",
+       "windowDays": 7
+      },
+      {
+       "eventType": "VIEW_THROUGH",
+       "windowDays": 1
+      }
+     ],
+     "lastSignificantEditAt": "2026-10-04T15:00:00.000Z",
+     "learningPhase": {
+      "status": "LEARNING"
+     },
+     "adCount": 1,
+     "moshiAdCount": 0,
+     "metrics": {
+      "reach": 7271,
+      "impressions": 8156,
+      "spend": 142.52,
+      "roas": 0.8634,
+      "purchases": 3,
+      "purchaseValue": 123.05,
+      "cpm": 17.4743,
+      "messagingConversationsStarted": 0,
+      "costPerMessagingConversationStarted": null
+     },
+     "adsOverMaxAds": 1,
+     "ads": []
+    }
+   ]
+  },
+  {
+   "campaignId": "1202680000000011",
+   "campaignName": "Moshi Managed Sales Campaign - DO NOT EDIT",
+   "owner": "moshi",
+   "status": "ACTIVE",
+   "objective": "OUTCOME_SALES",
+   "startTime": "2026-09-18T08:30:00-0600",
+   "adsetCount": 1,
+   "adCount": 4,
+   "moshiAdCount": 4,
+   "metrics": {
+    "reach": 55877,
+    "impressions": 109122,
+    "spend": 1572.65,
+    "roas": 0.7991,
+    "purchases": 28,
+    "purchaseValue": 1256.64,
+    "cpm": 14.4119,
+    "messagingConversationsStarted": 546,
+    "costPerMessagingConversationStarted": 2.8803
+   },
+   "adsets": [
+    {
+     "adsetId": "1202680000000012",
+     "adsetName": "Moshi - IG+FB - Sales/Purchase",
+     "owner": "moshi",
+     "status": "PAUSED",
+     "effectiveStatus": "PAUSED",
+     "adsetStatus": "PAUSED",
+     "startTime": "2026-09-18T08:30:00-0600",
+     "optimizationGoal": "OFFSITE_CONVERSIONS",
+     "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
+     "dailyBudget": "10000",
+     "attributionSpec": [
+      {
+       "eventType": "CLICK_THROUGH",
+       "windowDays": 7
+      },
+      {
+       "eventType": "VIEW_THROUGH",
+       "windowDays": 1
+      }
+     ],
+     "adCount": 4,
+     "moshiAdCount": 4,
+     "metrics": {
+      "reach": 55877,
+      "impressions": 109122,
+      "spend": 1572.65,
+      "roas": 0.7991,
+      "purchases": 28,
+      "purchaseValue": 1256.64,
+      "cpm": 14.4119,
+      "messagingConversationsStarted": 546,
+      "costPerMessagingConversationStarted": 2.8803
+     },
+     "adsOverMaxAds": 4,
+     "ads": []
+    }
+   ]
+  },
+  {
+   "campaignId": "1202680000000001",
+   "campaignName": "Moshi Managed Campaign - DO NOT EDIT",
+   "owner": "moshi",
+   "status": "ACTIVE",
+   "objective": "OUTCOME_ENGAGEMENT",
+   "startTime": "2026-09-03T10:12:00-0600",
+   "adsetCount": 1,
+   "adCount": 4,
+   "moshiAdCount": 4,
+   "metrics": {
+    "reach": 11238,
+    "impressions": 16349,
+    "spend": 263.52,
+    "roas": 0,
+    "purchases": 0,
+    "purchaseValue": 0,
+    "cpm": 16.1184,
+    "messagingConversationsStarted": 457,
+    "costPerMessagingConversationStarted": 0.5766
+   },
+   "adsets": [
+    {
+     "adsetId": "1202680000000002",
+     "adsetName": "Moshi - IG+FB - Chats",
+     "owner": "moshi",
+     "status": "PAUSED",
+     "effectiveStatus": "PAUSED",
+     "adsetStatus": "PAUSED",
+     "startTime": "2026-09-03T10:12:00-0600",
+     "optimizationGoal": "CONVERSATIONS",
+     "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
+     "dailyBudget": "5000",
+     "attributionSpec": [
+      {
+       "eventType": "CLICK_THROUGH",
+       "windowDays": 1
+      }
+     ],
+     "adCount": 4,
+     "moshiAdCount": 4,
+     "metrics": {
+      "reach": 11238,
+      "impressions": 16349,
+      "spend": 263.52,
+      "roas": 0,
+      "purchases": 0,
+      "purchaseValue": 0,
+      "cpm": 16.1184,
+      "messagingConversationsStarted": 457,
+      "costPerMessagingConversationStarted": 0.5766
+     },
+     "adsOverMaxAds": 4,
+     "ads": []
+    }
+   ]
+  }
+ ]
+}

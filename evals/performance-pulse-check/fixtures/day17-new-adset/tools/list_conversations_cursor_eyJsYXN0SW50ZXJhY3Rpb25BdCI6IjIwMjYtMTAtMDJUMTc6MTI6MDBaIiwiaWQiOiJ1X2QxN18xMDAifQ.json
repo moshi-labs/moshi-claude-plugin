@@ -1,0 +1,1578 @@
+{
+ "_shape": "modelled-from-dto",
+ "data": [
+  {
+   "id": "u_d17_075",
+   "name": "mug_diaries",
+   "username": "mug_diaries",
+   "source": "instagram",
+   "followerCount": 596,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_075",
+    "funnelPosition": "ENGAGED",
+    "lastMessage": "how much caffeine is in the chai?",
+    "lastUserMessageAt": "2026-10-03T15:46:01Z",
+    "lastActivityAt": "2026-10-03T15:46:01Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": true,
+   "engagementScore": 41,
+   "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000175&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+  },
+  {
+   "id": "u_d17_073",
+   "name": "sip_reads",
+   "username": "sip_reads",
+   "source": "instagram",
+   "followerCount": 438,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_073",
+    "funnelPosition": "ENGAGED",
+    "lastMessage": "hi! what tea would you recommend for mornings?",
+    "lastUserMessageAt": "2026-10-03T12:46:45Z",
+    "lastActivityAt": "2026-10-03T12:46:45Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": true,
+   "engagementScore": 70,
+   "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000173&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+  },
+  {
+   "id": "u_d17_108",
+   "name": "sencha.cup",
+   "username": "sencha.cup",
+   "source": "instagram",
+   "profilePic": "https://media.example.com/ig/sencha.cup.jpg",
+   "followerCount": 938,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_108",
+    "funnelPosition": "ENGAGED",
+    "lastMessage": "what does the harvest blend taste like?",
+    "lastUserMessageAt": "2026-10-03T10:53:52Z",
+    "lastActivityAt": "2026-10-03T10:53:52Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": false,
+   "engagementScore": 88,
+   "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000208&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+  },
+  {
+   "id": "u_d17_035",
+   "name": "rooibos.life",
+   "username": "rooibos.life",
+   "source": "instagram",
+   "profilePic": "https://media.example.com/ig/rooibos.life.jpg",
+   "followerCount": 306,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_035",
+    "funnelPosition": "ENGAGED",
+    "lastMessage": "hi! what tea would you recommend for mornings?",
+    "lastUserMessageAt": "2026-10-03T10:20:35Z",
+    "lastActivityAt": "2026-10-03T10:20:35Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": false,
+   "engagementScore": 84,
+   "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000135&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+  },
+  {
+   "id": "u_d17_144",
+   "name": "matcha.and.co",
+   "username": "matcha.and.co",
+   "source": "instagram",
+   "profilePic": "https://media.example.com/ig/matcha.and.co.jpg",
+   "followerCount": 738,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_144",
+    "funnelPosition": "ENGAGED",
+    "lastMessage": "what does the harvest blend taste like?",
+    "lastUserMessageAt": "2026-10-03T09:02:57Z",
+    "lastActivityAt": "2026-10-03T09:02:57Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": true,
+   "engagementScore": 34,
+   "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000244&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+  },
+  {
+   "id": "u_d17_116",
+   "name": "pekoe.club",
+   "username": "pekoe.club",
+   "source": "instagram",
+   "profilePic": "https://media.example.com/ig/pekoe.club.jpg",
+   "followerCount": 344,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_116",
+    "funnelPosition": "ENGAGED",
+    "lastMessage": "hi! what tea would you recommend for mornings?",
+    "lastUserMessageAt": "2026-10-03T06:57:43Z",
+    "lastActivityAt": "2026-10-03T06:57:43Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": false,
+   "engagementScore": 43,
+   "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000216&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+  },
+  {
+   "id": "u_d17_039",
+   "name": "mug_reads",
+   "username": "mug_reads",
+   "source": "instagram",
+   "profilePic": "https://media.example.com/ig/mug_reads.jpg",
+   "followerCount": 128,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_039",
+    "funnelPosition": "ENGAGED",
+    "lastMessage": "what does the harvest blend taste like?",
+    "lastUserMessageAt": "2026-10-03T04:59:54Z",
+    "lastActivityAt": "2026-10-03T04:59:54Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": false,
+   "engagementScore": 32,
+   "threadUrl": null
+  },
+  {
+   "id": "u_d17_026",
+   "name": "leaf.club",
+   "username": "leaf.club",
+   "source": "instagram",
+   "profilePic": "https://media.example.com/ig/leaf.club.jpg",
+   "followerCount": 280,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_026",
+    "funnelPosition": "ENGAGED",
+    "lastMessage": "hi! what tea would you recommend for mornings?",
+    "lastUserMessageAt": "2026-10-03T00:06:04Z",
+    "lastActivityAt": "2026-10-03T00:06:04Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": true,
+   "engagementScore": 73,
+   "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000126&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+  },
+  {
+   "id": "u_d17_006",
+   "name": "Priya Natarajan",
+   "source": "messenger",
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "Messenger DM",
+    "conversationId": "conv_d17_006",
+    "funnelPosition": "PURCHASED",
+    "lastMessage": "just ordered, thank you!",
+    "lastUserMessageAt": "2026-10-03T00:05:00Z",
+    "lastActivityAt": "2026-10-03T00:05:00Z"
+   },
+   "aov": 61,
+   "ltv": 61,
+   "purchaseCount": 1,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "engagementScore": 41,
+   "threadUrl": "https://www.facebook.com/110270000000071/inbox/5550000000035/?section=messages"
+  },
+  {
+   "id": "u_d17_069",
+   "name": "herbal_diaries",
+   "username": "herbal_diaries",
+   "source": "instagram",
+   "profilePic": "https://media.example.com/ig/herbal_diaries.jpg",
+   "followerCount": 93,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_069",
+    "funnelPosition": "ENGAGED",
+    "lastMessage": "hi! what tea would you recommend for mornings?",
+    "lastUserMessageAt": "2026-10-02T15:33:22Z",
+    "lastActivityAt": "2026-10-02T15:33:22Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": false,
+   "engagementScore": 33,
+   "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000169&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+  },
+  {
+   "id": "u_d17_072",
+   "name": "earl.house",
+   "username": "earl.house",
+   "source": "instagram",
+   "followerCount": 390,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_072",
+    "funnelPosition": "ENGAGED",
+    "lastMessage": "what does the harvest blend taste like?",
+    "lastUserMessageAt": "2026-10-02T13:38:13Z",
+    "lastActivityAt": "2026-10-02T13:38:13Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": false,
+   "engagementScore": 31,
+   "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000172&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+  },
+  {
+   "id": "u_d17_025",
+   "name": "herbal.life17",
+   "username": "herbal.life17",
+   "source": "instagram",
+   "profilePic": "https://media.example.com/ig/herbal.life17.jpg",
+   "followerCount": 235,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_025",
+    "funnelPosition": "ENGAGED",
+    "lastMessage": "what does the harvest blend taste like?",
+    "lastUserMessageAt": "2026-10-02T11:49:22Z",
+    "lastActivityAt": "2026-10-02T11:49:22Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": true,
+   "engagementScore": 48,
+   "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000125&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+  },
+  {
+   "id": "u_d17_066",
+   "name": "biscuit.and.cake",
+   "username": "biscuit.and.cake",
+   "source": "instagram",
+   "profilePic": "https://media.example.com/ig/biscuit.and.cake.jpg",
+   "followerCount": 360,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_066",
+    "funnelPosition": "ENGAGED",
+    "lastMessage": "hi! what tea would you recommend for mornings?",
+    "lastUserMessageAt": "2026-10-02T07:45:31Z",
+    "lastActivityAt": "2026-10-02T07:45:31Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": true,
+   "engagementScore": 49,
+   "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000166&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+  },
+  {
+   "id": "u_d17_024",
+   "name": "brew.house",
+   "username": "brew.house",
+   "source": "instagram",
+   "profilePic": "https://media.example.com/ig/brew.house.jpg",
+   "followerCount": 501,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_024",
+    "funnelPosition": "ENGAGED",
+    "lastMessage": "how much caffeine is in the chai?",
+    "lastUserMessageAt": "2026-10-02T05:24:35Z",
+    "lastActivityAt": "2026-10-02T05:24:35Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": false,
+   "engagementScore": 55,
+   "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000124&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+  },
+  {
+   "id": "u_d17_140",
+   "name": "lemon.girl",
+   "username": "lemon.girl",
+   "source": "instagram",
+   "profilePic": "https://media.example.com/ig/lemon.girl.jpg",
+   "followerCount": 257,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_140",
+    "funnelPosition": "ENGAGED",
+    "lastMessage": "hi! what tea would you recommend for mornings?",
+    "lastUserMessageAt": "2026-10-02T05:04:32Z",
+    "lastActivityAt": "2026-10-02T05:04:32Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": false,
+   "engagementScore": 87,
+   "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000240&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+  },
+  {
+   "id": "u_d17_081",
+   "name": "brew.and.co14",
+   "username": "brew.and.co14",
+   "source": "instagram",
+   "profilePic": "https://media.example.com/ig/brew.and.co14.jpg",
+   "followerCount": 262,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_081",
+    "funnelPosition": "ENGAGED",
+    "lastMessage": "hi! what tea would you recommend for mornings?",
+    "lastUserMessageAt": "2026-10-02T00:46:04Z",
+    "lastActivityAt": "2026-10-02T00:46:04Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": false,
+   "engagementScore": 48,
+   "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000181&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+  },
+  {
+   "id": "u_d17_021",
+   "name": "mug_corner",
+   "username": "mug_corner",
+   "source": "instagram",
+   "profilePic": "https://media.example.com/ig/mug_corner.jpg",
+   "followerCount": 102,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_021",
+    "funnelPosition": "ENGAGED",
+    "lastMessage": "what does the harvest blend taste like?",
+    "lastUserMessageAt": "2026-10-01T15:55:18Z",
+    "lastActivityAt": "2026-10-01T15:55:18Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": true,
+   "engagementScore": 48,
+   "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000121&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+  },
+  {
+   "id": "u_d17_092",
+   "name": "brew.journal",
+   "username": "brew.journal",
+   "source": "instagram",
+   "profilePic": "https://media.example.com/ig/brew.journal.jpg",
+   "followerCount": 115,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_092",
+    "funnelPosition": "ENGAGED",
+    "lastMessage": "hi! what tea would you recommend for mornings?",
+    "lastUserMessageAt": "2026-10-01T06:46:22Z",
+    "lastActivityAt": "2026-10-01T06:46:22Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": false,
+   "engagementScore": 65,
+   "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000192&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+  },
+  {
+   "id": "u_d17_123",
+   "name": "mug.days",
+   "username": "mug.days",
+   "source": "instagram",
+   "profilePic": "https://media.example.com/ig/mug.days.jpg",
+   "followerCount": 738,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_123",
+    "funnelPosition": "CART",
+    "lastMessage": "is the gift box still available?",
+    "lastUserMessageAt": "2026-10-01T04:39:33Z",
+    "lastActivityAt": "2026-10-01T04:39:33Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": true,
+   "engagementScore": 52,
+   "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000223&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+  },
+  {
+   "id": "u_d17_122",
+   "name": "biscuit.table",
+   "username": "biscuit.table",
+   "source": "instagram",
+   "profilePic": "https://media.example.com/ig/biscuit.table.jpg",
+   "followerCount": 704,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_122",
+    "funnelPosition": "ENGAGED",
+    "lastMessage": "what does the harvest blend taste like?",
+    "lastUserMessageAt": "2026-10-01T04:31:45Z",
+    "lastActivityAt": "2026-10-01T04:31:45Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": false,
+   "engagementScore": 36,
+   "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000222&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+  },
+  {
+   "id": "u_d17_077",
+   "name": "sip_kat",
+   "username": "sip_kat",
+   "source": "instagram",
+   "profilePic": "https://media.example.com/ig/sip_kat.jpg",
+   "followerCount": 391,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_077",
+    "funnelPosition": "ENGAGED",
+    "lastMessage": "how much caffeine is in the chai?",
+    "lastUserMessageAt": "2026-10-01T02:29:46Z",
+    "lastActivityAt": "2026-10-01T02:29:46Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": false,
+   "engagementScore": 66,
+   "threadUrl": null
+  },
+  {
+   "id": "u_d17_071",
+   "name": "cozy.club",
+   "username": "cozy.club",
+   "source": "instagram",
+   "profilePic": "https://media.example.com/ig/cozy.club.jpg",
+   "followerCount": 869,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_071",
+    "funnelPosition": "ENGAGED",
+    "lastMessage": "hi! what tea would you recommend for mornings?",
+    "lastUserMessageAt": "2026-10-01T00:10:25Z",
+    "lastActivityAt": "2026-10-01T00:10:25Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": false,
+   "engagementScore": 89,
+   "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000171&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+  },
+  {
+   "id": "u_d17_074",
+   "name": "leaf.house58",
+   "username": "leaf.house58",
+   "source": "instagram",
+   "profilePic": "https://media.example.com/ig/leaf.house58.jpg",
+   "followerCount": 214,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_074",
+    "funnelPosition": "ENGAGED",
+    "lastMessage": "hi! what tea would you recommend for mornings?",
+    "lastUserMessageAt": "2026-09-30T14:33:02Z",
+    "lastActivityAt": "2026-09-30T14:33:02Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": false,
+   "engagementScore": 44,
+   "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000174&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+  },
+  {
+   "id": "u_d17_088",
+   "name": "matcha.and.cake76",
+   "username": "matcha.and.cake76",
+   "source": "instagram",
+   "profilePic": "https://media.example.com/ig/matcha.and.cake76.jpg",
+   "followerCount": 71,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_088",
+    "funnelPosition": "ENGAGED",
+    "lastMessage": "hi! what tea would you recommend for mornings?",
+    "lastUserMessageAt": "2026-09-29T19:48:47Z",
+    "lastActivityAt": "2026-09-29T19:48:47Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": true,
+   "engagementScore": 55,
+   "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000188&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+  },
+  {
+   "id": "u_d17_100",
+   "name": "darjeeling_nook74",
+   "username": "darjeeling_nook74",
+   "source": "instagram",
+   "profilePic": "https://media.example.com/ig/darjeeling_nook74.jpg",
+   "followerCount": 766,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_100",
+    "funnelPosition": "ENGAGED",
+    "lastMessage": "hi! what tea would you recommend for mornings?",
+    "lastUserMessageAt": "2026-09-29T17:32:17Z",
+    "lastActivityAt": "2026-09-29T17:32:17Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": false,
+   "engagementScore": 62,
+   "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000200&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+  },
+  {
+   "id": "u_d17_090",
+   "name": "jasmine.table68",
+   "username": "jasmine.table68",
+   "source": "instagram",
+   "profilePic": "https://media.example.com/ig/jasmine.table68.jpg",
+   "followerCount": 534,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_090",
+    "funnelPosition": "ENGAGED",
+    "lastMessage": "hi! what tea would you recommend for mornings?",
+    "lastUserMessageAt": "2026-09-29T13:51:33Z",
+    "lastActivityAt": "2026-09-29T13:51:33Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": false,
+   "engagementScore": 37,
+   "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000190&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+  },
+  {
+   "id": "u_d17_082",
+   "name": "assam.club",
+   "username": "assam.club",
+   "source": "instagram",
+   "profilePic": "https://media.example.com/ig/assam.club.jpg",
+   "followerCount": 645,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_082",
+    "funnelPosition": "ENGAGED",
+    "lastMessage": "hi! what tea would you recommend for mornings?",
+    "lastUserMessageAt": "2026-09-29T11:10:10Z",
+    "lastActivityAt": "2026-09-29T11:10:10Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": false,
+   "engagementScore": 57,
+   "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000182&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+  },
+  {
+   "id": "u_d17_093",
+   "name": "herbal.table40",
+   "username": "herbal.table40",
+   "source": "instagram",
+   "followerCount": 715,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_093",
+    "funnelPosition": "ENGAGED",
+    "lastMessage": "how much caffeine is in the chai?",
+    "lastUserMessageAt": "2026-09-29T04:17:49Z",
+    "lastActivityAt": "2026-09-29T04:17:49Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": false,
+   "engagementScore": 56,
+   "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000193&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+  },
+  {
+   "id": "u_d17_057",
+   "name": "mint_kat95",
+   "username": "mint_kat95",
+   "source": "instagram",
+   "profilePic": "https://media.example.com/ig/mint_kat95.jpg",
+   "followerCount": 565,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_057",
+    "funnelPosition": "ENGAGED",
+    "lastMessage": "what does the harvest blend taste like?",
+    "lastUserMessageAt": "2026-09-29T01:12:32Z",
+    "lastActivityAt": "2026-09-29T01:12:32Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": true,
+   "engagementScore": 40,
+   "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000157&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+  },
+  {
+   "id": "u_d17_053",
+   "name": "honey.notes44",
+   "username": "honey.notes44",
+   "source": "instagram",
+   "followerCount": 405,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_053",
+    "funnelPosition": "ENGAGED",
+    "lastMessage": "how much caffeine is in the chai?",
+    "lastUserMessageAt": "2026-09-28T21:54:01Z",
+    "lastActivityAt": "2026-09-28T21:54:01Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": true,
+   "engagementScore": 37,
+   "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000153&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+  },
+  {
+   "id": "u_d17_007",
+   "name": "Ola Mensah",
+   "username": "early.oolong",
+   "source": "instagram",
+   "profilePic": "https://media.example.com/ig/early.oolong.jpg",
+   "followerCount": 330,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_007",
+    "funnelPosition": "PURCHASED",
+    "lastMessage": "just ordered, thank you!",
+    "lastUserMessageAt": "2026-09-28T19:20:00Z",
+    "lastActivityAt": "2026-09-28T19:20:00Z"
+   },
+   "aov": 52,
+   "ltv": 52,
+   "purchaseCount": 1,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": true,
+   "engagementScore": 37,
+   "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000107&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+  },
+  {
+   "id": "u_d17_062",
+   "name": "saucer.club54",
+   "username": "saucer.club54",
+   "source": "instagram",
+   "followerCount": 775,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_062",
+    "funnelPosition": "ENGAGED",
+    "lastMessage": "hi! what tea would you recommend for mornings?",
+    "lastUserMessageAt": "2026-09-28T19:17:17Z",
+    "lastActivityAt": "2026-09-28T19:17:17Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": false,
+   "engagementScore": 77,
+   "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000162&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+  },
+  {
+   "id": "u_d17_067",
+   "name": "steep.and.co",
+   "username": "steep.and.co",
+   "source": "instagram",
+   "followerCount": 89,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_067",
+    "funnelPosition": "ENGAGED",
+    "lastMessage": "how much caffeine is in the chai?",
+    "lastUserMessageAt": "2026-09-28T16:46:40Z",
+    "lastActivityAt": "2026-09-28T16:46:40Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": false,
+   "engagementScore": 81,
+   "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000167&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+  },
+  {
+   "id": "u_d17_111",
+   "name": "cozy.and.cake25",
+   "username": "cozy.and.cake25",
+   "source": "instagram",
+   "profilePic": "https://media.example.com/ig/cozy.and.cake25.jpg",
+   "followerCount": 824,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_111",
+    "funnelPosition": "CART",
+    "lastMessage": "is the gift box still available?",
+    "lastUserMessageAt": "2026-09-28T15:35:45Z",
+    "lastActivityAt": "2026-09-28T15:35:45Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": true,
+   "engagementScore": 90,
+   "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000211&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+  },
+  {
+   "id": "u_d17_110",
+   "name": "biscuit.journal",
+   "username": "biscuit.journal",
+   "source": "instagram",
+   "profilePic": "https://media.example.com/ig/biscuit.journal.jpg",
+   "followerCount": 568,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_110",
+    "funnelPosition": "ENGAGED",
+    "lastMessage": "hi! what tea would you recommend for mornings?",
+    "lastUserMessageAt": "2026-09-28T13:55:24Z",
+    "lastActivityAt": "2026-09-28T13:55:24Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": true,
+   "engagementScore": 55,
+   "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000210&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+  },
+  {
+   "id": "u_d17_084",
+   "name": "chamomile_reads",
+   "username": "chamomile_reads",
+   "source": "instagram",
+   "followerCount": 566,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_084",
+    "funnelPosition": "ENGAGED",
+    "lastMessage": "how much caffeine is in the chai?",
+    "lastUserMessageAt": "2026-09-28T13:36:08Z",
+    "lastActivityAt": "2026-09-28T13:36:08Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": false,
+   "engagementScore": 33,
+   "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000184&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+  },
+  {
+   "id": "u_d17_061",
+   "name": "earl.days67",
+   "username": "earl.days67",
+   "source": "instagram",
+   "profilePic": "https://media.example.com/ig/earl.days67.jpg",
+   "followerCount": 451,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_061",
+    "funnelPosition": "ENGAGED",
+    "lastMessage": "hi! what tea would you recommend for mornings?",
+    "lastUserMessageAt": "2026-09-28T07:20:38Z",
+    "lastActivityAt": "2026-09-28T07:20:38Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": true,
+   "engagementScore": 59,
+   "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000161&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+  },
+  {
+   "id": "u_d17_054",
+   "name": "cozy.and.co",
+   "username": "cozy.and.co",
+   "source": "instagram",
+   "profilePic": "https://media.example.com/ig/cozy.and.co.jpg",
+   "followerCount": 474,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_054",
+    "funnelPosition": "ENGAGED",
+    "lastMessage": "hi! what tea would you recommend for mornings?",
+    "lastUserMessageAt": "2026-09-28T06:43:18Z",
+    "lastActivityAt": "2026-09-28T06:43:18Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": false,
+   "engagementScore": 57,
+   "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000154&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+  },
+  {
+   "id": "u_d17_045",
+   "name": "mint.table61",
+   "username": "mint.table61",
+   "source": "instagram",
+   "profilePic": "https://media.example.com/ig/mint.table61.jpg",
+   "followerCount": 359,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_045",
+    "funnelPosition": "ENGAGED",
+    "lastMessage": "hi! what tea would you recommend for mornings?",
+    "lastUserMessageAt": "2026-09-28T04:36:59Z",
+    "lastActivityAt": "2026-09-28T04:36:59Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": true,
+   "engagementScore": 38,
+   "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000145&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+  },
+  {
+   "id": "u_d17_087",
+   "name": "pekoe.and.cake",
+   "username": "pekoe.and.cake",
+   "source": "instagram",
+   "profilePic": "https://media.example.com/ig/pekoe.and.cake.jpg",
+   "followerCount": 393,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_087",
+    "funnelPosition": "ENGAGED",
+    "lastMessage": "hi! what tea would you recommend for mornings?",
+    "lastUserMessageAt": "2026-09-28T04:12:53Z",
+    "lastActivityAt": "2026-09-28T04:12:53Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": true,
+   "engagementScore": 89,
+   "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000187&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+  },
+  {
+   "id": "u_d17_115",
+   "name": "pekoe.hour",
+   "username": "pekoe.hour",
+   "source": "instagram",
+   "profilePic": "https://media.example.com/ig/pekoe.hour.jpg",
+   "followerCount": 919,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_115",
+    "funnelPosition": "ENGAGED",
+    "lastMessage": "hi! what tea would you recommend for mornings?",
+    "lastUserMessageAt": "2026-09-28T00:06:57Z",
+    "lastActivityAt": "2026-09-28T00:06:57Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": true,
+   "engagementScore": 49,
+   "threadUrl": null
+  },
+  {
+   "id": "u_d17_124",
+   "name": "cozy.cup",
+   "username": "cozy.cup",
+   "source": "instagram",
+   "profilePic": "https://media.example.com/ig/cozy.cup.jpg",
+   "followerCount": 248,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_124",
+    "funnelPosition": "ENGAGED",
+    "lastMessage": "hi! what tea would you recommend for mornings?",
+    "lastUserMessageAt": "2026-09-27T22:28:05Z",
+    "lastActivityAt": "2026-09-27T22:28:05Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": false,
+   "engagementScore": 61,
+   "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000224&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+  },
+  {
+   "id": "u_d17_033",
+   "name": "brew.studio13",
+   "username": "brew.studio13",
+   "source": "instagram",
+   "profilePic": "https://media.example.com/ig/brew.studio13.jpg",
+   "followerCount": 519,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_033",
+    "funnelPosition": "ENGAGED",
+    "lastMessage": "hi! what tea would you recommend for mornings?",
+    "lastUserMessageAt": "2026-09-27T19:27:57Z",
+    "lastActivityAt": "2026-09-27T19:27:57Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": false,
+   "engagementScore": 86,
+   "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000133&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+  },
+  {
+   "id": "u_d17_085",
+   "name": "mug.cup",
+   "username": "mug.cup",
+   "source": "instagram",
+   "profilePic": "https://media.example.com/ig/mug.cup.jpg",
+   "followerCount": 332,
+   "chatStatus": "INACTIVE",
+   "lastInteraction": {
+    "type": "IG DM",
+    "conversationId": "conv_d17_085",
+    "funnelPosition": "CART",
+    "lastMessage": "is the gift box still available?",
+    "lastUserMessageAt": "2026-09-27T18:22:28Z",
+    "lastActivityAt": "2026-09-27T18:22:28Z"
+   },
+   "aov": 0,
+   "ltv": 0,
+   "purchaseCount": 0,
+   "responseTime": 0,
+   "ads": [
+    {
+     "id": "5b0f2c1e-8a4d-4c6e-9f21-7d3a1b6c9e01",
+     "name": "Wren & Thistle · Steep guide",
+     "status": "active",
+     "startedAt": "2026-09-25T17:00:00.000Z"
+    }
+   ],
+   "connectedPlatforms": [],
+   "isBusiness": false,
+   "isVerifiedUser": false,
+   "isBusinessFollowUser": false,
+   "isUserFollowBusiness": true,
+   "engagementScore": 56,
+   "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000185&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+  }
+ ],
+ "page": {
+  "hasNext": false,
+  "hasPrevious": true,
+  "prevCursor": "eyJpZCI6InVfZDE3XzEwMSJ9",
+  "total": 144,
+  "window": {
+   "from": 101,
+   "to": 144
+  }
+ },
+ "extra": {
+  "averageAov": 51.81,
+  "averageLtv": 59.21,
+  "totalPurchases": 8
+ }
+}

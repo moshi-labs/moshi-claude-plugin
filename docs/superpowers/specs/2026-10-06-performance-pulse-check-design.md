@@ -16,6 +16,34 @@ Reference report: an internal Moshi day-one results report (Oct 2026)
 > Ad set settings appear only on ACTIVE ad sets. The rest of this document
 > describes the 0.8.0 design.
 
+> **Update 2026-10-13 (plugin 0.12.0).** The report follows the layout
+> hand-built for a merchant that day: a short title over the verdict; What messaging
+> ads tell you (`chatters`: who messaged, their followers, who bought, the
+> big accounts that did not); your launches; stages; tiles; Same ads (each
+> Moshi copy beside its `clonedFrom` original, replacing the account map);
+> From conversation to purchase (the funnel with Meta's purchases beside
+> it, chat order size and Moshi's share of spend from each campaign's T1
+> totals); Respond to your Closers. The footer, the change timeline, What
+> shoppers are asking, Next steps and Creative fatigue are gone: flags,
+> not-measurable items, changes and the fatigue read move to the chat
+> reply. A split test has no template section; `references/split-test.md`
+> adds one. Check 4 now guards chatter rows; checks 14 (https links) and 15
+> (`chatters.total`) are new.
+
+> **Update 2026-10-15 (plugin 0.13.0).** The report window defaults to a
+> baseline: when Moshi's newest ad set launched in the last 7 days (its first
+> delivery, from T1 and T2) and another Moshi ad ran before it, the window is
+> the 7 days before that launch (`window.before`; check 16 holds it to the
+> data). The Moshi tools take only named periods, so Moshi's own counts keep
+> their dates in `moshiWindow`, printed beside them. Stages and gates count to
+> today. Moshi's CTR is also compared with the merchant's running campaigns on
+> the same dates (a `running` comparison: CTR only, each campaign weighted by
+> its spend, from a seventh read, T7), next to the launch comparison. The
+> avatar is packed with zopfli to pay for it. `list_conversations` now pages
+> by cursor and returns each person's `threadUrl` (moshi-api #1832, moshi-mcp
+> #48), so who messaged lists everyone with a link to each thread, and the
+> partial-coverage line is only a fallback.
+
 ## Goal
 
 A merchant asks "how are my Moshi ads doing?" and gets a report that reads

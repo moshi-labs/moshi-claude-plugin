@@ -1,0 +1,46 @@
+{
+ "_shape": "modelled-from-description",
+ "organizationName": "Fogline Coffee Co.",
+ "currency": "USD",
+ "timezone": "America/Denver",
+ "window": {
+  "start": "2026-09-17",
+  "end": "2026-10-06"
+ },
+ "scorecard": {
+  "chats": 1020,
+  "productViews": 163,
+  "carts": 36,
+  "checkouts": 26,
+  "purchases": 2
+ },
+ "funnel": {
+  "chats": 1020,
+  "productViews": 163,
+  "carts": 36,
+  "checkouts": 26,
+  "orders": 2
+ },
+ "leads": {
+  "total": 1020,
+  "hot": 61,
+  "warm": 238,
+  "cold": 721
+ },
+ "openCarts": {
+  "count": 19,
+  "valueKnown": false
+ },
+ "closer": {
+  "recoveries": 1,
+  "revenue": 38.5
+ },
+ "flags": [],
+ "transcriptsToRead": {
+  "conversationIds": [
+   "conv_ov_01",
+   "conv_ov_02",
+   "conv_ov_03"
+  ]
+ }
+}

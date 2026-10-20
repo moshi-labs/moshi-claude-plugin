@@ -1,4 +1,5 @@
 {
   "dayConvention": "Day numbering: the first day with impressions is day 1, and the first N days are days 1 to N. Stage bands: 1-3, 4-7, 8-14, 15-30, 31+. A learning reset restarts the count at day 1 on the reset date. All in the account timezone.",
-  "note": "Moshi launched 2026-10-02, so today is day 5. No Meta connector."
+  "note": "Moshi launched 2026-10-02, so today is day 5. No Meta ad account is synced in Moshi.",
+  "dataSource": "T1 returns no_synced_ads with account currency and timezone null: no Meta ad account is synced in Moshi. The run stops after T1, uses moshi_only, and puts the flag in flags[]. Currency and timezone come from the Moshi tools."
 }

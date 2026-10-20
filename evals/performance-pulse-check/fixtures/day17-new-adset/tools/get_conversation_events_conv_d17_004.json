@@ -1,0 +1,28 @@
+{
+ "_shape": "modelled-from-dto",
+ "events": [
+  {
+   "eventType": "product_view",
+   "timestamp": "2026-10-04T20:45:00.000Z",
+   "data": {
+    "productTitle": "Fall Tins Sampler"
+   }
+  },
+  {
+   "eventType": "cart_add",
+   "timestamp": "2026-10-04T20:50:00.000Z",
+   "data": {
+    "quantity": 1
+   }
+  },
+  {
+   "eventType": "purchase_complete",
+   "timestamp": "2026-10-04T21:00:00Z",
+   "data": {
+    "orderId": "#2897",
+    "totalPrice": 44,
+    "currency": "USD"
+   }
+  }
+ ]
+}

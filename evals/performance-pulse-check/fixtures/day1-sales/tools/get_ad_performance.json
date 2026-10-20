@@ -27,6 +27,30 @@
   "carts": 2,
   "checkouts": 1
  },
+ "contactsCaptured": {
+  "total": 4,
+  "email": 3,
+  "phone": 1
+ },
+ "iceBreakers": {
+  "total": 12,
+  "items": [
+   {
+    "text": "Which scent lasts longest?",
+    "conversations": 5,
+    "share": 0.4167
+   },
+   {
+    "text": "Can I send it as a gift?",
+    "conversations": 3,
+    "share": 0.25
+   }
+  ],
+  "typedOwn": {
+   "conversations": 4,
+   "share": 0.3333
+  }
+ },
  "leadHeat": {
   "hot": 2,
   "warm": 5,

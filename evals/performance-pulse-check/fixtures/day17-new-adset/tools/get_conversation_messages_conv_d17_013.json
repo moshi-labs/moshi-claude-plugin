@@ -1,0 +1,28 @@
+{
+ "_shape": "modelled-from-dto",
+ "conversationId": "conv_d17_013",
+ "totalMessages": 4,
+ "returned": 4,
+ "messages": [
+  {
+   "from": "customer",
+   "text": "what is in the gift guide box?",
+   "at": "2026-10-12T15:20:00Z"
+  },
+  {
+   "from": "agent",
+   "text": "Three tins: morning chai, harvest blend and a caffeine-free rooibos, with a strainer.",
+   "at": "2026-10-12T15:20:30Z"
+  },
+  {
+   "from": "customer",
+   "text": "is the gift box still available? want it before the 20th",
+   "at": "2026-10-12T15:45:00Z"
+  },
+  {
+   "from": "agent",
+   "text": "Yes, and it ships tomorrow. I added it to your cart.",
+   "at": "2026-10-12T15:45:20Z"
+  }
+ ]
+}

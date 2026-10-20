@@ -1,0 +1,1455 @@
+{
+ "_shape": "modelled-from-dto",
+ "window": {
+  "since": "2026-09-27",
+  "displayUntil": "2026-10-13",
+  "period": "since_launch",
+  "note": "Inclusive range: every day from `since` through `displayUntil`. Render that as the period covered."
+ },
+ "flags": [],
+ "count": 144,
+ "total": 144,
+ "truncated": false,
+ "leads": [
+  {
+   "conversationId": "conv_d17_001",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "ana.brews",
+   "followerCount": 48200,
+   "furthestStageName": "purchase",
+   "lastMessageAt": "2026-10-11T16:20:00Z"
+  },
+  {
+   "conversationId": "conv_d17_002",
+   "channel": "instagram",
+   "metaAdId": "1202700000000035",
+   "flowName": "Wren & Thistle · Gift guide",
+   "username": "kettle.kate",
+   "followerCount": 3400,
+   "furthestStageName": "purchase",
+   "lastMessageAt": "2026-10-11T02:30:00Z"
+  },
+  {
+   "conversationId": "conv_d17_005",
+   "channel": "instagram",
+   "metaAdId": "1202700000000033",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "dee.reads",
+   "followerCount": 212,
+   "furthestStageName": "purchase",
+   "lastMessageAt": "2026-10-08T01:50:00Z"
+  },
+  {
+   "conversationId": "conv_d17_003",
+   "channel": "instagram",
+   "metaAdId": "1202700000000031",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "slowpour.sam",
+   "followerCount": 1180,
+   "furthestStageName": "purchase",
+   "lastMessageAt": "2026-10-07T18:40:00Z"
+  },
+  {
+   "conversationId": "conv_d17_004",
+   "channel": "instagram",
+   "metaAdId": "1202700000000033",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "moss.and.mint",
+   "followerCount": 640,
+   "furthestStageName": "purchase",
+   "lastMessageAt": "2026-10-06T15:10:00Z"
+  },
+  {
+   "conversationId": "conv_d17_006",
+   "channel": "messenger",
+   "metaAdId": "1202700000000031",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": null,
+   "followerCount": null,
+   "furthestStageName": "purchase",
+   "lastMessageAt": "2026-10-03T00:05:00Z"
+  },
+  {
+   "conversationId": "conv_d17_007",
+   "channel": "instagram",
+   "metaAdId": "1202700000000033",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "early.oolong",
+   "followerCount": 330,
+   "furthestStageName": "purchase",
+   "lastMessageAt": "2026-09-28T19:20:00Z"
+  },
+  {
+   "conversationId": "conv_d17_011",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "the.teacup.club",
+   "followerCount": 27300,
+   "furthestStageName": "checkout",
+   "lastMessageAt": "2026-10-12T21:30:00Z"
+  },
+  {
+   "conversationId": "conv_d17_008",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "chai.collective",
+   "followerCount": 212000,
+   "furthestStageName": "cart",
+   "lastMessageAt": "2026-10-12T19:05:00Z"
+  },
+  {
+   "conversationId": "conv_d17_013",
+   "channel": "instagram",
+   "metaAdId": "1202700000000035",
+   "flowName": "Wren & Thistle · Gift guide",
+   "username": "matchamorning",
+   "followerCount": 9700,
+   "furthestStageName": "cart",
+   "lastMessageAt": "2026-10-12T15:45:00Z"
+  },
+  {
+   "conversationId": "conv_d17_080",
+   "channel": "instagram",
+   "metaAdId": "1202700000000031",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "darjeeling_kat",
+   "followerCount": 614,
+   "furthestStageName": "cart",
+   "lastMessageAt": "2026-10-11T09:04:14Z"
+  },
+  {
+   "conversationId": "conv_d17_129",
+   "channel": "instagram",
+   "metaAdId": "1202700000000034",
+   "flowName": "Wren & Thistle · Gift guide",
+   "username": "matcha.life65",
+   "followerCount": 681,
+   "furthestStageName": "cart",
+   "lastMessageAt": "2026-10-11T07:09:12Z"
+  },
+  {
+   "conversationId": "conv_d17_060",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "brew.journal93",
+   "followerCount": 711,
+   "furthestStageName": "cart",
+   "lastMessageAt": "2026-10-10T23:26:57Z"
+  },
+  {
+   "conversationId": "conv_d17_049",
+   "channel": "instagram",
+   "metaAdId": "1202700000000031",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "pekoe_nook",
+   "followerCount": 901,
+   "furthestStageName": "cart",
+   "lastMessageAt": "2026-10-10T16:33:20Z"
+  },
+  {
+   "conversationId": "conv_d17_076",
+   "channel": "instagram",
+   "metaAdId": "1202700000000031",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "herbal_corner",
+   "followerCount": 178,
+   "furthestStageName": "cart",
+   "lastMessageAt": "2026-10-10T08:35:18Z"
+  },
+  {
+   "conversationId": "conv_d17_027",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "assam.house",
+   "followerCount": 644,
+   "furthestStageName": "cart",
+   "lastMessageAt": "2026-10-08T02:30:10Z"
+  },
+  {
+   "conversationId": "conv_d17_037",
+   "channel": "instagram",
+   "metaAdId": "1202700000000033",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "brew.hour80",
+   "followerCount": 704,
+   "furthestStageName": "cart",
+   "lastMessageAt": "2026-10-07T05:02:04Z"
+  },
+  {
+   "conversationId": "conv_d17_091",
+   "channel": "instagram",
+   "metaAdId": "1202700000000031",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "hibiscus.table42",
+   "followerCount": 162,
+   "furthestStageName": "cart",
+   "lastMessageAt": "2026-10-05T16:07:27Z"
+  },
+  {
+   "conversationId": "conv_d17_127",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "kettle.and.co97",
+   "followerCount": 477,
+   "furthestStageName": "cart",
+   "lastMessageAt": "2026-10-05T03:46:54Z"
+  },
+  {
+   "conversationId": "conv_d17_123",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "mug.days",
+   "followerCount": 738,
+   "furthestStageName": "cart",
+   "lastMessageAt": "2026-10-01T04:39:33Z"
+  },
+  {
+   "conversationId": "conv_d17_111",
+   "channel": "instagram",
+   "metaAdId": "1202700000000033",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "cozy.and.cake25",
+   "followerCount": 824,
+   "furthestStageName": "cart",
+   "lastMessageAt": "2026-09-28T15:35:45Z"
+  },
+  {
+   "conversationId": "conv_d17_085",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "mug.cup",
+   "followerCount": 332,
+   "furthestStageName": "cart",
+   "lastMessageAt": "2026-09-27T18:22:28Z"
+  },
+  {
+   "conversationId": "conv_d17_052",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "sencha.girl",
+   "followerCount": 686,
+   "furthestStageName": "product_view",
+   "lastMessageAt": "2026-10-12T03:26:16Z"
+  },
+  {
+   "conversationId": "conv_d17_022",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "lemon.days",
+   "followerCount": 71,
+   "furthestStageName": "product_view",
+   "lastMessageAt": "2026-10-12T01:49:46Z"
+  },
+  {
+   "conversationId": "conv_d17_113",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "earl.and.cake",
+   "followerCount": 405,
+   "furthestStageName": "product_view",
+   "lastMessageAt": "2026-10-12T01:32:05Z"
+  },
+  {
+   "conversationId": "conv_d17_059",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "rooibos.and.co",
+   "followerCount": 380,
+   "furthestStageName": "product_view",
+   "lastMessageAt": "2026-10-11T17:31:48Z"
+  },
+  {
+   "conversationId": "conv_d17_083",
+   "channel": "instagram",
+   "metaAdId": "1202700000000033",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "sencha.life",
+   "followerCount": 436,
+   "furthestStageName": "product_view",
+   "lastMessageAt": "2026-10-11T08:43:54Z"
+  },
+  {
+   "conversationId": "conv_d17_139",
+   "channel": "instagram",
+   "metaAdId": null,
+   "flowName": "Wren & Thistle · DM concierge",
+   "username": "mint.table15",
+   "followerCount": 874,
+   "furthestStageName": "product_view",
+   "lastMessageAt": "2026-10-11T06:49:26Z"
+  },
+  {
+   "conversationId": "conv_d17_130",
+   "channel": "instagram",
+   "metaAdId": "1202700000000035",
+   "flowName": "Wren & Thistle · Gift guide",
+   "username": "rooibos_corner",
+   "followerCount": 402,
+   "furthestStageName": "product_view",
+   "lastMessageAt": "2026-10-11T06:10:40Z"
+  },
+  {
+   "conversationId": "conv_d17_143",
+   "channel": "instagram",
+   "metaAdId": null,
+   "flowName": "Wren & Thistle · DM concierge",
+   "username": "chamomile_corner",
+   "followerCount": 519,
+   "furthestStageName": "product_view",
+   "lastMessageAt": "2026-10-11T04:53:25Z"
+  },
+  {
+   "conversationId": "conv_d17_134",
+   "channel": "instagram",
+   "metaAdId": "1202700000000035",
+   "flowName": "Wren & Thistle · Gift guide",
+   "username": "jasmine_corner",
+   "followerCount": 532,
+   "furthestStageName": "product_view",
+   "lastMessageAt": "2026-10-10T18:32:04Z"
+  },
+  {
+   "conversationId": "conv_d17_109",
+   "channel": "instagram",
+   "metaAdId": "1202700000000033",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "earl_corner",
+   "followerCount": 180,
+   "furthestStageName": "product_view",
+   "lastMessageAt": "2026-10-10T14:58:42Z"
+  },
+  {
+   "conversationId": "conv_d17_009",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "leafandladle",
+   "followerCount": 86400,
+   "furthestStageName": "product_view",
+   "lastMessageAt": "2026-10-09T22:10:00Z"
+  },
+  {
+   "conversationId": "conv_d17_023",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "earl.journal54",
+   "followerCount": 932,
+   "furthestStageName": "product_view",
+   "lastMessageAt": "2026-10-09T20:59:00Z"
+  },
+  {
+   "conversationId": "conv_d17_019",
+   "channel": "messenger",
+   "metaAdId": "1202700000000033",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": null,
+   "followerCount": null,
+   "furthestStageName": "product_view",
+   "lastMessageAt": "2026-10-09T16:00:00Z"
+  },
+  {
+   "conversationId": "conv_d17_034",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "brew.days",
+   "followerCount": 193,
+   "furthestStageName": "product_view",
+   "lastMessageAt": "2026-10-09T09:55:00Z"
+  },
+  {
+   "conversationId": "conv_d17_104",
+   "channel": "instagram",
+   "metaAdId": "1202700000000031",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "mint.cup55",
+   "followerCount": 930,
+   "furthestStageName": "product_view",
+   "lastMessageAt": "2026-10-09T09:35:15Z"
+  },
+  {
+   "conversationId": "conv_d17_097",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "assam.studio37",
+   "followerCount": 239,
+   "furthestStageName": "product_view",
+   "lastMessageAt": "2026-10-08T17:58:34Z"
+  },
+  {
+   "conversationId": "conv_d17_040",
+   "channel": "instagram",
+   "metaAdId": "1202700000000031",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "jasmine.and.cake",
+   "followerCount": 332,
+   "furthestStageName": "product_view",
+   "lastMessageAt": "2026-10-07T17:52:08Z"
+  },
+  {
+   "conversationId": "conv_d17_014",
+   "channel": "instagram",
+   "metaAdId": "1202700000000033",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "hearthandhoney",
+   "followerCount": 6200,
+   "furthestStageName": "product_view",
+   "lastMessageAt": "2026-10-06T19:30:00Z"
+  },
+  {
+   "conversationId": "conv_d17_105",
+   "channel": "instagram",
+   "metaAdId": "1202700000000031",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "rooibos.and.cake",
+   "followerCount": 622,
+   "furthestStageName": "product_view",
+   "lastMessageAt": "2026-10-06T09:54:54Z"
+  },
+  {
+   "conversationId": "conv_d17_030",
+   "channel": "instagram",
+   "metaAdId": "1202700000000033",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "darjeeling.and.cake53",
+   "followerCount": 419,
+   "furthestStageName": "product_view",
+   "lastMessageAt": "2026-10-06T01:34:16Z"
+  },
+  {
+   "conversationId": "conv_d17_099",
+   "channel": "instagram",
+   "metaAdId": "1202700000000031",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "earl_kat",
+   "followerCount": 385,
+   "furthestStageName": "product_view",
+   "lastMessageAt": "2026-10-04T22:17:08Z"
+  },
+  {
+   "conversationId": "conv_d17_017",
+   "channel": "instagram",
+   "metaAdId": "1202700000000031",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "biscuit.and.bergamot",
+   "followerCount": 1640,
+   "furthestStageName": "product_view",
+   "lastMessageAt": "2026-10-04T17:00:00Z"
+  },
+  {
+   "conversationId": "conv_d17_063",
+   "channel": "instagram",
+   "metaAdId": "1202700000000031",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "assam_nook",
+   "followerCount": 699,
+   "furthestStageName": "product_view",
+   "lastMessageAt": "2026-10-04T04:24:20Z"
+  },
+  {
+   "conversationId": "conv_d17_102",
+   "channel": "instagram",
+   "metaAdId": "1202700000000033",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "saucer.journal97",
+   "followerCount": 537,
+   "furthestStageName": "product_view",
+   "lastMessageAt": "2026-10-03T22:00:26Z"
+  },
+  {
+   "conversationId": "conv_d17_108",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "sencha.cup",
+   "followerCount": 938,
+   "furthestStageName": "product_view",
+   "lastMessageAt": "2026-10-03T10:53:52Z"
+  },
+  {
+   "conversationId": "conv_d17_144",
+   "channel": "instagram",
+   "metaAdId": null,
+   "flowName": "Wren & Thistle · DM concierge",
+   "username": "matcha.and.co",
+   "followerCount": 738,
+   "furthestStageName": "product_view",
+   "lastMessageAt": "2026-10-03T09:02:57Z"
+  },
+  {
+   "conversationId": "conv_d17_039",
+   "channel": "instagram",
+   "metaAdId": "1202700000000031",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "mug_reads",
+   "followerCount": 128,
+   "furthestStageName": "product_view",
+   "lastMessageAt": "2026-10-03T04:59:54Z"
+  },
+  {
+   "conversationId": "conv_d17_072",
+   "channel": "instagram",
+   "metaAdId": "1202700000000033",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "earl.house",
+   "followerCount": 390,
+   "furthestStageName": "product_view",
+   "lastMessageAt": "2026-10-02T13:38:13Z"
+  },
+  {
+   "conversationId": "conv_d17_025",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "herbal.life17",
+   "followerCount": 235,
+   "furthestStageName": "product_view",
+   "lastMessageAt": "2026-10-02T11:49:22Z"
+  },
+  {
+   "conversationId": "conv_d17_021",
+   "channel": "instagram",
+   "metaAdId": "1202700000000031",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "mug_corner",
+   "followerCount": 102,
+   "furthestStageName": "product_view",
+   "lastMessageAt": "2026-10-01T15:55:18Z"
+  },
+  {
+   "conversationId": "conv_d17_122",
+   "channel": "instagram",
+   "metaAdId": "1202700000000033",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "biscuit.table",
+   "followerCount": 704,
+   "furthestStageName": "product_view",
+   "lastMessageAt": "2026-10-01T04:31:45Z"
+  },
+  {
+   "conversationId": "conv_d17_057",
+   "channel": "instagram",
+   "metaAdId": "1202700000000033",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "mint_kat95",
+   "followerCount": 565,
+   "furthestStageName": "product_view",
+   "lastMessageAt": "2026-09-29T01:12:32Z"
+  },
+  {
+   "conversationId": "conv_d17_064",
+   "channel": "instagram",
+   "metaAdId": "1202700000000031",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "earl.days",
+   "followerCount": 462,
+   "furthestStageName": "click_through",
+   "lastMessageAt": "2026-10-13T07:29:55Z"
+  },
+  {
+   "conversationId": "conv_d17_131",
+   "channel": "instagram",
+   "metaAdId": "1202700000000034",
+   "flowName": "Wren & Thistle · Gift guide",
+   "username": "chamomile.journal",
+   "followerCount": 350,
+   "furthestStageName": "click_through",
+   "lastMessageAt": "2026-10-13T02:31:01Z"
+  },
+  {
+   "conversationId": "conv_d17_120",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "leaf_corner13",
+   "followerCount": 648,
+   "furthestStageName": "click_through",
+   "lastMessageAt": "2026-10-12T22:02:48Z"
+  },
+  {
+   "conversationId": "conv_d17_138",
+   "channel": "instagram",
+   "metaAdId": "1202700000000034",
+   "flowName": "Wren & Thistle · Gift guide",
+   "username": "mint.notes93",
+   "followerCount": 826,
+   "furthestStageName": "click_through",
+   "lastMessageAt": "2026-10-12T13:49:17Z"
+  },
+  {
+   "conversationId": "conv_d17_056",
+   "channel": "instagram",
+   "metaAdId": "1202700000000031",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "brew_nook68",
+   "followerCount": 235,
+   "furthestStageName": "click_through",
+   "lastMessageAt": "2026-10-11T11:47:00Z"
+  },
+  {
+   "conversationId": "conv_d17_136",
+   "channel": "instagram",
+   "metaAdId": "1202700000000035",
+   "flowName": "Wren & Thistle · Gift guide",
+   "username": "sencha.girl91",
+   "followerCount": 642,
+   "furthestStageName": "click_through",
+   "lastMessageAt": "2026-10-11T11:15:41Z"
+  },
+  {
+   "conversationId": "conv_d17_046",
+   "channel": "instagram",
+   "metaAdId": "1202700000000033",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "mint.house",
+   "followerCount": 409,
+   "furthestStageName": "click_through",
+   "lastMessageAt": "2026-10-10T20:15:09Z"
+  },
+  {
+   "conversationId": "conv_d17_042",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "sencha.house",
+   "followerCount": 513,
+   "furthestStageName": "click_through",
+   "lastMessageAt": "2026-10-08T21:41:05Z"
+  },
+  {
+   "conversationId": "conv_d17_010",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "steeped.daily",
+   "followerCount": 41900,
+   "furthestStageName": "click_through",
+   "lastMessageAt": "2026-10-08T14:00:00Z"
+  },
+  {
+   "conversationId": "conv_d17_044",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "leaf.hour",
+   "followerCount": 662,
+   "furthestStageName": "click_through",
+   "lastMessageAt": "2026-10-07T16:04:47Z"
+  },
+  {
+   "conversationId": "conv_d17_096",
+   "channel": "instagram",
+   "metaAdId": "1202700000000031",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "biscuit_nook",
+   "followerCount": 95,
+   "furthestStageName": "click_through",
+   "lastMessageAt": "2026-10-05T21:56:00Z"
+  },
+  {
+   "conversationId": "conv_d17_121",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "cozy_diaries",
+   "followerCount": 352,
+   "furthestStageName": "click_through",
+   "lastMessageAt": "2026-10-05T16:09:08Z"
+  },
+  {
+   "conversationId": "conv_d17_015",
+   "channel": "instagram",
+   "metaAdId": "1202700000000031",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "oolong.otto",
+   "followerCount": 4450,
+   "furthestStageName": "click_through",
+   "lastMessageAt": "2026-10-05T13:25:00Z"
+  },
+  {
+   "conversationId": "conv_d17_048",
+   "channel": "instagram",
+   "metaAdId": "1202700000000033",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "saucer.cup",
+   "followerCount": 728,
+   "furthestStageName": "click_through",
+   "lastMessageAt": "2026-10-03T18:12:11Z"
+  },
+  {
+   "conversationId": "conv_d17_075",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "mug_diaries",
+   "followerCount": 596,
+   "furthestStageName": "click_through",
+   "lastMessageAt": "2026-10-03T15:46:01Z"
+  },
+  {
+   "conversationId": "conv_d17_024",
+   "channel": "instagram",
+   "metaAdId": "1202700000000031",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "brew.house",
+   "followerCount": 501,
+   "furthestStageName": "click_through",
+   "lastMessageAt": "2026-10-02T05:24:35Z"
+  },
+  {
+   "conversationId": "conv_d17_077",
+   "channel": "instagram",
+   "metaAdId": "1202700000000033",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "sip_kat",
+   "followerCount": 391,
+   "furthestStageName": "click_through",
+   "lastMessageAt": "2026-10-01T02:29:46Z"
+  },
+  {
+   "conversationId": "conv_d17_093",
+   "channel": "instagram",
+   "metaAdId": "1202700000000031",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "herbal.table40",
+   "followerCount": 715,
+   "furthestStageName": "click_through",
+   "lastMessageAt": "2026-09-29T04:17:49Z"
+  },
+  {
+   "conversationId": "conv_d17_053",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "honey.notes44",
+   "followerCount": 405,
+   "furthestStageName": "click_through",
+   "lastMessageAt": "2026-09-28T21:54:01Z"
+  },
+  {
+   "conversationId": "conv_d17_067",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "steep.and.co",
+   "followerCount": 89,
+   "furthestStageName": "click_through",
+   "lastMessageAt": "2026-09-28T16:46:40Z"
+  },
+  {
+   "conversationId": "conv_d17_084",
+   "channel": "instagram",
+   "metaAdId": "1202700000000033",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "chamomile_reads",
+   "followerCount": 566,
+   "furthestStageName": "click_through",
+   "lastMessageAt": "2026-09-28T13:36:08Z"
+  },
+  {
+   "conversationId": "conv_d17_094",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "biscuit.studio",
+   "followerCount": 843,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-13T14:47:51Z"
+  },
+  {
+   "conversationId": "conv_d17_086",
+   "channel": "instagram",
+   "metaAdId": "1202700000000033",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "sencha_corner",
+   "followerCount": 597,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-13T01:25:05Z"
+  },
+  {
+   "conversationId": "conv_d17_020",
+   "channel": "messenger",
+   "metaAdId": "1202700000000035",
+   "flowName": "Wren & Thistle · Gift guide",
+   "username": null,
+   "followerCount": null,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-12T20:10:00Z"
+  },
+  {
+   "conversationId": "conv_d17_058",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "lemon.cup52",
+   "followerCount": 458,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-12T10:05:28Z"
+  },
+  {
+   "conversationId": "conv_d17_016",
+   "channel": "instagram",
+   "metaAdId": "1202700000000035",
+   "flowName": "Wren & Thistle · Gift guide",
+   "username": "rosehip.rae",
+   "followerCount": 2900,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-11T23:50:00Z"
+  },
+  {
+   "conversationId": "conv_d17_089",
+   "channel": "instagram",
+   "metaAdId": "1202700000000033",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "jasmine_kat99",
+   "followerCount": 67,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-11T16:20:59Z"
+  },
+  {
+   "conversationId": "conv_d17_098",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "cozy_nook",
+   "followerCount": 644,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-11T12:10:48Z"
+  },
+  {
+   "conversationId": "conv_d17_142",
+   "channel": "instagram",
+   "metaAdId": null,
+   "flowName": "Wren & Thistle · DM concierge",
+   "username": "herbal.club",
+   "followerCount": 741,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-11T11:31:40Z"
+  },
+  {
+   "conversationId": "conv_d17_135",
+   "channel": "instagram",
+   "metaAdId": "1202700000000034",
+   "flowName": "Wren & Thistle · Gift guide",
+   "username": "cozy_kat",
+   "followerCount": 696,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-11T09:54:38Z"
+  },
+  {
+   "conversationId": "conv_d17_132",
+   "channel": "instagram",
+   "metaAdId": "1202700000000035",
+   "flowName": "Wren & Thistle · Gift guide",
+   "username": "leaf.cup",
+   "followerCount": 689,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-11T06:36:55Z"
+  },
+  {
+   "conversationId": "conv_d17_137",
+   "channel": "instagram",
+   "metaAdId": "1202700000000034",
+   "flowName": "Wren & Thistle · Gift guide",
+   "username": "rooibos_kat",
+   "followerCount": 574,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-10T22:41:35Z"
+  },
+  {
+   "conversationId": "conv_d17_128",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "hibiscus_corner34",
+   "followerCount": 675,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-10T22:08:44Z"
+  },
+  {
+   "conversationId": "conv_d17_078",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "ginger.hour",
+   "followerCount": 731,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-10T19:24:59Z"
+  },
+  {
+   "conversationId": "conv_d17_101",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "mint.journal",
+   "followerCount": 216,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-10T19:03:03Z"
+  },
+  {
+   "conversationId": "conv_d17_133",
+   "channel": "instagram",
+   "metaAdId": "1202700000000034",
+   "flowName": "Wren & Thistle · Gift guide",
+   "username": "kettle.hour",
+   "followerCount": 351,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-10T18:15:03Z"
+  },
+  {
+   "conversationId": "conv_d17_029",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "rooibos.house",
+   "followerCount": 752,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-10T12:56:08Z"
+  },
+  {
+   "conversationId": "conv_d17_018",
+   "channel": "instagram",
+   "metaAdId": "1202700000000033",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "loose.leaf.lena",
+   "followerCount": 1120,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-10T12:40:00Z"
+  },
+  {
+   "conversationId": "conv_d17_117",
+   "channel": "instagram",
+   "metaAdId": "1202700000000033",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "chamomile.hour",
+   "followerCount": 645,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-10T12:06:51Z"
+  },
+  {
+   "conversationId": "conv_d17_095",
+   "channel": "instagram",
+   "metaAdId": "1202700000000031",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "earl_diaries36",
+   "followerCount": 716,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-10T10:14:51Z"
+  },
+  {
+   "conversationId": "conv_d17_079",
+   "channel": "instagram",
+   "metaAdId": "1202700000000031",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "rooibos.table48",
+   "followerCount": 540,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-10T06:04:35Z"
+  },
+  {
+   "conversationId": "conv_d17_114",
+   "channel": "instagram",
+   "metaAdId": "1202700000000031",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "biscuit.house",
+   "followerCount": 139,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-10T04:43:36Z"
+  },
+  {
+   "conversationId": "conv_d17_126",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "kettle_nook83",
+   "followerCount": 75,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-09T19:05:49Z"
+  },
+  {
+   "conversationId": "conv_d17_047",
+   "channel": "instagram",
+   "metaAdId": "1202700000000031",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "kettle.hour27",
+   "followerCount": 411,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-09T18:16:14Z"
+  },
+  {
+   "conversationId": "conv_d17_119",
+   "channel": "instagram",
+   "metaAdId": "1202700000000033",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "saucer_diaries",
+   "followerCount": 106,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-09T07:49:52Z"
+  },
+  {
+   "conversationId": "conv_d17_107",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "biscuit.life",
+   "followerCount": 913,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-09T02:52:00Z"
+  },
+  {
+   "conversationId": "conv_d17_112",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "ginger.table",
+   "followerCount": 89,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-08T23:43:33Z"
+  },
+  {
+   "conversationId": "conv_d17_043",
+   "channel": "instagram",
+   "metaAdId": "1202700000000031",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "ginger.days87",
+   "followerCount": 604,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-08T19:24:23Z"
+  },
+  {
+   "conversationId": "conv_d17_051",
+   "channel": "instagram",
+   "metaAdId": "1202700000000031",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "leaf.days56",
+   "followerCount": 809,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-08T18:54:45Z"
+  },
+  {
+   "conversationId": "conv_d17_041",
+   "channel": "instagram",
+   "metaAdId": "1202700000000031",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "steep_kat",
+   "followerCount": 173,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-08T06:38:28Z"
+  },
+  {
+   "conversationId": "conv_d17_028",
+   "channel": "instagram",
+   "metaAdId": "1202700000000033",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "assam.hour",
+   "followerCount": 191,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-07T16:03:54Z"
+  },
+  {
+   "conversationId": "conv_d17_012",
+   "channel": "instagram",
+   "metaAdId": "1202700000000033",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "nordic.brew.co",
+   "followerCount": 15800,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-07T09:15:00Z"
+  },
+  {
+   "conversationId": "conv_d17_141",
+   "channel": "instagram",
+   "metaAdId": null,
+   "flowName": "Wren & Thistle · DM concierge",
+   "username": "cozy_corner",
+   "followerCount": 642,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-07T00:44:21Z"
+  },
+  {
+   "conversationId": "conv_d17_068",
+   "channel": "instagram",
+   "metaAdId": "1202700000000031",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "sip_nook",
+   "followerCount": 745,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-06T22:08:32Z"
+  },
+  {
+   "conversationId": "conv_d17_070",
+   "channel": "instagram",
+   "metaAdId": "1202700000000031",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "saucer.house33",
+   "followerCount": 279,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-06T14:27:48Z"
+  },
+  {
+   "conversationId": "conv_d17_031",
+   "channel": "instagram",
+   "metaAdId": "1202700000000033",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "steep.club",
+   "followerCount": 856,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-06T10:17:37Z"
+  },
+  {
+   "conversationId": "conv_d17_032",
+   "channel": "instagram",
+   "metaAdId": "1202700000000033",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "pekoe.and.cake17",
+   "followerCount": 95,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-06T04:51:18Z"
+  },
+  {
+   "conversationId": "conv_d17_038",
+   "channel": "instagram",
+   "metaAdId": "1202700000000031",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "jasmine.hour",
+   "followerCount": 262,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-05T23:26:10Z"
+  },
+  {
+   "conversationId": "conv_d17_036",
+   "channel": "instagram",
+   "metaAdId": "1202700000000033",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "chamomile.cup",
+   "followerCount": 455,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-05T21:20:14Z"
+  },
+  {
+   "conversationId": "conv_d17_055",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "mint.girl",
+   "followerCount": 724,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-05T16:37:46Z"
+  },
+  {
+   "conversationId": "conv_d17_103",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "rooibos_reads",
+   "followerCount": 270,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-05T12:15:39Z"
+  },
+  {
+   "conversationId": "conv_d17_118",
+   "channel": "instagram",
+   "metaAdId": "1202700000000033",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "jasmine_nook",
+   "followerCount": 887,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-05T07:48:00Z"
+  },
+  {
+   "conversationId": "conv_d17_065",
+   "channel": "instagram",
+   "metaAdId": "1202700000000031",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "hibiscus.cup",
+   "followerCount": 561,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-04T05:09:34Z"
+  },
+  {
+   "conversationId": "conv_d17_106",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "brew.table",
+   "followerCount": 540,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-03T23:10:51Z"
+  },
+  {
+   "conversationId": "conv_d17_125",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "herbal.days78",
+   "followerCount": 824,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-03T21:34:22Z"
+  },
+  {
+   "conversationId": "conv_d17_050",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "saucer_nook91",
+   "followerCount": 796,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-03T17:55:54Z"
+  },
+  {
+   "conversationId": "conv_d17_073",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "sip_reads",
+   "followerCount": 438,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-03T12:46:45Z"
+  },
+  {
+   "conversationId": "conv_d17_035",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "rooibos.life",
+   "followerCount": 306,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-03T10:20:35Z"
+  },
+  {
+   "conversationId": "conv_d17_116",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "pekoe.club",
+   "followerCount": 344,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-03T06:57:43Z"
+  },
+  {
+   "conversationId": "conv_d17_026",
+   "channel": "instagram",
+   "metaAdId": "1202700000000031",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "leaf.club",
+   "followerCount": 280,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-03T00:06:04Z"
+  },
+  {
+   "conversationId": "conv_d17_069",
+   "channel": "instagram",
+   "metaAdId": "1202700000000033",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "herbal_diaries",
+   "followerCount": 93,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-02T15:33:22Z"
+  },
+  {
+   "conversationId": "conv_d17_066",
+   "channel": "instagram",
+   "metaAdId": "1202700000000031",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "biscuit.and.cake",
+   "followerCount": 360,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-02T07:45:31Z"
+  },
+  {
+   "conversationId": "conv_d17_140",
+   "channel": "instagram",
+   "metaAdId": null,
+   "flowName": "Wren & Thistle · DM concierge",
+   "username": "lemon.girl",
+   "followerCount": 257,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-02T05:04:32Z"
+  },
+  {
+   "conversationId": "conv_d17_081",
+   "channel": "instagram",
+   "metaAdId": "1202700000000033",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "brew.and.co14",
+   "followerCount": 262,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-02T00:46:04Z"
+  },
+  {
+   "conversationId": "conv_d17_092",
+   "channel": "instagram",
+   "metaAdId": "1202700000000031",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "brew.journal",
+   "followerCount": 115,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-01T06:46:22Z"
+  },
+  {
+   "conversationId": "conv_d17_071",
+   "channel": "instagram",
+   "metaAdId": "1202700000000033",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "cozy.club",
+   "followerCount": 869,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-10-01T00:10:25Z"
+  },
+  {
+   "conversationId": "conv_d17_074",
+   "channel": "instagram",
+   "metaAdId": "1202700000000031",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "leaf.house58",
+   "followerCount": 214,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-09-30T14:33:02Z"
+  },
+  {
+   "conversationId": "conv_d17_088",
+   "channel": "instagram",
+   "metaAdId": "1202700000000033",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "matcha.and.cake76",
+   "followerCount": 71,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-09-29T19:48:47Z"
+  },
+  {
+   "conversationId": "conv_d17_100",
+   "channel": "instagram",
+   "metaAdId": "1202700000000031",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "darjeeling_nook74",
+   "followerCount": 766,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-09-29T17:32:17Z"
+  },
+  {
+   "conversationId": "conv_d17_090",
+   "channel": "instagram",
+   "metaAdId": "1202700000000033",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "jasmine.table68",
+   "followerCount": 534,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-09-29T13:51:33Z"
+  },
+  {
+   "conversationId": "conv_d17_082",
+   "channel": "instagram",
+   "metaAdId": "1202700000000031",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "assam.club",
+   "followerCount": 645,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-09-29T11:10:10Z"
+  },
+  {
+   "conversationId": "conv_d17_062",
+   "channel": "instagram",
+   "metaAdId": "1202700000000033",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "saucer.club54",
+   "followerCount": 775,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-09-28T19:17:17Z"
+  },
+  {
+   "conversationId": "conv_d17_110",
+   "channel": "instagram",
+   "metaAdId": "1202700000000033",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "biscuit.journal",
+   "followerCount": 568,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-09-28T13:55:24Z"
+  },
+  {
+   "conversationId": "conv_d17_061",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "earl.days67",
+   "followerCount": 451,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-09-28T07:20:38Z"
+  },
+  {
+   "conversationId": "conv_d17_054",
+   "channel": "instagram",
+   "metaAdId": "1202700000000033",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "cozy.and.co",
+   "followerCount": 474,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-09-28T06:43:18Z"
+  },
+  {
+   "conversationId": "conv_d17_045",
+   "channel": "instagram",
+   "metaAdId": "1202700000000031",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "mint.table61",
+   "followerCount": 359,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-09-28T04:36:59Z"
+  },
+  {
+   "conversationId": "conv_d17_087",
+   "channel": "instagram",
+   "metaAdId": "1202700000000032",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "pekoe.and.cake",
+   "followerCount": 393,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-09-28T04:12:53Z"
+  },
+  {
+   "conversationId": "conv_d17_115",
+   "channel": "instagram",
+   "metaAdId": "1202700000000033",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "pekoe.hour",
+   "followerCount": 919,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-09-28T00:06:57Z"
+  },
+  {
+   "conversationId": "conv_d17_124",
+   "channel": "instagram",
+   "metaAdId": "1202700000000033",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "cozy.cup",
+   "followerCount": 248,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-09-27T22:28:05Z"
+  },
+  {
+   "conversationId": "conv_d17_033",
+   "channel": "instagram",
+   "metaAdId": "1202700000000031",
+   "flowName": "Wren & Thistle · Steep guide",
+   "username": "brew.studio13",
+   "followerCount": 519,
+   "furthestStageName": "flow_entry",
+   "lastMessageAt": "2026-09-27T19:27:57Z"
+  }
+ ]
+}

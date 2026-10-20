@@ -23,6 +23,30 @@
   "carts": 12,
   "checkouts": 6
  },
+ "contactsCaptured": {
+  "total": 41,
+  "email": 29,
+  "phone": 12
+ },
+ "iceBreakers": {
+  "total": 171,
+  "items": [
+   {
+    "text": "Which roast is least bitter?",
+    "conversations": 74,
+    "share": 0.4327
+   },
+   {
+    "text": "Can you grind it for my brewer?",
+    "conversations": 40,
+    "share": 0.2339
+   }
+  ],
+  "typedOwn": {
+   "conversations": 57,
+   "share": 0.3333
+  }
+ },
  "leadHeat": {
   "hot": 14,
   "warm": 52,
@@ -30,7 +54,7 @@
  },
  "orders": {
   "threadProven": 5,
-  "revenue": 214.0,
+  "revenue": 214,
   "delayed": 2
  },
  "flags": [

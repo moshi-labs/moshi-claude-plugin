@@ -1,0 +1,3900 @@
+{
+  "schemaVersion": 1,
+  "merchant": {
+    "name": "Wren & Thistle Tea",
+    "currency": "USD",
+    "timezone": "America/Los_Angeles"
+  },
+  "asOf": "2026-10-13T18:20:00Z",
+  "window": {
+    "start": "2026-10-03",
+    "end": "2026-10-09",
+    "partial": false,
+    "before": "1202700000000022"
+  },
+  "metaSyncedAt": "2026-10-13T18:12:00Z",
+  "metaWindow": {
+    "start": "2026-09-14",
+    "end": "2026-10-13"
+  },
+  "moshiWindow": {
+    "start": "2026-09-27",
+    "end": "2026-10-13"
+  },
+  "mode": "full",
+  "mood": "delight",
+  "primaryCampaignId": "1202700000000011",
+  "verdict": {
+    "title": "A strong week before the gift guide",
+    "headline": "Your chat ads clicked at {c:1202700000000011.ctr}, against {cmp:0.merchant} for your running campaigns.",
+    "body": "Over the 7 days before the gift guide launched, chats cost {m:costPerChat} each on Meta's count, and Meta credits the campaign with {c:1202700000000011.purchases} purchases. Since launch, {m:provenOrders} orders came straight from Moshi chats."
+  },
+  "campaigns": [
+    {
+      "id": "1202700000000101",
+      "name": "Evergreen | ASC | US",
+      "owner": "merchant",
+      "objective": "sales",
+      "metaObjective": "OUTCOME_SALES",
+      "budgetType": "CBO",
+      "dailyBudget": 600,
+      "status": "ACTIVE",
+      "startTime": "2026-03-03",
+      "adsPulled": "top",
+      "retargeting": false,
+      "metaSpend": 17586.89,
+      "metaPurchases": 454,
+      "metaPurchaseValue": 19876.43,
+      "adsets": [
+        {
+          "id": "1202700000000111",
+          "name": "Advantage+ shopping",
+          "status": "ACTIVE",
+          "startTime": "2026-03-03",
+          "optimizationGoal": "OFFSITE_CONVERSIONS",
+          "dailyBudget": null,
+          "learning": "success",
+          "adCount": 6,
+          "lastLearningReset": "2026-09-02",
+          "attributionSetting": "7-day click, 1-day view",
+          "totals": {
+            "spend": 4254.89,
+            "impressions": 268224,
+            "linkClicks": 3475,
+            "conversations": 0,
+            "purchases": 113,
+            "purchaseValue": 4911.96
+          },
+          "ads": [
+            {
+              "id": "1202700000000121",
+              "name": "Fall Tins | Flat lay",
+              "angle": "Fall tins flat lay",
+              "daily": [
+                {
+                  "date": "2026-09-14",
+                  "spend": 161.49,
+                  "impressions": 9972,
+                  "reach": 4152,
+                  "linkClicks": 151,
+                  "conversations": 0,
+                  "purchases": 4,
+                  "purchaseValue": 196.55
+                },
+                {
+                  "date": "2026-09-15",
+                  "spend": 163.15,
+                  "impressions": 9781,
+                  "reach": 4114,
+                  "linkClicks": 137,
+                  "conversations": 0,
+                  "purchases": 5,
+                  "purchaseValue": 229.5
+                },
+                {
+                  "date": "2026-09-16",
+                  "spend": 185.51,
+                  "impressions": 11795,
+                  "reach": 5019,
+                  "linkClicks": 152,
+                  "conversations": 0,
+                  "purchases": 5,
+                  "purchaseValue": 199.02
+                },
+                {
+                  "date": "2026-09-17",
+                  "spend": 196.17,
+                  "impressions": 11693,
+                  "reach": 4965,
+                  "linkClicks": 178,
+                  "conversations": 0,
+                  "purchases": 5,
+                  "purchaseValue": 220.24
+                },
+                {
+                  "date": "2026-09-18",
+                  "spend": 162.74,
+                  "impressions": 10545,
+                  "reach": 4342,
+                  "linkClicks": 140,
+                  "conversations": 0,
+                  "purchases": 5,
+                  "purchaseValue": 200.76
+                },
+                {
+                  "date": "2026-09-19",
+                  "spend": 182.4,
+                  "impressions": 10697,
+                  "reach": 4342,
+                  "linkClicks": 143,
+                  "conversations": 0,
+                  "purchases": 5,
+                  "purchaseValue": 206.58
+                },
+                {
+                  "date": "2026-09-20",
+                  "spend": 179.56,
+                  "impressions": 11740,
+                  "reach": 4991,
+                  "linkClicks": 157,
+                  "conversations": 0,
+                  "purchases": 5,
+                  "purchaseValue": 198.1
+                },
+                {
+                  "date": "2026-09-21",
+                  "spend": 165.02,
+                  "impressions": 10646,
+                  "reach": 4404,
+                  "linkClicks": 150,
+                  "conversations": 0,
+                  "purchases": 4,
+                  "purchaseValue": 193.06
+                },
+                {
+                  "date": "2026-09-22",
+                  "spend": 192.78,
+                  "impressions": 12599,
+                  "reach": 5234,
+                  "linkClicks": 168,
+                  "conversations": 0,
+                  "purchases": 5,
+                  "purchaseValue": 243.84
+                },
+                {
+                  "date": "2026-09-23",
+                  "spend": 187.24,
+                  "impressions": 11667,
+                  "reach": 4948,
+                  "linkClicks": 170,
+                  "conversations": 0,
+                  "purchases": 5,
+                  "purchaseValue": 218.86
+                },
+                {
+                  "date": "2026-09-24",
+                  "spend": 159.21,
+                  "impressions": 10301,
+                  "reach": 4203,
+                  "linkClicks": 134,
+                  "conversations": 0,
+                  "purchases": 4,
+                  "purchaseValue": 185.9
+                },
+                {
+                  "date": "2026-09-25",
+                  "spend": 162.67,
+                  "impressions": 9676,
+                  "reach": 3979,
+                  "linkClicks": 143,
+                  "conversations": 0,
+                  "purchases": 5,
+                  "purchaseValue": 244.8
+                },
+                {
+                  "date": "2026-09-26",
+                  "spend": 165.23,
+                  "impressions": 10480,
+                  "reach": 4221,
+                  "linkClicks": 159,
+                  "conversations": 0,
+                  "purchases": 4,
+                  "purchaseValue": 173.22
+                },
+                {
+                  "date": "2026-09-27",
+                  "spend": 177.69,
+                  "impressions": 11282,
+                  "reach": 4524,
+                  "linkClicks": 167,
+                  "conversations": 0,
+                  "purchases": 5,
+                  "purchaseValue": 213.54
+                },
+                {
+                  "date": "2026-09-28",
+                  "spend": 167.65,
+                  "impressions": 10316,
+                  "reach": 4123,
+                  "linkClicks": 149,
+                  "conversations": 0,
+                  "purchases": 5,
+                  "purchaseValue": 196.26
+                },
+                {
+                  "date": "2026-09-29",
+                  "spend": 189.11,
+                  "impressions": 11238,
+                  "reach": 4690,
+                  "linkClicks": 164,
+                  "conversations": 0,
+                  "purchases": 6,
+                  "purchaseValue": 276.82
+                },
+                {
+                  "date": "2026-09-30",
+                  "spend": 166.48,
+                  "impressions": 9826,
+                  "reach": 3915,
+                  "linkClicks": 131,
+                  "conversations": 0,
+                  "purchases": 5,
+                  "purchaseValue": 224.4
+                },
+                {
+                  "date": "2026-10-01",
+                  "spend": 196.94,
+                  "impressions": 12247,
+                  "reach": 5032,
+                  "linkClicks": 173,
+                  "conversations": 0,
+                  "purchases": 6,
+                  "purchaseValue": 292.1
+                },
+                {
+                  "date": "2026-10-02",
+                  "spend": 161.7,
+                  "impressions": 10242,
+                  "reach": 4090,
+                  "linkClicks": 153,
+                  "conversations": 0,
+                  "purchases": 4,
+                  "purchaseValue": 156.27
+                },
+                {
+                  "date": "2026-10-03",
+                  "spend": 201.16,
+                  "impressions": 12941,
+                  "reach": 5262,
+                  "linkClicks": 174,
+                  "conversations": 0,
+                  "purchases": 6,
+                  "purchaseValue": 238.75
+                },
+                {
+                  "date": "2026-10-04",
+                  "spend": 196.52,
+                  "impressions": 11709,
+                  "reach": 4710,
+                  "linkClicks": 157,
+                  "conversations": 0,
+                  "purchases": 6,
+                  "purchaseValue": 257.61
+                },
+                {
+                  "date": "2026-10-05",
+                  "spend": 158.58,
+                  "impressions": 9261,
+                  "reach": 3746,
+                  "linkClicks": 142,
+                  "conversations": 0,
+                  "purchases": 4,
+                  "purchaseValue": 162.32
+                },
+                {
+                  "date": "2026-10-06",
+                  "spend": 184.55,
+                  "impressions": 11563,
+                  "reach": 4710,
+                  "linkClicks": 167,
+                  "conversations": 0,
+                  "purchases": 5,
+                  "purchaseValue": 229.62
+                },
+                {
+                  "date": "2026-10-07",
+                  "spend": 198.81,
+                  "impressions": 11790,
+                  "reach": 4768,
+                  "linkClicks": 167,
+                  "conversations": 0,
+                  "purchases": 5,
+                  "purchaseValue": 202.44
+                },
+                {
+                  "date": "2026-10-08",
+                  "spend": 168.97,
+                  "impressions": 11002,
+                  "reach": 4293,
+                  "linkClicks": 168,
+                  "conversations": 0,
+                  "purchases": 5,
+                  "purchaseValue": 240.16
+                },
+                {
+                  "date": "2026-10-09",
+                  "spend": 192.23,
+                  "impressions": 11453,
+                  "reach": 4384,
+                  "linkClicks": 147,
+                  "conversations": 0,
+                  "purchases": 5,
+                  "purchaseValue": 197.58
+                },
+                {
+                  "date": "2026-10-10",
+                  "spend": 192.99,
+                  "impressions": 11481,
+                  "reach": 4581,
+                  "linkClicks": 150,
+                  "conversations": 0,
+                  "purchases": 5,
+                  "purchaseValue": 246.3
+                },
+                {
+                  "date": "2026-10-11",
+                  "spend": 182.05,
+                  "impressions": 10785,
+                  "reach": 4168,
+                  "linkClicks": 151,
+                  "conversations": 0,
+                  "purchases": 5,
+                  "purchaseValue": 241.12
+                },
+                {
+                  "date": "2026-10-12",
+                  "spend": 170.22,
+                  "impressions": 10333,
+                  "reach": 3990,
+                  "linkClicks": 139,
+                  "conversations": 0,
+                  "purchases": 4,
+                  "purchaseValue": 156.19
+                },
+                {
+                  "date": "2026-10-13",
+                  "spend": 75.73,
+                  "impressions": 4978,
+                  "reach": 1953,
+                  "linkClicks": 74,
+                  "conversations": 0,
+                  "purchases": 2,
+                  "purchaseValue": 90.98
+                }
+              ]
+            },
+            {
+              "id": "1202700000000122",
+              "name": "Steeping ritual | UGC",
+              "angle": "Steeping ritual",
+              "daily": [
+                {
+                  "date": "2026-09-14",
+                  "spend": 143.22,
+                  "impressions": 8594,
+                  "reach": 3839,
+                  "linkClicks": 125,
+                  "conversations": 0,
+                  "purchases": 3,
+                  "purchaseValue": 142.1
+                },
+                {
+                  "date": "2026-09-15",
+                  "spend": 123.51,
+                  "impressions": 8009,
+                  "reach": 3534,
+                  "linkClicks": 116,
+                  "conversations": 0,
+                  "purchases": 4,
+                  "purchaseValue": 170.82
+                },
+                {
+                  "date": "2026-09-16",
+                  "spend": 136.7,
+                  "impressions": 8721,
+                  "reach": 3694,
+                  "linkClicks": 114,
+                  "conversations": 0,
+                  "purchases": 4,
+                  "purchaseValue": 162.09
+                },
+                {
+                  "date": "2026-09-17",
+                  "spend": 124,
+                  "impressions": 8234,
+                  "reach": 3613,
+                  "linkClicks": 112,
+                  "conversations": 0,
+                  "purchases": 4,
+                  "purchaseValue": 174.05
+                },
+                {
+                  "date": "2026-09-18",
+                  "spend": 127.39,
+                  "impressions": 8529,
+                  "reach": 3655,
+                  "linkClicks": 121,
+                  "conversations": 0,
+                  "purchases": 3,
+                  "purchaseValue": 130.73
+                },
+                {
+                  "date": "2026-09-19",
+                  "spend": 155.28,
+                  "impressions": 10455,
+                  "reach": 4585,
+                  "linkClicks": 131,
+                  "conversations": 0,
+                  "purchases": 4,
+                  "purchaseValue": 173.67
+                },
+                {
+                  "date": "2026-09-20",
+                  "spend": 148.87,
+                  "impressions": 9203,
+                  "reach": 4012,
+                  "linkClicks": 113,
+                  "conversations": 0,
+                  "purchases": 4,
+                  "purchaseValue": 182.93
+                },
+                {
+                  "date": "2026-09-21",
+                  "spend": 150.17,
+                  "impressions": 9006,
+                  "reach": 3737,
+                  "linkClicks": 125,
+                  "conversations": 0,
+                  "purchases": 5,
+                  "purchaseValue": 212.12
+                },
+                {
+                  "date": "2026-09-22",
+                  "spend": 133.96,
+                  "impressions": 8533,
+                  "reach": 3581,
+                  "linkClicks": 109,
+                  "conversations": 0,
+                  "purchases": 4,
+                  "purchaseValue": 187.96
+                },
+                {
+                  "date": "2026-09-23",
+                  "spend": 142.25,
+                  "impressions": 9569,
+                  "reach": 4007,
+                  "linkClicks": 118,
+                  "conversations": 0,
+                  "purchases": 4,
+                  "purchaseValue": 162.12
+                },
+                {
+                  "date": "2026-09-24",
+                  "spend": 149.84,
+                  "impressions": 9731,
+                  "reach": 4196,
+                  "linkClicks": 128,
+                  "conversations": 0,
+                  "purchases": 4,
+                  "purchaseValue": 189.38
+                },
+                {
+                  "date": "2026-09-25",
+                  "spend": 131.54,
+                  "impressions": 8719,
+                  "reach": 3705,
+                  "linkClicks": 116,
+                  "conversations": 0,
+                  "purchases": 4,
+                  "purchaseValue": 194.14
+                },
+                {
+                  "date": "2026-09-26",
+                  "spend": 129.33,
+                  "impressions": 8478,
+                  "reach": 3555,
+                  "linkClicks": 113,
+                  "conversations": 0,
+                  "purchases": 3,
+                  "purchaseValue": 140.4
+                },
+                {
+                  "date": "2026-09-27",
+                  "spend": 151.62,
+                  "impressions": 9803,
+                  "reach": 4002,
+                  "linkClicks": 137,
+                  "conversations": 0,
+                  "purchases": 4,
+                  "purchaseValue": 179.36
+                },
+                {
+                  "date": "2026-09-28",
+                  "spend": 139.61,
+                  "impressions": 9147,
+                  "reach": 3749,
+                  "linkClicks": 121,
+                  "conversations": 0,
+                  "purchases": 4,
+                  "purchaseValue": 181.43
+                },
+                {
+                  "date": "2026-09-29",
+                  "spend": 135.31,
+                  "impressions": 8443,
+                  "reach": 3531,
+                  "linkClicks": 122,
+                  "conversations": 0,
+                  "purchases": 4,
+                  "purchaseValue": 160.99
+                },
+                {
+                  "date": "2026-09-30",
+                  "spend": 147.1,
+                  "impressions": 9539,
+                  "reach": 3841,
+                  "linkClicks": 123,
+                  "conversations": 0,
+                  "purchases": 4,
+                  "purchaseValue": 172.05
+                },
+                {
+                  "date": "2026-10-01",
+                  "spend": 149.79,
+                  "impressions": 10057,
+                  "reach": 4081,
+                  "linkClicks": 120,
+                  "conversations": 0,
+                  "purchases": 4,
+                  "purchaseValue": 182.21
+                },
+                {
+                  "date": "2026-10-02",
+                  "spend": 151.78,
+                  "impressions": 9645,
+                  "reach": 4071,
+                  "linkClicks": 119,
+                  "conversations": 0,
+                  "purchases": 4,
+                  "purchaseValue": 159.07
+                },
+                {
+                  "date": "2026-10-03",
+                  "spend": 127.88,
+                  "impressions": 8134,
+                  "reach": 3418,
+                  "linkClicks": 98,
+                  "conversations": 0,
+                  "purchases": 4,
+                  "purchaseValue": 199.83
+                },
+                {
+                  "date": "2026-10-04",
+                  "spend": 153.67,
+                  "impressions": 9467,
+                  "reach": 3965,
+                  "linkClicks": 135,
+                  "conversations": 0,
+                  "purchases": 4,
+                  "purchaseValue": 185.7
+                },
+                {
+                  "date": "2026-10-05",
+                  "spend": 136.76,
+                  "impressions": 9174,
+                  "reach": 3777,
+                  "linkClicks": 133,
+                  "conversations": 0,
+                  "purchases": 4,
+                  "purchaseValue": 170.66
+                },
+                {
+                  "date": "2026-10-06",
+                  "spend": 152.75,
+                  "impressions": 10183,
+                  "reach": 4253,
+                  "linkClicks": 135,
+                  "conversations": 0,
+                  "purchases": 4,
+                  "purchaseValue": 165.52
+                },
+                {
+                  "date": "2026-10-07",
+                  "spend": 142.85,
+                  "impressions": 8896,
+                  "reach": 3607,
+                  "linkClicks": 125,
+                  "conversations": 0,
+                  "purchases": 4,
+                  "purchaseValue": 181.08
+                },
+                {
+                  "date": "2026-10-08",
+                  "spend": 149.04,
+                  "impressions": 9457,
+                  "reach": 3729,
+                  "linkClicks": 114,
+                  "conversations": 0,
+                  "purchases": 4,
+                  "purchaseValue": 184.94
+                },
+                {
+                  "date": "2026-10-09",
+                  "spend": 146.13,
+                  "impressions": 9421,
+                  "reach": 3781,
+                  "linkClicks": 126,
+                  "conversations": 0,
+                  "purchases": 4,
+                  "purchaseValue": 187.9
+                },
+                {
+                  "date": "2026-10-10",
+                  "spend": 142.52,
+                  "impressions": 9583,
+                  "reach": 3805,
+                  "linkClicks": 127,
+                  "conversations": 0,
+                  "purchases": 4,
+                  "purchaseValue": 200.77
+                },
+                {
+                  "date": "2026-10-11",
+                  "spend": 146.61,
+                  "impressions": 9681,
+                  "reach": 3865,
+                  "linkClicks": 121,
+                  "conversations": 0,
+                  "purchases": 4,
+                  "purchaseValue": 191.13
+                },
+                {
+                  "date": "2026-10-12",
+                  "spend": 133.21,
+                  "impressions": 8359,
+                  "reach": 3360,
+                  "linkClicks": 120,
+                  "conversations": 0,
+                  "purchases": 4,
+                  "purchaseValue": 169.79
+                },
+                {
+                  "date": "2026-10-13",
+                  "spend": 64.93,
+                  "impressions": 4347,
+                  "reach": 1735,
+                  "linkClicks": 61,
+                  "conversations": 0,
+                  "purchases": 1,
+                  "purchaseValue": 47.69
+                }
+              ]
+            },
+            {
+              "id": "1202700000000123",
+              "name": "Bestsellers | Carousel",
+              "angle": "Bestseller carousel",
+              "daily": [
+                {
+                  "date": "2026-09-14",
+                  "spend": 106.57,
+                  "impressions": 6677,
+                  "reach": 2970,
+                  "linkClicks": 82,
+                  "conversations": 0,
+                  "purchases": 2,
+                  "purchaseValue": 90.16
+                },
+                {
+                  "date": "2026-09-15",
+                  "spend": 100.99,
+                  "impressions": 5968,
+                  "reach": 2723,
+                  "linkClicks": 79,
+                  "conversations": 0,
+                  "purchases": 2,
+                  "purchaseValue": 78.68
+                },
+                {
+                  "date": "2026-09-16",
+                  "spend": 108.05,
+                  "impressions": 6571,
+                  "reach": 2899,
+                  "linkClicks": 76,
+                  "conversations": 0,
+                  "purchases": 3,
+                  "purchaseValue": 123.36
+                },
+                {
+                  "date": "2026-09-17",
+                  "spend": 107.97,
+                  "impressions": 6735,
+                  "reach": 3010,
+                  "linkClicks": 88,
+                  "conversations": 0,
+                  "purchases": 3,
+                  "purchaseValue": 128.07
+                },
+                {
+                  "date": "2026-09-18",
+                  "spend": 107.33,
+                  "impressions": 6265,
+                  "reach": 2756,
+                  "linkClicks": 82,
+                  "conversations": 0,
+                  "purchases": 3,
+                  "purchaseValue": 139.86
+                },
+                {
+                  "date": "2026-09-19",
+                  "spend": 112.75,
+                  "impressions": 6521,
+                  "reach": 2869,
+                  "linkClicks": 82,
+                  "conversations": 0,
+                  "purchases": 3,
+                  "purchaseValue": 135.54
+                },
+                {
+                  "date": "2026-09-20",
+                  "spend": 104.41,
+                  "impressions": 6532,
+                  "reach": 2879,
+                  "linkClicks": 78,
+                  "conversations": 0,
+                  "purchases": 2,
+                  "purchaseValue": 81.88
+                },
+                {
+                  "date": "2026-09-21",
+                  "spend": 115.33,
+                  "impressions": 6910,
+                  "reach": 3009,
+                  "linkClicks": 83,
+                  "conversations": 0,
+                  "purchases": 3,
+                  "purchaseValue": 140.43
+                },
+                {
+                  "date": "2026-09-22",
+                  "spend": 99.3,
+                  "impressions": 5850,
+                  "reach": 2597,
+                  "linkClicks": 77,
+                  "conversations": 0,
+                  "purchases": 3,
+                  "purchaseValue": 134.16
+                },
+                {
+                  "date": "2026-09-23",
+                  "spend": 115.71,
+                  "impressions": 7103,
+                  "reach": 3076,
+                  "linkClicks": 97,
+                  "conversations": 0,
+                  "purchases": 3,
+                  "purchaseValue": 142.74
+                },
+                {
+                  "date": "2026-09-24",
+                  "spend": 118.38,
+                  "impressions": 7328,
+                  "reach": 3101,
+                  "linkClicks": 85,
+                  "conversations": 0,
+                  "purchases": 3,
+                  "purchaseValue": 142.92
+                },
+                {
+                  "date": "2026-09-25",
+                  "spend": 113.89,
+                  "impressions": 7091,
+                  "reach": 3069,
+                  "linkClicks": 90,
+                  "conversations": 0,
+                  "purchases": 3,
+                  "purchaseValue": 142.47
+                },
+                {
+                  "date": "2026-09-26",
+                  "spend": 108.86,
+                  "impressions": 6211,
+                  "reach": 2673,
+                  "linkClicks": 77,
+                  "conversations": 0,
+                  "purchases": 3,
+                  "purchaseValue": 118.14
+                },
+                {
+                  "date": "2026-09-27",
+                  "spend": 109.87,
+                  "impressions": 6871,
+                  "reach": 2988,
+                  "linkClicks": 96,
+                  "conversations": 0,
+                  "purchases": 2,
+                  "purchaseValue": 93.08
+                },
+                {
+                  "date": "2026-09-28",
+                  "spend": 97.14,
+                  "impressions": 5715,
+                  "reach": 2515,
+                  "linkClicks": 74,
+                  "conversations": 0,
+                  "purchases": 2,
+                  "purchaseValue": 81.16
+                },
+                {
+                  "date": "2026-09-29",
+                  "spend": 103.65,
+                  "impressions": 6447,
+                  "reach": 2831,
+                  "linkClicks": 80,
+                  "conversations": 0,
+                  "purchases": 3,
+                  "purchaseValue": 134.19
+                },
+                {
+                  "date": "2026-09-30",
+                  "spend": 109.62,
+                  "impressions": 6578,
+                  "reach": 2800,
+                  "linkClicks": 87,
+                  "conversations": 0,
+                  "purchases": 3,
+                  "purchaseValue": 122.76
+                },
+                {
+                  "date": "2026-10-01",
+                  "spend": 121.63,
+                  "impressions": 7452,
+                  "reach": 3127,
+                  "linkClicks": 99,
+                  "conversations": 0,
+                  "purchases": 3,
+                  "purchaseValue": 126.18
+                },
+                {
+                  "date": "2026-10-02",
+                  "spend": 119.9,
+                  "impressions": 7263,
+                  "reach": 3008,
+                  "linkClicks": 97,
+                  "conversations": 0,
+                  "purchases": 3,
+                  "purchaseValue": 121.2
+                },
+                {
+                  "date": "2026-10-03",
+                  "spend": 111.02,
+                  "impressions": 6632,
+                  "reach": 2838,
+                  "linkClicks": 92,
+                  "conversations": 0,
+                  "purchases": 3,
+                  "purchaseValue": 115.59
+                },
+                {
+                  "date": "2026-10-04",
+                  "spend": 101.58,
+                  "impressions": 6150,
+                  "reach": 2643,
+                  "linkClicks": 81,
+                  "conversations": 0,
+                  "purchases": 3,
+                  "purchaseValue": 117.06
+                },
+                {
+                  "date": "2026-10-05",
+                  "spend": 98.2,
+                  "impressions": 5656,
+                  "reach": 2337,
+                  "linkClicks": 67,
+                  "conversations": 0,
+                  "purchases": 3,
+                  "purchaseValue": 133.38
+                },
+                {
+                  "date": "2026-10-06",
+                  "spend": 107.46,
+                  "impressions": 6438,
+                  "reach": 2718,
+                  "linkClicks": 83,
+                  "conversations": 0,
+                  "purchases": 3,
+                  "purchaseValue": 141.3
+                },
+                {
+                  "date": "2026-10-07",
+                  "spend": 109.58,
+                  "impressions": 6803,
+                  "reach": 2896,
+                  "linkClicks": 82,
+                  "conversations": 0,
+                  "purchases": 3,
+                  "purchaseValue": 117.63
+                },
+                {
+                  "date": "2026-10-08",
+                  "spend": 111.14,
+                  "impressions": 6522,
+                  "reach": 2719,
+                  "linkClicks": 81,
+                  "conversations": 0,
+                  "purchases": 3,
+                  "purchaseValue": 132
+                },
+                {
+                  "date": "2026-10-09",
+                  "spend": 118.76,
+                  "impressions": 6976,
+                  "reach": 2895,
+                  "linkClicks": 84,
+                  "conversations": 0,
+                  "purchases": 3,
+                  "purchaseValue": 130.26
+                },
+                {
+                  "date": "2026-10-10",
+                  "spend": 112.62,
+                  "impressions": 6402,
+                  "reach": 2648,
+                  "linkClicks": 75,
+                  "conversations": 0,
+                  "purchases": 3,
+                  "purchaseValue": 120.13
+                },
+                {
+                  "date": "2026-10-11",
+                  "spend": 99.34,
+                  "impressions": 6162,
+                  "reach": 2506,
+                  "linkClicks": 73,
+                  "conversations": 0,
+                  "purchases": 2,
+                  "purchaseValue": 93.54
+                },
+                {
+                  "date": "2026-10-12",
+                  "spend": 111.9,
+                  "impressions": 6897,
+                  "reach": 2845,
+                  "linkClicks": 92,
+                  "conversations": 0,
+                  "purchases": 3,
+                  "purchaseValue": 136.63
+                },
+                {
+                  "date": "2026-10-13",
+                  "spend": 46.85,
+                  "impressions": 2693,
+                  "reach": 1079,
+                  "linkClicks": 31,
+                  "conversations": 0,
+                  "purchases": 2,
+                  "purchaseValue": 77.88
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1202700000000201",
+      "name": "RTG | Site + IG 30d",
+      "owner": "merchant",
+      "objective": "sales",
+      "metaObjective": "OUTCOME_SALES",
+      "budgetType": "ABO",
+      "dailyBudget": null,
+      "status": "ACTIVE",
+      "startTime": "2026-05-12",
+      "adsPulled": "none",
+      "retargeting": false,
+      "metaSpend": 5939.21,
+      "metaPurchases": 145,
+      "metaPurchaseValue": 5950.05,
+      "adsets": [
+        {
+          "id": "1202700000000211",
+          "name": "Broad 25-54",
+          "status": "ACTIVE",
+          "startTime": "2026-05-12",
+          "optimizationGoal": "OFFSITE_CONVERSIONS",
+          "dailyBudget": 160,
+          "learning": "success",
+          "adCount": 3,
+          "lastLearningReset": "2026-08-14",
+          "attributionSetting": "7-day click, 1-day view",
+          "totals": {
+            "spend": 1133.37,
+            "impressions": 84075,
+            "linkClicks": 1264,
+            "conversations": 0,
+            "purchases": 26,
+            "purchaseValue": 1082.98
+          },
+          "ads": []
+        },
+        {
+          "id": "1202700000000212",
+          "name": "Site visitors 30d",
+          "status": "ACTIVE",
+          "startTime": "2026-05-12",
+          "optimizationGoal": "OFFSITE_CONVERSIONS",
+          "dailyBudget": 40,
+          "retargeting": true,
+          "learning": "limited",
+          "adCount": 2,
+          "lastLearningReset": "2026-08-14",
+          "attributionSetting": "7-day click, 1-day view",
+          "totals": {
+            "spend": 277.16,
+            "impressions": 8708,
+            "linkClicks": 277,
+            "conversations": 0,
+            "purchases": 5,
+            "purchaseValue": 203.56
+          },
+          "ads": []
+        }
+      ]
+    },
+    {
+      "id": "1202700000000301",
+      "name": "Fall Tins | Launch",
+      "owner": "merchant",
+      "objective": "sales",
+      "metaObjective": "OUTCOME_SALES",
+      "budgetType": "ABO",
+      "dailyBudget": null,
+      "status": "ACTIVE",
+      "startTime": "2026-09-15",
+      "adsPulled": "all",
+      "retargeting": false,
+      "metaSpend": 3275.36,
+      "metaPurchases": 71,
+      "metaPurchaseValue": 3099.49,
+      "adsets": [
+        {
+          "id": "1202700000000311",
+          "name": "Fall Tins | Broad",
+          "status": "ACTIVE",
+          "startTime": "2026-09-15",
+          "optimizationGoal": "OFFSITE_CONVERSIONS",
+          "dailyBudget": 120,
+          "learning": "success",
+          "adCount": 4,
+          "lastLearningReset": "2026-09-15",
+          "attributionSetting": "7-day click, 1-day view",
+          "totals": {
+            "spend": 818.13,
+            "impressions": 53141,
+            "linkClicks": 823,
+            "conversations": 0,
+            "purchases": 17,
+            "purchaseValue": 743.73
+          },
+          "ads": [
+            {
+              "id": "1202700000000321",
+              "name": "Tin stack | Reel",
+              "angle": "Tin stack",
+              "daily": [
+                {
+                  "date": "2026-09-15",
+                  "spend": 22.19,
+                  "impressions": 1484,
+                  "reach": 1273,
+                  "linkClicks": 25,
+                  "conversations": 0,
+                  "purchases": 1,
+                  "purchaseValue": 47.71
+                },
+                {
+                  "date": "2026-09-16",
+                  "spend": 31.27,
+                  "impressions": 1958,
+                  "reach": 1688,
+                  "linkClicks": 31,
+                  "conversations": 0,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-09-17",
+                  "spend": 42.62,
+                  "impressions": 2717,
+                  "reach": 2413,
+                  "linkClicks": 43,
+                  "conversations": 0,
+                  "purchases": 1,
+                  "purchaseValue": 45.71
+                },
+                {
+                  "date": "2026-09-18",
+                  "spend": 45.03,
+                  "impressions": 3084,
+                  "reach": 2657,
+                  "linkClicks": 50,
+                  "conversations": 0,
+                  "purchases": 1,
+                  "purchaseValue": 49.1
+                },
+                {
+                  "date": "2026-09-19",
+                  "spend": 47.79,
+                  "impressions": 3119,
+                  "reach": 2733,
+                  "linkClicks": 55,
+                  "conversations": 0,
+                  "purchases": 1,
+                  "purchaseValue": 41.71
+                },
+                {
+                  "date": "2026-09-20",
+                  "spend": 50.33,
+                  "impressions": 3213,
+                  "reach": 2781,
+                  "linkClicks": 55,
+                  "conversations": 0,
+                  "purchases": 1,
+                  "purchaseValue": 47.29
+                },
+                {
+                  "date": "2026-09-21",
+                  "spend": 44.55,
+                  "impressions": 2947,
+                  "reach": 2561,
+                  "linkClicks": 47,
+                  "conversations": 0,
+                  "purchases": 1,
+                  "purchaseValue": 47.38
+                },
+                {
+                  "date": "2026-09-22",
+                  "spend": 43.94,
+                  "impressions": 2915,
+                  "reach": 2399,
+                  "linkClicks": 52,
+                  "conversations": 0,
+                  "purchases": 1,
+                  "purchaseValue": 44.61
+                },
+                {
+                  "date": "2026-09-23",
+                  "spend": 40.4,
+                  "impressions": 2681,
+                  "reach": 2323,
+                  "linkClicks": 46,
+                  "conversations": 0,
+                  "purchases": 1,
+                  "purchaseValue": 41.62
+                },
+                {
+                  "date": "2026-09-24",
+                  "spend": 47.44,
+                  "impressions": 3234,
+                  "reach": 2699,
+                  "linkClicks": 48,
+                  "conversations": 0,
+                  "purchases": 1,
+                  "purchaseValue": 41.05
+                },
+                {
+                  "date": "2026-09-25",
+                  "spend": 46.16,
+                  "impressions": 3043,
+                  "reach": 2488,
+                  "linkClicks": 45,
+                  "conversations": 0,
+                  "purchases": 1,
+                  "purchaseValue": 45.54
+                },
+                {
+                  "date": "2026-09-26",
+                  "spend": 50.05,
+                  "impressions": 3082,
+                  "reach": 2624,
+                  "linkClicks": 46,
+                  "conversations": 0,
+                  "purchases": 1,
+                  "purchaseValue": 47.16
+                },
+                {
+                  "date": "2026-09-27",
+                  "spend": 40.22,
+                  "impressions": 2608,
+                  "reach": 2147,
+                  "linkClicks": 41,
+                  "conversations": 0,
+                  "purchases": 1,
+                  "purchaseValue": 48.57
+                },
+                {
+                  "date": "2026-09-28",
+                  "spend": 40.96,
+                  "impressions": 2545,
+                  "reach": 2091,
+                  "linkClicks": 37,
+                  "conversations": 0,
+                  "purchases": 1,
+                  "purchaseValue": 41.84
+                }
+              ]
+            },
+            {
+              "id": "1202700000000322",
+              "name": "Harvest blend | Static",
+              "angle": "Harvest blend",
+              "daily": [
+                {
+                  "date": "2026-09-15",
+                  "spend": 17.95,
+                  "impressions": 1181,
+                  "reach": 1011,
+                  "linkClicks": 19,
+                  "conversations": 0,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-09-16",
+                  "spend": 25.7,
+                  "impressions": 1643,
+                  "reach": 1419,
+                  "linkClicks": 25,
+                  "conversations": 0,
+                  "purchases": 1,
+                  "purchaseValue": 37.88
+                },
+                {
+                  "date": "2026-09-17",
+                  "spend": 31.43,
+                  "impressions": 2051,
+                  "reach": 1736,
+                  "linkClicks": 34,
+                  "conversations": 0,
+                  "purchases": 1,
+                  "purchaseValue": 45.82
+                },
+                {
+                  "date": "2026-09-18",
+                  "spend": 39.17,
+                  "impressions": 2759,
+                  "reach": 2327,
+                  "linkClicks": 47,
+                  "conversations": 0,
+                  "purchases": 1,
+                  "purchaseValue": 38.07
+                },
+                {
+                  "date": "2026-09-19",
+                  "spend": 36.98,
+                  "impressions": 2421,
+                  "reach": 2037,
+                  "linkClicks": 35,
+                  "conversations": 0,
+                  "purchases": 1,
+                  "purchaseValue": 37.85
+                },
+                {
+                  "date": "2026-09-20",
+                  "spend": 32.52,
+                  "impressions": 2221,
+                  "reach": 1859,
+                  "linkClicks": 35,
+                  "conversations": 0,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-09-21",
+                  "spend": 34.49,
+                  "impressions": 2342,
+                  "reach": 2050,
+                  "linkClicks": 35,
+                  "conversations": 0,
+                  "purchases": 1,
+                  "purchaseValue": 45.08
+                },
+                {
+                  "date": "2026-09-22",
+                  "spend": 32.5,
+                  "impressions": 2123,
+                  "reach": 1778,
+                  "linkClicks": 32,
+                  "conversations": 0,
+                  "purchases": 1,
+                  "purchaseValue": 42.23
+                },
+                {
+                  "date": "2026-09-23",
+                  "spend": 32.44,
+                  "impressions": 2159,
+                  "reach": 1868,
+                  "linkClicks": 31,
+                  "conversations": 0,
+                  "purchases": 1,
+                  "purchaseValue": 44.32
+                },
+                {
+                  "date": "2026-09-24",
+                  "spend": 36.4,
+                  "impressions": 2390,
+                  "reach": 2016,
+                  "linkClicks": 40,
+                  "conversations": 0,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-09-25",
+                  "spend": 31.54,
+                  "impressions": 2195,
+                  "reach": 1855,
+                  "linkClicks": 32,
+                  "conversations": 0,
+                  "purchases": 1,
+                  "purchaseValue": 42.64
+                },
+                {
+                  "date": "2026-09-26",
+                  "spend": 32.14,
+                  "impressions": 2026,
+                  "reach": 1691,
+                  "linkClicks": 31,
+                  "conversations": 0,
+                  "purchases": 1,
+                  "purchaseValue": 46.12
+                },
+                {
+                  "date": "2026-09-27",
+                  "spend": 32.56,
+                  "impressions": 2159,
+                  "reach": 1837,
+                  "linkClicks": 36,
+                  "conversations": 0,
+                  "purchases": 1,
+                  "purchaseValue": 41.65
+                },
+                {
+                  "date": "2026-09-28",
+                  "spend": 34.9,
+                  "impressions": 2283,
+                  "reach": 1895,
+                  "linkClicks": 34,
+                  "conversations": 0,
+                  "purchases": 1,
+                  "purchaseValue": 42.12
+                }
+              ]
+            },
+            {
+              "id": "1202700000000323",
+              "name": "Pumpkin chai | UGC",
+              "angle": "Pumpkin chai",
+              "daily": [
+                {
+                  "date": "2026-09-15",
+                  "spend": 14.06,
+                  "impressions": 864,
+                  "reach": 761,
+                  "linkClicks": 12,
+                  "conversations": 0,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-09-16",
+                  "spend": 17.07,
+                  "impressions": 1049,
+                  "reach": 962,
+                  "linkClicks": 15,
+                  "conversations": 0,
+                  "purchases": 1,
+                  "purchaseValue": 43.49
+                },
+                {
+                  "date": "2026-09-17",
+                  "spend": 22.57,
+                  "impressions": 1462,
+                  "reach": 1280,
+                  "linkClicks": 21,
+                  "conversations": 0,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-09-18",
+                  "spend": 25.82,
+                  "impressions": 1692,
+                  "reach": 1463,
+                  "linkClicks": 24,
+                  "conversations": 0,
+                  "purchases": 1,
+                  "purchaseValue": 47.29
+                },
+                {
+                  "date": "2026-09-19",
+                  "spend": 27.58,
+                  "impressions": 1821,
+                  "reach": 1630,
+                  "linkClicks": 29,
+                  "conversations": 0,
+                  "purchases": 1,
+                  "purchaseValue": 46.18
+                },
+                {
+                  "date": "2026-09-20",
+                  "spend": 23.22,
+                  "impressions": 1410,
+                  "reach": 1203,
+                  "linkClicks": 23,
+                  "conversations": 0,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-09-21",
+                  "spend": 26.46,
+                  "impressions": 1705,
+                  "reach": 1495,
+                  "linkClicks": 28,
+                  "conversations": 0,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-09-22",
+                  "spend": 22.65,
+                  "impressions": 1397,
+                  "reach": 1178,
+                  "linkClicks": 22,
+                  "conversations": 0,
+                  "purchases": 1,
+                  "purchaseValue": 45.36
+                },
+                {
+                  "date": "2026-09-23",
+                  "spend": 22.1,
+                  "impressions": 1375,
+                  "reach": 1204,
+                  "linkClicks": 20,
+                  "conversations": 0,
+                  "purchases": 1,
+                  "purchaseValue": 46.6
+                },
+                {
+                  "date": "2026-09-24",
+                  "spend": 24.43,
+                  "impressions": 1484,
+                  "reach": 1264,
+                  "linkClicks": 20,
+                  "conversations": 0,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-09-25",
+                  "spend": 23.19,
+                  "impressions": 1462,
+                  "reach": 1253,
+                  "linkClicks": 24,
+                  "conversations": 0,
+                  "purchases": 1,
+                  "purchaseValue": 43.3
+                },
+                {
+                  "date": "2026-09-26",
+                  "spend": 23.11,
+                  "impressions": 1474,
+                  "reach": 1254,
+                  "linkClicks": 20,
+                  "conversations": 0,
+                  "purchases": 1,
+                  "purchaseValue": 45.91
+                },
+                {
+                  "date": "2026-09-27",
+                  "spend": 22.91,
+                  "impressions": 1518,
+                  "reach": 1324,
+                  "linkClicks": 23,
+                  "conversations": 0,
+                  "purchases": 1,
+                  "purchaseValue": 40.58
+                },
+                {
+                  "date": "2026-09-28",
+                  "spend": 24.09,
+                  "impressions": 1560,
+                  "reach": 1333,
+                  "linkClicks": 24,
+                  "conversations": 0,
+                  "purchases": 1,
+                  "purchaseValue": 40.19
+                }
+              ]
+            },
+            {
+              "id": "1202700000000324",
+              "name": "Gift tin | Carousel",
+              "angle": "Gift tin",
+              "daily": [
+                {
+                  "date": "2026-09-15",
+                  "spend": 7.89,
+                  "impressions": 484,
+                  "reach": 431,
+                  "linkClicks": 7,
+                  "conversations": 0,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-09-16",
+                  "spend": 10.87,
+                  "impressions": 690,
+                  "reach": 614,
+                  "linkClicks": 10,
+                  "conversations": 0,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-09-17",
+                  "spend": 13.07,
+                  "impressions": 849,
+                  "reach": 771,
+                  "linkClicks": 13,
+                  "conversations": 0,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-09-18",
+                  "spend": 15.51,
+                  "impressions": 975,
+                  "reach": 852,
+                  "linkClicks": 13,
+                  "conversations": 0,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-09-19",
+                  "spend": 16.25,
+                  "impressions": 1024,
+                  "reach": 894,
+                  "linkClicks": 15,
+                  "conversations": 0,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-09-20",
+                  "spend": 13.37,
+                  "impressions": 817,
+                  "reach": 730,
+                  "linkClicks": 12,
+                  "conversations": 0,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-09-21",
+                  "spend": 15.33,
+                  "impressions": 895,
+                  "reach": 812,
+                  "linkClicks": 13,
+                  "conversations": 0,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-09-22",
+                  "spend": 16.03,
+                  "impressions": 958,
+                  "reach": 827,
+                  "linkClicks": 15,
+                  "conversations": 0,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-09-23",
+                  "spend": 13.24,
+                  "impressions": 830,
+                  "reach": 716,
+                  "linkClicks": 12,
+                  "conversations": 0,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-09-24",
+                  "spend": 15.02,
+                  "impressions": 866,
+                  "reach": 749,
+                  "linkClicks": 12,
+                  "conversations": 0,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-09-25",
+                  "spend": 16.08,
+                  "impressions": 1023,
+                  "reach": 894,
+                  "linkClicks": 15,
+                  "conversations": 0,
+                  "purchases": 1,
+                  "purchaseValue": 37.64
+                },
+                {
+                  "date": "2026-09-26",
+                  "spend": 16.71,
+                  "impressions": 1068,
+                  "reach": 944,
+                  "linkClicks": 15,
+                  "conversations": 0,
+                  "purchases": 1,
+                  "purchaseValue": 39.57
+                },
+                {
+                  "date": "2026-09-27",
+                  "spend": 16.36,
+                  "impressions": 1047,
+                  "reach": 924,
+                  "linkClicks": 14,
+                  "conversations": 0,
+                  "purchases": 1,
+                  "purchaseValue": 41.28
+                },
+                {
+                  "date": "2026-09-28",
+                  "spend": 15.94,
+                  "impressions": 931,
+                  "reach": 789,
+                  "linkClicks": 14,
+                  "conversations": 0,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "1202700000000401",
+      "name": "Brand | Video views",
+      "owner": "merchant",
+      "objective": "other",
+      "metaObjective": "OUTCOME_AWARENESS",
+      "budgetType": "ABO",
+      "dailyBudget": null,
+      "status": "ACTIVE",
+      "startTime": "2026-08-20",
+      "adsPulled": "none",
+      "retargeting": false,
+      "metaSpend": 874.48,
+      "metaPurchases": 2,
+      "metaPurchaseValue": 83.32,
+      "adsets": [
+        {
+          "id": "1202700000000411",
+          "name": "Reach 18-44",
+          "status": "ACTIVE",
+          "startTime": "2026-08-20",
+          "optimizationGoal": "THRUPLAY",
+          "dailyBudget": 30,
+          "learning": null,
+          "adCount": 2,
+          "lastLearningReset": "2026-08-20",
+          "attributionSetting": "1-day click",
+          "totals": {
+            "spend": 207.97,
+            "impressions": 34969,
+            "linkClicks": 122,
+            "conversations": 0,
+            "purchases": 0,
+            "purchaseValue": 0
+          },
+          "ads": []
+        }
+      ]
+    },
+    {
+      "id": "1202700000000011",
+      "name": "Moshi | Sales | Wren & Thistle",
+      "owner": "moshi",
+      "objective": "sales",
+      "metaObjective": "OUTCOME_SALES",
+      "budgetType": "CBO",
+      "dailyBudget": 90,
+      "status": "ACTIVE",
+      "startTime": "2026-09-25",
+      "adsPulled": "all",
+      "retargeting": false,
+      "metaSpend": 636.99,
+      "metaPurchases": 13,
+      "metaPurchaseValue": 608.72,
+      "adsets": [
+        {
+          "id": "1202700000000021",
+          "name": "Moshi | Chat | Broad US 25-54",
+          "status": "ACTIVE",
+          "startTime": "2026-09-25",
+          "optimizationGoal": "OFFSITE_CONVERSIONS",
+          "dailyBudget": null,
+          "learning": null,
+          "adCount": 3,
+          "lastLearningReset": "2026-09-27",
+          "attributionSetting": "7-day click, 1-day view",
+          "ads": [
+            {
+              "id": "1202700000000031",
+              "name": "Moshi - Steep Guide Reel",
+              "angle": "Steep guide",
+              "clonedFrom": null,
+              "creativeOverlap": [],
+              "daily": [
+                {
+                  "date": "2026-09-27",
+                  "spend": 17.04,
+                  "impressions": 1184,
+                  "reach": 1106,
+                  "linkClicks": 26,
+                  "conversations": 4,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-09-28",
+                  "spend": 17.83,
+                  "impressions": 1279,
+                  "reach": 1183,
+                  "linkClicks": 27,
+                  "conversations": 4,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-09-29",
+                  "spend": 17.51,
+                  "impressions": 1149,
+                  "reach": 1102,
+                  "linkClicks": 24,
+                  "conversations": 4,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-09-30",
+                  "spend": 17.11,
+                  "impressions": 1191,
+                  "reach": 1116,
+                  "linkClicks": 28,
+                  "conversations": 4,
+                  "purchases": 1,
+                  "purchaseValue": 51.46
+                },
+                {
+                  "date": "2026-10-01",
+                  "spend": 17.39,
+                  "impressions": 1259,
+                  "reach": 1161,
+                  "linkClicks": 26,
+                  "conversations": 4,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-10-02",
+                  "spend": 16.13,
+                  "impressions": 1067,
+                  "reach": 975,
+                  "linkClicks": 27,
+                  "conversations": 4,
+                  "purchases": 1,
+                  "purchaseValue": 41.83
+                },
+                {
+                  "date": "2026-10-03",
+                  "spend": 17.78,
+                  "impressions": 1201,
+                  "reach": 1079,
+                  "linkClicks": 29,
+                  "conversations": 5,
+                  "purchases": 1,
+                  "purchaseValue": 44.14
+                },
+                {
+                  "date": "2026-10-04",
+                  "spend": 17.12,
+                  "impressions": 1233,
+                  "reach": 1150,
+                  "linkClicks": 29,
+                  "conversations": 4,
+                  "purchases": 1,
+                  "purchaseValue": 46.71
+                },
+                {
+                  "date": "2026-10-05",
+                  "spend": 16.19,
+                  "impressions": 1145,
+                  "reach": 1057,
+                  "linkClicks": 28,
+                  "conversations": 4,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-10-06",
+                  "spend": 15.58,
+                  "impressions": 1079,
+                  "reach": 987,
+                  "linkClicks": 26,
+                  "conversations": 4,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-10-07",
+                  "spend": 17.95,
+                  "impressions": 1214,
+                  "reach": 1118,
+                  "linkClicks": 30,
+                  "conversations": 5,
+                  "purchases": 1,
+                  "purchaseValue": 49.79
+                },
+                {
+                  "date": "2026-10-08",
+                  "spend": 16.68,
+                  "impressions": 1154,
+                  "reach": 1052,
+                  "linkClicks": 26,
+                  "conversations": 4,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-10-09",
+                  "spend": 18.76,
+                  "impressions": 1354,
+                  "reach": 1224,
+                  "linkClicks": 31,
+                  "conversations": 4,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-10-10",
+                  "spend": 9.07,
+                  "impressions": 606,
+                  "reach": 536,
+                  "linkClicks": 14,
+                  "conversations": 2,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-10-11",
+                  "spend": 9.59,
+                  "impressions": 686,
+                  "reach": 612,
+                  "linkClicks": 15,
+                  "conversations": 2,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-10-12",
+                  "spend": 10.64,
+                  "impressions": 766,
+                  "reach": 701,
+                  "linkClicks": 19,
+                  "conversations": 2,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-10-13",
+                  "spend": 4.71,
+                  "impressions": 331,
+                  "reach": 293,
+                  "linkClicks": 7,
+                  "conversations": 1,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                }
+              ]
+            },
+            {
+              "id": "1202700000000032",
+              "name": "Moshi - Cozy Mug Carousel",
+              "angle": "Cozy mug carousel",
+              "clonedFrom": null,
+              "creativeOverlap": [],
+              "daily": [
+                {
+                  "date": "2026-09-27",
+                  "spend": 12.72,
+                  "impressions": 834,
+                  "reach": 806,
+                  "linkClicks": 16,
+                  "conversations": 2,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-09-28",
+                  "spend": 11.57,
+                  "impressions": 758,
+                  "reach": 721,
+                  "linkClicks": 15,
+                  "conversations": 2,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-09-29",
+                  "spend": 14.27,
+                  "impressions": 988,
+                  "reach": 940,
+                  "linkClicks": 19,
+                  "conversations": 3,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-09-30",
+                  "spend": 12.21,
+                  "impressions": 768,
+                  "reach": 732,
+                  "linkClicks": 18,
+                  "conversations": 2,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-10-01",
+                  "spend": 12.43,
+                  "impressions": 800,
+                  "reach": 764,
+                  "linkClicks": 16,
+                  "conversations": 2,
+                  "purchases": 1,
+                  "purchaseValue": 44.32
+                },
+                {
+                  "date": "2026-10-02",
+                  "spend": 13.7,
+                  "impressions": 914,
+                  "reach": 879,
+                  "linkClicks": 18,
+                  "conversations": 2,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-10-03",
+                  "spend": 13.35,
+                  "impressions": 923,
+                  "reach": 843,
+                  "linkClicks": 19,
+                  "conversations": 3,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-10-04",
+                  "spend": 12.16,
+                  "impressions": 772,
+                  "reach": 697,
+                  "linkClicks": 17,
+                  "conversations": 2,
+                  "purchases": 1,
+                  "purchaseValue": 48.51
+                },
+                {
+                  "date": "2026-10-05",
+                  "spend": 13.67,
+                  "impressions": 911,
+                  "reach": 857,
+                  "linkClicks": 20,
+                  "conversations": 3,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-10-06",
+                  "spend": 13.64,
+                  "impressions": 869,
+                  "reach": 803,
+                  "linkClicks": 20,
+                  "conversations": 3,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-10-07",
+                  "spend": 12.76,
+                  "impressions": 874,
+                  "reach": 813,
+                  "linkClicks": 19,
+                  "conversations": 2,
+                  "purchases": 1,
+                  "purchaseValue": 48.92
+                },
+                {
+                  "date": "2026-10-08",
+                  "spend": 13.54,
+                  "impressions": 908,
+                  "reach": 854,
+                  "linkClicks": 20,
+                  "conversations": 3,
+                  "purchases": 1,
+                  "purchaseValue": 41.06
+                },
+                {
+                  "date": "2026-10-09",
+                  "spend": 13.01,
+                  "impressions": 886,
+                  "reach": 818,
+                  "linkClicks": 20,
+                  "conversations": 3,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-10-10",
+                  "spend": 6.85,
+                  "impressions": 434,
+                  "reach": 382,
+                  "linkClicks": 9,
+                  "conversations": 1,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-10-11",
+                  "spend": 6.93,
+                  "impressions": 433,
+                  "reach": 392,
+                  "linkClicks": 9,
+                  "conversations": 1,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-10-12",
+                  "spend": 7.83,
+                  "impressions": 526,
+                  "reach": 463,
+                  "linkClicks": 11,
+                  "conversations": 1,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-10-13",
+                  "spend": 2.95,
+                  "impressions": 189,
+                  "reach": 169,
+                  "linkClicks": 4,
+                  "conversations": 1,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                }
+              ]
+            },
+            {
+              "id": "1202700000000033",
+              "name": "Moshi - Tasting Notes UGC",
+              "angle": "Tasting notes",
+              "clonedFrom": null,
+              "creativeOverlap": [],
+              "daily": [
+                {
+                  "date": "2026-09-28",
+                  "spend": 9.73,
+                  "impressions": 582,
+                  "reach": 562,
+                  "linkClicks": 13,
+                  "conversations": 2,
+                  "purchases": 1,
+                  "purchaseValue": 47.6
+                },
+                {
+                  "date": "2026-09-29",
+                  "spend": 9.72,
+                  "impressions": 609,
+                  "reach": 568,
+                  "linkClicks": 13,
+                  "conversations": 2,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-09-30",
+                  "spend": 9.78,
+                  "impressions": 581,
+                  "reach": 547,
+                  "linkClicks": 13,
+                  "conversations": 2,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-10-01",
+                  "spend": 9.79,
+                  "impressions": 642,
+                  "reach": 594,
+                  "linkClicks": 13,
+                  "conversations": 2,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-10-02",
+                  "spend": 10.34,
+                  "impressions": 622,
+                  "reach": 589,
+                  "linkClicks": 12,
+                  "conversations": 2,
+                  "purchases": 1,
+                  "purchaseValue": 50.7
+                },
+                {
+                  "date": "2026-10-03",
+                  "spend": 9.16,
+                  "impressions": 585,
+                  "reach": 556,
+                  "linkClicks": 11,
+                  "conversations": 1,
+                  "purchases": 1,
+                  "purchaseValue": 46.73
+                },
+                {
+                  "date": "2026-10-04",
+                  "spend": 9.55,
+                  "impressions": 592,
+                  "reach": 558,
+                  "linkClicks": 13,
+                  "conversations": 2,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-10-05",
+                  "spend": 9.94,
+                  "impressions": 610,
+                  "reach": 570,
+                  "linkClicks": 13,
+                  "conversations": 2,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-10-06",
+                  "spend": 9.69,
+                  "impressions": 587,
+                  "reach": 537,
+                  "linkClicks": 11,
+                  "conversations": 1,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-10-07",
+                  "spend": 9.39,
+                  "impressions": 577,
+                  "reach": 533,
+                  "linkClicks": 11,
+                  "conversations": 1,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-10-08",
+                  "spend": 9.64,
+                  "impressions": 636,
+                  "reach": 602,
+                  "linkClicks": 13,
+                  "conversations": 2,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-10-09",
+                  "spend": 11.04,
+                  "impressions": 673,
+                  "reach": 610,
+                  "linkClicks": 13,
+                  "conversations": 2,
+                  "purchases": 1,
+                  "purchaseValue": 46.95
+                },
+                {
+                  "date": "2026-10-10",
+                  "spend": 5.26,
+                  "impressions": 315,
+                  "reach": 292,
+                  "linkClicks": 7,
+                  "conversations": 1,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-10-11",
+                  "spend": 4.69,
+                  "impressions": 290,
+                  "reach": 264,
+                  "linkClicks": 6,
+                  "conversations": 1,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-10-12",
+                  "spend": 4.71,
+                  "impressions": 291,
+                  "reach": 260,
+                  "linkClicks": 6,
+                  "conversations": 1,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-10-13",
+                  "spend": 2.54,
+                  "impressions": 156,
+                  "reach": 143,
+                  "linkClicks": 3,
+                  "conversations": 0,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "1202700000000022",
+          "name": "Moshi | Chat | Gift guide",
+          "status": "ACTIVE",
+          "startTime": "2026-10-09",
+          "optimizationGoal": "OFFSITE_CONVERSIONS",
+          "dailyBudget": null,
+          "learning": "learning",
+          "adCount": 2,
+          "lastLearningReset": "2026-10-10",
+          "attributionSetting": "7-day click, 1-day view",
+          "ads": [
+            {
+              "id": "1202700000000034",
+              "name": "Moshi - Gift Guide Reel",
+              "angle": "Gift guide",
+              "clonedFrom": null,
+              "creativeOverlap": [],
+              "daily": [
+                {
+                  "date": "2026-10-10",
+                  "spend": 6.17,
+                  "impressions": 347,
+                  "reach": 341,
+                  "linkClicks": 6,
+                  "conversations": 1,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-10-11",
+                  "spend": 7.77,
+                  "impressions": 420,
+                  "reach": 395,
+                  "linkClicks": 8,
+                  "conversations": 1,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-10-12",
+                  "spend": 10.41,
+                  "impressions": 591,
+                  "reach": 565,
+                  "linkClicks": 10,
+                  "conversations": 1,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-10-13",
+                  "spend": 4.51,
+                  "impressions": 268,
+                  "reach": 257,
+                  "linkClicks": 5,
+                  "conversations": 1,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                }
+              ]
+            },
+            {
+              "id": "1202700000000035",
+              "name": "Moshi - Gift Box Unboxing",
+              "angle": "Gift box unboxing",
+              "clonedFrom": null,
+              "creativeOverlap": [],
+              "daily": [
+                {
+                  "date": "2026-10-10",
+                  "spend": 4.68,
+                  "impressions": 257,
+                  "reach": 243,
+                  "linkClicks": 4,
+                  "conversations": 0,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-10-11",
+                  "spend": 6.52,
+                  "impressions": 362,
+                  "reach": 360,
+                  "linkClicks": 7,
+                  "conversations": 1,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-10-12",
+                  "spend": 7.65,
+                  "impressions": 415,
+                  "reach": 409,
+                  "linkClicks": 8,
+                  "conversations": 1,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                },
+                {
+                  "date": "2026-10-13",
+                  "spend": 3.64,
+                  "impressions": 193,
+                  "reach": 186,
+                  "linkClicks": 3,
+                  "conversations": 0,
+                  "purchases": 0,
+                  "purchaseValue": 0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "moshi": {
+    "firstLaunch": "2026-09-27",
+    "spend": 636.99,
+    "chats": 144,
+    "chatsFromAds": 138,
+    "contactsCaptured": 26,
+    "contactsEmail": 19,
+    "contactsPhone": 7,
+    "productViews": 41,
+    "carts": 13,
+    "checkouts": 9,
+    "provenOrders": 8,
+    "provenRevenue": 414.5,
+    "delayedOrders": 3,
+    "closerRecoveries": 1,
+    "closerRevenue": 48
+  },
+  "chatters": {
+    "total": null,
+    "people": [
+      {
+        "username": "biscuit.studio",
+        "followers": 843,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": null,
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000194&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "earl.days",
+        "followers": 462,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "click_through",
+        "profilePic": "https://media.example.com/ig/earl.days.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000164&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "chamomile.journal",
+        "followers": 350,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "click_through",
+        "profilePic": "https://media.example.com/ig/chamomile.journal.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000231&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "sencha_corner",
+        "followers": 597,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/sencha_corner.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000186&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "leaf_corner13",
+        "followers": 648,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "click_through",
+        "profilePic": "https://media.example.com/ig/leaf_corner13.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000220&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "the.teacup.club",
+        "followers": 27300,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "checkout",
+        "profilePic": "https://media.example.com/ig/the.teacup.club.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000111&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "name": "Grace Whitfield",
+        "channel": "messenger",
+        "followers": null,
+        "verified": false,
+        "followsYou": null,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": null,
+        "threadUrl": null
+      },
+      {
+        "username": "chai.collective",
+        "followers": 212000,
+        "verified": true,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "cart",
+        "profilePic": "https://media.example.com/ig/chai.collective.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000108&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "matchamorning",
+        "followers": 9700,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "cart",
+        "profilePic": "https://media.example.com/ig/matchamorning.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000113&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "mint.notes93",
+        "followers": 826,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "click_through",
+        "profilePic": "https://media.example.com/ig/mint.notes93.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000238&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "lemon.cup52",
+        "followers": 458,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/lemon.cup52.jpg",
+        "threadUrl": null
+      },
+      {
+        "username": "sencha.girl",
+        "followers": 686,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "product_view",
+        "profilePic": "https://media.example.com/ig/sencha.girl.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000152&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "lemon.days",
+        "followers": 71,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "product_view",
+        "profilePic": "https://media.example.com/ig/lemon.days.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000122&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "earl.and.cake",
+        "followers": 405,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "product_view",
+        "profilePic": "https://media.example.com/ig/earl.and.cake.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000213&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "rosehip.rae",
+        "followers": 2900,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/rosehip.rae.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000116&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "rooibos.and.co",
+        "followers": 380,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "product_view",
+        "profilePic": null,
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000159&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "jasmine_kat99",
+        "followers": 67,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/jasmine_kat99.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000189&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "ana.brews",
+        "followers": 48200,
+        "verified": true,
+        "followsYou": false,
+        "orderValue": 86,
+        "stage": null,
+        "profilePic": "https://media.example.com/ig/ana.brews.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000101&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "cozy_nook",
+        "followers": 644,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": null,
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000198&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "brew_nook68",
+        "followers": 235,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "click_through",
+        "profilePic": null,
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000156&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "herbal.club",
+        "followers": 741,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/herbal.club.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000242&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "sencha.girl91",
+        "followers": 642,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "click_through",
+        "profilePic": "https://media.example.com/ig/sencha.girl91.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000236&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "cozy_kat",
+        "followers": 696,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": null,
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000235&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "darjeeling_kat",
+        "followers": 614,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "cart",
+        "profilePic": "https://media.example.com/ig/darjeeling_kat.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000180&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "sencha.life",
+        "followers": 436,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "product_view",
+        "profilePic": "https://media.example.com/ig/sencha.life.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000183&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "matcha.life65",
+        "followers": 681,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "cart",
+        "profilePic": "https://media.example.com/ig/matcha.life65.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000229&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "mint.table15",
+        "followers": 874,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "product_view",
+        "profilePic": "https://media.example.com/ig/mint.table15.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000239&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "leaf.cup",
+        "followers": 689,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/leaf.cup.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000232&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "rooibos_corner",
+        "followers": 402,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "product_view",
+        "profilePic": null,
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000230&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "chamomile_corner",
+        "followers": 519,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "product_view",
+        "profilePic": "https://media.example.com/ig/chamomile_corner.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000243&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "kettle.kate",
+        "followers": 3400,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": 58,
+        "stage": null,
+        "profilePic": "https://media.example.com/ig/kettle.kate.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000102&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "brew.journal93",
+        "followers": 711,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "cart",
+        "profilePic": "https://media.example.com/ig/brew.journal93.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000160&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "rooibos_kat",
+        "followers": 574,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/rooibos_kat.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000237&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "hibiscus_corner34",
+        "followers": 675,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/hibiscus_corner34.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000228&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "mint.house",
+        "followers": 409,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "click_through",
+        "profilePic": "https://media.example.com/ig/mint.house.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000146&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "ginger.hour",
+        "followers": 731,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": null,
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000178&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "mint.journal",
+        "followers": 216,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/mint.journal.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000201&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "jasmine_corner",
+        "followers": 532,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "product_view",
+        "profilePic": null,
+        "threadUrl": null
+      },
+      {
+        "username": "kettle.hour",
+        "followers": 351,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/kettle.hour.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000233&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "pekoe_nook",
+        "followers": 901,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "cart",
+        "profilePic": "https://media.example.com/ig/pekoe_nook.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000149&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "earl_corner",
+        "followers": 180,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "product_view",
+        "profilePic": null,
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000209&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "rooibos.house",
+        "followers": 752,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/rooibos.house.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000129&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "loose.leaf.lena",
+        "followers": 1120,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/loose.leaf.lena.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000118&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "chamomile.hour",
+        "followers": 645,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/chamomile.hour.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000217&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "earl_diaries36",
+        "followers": 716,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/earl_diaries36.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000195&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "herbal_corner",
+        "followers": 178,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "cart",
+        "profilePic": "https://media.example.com/ig/herbal_corner.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000176&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "rooibos.table48",
+        "followers": 540,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/rooibos.table48.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000179&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "biscuit.house",
+        "followers": 139,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/biscuit.house.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000214&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "leafandladle",
+        "followers": 86400,
+        "verified": true,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "product_view",
+        "profilePic": null,
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000109&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "earl.journal54",
+        "followers": 932,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "product_view",
+        "profilePic": "https://media.example.com/ig/earl.journal54.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000123&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "kettle_nook83",
+        "followers": 75,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/kettle_nook83.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000226&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "kettle.hour27",
+        "followers": 411,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/kettle.hour27.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000147&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "name": "Tomás Herrera",
+        "channel": "messenger",
+        "followers": null,
+        "verified": false,
+        "followsYou": null,
+        "orderValue": null,
+        "stage": "product_view",
+        "profilePic": null,
+        "threadUrl": "https://www.facebook.com/110270000000071/inbox/5550000000126/?section=messages"
+      },
+      {
+        "username": "brew.days",
+        "followers": 193,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "product_view",
+        "profilePic": "https://media.example.com/ig/brew.days.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000134&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "mint.cup55",
+        "followers": 930,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "product_view",
+        "profilePic": null,
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000204&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "saucer_diaries",
+        "followers": 106,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/saucer_diaries.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000219&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "biscuit.life",
+        "followers": 913,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": null,
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000207&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "ginger.table",
+        "followers": 89,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/ginger.table.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000212&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "sencha.house",
+        "followers": 513,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "click_through",
+        "profilePic": "https://media.example.com/ig/sencha.house.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000142&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "ginger.days87",
+        "followers": 604,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/ginger.days87.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000143&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "leaf.days56",
+        "followers": 809,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/leaf.days56.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000151&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "assam.studio37",
+        "followers": 239,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "product_view",
+        "profilePic": null,
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000197&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "steeped.daily",
+        "followers": 41900,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "click_through",
+        "profilePic": "https://media.example.com/ig/steeped.daily.jpg",
+        "threadUrl": null
+      },
+      {
+        "username": "steep_kat",
+        "followers": 173,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/steep_kat.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000141&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "assam.house",
+        "followers": 644,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "cart",
+        "profilePic": "https://media.example.com/ig/assam.house.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000127&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "dee.reads",
+        "followers": 212,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": 39,
+        "stage": null,
+        "profilePic": "https://media.example.com/ig/dee.reads.jpg",
+        "threadUrl": null
+      },
+      {
+        "username": "slowpour.sam",
+        "followers": 1180,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": 74.5,
+        "stage": null,
+        "profilePic": "https://media.example.com/ig/slowpour.sam.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000103&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "jasmine.and.cake",
+        "followers": 332,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "product_view",
+        "profilePic": "https://media.example.com/ig/jasmine.and.cake.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000140&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "leaf.hour",
+        "followers": 662,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "click_through",
+        "profilePic": "https://media.example.com/ig/leaf.hour.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000144&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "assam.hour",
+        "followers": 191,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/assam.hour.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000128&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "nordic.brew.co",
+        "followers": 15800,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": null,
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000112&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "brew.hour80",
+        "followers": 704,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "cart",
+        "profilePic": "https://media.example.com/ig/brew.hour80.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000137&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "cozy_corner",
+        "followers": 642,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/cozy_corner.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000241&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "sip_nook",
+        "followers": 745,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/sip_nook.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000168&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "hearthandhoney",
+        "followers": 6200,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "product_view",
+        "profilePic": null,
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000114&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "moss.and.mint",
+        "followers": 640,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": 44,
+        "stage": null,
+        "profilePic": "https://media.example.com/ig/moss.and.mint.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000104&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "saucer.house33",
+        "followers": 279,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/saucer.house33.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000170&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "steep.club",
+        "followers": 856,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": null,
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000131&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "rooibos.and.cake",
+        "followers": 622,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "product_view",
+        "profilePic": "https://media.example.com/ig/rooibos.and.cake.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000205&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "pekoe.and.cake17",
+        "followers": 95,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/pekoe.and.cake17.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000132&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "darjeeling.and.cake53",
+        "followers": 419,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "product_view",
+        "profilePic": "https://media.example.com/ig/darjeeling.and.cake53.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000130&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "jasmine.hour",
+        "followers": 262,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/jasmine.hour.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000138&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "biscuit_nook",
+        "followers": 95,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "click_through",
+        "profilePic": "https://media.example.com/ig/biscuit_nook.jpg",
+        "threadUrl": null
+      },
+      {
+        "username": "chamomile.cup",
+        "followers": 455,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/chamomile.cup.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000136&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "mint.girl",
+        "followers": 724,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/mint.girl.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000155&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "cozy_diaries",
+        "followers": 352,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "click_through",
+        "profilePic": "https://media.example.com/ig/cozy_diaries.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000221&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "hibiscus.table42",
+        "followers": 162,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "cart",
+        "profilePic": null,
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000191&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "oolong.otto",
+        "followers": 4450,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "click_through",
+        "profilePic": null,
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000115&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "rooibos_reads",
+        "followers": 270,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": null,
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000203&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "jasmine_nook",
+        "followers": 887,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/jasmine_nook.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000218&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "kettle.and.co97",
+        "followers": 477,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "cart",
+        "profilePic": null,
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000227&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "earl_kat",
+        "followers": 385,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "product_view",
+        "profilePic": "https://media.example.com/ig/earl_kat.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000199&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "biscuit.and.bergamot",
+        "followers": 1640,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "product_view",
+        "profilePic": null,
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000117&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "hibiscus.cup",
+        "followers": 561,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/hibiscus.cup.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000165&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "assam_nook",
+        "followers": 699,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "product_view",
+        "profilePic": "https://media.example.com/ig/assam_nook.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000163&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "brew.table",
+        "followers": 540,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/brew.table.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000206&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "saucer.journal97",
+        "followers": 537,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "product_view",
+        "profilePic": null,
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000202&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "herbal.days78",
+        "followers": 824,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/herbal.days78.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000225&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "saucer.cup",
+        "followers": 728,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "click_through",
+        "profilePic": "https://media.example.com/ig/saucer.cup.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000148&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "saucer_nook91",
+        "followers": 796,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/saucer_nook91.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000150&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "mug_diaries",
+        "followers": 596,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "click_through",
+        "profilePic": null,
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000175&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "sip_reads",
+        "followers": 438,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": null,
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000173&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "sencha.cup",
+        "followers": 938,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "product_view",
+        "profilePic": "https://media.example.com/ig/sencha.cup.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000208&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "rooibos.life",
+        "followers": 306,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/rooibos.life.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000135&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "matcha.and.co",
+        "followers": 738,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "product_view",
+        "profilePic": "https://media.example.com/ig/matcha.and.co.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000244&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "pekoe.club",
+        "followers": 344,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/pekoe.club.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000216&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "mug_reads",
+        "followers": 128,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "product_view",
+        "profilePic": "https://media.example.com/ig/mug_reads.jpg",
+        "threadUrl": null
+      },
+      {
+        "username": "leaf.club",
+        "followers": 280,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/leaf.club.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000126&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "name": "Priya Natarajan",
+        "channel": "messenger",
+        "followers": null,
+        "verified": false,
+        "followsYou": null,
+        "orderValue": 61,
+        "stage": null,
+        "profilePic": null,
+        "threadUrl": "https://www.facebook.com/110270000000071/inbox/5550000000035/?section=messages"
+      },
+      {
+        "username": "herbal_diaries",
+        "followers": 93,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/herbal_diaries.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000169&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "earl.house",
+        "followers": 390,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "product_view",
+        "profilePic": null,
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000172&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "herbal.life17",
+        "followers": 235,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "product_view",
+        "profilePic": "https://media.example.com/ig/herbal.life17.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000125&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "biscuit.and.cake",
+        "followers": 360,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/biscuit.and.cake.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000166&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "brew.house",
+        "followers": 501,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "click_through",
+        "profilePic": "https://media.example.com/ig/brew.house.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000124&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "lemon.girl",
+        "followers": 257,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/lemon.girl.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000240&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "brew.and.co14",
+        "followers": 262,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/brew.and.co14.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000181&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "mug_corner",
+        "followers": 102,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "product_view",
+        "profilePic": "https://media.example.com/ig/mug_corner.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000121&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "brew.journal",
+        "followers": 115,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/brew.journal.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000192&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "mug.days",
+        "followers": 738,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "cart",
+        "profilePic": "https://media.example.com/ig/mug.days.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000223&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "biscuit.table",
+        "followers": 704,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "product_view",
+        "profilePic": "https://media.example.com/ig/biscuit.table.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000222&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "sip_kat",
+        "followers": 391,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "click_through",
+        "profilePic": "https://media.example.com/ig/sip_kat.jpg",
+        "threadUrl": null
+      },
+      {
+        "username": "cozy.club",
+        "followers": 869,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/cozy.club.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000171&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "leaf.house58",
+        "followers": 214,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/leaf.house58.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000174&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "matcha.and.cake76",
+        "followers": 71,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/matcha.and.cake76.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000188&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "darjeeling_nook74",
+        "followers": 766,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/darjeeling_nook74.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000200&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "jasmine.table68",
+        "followers": 534,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/jasmine.table68.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000190&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "assam.club",
+        "followers": 645,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/assam.club.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000182&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "herbal.table40",
+        "followers": 715,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "click_through",
+        "profilePic": null,
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000193&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "mint_kat95",
+        "followers": 565,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "product_view",
+        "profilePic": "https://media.example.com/ig/mint_kat95.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000157&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "honey.notes44",
+        "followers": 405,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "click_through",
+        "profilePic": null,
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000153&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "early.oolong",
+        "followers": 330,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": 52,
+        "stage": null,
+        "profilePic": "https://media.example.com/ig/early.oolong.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000107&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "saucer.club54",
+        "followers": 775,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": null,
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000162&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "steep.and.co",
+        "followers": 89,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "click_through",
+        "profilePic": null,
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000167&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "cozy.and.cake25",
+        "followers": 824,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "cart",
+        "profilePic": "https://media.example.com/ig/cozy.and.cake25.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000211&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "biscuit.journal",
+        "followers": 568,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/biscuit.journal.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000210&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "chamomile_reads",
+        "followers": 566,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "click_through",
+        "profilePic": null,
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000184&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "earl.days67",
+        "followers": 451,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/earl.days67.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000161&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "cozy.and.co",
+        "followers": 474,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/cozy.and.co.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000154&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "mint.table61",
+        "followers": 359,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/mint.table61.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000145&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "pekoe.and.cake",
+        "followers": 393,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/pekoe.and.cake.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000187&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "pekoe.hour",
+        "followers": 919,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/pekoe.hour.jpg",
+        "threadUrl": null
+      },
+      {
+        "username": "cozy.cup",
+        "followers": 248,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/cozy.cup.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000224&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "brew.studio13",
+        "followers": 519,
+        "verified": false,
+        "followsYou": false,
+        "orderValue": null,
+        "stage": "flow_entry",
+        "profilePic": "https://media.example.com/ig/brew.studio13.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000133&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      },
+      {
+        "username": "mug.cup",
+        "followers": 332,
+        "verified": false,
+        "followsYou": true,
+        "orderValue": null,
+        "stage": "cart",
+        "profilePic": "https://media.example.com/ig/mug.cup.jpg",
+        "threadUrl": "https://business.facebook.com/latest/inbox/instagram_direct?asset_id=110270000000071&business_id=900270000000009&selected_item_id=17841400000000185&thread_type=IG_MESSAGE&mailbox_id=110270000000071"
+      }
+    ]
+  },
+  "dashboardUrl": "https://wrenandthistle.moshi.ai",
+  "comparisons": [
+    {
+      "metric": "ctr",
+      "running": true,
+      "moshiCampaignId": "1202700000000011"
+    },
+    {
+      "metric": "ctr",
+      "day": 13,
+      "moshiCampaignId": "1202700000000011",
+      "merchantCampaignId": "1202700000000301"
+    }
+  ],
+  "changes": [
+    {
+      "date": "2026-10-01",
+      "what": "Cold-brew steeping times added to the tea guide",
+      "kind": "agent_knowledge",
+      "source": "moshi",
+      "entityId": null
+    },
+    {
+      "date": "2026-10-10",
+      "what": "Moshi launched the Gift guide ad set",
+      "kind": "new_ad",
+      "source": "moshi",
+      "entityId": "1202700000000022"
+    }
+  ],
+  "accountIssues": [],
+  "flags": [
+    {
+      "source": "moshi",
+      "code": "partial_period",
+      "text": "The window ends today, so today is still counting."
+    }
+  ],
+  "notMeasurableYet": [
+    "Moshi's own counts (chats, contacts, orders and who messaged): Sep 27 – Oct 13, since Moshi's tools can't cut out a past week, so they include the gift guide's first days"
+  ]
+}

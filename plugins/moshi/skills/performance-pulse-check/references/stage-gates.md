@@ -31,6 +31,12 @@ question.
 - The reset clock decides the stage and the next gate. The launch clock
   (days since day 1) decides comparisons and fatigue. A reset
   never delays those.
+- Age, stage and gates count to today (`asOf`), even when the report
+  window ends earlier, as a baseline window does: a gate is a date ahead
+  of the merchant. The window's numbers are judged at the stage the
+  campaign had reached on the window's last day. When that day was before
+  day 8, give no ROAS, CPA, purchase or order-value verdict on them, even
+  if today is past day 8; the funnel then calls Meta's ROAS too early.
 - Never infer learning status or a reset from the metrics. Learning status
   is `learningPhase.status`, and Meta reports it only for ACTIVE ad sets.
   If Meta does not show it, say nothing about learning.
@@ -49,7 +55,9 @@ An engagement campaign never gets a CPA or ROAS gate. Its day 8 gate is a
 read on cost per chat, carts and delayed orders.
 
 Next gates: day 4, day 8, day 15, day 31. With several Moshi campaigns,
-the next gate is the earliest next-gate date among them. The next gate date is the
+the next gate is the earliest next-gate date among the primary campaign
+and any campaign shown beside it (`data-contract.md`, `primaryCampaignId`);
+a footnoted campaign's gates do not count. The next gate date is the
 calendar date of the next of these, counted from day 1 or from the last
 reset. Every answer names it: "Next gate: first CPA read on 2026-10-14."
 
@@ -60,6 +68,8 @@ many events it has.
 ## Changes and when they show
 
 A change that has not reached its readable date is a reason not to judge.
+The report no longer lists changes, so your reply names each one that has
+not reached its readable date.
 
 | `kind` | Readable after |
 |---|---|
@@ -69,11 +79,19 @@ A change that has not reached its readable date is a reason not to judge.
 | `agent_knowledge`, `offer` | 5 days of chats |
 
 List every change after the first Moshi launch. The launch itself is not
-a change. Do not filter changes by whether they seem relevant to the
-question.
+a change. In a baseline window, list the newest Moshi ad set's launch as
+one (`new_ad`, `source: "moshi"`). It has its own clock from its launch:
+name its day 4 and day 8 dates with the change, not as the next gate,
+which stays the primary campaign's. Do not filter changes by whether
+they seem relevant to the question.
 
 ## Attribution backfill
 
 Meta keeps adding purchases to the last few days as conversions arrive.
 When the window ends in the last 7 days and any Meta purchase number is
 shown, add: "Meta may still add purchases to recent days."
+
+Meta counts purchases under each ad set's attribution window, and the
+report prints it next to every Meta purchase figure. When your ad set's
+window adds engaged views and Moshi's doesn't, its count is on a wider
+basis: say the two are not on the same basis instead of ranking them.

@@ -1,0 +1,94 @@
+{
+ "_shape": "modelled-from-description",
+ "window": {
+  "start": "2026-09-17",
+  "end": "2026-10-06"
+ },
+ "currency": "USD",
+ "spend": 1836.17,
+ "perAd": [
+  {
+   "metaAdId": "1202680000000013",
+   "spend": 1024.09
+  },
+  {
+   "metaAdId": "1202680000000014",
+   "spend": 423.89
+  },
+  {
+   "metaAdId": "1202680000000003",
+   "spend": 196.25
+  },
+  {
+   "metaAdId": "1202680000000015",
+   "spend": 64.77
+  },
+  {
+   "metaAdId": "1202680000000016",
+   "spend": 59.9
+  },
+  {
+   "metaAdId": "1202680000000004",
+   "spend": 42.91
+  },
+  {
+   "metaAdId": "1202680000000005",
+   "spend": 18.95
+  },
+  {
+   "metaAdId": "1202680000000006",
+   "spend": 5.41
+  }
+ ],
+ "dmFunnel": {
+  "chats": 1020,
+  "productViews": 163,
+  "carts": 36,
+  "checkouts": 26
+ },
+ "contactsCaptured": {
+  "total": 212,
+  "email": 158,
+  "phone": 54
+ },
+ "iceBreakers": {
+  "total": 1003,
+  "items": [
+   {
+    "text": "How free is the mug?",
+    "conversations": 412,
+    "share": 0.4108
+   },
+   {
+    "text": "How much caffeine is in it?",
+    "conversations": 168,
+    "share": 0.1675
+   },
+   {
+    "text": "How strong is the concentrate?",
+    "conversations": 95,
+    "share": 0.0947
+   }
+  ],
+  "typedOwn": {
+   "conversations": 328,
+   "share": 0.327
+  }
+ },
+ "leadHeat": {
+  "hot": 61,
+  "warm": 238,
+  "cold": 721
+ },
+ "orders": {
+  "threadProven": 2,
+  "revenue": 80.84,
+  "delayed": 1
+ },
+ "flags": [
+  {
+   "code": "purchase_events_without_order_id",
+   "text": "Most purchase events in Moshi carry no order id, so they are not counted as proven orders."
+  }
+ ]
+}

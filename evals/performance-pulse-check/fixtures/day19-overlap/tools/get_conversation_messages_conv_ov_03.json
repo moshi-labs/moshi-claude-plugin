@@ -1,0 +1,17 @@
+{
+ "_shape": "modelled-from-description",
+ "conversationId": "conv_ov_03",
+ "source": "profile",
+ "messages": [
+  {
+   "role": "shopper",
+   "text": "Do you make a decaf version?",
+   "sentAt": "2026-10-06T14:10:00Z"
+  },
+  {
+   "role": "agent",
+   "text": "Not yet. Our half-caff concentrate has about half the caffeine.",
+   "sentAt": "2026-10-06T14:10:50Z"
+  }
+ ]
+}
