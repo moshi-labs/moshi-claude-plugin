@@ -1,6 +1,6 @@
 ---
 name: scale-what-works
-description: Find the Meta ads already working for a Moshi merchant and turn the best of them into new Moshi flows — a brief orientation, a ranked shortlist of their proven ads rendered as cards, then on the merchant's go-ahead, publish the top picks as PAUSED ads sharing one ad set.
+description: Use when a Moshi merchant asks what to run next, which ads are worth scaling, how to get more out of their best-performing Meta ads, or to launch or relaunch ads. Finds the Meta ads already working and turns the best into new Moshi flows — a brief orientation, a ranked shortlist of proven ads as cards, then on the merchant's go-ahead, publishes the top picks as PAUSED ads sharing one ad set. Requires the Moshi MCP server.
 when_to_use: Use when a Moshi merchant asks what to run next, which ads are worth scaling, how to get more out of their best-performing Meta ads, or asks to launch or relaunch ads. Requires the Moshi MCP server.
 ---
 
@@ -8,7 +8,7 @@ Find the Meta ads already working for the organization this session is authentic
 
 ## Walk the merchant through it, in order
 
-1. Call `get_flow_status_data` with `period` set to the window the merchant named, or `since_launch` if they did not name one. Use it for two or three lines of orientation ONLY — spend, DM conversations opened, and whichever outcome this merchant runs on — thread-proven orders for a store, captured and qualified leads for a survey flow. This is orientation, not the report — `/flow_status_report` already produces the full one-pager over this same data, and this skill must not duplicate it. Do not build a funnel, a lead table, or a "what people said" section here.
+1. Call `get_flow_status_data` with `period` set to the window the merchant named, or `since_launch` if they did not name one. Use it for two or three lines of orientation ONLY — spend, DM conversations opened, and whichever outcome this merchant runs on — thread-proven orders for a store, captured and qualified leads for a survey flow. This is orientation, not the report — the flow status report (`/flow_status_report` where MCP prompts are available) already produces the full one-pager over this same data, and this skill must not duplicate it. Do not build a funnel, a lead table, or a "what people said" section here.
 2. Decide N first — see "How many ads to launch" below — then call `get_ad_shortlist` with `render: true` and `suggestLimit: N`. The tool decides the proposed set itself: it keeps only ads where `cloneable !== false` AND `alreadyMirrored !== true` (see Hard Rules below for exactly what the `null` case means and why it is kept, not dropped), ranks what remains by `cpa` ascending with `cpa: null` (no purchases yet) sorted last, and takes the top N. It draws cards for ONLY that set and returns the identical set as `suggested` in the tool result — the tool is the single source of truth for "which ads are we proposing", so the cards and your narration can never disagree. Read `suggested` off the result; do not re-derive the filter yourself.
 3. Look up the `suggested` adIds in `ads` to get each proposed ad's name, spend, cpa and roas.
 4. Draft the flow for each proposed ad, because `sourceMetaAdId` only supplies the
