@@ -20,7 +20,7 @@ provides:
 - **Three guided workflows**, as MCP prompts: `flow_status_report`, `scale_what_works` and
   `weekly_newsletter`
 
-**2. Four skills** — longer playbooks that travel with the plugin, so Claude Code, Claude
+**2. Five skills** — longer playbooks that travel with the plugin, so Claude Code, Claude
 Desktop and Claude.ai all get them:
 
 - `scale-what-works` — the "which ads should I run next" conversation.
@@ -34,6 +34,10 @@ Desktop and Claude.ai all get them:
   skewing results, such as Moshi ads that reuse the merchant's live creatives and so
   compete with them in the same auctions. It needs only the Moshi connection: the Meta
   numbers come from Moshi's synced copy of the ad account, refreshed about every 6 hours.
+- `plan-next-flows` — a one-pager planning the next Moshi ad set inside one of your existing
+  campaigns: how many ads, which of your proven ads to clone and why (based on how earlier
+  Moshi ads and DM vs website tests did), the flow each maps to, and the decisions to settle
+  before building. Read-only.
 - `close-the-carts` — work the Closer queue: see who almost bought, bulk-draft a nudge for
   each, review them all in one pass, and send the ones you approve.
 
@@ -193,6 +197,7 @@ plugins/moshi/
 ├── skills/scale-what-works/      the ads-scaling playbook
 ├── skills/weekly-newsletter/     the weekly merchant newsletter
 ├── skills/performance-pulse-check/  the ads pulse-check report
+├── skills/plan-next-flows/      the next-Moshi-ad-set one-pager
 └── skills/close-the-carts/       the Closer queue: bulk-draft, review, send
 evals/performance-pulse-check/    synthetic fixtures, rubric and template source (not shipped)
 ```
