@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Scale or Kill</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<!-- Look and feel from performance-pulse-check/assets/pulse-check.html. Edit only the const DATA block below. Zones, groups and actions are computed by the page. -->
+<style>:root{--bg:light-dark(oklch(.965 .005 250),oklch(.175 .008 262));--surface:light-dark(oklch(1 0 0),oklch(.23 .003 250));--surface-2:light-dark(oklch(.955 .008 250),oklch(.295 .005 250));--border:light-dark(oklch(.92 .005 250),oklch(.34 .005 250));--border-strong:light-dark(oklch(.85 .008 250),oklch(.42 .005 250));--text:light-dark(oklch(.25 .025 250),oklch(.96 .003 250));--text-2:light-dark(oklch(.48 .02 250),oklch(.74 .005 250));--primary:light-dark(oklch(.42 .24 264),oklch(.58 .22 264));--accent-soft:light-dark(oklch(.96 .04 264),oklch(.28 .08 264));--accent-strong:light-dark(oklch(.36 .27 264),oklch(.78 .2 264));--mint-soft:light-dark(oklch(.95 .04 155),oklch(.26 .025 155));--mint-strong:light-dark(oklch(.42 .12 155),oklch(.78 .1 155));--rose:oklch(.55 .22 18);--rose-soft:light-dark(oklch(.96 .03 18),oklch(.26 .025 18));--mb:light-dark(oklch(1 0 0),oklch(.15 .01 285));--m1:light-dark(oklch(.95 .02 220),oklch(.25 .02 220));--m2:light-dark(oklch(.91 .03 330),oklch(.27 .03 330));--m3:light-dark(oklch(.91 .04 230),oklch(.26 .04 230));--m4:light-dark(oklch(.92 .05 285),oklch(.28 .05 285));--m5:light-dark(oklch(.91 .05 340),oklch(.27 .05 340));--m6:light-dark(oklch(.87 .03 290),oklch(.23 .03 290));--r:10px;--r-lg:12px;--r-pill:999px;--shadow:0 1px 2px oklch(0 0 0/.08),0 4px 12px oklch(0 0 0/.04);--hd:-apple-system,"SF Pro Display","SF Pro Rounded","Geist",sans-serif;--mono:"Geist Mono",ui-monospace,monospace;color-scheme:light}@media(prefers-color-scheme:dark){:root:not([data-theme=light]){color-scheme:dark}}:root[data-theme=dark]{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 Geist,system-ui,sans-serif}.mesh{position:fixed;inset:0;z-index:-1;background-color:var(--mb);background-image:radial-gradient(at 40% 20%,var(--m1) 0px,transparent 50%),radial-gradient(at 80% 0%,var(--m2) 0px,transparent 50%),radial-gradient(at 0% 50%,var(--m3) 0px,transparent 50%),radial-gradient(at 80% 50%,var(--m4) 0px,transparent 50%),radial-gradient(at 0% 100%,var(--m5) 0px,transparent 50%),radial-gradient(at 80% 100%,var(--m6) 0px,transparent 50%)}.wrap{max-width:880px;margin:0 auto;padding:20px 16px 56px;display:grid;gap:16px}h1,h2,h3{font-family:var(--hd);margin:0;letter-spacing:-.01em;text-wrap:balance}h1{font-size:clamp(26px,5vw,38px);line-height:1.12;font-weight:700}h2{font-size:19px;font-weight:650}h3{font-size:15px;font-weight:600}p{margin:0}.glass{border-radius:var(--r-lg);padding:20px;display:grid;gap:14px;min-width:0;background:color-mix(in oklab,var(--surface) 48%,transparent);border:1px solid color-mix(in oklab,var(--border-strong) 55%,transparent);box-shadow:inset 0 1px color-mix(in oklab,var(--surface) 95%,transparent),0 1px 2px color-mix(in oklab,var(--text) 5%,transparent),0 6px 28px color-mix(in oklab,var(--text) 7%,transparent),0 20px 64px color-mix(in oklab,var(--accent-strong) 9%,transparent);-webkit-backdrop-filter:blur(28px) saturate(150%);backdrop-filter:blur(28px) saturate(150%)}.card{border-radius:var(--r);border:1px solid var(--border-strong);background:var(--surface);box-shadow:var(--shadow)}.pill{display:inline-flex;align-items:center;gap:4px;border-radius:var(--r-pill);padding:3px 8px;font:500 11px/1.25 Geist,sans-serif;background:var(--surface-2);color:var(--text-2);white-space:nowrap;vertical-align:middle}.pill.mint{background:var(--mint-soft);color:var(--mint-strong)}.pill.acc{background:var(--accent-soft);color:var(--accent-strong)}.pill.rose{background:var(--rose-soft);color:var(--rose)}.sub,.meta,small{color:var(--text-2);font-size:13px}.hd{display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px}.hd .mn{font:600 15px/1.2 var(--hd)}.hd .pl{display:flex;flex-wrap:wrap;gap:6px;margin-left:auto}.hero{display:grid;gap:10px;padding:12px 2px 4px}.hero p{max-width:62ch;font-size:16px}.hero p.dek{font:600 19px/1.35 var(--hd)}.hl{color:var(--accent-strong)}.wb{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}.wb>div{border:1px solid var(--border);border-radius:var(--r);padding:12px 14px;background:var(--accent-soft);display:grid;gap:4px;align-content:start}.wb>div.web{background:var(--surface-2)}.wb b{font:700 17px/1.2 var(--hd);color:var(--accent-strong)}.wb .web b{color:var(--text)}ul.l{margin:0;padding:0;list-style:none;display:grid;gap:10px}.adg{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,260px));gap:12px}.adc{padding:12px;display:grid;gap:8px;align-content:start}.adc img{width:100%;object-fit:cover;aspect-ratio:4/5;border-radius:8px;display:block}.adc .cap{color:var(--text-2);font-size:13px}.adc{min-width:0}.path{min-width:0;overflow-wrap:anywhere;display:grid;gap:4px;padding-top:8px;border-top:1px solid var(--border);font-size:13px}.fl{color:var(--primary);font-weight:600;text-decoration:none;margin-top:4px}.fl:hover{text-decoration:underline}.chips{display:flex;flex-wrap:wrap;gap:4px}.tw{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--border);vertical-align:top}th{color:var(--text-2);font-weight:500}code{font:12px var(--mono);background:var(--surface-2);padding:1px 4px;border-radius:4px}.ban{border-radius:var(--r-lg);padding:14px 16px;background:var(--accent-soft);color:var(--text);border:1px solid var(--primary)}.reach{padding:12px 14px;border-radius:var(--r);background:var(--mint-soft);font-size:14px}:focus-visible{outline:2px solid var(--primary);outline-offset:2px;border-radius:4px}@media(max-width:560px){.hd .pl{margin-left:0}.glass{padding:16px}.adg{grid-template-columns:minmax(0,1fr)}.adc{grid-template-columns:110px minmax(0,1fr);column-gap:12px}.adc img{grid-row:span 3}}.path .pill{justify-self:start}@media(max-width:560px){.adg .adc{grid-template-columns:minmax(0,1fr)}.adg .adc img{grid-row:auto;max-width:240px}}</style>
+<script>const LOGO = `<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAARVBMVEX////X2+3T1+vMyt7P1ui2yui4yN3V2uylveSHm8abt+KUrdLb4+7p6u+EcY9pUHKol8qwtdZTMlqrn7XLu9vj2OrUvOEMye+YAAAAAXRSTlMAQObYZgAAAcxJREFUOMuN1du2qyAMBVAxgVrvqdL//9STEEBU7NlrtKM8zMZAKTRNJYbT/CGmBUQb4trf33hBhDH4eqZ4prbj97vewKVq0F1nsdKMudPEb720apE7QSzb6bretld7z5N+YTVhAW3X92UnBvGH5tKDPWYJFzNysg64t/UmxiNJ96xT2zVX6FB6cLHwWHNJx8rD0KbCT9RFzPYdSpubmfg1yWBe1oCJ7bs3oYtDTeOURjyA5TODda6TwhxZtyxzRv0OMnaMSTExLiTgwSU0r+gSXs8YlhlOWJYz4oFWMmF+UdDns4UBbvMWsVjGRLSugnOrPCHFtCzbUZg1wa64mNi+eW0CsLCOHABpG1MtakExD3bFzViligEchE/6P9bNpZbC0sFTH/FHl8IyRxLcTs9J3YQVCdvuCfqidWtJ/1n4YL1PnYsm0M1ff36wcZpcOR0HY72uP5aEdzWmE+Ze15d1A87nDE7n7ewvdeVMOw4ZaTFbr9aXh81YHKUvLcaZfI6sguwPqXs67Fp/jayXhi1cjtErzhYs7rc7Ij8c0w+hcdA2txiolN13gPqdVbTy3QVyamXzBeDhK9lV/qChmZYfLvrL8i/XrDEP9/E/o404WUmLPLUAAAAASUVORK5CYII=" alt="Moshi" width=28 height=28>`;</script>
+</head>
+<style>.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}.tile{padding:12px 14px;display:grid;gap:2px}.tile b{font:700 22px/1.15 var(--hd)}.tile.scale b{color:var(--mint-strong)}.tile.kill b{color:var(--rose)}.chart{width:100%;height:auto;display:block;font:11px Geist,system-ui,sans-serif}.chart text{fill:var(--text-2)}.chart .ax{stroke:var(--border-strong)}.chart .gr{stroke:var(--border);stroke-dasharray:2 3}.chart .tgt{stroke:var(--text-2);stroke-dasharray:5 4}.chart .kc{stroke:var(--rose);fill:none;stroke-width:2}.chart .sc{stroke:var(--mint-strong);fill:none;stroke-width:2}.chart .kz{fill:var(--rose-soft);opacity:.7}.chart .sz{fill:var(--mint-soft);opacity:.8}.chart .med{stroke:var(--text-2);stroke-dasharray:3 3}.chart .ql{font-weight:600;fill:var(--text)}.dot{stroke:var(--surface);stroke-width:1.2}.dot.scale{fill:var(--mint-strong)}.dot.test{fill:var(--primary)}.dot.kill{fill:var(--rose)}.dot.off,.bub.off{opacity:.3}.bub{fill-opacity:.35;stroke-width:1.2}.bub.eff{fill:var(--mint-strong);stroke:var(--mint-strong)}.bub.reach{fill:var(--primary);stroke:var(--primary)}.bub.prec{fill:oklch(.7 .14 75);stroke:oklch(.6 .14 75)}.bub.kc{fill:var(--rose);stroke:var(--rose)}.lgd{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:12px;color:var(--text-2)}.lgd i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:-1px}td.n{font-variant-numeric:tabular-nums;white-space:nowrap}td.nm{min-width:180px;max-width:320px;overflow-wrap:anywhere}tr.off td{opacity:.55}.act{font-weight:600}</style>
+</head>
+<body>
+<div class="mesh"></div>
+<main class="wrap" id="app"></main>
+<script>
+const DATA = {
+  merchant: "Example Co",
+  date: "2026-11-02",
+  window: { from: "2026-10-02", to: "2026-10-31" },
+  currency: "USD",
+  target: { cpa: 50, source: "merchant" },
+  bumpPct: 15,
+  summary: "Two ads have earned more budget and two should go today. Most of the account is still in test, so keep spending there and watch how each ad moves.",
+  notes: [
+    "CPA uses Meta-attributed purchases from all customers. Moshi can't split out new customers, so this is blended CPA, not new-customer CPA.",
+    "Covers OUTCOME_SALES campaigns only. 1 lead-gen campaign (4 ads) left out."
+  ],
+  ads: [
+    { id: "1", name: "Before/after UGC v1", campaign: "Prospecting | Broad", owner: "merchant", status: "ACTIVE", spend: 4200, reach: 61000, purchases: 120 },
+    { id: "2", name: "Founder story 30s", campaign: "Prospecting | Broad", owner: "merchant", status: "ACTIVE", spend: 2600, reach: 52000, purchases: 65 },
+    { id: "3", name: "Review static 3", campaign: "Prospecting | Broad", owner: "merchant", status: "ACTIVE", spend: 1900, reach: 21000, purchases: 30 },
+    { id: "4", name: "Unboxing reel", campaign: "ASC", owner: "merchant", status: "ACTIVE", spend: 2100, reach: 70000, purchases: 38 },
+    { id: "5", name: "Ingredient carousel", campaign: "ASC", owner: "merchant", status: "ACTIVE", spend: 1800, reach: 16000, purchases: 30 },
+    { id: "6", name: "Meme static", campaign: "ASC", owner: "merchant", status: "ACTIVE", spend: 220, reach: 6100, purchases: 3 },
+    { id: "7", name: "Moshi DM: Quiz", campaign: "Moshi DM", owner: "moshi", status: "ACTIVE", spend: 600, reach: 14000, purchases: 4 },
+    { id: "8", name: "Lifestyle v4", campaign: "Prospecting | Broad", owner: "merchant", status: "ACTIVE", spend: 140, reach: 3000, purchases: 0 },
+    { id: "9", name: "Creator try-on", campaign: "ASC", owner: "merchant", status: "ACTIVE", spend: 1100, reach: 50000, purchases: 16 },
+    { id: "10", name: "Holiday teaser", campaign: "ASC", owner: "merchant", status: "PAUSED", spend: 300, reach: 5200, purchases: 1 }
+  ]
+};
+</script>
+<script>
+(function () {
+  const D = DATA, app = document.getElementById("app");
+  const T = +D.target.cpa, BUMP = (+D.bumpPct || 15) / 100;
+  const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  let fmt; try { fmt = new Intl.NumberFormat("en-US", { style: "currency", currency: D.currency || "USD", maximumFractionDigits: 0 }); } catch (e) { fmt = { format: v => Math.round(v) + " " + (D.currency || "") }; }
+  const money = v => v == null || !isFinite(v) ? "—" : fmt.format(v);
+  const num = v => Math.round(v).toLocaleString("en-US");
+
+  // 10% / 90% quantiles of Gamma(k + 0.5, 1): the Jeffreys posterior on purchases-per-dollar x target CPA.
+  // Kill when P(true CPA > target) >= 90%, i.e. spend/target >= KILL[k]. Scale when P(true CPA < target) >= 90%, i.e. spend/target <= SCALE[k].
+  const SCALE = [0.008,0.292,0.805,1.417,2.084,2.789,3.521,4.273,5.043,5.825,6.62,7.424,8.237,9.057,9.884,10.717,11.555,12.398,13.246,14.098,14.954,15.813,16.675,17.541,18.409,19.28,20.154,21.03,21.908,22.788,23.671,24.555,25.441,26.329,27.219,28.11,29.003,29.897,30.793,31.69,32.588];
+  const KILL = [1.353,3.126,4.618,6.009,7.342,8.638,9.906,11.154,12.385,13.602,14.808,16.003,17.191,18.371,19.544,20.711,21.873,23.029,24.182,25.33,26.474,27.615,28.753,29.887,31.019,32.148,33.274,34.398,35.52,36.639,37.757,38.873,39.987,41.099,42.209,43.318,44.425,45.531,46.635,47.738,48.84];
+  const qS = k => k <= 40 ? SCALE[k] : k + 0.7 - 1.2816 * Math.sqrt(k + 0.5);
+  const qK = k => k <= 40 ? KILL[k] : k + 0.7 + 1.2816 * Math.sqrt(k + 0.5);
+  const zoneAt = (spend, k, t) => { const e = spend / t; return e >= qK(k) ? "kill" : (k > 0 && e <= qS(k)) ? "scale" : "test"; };
+
+  const ads = (D.ads || []).filter(a => +a.spend > 0).map((a, i) => {
+    const k = Math.max(0, Math.floor(+a.purchases || 0)), spend = +a.spend, reach = +a.reach || 0;
+    return { ...a, i: i + 1, k, spend, reach, cpa: k > 0 ? spend / k : null, cpmr: reach > 0 ? spend / reach * 1000 : null,
+      zone: zoneAt(spend, k, T), zoneBumped: zoneAt(spend, k, T * (1 + BUMP)), live: String(a.status || "").toUpperCase() === "ACTIVE" };
+  });
+  const median = xs => { const s = xs.slice().sort((a, b) => a - b), m = s.length >> 1; return s.length ? (s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2) : null; };
+  const grouped = ads.filter(a => a.cpa != null && a.cpmr != null);
+  const mCpmr = median(grouped.map(a => a.cpmr)), mCpa = median(grouped.map(a => a.cpa));
+  const GROUP = { eff: "Efficient growth", reach: "Reach play", prec: "Precision", kc: "Kill candidate" };
+  ads.forEach(a => {
+    a.group = a.cpa == null || a.cpmr == null ? null : a.cpmr <= mCpmr ? (a.cpa <= mCpa ? "eff" : "reach") : (a.cpa <= mCpa ? "prec" : "kc");
+    let act, rank;
+    if (!a.live) { act = "Already off"; rank = 9; }
+    else if (a.zone === "scale") {
+      if (a.group === "eff") { act = "Scale faster: +15–25% now"; rank = 1; }
+      else if (a.group === "prec") { act = "Scale +5–15%, watch CPA as spend climbs"; rank = 2; }
+      else { act = "Scale +5–15%"; rank = 2; }
+    } else if (a.zone === "kill") {
+      if (a.owner === "moshi") { act = "Check DM orders before cutting: Meta misses sales closed in chat"; rank = 4; }
+      else if (a.group === "reach") { act = a.zoneBumped === "kill" ? `Cut: a kill even at target +${D.bumpPct || 15}%` : `Give it room: judge at target +${D.bumpPct || 15}% for ~2 more weeks`; rank = a.zoneBumped === "kill" ? 0 : 3; }
+      else if (a.group === "kc") { act = "Cut now"; rank = 0; }
+      else if (a.k === 0) { act = `Cut: no purchase after ${money(a.spend)}`; rank = 0; }
+      else { act = "Cut: CPA above target"; rank = 0; }
+    } else { act = a.group === "reach" ? "Keep testing: cheap reach, may close later" : "Keep testing"; rank = 5; }
+    a.act = act; a.rank = rank;
+  });
+
+  const live = ads.filter(a => a.live), cnt = z => live.filter(a => a.zone === z).length;
+  const killSpend = live.filter(a => a.zone === "kill").reduce((s, a) => s + a.spend, 0), allSpend = ads.reduce((s, a) => s + a.spend, 0);
+
+  // ---------- Chart 1: spend (log) vs CPA ----------
+  function chart1() {
+    const W = 820, H = 420, L = 62, R = 16, TP = 24, B = 44;
+    const sp = ads.map(a => a.spend), xMin = Math.max(1, Math.min(...sp, 0.25 * T) / 1.4), xMax = Math.max(...sp, 4 * T) * 1.4;
+    const yMax = Math.min(4 * T, Math.max(2 * T, ...ads.filter(a => a.cpa != null).map(a => a.cpa * 1.1)));
+    const X = v => L + (Math.log(v) - Math.log(xMin)) / (Math.log(xMax) - Math.log(xMin)) * (W - L - R);
+    const Y = v => TP + (1 - Math.min(v, yMax) / yMax) * (H - TP - B);
+    const pts = (q) => { const out = []; for (let k = 1, x; (x = T * q(k)) < xMax * 1.5 && k < 100000; k = k < 40 ? k + 1 : Math.ceil(k * 1.08)) if (x > xMin / 1.5) out.push([x, x / k]); return out; };
+    const kp = pts(qK).filter(p => p[1] <= yMax * 1.5), spP = pts(qS);
+    const path = ps => ps.map((p, i) => `${i ? "L" : "M"}${X(Math.max(p[0], xMin)).toFixed(1)},${Y(p[1]).toFixed(1)}`).join("");
+    const kpath = path(kp), spath = path(spP);
+    const k0 = X(Math.max(T * KILL[0], xMin)).toFixed(1);
+    const kArea = kp.length ? `M${k0},${Y(yMax)}L${k0},${TP + 14}L${X(kp[0][0]).toFixed(1)},${TP + 14}${kpath.replace(/^M/, "L")}L${X(kp[kp.length - 1][0]).toFixed(1)},${Y(yMax)}L${X(kp[0][0]).toFixed(1)},${Y(yMax)}Z` : "";
+    const sArea = spP.length ? `${spath}L${X(spP[spP.length - 1][0]).toFixed(1)},${Y(0)}L${X(Math.max(spP[0][0], xMin)).toFixed(1)},${Y(0)}Z` : "";
+    const ticks = []; for (let e = Math.floor(Math.log10(xMin)); e <= Math.ceil(Math.log10(xMax)); e++) [1, 2, 5].forEach(m => { const v = m * 10 ** e; if (v >= xMin && v <= xMax) ticks.push(v); });
+    const yt = [0, 0.5, 1, 1.5, 2, 3, 4].map(m => m * T).filter(v => v <= yMax);
+    const dots = ads.map(a => { const y = a.cpa == null ? TP + 4 : Y(a.cpa), cl = a.cpa == null || a.cpa > yMax;
+      return `<g><title>#${a.i} ${esc(a.name)} · ${money(a.spend)} spent · ${a.k} purchases · CPA ${money(a.cpa)} · ${a.zone}</title>${cl ? `<path class="dot ${a.zone}${a.live ? "" : " off"}" d="M${X(a.spend) - 6},${y + 5}L${X(a.spend) + 6},${y + 5}L${X(a.spend)},${y - 5}Z"/>` : `<circle class="dot ${a.zone}${a.live ? "" : " off"}" cx="${X(a.spend).toFixed(1)}" cy="${y.toFixed(1)}" r="6"/>`}${ads.length <= 40 ? `<text x="${X(a.spend) + 8}" y="${y + 4}">${a.i}</text>` : ""}</g>`; }).join("");
+    return `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="Spend versus CPA with kill and scale curves">
+      <defs><clipPath id="c1"><rect x="${L}" y="${TP}" width="${W - L - R}" height="${H - TP - B}"/></clipPath></defs>
+      <g clip-path="url(#c1)"><path class="kz" d="${kArea}"/><path class="sz" d="${sArea}"/></g>
+      ${ticks.map(v => `<line class="gr" x1="${X(v)}" x2="${X(v)}" y1="${TP}" y2="${H - B}"/><text x="${X(v)}" y="${H - B + 16}" text-anchor="middle">${money(v)}</text>`).join("")}
+      ${yt.map(v => `<line class="gr" x1="${L}" x2="${W - R}" y1="${Y(v)}" y2="${Y(v)}"/><text x="${L - 6}" y="${Y(v) + 4}" text-anchor="end">${money(v)}</text>`).join("")}
+      <line class="tgt" x1="${L}" x2="${W - R}" y1="${Y(T)}" y2="${Y(T)}"/><text x="${W - R - 4}" y="${Y(T) - 5}" text-anchor="end">target ${money(T)}</text>
+      <g clip-path="url(#c1)"><path class="kc" d="${kpath}"/><path class="sc" d="${spath}"/></g>
+      <line class="ax" x1="${L}" x2="${L}" y1="${TP}" y2="${H - B}"/><line class="ax" x1="${L}" x2="${W - R}" y1="${H - B}" y2="${H - B}"/>
+      <text x="${(L + W - R) / 2}" y="${H - 6}" text-anchor="middle">Spend (log scale)</text>
+      <text x="14" y="${(TP + H - B) / 2}" transform="rotate(-90 14 ${(TP + H - B) / 2})" text-anchor="middle">CPA</text>
+      <text x="${L + 6}" y="${TP + 14}">▲ no purchase yet, or CPA above ${money(yMax)}</text>
+      ${dots}</svg>`;
+  }
+
+  // ---------- Chart 2: CPMr vs CPA ----------
+  function chart2() {
+    if (grouped.length < 4) return `<p class="sub">Needs at least 4 ads with a purchase and reach to split into groups; ${grouped.length} qualify.</p>`;
+    const W = 820, H = 420, L = 62, R = 16, TP = 24, B = 44;
+    const xMax = Math.max(...grouped.map(a => a.cpmr)) * 1.12, yMax = Math.min(Math.max(...grouped.map(a => a.cpa)) * 1.12, Math.max(4 * T, mCpa * 2.5));
+    const X = v => L + v / xMax * (W - L - R), Y = v => TP + (1 - Math.min(v, yMax) / yMax) * (H - TP - B);
+    const rMax = Math.max(...grouped.map(a => a.reach)), rad = r => 4 + 20 * Math.sqrt(r / rMax);
+    const nice = (m, n) => { const s = 10 ** Math.floor(Math.log10(m / n)), f = [1, 2, 5, 10].find(f => m / (f * s) <= n) * s; const o = []; for (let v = 0; v <= m; v += f) o.push(v); return o; };
+    const bubs = grouped.slice().sort((a, b) => b.reach - a.reach).map(a => `<g><title>#${a.i} ${esc(a.name)} · CPMr ${money(a.cpmr)} · CPA ${money(a.cpa)} · reach ${num(a.reach)} · ${GROUP[a.group]}</title><circle class="bub ${a.group}${a.live ? "" : " off"}" cx="${X(a.cpmr).toFixed(1)}" cy="${Y(a.cpa).toFixed(1)}" r="${rad(a.reach).toFixed(1)}"/>${grouped.length <= 40 ? `<text x="${X(a.cpmr)}" y="${Y(a.cpa) + 4}" text-anchor="middle" style="fill:var(--text);font-weight:600">${a.i}</text>` : ""}</g>`).join("");
+    const mx = X(mCpmr), my = Y(mCpa);
+    return `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="CPMr versus CPA, bubbles sized by reach">
+      ${nice(xMax, 6).map(v => `<line class="gr" x1="${X(v)}" x2="${X(v)}" y1="${TP}" y2="${H - B}"/><text x="${X(v)}" y="${H - B + 16}" text-anchor="middle">${money(v)}</text>`).join("")}
+      ${nice(yMax, 6).map(v => `<line class="gr" x1="${L}" x2="${W - R}" y1="${Y(v)}" y2="${Y(v)}"/><text x="${L - 6}" y="${Y(v) + 4}" text-anchor="end">${money(v)}</text>`).join("")}
+      <line class="med" x1="${mx}" x2="${mx}" y1="${TP}" y2="${H - B}"/><line class="med" x1="${L}" x2="${W - R}" y1="${my}" y2="${my}"/>
+      <text class="ql" x="${L + 6}" y="${H - B - 8}">Efficient growth</text><text class="ql" x="${L + 6}" y="${TP + 14}">Reach play</text>
+      <text class="ql" x="${W - R - 6}" y="${H - B - 8}" text-anchor="end">Precision</text><text class="ql" x="${W - R - 6}" y="${TP + 14}" text-anchor="end">Kill candidate</text>
+      ${bubs}
+      <line class="ax" x1="${L}" x2="${L}" y1="${TP}" y2="${H - B}"/><line class="ax" x1="${L}" x2="${W - R}" y1="${H - B}" y2="${H - B}"/>
+      <text x="${(L + W - R) / 2}" y="${H - 6}" text-anchor="middle">CPMr: cost to reach 1,000 people (medians dashed: ${money(mCpmr)} CPMr, ${money(mCpa)} CPA)</text>
+      <text x="14" y="${(TP + H - B) / 2}" transform="rotate(-90 14 ${(TP + H - B) / 2})" text-anchor="middle">CPA</text></svg>`;
+  }
+
+  const glass = inner => `<section class="glass">${inner}</section>`;
+  const head = (h, sub) => `<div><h2>${esc(h)}</h2>${sub ? `<p class="sub">${esc(sub)}</p>` : ""}</div>`;
+  const zp = z => `<span class="pill ${z === "scale" ? "mint" : z === "kill" ? "rose" : "acc"}">${z === "scale" ? "Scale" : z === "kill" ? "Kill" : "Test"}</span>`;
+  const rows = ads.slice().sort((a, b) => a.rank - b.rank || b.spend - a.spend).map(a => `<tr class="${a.live ? "" : "off"}"><td class="n">${a.i}</td><td class="nm">${esc(a.name)}<br><small>${esc(a.campaign || "")}${a.owner === "moshi" ? " · Moshi" : ""}${a.live ? "" : " · " + esc(String(a.status || "").toLowerCase())}</small></td><td class="n">${money(a.spend)}</td><td class="n">${a.k}</td><td class="n">${money(a.cpa)}</td><td class="n">${money(a.cpmr)}</td><td>${zp(a.zone)}</td><td>${a.group ? esc(GROUP[a.group]) : "—"}</td><td class="act">${esc(a.act)}</td></tr>`).join("");
+  const srcLabel = D.target.source === "merchant" ? "your target" : "account blended CPA, used as the target";
+
+  app.innerHTML = `
+    <div class="hd">${LOGO}<span class="mn">${esc(D.merchant)} × Moshi</span><div class="pl"><span class="pill">${esc(D.window.from)} → ${esc(D.window.to)}</span><span class="pill acc">Target CPA ${money(T)}</span></div></div>
+    <div class="hero"><h1>Scale or kill</h1><p class="dek">${esc(D.summary)}</p></div>
+    <div class="tiles">
+      <div class="card tile scale"><small>Scale zone</small><b>${cnt("scale")}</b><small>live ads, 90% sure they beat target</small></div>
+      <div class="card tile"><small>Test zone</small><b>${cnt("test")}</b><small>live ads, not enough evidence yet</small></div>
+      <div class="card tile kill"><small>Kill zone</small><b>${cnt("kill")}</b><small>live ads, 90% sure they miss target</small></div>
+      <div class="card tile"><small>Spend on live kill-zone ads</small><b>${money(killSpend)}</b><small>${allSpend ? Math.round(killSpend / allSpend * 100) : 0}% of ${money(allSpend)}; ideally near zero</small></div>
+    </div>
+    ${glass(`${head("1 · Scale & kill", `Each dot is an ad. Above the red curve we're 90% sure it won't reach ${money(T)} (${srcLabel}); below the green curve, 90% sure it beats it. The curves pinch toward target as spend grows.`)}${chart1()}
+      <div class="lgd"><span><i style="background:var(--mint-strong)"></i>Scale</span><span><i style="background:var(--primary)"></i>Test</span><span><i style="background:var(--rose)"></i>Kill</span><span><i style="background:var(--text-2);opacity:.35"></i>Paused or off</span></div>`)}
+    ${glass(`${head("2 · CPMr vs CPA", `Bubbles sized by reach, split at the account's medians into four groups. Only ads with at least one purchase are drawn${ads.length - grouped.length ? ` (${ads.length - grouped.length} left off)` : ""}.`)}${chart2()}
+      <div class="lgd"><span><i style="background:var(--mint-strong)"></i>Efficient growth: cheap reach, low CPA</span><span><i style="background:var(--primary)"></i>Reach play: cheap reach, high CPA</span><span><i style="background:oklch(.7 .14 75)"></i>Precision: pricey reach, low CPA</span><span><i style="background:var(--rose)"></i>Kill candidate: pricey reach, high CPA</span></div>`)}
+    ${glass(`${head("What to do with each ad", "Both charts read together. Raise budgets 5–15% at a time; efficient-growth winners can go faster. Reach plays in the kill zone get a raised target before they're cut, since cheap reach often buys journeys that close later.")}
+      <div class="tw"><table><thead><tr><th>#</th><th>Ad</th><th>Spend</th><th>Purch.</th><th>CPA</th><th>CPMr</th><th>Zone</th><th>Group</th><th>Do this</th></tr></thead><tbody>${rows}</tbody></table></div>`)}
+    ${(D.notes || []).length ? glass(`${head("How to read these numbers")}<ul class="l">${D.notes.map(n => `<li class="sub">${esc(n)}</li>`).join("")}</ul>`) : ""}
+    <p class="sub">Read-only report. Nothing was paused or changed. Zones use a Bayesian test on purchase counts (Jeffreys prior, 90% threshold).</p>`;
+})();
+</script>
+</body>
+</html>
