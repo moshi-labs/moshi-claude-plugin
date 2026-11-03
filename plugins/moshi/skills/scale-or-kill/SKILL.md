@@ -30,6 +30,12 @@ in Ads Manager.
      Retention or BOF). Warm audiences buy cheaper and reach fewer new people, so mixing them
      with prospecting makes them look like efficient-growth winners against a prospecting
      target. If the merchant asks for retargeting, run it on its own with its own target.
+   - Also keep each ad set's setup, exactly as the tree returns it: the campaign's `objective`
+     and `dailyBudget`, and the ad set's `optimizationGoal`, `attributionSpec`, `bidStrategy`,
+     `dailyBudget`, `learningPhase` and `effectiveStatus`. The page shows them per ad and in a
+     "How each ad set is set up" table with Moshi ad sets first, so a Moshi ad set can be read
+     against the merchant's own. Meta returns delivery settings only for Moshi ad sets and for
+     merchant ad sets it reports active. A missing value means "not read", never "none".
    - A big account won't fit in one call. Call with `maxAds: 0` first to list the ad sets,
      then page through them with `adsetIds` in batches the tool accepts.
    - Keep ads with `metrics.spend > 0`. From each ad take `adId`, `adName`, the campaign's
@@ -100,7 +106,10 @@ in Ads Manager.
      bumpPct: 15,
      summary: "2–3 sentences: how many to scale, how many to cut, and the one move that matters most.",
      notes: ["every flag, exclusion and caveat, one per entry"],
-     ads: [{ id, name, campaign, owner, status, spend, reach, purchases }]
+     ads: [{ id, name, campaign, adset, adsetId, owner, status, spend, reach, purchases }],
+     adsets: [{ adsetId, adsetName, campaignName, objective, owner, effectiveStatus,
+                optimizationGoal, attributionSpec, bidStrategy, dailyBudget,
+                campaignDailyBudget, learningPhase }]   // copied as returned; null when absent
    };
    ```
 

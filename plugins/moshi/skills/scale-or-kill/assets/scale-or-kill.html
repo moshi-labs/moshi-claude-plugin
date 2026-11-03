@@ -19,7 +19,7 @@
 .bub{stroke-width:1.2;fill-opacity:.32;transition:opacity .15s}.bub.eff{fill:oklch(.6 .15 150);stroke:oklch(.6 .15 150)}.bub.reach{fill:oklch(.72 .15 75);stroke:oklch(.62 .15 75)}.bub.prec{fill:oklch(.62 .12 265);stroke:oklch(.62 .12 265)}.bub.kc{fill:oklch(.62 .17 25);stroke:oklch(.62 .17 25)}.bub.off{stroke-dasharray:2 2}
 .qa{opacity:0;transition:opacity .15s}.sel .qa.on{opacity:1}.sel .bub:not(.on){opacity:.18}.sel .ql:not(.on){opacity:.3}.ql .zl{font-size:15px}.ql.eff .zl{fill:oklch(.55 .15 150)}.ql.reach .zl{fill:oklch(.6 .15 70)}.ql.prec .zl{fill:oklch(.58 .14 265)}.ql.kc .zl{fill:oklch(.6 .17 25)}.qbg{fill:var(--surface);opacity:.85}
 .cap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;font:12px var(--mono);color:var(--text-2)}.cap b{color:var(--text)}
-td.n{font-variant-numeric:tabular-nums;white-space:nowrap}td.nm{min-width:200px;max-width:380px;overflow-wrap:anywhere}tr.off td{opacity:.55}details summary{cursor:pointer;font:600 14px var(--hd);padding:6px 0}h3 .pill{margin-left:6px}</style>
+td.n{font-variant-numeric:tabular-nums;white-space:nowrap}td.nm{min-width:200px;max-width:380px;overflow-wrap:anywhere}tr.off td{opacity:.55}small.su{color:var(--text-2);font-size:11.5px}tr.mo td{background:var(--accent-soft)}td{white-space:normal}details summary{cursor:pointer;font:600 14px var(--hd);padding:6px 0}h3 .pill{margin-left:6px}</style>
 </head>
 <body>
 <div class="mesh"></div>
@@ -83,6 +83,30 @@ const DATA = {
   const GSUB = { eff: "cheap reach, lower CPA", reach: "cheap reach, higher CPA", prec: "pricey reach, lower CPA", kc: "pricey reach, higher CPA" };
   ads.forEach(a => { a.group = a.cpa == null || a.cpmr == null ? null : a.cpmr <= mCpmr ? (a.cpa <= mCpa ? "eff" : "reach") : (a.cpa <= mCpa ? "prec" : "kc"); });
   const allSpend = ads.reduce((s, a) => s + a.spend, 0);
+
+  // Ad set delivery settings (optional DATA.adsets). Meta only returns them for Moshi ad sets and merchant ad sets
+  // it reports ACTIVE, so a missing value means "not read", never "none".
+  const AS = {}; (D.adsets || []).forEach(x => { AS[x.adsetId] = x; });
+  const title = v => String(v).toLowerCase().replace(/_/g, " ").replace(/^\w/, c => c.toUpperCase());
+  const OBJ = { OUTCOME_SALES: "Sales", OUTCOME_LEADS: "Leads", OUTCOME_TRAFFIC: "Traffic", OUTCOME_ENGAGEMENT: "Engagement", OUTCOME_AWARENESS: "Awareness", OUTCOME_APP_PROMOTION: "App promotion", CONVERSIONS: "Conversions" };
+  const GOAL = { OFFSITE_CONVERSIONS: "Website conversions", CONVERSATIONS: "Conversations", LINK_CLICKS: "Link clicks", LANDING_PAGE_VIEWS: "Landing page views", VALUE: "Purchase value", REACH: "Reach", IMPRESSIONS: "Impressions", LEAD_GENERATION: "Leads", QUALITY_LEAD: "Quality leads" };
+  const BID = { LOWEST_COST_WITHOUT_CAP: "Lowest cost", LOWEST_COST_WITH_BID_CAP: "Bid cap", COST_CAP: "Cost cap", LOWEST_COST_WITH_MIN_ROAS: "Min ROAS" };
+  const ATT = { CLICK_THROUGH: "click", VIEW_THROUGH: "view", ENGAGED_VIDEO_VIEW: "engaged view" };
+  const LRN = { SUCCESS: "Out of learning", LEARNING: "Learning", FAIL: "Learning limited" };
+  const minor = v => v == null || v === "" ? null : money(+v / 100);
+  const setup = x => {
+    if (!x) return null;
+    return {
+      objective: x.objective ? (OBJ[x.objective] || title(x.objective)) : null,
+      goal: x.optimizationGoal ? (GOAL[x.optimizationGoal] || title(x.optimizationGoal)) : null,
+      attribution: Array.isArray(x.attributionSpec) && x.attributionSpec.length ? x.attributionSpec.map(a => `${a.windowDays}d ${ATT[a.eventType] || title(a.eventType)}`).join(", ") : null,
+      bid: x.bidStrategy ? (BID[x.bidStrategy] || title(x.bidStrategy)) : null,
+      budget: x.dailyBudget ? `${minor(x.dailyBudget)}/day ad set` : x.campaignDailyBudget ? `${minor(x.campaignDailyBudget)}/day campaign` : null,
+      learning: x.learningPhase && x.learningPhase.status ? (LRN[x.learningPhase.status] || title(x.learningPhase.status)) + (x.learningPhase.status !== "SUCCESS" && x.learningPhase.conversions != null ? ` (${x.learningPhase.conversions} conv.)` : "") : null
+    };
+  };
+  ads.forEach(a => { a.setup = setup(AS[a.adsetId]); });
+  const setupLine = st => st ? [st.objective, st.goal && "for " + st.goal.toLowerCase(), st.attribution, st.bid, st.learning].filter(Boolean).join(" · ") : "";
   const bp = Math.round(BUMP * 100);
 
   function classify() {
@@ -181,10 +205,23 @@ const DATA = {
     return SECS.map(([key, title, tone, open]) => {
       const rs = ads.filter(a => a.sec === key).sort((a, b) => b.spend - a.spend);
       if (!rs.length) return "";
-      const body = `<div class="tw"><table><thead><tr><th>Ad</th><th>Spend</th><th>Purch.</th><th>CPA</th><th>CPMr</th><th>Zone</th><th>Group</th><th>Do this</th></tr></thead><tbody>${rs.map(a => `<tr class="${a.live ? "" : "off"}"><td class="nm">${esc(a.name)}<br><small>${esc(a.adset || a.campaign || "")}${a.owner === "moshi" ? " · Moshi" : ""}</small></td><td class="n">${money(a.spend)}</td><td class="n">${a.k}</td><td class="n">${money(a.cpa)}</td><td class="n">${money(a.cpmr)}</td><td>${zp(a.zone)}</td><td>${a.group ? esc(GROUP[a.group]) : "—"}</td><td><b>${esc(a.act)}</b></td></tr>`).join("")}</tbody></table></div>`;
+      const body = `<div class="tw"><table><thead><tr><th>Ad</th><th>Spend</th><th>Purch.</th><th>CPA</th><th>CPMr</th><th>Zone</th><th>Group</th><th>Do this</th></tr></thead><tbody>${rs.map(a => `<tr class="${a.live ? "" : "off"}"><td class="nm">${esc(a.name)}<br><small>${esc(a.adset || a.campaign || "")}${a.owner === "moshi" ? " · Moshi" : ""}</small>${a.setup ? `<br><small class="su">${esc(setupLine(a.setup))}</small>` : ""}</td><td class="n">${money(a.spend)}</td><td class="n">${a.k}</td><td class="n">${money(a.cpa)}</td><td class="n">${money(a.cpmr)}</td><td>${zp(a.zone)}</td><td>${a.group ? esc(GROUP[a.group]) : "—"}</td><td><b>${esc(a.act)}</b></td></tr>`).join("")}</tbody></table></div>`;
       const sp = rs.reduce((s, a) => s + a.spend, 0);
       return `<details ${open ? "open" : ""}><summary>${esc(title)} <span class="pill ${tone}">${rs.length} ads · ${money(sp)}</span></summary>${body}</details>`;
     }).join("");
+  }
+
+  function adsetTable() {
+    if (!(D.adsets || []).length) return "";
+    const by = {};
+    ads.forEach(a => { const k = a.adsetId || a.adset; if (!k) return; (by[k] = by[k] || { id: a.adsetId, name: a.adset, owner: a.owner, ads: [] }).ads.push(a); });
+    const rows = Object.values(by).map(g => { const x = AS[g.id] || {}; const sp = g.ads.reduce((s, a) => s + a.spend, 0), k = g.ads.reduce((s, a) => s + a.k, 0);
+      return { ...g, x, st: setup(AS[g.id]) || {}, sp, k, owner: x.owner || g.owner, live: g.ads.some(a => a.live), z: z => g.ads.filter(a => a.live && a.zone === z).length }; })
+      .sort((a, b) => (b.owner === "moshi") - (a.owner === "moshi") || b.sp - a.sp);
+    const c = v => v ? esc(v) : `<span class="sub">not read</span>`;
+    const body = rows.map(r => `<tr class="${r.live ? "" : "off"}${r.owner === "moshi" ? " mo" : ""}"><td class="nm">${esc(r.name || r.id)}${r.owner === "moshi" ? ` <span class="pill acc">Moshi</span>` : ""}<br><small>${esc(r.x.campaignName || "")}${r.x.effectiveStatus && r.x.effectiveStatus !== "ACTIVE" ? " · " + esc(title(r.x.effectiveStatus)) : ""}</small></td><td>${c(r.st.objective)}</td><td>${c(r.st.goal)}</td><td>${c(r.st.attribution)}</td><td>${c(r.st.bid)}</td><td>${c(r.st.budget)}</td><td>${c(r.st.learning)}</td><td class="n">${money(r.sp)}</td><td class="n">${money(r.k ? r.sp / r.k : null)}</td><td class="n"><span class="zs3"><b style="color:oklch(.55 .15 150)">${r.z("scale")}</b> / ${r.z("test")} / <b style="color:oklch(.58 .19 28)">${r.z("kill")}</b></span></td></tr>`).join("");
+    return glass(`<div><h2>How each ad set is set up</h2><p class="sub">Objective, what Meta optimizes for, attribution window, bid strategy, budget and learning status, next to how the ad set's live ads score at the current target. Moshi ad sets first. Meta only returns delivery settings for Moshi ad sets and merchant ad sets it reports active, so "not read" means unknown, not "none".</p></div>
+      <details open><summary>${rows.length} ad sets</summary><div class="tw"><table><thead><tr><th>Ad set</th><th>Objective</th><th>Optimized for</th><th>Attribution</th><th>Bid</th><th>Budget</th><th>Learning</th><th>Spend</th><th>CPA</th><th>Live ads S / T / K</th></tr></thead><tbody>${body}</tbody></table></div></details>`);
   }
 
   const glass = inner => `<section class="glass">${inner}</section>`;
@@ -209,6 +246,7 @@ const DATA = {
         <div class="lg chips2${sel ? " sel" : ""}">${["eff", "reach", "prec", "kc"].map(g => `<button class="chip${sel === g ? " on" : ""}" data-g="${g}"><i style="background:${{ eff: "oklch(.6 .15 150)", reach: "oklch(.72 .15 75)", prec: "oklch(.62 .12 265)", kc: "oklch(.62 .17 25)" }[g]}"></i>${GROUP[g]} ${grouped.filter(a => a.group === g).length}</button>`).join("")}</div>${chart2()}</section>
     </div>
     ${glass(`<div><h2>What to do with each ad</h2><p class="sub">Both charts read together. Raise budgets 5–15% at a time; efficient-growth winners can go faster. Reach plays in the kill zone get a target ${bp}% higher before they're cut, since cheap reach often buys journeys that close later.</p></div>${table()}`)}
+    ${adsetTable()}
     ${(D.notes || []).length ? glass(`<h2>How to read these numbers</h2><ul class="l">${D.notes.map(n => `<li class="sub">${esc(n)}</li>`).join("")}</ul>`) : ""}
     <p class="sub">Read-only report. Nothing was paused or changed. Zones use a Bayesian test on purchase counts (Jeffreys prior, 90% threshold); a scale call also needs at least 3 purchases. Groups split at the medians of ads with at least one purchase (${grouped.length}).</p>`;
     document.getElementById("src").textContent = srcLabel();
