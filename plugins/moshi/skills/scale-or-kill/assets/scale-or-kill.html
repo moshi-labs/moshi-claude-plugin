@@ -19,7 +19,11 @@
 .bub{stroke-width:1.2;fill-opacity:.32;transition:opacity .15s}.bub.eff{fill:oklch(.6 .15 150);stroke:oklch(.6 .15 150)}.bub.reach{fill:oklch(.72 .15 75);stroke:oklch(.62 .15 75)}.bub.prec{fill:oklch(.62 .12 265);stroke:oklch(.62 .12 265)}.bub.kc{fill:oklch(.62 .17 25);stroke:oklch(.62 .17 25)}.bub.off{stroke-dasharray:2 2}
 .qa{opacity:0;transition:opacity .15s}.sel .qa.on{opacity:1}.sel .bub:not(.on){opacity:.18}.sel .ql:not(.on){opacity:.3}.ql .zl{font-size:15px}.ql.eff .zl{fill:oklch(.55 .15 150)}.ql.reach .zl{fill:oklch(.6 .15 70)}.ql.prec .zl{fill:oklch(.58 .14 265)}.ql.kc .zl{fill:oklch(.6 .17 25)}.qbg{fill:var(--surface);opacity:.85}
 .cap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 16px;font:12px var(--mono);color:var(--text-2)}.cap b{color:var(--text)}
-td.n{font-variant-numeric:tabular-nums;white-space:nowrap}td.nm{min-width:200px;max-width:380px;overflow-wrap:anywhere}tr.off td{opacity:.55}small.su{color:var(--text-2);font-size:11.5px}tr.mo td{background:var(--accent-soft)}td{white-space:normal}details summary{cursor:pointer;font:600 14px var(--hd);padding:6px 0}h3 .pill{margin-left:6px}</style>
+td.n{font-variant-numeric:tabular-nums;white-space:nowrap}td.nm{min-width:200px;max-width:380px;overflow-wrap:anywhere}tr.off td{opacity:.55}small.su{color:var(--text-2);font-size:11.5px}tr.mo td{background:var(--accent-soft)}td{white-space:normal}.pt{cursor:pointer}.hp .pt:not(.pk){opacity:.28}.pt.pk circle.dot{r:8px}.pt.pk .dot,.pt.pk .bub{stroke:var(--text);stroke-width:2.6;opacity:1;fill-opacity:.95}.plab rect{fill:var(--text)}.plab text{fill:var(--surface)!important;font-weight:600}
+#tip{position:fixed;z-index:20;max-width:340px;padding:8px 10px;border-radius:8px;background:var(--text);color:var(--surface);font:12px/1.45 Geist,system-ui,sans-serif;pointer-events:none;box-shadow:var(--shadow)}#tip i{opacity:.7}
+.det{padding:16px 18px;display:grid;gap:10px;border-color:var(--primary)}.det.empty{border-style:dashed;border-color:var(--border-strong);background:transparent;box-shadow:none}.dh{display:flex;gap:12px;justify-content:space-between;align-items:start}.dh h3{font-size:17px;overflow-wrap:anywhere}.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px}.kv>div{background:var(--surface-2);border-radius:8px;padding:8px 10px;display:grid;gap:2px}.kv b{font:600 16px var(--hd)}
+tr.rp{cursor:pointer}tr.rp:hover td{background:var(--surface-2)}tr.pk td{background:var(--accent-soft)!important}#find{flex:1 1 220px;font:14px Geist,sans-serif;padding:7px 10px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface);color:var(--text)}
+details summary{cursor:pointer;font:600 14px var(--hd);padding:6px 0}h3 .pill{margin-left:6px}</style>
 </head>
 <body>
 <div class="mesh"></div>
@@ -54,7 +58,7 @@ const DATA = {
 (function () {
   const D = DATA, app = document.getElementById("app");
   const T0 = +D.target.cpa, BUMP = (+D.bumpPct || 15) / 100;
-  let T = T0, sel = null;
+  let T = T0, sel = null, pick = null;
   const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   let fmt; try { fmt = new Intl.NumberFormat("en-US", { style: "currency", currency: D.currency || "USD", maximumFractionDigits: 0 }); } catch (e) { fmt = { format: v => Math.round(v) + " " + (D.currency || "") }; }
   const money = v => v == null || !isFinite(v) ? "—" : fmt.format(v);
@@ -147,13 +151,14 @@ const DATA = {
     const order = { test: 0, kill: 1, scale: 2 };
     const dots = ads.slice().sort((a, b) => (b.live - a.live) * -1 || order[a.zone] - order[b.zone]).map(a => {
       const cx = X(a.spend), over = a.cpa == null || a.cpa > yMax, cy = over ? TP + 6 : Y(a.cpa), r = 3 + 3.5 * Math.sqrt(a.spend / Math.max(...sp));
-      return `<g><title>${esc(a.name)} · ${money(a.spend)} spent · ${a.k} purchases · CPA ${money(a.cpa)} · ${a.zone}${a.live ? "" : " · off"}</title>${over ? `<path class="dot ${a.zone}${a.live ? "" : " off"}" d="M${cx - 4.5},${cy + 4}L${cx + 4.5},${cy + 4}L${cx},${cy - 4}Z"/>` : `<circle class="dot ${a.zone}${a.live ? "" : " off"}" cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="${r.toFixed(1)}"/>`}</g>`;
+      return `<g class="pt${pick === a.i ? " pk" : ""}" data-i="${a.i}">${over ? `<path class="dot ${a.zone}${a.live ? "" : " off"}" d="M${cx - 4.5},${cy + 4}L${cx + 4.5},${cy + 4}L${cx},${cy - 4}Z"/>` : `<circle class="dot ${a.zone}${a.live ? "" : " off"}" cx="${cx.toFixed(1)}" cy="${cy.toFixed(1)}" r="${r.toFixed(1)}"/>`}</g>`;
     }).join("");
     // Worked example: the same CPA (1.6x target) is still a test at 4x target spend and a kill at 40x.
     const ex = [["A", 4 * T], ["B", 40 * T]].map(([n, s]) => { const c = 1.6 * T, z = zoneAt(s, Math.floor(s / c), T); return { n, s, c, z, x: X(s), y: Y(c) }; });
     const rings = ex.map(e => `<circle class="ring" cx="${e.x}" cy="${e.y}" r="13"/><circle class="rb" cx="${e.x + 14}" cy="${e.y - 16}" r="9"/><text class="rt" x="${e.x + 14}" y="${e.y - 12}" text-anchor="middle">${e.n}</text>`).join("");
     const ty = Y(T), tl = `target ${money(T)}`, tw = tl.length * 7 + 18, tx = Math.min(W - R - tw - 4, X(Math.sqrt(xMin * xMax)));
-    const svg = `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="Spend versus CPA with kill and scale curves">
+    const pa = pick && byI[pick], plab = pa ? pickLabel(pa.cpa == null || pa.cpa > yMax ? TP + 6 : Y(pa.cpa), X(pa.spend)) : "";
+    const svg = `<svg class="chart${pick ? " hp" : ""}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Spend versus CPA with kill and scale curves">
       <defs><clipPath id="c1"><rect x="${L}" y="${TP}" width="${W - L - R}" height="${H - TP - B}"/></clipPath></defs>
       ${xt.map(v => `<line class="gr" x1="${X(v)}" x2="${X(v)}" y1="${TP}" y2="${H - B}"/><text x="${X(v)}" y="${H - B + 18}" text-anchor="middle">${kmoney(v)}</text>`).join("")}
       ${yt.map(v => `<line class="gr" x1="${L}" x2="${W - R}" y1="${Y(v)}" y2="${Y(v)}"/><text x="${L - 8}" y="${Y(v) + 4}" text-anchor="end">${money(v)}</text>`).join("")}
@@ -162,7 +167,7 @@ const DATA = {
       <text class="zl k" x="${W - R - 10}" y="${TP + 38}" text-anchor="end">KILL</text><text class="zs" x="${W - R - 10}" y="${TP + 56}" text-anchor="end">90% sure it misses target</text>
       <text class="zl s" x="${W - R - 10}" y="${H - B - 48}" text-anchor="end">SCALE</text><text class="zs" x="${W - R - 10}" y="${H - B - 30}" text-anchor="end">90% sure it beats target</text>
       <line class="tgt" x1="${L}" x2="${W - R}" y1="${ty}" y2="${ty}"/>
-      ${dots}${rings}
+      ${dots}${pick ? "" : rings}${plab}
       <rect class="tp" x="${tx}" y="${ty - 12}" width="${tw}" height="24" rx="12"/><text class="tpt" x="${tx + tw / 2}" y="${ty + 4}" text-anchor="middle">${esc(tl)}</text>
       <line class="ax" x1="${L}" x2="${L}" y1="${TP}" y2="${H - B}"/><line class="ax" x1="${L}" x2="${W - R}" y1="${H - B}" y2="${H - B}"/>
       <text x="14" y="${(TP + H - B) / 2}" transform="rotate(-90 14 ${(TP + H - B) / 2})" text-anchor="middle">CPA (ALL CUSTOMERS)</text></svg>`;
@@ -183,18 +188,40 @@ const DATA = {
     const areas = Object.entries(quad).map(([g, [x1, y1, x2, y2]]) => `<rect class="qa${sel === g ? " on" : ""}" x="${x1}" y="${y1}" width="${x2 - x1}" height="${y2 - y1}" style="fill:${fill[g]}"/>`).join("");
     const lab = (g, x, y, anchor) => { const w = Math.max(GROUP[g].length * 10.5, GSUB[g].length * 7.3) + 16, bx = anchor === "end" ? x - w + 8 : x - 8;
       return `<g class="ql ${g}${sel === g ? " on" : ""}"><rect class="qbg" x="${bx}" y="${y - 22}" width="${w}" height="46" rx="6"/><text class="zl" x="${x}" y="${y}" text-anchor="${anchor}">${GROUP[g].toUpperCase()}</text><text class="zs" x="${x}" y="${y + 17}" text-anchor="${anchor}">${GSUB[g]}</text></g>`; };
-    const bubs = grouped.slice().sort((a, b) => b.reach - a.reach).map(a => `<g><title>${esc(a.name)} · CPMr ${money(a.cpmr)} · CPA ${money(a.cpa)} · reach ${num(a.reach)} · ${GROUP[a.group]}${a.live ? "" : " · off"}</title><circle class="bub ${a.group}${sel === a.group ? " on" : ""}${a.live ? "" : " off"}" cx="${X(a.cpmr).toFixed(1)}" cy="${Y(a.cpa).toFixed(1)}" r="${rad(a.reach).toFixed(1)}"/></g>`).join("");
-    return `<svg class="chart${sel ? " sel" : ""}" viewBox="0 0 ${W} ${H}" role="img" aria-label="CPMr versus CPA, bubbles sized by reach">
+    const bubs = grouped.slice().sort((a, b) => b.reach - a.reach).map(a => `<g class="pt${pick === a.i ? " pk" : ""}" data-i="${a.i}"><circle class="bub ${a.group}${sel === a.group ? " on" : ""}${a.live ? "" : " off"}" cx="${X(a.cpmr).toFixed(1)}" cy="${Y(a.cpa).toFixed(1)}" r="${rad(a.reach).toFixed(1)}"/></g>`).join("");
+    const pb = pick && byI[pick] && byI[pick].group ? byI[pick] : null, plab2 = pb ? pickLabel(Y(pb.cpa), X(pb.cpmr), rad(pb.reach)) : "";
+    return `<svg class="chart${sel ? " sel" : ""}${pick ? " hp" : ""}" viewBox="0 0 ${W} ${H}" role="img" aria-label="CPMr versus CPA, bubbles sized by reach">
       ${areas}
       ${xs.map(v => `<line class="gr" x1="${X(v)}" x2="${X(v)}" y1="${TP}" y2="${H - B}"/><text x="${X(v)}" y="${H - B + 18}" text-anchor="middle">${money(v)}</text>`).join("")}
       ${yTicks(yMax).map(v => `<line class="gr" x1="${L}" x2="${W - R}" y1="${Y(v)}" y2="${Y(v)}"/><text x="${L - 8}" y="${Y(v) + 4}" text-anchor="end">${money(v)}</text>`).join("")}
-      ${bubs}
+      ${bubs}${plab2}
       <line class="med" x1="${mx}" x2="${mx}" y1="${TP}" y2="${H - B}"/><line class="med" x1="${L}" x2="${W - R}" y1="${my}" y2="${my}"/>
       <text x="${W - R - 4}" y="${my - 6}" text-anchor="end" style="fill:var(--text)">median ${money(mCpa)}</text><text x="${mx + 6}" y="${H - B - 8}" style="fill:var(--text)">median ${money(mCpmr)}</text>
       ${lab("reach", L + 16, TP + 36, "start")}${lab("kc", W - R - 16, TP + 36, "end")}${lab("eff", L + 16, H - B - 34, "start")}${lab("prec", W - R - 16, H - B - 34, "end")}
       <line class="ax" x1="${L}" x2="${L}" y1="${TP}" y2="${H - B}"/><line class="ax" x1="${L}" x2="${W - R}" y1="${H - B}" y2="${H - B}"/>
       <text x="14" y="${(TP + H - B) / 2}" transform="rotate(-90 14 ${(TP + H - B) / 2})" text-anchor="middle">CPA (ALL CUSTOMERS)</text></svg>
       <div class="cap"><span>← cheaper reach</span><span>CPMR: COST PER 1,000 REACHED →</span></div>`;
+  }
+
+  const byI = {}; ads.forEach(a => { byI[a.i] = a; });
+  const mp = new RegExp("^" + String(D.merchant || "").replace(/[^a-z0-9]/gi, "[ _-]*") + "[ _·-]*", "i");
+  const short = (n, m) => { const t = String(n || "").replace(mp, "").replace(/_{2,}/g, " · ").replace(/_/g, " ").replace(/\s+/g, " ").trim(); return t.length > m ? t.slice(0, m - 1) + "…" : t; };
+  // Label the picked ad on the plot, flipping sides so it stays inside the chart.
+  function pickLabel(y, x, r) {
+    const a = byI[pick], t = short(a.name, 40), w = t.length * 6.9 + 16, right = x + (r || 7) + 8 + w < W - R;
+    const bx = right ? x + (r || 7) + 8 : x - (r || 7) - 8 - w, by = Math.max(TP + 2, Math.min(H - B - 24, y - 12));
+    return `<g class="plab" pointer-events="none"><rect x="${bx}" y="${by}" width="${w}" height="24" rx="6"/><text x="${bx + 8}" y="${by + 16}">${esc(t)}</text></g>`;
+  }
+  function detail() {
+    if (!pick || !byI[pick]) return `<section class="card det empty"><p class="sub">Click any dot or bubble, or a row in the table below, to see which ad it is. The same ad lights up in both charts.</p></section>`;
+    const a = byI[pick], st = a.setup, killAt = T * qK(a.k), scaleAt = a.k >= MIN_SCALE ? T * qS(a.k) : null;
+    const why = a.zone === "kill" ? `With ${a.k} purchase${a.k === 1 ? "" : "s"}, an ad becomes a kill once it has spent ${money(killAt)} at a ${money(T)} target. This one has spent ${money(a.spend)}.`
+      : a.zone === "scale" ? `With ${a.k} purchases, an ad is a scale while it has spent ${money(scaleAt)} or less at a ${money(T)} target. This one has spent ${money(a.spend)}.`
+      : `With ${a.k} purchase${a.k === 1 ? "" : "s"}, it turns into a kill at ${money(killAt)} of spend${scaleAt ? ` and stays a scale only at ${money(scaleAt)} or less` : a.k < MIN_SCALE ? `; it needs ${MIN_SCALE} purchases before it can be a scale` : ""}. It has spent ${money(a.spend)}, so the evidence isn't in yet.`;
+    const kv = (k, v) => `<div><small>${k}</small><b>${v}</b></div>`;
+    return `<section class="card det"><div class="dh"><div><h3>${esc(a.name)}</h3><p class="sub">${esc(a.adset || "")}${a.campaign ? " · " + esc(a.campaign) : ""}${a.owner === "moshi" ? " · Moshi" : ""} · ${a.live ? "live" : "off (" + esc(String(a.status || "").toLowerCase()) + ")"}</p></div><button class="chip" id="unpick" aria-label="Clear selection">✕</button></div>
+      <div class="kv">${kv("Spend", money(a.spend))}${kv("Purchases", a.k)}${kv("CPA", money(a.cpa))}${kv("CPMr", money(a.cpmr))}${kv("Reach", num(a.reach))}${kv("Zone", zp(a.zone))}${kv("Group", a.group ? GROUP[a.group] : "—")}</div>
+      <p><b>${esc(a.act)}.</b> <span class="sub">${esc(why)}</span></p>${st ? `<p class="sub">Set up: ${esc(setupLine(st))}${st.budget ? " · " + esc(st.budget) : ""}</p>` : ""}</section>`;
   }
 
   const SECS = [
@@ -205,9 +232,9 @@ const DATA = {
     return SECS.map(([key, title, tone, open]) => {
       const rs = ads.filter(a => a.sec === key).sort((a, b) => b.spend - a.spend);
       if (!rs.length) return "";
-      const body = `<div class="tw"><table><thead><tr><th>Ad</th><th>Spend</th><th>Purch.</th><th>CPA</th><th>CPMr</th><th>Zone</th><th>Group</th><th>Do this</th></tr></thead><tbody>${rs.map(a => `<tr class="${a.live ? "" : "off"}"><td class="nm">${esc(a.name)}<br><small>${esc(a.adset || a.campaign || "")}${a.owner === "moshi" ? " · Moshi" : ""}</small>${a.setup ? `<br><small class="su">${esc(setupLine(a.setup))}</small>` : ""}</td><td class="n">${money(a.spend)}</td><td class="n">${a.k}</td><td class="n">${money(a.cpa)}</td><td class="n">${money(a.cpmr)}</td><td>${zp(a.zone)}</td><td>${a.group ? esc(GROUP[a.group]) : "—"}</td><td><b>${esc(a.act)}</b></td></tr>`).join("")}</tbody></table></div>`;
+      const body = `<div class="tw"><table><thead><tr><th>Ad</th><th>Spend</th><th>Purch.</th><th>CPA</th><th>CPMr</th><th>Zone</th><th>Group</th><th>Do this</th></tr></thead><tbody>${rs.map(a => `<tr class="rp${a.live ? "" : " off"}${pick === a.i ? " pk" : ""}" data-r="${a.i}"><td class="nm">${esc(a.name)}<br><small>${esc(a.adset || a.campaign || "")}${a.owner === "moshi" ? " · Moshi" : ""}</small>${a.setup ? `<br><small class="su">${esc(setupLine(a.setup))}</small>` : ""}</td><td class="n">${money(a.spend)}</td><td class="n">${a.k}</td><td class="n">${money(a.cpa)}</td><td class="n">${money(a.cpmr)}</td><td>${zp(a.zone)}</td><td>${a.group ? esc(GROUP[a.group]) : "—"}</td><td><b>${esc(a.act)}</b></td></tr>`).join("")}</tbody></table></div>`;
       const sp = rs.reduce((s, a) => s + a.spend, 0);
-      return `<details ${open ? "open" : ""}><summary>${esc(title)} <span class="pill ${tone}">${rs.length} ads · ${money(sp)}</span></summary>${body}</details>`;
+      return `<details ${open || rs.some(a => a.i === pick) ? "open" : ""}><summary>${esc(title)} <span class="pill ${tone}">${rs.length} ads · ${money(sp)}</span></summary>${body}</details>`;
     }).join("");
   }
 
@@ -245,6 +272,7 @@ const DATA = {
       <section class="card cc"><h2><span class="badge">2</span>CPMr vs CPA</h2><p class="sub">Bubble = reach. Split at the account medians. Tap a group to isolate it.</p>
         <div class="lg chips2${sel ? " sel" : ""}">${["eff", "reach", "prec", "kc"].map(g => `<button class="chip${sel === g ? " on" : ""}" data-g="${g}"><i style="background:${{ eff: "oklch(.6 .15 150)", reach: "oklch(.72 .15 75)", prec: "oklch(.62 .12 265)", kc: "oklch(.62 .17 25)" }[g]}"></i>${GROUP[g]} ${grouped.filter(a => a.group === g).length}</button>`).join("")}</div>${chart2()}</section>
     </div>
+    ${detail()}
     ${glass(`<div><h2>What to do with each ad</h2><p class="sub">Both charts read together. Raise budgets 5–15% at a time; efficient-growth winners can go faster. Reach plays in the kill zone get a target ${bp}% higher before they're cut, since cheap reach often buys journeys that close later.</p></div>${table()}`)}
     ${adsetTable()}
     ${(D.notes || []).length ? glass(`<h2>How to read these numbers</h2><ul class="l">${D.notes.map(n => `<li class="sub">${esc(n)}</li>`).join("")}</ul>`) : ""}
@@ -255,13 +283,30 @@ const DATA = {
   }
   app.innerHTML = `    <div class="hd">${LOGO}<span class="mn">${esc(D.merchant)} × Moshi</span><div class="pl"><span class="pill">${esc(D.window.from)} → ${esc(D.window.to)}</span><span class="pill">${ads.length} ads · ${money(allSpend)}</span></div></div>
     <div class="hero"><h1>Scale or kill</h1><p class="dek">${esc(D.summary)}</p></div>
-    <div class="card ctl"><label for="tn">Target CPA</label><input id="tn" type="number" min="1" step="1" value="${Math.round(T)}"><input id="tr" type="range" min="${lo}" max="${hi}" step="1" value="${Math.round(T)}" aria-label="Target CPA"><small id="src"></small><button id="rs" hidden>Reset to ${money(T0)}</button></div>
+    <div class="card ctl"><label for="tn">Target CPA</label><input id="tn" type="number" min="1" step="1" value="${Math.round(T)}"><input id="tr" type="range" min="${lo}" max="${hi}" step="1" value="${Math.round(T)}" aria-label="Target CPA"><small id="src"></small><button id="rs" hidden>Reset to ${money(T0)}</button><input id="find" list="adl" placeholder="Find an ad by name" aria-label="Find an ad"><datalist id="adl">${ads.map(a => `<option value="${esc(a.name)}">`).join("")}</datalist></div><div id="tip" role="tooltip" hidden></div>
 <div id="dyn" style="display:grid;gap:16px"></div>`;
-  const dyn = document.getElementById("dyn"), tn = document.getElementById("tn"), tr = document.getElementById("tr");
+  const dyn = document.getElementById("dyn"), tn = document.getElementById("tn"), tr = document.getElementById("tr"), tip = document.getElementById("tip");
+  const setHash = () => { try { history.replaceState(null, "", pick ? "#ad=" + encodeURIComponent(byI[pick].id) : location.pathname + location.search); } catch (e) {} };
+  const choose = (i, scrollTo) => { pick = pick === i && !scrollTo ? null : i; setHash(); tip.hidden = true; render(); const el = document.querySelector(scrollTo || ".det"); if (el && el.scrollIntoView) el.scrollIntoView({ behavior: "smooth", block: scrollTo ? "start" : "nearest" }); };
+  dyn.addEventListener("click", e => {
+    const p = e.target.closest && e.target.closest(".pt"); if (p) return choose(+p.dataset.i);
+    const r = e.target.closest && e.target.closest("tr[data-r]"); if (r) return choose(+r.dataset.r, ".charts");
+    if (e.target.closest && e.target.closest("#unpick")) { pick = null; setHash(); render(); }
+  });
+  dyn.addEventListener("mousemove", e => {
+    const p = e.target.closest && e.target.closest(".pt"); if (!p) { tip.hidden = true; return; }
+    const a = byI[+p.dataset.i]; if (!a) return;
+    tip.innerHTML = `<b>${esc(short(a.name, 60))}</b><br>${money(a.spend)} spent · ${a.k} purchases · CPA ${money(a.cpa)} · CPMr ${money(a.cpmr)}<br>${a.zone[0].toUpperCase() + a.zone.slice(1)}${a.group ? " · " + GROUP[a.group] : ""}${a.live ? "" : " · off"} · <i>click for details</i>`;
+    tip.hidden = false; const x = Math.min(e.clientX + 14, innerWidth - tip.offsetWidth - 8), y = e.clientY + 16 + tip.offsetHeight > innerHeight ? e.clientY - tip.offsetHeight - 10 : e.clientY + 16;
+    tip.style.left = x + "px"; tip.style.top = y + "px";
+  });
+  dyn.addEventListener("mouseleave", () => { tip.hidden = true; });
+  document.getElementById("find").addEventListener("change", e => { const a = ads.find(x => x.name === e.target.value); if (a) { e.target.value = ""; choose(a.i, ".charts"); } });
   const set = (v, from) => { v = Math.round(+v); if (v > 0 && isFinite(v)) { T = v; if (from !== tn) tn.value = v; if (from !== tr) tr.value = v; render(); } };
   tn.addEventListener("change", e => set(e.target.value, tn));
   tr.addEventListener("input", e => set(e.target.value, tr));
   document.getElementById("rs").addEventListener("click", () => set(T0));
+  try { const m = /ad=([^&]+)/.exec(location.hash); const a0 = m && ads.find(x => String(x.id) === decodeURIComponent(m[1])); if (a0) pick = a0.i; } catch (e) {}
   render();
 })();
 </script>
