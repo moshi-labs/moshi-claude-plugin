@@ -26,6 +26,12 @@ in Ads Manager.
    - Keep ads in campaigns whose `objective` is a sales objective (`OUTCOME_SALES`, or legacy
      `CONVERSIONS`). CPA means nothing for lead, traffic or engagement campaigns. Count what you
      left out and say so in `notes`.
+   - Leave out retargeting campaigns by default (a name with RTG, Retargeting, Remarketing,
+     Retention or BOF). Warm audiences buy cheaper and reach fewer new people, so mixing them
+     with prospecting makes them look like efficient-growth winners against a prospecting
+     target. If the merchant asks for retargeting, run it on its own with its own target.
+   - A big account won't fit in one call. Call with `maxAds: 0` first to list the ad sets,
+     then page through them with `adsetIds` in batches the tool accepts.
    - Keep ads with `metrics.spend > 0`. From each ad take `adId`, `adName`, the campaign's
      `campaignName`, `owner`, `effectiveStatus`, `metrics.spend`, `metrics.reach` and
      `metrics.purchases`.
@@ -38,7 +44,8 @@ in Ads Manager.
    page agree.
    - `k` = purchases (whole number), `E` = spend ÷ target CPA.
    - **Kill** when `E ≥ KILL[k]`: 90% sure the ad's true CPA is above target.
-   - **Scale** when `k ≥ 1` and `E ≤ SCALE[k]`: 90% sure it's below target.
+   - **Scale** when `k ≥ 3` and `E ≤ SCALE[k]`: 90% sure it's below target. The 3-purchase
+     floor stops one lucky sale on $10 of spend from reading as a winner.
    - Otherwise **test**.
 
    | k | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 8 | 10 | 15 | 20 | 25 | 30 | 40 |
