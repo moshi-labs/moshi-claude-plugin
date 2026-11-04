@@ -140,6 +140,9 @@ in Ads Manager.
 
 - **No sales campaigns** in the window: stop and say so. Don't fall back to lead or traffic
   campaigns.
+- **An ad's status disagrees with its ad set's** (the ad reads ACTIVE, its ad set reads PAUSED,
+  ADSET_PAUSED or CAMPAIGN_PAUSED): one of the two is stale in the synced copy. Don't pick one
+  quietly. The page flags it on the ad, and `notes` names the ad and says to check Ads Manager.
 - **Almost everything in test**: that's normal, and the page says so. Don't force calls.
 - **The kill zone holds a lot of spend**: point it out in `summary`. Per the post, the kill zone
   should ideally be empty, since that means bad ads were cut before they wasted money.

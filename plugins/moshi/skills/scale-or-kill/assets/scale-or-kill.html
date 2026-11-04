@@ -23,7 +23,7 @@ td.n{font-variant-numeric:tabular-nums;white-space:nowrap}td.nm{min-width:200px;
 #tip{position:fixed;z-index:20;max-width:340px;padding:8px 10px;border-radius:8px;background:var(--text);color:var(--surface);font:12px/1.45 Geist,system-ui,sans-serif;pointer-events:none;box-shadow:var(--shadow)}#tip i{opacity:.7}
 .det{padding:16px 18px;display:grid;gap:10px;border-color:var(--primary)}.det.empty{border-style:dashed;border-color:var(--border-strong);background:transparent;box-shadow:none}.dh{display:flex;gap:12px;justify-content:space-between;align-items:start}.dh h3{font-size:17px;overflow-wrap:anywhere}.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px}.kv>div{background:var(--surface-2);border-radius:8px;padding:8px 10px;display:grid;gap:2px}.kv b{font:600 16px var(--hd)}
 tr.rp{cursor:pointer}tr.rp:hover td{background:var(--surface-2)}tr.pk td{background:var(--accent-soft)!important}#find{flex:1 1 220px;font:14px Geist,sans-serif;padding:7px 10px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface);color:var(--text)}
-.ec{width:100%;height:440px;min-width:0}#bnote{font-family:var(--mono);font-size:12px;min-height:1.4em}#top{display:grid}details summary{cursor:pointer;font:600 14px var(--hd);padding:6px 0}h3 .pill{margin-left:6px}</style>
+.ec{width:100%;height:440px;min-width:0}#bnote{font-family:var(--mono);font-size:12px;min-height:1.4em}#top{display:grid}.tg{gap:10px 18px}.tl{font:600 13px var(--mono);text-transform:uppercase;letter-spacing:.06em}.seg{display:inline-flex;border:1px solid var(--border-strong);border-radius:999px;padding:3px;gap:2px;background:var(--surface-2)}.seg button{font:500 13px Geist,sans-serif;border:0;background:transparent;color:var(--text-2);padding:6px 12px;border-radius:999px;cursor:pointer}.seg button[aria-pressed=true]{background:var(--surface);color:var(--text);box-shadow:var(--shadow);font-weight:600}.sw{display:inline-flex;gap:6px;align-items:center;font-size:14px;cursor:pointer}.sw input{accent-color:var(--primary)}.lg i.dia{border-radius:2px;transform:rotate(45deg) scale(.85);background:var(--text-2);outline:1.5px solid var(--text);outline-offset:-1px}.cf{color:var(--rose);font-size:12px}p.cf{font-size:13px}details summary{cursor:pointer;font:600 14px var(--hd);padding:6px 0}h3 .pill{margin-left:6px}</style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
 </head>
 <body>
@@ -60,6 +60,10 @@ const DATA = {
   const D = DATA, app = document.getElementById("app");
   const T0 = +D.target.cpa, BUMP = (+D.bumpPct || 15) / 100;
   let T = T0, sel = null, pick = null;
+  // Moshi toggles: whose ads to show, whether to mark Moshi's, whether to show ads that are off.
+  let own = "all", markMoshi = true, showOff = true;
+  const isMoshi = a => a.owner === "moshi";
+  const visible = a => (own === "all" || (own === "moshi") === isMoshi(a)) && (showOff || a.live);
   const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   let fmt; try { fmt = new Intl.NumberFormat("en-US", { style: "currency", currency: D.currency || "USD", maximumFractionDigits: 0 }); } catch (e) { fmt = { format: v => Math.round(v) + " " + (D.currency || "") }; }
   const money = v => v == null || !isFinite(v) ? "—" : fmt.format(v);
@@ -110,7 +114,7 @@ const DATA = {
       learning: x.learningPhase && x.learningPhase.status ? (LRN[x.learningPhase.status] || title(x.learningPhase.status)) + (x.learningPhase.status !== "SUCCESS" && x.learningPhase.conversions != null ? ` (${x.learningPhase.conversions} conv.)` : "") : null
     };
   };
-  ads.forEach(a => { a.setup = setup(AS[a.adsetId]); });
+  ads.forEach(a => { a.setup = setup(AS[a.adsetId]); const ae = AS[a.adsetId] && AS[a.adsetId].effectiveStatus; a.conflict = a.live && !!ae && ae !== "ACTIVE" ? ae : null; });
   const setupLine = st => st ? [st.objective, st.goal && "for " + st.goal.toLowerCase(), st.attribution, st.bid, st.learning].filter(Boolean).join(" · ") : "";
   const bp = Math.round(BUMP * 100);
 
@@ -144,7 +148,7 @@ const DATA = {
   const curve = q => { const o = []; for (let k = 1; k < 100000; k = k < 40 ? k + 1 : Math.ceil(k * 1.06)) { const x = T * q(k); if (x > xMax * 1.5) break; o.push([x, x / k]); } return o; };
   const mono = '"Geist Mono", ui-monospace, monospace', body = 'Geist, system-ui, sans-serif';
   const kfmt = v => v >= 1000 ? "$" + (v / 1000) + "K" : "$" + v;
-  let e1 = null, e2 = null;
+  let e1 = null, e2 = null, shown1 = [];
 
   function tipHtml(a) {
     return `<b>${esc(short(a.name, 60))}</b><br>${money(a.spend)} spent · ${a.k} purchases · CPA ${money(a.cpa)}<br>CPMr ${money(a.cpmr)} · reach ${num(a.reach)}<br><span style="color:${ZC[a.zone]}">●</span> ${a.zone}${a.group ? " · " + GROUP[a.group] : ""}${a.live ? "" : " · off"}<br><i style="opacity:.7">click for details</i>`;
@@ -160,10 +164,11 @@ const DATA = {
 
   function opt1() {
     const c = PAL(), ym = yTop();
-    const data = ads.map(a => {
-      const over = a.cpa == null || a.cpa > ym, dim = (pick && pick !== a.i) ? 0.3 : 1;
-      return { name: "a" + a.i, value: [a.spend, over ? ym : a.cpa], symbol: over ? "triangle" : "circle", symbolSize: (5 + 9 * Math.sqrt(a.spend / Math.max(...spends))) * (pick === a.i ? 1.7 : 1),
-        itemStyle: Object.assign({ color: ZC[a.zone], opacity: (a.live ? 0.9 : 0.3) * dim }, picked(a, c)), label: pickLabel(a, c, a.spend > Math.sqrt(xMin * xMax)) };
+    shown1 = ads.filter(visible);
+    const data = shown1.map(a => {
+      const over = a.cpa == null || a.cpa > ym, dim = (pick && pick !== a.i) ? 0.3 : 1, mo = markMoshi && isMoshi(a);
+      return { name: "a" + a.i, value: [a.spend, over ? ym : a.cpa], symbol: mo ? "diamond" : over ? "triangle" : "circle", symbolSize: (5 + 9 * Math.sqrt(a.spend / Math.max(...spends))) * (pick === a.i ? 1.7 : 1),
+        itemStyle: Object.assign({ color: ZC[a.zone], opacity: (a.live ? 0.9 : 0.3) * dim }, mo ? { borderColor: c.ink, borderWidth: 1.5, opacity: (a.live ? 1 : 0.75) * dim } : {}, picked(a, c)), label: pickLabel(a, c, a.spend > Math.sqrt(xMin * xMax)) };
     });
     return Object.assign(base(c), {
       toolbox: { right: 4, top: -4, iconStyle: { borderColor: c.ink2 }, feature: { brush: { type: ["rect", "clear"], title: { rect: "Select ads", clear: "Clear selection" } }, restore: { title: "Reset zoom" } } },
@@ -186,10 +191,10 @@ const DATA = {
   }
   function opt2() {
     const c = PAL(), ym = yTop(), rMax = Math.max(...grouped.map(a => a.reach));
-    const data = grouped.map(a => {
-      const dim = (pick && pick !== a.i) || (sel && sel !== a.group) ? 0.25 : 1;
-      return { name: "a" + a.i, value: [a.cpmr, Math.min(a.cpa, ym)], symbolSize: (6 + 34 * Math.sqrt(a.reach / rMax)) * (pick === a.i ? 1.25 : 1),
-        itemStyle: Object.assign({ color: GC[a.group], borderColor: GC[a.group], borderWidth: 1, opacity: (a.live ? 0.55 : 0.2) * dim }, picked(a, c)), label: pickLabel(a, c, a.cpmr > mCpmr) };
+    const data = grouped.filter(visible).map(a => {
+      const dim = (pick && pick !== a.i) || (sel && sel !== a.group) ? 0.25 : 1, mo = markMoshi && isMoshi(a);
+      return { name: "a" + a.i, value: [a.cpmr, Math.min(a.cpa, ym)], symbol: mo ? "diamond" : "circle", symbolSize: (6 + 34 * Math.sqrt(a.reach / rMax)) * (pick === a.i ? 1.25 : 1),
+        itemStyle: Object.assign({ color: GC[a.group], borderColor: GC[a.group], borderWidth: 1, opacity: (a.live ? 0.55 : 0.2) * dim }, mo ? { borderColor: c.ink, borderWidth: 2, opacity: (a.live ? 0.9 : 0.7) * dim } : {}, picked(a, c)), label: pickLabel(a, c, a.cpmr > mCpmr) };
     });
     const t = (text, pos, g) => ({ type: "text", ...pos, style: { text, fill: sel && sel !== g ? c.line : GC[g], font: "700 11px " + mono, align: pos.right != null ? "right" : "left" } });
     return Object.assign(base(c), {
@@ -211,7 +216,7 @@ const DATA = {
       e1 = echarts.init(document.getElementById("ec1")); e2 = echarts.init(document.getElementById("ec2"));
       link(e1, e2); link(e2, e1);
       e1.on("brushselected", p => {
-        const b = p.batch && p.batch[0], idx = (b && b.selected[0] && b.selected[0].dataIndex) || [], s = idx.map(i => ads[i]), note = document.getElementById("bnote");
+        const b = p.batch && p.batch[0], idx = (b && b.selected[0] && b.selected[0].dataIndex) || [], s = idx.map(i => shown1[i]).filter(Boolean), note = document.getElementById("bnote");
         e2.dispatchAction({ type: "downplay", seriesIndex: 0 });
         if (!s.length) { note.textContent = "Tip: use the box tool (top right of chart 1) to select a group of ads."; return; }
         const sp = s.reduce((x, a) => x + a.spend, 0), k = s.reduce((x, a) => x + a.k, 0), z = q => s.filter(a => a.zone === q).length;
@@ -233,7 +238,7 @@ const DATA = {
     const kv = (k, v) => `<div><small>${k}</small><b>${v}</b></div>`;
     return `<section class="card det"><div class="dh"><div><h3>${esc(a.name)}</h3><p class="sub">${esc(a.adset || "")}${a.campaign ? " · " + esc(a.campaign) : ""}${a.owner === "moshi" ? " · Moshi" : ""} · ${a.live ? "live" : "off (" + esc(String(a.status || "").toLowerCase()) + ")"}</p></div><button class="chip" id="unpick" aria-label="Clear selection">✕</button></div>
       <div class="kv">${kv("Spend", money(a.spend))}${kv("Purchases", a.k)}${kv("CPA", money(a.cpa))}${kv("CPMr", money(a.cpmr))}${kv("Reach", num(a.reach))}${kv("Zone", zp(a.zone))}${kv("Group", a.group ? GROUP[a.group] : "—")}</div>
-      <p><b>${esc(a.act)}.</b> <span class="sub">${esc(why)}</span></p>${st ? `<p class="sub">Set up: ${esc(setupLine(st))}${st.budget ? " · " + esc(st.budget) : ""}</p>` : ""}</section>`;
+      ${a.conflict ? `<p class="cf">Status unclear: this ad reads active but its ad set reads ${esc(a.conflict.toLowerCase().replace(/_/g, " "))}. Moshi's synced copy may be behind; check it in Ads Manager.</p>` : ""}<p><b>${esc(a.act)}.</b> <span class="sub">${esc(why)}</span></p>${st ? `<p class="sub">Set up: ${esc(setupLine(st))}${st.budget ? " · " + esc(st.budget) : ""}</p>` : ""}</section>`;
   }
 
   const SECS = [
@@ -242,9 +247,9 @@ const DATA = {
   const zp = z => `<span class="pill ${z === "scale" ? "mint" : z === "kill" ? "rose" : ""}">${z === "scale" ? "Scale" : z === "kill" ? "Kill" : "Test"}</span>`;
   function table() {
     return SECS.map(([key, title, tone, open]) => {
-      const rs = ads.filter(a => a.sec === key).sort((a, b) => b.spend - a.spend);
+      const rs = ads.filter(a => a.sec === key && visible(a)).sort((a, b) => b.spend - a.spend);
       if (!rs.length) return "";
-      const body = `<div class="tw"><table><thead><tr><th>Ad</th><th>Spend</th><th>Purch.</th><th>CPA</th><th>CPMr</th><th>Zone</th><th>Group</th><th>Do this</th></tr></thead><tbody>${rs.map(a => `<tr class="rp${a.live ? "" : " off"}${pick === a.i ? " pk" : ""}" data-r="${a.i}"><td class="nm">${esc(a.name)}<br><small>${esc(a.adset || a.campaign || "")}${a.owner === "moshi" ? " · Moshi" : ""}</small>${a.setup ? `<br><small class="su">${esc(setupLine(a.setup))}</small>` : ""}</td><td class="n">${money(a.spend)}</td><td class="n">${a.k}</td><td class="n">${money(a.cpa)}</td><td class="n">${money(a.cpmr)}</td><td>${zp(a.zone)}</td><td>${a.group ? esc(GROUP[a.group]) : "—"}</td><td><b>${esc(a.act)}</b></td></tr>`).join("")}</tbody></table></div>`;
+      const body = `<div class="tw"><table><thead><tr><th>Ad</th><th>Spend</th><th>Purch.</th><th>CPA</th><th>CPMr</th><th>Zone</th><th>Group</th><th>Do this</th></tr></thead><tbody>${rs.map(a => `<tr class="rp${a.live ? "" : " off"}${pick === a.i ? " pk" : ""}" data-r="${a.i}"><td class="nm">${esc(a.name)}<br><small>${esc(a.adset || a.campaign || "")}${a.owner === "moshi" ? " · Moshi" : ""}</small>${a.conflict ? `<br><small class="cf">Status unclear: ad reads active, ad set reads ${esc(a.conflict.toLowerCase().replace(/_/g, " "))}</small>` : ""}${a.setup ? `<br><small class="su">${esc(setupLine(a.setup))}</small>` : ""}</td><td class="n">${money(a.spend)}</td><td class="n">${a.k}</td><td class="n">${money(a.cpa)}</td><td class="n">${money(a.cpmr)}</td><td>${zp(a.zone)}</td><td>${a.group ? esc(GROUP[a.group]) : "—"}</td><td><b>${esc(a.act)}</b></td></tr>`).join("")}</tbody></table></div>`;
       const sp = rs.reduce((s, a) => s + a.spend, 0);
       return `<details ${open || rs.some(a => a.i === pick) ? "open" : ""}><summary>${esc(title)} <span class="pill ${tone}">${rs.length} ads · ${money(sp)}</span></summary>${body}</details>`;
     }).join("");
@@ -253,7 +258,7 @@ const DATA = {
   function adsetTable() {
     if (!(D.adsets || []).length) return "";
     const by = {};
-    ads.forEach(a => { const k = a.adsetId || a.adset; if (!k) return; (by[k] = by[k] || { id: a.adsetId, name: a.adset, owner: a.owner, ads: [] }).ads.push(a); });
+    ads.filter(visible).forEach(a => { const k = a.adsetId || a.adset; if (!k) return; (by[k] = by[k] || { id: a.adsetId, name: a.adset, owner: a.owner, ads: [] }).ads.push(a); });
     const rows = Object.values(by).map(g => { const x = AS[g.id] || {}; const sp = g.ads.reduce((s, a) => s + a.spend, 0), k = g.ads.reduce((s, a) => s + a.k, 0);
       return { ...g, x, st: setup(AS[g.id]) || {}, sp, k, owner: x.owner || g.owner, live: g.ads.some(a => a.live), z: z => g.ads.filter(a => a.live && a.zone === z).length }; })
       .sort((a, b) => (b.owner === "moshi") - (a.owner === "moshi") || b.sp - a.sp);
@@ -269,18 +274,19 @@ const DATA = {
 
   function render() {
     classify();
-    const live = ads.filter(a => a.live), cnt = z => live.filter(a => a.zone === z).length, all = z => ads.filter(a => a.zone === z).length;
+    const vis = ads.filter(visible), live = vis.filter(a => a.live), cnt = z => live.filter(a => a.zone === z).length, all = z => vis.filter(a => a.zone === z).length, visSpend = vis.reduce((x, a) => x + a.spend, 0);
     const killSpend = live.filter(a => a.zone === "kill").reduce((s, a) => s + a.spend, 0);
     top.innerHTML = `<div class="tiles">
       <div class="card tile scale"><small>Scale zone</small><b>${cnt("scale")}</b><small>live ads, 90% sure they beat target</small></div>
       <div class="card tile"><small>Test zone</small><b>${cnt("test")}</b><small>live ads, keep spending and watch</small></div>
       <div class="card tile kill"><small>Kill zone</small><b>${cnt("kill")}</b><small>live ads, 90% sure they miss target</small></div>
-      <div class="card tile"><small>Spend on live kill-zone ads</small><b>${money(killSpend)}</b><small>${allSpend ? Math.round(killSpend / allSpend * 100) : 0}% of all spend; ideally near zero</small></div>
+      <div class="card tile"><small>Spend on live kill-zone ads</small><b>${money(killSpend)}</b><small>${visSpend ? Math.round(killSpend / visSpend * 100) : 0}% of ${own === "all" ? "all" : "this"} spend; ideally near zero</small></div>
     </div>`;
-    document.getElementById("lg1").innerHTML = `<span><i style="background:${ZC.scale}"></i>Scale ${all("scale")}</span><span><i style="background:${ZC.test}"></i>Test ${all("test")}</span><span><i style="background:${ZC.kill}"></i>Kill ${all("kill")}</span>`;
+    document.getElementById("lg1").innerHTML = `<span><i style="background:${ZC.scale}"></i>Scale ${all("scale")}</span><span><i style="background:${ZC.test}"></i>Test ${all("test")}</span><span><i style="background:${ZC.kill}"></i>Kill ${all("kill")}</span>${markMoshi && vis.some(isMoshi) ? `<span><i class="dia"></i>Moshi ad</span>` : ""}${vis.length ? "" : `<span>No ads match these toggles.</span>`}`;
+    document.querySelectorAll("#own button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.own === own)));
     document.getElementById("sub1").textContent = `Each dot is an ad. Curves mark where we're 90% sure it beats or misses ${money(T)}, ${srcLabel()}. Scroll to zoom the spend axis.`;
     const lg2 = document.getElementById("lg2"); lg2.className = "lg chips2" + (sel ? " sel" : "");
-    lg2.innerHTML = ["eff", "reach", "prec", "kc"].map(g => `<button class="chip${sel === g ? " on" : ""}" data-g="${g}"><i style="background:${GC[g]}"></i>${GROUP[g]} ${grouped.filter(a => a.group === g).length}</button>`).join("");
+    lg2.innerHTML = ["eff", "reach", "prec", "kc"].map(g => `<button class="chip${sel === g ? " on" : ""}" data-g="${g}"><i style="background:${GC[g]}"></i>${GROUP[g]} ${grouped.filter(a => a.group === g && visible(a)).length}</button>`).join("");
     dyn.innerHTML = `
     ${detail()}
     ${glass(`<div><h2>What to do with each ad</h2><p class="sub">Both charts read together. Raise budgets 5–15% at a time; efficient-growth winners can go faster. Reach plays in the kill zone get a target ${bp}% higher before they're cut, since cheap reach often buys journeys that close later.</p></div>${table()}`)}
@@ -294,6 +300,7 @@ const DATA = {
   app.innerHTML = `    <div class="hd">${LOGO}<span class="mn">${esc(D.merchant)} × Moshi</span><div class="pl"><span class="pill">${esc(D.window.from)} → ${esc(D.window.to)}</span><span class="pill">${ads.length} ads · ${money(allSpend)}</span></div></div>
     <div class="hero"><h1>Scale or kill</h1><p class="dek">${esc(D.summary)}</p></div>
     <div class="card ctl"><label for="tn">Target CPA</label><input id="tn" type="number" min="1" step="1" value="${Math.round(T)}"><input id="tr" type="range" min="${lo}" max="${hi}" step="1" value="${Math.round(T)}" aria-label="Target CPA"><small id="src"></small><button id="rs" hidden>Reset to ${money(T0)}</button><input id="find" list="adl" placeholder="Find an ad by name" aria-label="Find an ad"><datalist id="adl">${ads.map(a => `<option value="${esc(a.name)}">`).join("")}</datalist></div><div id="tip" role="tooltip" hidden></div>
+<div class="card ctl tg"><span class="tl">Show</span><div class="seg" id="own" role="group" aria-label="Whose ads"><button data-own="all" aria-pressed="true">All ${ads.length}</button><button data-own="merchant" aria-pressed="false">${esc(D.merchant)}'s own ${ads.length - ads.filter(isMoshi).length}</button><button data-own="moshi" aria-pressed="false">Moshi ${ads.filter(isMoshi).length}</button></div><label class="sw"><input type="checkbox" id="mk" checked> Mark Moshi ads</label><label class="sw"><input type="checkbox" id="off" checked> Show paused ads</label>${ads.some(isMoshi) && !ads.some(a => isMoshi(a) && a.live) ? `<small>All of Moshi's ads are paused in this window.</small>` : ""}</div>
 <div id="top"></div>
     <div class="charts">
       <section class="card cc"><h2><span class="badge">1</span>Scale &amp; Kill</h2><p class="sub" id="sub1"></p><div class="lg" id="lg1"></div><div class="ec" id="ec1" role="img" aria-label="Spend versus CPA for each ad, with the kill and scale curves"></div><p class="sub mono" id="bnote">Tip: use the box tool (top right of chart 1) to select a group of ads.</p></section>
@@ -302,6 +309,9 @@ const DATA = {
 <div id="dyn" style="display:grid;gap:16px"></div>`;
   const top = document.getElementById("top");
   document.querySelector(".charts").addEventListener("click", e => { const b = e.target.closest && e.target.closest(".chip[data-g]"); if (b) { sel = sel === b.dataset.g ? null : b.dataset.g; render(); } });
+  document.getElementById("own").addEventListener("click", e => { const b = e.target.closest && e.target.closest("button[data-own]"); if (b) { own = b.dataset.own; e2 && e2.dispatchAction({ type: "brush", areas: [] }); render(); } });
+  document.getElementById("mk").addEventListener("change", e => { markMoshi = e.target.checked; render(); });
+  document.getElementById("off").addEventListener("change", e => { showOff = e.target.checked; render(); });
   const dyn = document.getElementById("dyn"), tn = document.getElementById("tn"), tr = document.getElementById("tr"), tip = document.getElementById("tip");
   const setHash = () => { try { history.replaceState(null, "", pick ? "#ad=" + encodeURIComponent(byI[pick].id) : location.pathname + location.search); } catch (e) {} };
   const choose = (i, scrollTo) => { pick = pick === i && !scrollTo ? null : i; setHash(); tip.hidden = true; render(); const el = document.querySelector(scrollTo || ".det"); if (el && el.scrollIntoView) el.scrollIntoView({ behavior: "smooth", block: scrollTo ? "start" : "nearest" }); };
