@@ -92,7 +92,8 @@ in Ads Manager.
      `get_ad_performance` for thread-proven orders. Never add those to Meta's purchases.
 
 6. **Render.** Copy `assets/scale-or-kill.html` and replace only the `const DATA = {...};`
-   block. The page computes the zones, groups, curves, tiles and action table from the raw ad
+   block. The page draws both charts with Apache ECharts 5.5.0, loaded from cdnjs, with linked hover,
+   click-to-select, zoom on the spend axis and box-select. It computes the zones, groups, curves, tiles and action table from the raw ad
    rows. Don't pre-compute them into DATA. Publish the whole template, with your DATA block, as
    an artifact.
 
