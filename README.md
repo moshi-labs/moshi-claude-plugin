@@ -20,7 +20,7 @@ provides:
 - **Three guided workflows**, as MCP prompts: `flow_status_report`, `scale_what_works` and
   `weekly_newsletter`
 
-**2. Five skills** — longer playbooks that travel with the plugin, so Claude Code, Claude
+**2. Six skills** — longer playbooks that travel with the plugin, so Claude Code, Claude
 Desktop and Claude.ai all get them:
 
 - `scale-what-works` — the "which ads should I run next" conversation.
@@ -38,6 +38,10 @@ Desktop and Claude.ai all get them:
   campaigns: how many ads, which of your proven ads to clone and why (based on how earlier
   Moshi ads and DM vs website tests did), the flow each maps to, and the decisions to settle
   before building. Read-only.
+- `scale-or-kill` — which live ads to scale, keep testing or cut. Two charts read together:
+  spend vs CPA with 90%-confidence kill and scale curves around your target CPA, and CPMr vs
+  CPA split into efficient growth, reach play, precision and kill candidate. One action per
+  ad. Read-only.
 - `close-the-carts` — work the Closer queue: see who almost bought, bulk-draft a nudge for
   each, review them all in one pass, and send the ones you approve.
 
