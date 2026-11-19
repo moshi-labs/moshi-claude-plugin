@@ -1,0 +1,33 @@
+{
+ "_shape": "modelled-from-dto",
+ "conversationId": "conv_d17_008",
+ "totalMessages": 5,
+ "returned": 5,
+ "messages": [
+  {
+   "from": "customer",
+   "text": "Is the Fall Tins sampler a good gift for someone who mostly drinks coffee?",
+   "at": "2026-10-12T18:40:00Z"
+  },
+  {
+   "from": "agent",
+   "text": "It is! The chai and the harvest blend both have the body coffee drinkers like. Want me to add the gift box?",
+   "at": "2026-10-12T18:41:00Z"
+  },
+  {
+   "from": "customer",
+   "text": "yes add it",
+   "at": "2026-10-12T18:52:00Z"
+  },
+  {
+   "from": "agent",
+   "text": "Done: the sampler in a gift box is in your cart. Your checkout link is below.",
+   "at": "2026-10-12T18:52:30Z"
+  },
+  {
+   "from": "customer",
+   "text": "is the gift box still available?",
+   "at": "2026-10-12T19:05:00Z"
+  }
+ ]
+}

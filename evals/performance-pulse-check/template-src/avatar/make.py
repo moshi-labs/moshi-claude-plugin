@@ -1,7 +1,9 @@
 # Builds av.js (the embedded Moshi avatar) from the frontend's .lottie files.
 # usage: python3 -I make.py <frontend public/animations dir>
-# Needs Pillow. Writes av.js next to this file and prints byte counts.
-import json, sys, os, io, base64, gzip, zipfile
+# Needs Pillow and zopfli (pip install pillow zopfli). Writes av.js next to this
+# file and prints byte counts.
+import json, sys, os, io, base64, zipfile
+import zopfli.gzip
 from PIL import Image
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -103,7 +105,9 @@ for mood, (path, op) in MOODS.items():
     stats[mood] = (raw_total, len(raw_json), img_in, len(vec), img_out)
 
 js = json.dumps(blob, separators=(',', ':')).encode()
-gz = base64.b64encode(gzip.compress(js, 9, mtime=0)).decode()
+# zopfli writes the same gzip format as gzip -9, about 9% smaller (1.6 KB of
+# base64 here), and the page's DecompressionStream reads either.
+gz = base64.b64encode(zopfli.gzip.compress(js, numiterations=15)).decode()
 out = 'const AV={i:{%s},z:"%s"};' % (','.join('%s:"%s"' % (k, v[1]) for k, v in IMG.items()), gz)
 open(os.path.join(HERE, 'av.js'), 'w').write(out)
 for m, (rz, rj, ii, v, io_) in stats.items():

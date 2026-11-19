@@ -11,19 +11,21 @@ organization argument, so never pass one.
 
 ## The plan
 
-Make at most six reads, plus any splits the size guard needs. Never call
+Make at most seven reads, plus any splits the size guard needs. Never call
 once per ad. Dates are `YYYY-MM-DD`, include both ends, and are the ad
-account's own days. The report window is the one `get_ad_performance`
-returns; the Meta reads start early enough to cover it.
+account's own days. Read T1 and T2 first: they give each Moshi ad set's
+launch, which sets the report window (`data-contract.md` → Report
+window). T6 and T7 read that window.
 
 | Read | Arguments | Gives |
 |---|---|---|
-| T1 account | `dateFrom`: the earlier of `window.start` and 29 days before today (never more than 91 days before today), `dateTo`: today, `maxAds: 0` | `account`, `organization`, `flags`, and every campaign and ad set that delivered in those days, with no ad rows. Each campaign's `metrics` (`spend`, `purchases`, `purchaseValue`) are its `metaSpend`, `metaPurchases` and `metaPurchaseValue`, complete even though no ads are listed |
+| T1 account | `dateFrom`: the earliest of `get_ad_performance`'s `window.since`, the start of a window the merchant asked for, and 29 days before today (never more than 91 days before today), `dateTo`: today, `maxAds: 0` | `account`, `organization`, `flags`, and every campaign and ad set that delivered in those days, with no ad rows. Each campaign's `metrics` (`spend`, `purchases`, `purchaseValue`) are its `metaSpend`, `metaPurchases` and `metaPurchaseValue`, complete even though no ads are listed |
 | T2 Moshi ads | T1's `window.dateFrom` and `window.dateTo`, `granularity: "daily"`, `owner: "moshi"`, `maxAds: 500` | daily rows for every Moshi ad, with its `clonedFrom` and `creativeOverlap` |
 | T3 top ads | T1's dates, `granularity: "daily"`, `owner: "merchant"`, `maxAds: 3` | daily rows for the merchant's 3 top ads by spend |
 | T4 launches | `dateFrom`: 89 days before today, `dateTo`: today, `owner: "merchant"`, `maxAds: 0` | the merchant's campaigns that delivered in the last 90 days, each ad set with its `startTime`. A launch is an ad set, or a whole campaign, that started in those 90 days |
 | T5 one launch | `adsetIds`: the launch ad set, or every ad set T4 lists for a launch campaign, `granularity: "daily"`, `dateFrom`: its `startTime` day, `dateTo`: 13 days later | daily rows for every ad of the launch, days 1–14 |
-| T6 overlap | `adIds`: every `clonedFrom.adId` and `creativeOverlap[].adId` on the Moshi ads T2 returned, `granularity: "daily"`, `dateFrom`: `window.start`, `dateTo`: `window.end`, `maxAds: 200` | daily rows for each ad of yours a Moshi ad was cloned from or shares a creative with, and each of their ad sets' `metrics` for the report window (`adsets[].totals`). Same ads and the overlap callout read them |
+| T6 overlap | `adIds`: every `clonedFrom.adId` and `creativeOverlap[].adId` on the Moshi ads T2 returned, `granularity: "daily"`, `dateFrom`: `window.start`, `dateTo`: `window.end`, `maxAds: 200` | daily rows for each ad of yours a Moshi ad was cloned from or shares a creative with, and each of their ad sets' `metrics` for the report window. Same ads and the overlap callout read them |
+| T7 running | `dateFrom`: `window.start`, `dateTo`: `window.end`, `owner: "merchant"`, `maxAds: 500` | every campaign, ad set and ad of yours that delivered in the report window, each ad with its `funnel.linkClicks`. Each ad set's `metrics` and its ads' link clicks are its `totals`, which your running campaigns read |
 
 - Read T1 first. If its `flags` include `no_synced_ads`, Moshi has no Meta
   ad account connected or nothing has synced yet. Stop there and use
@@ -41,6 +43,10 @@ returns; the Meta reads start early enough to cover it.
   originals didn't run. When `requested_ids_unmatched` leaves one
   original out for any reason but "nothing delivered in this range",
   write that Moshi ad's `clonedFrom` as null.
+- Run T7 once, after the window is set, unless the mode is `moshi_only`,
+  no Moshi campaign spent in the window, or T1 lists no campaign of yours
+  with the primary campaign's objective. It lists ads but no daily rows,
+  so it adds no ads to DATA: only each merchant ad set's `totals`.
 - T1 never starts more than 91 days before today, so no daily read passes
   the tool's 92-day cap. When `window.start` is earlier than that, add
   "Meta numbers: only the last 92 days of the window" to
@@ -100,6 +106,7 @@ exception. On T1, T3 and T4 you set `maxAds` yourself, so an
 | `reach_pending` | Window reach was still loading, so every window `reach` is null | Use only the daily rows' `reach`. Window reach is unknown. Never sum or max the daily rows to stand in for it |
 | `partial_result` | Part of the account may be missing | Never present a total as the whole account's |
 | `ads_over_max_ads` (T2) | Moshi has more than 500 ads | Read the rest one campaign at a time, as the size guard does |
+| `ads_over_max_ads` (T7) | More than 500 of your ads delivered in the window | Keep the flag. An ad set with `adsOverMaxAds` gets `linkClicks: null`, so your running campaigns count only the ad sets listed in full |
 | `requested_ids_unmatched` | `unmatchedIds` gives a reason for each missing id | If the reason is "nothing delivered in this range", that ad set has no rows there. For any other reason, leave the id out and name it in `notMeasurableYet`. Never report it as zero |
 | An error that is not a size refusal | The read failed | If T1 failed, use `moshi_only`. If a later read failed, keep what loaded, add the flag `meta_read_failed`, and drop the parts that need the missing read. Never retry in a loop |
 
@@ -121,6 +128,10 @@ campaign at a time and keep every other argument. Never shorten the dates.
 - T3 or T4: if refused, skip it and add the missing part to
   `notMeasurableYet` (your top ads, or your launches).
 - T6: if refused, skip it as the plan says.
+- T7: make one call per campaign of yours with the primary campaign's
+  objective in the refusal's list, largest spend first, at most 5. Add
+  "Your running campaigns: only your largest were read" to
+  `notMeasurableYet`.
 - If a single ad set is still refused, leave it out and name it in
   `notMeasurableYet`.
 

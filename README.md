@@ -20,7 +20,7 @@ provides:
 - **Three guided workflows**, as MCP prompts: `flow_status_report`, `scale_what_works` and
   `weekly_newsletter`
 
-**2. Four skills** — longer playbooks that travel with the plugin, so Claude Code, Claude
+**2. Five skills** — longer playbooks that travel with the plugin, so Claude Code, Claude
 Desktop and Claude.ai all get them:
 
 - `scale-what-works` — the "which ads should I run next" conversation.
@@ -28,10 +28,16 @@ Desktop and Claude.ai all get them:
   run can write unattended.
 - `performance-pulse-check` — the "how are my Moshi ads doing" report. It reads the whole
   Meta ad account, leads with Moshi's biggest campaign, judges it by its age and objective,
-  and compares it with the merchant's own launches. It opens with what in the account is
+  and compares it with the merchant's own launches and the campaigns they are running. When
+  Moshi has just launched a new ad set, it reports the week before that launch, the baseline
+  the change is measured against. It opens with what in the account is
   skewing results, such as Moshi ads that reuse the merchant's live creatives and so
   compete with them in the same auctions. It needs only the Moshi connection: the Meta
   numbers come from Moshi's synced copy of the ad account, refreshed about every 6 hours.
+- `plan-next-flows` — a one-pager planning the next Moshi ad set inside one of your existing
+  campaigns: how many ads, which of your proven ads to clone and why (based on how earlier
+  Moshi ads and DM vs website tests did), the flow each maps to, and the decisions to settle
+  before building. Read-only.
 - `close-the-carts` — work the Closer queue: see who almost bought, bulk-draft a nudge for
   each, review them all in one pass, and send the ones you approve.
 
@@ -89,34 +95,33 @@ Use `--scope user` to make it available in every project rather than just the cu
 
 ## Claude Desktop and Claude.ai
 
-Install the plugin — it brings the MCP server and the skills in together. Same flow on the
-desktop app, the web app and Cowork; available on all paid plans (Pro, Max, Team,
-Enterprise).
+Same flow in Cowork, the desktop app, claude.ai and mobile.
 
-1. Open **Customize** in the left sidebar, then the **Plugins** tab.
-   In Cowork, open **Customize** from the **Cowork** tab first.
-2. Under **Personal plugins**, click **+ → Add marketplace**
-3. Choose **Add from a repository** and give it
-   `https://github.com/moshi-labs/moshi-claude-plugin`
-4. Install **moshi**, then sign in to Moshi when it prompts you to connect
+### Connect Moshi
 
-The three guided workflows are MCP *prompts*, and prompts live somewhere other than the tools
-list: click the **+** button in the composer, then **Connectors → moshi**. A prompt that is
-working perfectly will never show up under tools, so look there before assuming something is
-broken.
-
-The desktop app only starts connectors at launch — quit it fully and reopen if Moshi does not
-show up.
-
-### Just the MCP server
-
-Plugins need a paid plan. On Free, or if you want the tools without the rest, add the server
-as a custom connector instead: **Customize → Connectors → + → Add custom connector**, URL
-`https://mcp.moshi.ai/mcp`, then **Connect** and sign in.
+1. **Customize → Connectors → + → Add custom connector**
+2. URL: `https://mcp.moshi.ai/mcp`
+3. **Connect**, sign in to Moshi, and pick your organization
 
 On Team and Enterprise an Owner adds it once for the whole workspace under **Organization
 settings → Connectors → Add**, hovering **Custom** and picking **Web**. Members then click
 **Connect** under **Customize → Connectors** to sign in as themselves.
+
+### Add the plugin (optional)
+
+The plugin adds the skills on top of the same connection. Plugins need a paid plan (Pro, Max,
+Team, Enterprise).
+
+1. Open **Customize → Plugins**. In Cowork, open **Customize** from the **Cowork** tab first.
+2. Under **Personal plugins**, click **+ → Add marketplace → Add from a repository** and give
+   it `https://github.com/moshi-labs/moshi-claude-plugin`
+3. Install **moshi**
+
+The guided workflows are MCP *prompts*, which live under **+ → Connectors → moshi** in the
+composer, not in the tools list.
+
+The desktop app only starts connectors at launch. Quit it fully and reopen if Moshi doesn't
+show up.
 
 ## ChatGPT
 
@@ -191,6 +196,7 @@ plugins/moshi/
 ├── skills/scale-what-works/      the ads-scaling playbook
 ├── skills/weekly-newsletter/     the weekly merchant newsletter
 ├── skills/performance-pulse-check/  the ads pulse-check report
+├── skills/plan-next-flows/      the next-Moshi-ad-set one-pager
 └── skills/close-the-carts/       the Closer queue: bulk-draft, review, send
 evals/performance-pulse-check/    synthetic fixtures, rubric and template source (not shipped)
 ```

@@ -1,0 +1,875 @@
+{
+ "organization": {
+  "id": "3c1f7a52-9e4b-5d08-a6c2-7b1e0d4f9a83",
+  "name": "Wren & Thistle Tea"
+ },
+ "account": {
+  "currency": "USD",
+  "timezone": "America/Los_Angeles"
+ },
+ "window": {
+  "dateFrom": "2026-10-03",
+  "dateTo": "2026-10-09",
+  "days": 7,
+  "granularity": "total",
+  "note": "Inclusive: every day from dateFrom through dateTo, as Meta's insight days in the ad account's timezone."
+ },
+ "source": "Moshi's synced copy of the organization's Meta ad account (every campaign, Moshi-created and the merchant's own), refreshed about every 6 hours.",
+ "flags": [],
+ "counts": {
+  "campaigns": 4,
+  "adsets": 5,
+  "ads": 17,
+  "adsListed": 17,
+  "adsOverMaxAds": 0,
+  "omittedForNoDelivery": {
+   "campaigns": 0,
+   "adsets": 0,
+   "ads": 0
+  }
+ },
+ "campaigns": [
+  {
+   "campaignId": "1202700000000101",
+   "campaignName": "Evergreen | ASC | US",
+   "owner": "merchant",
+   "status": "ACTIVE",
+   "objective": "OUTCOME_SALES",
+   "startTime": "2026-03-03T09:00:00-0800",
+   "dailyBudget": "60000",
+   "adsetCount": 1,
+   "adCount": 9,
+   "moshiAdCount": 0,
+   "metrics": {
+    "reach": 82873,
+    "impressions": 268224,
+    "spend": 4254.89,
+    "roas": 1.1544,
+    "purchases": 113,
+    "purchaseValue": 4911.96,
+    "cpm": 15.8632,
+    "messagingConversationsStarted": 0,
+    "costPerMessagingConversationStarted": null
+   },
+   "adsets": [
+    {
+     "adsetId": "1202700000000111",
+     "adsetName": "Advantage+ shopping",
+     "owner": "merchant",
+     "status": "ACTIVE",
+     "effectiveStatus": "ACTIVE",
+     "adsetStatus": "ACTIVE",
+     "startTime": "2026-03-03T09:00:00-0800",
+     "optimizationGoal": "OFFSITE_CONVERSIONS",
+     "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
+     "attributionSpec": [
+      {
+       "eventType": "CLICK_THROUGH",
+       "windowDays": 7
+      },
+      {
+       "eventType": "VIEW_THROUGH",
+       "windowDays": 1
+      }
+     ],
+     "lastSignificantEditAt": "2026-09-02T17:00:00.000Z",
+     "learningPhase": {
+      "status": "SUCCESS",
+      "learningWindowEndsAt": "2026-09-09T17:00:00.000Z"
+     },
+     "adCount": 9,
+     "moshiAdCount": 0,
+     "metrics": {
+      "reach": 86640,
+      "impressions": 268224,
+      "spend": 4254.89,
+      "roas": 1.1544,
+      "purchases": 113,
+      "purchaseValue": 4911.96,
+      "cpm": 15.8632,
+      "messagingConversationsStarted": 0,
+      "costPerMessagingConversationStarted": null
+     },
+     "ads": [
+      {
+       "adId": "1202700000000121",
+       "adName": "Fall Tins | Flat lay",
+       "owner": "merchant",
+       "moshiFlowId": null,
+       "status": "ACTIVE",
+       "effectiveStatus": "ACTIVE",
+       "creativeType": "video",
+       "ctaType": "SHOP_NOW",
+       "metrics": {
+        "reach": 26341,
+        "impressions": 79719,
+        "spend": 1300.82,
+        "roas": 1.175,
+        "purchases": 36,
+        "purchaseValue": 1528.48,
+        "cpm": 16.3176,
+        "messagingConversationsStarted": 0,
+        "costPerMessagingConversationStarted": null
+       },
+       "funnel": {
+        "clicks": 1536,
+        "linkClicks": 1122,
+        "ctr": 1.9268,
+        "landingPageViews": 875,
+        "addToCart": 98,
+        "initiateCheckout": 56,
+        "leads": 0,
+        "videoViews": 16741,
+        "postEngagement": 2151
+       }
+      },
+      {
+       "adId": "1202700000000122",
+       "adName": "Steeping ritual | UGC",
+       "owner": "merchant",
+       "moshiFlowId": null,
+       "status": "ACTIVE",
+       "effectiveStatus": "ACTIVE",
+       "creativeType": "video",
+       "ctaType": "SHOP_NOW",
+       "metrics": {
+        "reach": 21926,
+        "impressions": 64732,
+        "spend": 1009.08,
+        "roas": 1.2642,
+        "purchases": 28,
+        "purchaseValue": 1275.63,
+        "cpm": 15.5886,
+        "messagingConversationsStarted": 0,
+        "costPerMessagingConversationStarted": null
+       },
+       "funnel": {
+        "clicks": 1195,
+        "linkClicks": 866,
+        "ctr": 1.8461,
+        "landingPageViews": 675,
+        "addToCart": 73,
+        "initiateCheckout": 45,
+        "leads": 0,
+        "videoViews": 13593,
+        "postEngagement": 1672
+       }
+      },
+      {
+       "adId": "1202700000000123",
+       "adName": "Bestsellers | Carousel",
+       "owner": "merchant",
+       "moshiFlowId": null,
+       "status": "ACTIVE",
+       "effectiveStatus": "ACTIVE",
+       "creativeType": "image",
+       "ctaType": "SHOP_NOW",
+       "metrics": {
+        "reach": 15740,
+        "impressions": 45177,
+        "spend": 757.74,
+        "roas": 1.1709,
+        "purchases": 21,
+        "purchaseValue": 887.22,
+        "cpm": 16.7727,
+        "messagingConversationsStarted": 0,
+        "costPerMessagingConversationStarted": null
+       },
+       "funnel": {
+        "clicks": 783,
+        "linkClicks": 570,
+        "ctr": 1.7332,
+        "landingPageViews": 445,
+        "addToCart": 58,
+        "initiateCheckout": 35,
+        "leads": 0,
+        "videoViews": 0,
+        "postEngagement": 1096
+       }
+      },
+      {
+       "adId": "1202700000000124",
+       "adName": "Founder story",
+       "owner": "merchant",
+       "moshiFlowId": null,
+       "status": "ACTIVE",
+       "effectiveStatus": "ACTIVE",
+       "creativeType": "video",
+       "ctaType": "SHOP_NOW",
+       "metrics": {
+        "reach": 13210,
+        "impressions": 35989,
+        "spend": 559.15,
+        "roas": 1.1534,
+        "purchases": 14,
+        "purchaseValue": 644.91,
+        "cpm": 15.5367,
+        "messagingConversationsStarted": 0,
+        "costPerMessagingConversationStarted": null
+       },
+       "funnel": {
+        "clicks": 610,
+        "linkClicks": 445,
+        "ctr": 1.695,
+        "landingPageViews": 347,
+        "addToCart": 39,
+        "initiateCheckout": 24,
+        "leads": 0,
+        "videoViews": 7557,
+        "postEngagement": 855
+       }
+      },
+      {
+       "adId": "1202700000000125",
+       "adName": "Iced tea season",
+       "owner": "merchant",
+       "moshiFlowId": null,
+       "status": "ACTIVE",
+       "effectiveStatus": "ACTIVE",
+       "creativeType": "image",
+       "ctaType": "SHOP_NOW",
+       "metrics": {
+        "reach": 9175,
+        "impressions": 23195,
+        "spend": 350.81,
+        "roas": 0.831,
+        "purchases": 7,
+        "purchaseValue": 291.53,
+        "cpm": 15.1244,
+        "messagingConversationsStarted": 0,
+        "costPerMessagingConversationStarted": null
+       },
+       "funnel": {
+        "clicks": 358,
+        "linkClicks": 258,
+        "ctr": 1.5434,
+        "landingPageViews": 202,
+        "addToCart": 22,
+        "initiateCheckout": 14,
+        "leads": 0,
+        "videoViews": 0,
+        "postEngagement": 502
+       }
+      },
+      {
+       "adId": "1202700000000126",
+       "adName": "Sampler | Static",
+       "owner": "merchant",
+       "moshiFlowId": null,
+       "status": "ACTIVE",
+       "effectiveStatus": "ACTIVE",
+       "creativeType": "image",
+       "ctaType": "SHOP_NOW",
+       "metrics": {
+        "reach": 7782,
+        "impressions": 19412,
+        "spend": 277.29,
+        "roas": 1.0249,
+        "purchases": 7,
+        "purchaseValue": 284.19,
+        "cpm": 14.2845,
+        "messagingConversationsStarted": 0,
+        "costPerMessagingConversationStarted": null
+       },
+       "funnel": {
+        "clicks": 289,
+        "linkClicks": 214,
+        "ctr": 1.4888,
+        "landingPageViews": 167,
+        "addToCart": 22,
+        "initiateCheckout": 14,
+        "leads": 0,
+        "videoViews": 0,
+        "postEngagement": 403
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "campaignId": "1202700000000201",
+   "campaignName": "RTG | Site + IG 30d",
+   "owner": "merchant",
+   "status": "ACTIVE",
+   "objective": "OUTCOME_SALES",
+   "startTime": "2026-05-12T09:00:00-0700",
+   "adsetCount": 2,
+   "adCount": 6,
+   "moshiAdCount": 0,
+   "metrics": {
+    "reach": 29622,
+    "impressions": 92783,
+    "spend": 1410.53,
+    "roas": 0.9121,
+    "purchases": 31,
+    "purchaseValue": 1286.54,
+    "cpm": 15.2025,
+    "messagingConversationsStarted": 0,
+    "costPerMessagingConversationStarted": null
+   },
+   "adsets": [
+    {
+     "adsetId": "1202700000000211",
+     "adsetName": "Broad 25-54",
+     "owner": "merchant",
+     "status": "ACTIVE",
+     "effectiveStatus": "ACTIVE",
+     "adsetStatus": "ACTIVE",
+     "startTime": "2026-05-12T09:00:00-0700",
+     "optimizationGoal": "OFFSITE_CONVERSIONS",
+     "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
+     "dailyBudget": "16000",
+     "attributionSpec": [
+      {
+       "eventType": "CLICK_THROUGH",
+       "windowDays": 7
+      },
+      {
+       "eventType": "VIEW_THROUGH",
+       "windowDays": 1
+      }
+     ],
+     "lastSignificantEditAt": "2026-08-14T16:00:00.000Z",
+     "learningPhase": {
+      "status": "SUCCESS",
+      "learningWindowEndsAt": "2026-08-21T16:00:00.000Z"
+     },
+     "adCount": 4,
+     "moshiAdCount": 0,
+     "metrics": {
+      "reach": 29032,
+      "impressions": 84075,
+      "spend": 1133.37,
+      "roas": 0.9555,
+      "purchases": 26,
+      "purchaseValue": 1082.98,
+      "cpm": 13.4805,
+      "messagingConversationsStarted": 0,
+      "costPerMessagingConversationStarted": null
+     },
+     "ads": [
+      {
+       "adId": "1202700000000221",
+       "adName": "Morning cup | Reel",
+       "owner": "merchant",
+       "moshiFlowId": null,
+       "status": "ACTIVE",
+       "effectiveStatus": "ACTIVE",
+       "creativeType": "video",
+       "ctaType": "SHOP_NOW",
+       "metrics": {
+        "reach": 12984,
+        "impressions": 35483,
+        "spend": 493.47,
+        "roas": 1.185,
+        "purchases": 14,
+        "purchaseValue": 584.75,
+        "cpm": 13.9072,
+        "messagingConversationsStarted": 0,
+        "costPerMessagingConversationStarted": null
+       },
+       "funnel": {
+        "clicks": 787,
+        "linkClicks": 573,
+        "ctr": 2.218,
+        "landingPageViews": 446,
+        "addToCart": 39,
+        "initiateCheckout": 22,
+        "leads": 0,
+        "videoViews": 7452,
+        "postEngagement": 1101
+       }
+      },
+      {
+       "adId": "1202700000000222",
+       "adName": "Gift set | Static",
+       "owner": "merchant",
+       "moshiFlowId": null,
+       "status": "ACTIVE",
+       "effectiveStatus": "ACTIVE",
+       "creativeType": "image",
+       "ctaType": "SHOP_NOW",
+       "metrics": {
+        "reach": 10931,
+        "impressions": 29025,
+        "spend": 384.46,
+        "roas": 1.0052,
+        "purchases": 9,
+        "purchaseValue": 386.45,
+        "cpm": 13.2458,
+        "messagingConversationsStarted": 0,
+        "costPerMessagingConversationStarted": null
+       },
+       "funnel": {
+        "clicks": 582,
+        "linkClicks": 428,
+        "ctr": 2.0052,
+        "landingPageViews": 334,
+        "addToCart": 27,
+        "initiateCheckout": 18,
+        "leads": 0,
+        "videoViews": 0,
+        "postEngagement": 815
+       }
+      },
+      {
+       "adId": "1202700000000223",
+       "adName": "Loose leaf 101",
+       "owner": "merchant",
+       "moshiFlowId": null,
+       "status": "ACTIVE",
+       "effectiveStatus": "ACTIVE",
+       "creativeType": "video",
+       "ctaType": "SHOP_NOW",
+       "metrics": {
+        "reach": 7642,
+        "impressions": 19567,
+        "spend": 255.44,
+        "roas": 0.4376,
+        "purchases": 3,
+        "purchaseValue": 111.78,
+        "cpm": 13.0546,
+        "messagingConversationsStarted": 0,
+        "costPerMessagingConversationStarted": null
+       },
+       "funnel": {
+        "clicks": 354,
+        "linkClicks": 263,
+        "ctr": 1.8092,
+        "landingPageViews": 205,
+        "addToCart": 11,
+        "initiateCheckout": 7,
+        "leads": 0,
+        "videoViews": 4107,
+        "postEngagement": 496
+       }
+      }
+     ]
+    },
+    {
+     "adsetId": "1202700000000212",
+     "adsetName": "Site visitors 30d",
+     "owner": "merchant",
+     "status": "ACTIVE",
+     "effectiveStatus": "ACTIVE",
+     "adsetStatus": "ACTIVE",
+     "startTime": "2026-05-12T09:00:00-0700",
+     "optimizationGoal": "OFFSITE_CONVERSIONS",
+     "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
+     "dailyBudget": "4000",
+     "attributionSpec": [
+      {
+       "eventType": "CLICK_THROUGH",
+       "windowDays": 7
+      },
+      {
+       "eventType": "VIEW_THROUGH",
+       "windowDays": 1
+      }
+     ],
+     "lastSignificantEditAt": "2026-08-14T16:00:00.000Z",
+     "learningPhase": {
+      "status": "FAIL",
+      "learningWindowEndsAt": "2026-08-21T16:00:00.000Z"
+     },
+     "adCount": 2,
+     "moshiAdCount": 0,
+     "metrics": {
+      "reach": 1936,
+      "impressions": 8708,
+      "spend": 277.16,
+      "roas": 0.7344,
+      "purchases": 5,
+      "purchaseValue": 203.56,
+      "cpm": 31.8282,
+      "messagingConversationsStarted": 0,
+      "costPerMessagingConversationStarted": null
+     },
+     "ads": [
+      {
+       "adId": "1202700000000224",
+       "adName": "Come back | 10% off",
+       "owner": "merchant",
+       "moshiFlowId": null,
+       "status": "ACTIVE",
+       "effectiveStatus": "ACTIVE",
+       "creativeType": "image",
+       "ctaType": "SHOP_NOW",
+       "metrics": {
+        "reach": 1336,
+        "impressions": 5602,
+        "spend": 172.92,
+        "roas": 0.6927,
+        "purchases": 3,
+        "purchaseValue": 119.78,
+        "cpm": 30.8675,
+        "messagingConversationsStarted": 0,
+        "costPerMessagingConversationStarted": null
+       },
+       "funnel": {
+        "clicks": 246,
+        "linkClicks": 180,
+        "ctr": 4.3913,
+        "landingPageViews": 141,
+        "addToCart": 12,
+        "initiateCheckout": 9,
+        "leads": 0,
+        "videoViews": 0,
+        "postEngagement": 346
+       }
+      },
+      {
+       "adId": "1202700000000225",
+       "adName": "Still thinking? | Reel",
+       "owner": "merchant",
+       "moshiFlowId": null,
+       "status": "ACTIVE",
+       "effectiveStatus": "ACTIVE",
+       "creativeType": "video",
+       "ctaType": "SHOP_NOW",
+       "metrics": {
+        "reach": 768,
+        "impressions": 3106,
+        "spend": 104.24,
+        "roas": 0.8037,
+        "purchases": 2,
+        "purchaseValue": 83.78,
+        "cpm": 33.5608,
+        "messagingConversationsStarted": 0,
+        "costPerMessagingConversationStarted": null
+       },
+       "funnel": {
+        "clicks": 134,
+        "linkClicks": 97,
+        "ctr": 4.3142,
+        "landingPageViews": 75,
+        "addToCart": 7,
+        "initiateCheckout": 6,
+        "leads": 0,
+        "videoViews": 653,
+        "postEngagement": 187
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "campaignId": "1202700000000301",
+   "campaignName": "Fall Tins | Launch",
+   "owner": "merchant",
+   "status": "ACTIVE",
+   "objective": "OUTCOME_SALES",
+   "startTime": "2026-09-15T09:00:00-0700",
+   "adsetCount": 1,
+   "adCount": 4,
+   "moshiAdCount": 0,
+   "metrics": {
+    "reach": 31407,
+    "impressions": 53141,
+    "spend": 818.13,
+    "roas": 0.9091,
+    "purchases": 17,
+    "purchaseValue": 743.73,
+    "cpm": 15.3955,
+    "messagingConversationsStarted": 0,
+    "costPerMessagingConversationStarted": null
+   },
+   "adsets": [
+    {
+     "adsetId": "1202700000000311",
+     "adsetName": "Fall Tins | Broad",
+     "owner": "merchant",
+     "status": "ACTIVE",
+     "effectiveStatus": "ACTIVE",
+     "adsetStatus": "ACTIVE",
+     "startTime": "2026-09-15T09:00:00-0700",
+     "optimizationGoal": "OFFSITE_CONVERSIONS",
+     "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
+     "dailyBudget": "12000",
+     "attributionSpec": [
+      {
+       "eventType": "CLICK_THROUGH",
+       "windowDays": 7
+      },
+      {
+       "eventType": "VIEW_THROUGH",
+       "windowDays": 1
+      }
+     ],
+     "lastSignificantEditAt": "2026-09-15T16:00:00.000Z",
+     "learningPhase": {
+      "status": "SUCCESS",
+      "learningWindowEndsAt": "2026-09-22T16:00:00.000Z"
+     },
+     "adCount": 4,
+     "moshiAdCount": 0,
+     "metrics": {
+      "reach": 32834,
+      "impressions": 53141,
+      "spend": 818.13,
+      "roas": 0.9091,
+      "purchases": 17,
+      "purchaseValue": 743.73,
+      "cpm": 15.3955,
+      "messagingConversationsStarted": 0,
+      "costPerMessagingConversationStarted": null
+     },
+     "ads": [
+      {
+       "adId": "1202700000000321",
+       "adName": "Tin stack | Reel",
+       "owner": "merchant",
+       "moshiFlowId": null,
+       "status": "ACTIVE",
+       "effectiveStatus": "ACTIVE",
+       "creativeType": "video",
+       "ctaType": "SHOP_NOW",
+       "metrics": {
+        "reach": 13238,
+        "impressions": 19973,
+        "spend": 306.1,
+        "roas": 1.125,
+        "purchases": 8,
+        "purchaseValue": 344.35,
+        "cpm": 15.3257,
+        "messagingConversationsStarted": 0,
+        "costPerMessagingConversationStarted": null
+       },
+       "funnel": {
+        "clicks": 439,
+        "linkClicks": 325,
+        "ctr": 2.198,
+        "landingPageViews": 254,
+        "addToCart": 26,
+        "initiateCheckout": 15,
+        "leads": 0,
+        "videoViews": 4193,
+        "postEngagement": 615
+       }
+      },
+      {
+       "adId": "1202700000000322",
+       "adName": "Harvest blend | Static",
+       "owner": "merchant",
+       "moshiFlowId": null,
+       "status": "ACTIVE",
+       "effectiveStatus": "ACTIVE",
+       "creativeType": "image",
+       "ctaType": "SHOP_NOW",
+       "metrics": {
+        "reach": 11044,
+        "impressions": 16445,
+        "spend": 239.55,
+        "roas": 0.9289,
+        "purchases": 5,
+        "purchaseValue": 222.52,
+        "cpm": 14.5667,
+        "messagingConversationsStarted": 0,
+        "costPerMessagingConversationStarted": null
+       },
+       "funnel": {
+        "clicks": 356,
+        "linkClicks": 258,
+        "ctr": 2.1648,
+        "landingPageViews": 202,
+        "addToCart": 16,
+        "initiateCheckout": 10,
+        "leads": 0,
+        "videoViews": 0,
+        "postEngagement": 498
+       }
+      },
+      {
+       "adId": "1202700000000323",
+       "adName": "Pumpkin chai | UGC",
+       "owner": "merchant",
+       "moshiFlowId": null,
+       "status": "ACTIVE",
+       "effectiveStatus": "ACTIVE",
+       "creativeType": "video",
+       "ctaType": "SHOP_NOW",
+       "metrics": {
+        "reach": 7308,
+        "impressions": 10830,
+        "spend": 173.85,
+        "roas": 1.0173,
+        "purchases": 4,
+        "purchaseValue": 176.86,
+        "cpm": 16.0526,
+        "messagingConversationsStarted": 0,
+        "costPerMessagingConversationStarted": null
+       },
+       "funnel": {
+        "clicks": 213,
+        "linkClicks": 156,
+        "ctr": 1.9668,
+        "landingPageViews": 121,
+        "addToCart": 15,
+        "initiateCheckout": 11,
+        "leads": 0,
+        "videoViews": 2274,
+        "postEngagement": 298
+       }
+      },
+      {
+       "adId": "1202700000000324",
+       "adName": "Gift tin | Carousel",
+       "owner": "merchant",
+       "moshiFlowId": null,
+       "status": "ACTIVE",
+       "effectiveStatus": "ACTIVE",
+       "creativeType": "image",
+       "ctaType": "SHOP_NOW",
+       "metrics": {
+        "reach": 4099,
+        "impressions": 5893,
+        "spend": 98.63,
+        "roas": 0,
+        "purchases": 0,
+        "purchaseValue": 0,
+        "cpm": 16.7368,
+        "messagingConversationsStarted": 0,
+        "costPerMessagingConversationStarted": null
+       },
+       "funnel": {
+        "clicks": 113,
+        "linkClicks": 84,
+        "ctr": 1.9175,
+        "landingPageViews": 66,
+        "addToCart": 4,
+        "initiateCheckout": 4,
+        "leads": 0,
+        "videoViews": 0,
+        "postEngagement": 159
+       }
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "campaignId": "1202700000000401",
+   "campaignName": "Brand | Video views",
+   "owner": "merchant",
+   "status": "ACTIVE",
+   "objective": "OUTCOME_AWARENESS",
+   "startTime": "2026-08-20T09:00:00-0700",
+   "adsetCount": 1,
+   "adCount": 2,
+   "moshiAdCount": 0,
+   "metrics": {
+    "reach": 15444,
+    "impressions": 34969,
+    "spend": 207.97,
+    "roas": 0,
+    "purchases": 0,
+    "purchaseValue": 0,
+    "cpm": 5.9473,
+    "messagingConversationsStarted": 0,
+    "costPerMessagingConversationStarted": null
+   },
+   "adsets": [
+    {
+     "adsetId": "1202700000000411",
+     "adsetName": "Reach 18-44",
+     "owner": "merchant",
+     "status": "ACTIVE",
+     "effectiveStatus": "ACTIVE",
+     "adsetStatus": "ACTIVE",
+     "startTime": "2026-08-20T09:00:00-0700",
+     "optimizationGoal": "THRUPLAY",
+     "bidStrategy": "LOWEST_COST_WITHOUT_CAP",
+     "dailyBudget": "3000",
+     "attributionSpec": [
+      {
+       "eventType": "CLICK_THROUGH",
+       "windowDays": 1
+      }
+     ],
+     "lastSignificantEditAt": "2026-08-20T16:00:00.000Z",
+     "adCount": 2,
+     "moshiAdCount": 0,
+     "metrics": {
+      "reach": 16146,
+      "impressions": 34969,
+      "spend": 207.97,
+      "roas": 0,
+      "purchases": 0,
+      "purchaseValue": 0,
+      "cpm": 5.9473,
+      "messagingConversationsStarted": 0,
+      "costPerMessagingConversationStarted": null
+     },
+     "ads": [
+      {
+       "adId": "1202700000000421",
+       "adName": "Garden to cup | 15s",
+       "owner": "merchant",
+       "moshiFlowId": null,
+       "status": "ACTIVE",
+       "effectiveStatus": "ACTIVE",
+       "creativeType": "video",
+       "ctaType": "SHOP_NOW",
+       "metrics": {
+        "reach": 10436,
+        "impressions": 21064,
+        "spend": 128.08,
+        "roas": 0,
+        "purchases": 0,
+        "purchaseValue": 0,
+        "cpm": 6.0805,
+        "messagingConversationsStarted": 0,
+        "costPerMessagingConversationStarted": null
+       },
+       "funnel": {
+        "clicks": 108,
+        "linkClicks": 78,
+        "ctr": 0.5127,
+        "landingPageViews": 61,
+        "addToCart": 3,
+        "initiateCheckout": 4,
+        "leads": 0,
+        "videoViews": 4424,
+        "postEngagement": 150
+       }
+      },
+      {
+       "adId": "1202700000000422",
+       "adName": "Tea farm | 6s",
+       "owner": "merchant",
+       "moshiFlowId": null,
+       "status": "ACTIVE",
+       "effectiveStatus": "ACTIVE",
+       "creativeType": "video",
+       "ctaType": "SHOP_NOW",
+       "metrics": {
+        "reach": 7114,
+        "impressions": 13905,
+        "spend": 79.89,
+        "roas": 0,
+        "purchases": 0,
+        "purchaseValue": 0,
+        "cpm": 5.7454,
+        "messagingConversationsStarted": 0,
+        "costPerMessagingConversationStarted": null
+       },
+       "funnel": {
+        "clicks": 61,
+        "linkClicks": 44,
+        "ctr": 0.4387,
+        "landingPageViews": 34,
+        "addToCart": 0,
+        "initiateCheckout": 4,
+        "leads": 0,
+        "videoViews": 2920,
+        "postEngagement": 86
+       }
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

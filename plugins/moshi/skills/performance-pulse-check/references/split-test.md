@@ -40,6 +40,12 @@ ROAS. Next reads are each ad set's gate dates from `stage-gates.md`
 (day 4 for cost per chat, day 8 for the first CPA). Before day 8, name no
 winner: "One day is too early to call either."
 
+A test that launched in the last 7 days makes the report window the 7
+days before it (`data-contract.md` → Report window), so the rest of the
+report is the baseline the test is measured against. This section is
+then the only place the test shows: its numbers cover the test's own
+days so far, and the sub line's launch day says so.
+
 ## The snippet
 
 Put this `<script>` after the script that holds `const DATA` (the last

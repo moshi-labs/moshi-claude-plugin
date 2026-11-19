@@ -1,0 +1,62 @@
+{
+ "_shape": "modelled-from-dto",
+ "window": {
+  "since": "2026-09-27",
+  "displayUntil": "2026-10-13",
+  "period": "custom",
+  "note": "Inclusive range: every day from `since` through `displayUntil`. Render that as the period covered."
+ },
+ "organization": {
+  "id": "3c1f7a52-9e4b-5d08-a6c2-7b1e0d4f9a83",
+  "name": "Wren & Thistle Tea",
+  "dashboardUrl": "https://wrenandthistle.moshi.ai"
+ },
+ "nudgesSent": 4,
+ "nudgedThenPurchased": 1,
+ "stillReachable": {
+  "count": 3,
+  "cartValue": 132,
+  "cartValueUnknownCount": 1,
+  "topLeads": [
+   {
+    "conversationId": "conv_d17_008",
+    "platform": "instagram",
+    "heat": 71,
+    "bucket": "HOT",
+    "lastCartValue": 64,
+    "abandonmentStage": "cart",
+    "windowClosesAt": "2026-10-13T19:05:00Z",
+    "heldByHuman": false
+   },
+   {
+    "conversationId": "conv_d17_011",
+    "platform": "instagram",
+    "heat": 66,
+    "bucket": "HOT",
+    "lastCartValue": 68,
+    "abandonmentStage": "checkout",
+    "windowClosesAt": "2026-10-13T21:30:00Z",
+    "heldByHuman": false
+   }
+  ]
+ },
+ "windowClosed": {
+  "count": 6,
+  "cartValue": 241,
+  "cartValueUnknownCount": 2
+ },
+ "noLongerEligible": {
+  "count": 2
+ },
+ "criteria": {
+  "windowHours": 24,
+  "nudgeCooldownHours": 72,
+  "dailyCap": 20
+ },
+ "flags": [
+  {
+   "code": "partial_period",
+   "message": "The window ends today, so today is still counting."
+  }
+ ]
+}

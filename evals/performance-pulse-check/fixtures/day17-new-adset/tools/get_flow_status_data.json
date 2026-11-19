@@ -1,0 +1,53 @@
+{
+ "_shape": "modelled-from-description",
+ "organizationName": "Wren & Thistle Tea",
+ "currency": "USD",
+ "timezone": "America/Los_Angeles",
+ "window": {
+  "since": "2026-09-27",
+  "displayUntil": "2026-10-13",
+  "period": "since_launch",
+  "note": "Inclusive range: every day from `since` through `displayUntil`. Render that as the period covered."
+ },
+ "scorecard": {
+  "chats": 144,
+  "productViews": 41,
+  "carts": 13,
+  "checkouts": 9,
+  "purchases": 8
+ },
+ "funnel": {
+  "chats": 144,
+  "productViews": 41,
+  "carts": 13,
+  "checkouts": 9,
+  "orders": 8
+ },
+ "leads": {
+  "total": 144,
+  "hot": 12,
+  "warm": 37,
+  "cold": 95
+ },
+ "openCarts": {
+  "count": 5,
+  "valueKnown": false
+ },
+ "closer": {
+  "recoveries": 1,
+  "revenue": 48
+ },
+ "flags": [
+  {
+   "code": "partial_period",
+   "text": "The window ends today, so today is still counting."
+  }
+ ],
+ "transcriptsToRead": {
+  "conversationIds": [
+   "conv_d17_008",
+   "conv_d17_011",
+   "conv_d17_013"
+  ]
+ }
+}

@@ -1,0 +1,28 @@
+{
+ "_shape": "modelled-from-dto",
+ "conversationId": "conv_d17_011",
+ "totalMessages": 4,
+ "returned": 4,
+ "messages": [
+  {
+   "from": "customer",
+   "text": "Do you ship to Canada?",
+   "at": "2026-10-12T21:10:00Z"
+  },
+  {
+   "from": "agent",
+   "text": "We do, in 5 to 8 business days. Shipping is free over $60.",
+   "at": "2026-10-12T21:10:40Z"
+  },
+  {
+   "from": "customer",
+   "text": "ok checking out now",
+   "at": "2026-10-12T21:22:00Z"
+  },
+  {
+   "from": "agent",
+   "text": "Lovely! Your cart holds the tin stack and the harvest blend. Tap the link to finish when you are ready.",
+   "at": "2026-10-12T21:30:00Z"
+  }
+ ]
+}

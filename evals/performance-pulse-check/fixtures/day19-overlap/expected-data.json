@@ -54,6 +54,7 @@
           "totals": {
             "spend": 8381.13,
             "impressions": 404126,
+            "linkClicks": null,
             "conversations": 0,
             "purchases": 208,
             "purchaseValue": 9099.65
@@ -429,6 +430,7 @@
           "totals": {
             "spend": 7229.8,
             "impressions": 462949,
+            "linkClicks": null,
             "conversations": 0,
             "purchases": 161,
             "purchaseValue": 7053.69
@@ -1412,6 +1414,7 @@
           "totals": {
             "spend": 15393.76,
             "impressions": 696227,
+            "linkClicks": null,
             "conversations": 0,
             "purchases": 354,
             "purchaseValue": 15052.2

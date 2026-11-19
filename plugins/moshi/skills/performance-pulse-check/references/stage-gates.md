@@ -31,6 +31,12 @@ question.
 - The reset clock decides the stage and the next gate. The launch clock
   (days since day 1) decides comparisons and fatigue. A reset
   never delays those.
+- Age, stage and gates count to today (`asOf`), even when the report
+  window ends earlier, as a baseline window does: a gate is a date ahead
+  of the merchant. The window's numbers are judged at the stage the
+  campaign had reached on the window's last day. When that day was before
+  day 8, give no ROAS, CPA, purchase or order-value verdict on them, even
+  if today is past day 8; the funnel then calls Meta's ROAS too early.
 - Never infer learning status or a reset from the metrics. Learning status
   is `learningPhase.status`, and Meta reports it only for ACTIVE ad sets.
   If Meta does not show it, say nothing about learning.
@@ -73,8 +79,11 @@ not reached its readable date.
 | `agent_knowledge`, `offer` | 5 days of chats |
 
 List every change after the first Moshi launch. The launch itself is not
-a change. Do not filter changes by whether they seem relevant to the
-question.
+a change. In a baseline window, list the newest Moshi ad set's launch as
+one (`new_ad`, `source: "moshi"`). It has its own clock from its launch:
+name its day 4 and day 8 dates with the change, not as the next gate,
+which stays the primary campaign's. Do not filter changes by whether
+they seem relevant to the question.
 
 ## Attribution backfill
 

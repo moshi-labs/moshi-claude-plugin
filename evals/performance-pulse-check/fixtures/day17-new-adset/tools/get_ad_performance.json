@@ -1,0 +1,85 @@
+{
+ "_shape": "modelled-from-description",
+ "window": {
+  "since": "2026-09-27",
+  "displayUntil": "2026-10-13",
+  "period": "since_launch",
+  "note": "Inclusive range: every day from `since` through `displayUntil`. Render that as the period covered."
+ },
+ "currency": "USD",
+ "spend": 636.99,
+ "perAd": [
+  {
+   "metaAdId": "1202700000000031",
+   "spend": 257.08
+  },
+  {
+   "metaAdId": "1202700000000032",
+   "spend": 193.59
+  },
+  {
+   "metaAdId": "1202700000000033",
+   "spend": 134.97
+  },
+  {
+   "metaAdId": "1202700000000034",
+   "spend": 28.86
+  },
+  {
+   "metaAdId": "1202700000000035",
+   "spend": 22.49
+  }
+ ],
+ "dmFunnel": {
+  "chats": 144,
+  "chatsFromAds": 138,
+  "productViews": 41,
+  "carts": 13,
+  "checkouts": 9
+ },
+ "contactsCaptured": {
+  "total": 26,
+  "email": 19,
+  "phone": 7
+ },
+ "iceBreakers": {
+  "total": 138,
+  "items": [
+   {
+    "text": "Which tea is best for mornings?",
+    "conversations": 51,
+    "share": 0.3696
+   },
+   {
+    "text": "Is the sampler a good gift?",
+    "conversations": 33,
+    "share": 0.2391
+   },
+   {
+    "text": "How much caffeine is in the chai?",
+    "conversations": 17,
+    "share": 0.1232
+   }
+  ],
+  "typedOwn": {
+   "conversations": 37,
+   "share": 0.2681
+  }
+ },
+ "leadHeat": {
+  "hot": 12,
+  "warm": 37,
+  "cold": 95
+ },
+ "orders": {
+  "threadProven": 8,
+  "revenue": 414.5,
+  "delayed": 3
+ },
+ "flags": [
+  {
+   "code": "partial_period",
+   "text": "The window ends today, so today is still counting."
+  }
+ ]
+}

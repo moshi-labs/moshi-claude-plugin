@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Next Moshi Flows</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<!-- Look and feel from performance-pulse-check/assets/pulse-check.html. Edit only the const DATA block below. -->
+<style>:root{--bg:light-dark(oklch(.965 .005 250),oklch(.175 .008 262));--surface:light-dark(oklch(1 0 0),oklch(.23 .003 250));--surface-2:light-dark(oklch(.955 .008 250),oklch(.295 .005 250));--border:light-dark(oklch(.92 .005 250),oklch(.34 .005 250));--border-strong:light-dark(oklch(.85 .008 250),oklch(.42 .005 250));--text:light-dark(oklch(.25 .025 250),oklch(.96 .003 250));--text-2:light-dark(oklch(.48 .02 250),oklch(.74 .005 250));--primary:light-dark(oklch(.42 .24 264),oklch(.58 .22 264));--accent-soft:light-dark(oklch(.96 .04 264),oklch(.28 .08 264));--accent-strong:light-dark(oklch(.36 .27 264),oklch(.78 .2 264));--mint-soft:light-dark(oklch(.95 .04 155),oklch(.26 .025 155));--mint-strong:light-dark(oklch(.42 .12 155),oklch(.78 .1 155));--rose:oklch(.55 .22 18);--rose-soft:light-dark(oklch(.96 .03 18),oklch(.26 .025 18));--mb:light-dark(oklch(1 0 0),oklch(.15 .01 285));--m1:light-dark(oklch(.95 .02 220),oklch(.25 .02 220));--m2:light-dark(oklch(.91 .03 330),oklch(.27 .03 330));--m3:light-dark(oklch(.91 .04 230),oklch(.26 .04 230));--m4:light-dark(oklch(.92 .05 285),oklch(.28 .05 285));--m5:light-dark(oklch(.91 .05 340),oklch(.27 .05 340));--m6:light-dark(oklch(.87 .03 290),oklch(.23 .03 290));--r:10px;--r-lg:12px;--r-pill:999px;--shadow:0 1px 2px oklch(0 0 0/.08),0 4px 12px oklch(0 0 0/.04);--hd:-apple-system,"SF Pro Display","SF Pro Rounded","Geist",sans-serif;--mono:"Geist Mono",ui-monospace,monospace;color-scheme:light}@media(prefers-color-scheme:dark){:root:not([data-theme=light]){color-scheme:dark}}:root[data-theme=dark]{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 Geist,system-ui,sans-serif}.mesh{position:fixed;inset:0;z-index:-1;background-color:var(--mb);background-image:radial-gradient(at 40% 20%,var(--m1) 0px,transparent 50%),radial-gradient(at 80% 0%,var(--m2) 0px,transparent 50%),radial-gradient(at 0% 50%,var(--m3) 0px,transparent 50%),radial-gradient(at 80% 50%,var(--m4) 0px,transparent 50%),radial-gradient(at 0% 100%,var(--m5) 0px,transparent 50%),radial-gradient(at 80% 100%,var(--m6) 0px,transparent 50%)}.wrap{max-width:880px;margin:0 auto;padding:20px 16px 56px;display:grid;gap:16px}h1,h2,h3{font-family:var(--hd);margin:0;letter-spacing:-.01em;text-wrap:balance}h1{font-size:clamp(26px,5vw,38px);line-height:1.12;font-weight:700}h2{font-size:19px;font-weight:650}h3{font-size:15px;font-weight:600}p{margin:0}.glass{border-radius:var(--r-lg);padding:20px;display:grid;gap:14px;min-width:0;background:color-mix(in oklab,var(--surface) 48%,transparent);border:1px solid color-mix(in oklab,var(--border-strong) 55%,transparent);box-shadow:inset 0 1px color-mix(in oklab,var(--surface) 95%,transparent),0 1px 2px color-mix(in oklab,var(--text) 5%,transparent),0 6px 28px color-mix(in oklab,var(--text) 7%,transparent),0 20px 64px color-mix(in oklab,var(--accent-strong) 9%,transparent);-webkit-backdrop-filter:blur(28px) saturate(150%);backdrop-filter:blur(28px) saturate(150%)}.card{border-radius:var(--r);border:1px solid var(--border-strong);background:var(--surface);box-shadow:var(--shadow)}.pill{display:inline-flex;align-items:center;gap:4px;border-radius:var(--r-pill);padding:3px 8px;font:500 11px/1.25 Geist,sans-serif;background:var(--surface-2);color:var(--text-2);white-space:nowrap;vertical-align:middle}.pill.mint{background:var(--mint-soft);color:var(--mint-strong)}.pill.acc{background:var(--accent-soft);color:var(--accent-strong)}.pill.rose{background:var(--rose-soft);color:var(--rose)}.sub,.meta,small{color:var(--text-2);font-size:13px}.hd{display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px}.hd .mn{font:600 15px/1.2 var(--hd)}.hd .pl{display:flex;flex-wrap:wrap;gap:6px;margin-left:auto}.hero{display:grid;gap:10px;padding:12px 2px 4px}.hero p{max-width:62ch;font-size:16px}.hero p.dek{font:600 19px/1.35 var(--hd)}.hl{color:var(--accent-strong)}.wb{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}.wb>div{border:1px solid var(--border);border-radius:var(--r);padding:12px 14px;background:var(--accent-soft);display:grid;gap:4px;align-content:start}.wb>div.web{background:var(--surface-2)}.wb b{font:700 17px/1.2 var(--hd);color:var(--accent-strong)}.wb .web b{color:var(--text)}ul.l{margin:0;padding:0;list-style:none;display:grid;gap:10px}.adg{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,260px));gap:12px}.adc{padding:12px;display:grid;gap:8px;align-content:start}.adc img{width:100%;object-fit:cover;aspect-ratio:4/5;border-radius:8px;display:block}.adc .cap{color:var(--text-2);font-size:13px}.adc{min-width:0}.path{min-width:0;overflow-wrap:anywhere;display:grid;gap:4px;padding-top:8px;border-top:1px solid var(--border);font-size:13px}.fl{color:var(--primary);font-weight:600;text-decoration:none;margin-top:4px}.fl:hover{text-decoration:underline}.chips{display:flex;flex-wrap:wrap;gap:4px}.tw{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--border);vertical-align:top}th{color:var(--text-2);font-weight:500}code{font:12px var(--mono);background:var(--surface-2);padding:1px 4px;border-radius:4px}.ban{border-radius:var(--r-lg);padding:14px 16px;background:var(--accent-soft);color:var(--text);border:1px solid var(--primary)}.reach{padding:12px 14px;border-radius:var(--r);background:var(--mint-soft);font-size:14px}:focus-visible{outline:2px solid var(--primary);outline-offset:2px;border-radius:4px}@media(max-width:560px){.hd .pl{margin-left:0}.glass{padding:16px}.adg{grid-template-columns:minmax(0,1fr)}.adc{grid-template-columns:110px minmax(0,1fr);column-gap:12px}.adc img{grid-row:span 3}}.path .pill{justify-self:start}@media(max-width:560px){.adg .adc{grid-template-columns:minmax(0,1fr)}.adg .adc img{grid-row:auto;max-width:240px}}</style>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Next Moshi Flows</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<!-- Look and feel from performance-pulse-check/assets/pulse-check.html. Edit only the const DATA block below. -->
+<style>:root{--bg:light-dark(oklch(.965 .005 250),oklch(.175 .008 262));--surface:light-dark(oklch(1 0 0),oklch(.23 .003 250));--surface-2:light-dark(oklch(.955 .008 250),oklch(.295 .005 250));--border:light-dark(oklch(.92 .005 250),oklch(.34 .005 250));--border-strong:light-dark(oklch(.85 .008 250),oklch(.42 .005 250));--text:light-dark(oklch(.25 .025 250),oklch(.96 .003 250));--text-2:light-dark(oklch(.48 .02 250),oklch(.74 .005 250));--primary:light-dark(oklch(.42 .24 264),oklch(.58 .22 264));--accent-soft:light-dark(oklch(.96 .04 264),oklch(.28 .08 264));--accent-strong:light-dark(oklch(.36 .27 264),oklch(.78 .2 264));--mint-soft:light-dark(oklch(.95 .04 155),oklch(.26 .025 155));--mint-strong:light-dark(oklch(.42 .12 155),oklch(.78 .1 155));--rose:oklch(.55 .22 18);--rose-soft:light-dark(oklch(.96 .03 18),oklch(.26 .025 18));--mb:light-dark(oklch(1 0 0),oklch(.15 .01 285));--m1:light-dark(oklch(.95 .02 220),oklch(.25 .02 220));--m2:light-dark(oklch(.91 .03 330),oklch(.27 .03 330));--m3:light-dark(oklch(.91 .04 230),oklch(.26 .04 230));--m4:light-dark(oklch(.92 .05 285),oklch(.28 .05 285));--m5:light-dark(oklch(.91 .05 340),oklch(.27 .05 340));--m6:light-dark(oklch(.87 .03 290),oklch(.23 .03 290));--r:10px;--r-lg:12px;--r-pill:999px;--shadow:0 1px 2px oklch(0 0 0/.08),0 4px 12px oklch(0 0 0/.04);--hd:-apple-system,"SF Pro Display","SF Pro Rounded","Geist",sans-serif;--mono:"Geist Mono",ui-monospace,monospace;color-scheme:light}@media(prefers-color-scheme:dark){:root:not([data-theme=light]){color-scheme:dark}}:root[data-theme=dark]{color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 Geist,system-ui,sans-serif}.mesh{position:fixed;inset:0;z-index:-1;background-color:var(--mb);background-image:radial-gradient(at 40% 20%,var(--m1) 0px,transparent 50%),radial-gradient(at 80% 0%,var(--m2) 0px,transparent 50%),radial-gradient(at 0% 50%,var(--m3) 0px,transparent 50%),radial-gradient(at 80% 50%,var(--m4) 0px,transparent 50%),radial-gradient(at 0% 100%,var(--m5) 0px,transparent 50%),radial-gradient(at 80% 100%,var(--m6) 0px,transparent 50%)}.wrap{max-width:880px;margin:0 auto;padding:20px 16px 56px;display:grid;gap:16px}h1,h2,h3{font-family:var(--hd);margin:0;letter-spacing:-.01em;text-wrap:balance}h1{font-size:clamp(26px,5vw,38px);line-height:1.12;font-weight:700}h2{font-size:19px;font-weight:650}h3{font-size:15px;font-weight:600}p{margin:0}.glass{border-radius:var(--r-lg);padding:20px;display:grid;gap:14px;min-width:0;background:color-mix(in oklab,var(--surface) 48%,transparent);border:1px solid color-mix(in oklab,var(--border-strong) 55%,transparent);box-shadow:inset 0 1px color-mix(in oklab,var(--surface) 95%,transparent),0 1px 2px color-mix(in oklab,var(--text) 5%,transparent),0 6px 28px color-mix(in oklab,var(--text) 7%,transparent),0 20px 64px color-mix(in oklab,var(--accent-strong) 9%,transparent);-webkit-backdrop-filter:blur(28px) saturate(150%);backdrop-filter:blur(28px) saturate(150%)}.card{border-radius:var(--r);border:1px solid var(--border-strong);background:var(--surface);box-shadow:var(--shadow)}.pill{display:inline-flex;align-items:center;gap:4px;border-radius:var(--r-pill);padding:3px 8px;font:500 11px/1.25 Geist,sans-serif;background:var(--surface-2);color:var(--text-2);white-space:nowrap;vertical-align:middle}.pill.mint{background:var(--mint-soft);color:var(--mint-strong)}.pill.acc{background:var(--accent-soft);color:var(--accent-strong)}.pill.rose{background:var(--rose-soft);color:var(--rose)}.sub,.meta,small{color:var(--text-2);font-size:13px}.hd{display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px}.hd .mn{font:600 15px/1.2 var(--hd)}.hd .pl{display:flex;flex-wrap:wrap;gap:6px;margin-left:auto}.hero{display:grid;gap:10px;padding:12px 2px 4px}.hero p{max-width:62ch;font-size:16px}.hero p.dek{font:600 19px/1.35 var(--hd)}.hl{color:var(--accent-strong)}.wb{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}.wb>div{border:1px solid var(--border);border-radius:var(--r);padding:12px 14px;background:var(--accent-soft);display:grid;gap:4px;align-content:start}.wb>div.web{background:var(--surface-2)}.wb b{font:700 17px/1.2 var(--hd);color:var(--accent-strong)}.wb .web b{color:var(--text)}ul.l{margin:0;padding:0;list-style:none;display:grid;gap:10px}.adg{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,260px));gap:12px}.adc{padding:12px;display:grid;gap:8px;align-content:start}.adc img{width:100%;object-fit:cover;aspect-ratio:4/5;border-radius:8px;display:block}.adc .cap{color:var(--text-2);font-size:13px}.adc{min-width:0}.path{min-width:0;overflow-wrap:anywhere;display:grid;gap:4px;padding-top:8px;border-top:1px solid var(--border);font-size:13px}.fl{color:var(--primary);font-weight:600;text-decoration:none;margin-top:4px}.fl:hover{text-decoration:underline}.chips{display:flex;flex-wrap:wrap;gap:4px}.tw{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--border);vertical-align:top}th{color:var(--text-2);font-weight:500}code{font:12px var(--mono);background:var(--surface-2);padding:1px 4px;border-radius:4px}.ban{border-radius:var(--r-lg);padding:14px 16px;background:var(--accent-soft);color:var(--text);border:1px solid var(--primary)}.reach{padding:12px 14px;border-radius:var(--r);background:var(--mint-soft);font-size:14px}:focus-visible{outline:2px solid var(--primary);outline-offset:2px;border-radius:4px}@media(max-width:560px){.hd .pl{margin-left:0}.glass{padding:16px}.adg{grid-template-columns:minmax(0,1fr)}.adc{grid-template-columns:110px minmax(0,1fr);column-gap:12px}.adc img{grid-row:span 3}}</style>
+<script>const LOGO = `<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACwAAAAsCAMAAAApWqozAAAARVBMVEX////X2+3T1+vMyt7P1ui2yui4yN3V2uylveSHm8abt+KUrdLb4+7p6u+EcY9pUHKol8qwtdZTMlqrn7XLu9vj2OrUvOEMye+YAAAAAXRSTlMAQObYZgAAAcxJREFUOMuN1du2qyAMBVAxgVrvqdL//9STEEBU7NlrtKM8zMZAKTRNJYbT/CGmBUQb4trf33hBhDH4eqZ4prbj97vewKVq0F1nsdKMudPEb720apE7QSzb6bretld7z5N+YTVhAW3X92UnBvGH5tKDPWYJFzNysg64t/UmxiNJ96xT2zVX6FB6cLHwWHNJx8rD0KbCT9RFzPYdSpubmfg1yWBe1oCJ7bs3oYtDTeOURjyA5TODda6TwhxZtyxzRv0OMnaMSTExLiTgwSU0r+gSXs8YlhlOWJYz4oFWMmF+UdDns4UBbvMWsVjGRLSugnOrPCHFtCzbUZg1wa64mNi+eW0CsLCOHABpG1MtakExD3bFzViligEchE/6P9bNpZbC0sFTH/FHl8IyRxLcTs9J3YQVCdvuCfqidWtJ/1n4YL1PnYsm0M1ff36wcZpcOR0HY72uP5aEdzWmE+Ze15d1A87nDE7n7ewvdeVMOw4ZaTFbr9aXh81YHKUvLcaZfI6sguwPqXs67Fp/jayXhi1cjtErzhYs7rc7Ij8c0w+hcdA2txiolN13gPqdVbTy3QVyamXzBeDhK9lV/qChmZYfLvrL8i/XrDEP9/E/o404WUmLPLUAAAAASUVORK5CYII=" alt="Moshi" width=28 height=28>`;</script>
+</head>
+<body>
+<div class="mesh"></div>
+<main class="wrap" id="app"></main>
+<script>
+const DATA = {
+  merchant: "Example Co",
+  date: "2026-10-21",
+  pills: [{ text: "3 ads", tone: "acc" }, { text: "Prospecting CBO", tone: "" }, { text: "Not built yet", tone: "rose" }],
+  title: "Next Moshi flows in your Prospecting campaign",
+  dek: "One new ad set, three of your proven prospecting ads. Tapping Shop Now opens a chat with your Moshi agent.",
+  intro: "We'd add the ad set inside Prospecting | Broad, the campaign that carries most of your spend. We picked the ads by matching your current winners to what has worked best in Moshi DM ads so far.",
+  glance: [
+    { value: "3 ads", label: "Running ad sets here average 3.2 active ads (median 2)." },
+    { value: "$40 vs $67 CPM", label: "DM vs website in the head-to-head test, 10-12 to 10-19." },
+    { value: "~2.7× link CTR", label: "Short, claim-led ads in DM vs on the website." },
+    { value: "$114 CPA · 0.80 ROAS", label: "The campaign we'd join, last 30 days.", muted: true }
+  ],
+  picksSub: "Each ad's own results. 30 days = 09-21 to 10-20, 7 days = 10-14 to 10-20. Meta-reported purchases.",
+  picks: [
+    { title: "1 · Review static", thumbnailUrl: null,
+      chips: [{ text: "52 purchases", tone: "mint" }, { text: "$80 CPA", tone: "" }, { text: "1.06 ROAS", tone: "" }],
+      why: "Your best recent winner, and it's still accelerating. It has the same shape as the static with the best DM cost per purchase.",
+      flow: "Reactive Skin flow: Original, Capsules.",
+      watch: "The image promises a 30-day trial, so the chat has to honour it." },
+    { title: "2 · Before/after testimonial", thumbnailUrl: null,
+      chips: [{ text: "81 purchases", tone: "mint" }, { text: "$81 CPA", tone: "" }],
+      why: "Most purchases in the campaign. It's a first-person testimonial, the style behind the best chat order rate so far.",
+      flow: "Reactive Skin flow, the same as #1.", watch: "" },
+    { title: "3 · Three systems explainer", thumbnailUrl: null,
+      chips: [{ text: "13 purchases", tone: "mint" }, { text: "$80 CPA", tone: "" }],
+      why: "The angle that tripled link CTR in DM, in a fresh creative.",
+      flow: "New flow, leading with Capsules.", watch: "Small sample, so it's the most speculative pick." }
+  ],
+  tables: [{
+    title: "What the DM vs website test showed", sub: "10-12 to 10-19. Meta pixel purchases, 7-day click / 1-day view.",
+    columns: ["Ad", "Arm", "Spend", "CPM", "Link CTR", "Purchases", "Chats", "Chat orders"],
+    rows: [
+      { cells: ["Ad A", "DM", "$2,035", "$40", "1.10%", "16", "58", "2"], arm: "dm" },
+      { cells: ["", "Web", "$1,474", "$70", "1.31%", "13", "–", "–"], arm: "web" },
+      { cells: ["Total", "DM", "$2,261", "$41", "1.28%", "19", "80", "3"], arm: "dm", bold: true },
+      { cells: ["", "Web", "$2,305", "$67", "1.22%", "17", "–", "–"], arm: "web", bold: true }
+    ],
+    note: "Meta put most of the DM arm's budget into Ad A."
+  }],
+  holds: ["DM ads cost about 40% less to show, on every ad."],
+  early: ["Purchases between the arms: 19 vs 17 on equal spend."],
+  setup: [
+    ["Budget", "The campaign shares its daily budget across ad sets (CBO), so the new ad set has no budget of its own. Set a minimum daily spend, as other ad sets here do."],
+    ["Optimized for", "Purchase, matching every other ad set in the campaign."],
+    ["To confirm", "That Meta accepts a chat ad set beside website ad sets in this campaign."]
+  ],
+  decisions: ["Do we need sign-off from whoever runs this campaign?", "Do we set a minimum daily spend?"],
+  bench: [{ title: "Celebrity UGC", thumbnailUrl: null, chips: [{ text: "Best chat order rate", tone: "mint" }], note: "Paused on your side and may be fatigued." }],
+  leftOut: ["Ads already in the head-to-head test, because they're already running in DM."],
+  nextStep: "Settle the decisions above. Then we build the ad set and its flows, all paused, for one last review.",
+  footer: "Data pulled 2026-10-21 from Moshi's synced copy of the ad account. Nothing has been changed."
+};
+</script>
+<script>
+(function () {
+  const D = DATA, app = document.getElementById("app");
+  const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const pill = p => `<span class="pill${p.tone ? " " + esc(p.tone) : ""}">${esc(p.text)}</span>`;
+  const img = (u, alt) => /^https:\/\/|^data:image\//.test(u || "") ? `<img src="${esc(u)}" alt="${esc(alt)}" loading="lazy" onerror="this.remove()">` : "";
+  const list = (items, tag) => (items || []).map(t => `<li>${pill({ text: tag.text, tone: tag.tone })} ${esc(t)}</li>`).join("");
+  const glass = (inner) => `<section class="glass">${inner}</section>`;
+  const head = (h, sub) => `<div><h2>${esc(h)}</h2>${sub ? `<p class="sub">${esc(sub)}</p>` : ""}</div>`;
+  let h = "";
+
+  h += `<header class="hd">${typeof LOGO === "string" ? LOGO : ""}<div><div class="mn">${esc(D.merchant)}</div><div class="meta">Next Moshi flows · proposal · ${esc(D.date)}</div></div><div class="pl">${(D.pills || []).map(pill).join("")}</div></header>`;
+  h += `<section class="hero"><h1>${esc(D.title)}</h1>${D.dek ? `<p class="dek">${esc(D.dek)}</p>` : ""}${D.intro ? `<p>${esc(D.intro)}</p>` : ""}</section>`;
+
+  if ((D.glance || []).length) h += glass(`<h2>At a glance</h2><div class="wb">${D.glance.map(g => `<div${g.muted ? ' class="web"' : ""}><b>${esc(g.value)}</b><span>${esc(g.label)}</span></div>`).join("")}</div>`);
+
+  h += glass(head(`The ${(D.picks || []).length === 1 ? "ad" : (D.picks || []).length + " ads"}`, D.picksSub) + `<div class="adg">${(D.picks || []).map(p => `<div class="card adc">${img(p.thumbnailUrl, p.title)}<h3>${esc(p.title)}</h3><div class="chips">${(p.chips || []).map(pill).join("")}</div><div class="path"><b>Why</b><span>${esc(p.why)}</span></div><div class="path"><b>Flow</b><span>${esc(p.flow)}</span></div>${p.watch ? `<div class="path">${pill({ text: "Watch", tone: "rose" })}<span>${esc(p.watch)}</span></div>` : ""}</div>`).join("")}</div>`);
+
+  (D.tables || []).forEach(t => {
+    const rows = (t.rows || []).map(r => `<tr>${r.cells.map((c, i) => {
+      let v = esc(c);
+      if (i === 1 && r.arm && c) v = pill({ text: c, tone: r.arm === "dm" ? "acc" : "" });
+      return `<td>${r.bold && i !== 1 ? `<b>${v}</b>` : v}</td>`;
+    }).join("")}</tr>`).join("");
+    h += glass(head(t.title, t.sub) + `<div class="tw"><table><thead><tr>${t.columns.map(c => `<th>${esc(c)}</th>`).join("")}</tr></thead><tbody>${rows}</tbody></table></div>${t.note ? `<p class="sub">${esc(t.note)}</p>` : ""}`);
+  });
+
+  if ((D.holds || []).length || (D.early || []).length) h += glass(`<h2>What we're confident in</h2><ul class="l">${list(D.holds, { text: "Holds up", tone: "mint" })}${list(D.early, { text: "Too early", tone: "" })}</ul>`);
+
+  if ((D.setup || []).length) h += glass(`<h2>How we'd set up the ad set</h2><div class="tw"><table><thead><tr><th>Setting</th><th>Plan</th></tr></thead><tbody>${D.setup.map(r => `<tr><td>${esc(r[0])}</td><td>${esc(r[1])}</td></tr>`).join("")}</tbody></table></div>`);
+
+  if ((D.decisions || []).length) h += glass(`<h2>Decisions before we build</h2><ul class="l">${D.decisions.map((d, i) => `<li>${pill({ text: String(i + 1), tone: "acc" })} ${esc(d)}</li>`).join("")}</ul>`);
+
+  if ((D.bench || []).length || (D.leftOut || []).length) h += glass(head("On the bench", "Next in line if a pick underdelivers.") + `<div class="adg">${(D.bench || []).map(b => `<div class="card adc">${img(b.thumbnailUrl, b.title)}<h3>${esc(b.title)}</h3><div class="chips">${(b.chips || []).map(pill).join("")}</div><p class="cap">${esc(b.note)}</p></div>`).join("")}</div>${(D.leftOut || []).length ? `<ul class="l">${list(D.leftOut, { text: "Left out", tone: "" })}</ul>` : ""}`);
+
+  h += glass(`<h2>Next step</h2><div class="reach">${esc(D.nextStep)}</div>${D.footer ? `<p class="sub">${esc(D.footer)}</p>` : ""}`);
+
+  app.innerHTML = h;
+  document.title = D.merchant + " · Next Moshi Flows";
+})();
+</script>
+</body>
+</html>
