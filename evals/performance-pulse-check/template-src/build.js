@@ -41,12 +41,10 @@ chatters: { total: 318, people: [
   { username: "heatseekr", followers: 2300, followsYou: true, orderValue: 44.5 },
   { username: "taco.jo", followers: 640, followsYou: false, orderValue: 89 },
   { name: "Dana Ruiz", channel: "messenger", orderValue: 41 },
-  { username: "bbq.dad", followers: 21500, followsYou: false, stage: "cart" },
-  { username: "chili.lab", followers: 9100, verified: true, followsYou: false, stage: "product_view" },
-  { username: "mild.mo", followers: 310, followsYou: true }
+  { username: "bbq.dad", followers: 21500, followsYou: false, stage: "cart" }
 ] },
 dashboardUrl: "https://brindle.moshi.ai",
-flags: [{ source: "moshi", code: "order_match_pending", text: "Oct 6 orders still matching." }]
+flags: [{ source: "moshi", code: "order_match_pending", text: "Orders still matching." }]
 };`;
 // Plain attribute values need no quotes in HTML (class=sub is class="sub", alt is alt=""), which saves about 175 bytes of the size line.
 const t=fs.readFileSync(S+'/tpl.html','utf8').replace(/<script>\n(const LOGO[\s\S]*?)<\/script>/,(m,c)=>'<script>\n'+c.replace(/ (class|role|aria-hidden|loading|target|rel|width|height|tabindex)="([\w-]+)"/g,' $1=$2').replace(/ alt=""/g,' alt')+'</script>').replace('%%LOGO%%',()=>fs.readFileSync(S+'/logo/logo64q.png.b64','utf8').trim()).replace('%%AV%%',()=>fs.readFileSync(S+'/avatar/av.js','utf8').trim().replace(/;$/,'')+';AV.s={delight:"'+fs.readFileSync(S+'/avatar/still-delight.webp.b64','utf8').trim()+'",reading:"'+fs.readFileSync(S+'/avatar/still-reading.webp.b64','utf8').trim()+'"};');

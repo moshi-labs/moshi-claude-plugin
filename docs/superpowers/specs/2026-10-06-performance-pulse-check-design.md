@@ -43,6 +43,13 @@ Reference report: an internal Moshi day-one results report (Oct 2026)
 > by cursor and returns each person's `threadUrl` (moshi-api #1832, moshi-mcp
 > #48), so who messaged lists everyone with a link to each thread, and the
 > partial-coverage line is only a fallback.
+>
+> **Update 2026-10-14 (plugin 0.14.1).** Things in your account affecting
+> results shows only when your ads clearly starved Moshi's copy: on 3+
+> days both delivered, Moshi took 20% or less of the impressions and spent
+> under half its daily budget. Shared creative alone no longer opens the
+> report, and `accountIssues` print only beside that callout; otherwise
+> the reply carries them.
 
 ## Goal
 
