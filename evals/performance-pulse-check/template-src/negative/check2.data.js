@@ -25,7 +25,8 @@ const D = {
     camp("cmr", "moshi", "sales", "2026-09-22", [R("2026-09-22", 15)]), camp("cmo", "moshi", "other", "2026-09-22", [R("2026-09-22", 15)]),
     camp("yo", "merchant", "other", "2026-08-01", [R("2026-08-01", 14)]), camp("cmt", "moshi", "sales", "2026-09-01", [R("2026-09-07", 30)]),
     camp("cmg", "moshi", "sales", "2026-09-22", [R("2026-09-22", 3).concat(R("2026-09-26", 11))]),
-    camp("ytc", "merchant", "sales", "2026-08-01", [R("2026-08-01", 14)], { adsPulled: "top" })); // cmt: rows start at the 30-day read's start (Sep 7), so day 1 stays its Sep 1 startTime; cmg: Sep 25 has no row
+    camp("ytc", "merchant", "sales", "2026-08-01", [R("2026-08-01", 14)], { adsPulled: "top" }), // cmt: rows start at the 30-day read's start (Sep 7), so day 1 stays its Sep 1 startTime; cmg: Sep 25 has no row
+    camp("cme", "moshi", "engagement", "2026-09-22", [R("2026-09-22", 15)]), camp("ye", "merchant", "engagement", "2026-08-01", [R("2026-08-01", 14)])); // a CPA comparison judges, so engagement fails it
   D.campaigns.find(c => c.id == "cmr").adsets[0].lastLearningReset = "2026-10-01"; // reset clock: day 6 on Oct 6
   D.comparisons = [
     { metric: "ctr", day: 15, moshiCampaignId: "cm1", merchantCampaignId: "ym1" },
@@ -36,6 +37,7 @@ const D = {
     { metric: "ctr", day: 7, moshiCampaignId: "cmt", merchantCampaignId: "ym1" },
     { metric: "ctr", day: 7, moshiCampaignId: "cmg", merchantCampaignId: "ym1" },
     { metric: "cpa", day: 7, moshiCampaignId: "cm1", merchantCampaignId: "ym1" },
-    { metric: "ctr", day: 7, moshiCampaignId: "cm1", merchantCampaignId: "ytc" }];
+    { metric: "ctr", day: 7, moshiCampaignId: "cm1", merchantCampaignId: "ytc" },
+    { metric: "cpa", day: 8, moshiCampaignId: "cme", merchantCampaignId: "ye" }];
   return D;
 })();

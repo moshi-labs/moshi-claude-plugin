@@ -21,7 +21,9 @@ const D = {
   accountIssues: [], flags: [], notMeasurableYet: []
 };
   // change
-  D.campaigns.push(camp("ce1", "moshi", "engagement", "2026-09-22", [R("2026-09-22", 15)]));
-  D.verdict.body = "ROAS {c:ce1.roas}.";
+  // moshi_only mode: a roas or cpa token fails check 1 even with no campaign to point to. The headline still renders.
+  D.mode = "moshi_only"; D.metaSyncedAt = null; D.campaigns = []; D.comparisons = [];
+  Object.assign(D.moshi, { cpa: 27, roas: 1.8 });
+  D.verdict = { headline: "Chats cost {m:costPerChat} each.", body: "ROAS {c:cm1.roas}, CPA {all:moshi.cpa}, {m:cpa}, {m:roas}." };
   return D;
 })();
