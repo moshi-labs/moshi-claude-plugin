@@ -33,14 +33,24 @@ if (!existsSync(join(mcpDir, ".git"))) {
   process.exit(2);
 }
 
-const git = (...a) => execFileSync("git", ["-C", mcpDir, ...a], { encoding: "utf8", maxBuffer: 64 << 20 });
+// Exit 2 is a setup error (bad checkout, ref or format); exit 1 means bad references.
+function setupError(message) {
+  console.error(message);
+  process.exit(2);
+}
 
-if (!process.argv.includes("--no-fetch") && ref.startsWith("origin/")) {
+const git = (...a) => {
   try {
-    git("fetch", "--quiet", "origin", ref.slice("origin/".length));
-  } catch {
-    console.error(`warning: could not fetch ${ref}; checking against the local copy of it.`);
+    return execFileSync("git", ["-C", mcpDir, ...a], { encoding: "utf8", maxBuffer: 64 << 20, stdio: ["ignore", "pipe", "pipe"] });
+  } catch (e) {
+    setupError(`git ${a.join(" ")} failed in ${mcpDir}: ${String(e.stderr ?? e.message).trim()}`);
   }
+};
+
+// A stale local origin/main would let a tool main has since dropped pass, so a
+// failed fetch stops the check. --no-fetch opts in to the local copy.
+if (!process.argv.includes("--no-fetch") && ref.startsWith("origin/")) {
+  git("fetch", "--quiet", "origin", ref.slice("origin/".length));
 }
 
 const show = (path) => git("show", `${ref}:${path}`);
@@ -56,14 +66,13 @@ for (const m of generated.matchAll(/^\s*name: "([a-z0-9_]+)",[\s\S]*?^\s*admin: 
   tools.set(m[1], { file: "src/tools/generated/index.ts", admin: m[2] === "true" });
 }
 if (tools.size === 0) {
-  console.error(`Read no generated tools from ${ref}:src/tools/generated/index.ts; its format changed, so fix this script.`);
-  process.exit(2);
+  setupError(`Read no generated tools from ${ref}:src/tools/generated/index.ts; its format changed, so fix this script.`);
 }
 
 // Hand-written tool groups registered only inside `if (isSuperAdmin) { ... }` in server.ts.
 const server = show("src/server.ts");
 const adminGroups = new Set();
-for (const m of server.matchAll(/if \(isSuperAdmin\) \{/g)) {
+for (const m of server.matchAll(/if \(\s*[\w.]*isSuperAdmin\s*\)\s*\{/g)) {
   let depth = 0;
   let i = m.index + m[0].length - 1;
   const start = i;
@@ -74,13 +83,20 @@ for (const m of server.matchAll(/if \(isSuperAdmin\) \{/g)) {
   for (const c of server.slice(start, i).matchAll(/\b(register[A-Za-z]+Tools)\(/g)) adminGroups.add(c[1]);
 }
 
+// Fail closed: with no admin groups found, every staff tool would pass as a merchant tool.
+if (adminGroups.size === 0) {
+  setupError(`Found no tool group registered under isSuperAdmin in ${ref}:src/server.ts; the gate changed, so fix this script.`);
+}
+
 for (const file of srcFiles) {
   if (file === "src/tools/generated/index.ts") continue;
   const text = show(file);
-  const group = text.match(/export function (register[A-Za-z]+Tools)\(/)?.[1];
-  const admin = group !== undefined && adminGroups.has(group);
+  // A tool belongs to the nearest `export function registerXTools(` above it,
+  // so a file holding several groups gets each one's admin status right.
+  const groups = [...text.matchAll(/export function (register[A-Za-z]+Tools)\(/g)].map((g) => ({ name: g[1], at: g.index }));
   for (const m of text.matchAll(/register(?:App)?Tool\(\s*(?:server,\s*)?"([a-z0-9_]+)"/g)) {
-    tools.set(m[1], { file, admin });
+    const group = groups.filter((g) => g.at < m.index).at(-1)?.name;
+    tools.set(m[1], { file, admin: group !== undefined && adminGroups.has(group) });
   }
 }
 
@@ -88,14 +104,16 @@ for (const file of srcFiles) {
 
 // A Moshi tool name is snake_case and starts with a verb. Flags, enum values and
 // field names in the skills (partial_period, last_7d, moshi_only) do not, so
-// they are not mistaken for tools.
-const VERBS = [
+// they are not mistaken for tools. The verbs are every first word in the
+// catalog, plus common ones a removed or misspelled tool might use.
+const VERBS = new Set([...[...tools.keys()].map((n) => n.split("_")[0]),
   "get", "list", "create", "update", "delete", "send", "draft", "launch", "poll",
   "upload", "export", "run", "set", "start", "stop", "reset", "regenerate",
   "render", "submit", "approve", "refresh", "interpret", "define", "configure",
-  "register", "unregister", "rerun",
-];
-const TOOL_RE = new RegExp(`(?<![A-Za-z0-9_])(?:${VERBS.join("|")})_[a-z0-9]+(?:_[a-z0-9]+)*(?![A-Za-z0-9_])`, "g");
+  "register", "unregister", "rerun", "add", "remove", "test", "fetch", "search",
+  "find", "check", "sync", "pause", "activate",
+]);
+const TOOL_RE = new RegExp(`(?<![A-Za-z0-9_])(?:${[...VERBS].join("|")})_[a-z0-9]+(?:_[a-z0-9]+)*(?![A-Za-z0-9_])`, "g");
 
 // Names that look like Moshi tools but are not, each with its reason.
 const NOT_MOSHI_TOOLS = {};
@@ -118,16 +136,16 @@ for (const file of skillFiles) {
     for (const m of line.matchAll(TOOL_RE)) {
       const name = m[0];
       if (name in NOT_MOSHI_TOOLS) continue;
-      seen.add(name);
       const where = `${relative(repoRoot, file)}:${i + 1}`;
       const tool = tools.get(name);
+      if (tool && !tool.admin) seen.add(name);
       if (!tool) problems.push(`${where}  ${name}: not a moshi-mcp tool at ${ref}`);
       else if (tool.admin) problems.push(`${where}  ${name}: Moshi super-admin only (${tool.file}); merchants never see it`);
     }
   });
 }
 
-console.log(`moshi-mcp ${ref}: ${tools.size} tools. Skills reference ${seen.size} of them in ${skillFiles.length} files.`);
+console.log(`moshi-mcp ${ref}: ${tools.size} tools. Skills reference ${seen.size} merchant tools in ${skillFiles.length} files.`);
 if (problems.length > 0) {
   console.error(`\n${problems.length} reference(s) to a tool a merchant's session does not have:\n${problems.join("\n")}`);
   process.exit(1);

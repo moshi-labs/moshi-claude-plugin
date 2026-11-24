@@ -4,7 +4,7 @@ description: Write a Moshi merchant's weekly newsletter as an artifact from one 
 when_to_use: Use when a Moshi merchant, or a scheduled Cowork run, asks for a weekly newsletter, a weekly recap or digest, or how the week went. With no dates it covers the last completed Monday-to-Sunday week in UTC, so it runs unattended. Requires the Moshi MCP server.
 ---
 
-Write the weekly Moshi newsletter for the organization this session is authenticated as. Cover the window the merchant named. If they named none, which is always the case on a scheduled run, cover the last completed Monday-to-Sunday week in UTC: `periodEnd` is the latest Sunday before today (yesterday when today is Monday, 7 days back when today is Sunday), and `periodStart` is the Monday 6 days before it. Both days are included. The **prior period** is the same number of days ending the day before `periodStart` (for a week, the Monday-to-Sunday before it). The reader is the merchant: a busy owner who wants to know how the week went, which shoppers are worth a message today, and what to do next.
+Write the weekly Moshi newsletter for the organization this session is authenticated as. Cover the window the merchant named. If they named none, which is always the case on a scheduled run, cover the last completed Monday-to-Sunday week in UTC: `periodEnd` is the latest Sunday before today (yesterday when today is Monday, 7 days back when today is Sunday), and `periodStart` is the Monday 6 days before it. Both days are included. The **prior period** is the same number of days ending the day before `periodStart` (for a week, the Monday-to-Sunday before it). No tool picks these dates for you: work all four out from today's date in UTC, not local time, before the first read, and write them down. After the reads, check that the current read's `window.since` and `window.displayUntil` equal the window you asked for, and the prior read's equal the prior period; if either differs, stop and report it rather than write the newsletter. The reader is the merchant: a busy owner who wants to know how the week went, which shoppers are worth a message today, and what to do next.
 
 ## Pull the data first
 
@@ -12,11 +12,11 @@ Write the weekly Moshi newsletter for the organization this session is authentic
    - `get_ad_performance` with `periodStart` and `periodEnd` for the window: the **current** read.
    - `get_ad_performance` with `periodStart` and `periodEnd` for the prior period: the **prior** read.
    - `get_closer_activity` with the window's `periodStart` and `periodEnd`: nudges sent, nudged-then-purchased, missed carts, and `organization`.
-   - `get_closer_queue` with `limit: 10`: `total` is the number of leads waiting in Closer right now.
+   - `get_closer_queue` with `limit: 1`: only its `total` is used, the number of leads waiting in Closer right now. Its rows name shoppers, so do not ask for more.
    - `get_ad_shortlist` with `suggestLimit: 3`: the next ads worth launching.
 
    If either `get_ad_performance` read or `get_closer_activity` returns an error, stop and report that error. Never write a partial newsletter. If `get_closer_queue` fails, leave out the live-queue count and add a footer line saying it could not be read. If `get_ad_shortlist` fails, leave out section 4 and say so in the footer.
-2. Pick 2 or 3 threads to quote, in this order, skipping duplicates: conversations that bought in the window, then `get_closer_activity`'s `stillReachable.topLeads`, then conversations that reached checkout or cart. To find buyers and checkouts, call `get_leads` with the smallest `period` that covers the window (`last_7d` when `periodStart` is at most 7 days ago, else `last_30d`, else `last_90d`, else `since_launch`) and take rows whose `furthestStageName` is `purchase`, then `checkout`, then `cart`. `get_leads` cannot be cut to the exact window, so for each pick call `get_conversation_events` and keep it only when its purchase, checkout or cart event falls inside the window.
+2. Pick 2 or 3 threads to quote, in this order, skipping duplicates: conversations that bought in the window, then `get_closer_activity`'s `stillReachable.topLeads`, then conversations that reached checkout or cart. To find buyers and checkouts, call `get_leads` with `limit: 200` and the smallest `period` that covers the window. `last_N` covers today and the N−1 days before it, so use `last_7d` only when `periodStart` is no more than 6 days before today (a Monday run's default week needs `last_30d`), else `last_30d` when it is no more than 29 days before today, else `last_90d`. Take rows whose `furthestStageName` is `purchase`, then `checkout`, then `cart`. `get_leads` cannot be cut to the exact window and counts conversations by when they started, so for each pick call `get_conversation_events` and keep it only when its purchase, checkout or cart event falls inside the window. When `get_leads` comes back `truncated`, or finds no buyer inside the window, fall back to `stillReachable.topLeads`; never claim nobody bought, since `threadProvenPurchases` is the count.
 3. Call `get_conversation_messages` on the 2 or 3 threads you kept. Transcripts carry real customer PII, so read only the threads you will quote.
 4. Do not call `get_meta_platform_metrics`, `create_ad`, `draft_closer_nudge`, `send_closer_nudge` or any other write tool. This newsletter reports; it never acts.
 
@@ -72,7 +72,7 @@ Write to the merchant the way a sharp colleague would: plain words, short senten
 
 ## Quiet weeks
 
-The week is quiet when the current read has zero spend, `conversations.leadPopulation` 0, `threadProvenPurchases` 0, `purchaseEventsWithoutOrderId` 0 and no `funnel` events, and `get_closer_activity` has zero `nudgesSent`, `stillReachable.count`, `windowClosed.count` and `noLongerEligible.count`, and the live queue `total` is 0. Then render only the header, a one-line glance and the footer. Do not pad it.
+The week is quiet when the current read has zero spend, `conversations.leadPopulation` 0, `threadProvenPurchases` 0, `purchaseEventsWithoutOrderId` 0 and no `funnel` events, and `get_closer_activity` has zero `nudgesSent`, `stillReachable.count`, `windowClosed.count` and `noLongerEligible.count`, and the live queue `total` is 0. When `get_closer_queue` could not be read, decide from the other counts alone and keep its footer line. Then render only the header, a one-line glance and the footer. Do not pad it.
 
 ## Edge cases
 
@@ -80,7 +80,7 @@ The week is quiet when the current read has zero spend, `conversations.leadPopul
 - `partial_period` flag: the window reaches today, so say "so far" and show no changes (rule 8).
 - A Closer flag that says history is incomplete: the missed counts are floors.
 - A flag that says some purchases have no amount: revenue is a floor.
-- `get_closer_queue`'s `total` is exact even though you read only 10 rows.
+- `get_closer_queue`'s `total` is exact even though you read only 1 row.
 - `stillReachable.topLeads` holds only the top few leads; `stillReachable.count` is the full count.
 
 Design it cleanly: stat tiles, restrained color, readable in light and dark, and short enough to read in two minutes. Produce it as an artifact.
