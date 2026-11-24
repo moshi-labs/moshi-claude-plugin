@@ -120,7 +120,7 @@ return{spend:sp,impressions:im,linkClicks:lc,conversations:cv,purchases:pu,purch
 // Moshi publishes ads paused, so delivery can start days after start_time. A first row within a day of the 30-day read's start
 // means the read cut the history off, so day 1 stays the startTime. No rows: the startTime, then moshi.firstLaunch for a Moshi entity.
 const first=e=>{const c=camp(e),s=e.startTime||c.startTime,r=adsOf(e).map(a=>a.r1).filter(Boolean).sort()[0],x=r&&dd(AO||REF,r);return(r&&!(s&&(r<=s||x>=28&&x<=31))?r:s)||(c.owner=='moshi'&&D.moshi&&D.moshi.firstLaunch)||null};
-const camp=e=>e.c||e,isEng=es=>es.some(e=>camp(e).objective=='engagement');
+const camp=e=>e.c||e;
 // The latest learning reset after day 1. An ad set: its lastLearningReset, or a significant Meta change on it, its campaign or its ads.
 // A campaign: the latest of its ad sets' resets, or a significant Meta change on the campaign.
 function resetOf(e){const f=first(e),ids=e.adsets?[e.id]:[e.id,e.c.id,...e.ads.map(a=>a.id)];let r=e.adsets?e.adsets.map(resetOf).filter(Boolean).sort().pop():e.lastLearningReset;
@@ -150,8 +150,9 @@ const hd=(C,t)=>{if(C.owner=='moshi'&&PR&&C!=PR&&spW(C)<spW(PR)-.005)throw[13,`t
 const cpChat=()=>{const m=D.moshi||{},dc=FULL&&MC.find(c=>c.dup);if(dc)throw[10,dc.dup];return FULL&&CA.conversations?(ok(CA.spend)?CA.spend/CA.conversations:null):ok(m.spend)&&ok(m.chatsFromAds)&&m.chatsFromAds?m.spend/m.chatsFromAds:null};
 // x: 'h' for the verdict headline, 'b' for its body. Returns [metric, value, attribution window or 0].
 function val(p,b,x){if(p=='cmp'){const[i,k]=b.split('.'),c=CMPS[+i];if(!c||!/^\d+$/.test(i)||!['moshi','merchant','note'].includes(k))throw[3,`{cmp:${b}} points to nothing`];if(!c.ok)throw c.err||[2,`{cmp:${b}} cites a failed comparison`];if(x=='h')hd(c.mc,`{cmp:${b}}`);return k=='note'?['s',c.note]:[c.metric,c.v[k=='moshi'?0:1],c.lab&&c.lab[k=='moshi'?0:1]]}
-if(p=='m'){const m=D.moshi||{};if(AGE.includes(b)){if(b[0]!='n'){const rs=D.campaigns.filter(c=>c.owner=='moshi'&&resetOf(c));if(rs.length)throw[7,`{m:${b}} ignores the learning reset; cite {c:${rs[0].id}.${b}}`]}const g=b[0]=='n'?mGate():mStage();if(!g&&BADF)throw[8,`{m:${b}} needs a valid moshi.firstLaunch`];return ageV(b,g)}if(b=='firstLaunch'){if(!m[b])throw BADF?[8,`{m:${b}} needs a valid moshi.firstLaunch`]:[9,`{m:${b}} has no value`];return['s',fD(m[b])]}if(b=='costPerChat')return['costPerChat',cpChat()];if(Object.hasOwn(m,b))return[b,m[b]];throw[3,`{m:${b}} points to nothing`]}
+if(p=='m'){const m=D.moshi||{};if(AGE.includes(b)){if(b[0]!='n'){const rs=D.campaigns.filter(c=>c.owner=='moshi'&&resetOf(c));if(rs.length)throw[7,`{m:${b}} ignores the learning reset; cite {c:${rs[0].id}.${b}}`]}const g=b[0]=='n'?mGate():mStage();if(!g&&BADF)throw[8,`{m:${b}} needs a valid moshi.firstLaunch`];return ageV(b,g)}if(b=='firstLaunch'){if(!m[b])throw BADF?[8,`{m:${b}} needs a valid moshi.firstLaunch`]:[9,`{m:${b}} has no value`];return['s',fD(m[b])]}if(b=='costPerChat')return['costPerChat',cpChat()];if(Object.hasOwn(m,b)&&b!='cpa'&&b!='roas')return[b,m[b]];throw[3,`{m:${b}} points to nothing`]}
 const i=b.lastIndexOf('.'),id=b.slice(0,i),k=b.slice(i+1);let es;
+if((k=='roas'||k=='cpa')&&D.mode=='moshi_only')throw[1,`{${p}:${b}} would show ${k.toUpperCase()} in moshi_only mode`];
 if(p=='all'){if(id!='moshi'&&id!='merchant')throw[3,`{all:${b}} points to nothing`];es=D.campaigns.filter(c=>c.owner==id);const pc=es.find(c=>pulled(c)!='all');if(pc)throw[6,`{all:${b}} includes ${pc.name}, which has adsPulled "${pulled(pc)}"`];if(!es.length)throw id=='merchant'?[6,`{all:${b}} has no merchant campaign`]:[3,`{all:${b}} has no Moshi campaign`]}
 else{const e=p.length==1&&'csa'.includes(p)&&IX[p][id];if(!e)throw[3,`{${p}:${b}} points to nothing`];es=[e]}
 if(!MET.includes(k)&&!(AGE.includes(k)&&'cs'.includes(p)&&p.length==1))throw[3,`{${p}:${b}} uses unknown metric "${k}"`];
@@ -161,7 +162,6 @@ if(x&&p!='all'){const e=es[0],C=camp(e);if(x=='h')hd(C,`{${p}:${b}}`);if(!AGE.in
 // Age tokens skip check 10: day 1 reads a.r1, which a duplicate row does not change.
 if(AGE.includes(k))return ageV(k,stage(es[0]));
 const de=es.find(e=>e.dup);if(de)throw[10,de.dup];
-if((k=='roas'||k=='cpa')&&isEng(es))throw[1,`{${p}:${b}} would show ${k.toUpperCase()} for an engagement campaign`];
 return[k,agg(rowsOf(es).filter(inW),es.reduce((n,e)=>n+(e.daily?1:e.adsets?nAds(e):nA(e)),0))[k],PM.includes(k)&&lab(es)]}
 // The first Meta purchase figure for each window in a string gets the window after it ("12 purchases (7-day click)").
 function tok(str,x){let fail=0,mal=0,o='';const seen=new Set,P=String(str).split(/(\{[a-z]+:[^{}]+\})/);
@@ -201,7 +201,7 @@ const dc=mc.dup||yc.dup;if(dc)return(bad(10,dc),{ok:0,err:[10,dc]});
 if(mc.objective!=Y.objective)return e(`objectives differ (${mc.objective} vs ${Y.objective})`);if(Y.retargeting||yc.retargeting)return e(`your ${u} is retargeting`);if(pulled(yc)!='all')return e(`your ${u} has adsPulled "${pulled(yc)}"; a comparison needs "all"`);
 if(!Object.keys(LBL).includes(x.metric))return e('unknown metric');if(!Number.isInteger(x.day)||x.day<1||x.day>14)return e('day must be a whole number from 1 to 14');
 const st=yc.startTime||Y.startTime;if(!st)return e(`your ${u} has no start date, so it may not be a launch`);if(dd(AO||REF,st)>90)return e(`your ${u} started more than 90 days ago`);
-if(x.metric=='roas'||x.metric=='cpa'){if(mc.objective=='engagement')return(bad(1,`comparison would show ${M} for an engagement campaign`),{ok:0});if(mc.objective!='sales')return e(`${M} needs a Sales campaign`);
+if(x.metric=='roas'||x.metric=='cpa'){if(mc.objective!='sales')return e(`${M} needs a Sales campaign`);
 const g=clk(mc),ra=g&&dd(REF,g.d)+1;if(!g||ra<8)return e(`Moshi is on day ${g?ra:'—'} since its last reset; ${M} needs day 8`);if(x.day<8)return e(`${M} needs at least 8 days; day is ${x.day}`)}
 for(const c of[mc,yc]){const f=first(c),k=f?new Set(rowsOf([c]).filter(r=>r.impressions>0&&r.date>=f&&r.date<addD(f,x.day)).map(r=>r.date)).size:0;if(k<x.day)return e(`${c.name} has rows for only ${k} of the first ${x.day} days`)}
 // Moshi's days 1–N end by the window's last day: in a baseline window, N stops before the new ad set.
@@ -312,6 +312,24 @@ const SG=MC.filter(c=>c.objective=='sales').map(stage),early=SG.length&&SG.every
 // The window of Meta's purchases in the funnel: the Moshi ad sets that delivered in the window (lab keeps those with purchases).
 if(full&&!dM)try{attr=lab(MC.flatMap(c=>c.adsets).filter(s=>rowsOf([s]).some(inW)))}catch(e){bad(...e);attr=null}
 h.push(`<div class="tiles">${tile('Spend',fM(full?MA.spend:m.spend),full?'Moshi campaigns, Meta':'Moshi-managed')}${full?tile('CTR',fP(MA.ctr),'link clicks ÷ impressions'):''}${tile('Cost per ad chat',fM(cpc),full&&CA.conversations?`Meta’s count: ${fN(CA.conversations)} chats started${CC.length<MC.length?', on the campaigns that start chats':''}`:'Moshi’s count of chats from ads'+(ml&&', '+ml))}${tile('Chats',fN(m.chats),[ok(m.chatsFromAds)&&fN(m.chatsFromAds)+' from ads',ml].filter(Boolean).join(', '))}${tile('Contacts captured',fN(m.contactsCaptured),'emails and phones'+(ml&&', '+ml))}</div>`);
+// Use the report window, including when the campaign has no chat funnel.
+if(full){
+const rows=[];
+for(const c of MC){
+ if(c.dup||pulled(c)!='all')continue;
+ const metrics=agg(rowsOf([c]).filter(inW),0);
+ if(!(metrics.purchases>0))continue;
+ const sets=c.adsets.filter(s=>rowsOf([s]).some(r=>inW(r)&&r.purchases>0));
+ const unique=values=>[...new Set(values)].join('; ');
+ const goals=unique(sets.map(s=>s.optimizationGoal?String(s.optimizationGoal).toLowerCase().replaceAll('_',' '):'goal not reported'));
+ let windowLabel;
+ try{windowLabel=lab(sets)}catch(error){bad(...error);continue}
+ const g=stage(c),early=!g||addD(g.s.d,7)>REF;
+ const judgment=[c.objective=='engagement'?'judged on cost per conversation':c.objective!='sales'?'no CPA or ROAS verdict':early?'':'Sales campaign',early?'too early to judge':''].filter(Boolean).join(' · ');
+ rows.push(tile(esc(c.name),fN(metrics.purchases)+' purchases',esc(goals)+' · '+esc(windowLabel)+' · '+judgment+' · '+fM(metrics.cpa)+' CPA · '+fmt('roas',metrics.roas)+' ROAS'));
+}
+if(rows.length)h.push(sec('Meta pixel purchases',wd(W),rows.join('')));
+}
 // 8 Same ads: each Moshi ad (primary campaign, and any shown beside it) with the ad of yours it was cloned from (clonedFrom), over
 // the window. One card per original; Moshi's copies of it add up (a copy that failed check 10 hides its card). Cards where Moshi's
 // CTR is the higher come first, then by Moshi's CTR.

@@ -113,10 +113,17 @@ Your chat reply has these parts, in this order:
    Manager, including one that hurts Moshi. Show it, then give the context.
 3. Meta purchases and Moshi-proven orders are two separate rows. Never add
    them.
-4. No ROAS and no CPA for an engagement campaign, ever. No ROAS or CPA in
+4. In full mode, show Meta's pixel CPA and ROAS for each completely read
+   Moshi campaign with pixel purchases in the report window. Include requested
+   merchant rates when the read supports them. Label rates with the reported
+   optimization goal and attribution window (rule 8). Example: "Meta optimizes this ad set for
+   conversations, not purchases". When Meta reports no goal, say the goal
+   is not reported. Judge only a Sales campaign on CPA and ROAS. Judge an
+   engagement campaign on cost per conversation. No ROAS or CPA in
    `moshi_only` mode. Never build ROAS or CPA from Moshi-proven orders.
 5. No ROAS, CPA, purchase or order-value verdict before day 8, counted
-   from the last reset.
+   from the last reset. Before day 8, still show the number, labeled "too
+   early to judge".
 6. Learning status and resets come from Meta fields only: `learningPhase`
    and `lastSignificantEditAt`. If Meta does not show them, say nothing
    about learning. Meta does not say what a significant edit changed, so
@@ -171,8 +178,9 @@ DATA.
 
 | You think | Reality |
 |---|---|
-| "The merchant asked for ROAS, or it's a Sales campaign, so I'll compute it." | If the ad set optimizes for CONVERSATIONS, ROAS measures a goal Meta is not chasing. Say so, and give cost per conversation. |
-| "ROAS isn't ready yet. I'll check it on day 7." | For an engagement campaign, the answer is "not applicable", not "not yet". |
+| "The merchant asked for ROAS, or it's a Sales campaign, so I'll judge it on ROAS." | If the ad set optimizes for CONVERSATIONS, Meta is not chasing purchases. Show the pixel ROAS with that goal, and judge on cost per conversation. |
+| "The ad set optimizes for CONVERSATIONS, or Meta reports no goal, so I'll leave out ROAS and CPA." | The merchant sees them in Ads Manager. Show them with the goal and the window. |
+| "ROAS isn't ready yet, so I'll leave it out until day 8." | Show it now, labeled "too early to judge". Day 8 gates the verdict only. |
 | "Moshi's proven orders give me a ROAS." | Proven orders are a floor. A ROAS built from them understates Moshi and looks like Meta's number. |
 | "Mature campaigns are useful context." | They have months of learning and 10× the budget. They never go into a launch comparison; your running campaigns compare with Moshi on CTR only, over the same dates. |
 | "It's called RTG, so it's retargeting." | An RTG campaign can be mostly broad. Your running campaigns count every one with the objective, by spend. |
@@ -195,7 +203,8 @@ Stop and re-check when you notice yourself:
 
 - Writing "check back around day 7" with no date.
 - Typing a number into prose instead of a token.
-- Saying ROAS or CPA near an engagement campaign.
+- Judging an engagement campaign on ROAS or CPA.
+- Leaving out a pixel ROAS or CPA, or citing one without its goal and window.
 - Reading a lifetime CTR next to Moshi's first few days.
 - Writing a `{…}` token that is not in the contract's token table.
 - Leading the verdict with a campaign that is not the primary.

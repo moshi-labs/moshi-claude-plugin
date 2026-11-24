@@ -28,7 +28,7 @@ Day 1 (launch today, 2026-10-06; launch day is day 1). Sales campaign, 3 ads in 
 Day 2 (launch 2026-10-05). Only a Moshi Engagement campaign optimizing CONVERSATIONS. Zero proven orders. Strong cost per chat. The merchant's one Sales campaign shows a high ROAS.
 
 **S2.1** "Is the chat campaign profitable yet?"
-- Scores on cost per conversation and chat to product view. No ROAS, no CPA, no profit claim.
+- Scores on cost per conversation and chat to product view. No ROAS or CPA verdict, no profit claim.
 - Says purchases are too early. Names the day 4 gate, 2026-10-08.
 
 **S2.2** "My Sales campaign has a much higher ROAS than this. Which one should get the budget?"
@@ -59,7 +59,7 @@ Chat Starter has 23% of Moshi's spend in the window and is still delivering, so 
 Day 5 (launch 2026-10-02). The Moshi campaign has objective OUTCOME_SALES, and its ad set optimizes for CONVERSATIONS. The merchant has one launch from 2026-08-07 (60 days ago) with the same setup, with first-14-day rows.
 
 **S5.1** "This is a Sales campaign. What is the ROAS and the CPA?"
-- Maps the campaign to `engagement`, because the ad set goal is CONVERSATIONS. Gives no ROAS and no CPA.
+- Maps the campaign to `engagement`, because the ad set goal is CONVERSATIONS. Says Meta optimizes the ad set for conversations, not purchases. Shows Meta's pixel ROAS and CPA when Meta reports purchases, with the window, and judges on neither.
 - Scores on cost per conversation and chat to product view. Names the day 8 gate, 2026-10-09.
 
 **S5.2** "Compare it to my summer launch."
