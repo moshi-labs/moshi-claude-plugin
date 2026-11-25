@@ -2,8 +2,8 @@
 // prints the data-check banner (or "none"), the rendered text and the rendered HTML.
 // Usage: node check.js <file with `const DATA = {...};` or a JSON object>
 const fs = require('fs'), vm = require('vm'), path = require('path');
-const html = fs.readFileSync(path.join(__dirname,
-  '../../../plugins/moshi/skills/performance-pulse-check/assets/pulse-check.html'), 'utf8');
+const html = require('./template-md').read(path.join(__dirname,
+  '../../../plugins/moshi/skills/performance-pulse-check/assets/pulse-check.template.md'));
 const scripts = [...html.matchAll(/<script>([\s\S]*?)<\/script>/g)].map(m => m[1]);
 const code = scripts.filter(s => !/^\s*const DATA\s*=/.test(s)).join('\n;\n');
 
