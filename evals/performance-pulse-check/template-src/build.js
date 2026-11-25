@@ -49,9 +49,13 @@ dashboardUrl: "https://brindle.moshi.ai",
 flags: [{ source: "moshi", code: "order_match_pending", text: "Oct 6 orders still matching." }]
 };`;
 // Plain attribute values need no quotes in HTML (class=sub is class="sub", alt is alt=""), which saves about 175 bytes of the size line.
-const t=fs.readFileSync(S+'/tpl.html','utf8').replace(/<script>\n(const LOGO[\s\S]*?)<\/script>/,(m,c)=>'<script>\n'+c.replace(/ (class|role|aria-hidden|loading|target|rel|width|height|tabindex)="([\w-]+)"/g,' $1=$2').replace(/ alt=""/g,' alt')+'</script>').replace('%%LOGO%%',()=>fs.readFileSync(S+'/logo/logo64q.png.b64','utf8').trim()).replace('%%AV%%',()=>fs.readFileSync(S+'/avatar/av.js','utf8').trim().replace(/;$/,'')+';AV.s={delight:"'+fs.readFileSync(S+'/avatar/still-delight.webp.b64','utf8').trim()+'",reading:"'+fs.readFileSync(S+'/avatar/still-reading.webp.b64','utf8').trim()+'"};');
+const t=fs.readFileSync(S+'/tpl.html','utf8').replace(/<script>\n(const LOGO[\s\S]*?)<\/script>/,(m,c)=>'<script>\n'+c.replace(/ (class|role|aria-hidden|loading|target|rel|width|height|tabindex)="([\w-]+)"/g,' $1=$2').replace(/ alt=""/g,' alt')+'</script>').replace('%%LOGO%%',()=>fs.readFileSync(S+'/logo/logo64q.png.b64','utf8').trim()).replace('%%AV%%',()=>'const AV={};AV.s={delight:"'+fs.readFileSync(S+'/avatar/still-delight.webp.b64','utf8').trim()+'",reading:"'+fs.readFileSync(S+'/avatar/still-reading.webp.b64','utf8').trim()+'"};');
 // Function replacers keep $&, $' and $` in inserted text literal.
 const cp=require('child_process'),NM=process.env.NM_BIN||'npx --yes ';
 let o=t.replace(/<style>([\s\S]*?)<\/style>/,(m,c)=>'<style>'+cp.execSync(NM+'esbuild --loader=css --minify --target=chrome123,safari17.5,firefox120 --log-level=warning',{input:c}).toString().trim()+'</style>');
 o=o.replace(/<script>\n(const LOGO[\s\S]*?)<\/script>/,(m,c)=>{fs.writeFileSync(S+'/code.js',c);return'<script>'+cp.execSync(NM+'terser '+S+'/code.js --toplevel -m -c passes=2 --ecma 2020').toString().trim()+'</script>'});
-const out=process.argv[2];fs.writeFileSync(out,(process.argv[3]?t:o).replace('%%DATA%%',()=>process.argv[4]?fs.readFileSync(process.argv[4],'utf8'):data));
+// Keep the sample replaceable as a single DATA block. Compact its whitespace for the 120 KiB host budget.
+const sample = process.argv[3] || process.argv[4] ? data : cp.execSync(NM+'esbuild --loader=js --minify-whitespace --minify-syntax --target=es2020', {input:data}).toString().trim().replace(/^const DATA=/, 'const DATA = ');
+const out=process.argv[2];const page=(process.argv[3]?t:o).replace('%%DATA%%',()=>process.argv[4]?fs.readFileSync(process.argv[4],'utf8'):sample);
+// The Claude directory accepts no .html from unverified publishers, so the shipped template is the page inside a Markdown fence.
+fs.writeFileSync(out,out.endsWith('.md')?require('./template-md').wrap(page):page);

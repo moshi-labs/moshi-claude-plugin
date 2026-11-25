@@ -1,7 +1,7 @@
 # DATA contract (schemaVersion 1)
 
 The report template reads one object, `const DATA = {...};`, in the last
-script of `assets/pulse-check.html`. You fill it with raw numbers. The
+script of the HTML in `assets/pulse-check.template.md`. You fill it with raw numbers. The
 template computes every rate, cost, ratio, age, stage and resource note.
 Never put a computed value in DATA.
 
@@ -390,7 +390,10 @@ Metrics for `c`, `s`, `a` and `all`: `spend`, `impressions`, `linkClicks`,
 `frequency`, `ads` (count). Campaigns and ad sets also take `age`,
 `stage`, `nextGate` and `nextGateDate`.
 
-`roas` and `cpa` on an `engagement` campaign fail the data check. Write
+`roas` and `cpa` are Meta's pixel numbers. They resolve on every
+campaign, whatever its goal. In the same sentence, name the goal Meta
+optimizes for and the attribution window, and judge only a `sales`
+campaign on them. In `moshi_only` mode they fail the data check. Write
 the numbers you mean, not the arithmetic: `{c:123.cpc}`, never "$412 ÷
 160".
 
@@ -446,7 +449,7 @@ The template shows a "data check" banner and hides the affected part when
 a check fails:
 
 0. The DATA block is missing, or the report could not render.
-1. ROAS or CPA would show for an engagement campaign.
+1. ROAS or CPA would show in `moshi_only` mode.
 2. A comparison breaks `comparison-method.md`: unknown ids or owners,
    different objectives, a retargeting merchant side, a merchant
    side whose `adsPulled` is not `"all"`, a merchant
@@ -532,3 +535,5 @@ const DATA = {
   comparisons: [], changes: [], accountIssues: [], flags: [], notMeasurableYet: ["Purchases: too early on day 2"]
 };
 ```
+
+In full mode the pixel purchase section lists complete Moshi campaigns with purchases in the selected window. Show the reported optimization goals and attribution windows, including unknown values. An engagement campaign has a cost-per-conversation verdict even when it reports pixel purchases.

@@ -1,16 +1,26 @@
 {
   "name": "moshi",
+  "displayName": "Moshi",
   "description": "Moshi: conversational commerce and lead gen over Instagram DM, Facebook Messenger and iMessage. Bundles the Moshi MCP server and guided workflows. Sign in with your Moshi account when prompted.",
   "version": "0.15.0",
   "author": {
-    "name": "Moshi Labs"
+    "name": "Moshi Labs",
+    "email": "support@moshi.ai",
+    "url": "https://www.moshi.ai"
   },
+  "homepage": "https://docs.moshi.ai",
+  "repository": "https://github.com/moshi-labs/moshi-claude-plugin",
+  "license": "MIT",
   "keywords": [
     "moshi",
     "mcp",
     "meta",
     "ads",
     "commerce",
-    "lead-gen"
-  ]
+    "lead-gen",
+    "instagram",
+    "messenger",
+    "imessage"
+  ],
+  "privacyPolicyUrl": "https://www.moshi.ai/legal/privacy"
 }

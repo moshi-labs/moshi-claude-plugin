@@ -148,7 +148,7 @@ campaign at a time and keep every other argument. Never shorten the dates.
 | 7 comparison launches | T4 finds them and T5 reads each one |
 | 8 activity log | None in v1. Meta changes show only as significant edits |
 | 9 anomaly signal | None in v1 |
-| `get_organization_ads` | The tree's `owner` labels |
+| The Moshi-ads list, which Moshi removed | The tree's `owner` labels and `moshiFlowId`. `list_flows` lists the flows themselves |
 
 ## Limits
 

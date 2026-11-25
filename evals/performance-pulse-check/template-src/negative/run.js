@@ -5,10 +5,12 @@
 const { execFileSync } = require('child_process'), path = require('path'), fs = require('fs');
 const check = path.join(__dirname, '..', 'check.js');
 const EXPECT = {
+  'moshi-only.data.js': [], 'pixel-engagement.data.js': [], 'pixel-paused.data.js': [],
   'base.data.js': [],
   'check0.data.js': ['Check 0: the report could not render'],
-  'check1.data.js': ['Check 1: {c:ce1.roas} would show ROAS for an engagement campaign'],
-  'check2.data.js': ['Check 2: comparison ctr day 15: day must be a whole number from 1 to 14',
+  'check1.data.js': ['Check 1: {c:cm1.roas} would show ROAS in moshi_only mode', 'Check 1: {all:moshi.cpa} would show CPA in moshi_only mode', 'Check 3: {m:cpa} points to nothing', 'Check 3: {m:roas} points to nothing'],
+  'check2.data.js': ['Check 2: comparison cpa day 8: CPA needs a Sales campaign',
+    'Check 2: comparison ctr day 15: day must be a whole number from 1 to 14',
     'Check 2: comparison ctr day 7: your campaign has no start date',
     'Check 2: comparison ctr day 7: your campaign started more than 90 days ago',
     'Check 2: comparison cpa day 7: Moshi is on day 6 since its last reset; CPA needs day 8',
@@ -113,7 +115,9 @@ for (const f of fs.readdirSync(FIXTURES)) if (fs.existsSync(path.join(FIXTURES, 
 // count the window's; the stage and gates count to today. baseline-early: the funnel's ROAS is judged at the window's last day.
 // baseline-past: a launch comparison stops at the window's last day, and its CPA gate is judged there. running-dup: a duplicate row
 // hides a running comparison with check 10.
-const RENDERED = { 'check3.data.js': ['&lt;b&gt;x&lt;/b&gt;'],
+const RENDERED = {
+  'pixel-engagement.data.js': ['15 purchases','judged on cost per conversation · $52.00 CPA · 0.80x ROAS','too early to judge · $30.00 CPA','judged on cost per conversation · too early to judge · $25.00 CPA'],
+  'pixel-paused.data.js': ['goal not reported','no CPA or ROAS verdict · $56.17 CPA · 0.80x ROAS'], 'check3.data.js': ['&lt;b&gt;x&lt;/b&gt;'],
   'adset-day1.data.js': ['New set is on day 5', 'old set is on day 67', 'the campaign is on day 67'],
   'first-launch.data.js': ['Moshi launched Sep 22'],
   'check10.data.js': ['Wait until Oct 22'],
@@ -176,7 +180,8 @@ const RENDERED = { 'check3.data.js': ['&lt;b&gt;x&lt;/b&gt;'],
     'Moshi is 2.2% of your ad spend Moshi · 0.96x ROAS $637 Your other campaigns · 1.05x ROAS $27,676', 'Review your Closers →'] };
 // Strings that must not render. check10: no Meta tile, comparison or funnel value from the duplicate Moshi ad (CTR 1.20%, value $1,800).
 // cmp-dup: the failed comparison reports check 10, not check 2. window-rows: $700 would count the Sep 15-21 rows before window.start.
-const RENDERED_NOT = { 'check10.data.js': ['1.20%', '$1,800'],
+const RENDERED_NOT = {
+  'moshi-only.data.js': ['Meta pixel purchases',' CPA',' ROAS'], 'check10.data.js': ['1.20%', '$1,800'],
   'cmp-dup.data.js': ['Check 2'], 'check8.data.js': ['Check 9'], 'window-rows.data.js': ['$700'],
   'check11.data.js': ['Your Tan ad clicked at', 'yo set 1.20%'], 'check12.data.js': ['Meta-credited purchases', 'CPA $25.00', 'CPA, first 14 days'],
   'check13.data.js': ['Moshi CTR is', 'CPA $25.00'], 'check13-headline.data.js': ['Chats cost'], 'primary.data.js': ['cm2 Engagement Today'],
@@ -224,8 +229,8 @@ for (const [file, want] of Object.entries(EXPECT)) {
   console.log(`${bad ? 'FAIL' : 'ok  '} ${file.replace('../../', '')}: ${bad ? (miss.length ? 'missing ' + miss.join(' | ') : 'unexpected ' + banner) : banner}`);
 }
 // The design spec's size line: a host that must re-emit the template whole can do it in one artifact.
-const size = fs.statSync(path.join(__dirname, '../../../../plugins/moshi/skills/performance-pulse-check/assets/pulse-check.html')).size;
+const size = Buffer.byteLength(require('../template-md').read(path.join(__dirname, '../../../../plugins/moshi/skills/performance-pulse-check/assets/pulse-check.template.md')));
 if (size > 122880) failed++;
-console.log(`${size > 122880 ? 'FAIL' : 'ok  '} pulse-check.html: ${size.toLocaleString('en-US')} of 122,880 bytes`);
+console.log(`${size > 122880 ? 'FAIL' : 'ok  '} pulse-check page: ${size.toLocaleString('en-US')} of 122,880 bytes`);
 console.log(failed ? `${failed} negative test(s) failed` : 'all negative tests passed');
 process.exit(failed ? 1 : 0);

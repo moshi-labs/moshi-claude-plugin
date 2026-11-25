@@ -1,33 +1,46 @@
 ---
 name: weekly-newsletter
-description: Write a Moshi merchant's weekly newsletter as an artifact from one consistent read — the week at a glance with changes from the prior period, top conversations, Closer wins and missed leads, the next ad to launch, and what's new from Moshi. Read-only.
+description: Write a Moshi merchant's weekly newsletter as an artifact from one batch of reads — the week at a glance with changes from the prior period, top conversations, Closer wins and missed leads, and the next ad to launch. Read-only.
 when_to_use: Use when a Moshi merchant, or a scheduled Cowork run, asks for a weekly newsletter, a weekly recap or digest, or how the week went. With no dates it covers the last completed Monday-to-Sunday week in UTC, so it runs unattended. Requires the Moshi MCP server.
 ---
 
-Write the weekly Moshi newsletter for the organization this session is authenticated as. Cover the window the merchant named. If they named none, which is always the case on a scheduled run, cover the last completed Monday-to-Sunday week in UTC: `periodEnd` is the latest Sunday before today (yesterday when today is Monday, 7 days back when today is Sunday), and `periodStart` is the Monday 6 days before it. Both days are included. The reader is the merchant: a busy owner who wants to know how the week went, which shoppers are worth a message today, and what to do next.
+Write the weekly Moshi newsletter for the organization this session is authenticated as. Cover the window the merchant named. If they named none, which is always the case on a scheduled run, cover the last completed Monday-to-Sunday week in UTC: `periodEnd` is the latest Sunday before today (yesterday when today is Monday, 7 days back when today is Sunday), and `periodStart` is the Monday 6 days before it. Both days are included. The **prior period** is the same number of days ending the day before `periodStart` (for a week, the Monday-to-Sunday before it). No tool picks these dates for you: work all four out from today's date in UTC, not local time, before the first read, and write them down. After the reads, check that the current read's `window.since` and `window.displayUntil` equal the window you asked for, and the prior read's equal the prior period; if either differs, stop and report it rather than write the newsletter. The reader is the merchant: a busy owner who wants to know how the week went, which shoppers are worth a message today, and what to do next.
 
 ## Pull the data first
 
-1. Call `get_weekly_newsletter_data`. For a window the merchant named, pass `periodStart` and `periodEnd` as YYYY-MM-DD. For the default week, pass neither: the tool applies the rule above, and `window` in its result names the dates. That one call returns the scorecard and its comparison with the prior period, the funnel, proven closes, missed Closer opportunities, the next ads worth launching, Moshi's new releases, and the flags, all read at one moment. Work only from what it returns. If it returns an error, stop and report that error. Never write a partial newsletter.
-2. Then call `get_conversation_messages` on 2 or 3 of `transcriptsToRead.candidates[].conversationId`, in the order listed. Each candidate's `reason` (`purchase`, `closer_queue` or `furthest_stage`) says what happened in that thread — use it when you write section 2. Transcripts are not bundled because they carry real customer PII, so read only the threads you will quote.
-3. Do not call `get_meta_platform_metrics`, `create_ad`, or any Closer send. This newsletter reports; it never acts.
+1. Make these five reads together, in one turn, so they describe one moment. Heat is derived at read time and decays, so reads made minutes apart do not belong on the same page.
+   - `get_ad_performance` with `periodStart` and `periodEnd` for the window: the **current** read.
+   - `get_ad_performance` with `periodStart` and `periodEnd` for the prior period: the **prior** read.
+   - `get_closer_activity` with the window's `periodStart` and `periodEnd`: nudges sent, nudged-then-purchased, missed carts, and `organization`.
+   - `get_closer_queue` with `limit: 1`: only its `total` is used, the number of leads waiting in Closer right now. Its rows name shoppers, so do not ask for more.
+   - `get_ad_shortlist` with `suggestLimit: 3`: the next ads worth launching.
+
+   If either `get_ad_performance` read or `get_closer_activity` returns an error, stop and report that error. Never write a partial newsletter. If `get_closer_queue` fails, leave out the live-queue count and add a footer line saying it could not be read. If `get_ad_shortlist` fails, leave out section 4 and say so in the footer.
+2. Pick 2 or 3 threads to quote, in this order, skipping duplicates: conversations that bought in the window, then `get_closer_activity`'s `stillReachable.topLeads`, then conversations that reached checkout or cart. To find buyers and checkouts, call `get_leads` with `limit: 200` and the smallest `period` that covers the window. `last_N` covers today and the N−1 days before it, so use `last_7d` only when `periodStart` is no more than 6 days before today (a Monday run's default week needs `last_30d`), else `last_30d` when it is no more than 29 days before today, else `last_90d`. Take rows whose `furthestStageName` is `purchase`, then `checkout`, then `cart`. `get_leads` cannot be cut to the exact window and counts conversations by when they started, so for each pick call `get_conversation_events` and keep it only when its purchase, checkout or cart event falls inside the window. When `get_leads` comes back `truncated`, or finds no buyer inside the window, fall back to `stillReachable.topLeads`; never claim nobody bought, since `threadProvenPurchases` is the count.
+3. Call `get_conversation_messages` on the 2 or 3 threads you kept. Transcripts carry real customer PII, so read only the threads you will quote.
+4. Do not call `get_meta_platform_metrics`, `create_ad`, `draft_closer_nudge`, `send_closer_nudge` or any other write tool. This newsletter reports; it never acts.
 
 ## Hard rules — these are correctness, not style
 
-1. **Never invent a number.** If a section needs data the tool does not return, leave it out and list it under "not measurable yet". Do not estimate, interpolate, or carry a figure over from an example or an earlier edition.
-2. **`threadProvenOrders` is a floor, not a total.** It counts orders Moshi can tie to a named conversation and an order id. The ad platform reports its own, larger modelled purchase count, and **it is not in this data**. Never add the two together, and never present thread-proven orders as the full conversion count.
-3. **Render the window as `window.periodStart` → `window.periodEnd`.** Both days count. Never render an exclusive bound such as `until`, which is the day after the window ends. The tool withholds it on purpose; do not reintroduce it from anywhere else.
-4. **Heat decays on a 7-day half-life** and is derived at read time. Report the current warm-or-hotter count; never describe a change between two reads as engagement moving.
-5. **Surface every entry in `flags`** where the reader can see it. Each one means a number on the page may be wrong.
-6. **Anonymize all verbatims.** Transcripts contain real customer PII: strip names, handles, emails and phone numbers. Quote 15 words or fewer.
+1. **Never invent a number.** If a section needs data these reads do not return, leave it out and list it under "not measurable yet". Do not estimate, interpolate, or carry a figure over from an example or an earlier edition.
+2. **`threadProvenPurchases` is a floor, not a total.** It counts orders Moshi can tie to a named conversation and an order id, and `threadProvenRevenue` sums those same orders. The ad platform reports its own, larger modelled purchase count, and **it is not in this data**. Never add the two together, and never present thread-proven orders as the full conversion count.
+3. **Render the window as `window.since` → `window.displayUntil`** from the current read. Both days count. Never render `window.until`: it is the exclusive bound, the day after the window ends.
+4. **Heat decays on a 7-day half-life** and is derived at read time. Warm-or-hotter is `heat.warm + heat.hot + heat.burning` from the current read. Report the current value only; never compare it with the prior read, and never describe a change between two reads as engagement moving.
+5. **Surface every entry in every read's `flags`** where the reader can see it, once each. Each one means a number on the page may be wrong.
+6. **Anonymize all verbatims.** Transcripts contain real customer PII: strip names, handles, emails and phone numbers. Quote 15 words or fewer. Never print a `displayName` or `username` from `get_closer_queue` or `get_leads`.
 7. **When a `truncated` field is true**, say so and give how many rows you saw of `total`.
-8. **Take changes only from `scorecard.deltas`, and only where `comparable` is true.** Never compute a delta yourself. `pct` is a percentage (25 means up 25%) and is null when the prior value was 0; then give `abs` alone.
-9. **Label `nextAds` figures with the shortlist's own window**, `nextAds.window.dateStart` → `nextAds.window.dateStop`. Never present that spend, CPA or ROAS as this period's numbers.
+8. **Changes come only from the current and prior `get_ad_performance` reads, and follow these rules exactly.**
+   - Compare only these figures: spend, DM conversations (`conversations.leadPopulation`), thread-proven orders and thread-proven revenue. Never heat.
+   - `abs` is current minus prior. `pct` is `abs / prior × 100`, rounded to a whole number; when the prior value is 0, give `abs` alone.
+   - Compare spend only when both reads have `hasMetaAdData` true.
+   - Show no change at all when the current read has the `partial_period` flag; say comparisons come once the period is complete.
+   - The prior period has no data when its read has zero spend, an empty `funnel`, all four heat buckets at 0, zero `threadProvenPurchases` and zero `purchaseEventsWithoutOrderId`. Then show no changes and label the tiles "first period with data".
+9. **Label `get_ad_shortlist` figures with its own window**, `window.dateStart` → `window.dateStop`. Never present that spend, CPA or ROAS as this period's numbers.
 10. **Stay read-only.** Never launch an ad, send a nudge or call a write tool. Every call to action sends the merchant to act.
-11. **Name the merchant only from `organization.name`.** Never guess a name or take one from a transcript.
-12. **Link any dashboard destination with `organization.dashboardUrl`** (the Closer CTA keeps `organization.closerUrl`). Never write `app.moshi.ai` or any other hardcoded Moshi dashboard host.
-13. **Badge "Closed with Closer" only where a row's `closedWithCloser` is true.** Never add `closes.closedWithCloserCount` to `missed.nudgedThenPurchased`: the first counts this period's orders that followed a Closer nudge, and the second counts conversations nudged this period that later placed an order. They answer different questions.
-14. **Money has a currency.** Take it from `closes.rows[].currency` for purchase values and `nextAds.accountCurrency` for ad figures, where present. Never assume USD, and never print a `$` sign unless the currency is USD.
+11. **Name the merchant only from `get_closer_activity`'s `organization.name`.** Never guess a name or take one from a transcript.
+12. **Link the dashboard with `organization.dashboardUrl`, and Closer with `organization.dashboardUrl` + `/closer`** (drop any trailing slash first). Never write `app.moshi.ai` or any other hardcoded Moshi dashboard host.
+13. **Keep the two Closer counts apart.** `threadProvenPurchases` counts this period's orders. `nudgedThenPurchased` counts conversations nudged this period that later placed an order, up to now. They answer different questions: never add them, and never call one a share of the other.
+14. **Money has a currency.** `get_ad_shortlist`'s `accountCurrency` is the currency of its spend, CPA and ROAS. The reporting reads carry no currency for spend, revenue or cart values: print those as plain numbers with no currency sign, unless a read names the currency. Never assume USD.
 
 ## Voice
 
@@ -37,45 +50,37 @@ Write to the merchant the way a sharp colleague would: plain words, short senten
 
 **Header**: `organization.name` × Moshi, the window, and a summary of 2 or 3 sentences.
 
-**1. At a glance**: four tiles, each with its change from `scorecard.deltas` where `comparable` is true.
-- Spend. When `scorecard.current.hasMetaAdData` is false, this tile says "No Moshi ads ran", and no cost ratio built on this period's Moshi spend (such as cost per conversation or per order) appears anywhere in sections 1 to 3. Section 4's CPA and ROAS are exempt: they come from `nextAds`, on the shortlist's own window (rule 9), not this period's spend. The DM conversations tile and the Lead closers section still render. If `flags` has `orphan_spend_rows`, say instead that spend could not be matched to an ad, and never say no ads ran.
-- DM conversations: `scorecard.current.conversations`.
-- Warm-or-hotter: `scorecard.current.warmOrHotter`, the current value only (rule 4).
-- Thread-proven orders with their revenue: `scorecard.current.threadProvenOrders` and `scorecard.current.threadProvenRevenue`, labelled as a floor. `scorecard.prior` carries the same two keys, for the delta.
+**1. At a glance**: four tiles, each with its change where rule 8 allows one.
+- Spend. When the current read's `hasMetaAdData` is false, this tile says "No Moshi ads ran" (its `note` says why), and no cost ratio built on this period's Moshi spend (such as cost per conversation or per order) appears anywhere in sections 1 to 3. Section 4's CPA and ROAS are exempt: they come from `get_ad_shortlist`, on its own window (rule 9). The DM conversations tile and the Lead closers section still render. If a flag says spend could not be matched to an ad, say that instead, and never say no ads ran.
+- DM conversations: `conversations.leadPopulation`.
+- Warm-or-hotter: the current value only (rule 4).
+- Thread-proven orders with their revenue: `threadProvenPurchases` and `threadProvenRevenue`, labelled as a floor. When `purchaseEventsWithoutOrderId` is above 0, add that many more purchases showed up without an order id, so they are not counted.
 
-When `scorecard.prior` is null, show no changes and label the tiles "first period with data".
-
-**2. Top conversations**: the 2 or 3 threads you read. For each, an anonymized quote of 15 words or fewer and how it ended: bought (with the order value from `closes.rows`), in the Closer queue, or reached checkout.
+**2. Top conversations**: the 2 or 3 threads you read. For each, an anonymized quote of 15 words or fewer and how it ended: bought (with the order value when its purchase event shows one), in the Closer queue, or reached checkout or cart.
 
 **3. Lead closers**
-- Proven closes, from `closes.rows`: order value, channel, and the flow or ad (`flowName`, or `adName` when present), with the "Closed with Closer" badge where `closedWithCloser` is true.
-- Missed opportunities: `missed.stillReachable.count` leads worth `missed.stillReachable.cartValue` can still get a reply. Next to that, put a call to action that links to `organization.closerUrl` and names `missed.liveQueue.total`, the number of leads waiting in Closer right now.
-- Then `missed.windowClosed.count` leads worth `missed.windowClosed.cartValue` whose reply window has closed.
+- Closer this period: `nudgesSent` nudges sent, and `nudgedThenPurchased` of those conversations have since ordered (rule 13).
+- Missed opportunities: `stillReachable.count` leads worth `stillReachable.cartValue` can still get a reply. Next to that, put a call to action that links to the Closer page (rule 12) and names `get_closer_queue`'s `total`, the number of leads waiting in Closer right now.
+- Then `windowClosed.count` leads worth `windowClosed.cartValue` whose reply window has closed, and `noLongerEligible.count` that no longer qualify for a nudge.
 - A cart value is a floor ("at least") when its `cartValueUnknownCount` is above 0.
 
-**4. Next ad to launch**: 1 to 3 ads from `nextAds.ads`, each with CPA and ROAS labelled with the shortlist's own window, `nextAds.window.dateStart` → `nextAds.window.dateStop` (rule 9), and the call to action "run Scale what works" (`/scale_what_works`, or the `scale-what-works` skill). If `nextAds` is null or `nextAds.ads` is empty, leave the section out and say why in one line.
+**4. Next ad to launch**: 1 to 3 ads from `get_ad_shortlist`, the ones whose ids are in `suggested`, in that order, each with CPA and ROAS labelled with the shortlist's own window (rule 9), and the call to action "run Scale what works" (`/scale_what_works`, or the `scale-what-works` skill). If `suggested` is empty, leave the section out and say why in one line (`note` when present).
 
-**5. New from Moshi**: only from `releases`. For each entry, its title, its summary in one line, and its link. Leave the section out when `releases` is null or empty.
+**5. What's next**: 2 or 3 moves, each naming the figure behind it.
 
-**6. What's next**: 2 or 3 moves, each naming the figure behind it.
-
-**Footer**: every entry in `flags`, then a "not measurable yet" list: platform-attributed purchases and ROAS · lifetime reach · per-ad spend and efficiency · heat trend across weeks · carts that never became Closer-eligible (the funnel shows them; the Closer counts do not).
+**Footer**: every flag (rule 5), then a "not measurable yet" list: platform-attributed purchases and ROAS · lifetime reach · per-ad spend and efficiency · heat trend across weeks · each order's value and channel · carts that never became Closer-eligible (the funnel shows them; the Closer counts do not).
 
 ## Quiet weeks
 
-When `edition` is `"quiet_week"`, nothing measurable happened in the window. Render only the header, a one-line glance, New from Moshi when `releases` has entries, and the footer. Do not pad it.
+The week is quiet when the current read has zero spend, `conversations.leadPopulation` 0, `threadProvenPurchases` 0, `purchaseEventsWithoutOrderId` 0 and no `funnel` events, and `get_closer_activity` has zero `nudgesSent`, `stillReachable.count`, `windowClosed.count` and `noLongerEligible.count`, and the live queue `total` is 0. When `get_closer_queue` could not be read, decide from the other counts alone and keep its footer line. Then render only the header, a one-line glance and the footer. Do not pad it.
 
 ## Edge cases
 
-- `nextAds` is null (the `ad_shortlist_unavailable` flag): leave out section 4 and keep the flag in the footer.
-- `no_connected_ad_account` flag with an empty `nextAds.ads`: leave out section 4 and give that reason (`nextAds.notes.note`).
-- `releases` is null (the `releases_unavailable` flag): leave out section 5 and keep the flag in the footer. An empty `releases` list: leave out section 5 without comment.
-- `partial_period` flag: the window reaches today, so say "so far", and every `scorecard.deltas` entry is `comparable: false` — show no week-over-week changes; comparisons come once the week is complete.
-- `closer_history_incomplete` flag: the missed counts are a floor.
-- `purchases_missing_amount` flag: revenue is a floor.
-- `duplicate_order_ids` flag: show the rows as they are; do not dedupe them.
-- `purchase_count_mismatch` flag: a purchase landed between reads. Show both numbers and do not reconcile them.
-- `live_queue_truncated` flag: `missed.liveQueue.total` is exact, straight from `/recover`'s own count, and so is `missed.liveQueue.returned`, the number of rows the tool actually read. Only `missed.liveQueue.cartValue` is a floor — it covers those returned rows only.
-- `closer_queue_truncated` flag: `missed.stillReachable.count` and `missed.stillReachable.cartValue` are floors — say so.
+- `get_ad_shortlist` failed, or says there is no connected ad account: leave out section 4 and give the reason in one line.
+- `partial_period` flag: the window reaches today, so say "so far" and show no changes (rule 8).
+- A Closer flag that says history is incomplete: the missed counts are floors.
+- A flag that says some purchases have no amount: revenue is a floor.
+- `get_closer_queue`'s `total` is exact even though you read only 1 row.
+- `stillReachable.topLeads` holds only the top few leads; `stillReachable.count` is the full count.
 
 Design it cleanly: stat tiles, restrained color, readable in light and dark, and short enough to read in two minutes. Produce it as an artifact.
