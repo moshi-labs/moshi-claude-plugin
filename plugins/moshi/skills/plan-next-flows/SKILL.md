@@ -104,8 +104,8 @@ an explicit go-ahead, through `scale-what-works` (see "After the plan").
    - the offer, including any promise a picked creative makes;
    - overlap with Moshi tests already running on the same audience.
 
-9. **Render.** Copy `assets/next-flows.html` and replace only the `const DATA = {...};`
-   block, following "DATA" below. If you can copy files, copy and edit. If not, emit the
+9. **Render.** Copy the HTML in `assets/next-flows.template.md` and replace only the `const DATA = {...};`
+   block, following "DATA" below. If you can write files, write the fenced HTML to an `.html` file and edit that. If not, emit the
    whole template with your DATA block, as an artifact.
 
 10. **Reply in chat** with four short parts:

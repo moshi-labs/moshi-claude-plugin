@@ -229,8 +229,8 @@ for (const [file, want] of Object.entries(EXPECT)) {
   console.log(`${bad ? 'FAIL' : 'ok  '} ${file.replace('../../', '')}: ${bad ? (miss.length ? 'missing ' + miss.join(' | ') : 'unexpected ' + banner) : banner}`);
 }
 // The design spec's size line: a host that must re-emit the template whole can do it in one artifact.
-const size = fs.statSync(path.join(__dirname, '../../../../plugins/moshi/skills/performance-pulse-check/assets/pulse-check.html')).size;
+const size = Buffer.byteLength(require('../template-md').read(path.join(__dirname, '../../../../plugins/moshi/skills/performance-pulse-check/assets/pulse-check.template.md')));
 if (size > 122880) failed++;
-console.log(`${size > 122880 ? 'FAIL' : 'ok  '} pulse-check.html: ${size.toLocaleString('en-US')} of 122,880 bytes`);
+console.log(`${size > 122880 ? 'FAIL' : 'ok  '} pulse-check page: ${size.toLocaleString('en-US')} of 122,880 bytes`);
 console.log(failed ? `${failed} negative test(s) failed` : 'all negative tests passed');
 process.exit(failed ? 1 : 0);

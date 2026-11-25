@@ -1,7 +1,7 @@
 # DATA contract (schemaVersion 1)
 
 The report template reads one object, `const DATA = {...};`, in the last
-script of `assets/pulse-check.html`. You fill it with raw numbers. The
+script of the HTML in `assets/pulse-check.template.md`. You fill it with raw numbers. The
 template computes every rate, cost, ratio, age, stage and resource note.
 Never put a computed value in DATA.
 

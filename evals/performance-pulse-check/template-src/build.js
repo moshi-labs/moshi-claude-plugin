@@ -56,4 +56,6 @@ let o=t.replace(/<style>([\s\S]*?)<\/style>/,(m,c)=>'<style>'+cp.execSync(NM+'es
 o=o.replace(/<script>\n(const LOGO[\s\S]*?)<\/script>/,(m,c)=>{fs.writeFileSync(S+'/code.js',c);return'<script>'+cp.execSync(NM+'terser '+S+'/code.js --toplevel -m -c passes=2 --ecma 2020').toString().trim()+'</script>'});
 // Keep the sample replaceable as a single DATA block. Compact its whitespace for the 120 KiB host budget.
 const sample = process.argv[3] || process.argv[4] ? data : cp.execSync(NM+'esbuild --loader=js --minify-whitespace --minify-syntax --target=es2020', {input:data}).toString().trim().replace(/^const DATA=/, 'const DATA = ');
-const out=process.argv[2];fs.writeFileSync(out,(process.argv[3]?t:o).replace('%%DATA%%',()=>process.argv[4]?fs.readFileSync(process.argv[4],'utf8'):sample));
+const out=process.argv[2];const page=(process.argv[3]?t:o).replace('%%DATA%%',()=>process.argv[4]?fs.readFileSync(process.argv[4],'utf8'):sample);
+// The Claude directory accepts no .html from unverified publishers, so the shipped template is the page inside a Markdown fence.
+fs.writeFileSync(out,out.endsWith('.md')?require('./template-md').wrap(page):page);

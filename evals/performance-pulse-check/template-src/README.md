@@ -3,10 +3,10 @@
 `tpl.html` is the readable template. `build.js` inlines the logo, the avatar, drops
 the quotes around plain attribute values in the markup the code writes
 (`class=sub`), minifies the CSS (esbuild) and JS (terser), and writes the shipped
-file:
+file. An output path ending in `.md` is wrapped in the Markdown template the plugin ships (the directory takes no `.html` from unverified publishers):
 
 ```
-node build.js ../../../plugins/moshi/skills/performance-pulse-check/assets/pulse-check.html
+node build.js ../../../plugins/moshi/skills/performance-pulse-check/assets/pulse-check.template.md
 ```
 
 - `node build.js <out> 1` writes the unminified template.

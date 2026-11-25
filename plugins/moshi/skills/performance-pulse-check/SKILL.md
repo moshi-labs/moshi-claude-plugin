@@ -67,10 +67,10 @@ allows, and how to say it.
    and set `adsPulled` from the read that pulled each campaign's ads.
    Write `verdict.title` in a few plain words, and the headline and body
    with tokens such as `{c:123.cpc}`, never with typed numbers.
-9. **Render.** Copy `assets/pulse-check.html` and replace only the
+9. **Render.** Copy the HTML in `assets/pulse-check.template.md` and replace only the
    `const DATA = {...};` block in its last script (a split test adds one
-   script after it: see Split tests). If you can copy files,
-   copy and edit. If not, emit the whole template unchanged with your DATA
+   script after it: see Split tests). If you can write files,
+   write the fenced HTML to an `.html` file and edit that. If not, emit the whole template unchanged with your DATA
    block, as an artifact. If the report shows a "data check" banner, fix
    DATA and render again.
 10. **Reply in chat** with the answer shape below.
