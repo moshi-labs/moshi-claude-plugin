@@ -73,7 +73,7 @@ table{width:100%;border-collapse:collapse;font-size:13px}th,td{text-align:left;p
 %%AV%%
 </script>
 <script>
-const LOGO="data:image/png;base64,%%LOGO%%",LOT='https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie_svg.min.js';
+const LOGO="data:image/png;base64,%%LOGO%%";
 const B=[0,8,2,10,12,4,14,6,3,11,1,9,15,7,13,5],DY=864e5,GATES=[4,8,15,31];
 const STG=[['Learning','day 1–3'],['Early read','day 4–7'],['First fair read','day 8–14'],['Fatigue watch','day 15–30'],['Full verdict','day 31+']];
 const MET=['spend','impressions','linkClicks','ctr','cpc','cpm','conversations','costPerConversation','purchases','purchaseValue','roas','cpa','frequency','ads'],AGE=['age','stage','nextGate','nextGateDate'];
@@ -87,7 +87,7 @@ const PLANE='<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke=
 // Meta purchase figures always show the attribution window of the ad sets behind them.
 const PM=['purchases','purchaseValue','roas','cpa'],NR='Meta’s default for this ad set (not reported)';
 const N0=()=>Object.create(null);
-let ANI,AVS,CMPS=[],D,W,REF,AO,CUR='USD',TZ='UTC',ERR=[],CH=[],INK={},T=0,MOV,RUN,SH,ACT=0,VIS=new Set(),BADF,IX={c:N0(),s:N0(),a:N0()},FULL,MC=[],COV=[],PR=null,MA={},CA={},OV={a:new Set,s:new Set,c:new Set};
+let CMPS=[],D,W,REF,AO,CUR='USD',TZ='UTC',ERR=[],CH=[],INK={},T=0,MOV,RUN,SH,ACT=0,VIS=new Set(),BADF,IX={c:N0(),s:N0(),a:N0()},FULL,MC=[],COV=[],PR=null,MA={},CA={},OV={a:new Set,s:new Set,c:new Set};
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const pd=s=>Date.parse(s+'T00:00:00Z'),ds=n=>new Date(n).toISOString().slice(0,10),dd=(a,b)=>Math.round((pd(a)-pd(b))/DY),addD=(s,n)=>ds(pd(s)+n*DY);
 const isD=s=>typeof s=='string'&&/^\d{4}-\d\d-\d\d$/.test(s)&&!isNaN(pd(s))&&ds(pd(s))==s;
@@ -217,7 +217,7 @@ ${barRow('<span class="dot"></span>'+yn,fmt(x.metric,v[1]),ok(v[1])?v[1]/mx:0,'g
 <p class="rn">${esc(note)}${L?`<br>Counted on: Moshi ${esc(L[0])} · yours ${esc(L[1])}`:''}</p></div>`}}
 const banner=()=>`<div class="ban" role="alert"><b>Data check</b>: ${ERR.length} problem${ERR.length>1?'s':''} found. The affected parts are hidden.<ul>${ERR.map(e=>`<li>${esc(e)}</li>`).join('')}</ul></div>`;
 function render(){const app=document.getElementById('app');let done;
-try{done=build(app)}catch(e){bad(0,`the report could not render: ${e&&e.message||e}`);app.innerHTML=banner()}window.ERRORS=ERR;if(done){avatar();boot()}}
+try{done=build(app)}catch(e){bad(0,`the report could not render: ${e&&e.message||e}`);app.innerHTML=banner()}window.ERRORS=ERR;if(done)boot()}
 function build(app){
 try{D=DATA}catch(e){D=null}
 if(!D||typeof D!='object'){bad(0,'the DATA block is missing or did not parse');app.innerHTML=banner();return}
@@ -356,11 +356,6 @@ const cu=url(D.dashboardUrl,'dashboardUrl');
 if(cu)h.push(sec('Respond to your Closers',null,`<p style="max-width:62ch">Some shoppers reach a cart in chat and then go quiet. Moshi drafts a personal follow-up for each one, called a Closer, to bring them back to checkout. Take a quick look, edit anything that doesn’t sound like you, and send.</p><a class="cbtn" href="${esc(cu.replace(/\/+$/,''))}/closer" target="_blank" rel="noopener">Review your Closers →</a>`));
 if(ERR.length)h.unshift(banner());
 app.innerHTML=h.join('\n');return 1}
-function avatar(){const el=document.querySelector('.av div');if(AVS||!el||matchMedia('(prefers-reduced-motion: reduce)').matches||!window.DecompressionStream)return;AVS=1;
-const m=el.parentElement.classList.contains('delight')?'delight':'reading',sc=document.createElement('script');sc.src=LOT;
-sc.onload=async()=>{try{const r=new Response(Uint8Array.from(atob(AV.z),c=>c.charCodeAt(0))).body.pipeThrough(new DecompressionStream('gzip')),j=(await new Response(r).json())[m];
-j.assets.forEach(a=>{if(a.e)a.p='data:image/webp;base64,'+AV.i[a.p]});ANI=lottie.loadAnimation({container:el,renderer:'svg',loop:m=='reading',autoplay:true,animationData:j});
-ANI.addEventListener('DOMLoaded',()=>el.querySelector('img')?.remove())}catch(e){}};document.head.append(sc)}
 function inks(){const p=document.createElement('canvas').getContext('2d'),q=document.body.appendChild(document.createElement('i'));['p:primary','g:text-2','m:mint','a:accent-strong'].forEach(z=>{const[k,n]=z.split(':');p.clearRect(0,0,1,1);q.style.color=`var(--${n})`;p.fillStyle='#888';p.fillStyle=getComputedStyle(q).color;p.fillRect(0,0,1,1);INK[k]=[...p.getImageData(0,0,1,1).data]});q.remove()}
 function paint(c){if(!c._x||!c.width)return;const w=c.width,h=c.height,im=c._x.createImageData(w,h),d=im.data;
 const px=(X,Y,k)=>{if(X<0||Y<0||X>=w||Y>=h)return;const i=(Y*w+X)*4;d[i]=k[0];d[i+1]=k[1];d[i+2]=k[2];d[i+3]=255};
@@ -380,7 +375,7 @@ const io=new IntersectionObserver(es=>{es.forEach(x=>x.isIntersecting?VIS.add(x.
 ['pointermove','pointerdown'].forEach(n=>addEventListener(n,()=>{ACT=Date.now();wake()},{passive:true}));
 const re=()=>{inks();size()};new ResizeObserver(()=>requestAnimationFrame(size)).observe(document.body);
 matchMedia('(prefers-color-scheme: dark)').addEventListener('change',re);new MutationObserver(re).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
-rm.addEventListener('change',()=>{MOV=!rm.matches;if(ANI)MOV?ANI.play():ANI.pause();else avatar();wake()});
+rm.addEventListener('change',()=>{MOV=!rm.matches;wake()});
 document.addEventListener('visibilitychange',wake);size()}
 // A picture that fails to load (Meta's image links expire) is removed: the initial or the card's text shows instead.
 addEventListener('error',e=>{if(e.target.tagName=='IMG')e.target.remove()},true);
