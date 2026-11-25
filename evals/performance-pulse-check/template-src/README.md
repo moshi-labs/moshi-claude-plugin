@@ -6,7 +6,7 @@ the quotes around plain attribute values in the markup the code writes
 file. An output path ending in `.md` is wrapped in the Markdown template the plugin ships (the directory takes no `.html` from unverified publishers):
 
 ```
-node build.js ../../../plugins/moshi/skills/performance-pulse-check/assets/pulse-check.template.md
+node build.js ../../../plugins/moshi/skills/performance-pulse-check/assets/pulse-check.template.md 1
 ```
 
 - `node build.js <out> 1` writes the unminified template.
@@ -38,19 +38,16 @@ values (about 170).
 
 ## Avatar
 
-`avatar/av.js` holds the Moshi Lottie avatar for `DATA.mood` (`delight` or
-`reading`): both animations as one gzip+base64 JSON blob, plus their images
-as shared WebP data URIs. `avatar/make.py` builds it from the frontend's
-`.lottie` files (needs Pillow and zopfli, which packs the JSON 1.6 KB smaller
-than gzip -9 in the same gzip format):
+The report shows a still Moshi avatar for `DATA.mood` (`delight` or `reading`):
+`avatar/still-*.webp.b64`, embedded as WebP data URIs. Re-shoot them with
+`avatar/still.html` (serve the folder, open `still.html?m=delight&fr=195` or
+`?m=reading&fr=300` in headless Chrome with a transparent background, encode
+192 px wide WebP, keep each under 6 KB).
 
-```
-python3 -I avatar/make.py <moshi-frontend>/apps/admin-app/public/animations
-```
+0.14.4 removed the animated Lottie avatar. Its gzip+base64 JSON and the
+lottie-web script loaded from cdnjs are code the Claude directory's security
+scan can't read, so the scan refused the plugin. `avatar/av.js` and
+`avatar/make.py` built that animation and are kept only as its source.
 
-The page loads lottie-web (`lottie_svg`, for the glow blur) from cdnjs at run
-time. `still-*.webp.b64` are the fallback frames, shown when the script fails
-or reduced motion is on. Re-shoot them with `avatar/still.html` (serve the
-folder, open `still.html?m=delight&fr=195` or `?m=reading&fr=300` in headless
-Chrome with a transparent background, encode 192 px wide WebP, keep each
-under 6 KB).
+The shipped template is now built unminified (`node build.js <out> 1`), so the
+scan can read every line of its code.
