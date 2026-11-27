@@ -61,7 +61,7 @@ in Ads Manager.
 
    For a `k` between the columns, or above 40, use `k + 0.7 ∓ 1.28·√(k + 0.5)` (minus for SCALE,
    plus for KILL). The full table for every `k` from 0 to 40 is in
-   `assets/scale-or-kill.html`; it is the 10th and 90th percentile of a Gamma(k + ½) posterior.
+   `assets/scale-or-kill.template.md`; it is the 10th and 90th percentile of a Gamma(k + ½) posterior.
 
    Worked check: target $50, CPA $80. At $200 spent (2 purchases), E = 4 < 4.62, so **test**.
    At $2,000 spent (25 purchases), E = 40 ≥ 32.15, so **kill**. That is the point of the
@@ -91,8 +91,9 @@ in Ads Manager.
      Meta's purchase count misses sales closed in a Moshi chat. Point the merchant to
      `get_ad_performance` for thread-proven orders. Never add those to Meta's purchases.
 
-6. **Render.** Copy `assets/scale-or-kill.html` and replace only the `const DATA = {...};`
-   block. The page draws both charts with Apache ECharts 5.5.0, loaded from cdnjs, with linked hover,
+6. **Render.** Copy the HTML in `assets/scale-or-kill.template.md` and replace only the
+   `const DATA = {...};` block. If you can write files, write the fenced HTML to an `.html` file
+   and edit that. The page draws both charts with Apache ECharts 5.5.0, loaded from cdnjs, with linked hover,
    click-to-select, zoom on the spend axis and box-select. It computes the zones, groups, curves, tiles and action table from the raw ad
    rows. Don't pre-compute them into DATA. Publish the whole template, with your DATA block, as
    an artifact.
